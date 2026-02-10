@@ -193,11 +193,11 @@ const StatsAndCTA = () => {
             <div
               className="cta-image-wrapper relative 
                             w-[280px] h-[170px]   /* Tamaño más grande */
-                            md:w-[550px] md:h-[400px] 
+                            md:w-[450px] md:h-[250px] 
                             z-30 drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]"
             >
               <Image
-                src="/images/LAPTOP-1.gif"
+                src="/images/monitor.webp"
                 alt="iMac Display"
                 fill
                 priority

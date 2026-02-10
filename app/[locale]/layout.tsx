@@ -23,12 +23,12 @@ const poppins = Poppins({
   display: 'swap',
 });
 const lenisOptions = {
-    lerp: 0.1,           // Intensidad del frenado (0 a 1). Menor número = más pesado/lento.
-    duration: 1.5,       // Duración del scroll en segundos.
-    smoothWheel: true,   // Activa scroll suave para ratón.
-    wheelMultiplier: 0.5,  // Multiplicador de velocidad (1.5 o 2 para ir más rápido).
-    touchMultiplier: 2,  // Sensibilidad en dispositivos táctiles.
-    infinite: false,     // ¿Scroll infinito?
+    lerp: 0.1,          
+    duration: 1.5,       
+    smoothWheel: true,  
+    wheelMultiplier: 0.5,  
+    touchMultiplier: 2,  
+    infinite: false,    
   }
 
 export const metadata: Metadata = {
