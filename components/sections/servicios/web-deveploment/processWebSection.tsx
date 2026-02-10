@@ -113,10 +113,10 @@ const ProcessWebSection = () => {
               ref={(el) => { stepsRef.current[index] = el; }}
               className="flex flex-col"
             >
-              <span className={`block text-[#A21F8A] text-4xl lg:text-3xl font-bold mb-6 pb-4 ${trirong.className} border-b border-gray-600`}>
+              <span className={`block text-[#A21F8A] text-4xl lg:text-3xl 2xl:text-5xl font-bold mb-6 pb-4 ${trirong.className} border-b border-gray-600`}>
                 {step.id}
               </span>
-              <h3 className="xl:text-lg font-semibold tracking-[0.07em]">
+              <h3 className="xl:text-lg 2xl:text-xl font-semibold tracking-[0.07em]">
                 {step.title}
               </h3>
             </div>
