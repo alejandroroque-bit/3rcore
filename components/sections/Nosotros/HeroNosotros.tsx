@@ -161,13 +161,6 @@ const HeroNosotros = () => {
         </div>
       </div>
 
-      {!isVideoLoaded && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center bg-black">
-          <div className="relative">
-            <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin"></div>
-          </div>
-        </div>
-      )}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#16021B] via-[#16021B]/50 to-transparent z-[6] pointer-events-none" /> 
     </section>
   );
