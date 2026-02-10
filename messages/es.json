@@ -1,0 +1,639 @@
+{
+  "HeroHome": 
+  {
+    "agency":"La Agencia",
+    "s":"es",
+    "impact": "Impacto",
+    "values": "Valores",
+    "experience": "Experiencia",
+    "identity": "Identidad",
+    "professionalism": "Profesionalismo",
+    "connection": "Conexión",
+    "agency2":"Agencia",
+    "d":"de",
+    "marketing":"Marketing Digital"
+  }
+  ,
+  "TeamSection": {
+    "title": "Somos un equipo",
+    "subtitle": "Profesional y Nativo Digital",
+    "description": "En 3R CORE AGENCIA DE MARKETING Somos un equipo de profesionales con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la Experiencia, la Visión y la Tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresa"
+  }
+  ,
+  "Hovers": {
+    "ver": "/images/tituloCarru/Servicios.svg",
+    "hor": "/images/tituloCarru/serviciosHorizontal.svg"
+  }
+  ,
+  "CTA": {
+    "titleLine1": "Posiciónate e Inserta",
+    "titleLine2": "tu marca en el mercado",
+    "ctaButton": "Contáctanos",
+    "labelClients": "MARCAS TRABAJADAS",
+    "labelExperience": "AÑOS DE EXPERIENCIA",
+    "labelCountries": "PAISES ALCANZADOS"
+  }
+  ,
+  "ClientsSection": {
+    "title": "Nuestros Clientes",
+    "description": "Empresas que confían en nuestra visión y resultados."
+  }
+  ,
+  "NewsSection": {
+    "title": "Entérate de nuestras noticias",
+    "readMore": "Leer más",
+    "viewAllBlogs": "Leer más blogs",
+    "t":""
+  }
+  ,
+  "ContactSection": {
+    "title": "Contáctanos",
+    "fieldName": "Nombre y Apellido",
+    "fieldCompany": "Empresa",
+    "fieldPhone": "Teléfono",
+    "fieldEmail": "Email",
+    "fieldMessage": "Mensaje",
+    "buttonSend": "Enviar",
+    "buttonSending": "Enviando..."
+  }
+  ,
+  "LandingContactSection": {
+    "title": "Contáctanos",
+    "fieldName": "Nombre y Apellido",
+    "fieldCompany": "Empresa",
+    "fieldPhone": "Teléfono",
+    "fieldEmail": "Email",
+    "fieldMessage": "Mensaje",
+    "web":"Link de tu página web",
+    "buttonSend": "Enviar",
+    "buttonSending": "Enviando..."
+  }
+  ,
+  "Navbar": {
+    "title":"Navegador",
+    "regular": "Tu Éxito",
+    "bold": "NUESTRO ÉXITO",
+    "nav": {
+      "home":"INICIO",
+      "about us":"NOSOTROS",
+      "services":"SERVICIOS",
+      "blogs":"BLOGS",
+      "contact":"CONTACTO"
+    },
+    "clo":"CERRAR"
+  }
+  ,
+  "FoundersSection": {
+    "badge": "Fundadores",
+    "description": "Pasa el cursor sobre cada fundador para conectar con su visión.",
+    "roles": {
+      "ceo": "CEO 3R Core",
+      "marketingDirector": "Director de Marketing",
+      "seoDirector": "Analista de SEO y Google ADS"
+    }
+  }
+  ,
+  "AboutSection": {
+    "title": "Nosotros",
+    "subtitle": "Potenciamos tus resultados",
+    "description": "Somos equipo de profesionales y nativos digitales que conjugamos la Experiencia, la Visión y la Tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes"
+  }
+  ,
+  "OurTeamSection": {
+    "title": "Nuestro Equipo",
+    "description": "Conoce a las personas que hacen posible nuestro éxito."
+  }
+  ,
+  "MomentsSection": {
+    "highlightText": "MOMENTOS QUE FORTALECEN NUESTRO VÍNCULO"
+  }
+  ,
+  "ScheduleSection": {
+    "title": "Horario de Atención",
+    "hours": "Lunes a Viernes de 9am a 18 pm (PET)"
+  }
+  ,
+  "ExpansionSection": {
+    "title": "Expandimos",
+    "subtitle": "tu alcance al mundo"
+  }
+  ,
+  "BrandingHero": {
+    "slogan": "Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta.",
+
+    "protitle":"Nuestro proceso nos diferencia",
+    "prosubtitle1": "Devoción y rigor artístico",
+    "prosubtitle2": "Somos el equipo que desarrollamos la esencia de tu marca",
+    "proIn":"Investigación",
+    "proEs":"Estrategia",
+    "proPla":"Planificación",
+    "proDi":"Diseño",
+    "proIm":"Implementación",
+    "proGes":"Gestión y resultado",
+
+    "maTitle":"Manual de Marca",
+    "maParraf":"El brading es la parte fundamental de cualquier identidad de marca que se va a lanzar y posicionar en el mercado. Su objetivo es que la identidad visual sea consistente a través del tiempo y así crear una marca sólida.",
+    "maPreg":"¿Necesitas ayuda con el tuyo?",
+    "mabot":"Contáctanos",
+
+    "apMarca":"Aplicaciones de marca",
+    "apParraf":"Una vez concebida la marca, se genera el branding para productos y merch, obteniendo una imagen más profesional.",
+
+    "titPro":"Algunos de nuestros proyectos"
+
+  }
+  ,
+  "SocialMediaHero": {
+    "slogan": "Ofrecemos un estrategia digitales integradas a los objetivos de cada empresa. Diseñamos y creamos contenido relevante que permite el desarrollo de un vínculo con tu público objetivo. Nosotros como agencia de marketing digital, nuestro compromiso consiste en aprovechar las ventajas de las redes sociales para potenciar el valor que ofrece tu marca.",
+
+    "protitle":"Nosotros te mantenemos actualizados",
+    "prosubtitle":"Con tendencias actuales  y audiencia que tu marca necesita",
+    "proIn":"Investigación",
+    "proEs":"Estrategia",
+    "proAr":"Armado de grilla",
+    "proDi":"Diseño contenido",
+    "proPu":"Publicación",
+    "proGes":"Gestión y análisis",
+
+    "poTitle":"Diseño de posts",
+    "poParraf":" Con ingenio y dedicación desarrollamos contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.",
+    "poPreg":"¿Hablamos de tu próximo gran paso en redes?",
+    "pobot":"Contáctanos",
+
+    "griPost":"Grilla de Contenidos",
+    "griParraf":"Estrategias personalizadas que reflejan los valores únicos de la marca. Desarrollamos el copy para cada post, cubriendo diversos formatos de contenido.",
+
+    "titPost":"Algunos de nuestros proyectos"
+
+
+  }
+  ,
+  "SeoSemHero": {
+    "slogan": "Impulsa tu negocio en <google>Google</google> y atrae clientes que sí buscan lo que ofreces",
+    "protitle":"Nuestro mantenemos actualizados",
+    "prosubtitle":"vamos con las tendencias actuales y audiencia que tu marca necesita",
+    "proIn":"Investigación",
+    "proEs":"Estrategia",
+    "proAr":"Armado de grilla",
+    "proDi":"Diseño contenido",
+    "proPu":"Publicación",
+    "proGes":"Gestión y análisis",
+    "poTitle":"Diseño de posts",
+    "poParraf":" Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Paranosotros, la clave está en cómo contamos tu historia a través del diseño.",
+    "poPreg":"¿Hablamos de tu próximo gran paso en redes?",
+    "pobot":"Contáctanos",
+    "griPost":"Grilla de Contenidos",
+    "griParraf":"Estrategias personalizadas que reflejan los valores únicos de la marca. Desarrollamos el copy para cada post, cubriendo diversos formatos de contenido.",
+    "titPost":"Algunos de nuestros proyectos"
+  }
+  ,
+  "Footer": {
+    "services": "Servicios",
+    "agency": "Nuestra Agencia",
+    "socialMedia": "Redes Sociales",
+    "privacyPolicy": "Política de Privacidad",
+    "pregunta": "FAQ",
+    "Recla":"Reclamaciones",
+    "termsConditions": "Términos y condiciones",
+    "copyright": "© 2026 3R CORE. Todos los derechos reservados",
+    "A":" Atención: Lunes a Viernes"
+  }
+  ,
+  "cooke": {
+    "services": "Servicios",
+    "agency": "Nuestra Agencia",
+    "socialMedia": "Redes Sociales",
+    "privacyPolicy": "Política de Privacidad",
+    "termsConditions": "Términos y condiciones",
+    "copyright": "© 2026 3R CORE. Todos los derechos reservados",
+    "A":" Atención: Lunes a Viernes"
+  }
+  ,
+  "CookieBanner": {
+    "message": "Utilizamos cookies para mejorar tu experiencia. Al aceptar, consientes el uso de tecnologías de seguimiento según nuestra",
+    "privacyLink": "Política de Privacidad",
+    "decline": "Rechazar",
+    "acceptAll": "Aceptar todas"
+  }
+  ,
+  "PrivacyPolicy": {
+      "title": "Políticas de privacidad",
+      "topBadge": "POLÍTICA DE PRIVACIDAD GENERAL",
+      "sections": {
+        "s1": {
+          "title": "Introducción",
+          "text": "La Agencia de Marketing 3R Core, con número de RUC 2060900821 y ubicada en la Av. Las Caobas 170, La Molina, Lima, presenta su Política de Privacidad para informar sobre las condiciones generales de tratamiento de datos personales de sus clientes y usuarios que ingresen a su sitio web: https://www.3rcore.com."
+        },
+        "s2": {
+          "title": "Objetivo y finalidad",
+          "text": "En 3R Core Agencia de Marketing nos preocupa brindar a los titulares de datos personales el más alto nivel de seguridad y proteger la confidencialidad de su información.",
+          "quote": "Las relaciones comerciales se llevan a cabo en un entorno de servidor seguro bajo protocolo SSL (Secure Socket Layer), que mantiene la información encriptada y segura."
+        },
+        "s3": {
+          "title": "Legislación",
+          "intro": "Esta política está regulada por la legislación peruana y en particular por:",
+          "law1": "Ley N° 29733 – Ley de Protección de Datos Personales.",
+          "law2": "Decreto Supremo N° 003-2013-JUS, Reglamento de la Ley N° 29733.",
+          "footer": "De acuerdo con la Ley N° 29733, los datos personales son cualquier información que identifica o hace identificable a una persona natural. El tratamiento de estos datos incluye la recopilación, registro, almacenamiento y cualquier procedimiento técnico que facilite el acceso o interconexión de los mismos."
+        },
+        "s4": {
+          "title": "Almacenamiento de información",
+          "text": "Los datos proporcionados serán almacenados en los bancos de datos llamados «Clientes» y «Prospectos», debidamente registrados ante la Dirección General de Protección de Datos Personales. Únicamente el personal autorizado de 3R Core podrá gestionar dicha información para responder a las solicitudes de los titulares."
+        },
+        "s5": {
+          "title": "Ejercicio de Derechos",
+          "text": "Puedes ejercer tus derechos de información, acceso, actualización, inclusión, rectificación y supresión de tus datos personales mediante:",
+          "physical": "Vía Presencial",
+          "digital": "Vía Digital",
+          "subject": "Asunto: Protección de Datos Personales"
+        },
+        "s6": {
+          "title": "Calidad de los Datos Personales",
+          "text": "Los datos recopilados son pertinentes, adecuados y proporcionados para su finalidad. Es importante que la información sea veraz y esté actualizada. Los datos serán eliminados cuando ya no sean necesarios para su fin, aunque podrán mantenerse por un período indefinido según lo permita la ley."
+        }
+      }
+  }
+  ,
+    "Terms": {
+      "title": "Términos y condiciones",
+      "topBadge": "CONDICIONES DE USO",
+      "sections": {
+        "s1": {
+          "title": "Información General",
+          "text": "El presente documento regula el acceso y uso del sitio web https://www.3rcore.com, titularidad de la Agencia de Marketing 3R Core, con RUC 2060900821 y domicilio en Av. Las Caobas 170, La Molina, Lima. Al navegar por este sitio, el usuario acepta de forma íntegra estas condiciones."
+        },
+        "s2": {
+          "title": "Propiedad Intelectual",
+          "text": "Todo el contenido de este sitio (textos, logotipos, diseños y código fuente) es propiedad de 3R Core o cuenta con las licencias correspondientes.",
+          "quote": "Queda estrictamente prohibida la reproducción, distribución o modificación de cualquier elemento de esta web sin la autorización expresa y por escrito de la agencia."
+        },
+        "s3": {
+          "title": "Marco Legal",
+          "intro": "Estos términos se rigen por la legislación peruana vigente, incluyendo:",
+          "law1": "Ley N° 29571 - Código de Protección y Defensa del Consumidor.",
+          "law2": "Decreto Legislativo N° 822 - Ley sobre el Derecho de Autor.",
+          "footer": "Cualquier controversia derivada del uso del sitio será resuelta ante los tribunales de Lima, Perú. 3R Core se reserva el derecho de modificar estos términos en cualquier momento para adaptarlos a cambios legislativos o tecnológicos."
+        },
+        "s4": {
+          "title": "Responsabilidad del Usuario",
+          "text": "El usuario se compromete a hacer un uso lícito del sitio web. No se permite el uso de software automatizado para extraer datos (scraping) ni acciones que comprometan la seguridad del servidor SSL de 3R Core. La empresa no se hace responsable de daños derivados de interferencias externas, virus informáticos o desconexiones del servicio ajenas a nuestra gestión."
+        },
+        "s5": {
+          "title": "Contacto y Reclamaciones",
+          "text": "Para dudas sobre nuestros servicios o solicitudes formales, el usuario puede comunicarse a través de nuestros canales oficiales:",
+          "physical": "Atención Física",
+          "digital": "Atención Digital",
+          "subject": "Asunto: Consulta Términos y Condiciones"
+        },
+        "s6": {
+          "title": "Servicios y Presupuestos",
+          "text": "La información sobre servicios mostrada en la web es referencial. La prestación de servicios de marketing final se formalizará mediante un contrato específico o propuesta comercial aceptada, donde se detallarán los términos de pago, plazos de entrega y obligaciones mutuas."
+        }
+      }
+  }
+  ,
+  "FeaturesSection": {
+    "mainTitle": "Trabajemos juntos para lograr tus objetivos",
+    "committed": {
+      "title": "COMPROMETIDOS",
+      "description": "Mantenemos una comunicación constante que nos permite tener claros los puntos que requieres, y atenderlos lo más pronto posible."
+    },
+    "creative": {
+      "title": "CREATIVOS",
+      "description": "Convertimos la innovación en eficiencia. Presentamos propuestas que marcan la diferencia y nos comprometemos no solo a alcanzar tus metas, sino a sobrepasarlas."
+    },
+    "professional": {
+      "title": "PROFESIONALES",
+      "description": "Nos involucramos de principio a fin, brindando una pre-producción meticulosa, asistencia técnica permanente y un análisis profundo de métricas al concluir para asegurar que los objetivos se cumplan."
+    }
+  }
+  ,
+  "ServiceAbout": {
+    "title": "Te brindamos ideas creativas",
+    "subtitle1": "que aseguran resultados exitosos",
+    "subtitle2": "para tus proyectos"
+  }
+  ,
+  "preload":{
+    "text":"Cargando Experiencia..."
+  }
+  ,
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "topBadge": "FAQ - Resolvemos tus dudas",
+    
+    "faqs": {
+      "q1": {
+        "question": "¿Qué servicios ofrece 3R CORE?",
+        "answer": "Somos una agencia de marketing digital integral que ofrece Branding Corporativo, Gestión de Redes Sociales (Social Media), Desarrollo Web & E-commerce (Shopify/WooCommerce), Google Ads (SEM) y Posicionamiento SEO."
+      },
+      "q2": {
+        "question": "¿Por qué elegir a 3R CORE como mi agencia?",
+        "answer": "Somos un equipo de profesionales y nativos digitales con una visión de 3 generaciones. Conjugamos la experiencia, la visión estratégica y la tecnología para crear estrategias personalizadas que potencian el crecimiento real de tu empresa."
+      },
+      "q3": {
+        "question": "¿Qué incluye el servicio de Branding?",
+        "answer": "Creamos una identidad única que incluye diseño de logotipo, manual de marca, paleta de colores, tipografía corporativa, diseño de papelería, merchandising y plantillas para redes sociales para asegurar que tu marca destaque."
+      },
+      "q4": {
+        "question": "¿Con qué plataformas de desarrollo web trabajan?",
+        "answer": "Nos asociamos con las mejores plataformas de comercio electrónico como Shopify y WooCommerce para ofrecer sitios web escalables, robustos y con alto performance (UX/UI), adaptándonos a las necesidades de tu negocio."
+      },
+      "q5": {
+        "question": "¿Qué resultados puedo esperar de las campañas de Google Ads?",
+        "answer": "Nuestras campañas están enfocadas en la conversión. Obtendrás mayor visibilidad en los primeros resultados de búsqueda, un incremento en los mensajes y llamadas de clientes potenciales, y un mejor retorno de inversión (ROI)."
+      },
+      "q6": {
+        "question": "¿Dónde se encuentran ubicados y cuál es su horario?",
+        "answer": "Nuestra oficina principal está en Calle las Caobas 170, La Molina, Lima. Atendemos de lunes a viernes de 9 a.m. a 6 p.m. Contamos con presencia y atención tanto en Perú como en EE.UU."
+      }
+    },
+
+    "contact": {
+      "title": "¿Aún tienes preguntas?",
+      "description": "Nuestro equipo está listo para ayudarte. Contáctanos y te responderemos a la brevedad."
+    }
+  }
+  ,
+  "SEOSEM": {
+    "title": {
+      "part1": "Te posicionamos en GOOGLE",
+      "part3": "manera orgánica"
+    },
+    "description": {
+      "paragraph1": "En 3R CORE ayudamos a que tu marca aparezca en los primeros resultados de Google, tanto de forma orgánica (SEO) como a través de anuncios pagados (Google Ads). Nuestro objetivo es simple: que más personas encuentren tu negocio, confíen en tu marca y te contacten.",
+      "paragraph2": "Trabajamos el posicionamiento desde una estrategia integral, combinando análisis, contenido, pauta y optimización constante, para que tu inversión genere resultados reales y medibles"
+    },
+    "cta": "Solicitar consultoría SEO"
+  }
+  ,
+  "SeoSemSection": {
+    "header": {
+      "subtitle": "¿QUÉ HACEMOS Y EN QUÉ CONSISTE EL SERVICIO?",
+      "description": "Nuestro servicio de SEO/SEM y GOOGLE ADS se enfoca en lograr visibilidad, tráfico de calidad y conversiones.No se trata solo de aparecer en Google, sino de aparecer frente a las personas correctas."
+    },
+    "seo": {
+      "title": "SEO",
+      "subtitle": "Posicionamiento orgánico\nen Google",
+      "description": "El <strong>SEO</strong> permite que tu página web aparezca de forma natural en Google cuando alguien busca tus servicios o productos. Trabajamos:",
+      "items": [
+        "Auditoría <strong>SEO</strong> de tu web",
+        "Optimización <strong>SEO</strong> On Page (estructura, textos, velocidad)",
+        "Estrategia de palabras clave",
+        "Creación de contenido optimizado",
+        "Estrategia orgánica a mediano y largo plazo"
+      ],
+      "footer": "El <strong>SEO</strong> es ideal para construir autoridad, confianza y resultados sostenibles en el tiempo."
+    },
+    "sem": {
+      "title": "SEM",
+      "subtitle": "Publicidad en Google Ads",
+      "description": "Con <strong>Google Ads</strong> logramos resultados inmediatos a través de anuncios estratégicamente segmentados. Nos encargamos de:",
+      "items": [
+        "Creación y configuración de campañas en <strong>Google Ads</strong>",
+        "Segmentación por intención de búsqueda",
+        "Optimización del presupuesto",
+        "Monitoreo constante de resultados",
+        "Mejora continua del rendimiento de la pauta"
+      ],
+      "footer": "El <strong>SEM</strong> es ideal si buscas ventas rápidas, generación de leads o tráfico inmediato."
+    }
+  }
+  ,
+  "SEOMETO": {
+    "title": "Nuestra metodología de trabajo",
+    "subtitle": "En 3R CORE no improvisamos. <br /> Trabajamos con una metodología clara y probada:",
+    "step1_title": "ANÁLISIS INICIAL",
+    "step1_desc": "Estudiamos tu negocio, tu web, tu mercado y tu competencia.",
+    "step2_title": "DEFINICIÓN DE ESTRATEGIA",
+    "step2_desc": "Elegimos las palabras clave, el enfoque SEO y/o SEM y los objetivos.",
+    "step3_title": "IMPLEMENTACIÓN",
+    "step3_desc": "Optimizamos tu web y lanzamos campañas en Google según la estrategia definida.",
+    "step4_title": "MONITOREO Y OPTIMIZACIÓN",
+    "step4_desc": "Medimos resultados, analizamos datos y ajustamos para mejorar el rendimiento.",
+    "step5_title": "REPORTES CLAROS",
+    "step5_desc": "Te mostramos qué está funcionando y cómo evoluciona tu inversión."
+  }
+  ,
+  "TOOLS": {
+      "title": "HERRAMIENTAS QUE UTILIZAMOS"
+  }
+  ,
+  "WebHero": {
+    "slogan": "Nos asociamos con las mejores plataformas de comercio electrónico del mercado, como <shopify>Shopify</shopify> y <woo></woo>, que ofrecen la escalabilidad, robustez y flexibilidad para adaptarse a cualquier negocio en tiempo récord, acelerar los mercados digitales y evitar implementaciones prolongadas.",
+
+    "protitle": "La mejor tecnologia para cada proyecto",
+    "prosubtitle": "tu sitio funcionará a velocidad, será seguro, fácil de mantener y preparado para crecer",
+    "proIn": "Estrategia",  
+    "proEs": "Arquitectura",
+    "proAr": "Diseño en figma",
+    "proDi": "Programación",
+    "proPu": "Optimización",
+    "proGes": "Lanzamiento",
+
+    "poTitle": "Proceso de Trabajo Completo",
+    "poParraf1": "Iniciamos con una consulta donde entendemos profundamente tu negocio, tus objetivos, tu competencia y tu presupuesto. Luego diseñamos una estrategia clara de cómo será el sitio y qué funcionalidades tendrá.",
+    "poParraf2": "Creamos diseños visuales completos en Figma que apruebas antes de que escribamos una sola línea de código. Una vez aprobado el diseño, desarrollamos el sitio con estándares profesionales de calidad. Realizamos pruebas exhaustivas en todos los navegadores y dispositivos móviles y desktop.",
+    "poParraf3": "Finalmente, lanzamos tu sitio",
+    "poPreg": "Shall we discuss your next big step on social media?",
+    "pobot": "Contáctanos",
+
+    "griPost": "¿Listo para transformar tu presencia digital?",
+    "griParraf": "Agenda una consulta gratuita de 30 minutos. Analizamos tu situación actual, identificamos oportunidades y te proponemos un plan claro. Muchos de nuestros clientes comenzaron con esta simple conversación.",
+
+    "titPost": "Some of our projects"
+  }
+  ,
+  "WebSection": {
+    "header": {
+      "subtitle": "TIPOS DE SITIOS",
+      "description": "Diseñamos y desarrollamos todo tipo de sitios web adaptados a tus necesidades:"
+    },
+    "landing": {
+      "title": "Landing Pages",
+      "description": "Páginas de aterrizaje optimizadas para convertir visitantes en clientes, ideales para campañas de marketing y lanzamientos de productos."
+    },
+    "info": {
+      "title": "Sitios Informativos y Corporativos",
+      "description": "Portales profesionales que proyectan la imagen de tu empresa y comunican efectivamente tus servicios."
+    }
+    ,
+    "Ecomm": {
+      "title": "E-commerce",
+      "description": "Tiendas online completas con carrito de compras, pasarelas de pago integradas y gestión de inventario."
+    }
+    ,
+    "Elearn": {
+      "title": "Plataformas E-Learning",
+      "description": "Sistemas de aprendizaje en línea con gestión de cursos, estudiantes y contenido educativo."
+    }
+    ,
+    "Servic": {
+      "title": "Sitios de Servicios",
+      "description": "Páginas con formularios inteligentes, sistemas de citas y agendamiento automatizado."
+    }
+    ,
+    "Blogs": {
+      "title": "Blogs y Portales de Contenido",
+      "description": "Plataformas optimizadas para publicación y distribución de contenido."
+    }
+  }
+  ,
+  "webFAQ": {
+    "title": "Preguntas Frecuentes",
+    "topBadge": "FAQ - Resolvemos tus dudas",
+    "par":"Llevamos 8 años creando sitios web. Hemos completado más de 150 proyectos exitosos de diseño y desarrollo. Nuestro equipo está certificado en diseño UX/UI y desarrollo web moderno. Garantizamos satisfacción.",
+    "tipar":"CASOS DE ÉXITO",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto tiempo tarda?",
+        "answer": "Típicamente 4-12 semanas según complejidad. Brindamos cronogramas claros desde el inicio."
+      },
+      "q2": {
+        "question": "¿Puedo ver el diseño antes del desarrollo?",
+        "answer": "Absolutamente. Creamos prototipos completos en Figma que apruebas antes de comenzar el desarrollo. Así sabrás exactamente cómo se verá tu sitio."
+      },
+      "q3": {
+        "question": "¿Puedo cambiar el contenido yo mismo?",
+        "answer": "Sí, completamente. Te enseñamos a usar el panel de administración y puedes actualizar textos, imágenes y contenido."
+      },
+      "q4": {
+        "question": "¿Qué pasa después del lanzamiento??",
+        "answer": "Ofrecemos planes de mantenimiento y soporte. Estamos disponibles para cambios, optimizaciones y resolución de problemas."
+      },
+      "q5": {
+        "question": "¿Incluye posicionamiento en Google?",
+        "answer": "Entregamos tu sitio con SEO básico implementado, optimizado para ser rápido y con la estructura técnica correcta. Si necesitas servicios de SEO más avanzados para aumentar tu tráfico y posicionamiento, ofrecemos ese servicio por separado."
+      },
+      "q6": {
+        "question": "¿Y si necesito funcionalidades específicas?",
+        "answer": "Podemos diseñar e integrar casi cualquier cosa: pasarelas de pago, sistemas de reservas, integraciones con CRM, automatizaciones, etc."
+      }
+    }
+  }
+  ,
+  "ComplaintsSection": {
+    "title": "Libro de Reclamaciones",
+    "fieldName": "Nombres",
+    "fieldLastName": "Apellidos",
+    "fieldPhone": "Teléfono",
+    "fieldEmail": "Correo Electrónico",
+    "fieldDocumentType": "Tipo de Documento",
+    "fieldDocumentNumber": "Número de Documento",
+    "fieldComplaintType": "Tipo de Reclamación",
+    "fieldDetail": "Detalle de la Reclamación",
+    "fieldRequest": "Pedido",
+    "buttonSend": "Enviar Reclamación",
+    "buttonSending": "Enviando...",
+    "placeholderSelect": "Select",
+    "placeholderDetail": "Describe your claim with as much detail as possible...",
+    "placeholderRequest": "What are you requesting us to do?",
+    "options": {
+      "claim": "Claim",
+      "complaint": "Complaint"
+    }
+  }
+  ,
+  "LandingHero": {
+    "titleLine1": "POSICIONAMIENTO",
+    "titleLine2": "SEO",
+    "slogan": "Impulsa tu negocio en Google y atrae clientes que sí buscan lo que ofreces",
+    "buttonText": "CONTACTAR SERVICIO",
+    "whatsappMessage": "Hola vengo de la página web, quiero agendar una reunión."
+  }
+  ,
+  "FirstLandingSection": {
+    "number": "01.",
+    "heading": "Posicionamiento SEO en Google para empresas que quieren resultados reales",
+    "description": "Mejoramos la visibilidad de tu página web en Google con una estrategia SEO profesional, alineada a tu rubro y oportunidades de venta de forma sostenida.",
+    "quote": {
+      "line1": "El SEO no es publicidad ni redes sociales",
+      "line2": "es una estrategia de mediano plazo que construye autoridad, posicionamiento y resultados progresivos en Google"
+    },
+    "pricing": {
+      "label": "Inversión Mensual",
+      "amount": "S/1500",
+      "feature1": "Estrategia SEO profesional",
+      "feature2": "Sin contratos forzosos",
+      "feature3": "Resultados progresivos"
+    }
+  }
+  ,
+  "SecondLandingSection": {
+    "number": "02.",
+    "title": "¿Por qué hacer Posicionamiento SEO?",
+    "subtitle": "Trabajamos bajo una metodología clara, medible y orientada a resultados.",
+    "cards": {
+      "audit": {
+        "title": "Auditoría y Planificación SEO",
+        "items": [
+          "Análisis de palabras clave principales de tu negocio",
+          "Estudio de competidores directos en Google",
+          "Revisión básica de la estructura de tu sitio web",
+          "Propuesta de calendario editorial mensual (8 - 15 títulos optimizados)",
+          "Reporte mensual de rendimiento"
+        ]
+      },
+      "interlinks": {
+        "title": "Optimización de Interlinks",
+        "items": [
+          "Análisis de la estructura interna del sitio",
+          "Estrategia de enlaces internos entre contenidos",
+          "Optimización del recorrido del usuario",
+          "Mejora de la autoridad interna de las páginas principales"
+        ]
+      },
+      "scaling": {
+        "title": "Escalamiento SEO",
+        "items": [
+          "Identificación de nuevas oportunidades de posicionamiento",
+          "Optimización continua de contenidos existentes",
+          "Refuerzo de páginas con mejor desempeño",
+          "Reporte de crecimiento y plan de acciones futuras"
+        ]
+      }
+    }
+  }
+  ,
+  "ThirdLandingSection": {
+    "number": "03.",
+    "heading": "¿Cuándo se empiezan a ver resultados?",
+    "description": "El SEO es una estrategia constante, muy efectiva. Los primeros avances suelen observarse a partir del tercer mes, dependiendo del rubro, competencia y estado inicial del sitio web.",
+    "quote": {
+      "line1": "Las grandes empresas lo hacen",
+      "line2": "Prometemos resultados reales"
+    }
+  }
+  ,
+  "FourthLandingSection": {
+    "number": "04.",
+    "heading": "Casos de éxito en posicionamiento SEO",
+    "description": "Hemos trabajado estrategias SEO para diferentes rubros, logrando posicionamiento en búsquedas clave como:",
+    "successCases": {
+      "case1": "Argentaria - Joyería y platería",
+      "case2": "As de Oros - Casino y entretenimiento"
+    },
+    "quote": {
+      "line1": "Cada proyecto parte de un análisis real",
+      "line2": "y una estrategia personalizada según el negocio"
+    }
+  }
+  ,
+  "FiveLandingSection": {
+    "number": "05.",
+    "heading": "Inversión del servicio SEO",
+    "description": "Este servicio incluye auditoría, planificación, optimización, escalamiento y reportes mensuales.",
+    "pricing": {
+      "label": "Inversión Mensual",
+      "amount": "S/1500",
+      "footer": "Es una estrategia continua enfocada en resultados sostenibles."
+    }
+  }
+  ,
+  "SixLandingSection": {
+    "number": "06.",
+    "heading": "¿Tu negocio está listo para posicionarse en Google",
+    "description": "Si buscas resultados inmediatos, este servicio no es para ti.<br/>Si buscas construir presencia digital sólida y tráfico constante, podemos ayudarte."
+  }
+
+} 
