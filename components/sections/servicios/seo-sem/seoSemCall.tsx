@@ -21,7 +21,7 @@ export default function SeoSemCall() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 50%',
           toggleActions: 'play none none reverse',
         },
       });
@@ -31,7 +31,7 @@ export default function SeoSemCall() {
         tl.from(titleLines, {
           opacity: 0,
           y: 50,
-          duration: 1,
+          duration: 0.5,
           stagger: 0.2,
           ease: 'power3.out',
         });
@@ -40,7 +40,7 @@ export default function SeoSemCall() {
       tl.from([paragraph1Ref.current, paragraph2Ref.current], {
         opacity: 0,
         y: 30,
-        duration: 0.8,
+        duration: 0.5,
         stagger: 0.15,
         ease: 'power2.out',
       }, '-=0.3'); 
@@ -55,7 +55,7 @@ export default function SeoSemCall() {
 
       gsap.to(imageRef.current, {
         y: -15,
-        duration: 2.5,
+        duration: 1.5,
         ease: 'power1.inOut',
         yoyo: true,
         repeat: -1,
