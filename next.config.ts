@@ -14,10 +14,10 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    optimizeCss: true, // Inline de CSS crítico
+    optimizeCss: true, 
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production', // Bonus: remueve console.logs
+    removeConsole: process.env.NODE_ENV === 'production', 
   },
   async headers() {
     return [
