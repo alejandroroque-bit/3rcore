@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizeCss: true, // Inline de CSS crítico
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production', // Bonus: remueve console.logs
+  },
   async headers() {
     return [
       {
