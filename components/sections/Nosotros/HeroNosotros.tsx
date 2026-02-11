@@ -111,7 +111,6 @@ const HeroNosotros = () => {
             opacity: isVideoLoaded ? 1 : 0
           }}
         >
-          <source src="/videos/nosoHero.webm" type="video/webm" />
           <source src="/videos/nosoHero.mp4" type="video/mp4" />
           Tu navegador no soporta videos.
         </video>

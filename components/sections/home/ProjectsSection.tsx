@@ -81,8 +81,7 @@ export default function ProjectsSection() {
       slides: [
         "/images/tituloCarru/seoCarrubg.webp",
         "/images/tituloCarru/seoCarru1.webp",
-        "/images/tituloCarru/seoCarru2.webp",
-        "/images/tituloCarru/seoCarru3.webp",
+        "/images/tituloCarru/seoCarru2.webp"
       ]
     },
     {
