@@ -8,6 +8,7 @@ import SecondLandingSection from "@/components/sections/landing/secondLandingSec
 import SixLandingSection from "@/components/sections/landing/sixLandingSection";
 import ThirdLandingSection from "@/components/sections/landing/thirdLandingSection";
 import Tools from "@/components/sections/landing/Tools";
+import { SeoClients } from "@/components/sections/servicios/seo-sem/seoClients";
 import WhatsAppBtnLanding from '@/components/ui/WhatsAppBtnLanding'
 import { useEffect, useState } from "react";
 
@@ -32,6 +33,7 @@ export default function Landing() {
       <SecondLandingSection/>
       <ThirdLandingSection/>
       <FourthLandingSection/>
+      <SeoClients/>
       <FiveLandingSection/>
       <SixLandingSection/>
       <div  id="contacto">
