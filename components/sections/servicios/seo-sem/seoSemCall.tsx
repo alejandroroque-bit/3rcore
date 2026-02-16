@@ -110,7 +110,7 @@ export default function SeoSemCall() {
           <div className="relative flex justify-end ms:justify-end lg:justify-end">
             <div 
               ref={imageRef}
-              className="relative w-full max-w-[350px] lg:max-w-[650px] 2xl:max-w-[750px]"
+              className="relative w-full max-w-[350px] lg:max-w-[650px] 2xl:max-w-[700px]"
             >
               <Image
                 src="/images/seosem/laptopInici.png"

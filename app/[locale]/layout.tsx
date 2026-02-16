@@ -15,6 +15,7 @@ import { getMessages } from "next-intl/server";
 
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
 import ReactLenis from "lenis/react";
+import ButtonServicios from "@/components/ui/buttonServicios";
 
 const poppins = Poppins({
   subsets: ["latin"],
