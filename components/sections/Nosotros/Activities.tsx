@@ -62,13 +62,13 @@ export function DraggableCardDemo() {
     {
       title: "Tengo HAMBRE!!!!!!",
       image:
-        "/images/Actividades/2d945cc9-ab13-4ac5-9271-74eef5d9345f-e1755293820185.jpg",
+        "/images/Actividades/2d945cc9-ab13-4ac5-9271-74eef5d9345f-e1755293820185.webp",
       className: "absolute top-8 left-[30%] rotate-[4deg]",
     },
     {
       title: "Reuniones",
       image:
-        "/images/Actividades/WhatsApp-Image-2023-05-08-at-16.47.46.jpeg",
+        "/images/Actividades/WhatsApp-Image-2023-05-08-at-16.47.46.webp",
       className: "absolute top-8 left-[30%] rotate-[4deg]",
     },
   ];
