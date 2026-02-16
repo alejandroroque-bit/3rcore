@@ -181,10 +181,8 @@ const Navbar = () => {
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-24 lg:h-18 xl:h-24 relative">
 
-            {/* Left: Logo + Services dropdown */}
             <div className="flex items-center gap-6 flex-shrink-0 relative z-[60]">
 
-              {/* Logo */}
               <Link
                 href="/"
                 onClick={() => { setIsOpen(false); handleScrollTop("/"); }}
@@ -199,8 +197,7 @@ const Navbar = () => {
                   />
                 </div>
               </Link>
-
-              {/* Services pill button + dropdown */}
+              
               <div className="relative hidden md:block">
                 <button
                   onMouseEnter={openServices}

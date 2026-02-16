@@ -130,13 +130,13 @@ const ProcessSection = () => {
       <div ref={imageContainerRef} className="w-full md:h-[25vh] lg:h-[60vh] mt-12 xl:mt-24 overflow-hidden">
         <img 
           ref={imageRef}
-          src="/images/branding/VideoMobile.gif" 
+          src="/images/branding/VideoMobile1.gif" 
           alt="Proceso creativo"
           className="w-full h-full object-cover md:hidden" 
         />
         
         <img 
-          src="/images/branding/GIF-BRAND-WEB.gif" 
+          src="/images/branding/GIF-BRAND-WEB1.gif" 
           alt="Proceso creativo"
           className="w-full h-full object-cover hidden md:block" 
         />
