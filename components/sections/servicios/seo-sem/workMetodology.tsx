@@ -66,7 +66,7 @@ const WorkMethodology = () => {
 
       <div className="laptop-image mt-16 w-full max-w-5xl flex justify-center relative z-20 -mb-[5%] md:-mb-[10%] pointer-events-none">
         <img 
-          src="/images/seosem/laptopCom.png" 
+          src="/images/seosem/laptopCom.webp" 
           alt="Mockup Laptop" 
           className="w-full h-auto object-contain drop-shadow-2xl"
         />
