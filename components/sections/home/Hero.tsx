@@ -460,7 +460,7 @@ export default function HeroHome() {
 
       <canvas 
         ref={lettersCanvasRef} 
-        className="absolute inset-0 w-full h-full pointer-events-none z-[8]"
+        className="absolute inset-0 w-full h-full pointer-events-none z-[8] hidden md:block"
       />
 
       <canvas 
@@ -501,17 +501,29 @@ export default function HeroHome() {
         </div>
       </div>
 
-      <div className="absolute bottom-30 lg:bottom-5 2xl:bottom-20 left-10 2xl:left-20 z-20 text-white pointer-events-none">
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:top-auto lg:translate-y-0 lg:bottom-5 2xl:bottom-20 lg:left-10 lg:translate-x-0 2xl:left-20 z-20 text-white pointer-events-none text-center lg:text-left">
 
-        <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
-              bg-clip-text text-transparent font-m tracking-tighter leading-tight">
+        <h1 className="text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
+              bg-clip-text text-transparent font-semibold tracking-tighter leading-tight"
+            style={{
+              WebkitTextStroke: '0.3px black',
+              paintOrder: 'stroke fill'
+            }}>
             3R CORE
         </h1>
-        <h2 className="text-2xl md:text-4xl xl:text-5xl font-light ">{t('agency2')}  <span className="italic font-serif">{t('d')}</span></h2>
+        
+        <h2 className="text-3xl md:text-4xl xl:text-5xl font-light">
+            {t('agency2')}  <span className="italic font-serif">{t('d')}</span>
+        </h2>
+        
         <div className="relative">
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
-              bg-clip-text text-transparent font-m tracking-tighter leading-tight">
-            {t('marketing')}
+          <h1 className="text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
+                bg-clip-text text-transparent font-semibold tracking-tighter leading-tight"
+              style={{
+                WebkitTextStroke: '0.3px black',  
+                paintOrder: 'stroke fill'
+              }}>
+              {t('marketing')}
           </h1>
         </div>
       </div>
