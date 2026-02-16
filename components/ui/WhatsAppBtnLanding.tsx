@@ -130,26 +130,15 @@ const WhatsAppBtnLanding = () => {
   e.preventDefault();
   
   const message = `
-    *SOLICITUD DE CONTACTO*
-    ━━━━━━━━━━━━━━━━━━━━━━
+
     *INFORMACIÓN DEL CLIENTE*
     Nombre: ${formData.nombre}
     Teléfono: ${formData.codigoPais} ${formData.numero}
     Correo electrónico: ${formData.correo}
     ${formData.paginaWeb ? `Página web: ${formData.paginaWeb}` : ''}
-    ━━━━━━━━━━━━━━━━━━━━━━
+    
     *DETALLES DEL PROYECTO*
     ${formData.proyecto}
-    ━━━━━━━━━━━━━━━━━━━━━━
-    Fecha de registro: ${new Date().toLocaleDateString('es-PE', { 
-      day: '2-digit', 
-      month: 'long', 
-      year: 'numeric' 
-    })}
-    Hora: ${new Date().toLocaleTimeString('es-PE', { 
-      hour: '2-digit', 
-      minute: '2-digit' 
-    })}
       `.trim();
 
       const encodedMessage = encodeURIComponent(message);
