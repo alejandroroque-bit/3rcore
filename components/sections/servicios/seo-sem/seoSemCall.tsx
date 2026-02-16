@@ -113,7 +113,7 @@ export default function SeoSemCall() {
               className="relative w-full max-w-[350px] lg:max-w-[650px] 2xl:max-w-[700px]"
             >
               <Image
-                src="/images/seosem/laptopInici.png"
+                src="/images/seosem/laptopInici.webp"
                 alt="Laptop showing Google search results"
                 width={600}
                 height={450}

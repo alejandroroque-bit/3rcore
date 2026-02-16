@@ -56,7 +56,7 @@ const ImgWebSection = () => {
       <div ref={imageContainerRef} className="w-full md:h-[40vh] lg:h-[70vh] xl:h-[90vh] overflow-hidden">
         <img 
           ref={imageRef}
-          src="/images/web/fondoWeb2.png" 
+          src="/images/web/fondoWeb2.webp" 
           alt="Proceso creativo"
           className="w-full h-full " 
         />

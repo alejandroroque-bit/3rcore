@@ -67,7 +67,7 @@ export default function BrandApplications() {
 
             <div className="absolute -bottom-20 -left-8 lg:-bottom-10 lg:-left-20 w-24 h-24 lg:w-50 lg:h-30 2xl:h-50 z-10">
               <img 
-                src="/images/branding/Apli/stickerAI.png" 
+                src="/images/branding/Apli/stickerAI.webp" 
                 alt="Alucon Sticker"
                 className="w-full h-full object-contain drop-shadow-xl"
                 loading="eager"

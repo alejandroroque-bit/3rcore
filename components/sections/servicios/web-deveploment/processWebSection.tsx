@@ -127,7 +127,7 @@ const ProcessWebSection = () => {
       <div ref={imageContainerRef} className="w-full md:h-[25vh] lg:h-[60vh]  mt-12 xl:mt-24 overflow-hidden">
         <img 
           ref={imageRef}
-          src="/images/web/fondoWeb.png" 
+          src="/images/web/fondoWeb.webp" 
           alt="Proceso creativo"
           className="w-full h-full object-cover" 
         />
