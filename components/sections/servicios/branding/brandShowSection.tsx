@@ -47,7 +47,7 @@ export function BrandShowSection(){
       <div ref={imageContainerRef} className="w-full h-[20vh] lg:h-[50vh] xl:h-[70vh] overflow-hidden">
         <img 
           ref={imageRef}
-          src="/images/branding/fond.png" 
+          src="/images/branding/fond.webp" 
           alt="Proceso creativo"
           className="object-cover " 
         />
