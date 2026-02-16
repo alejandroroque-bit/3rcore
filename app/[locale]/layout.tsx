@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google"; 
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
-import SmoothScrolling from "@/components/ui/SmoothScrolling"
 import Navbar from "@/components/layout/Navbar";
 import CookieBanner from "@/components/layout/CookieBanners";
-import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
-import ScrollContactBtn from "@/components/ui/ScrollContactBtn";
 
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
@@ -15,7 +12,6 @@ import { getMessages } from "next-intl/server";
 
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
 import ReactLenis from "lenis/react";
-import ButtonServicios from "@/components/ui/buttonServicios";
 
 const poppins = Poppins({
   subsets: ["latin"],
