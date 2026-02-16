@@ -25,7 +25,7 @@ export default function SocialPortfolio() {
           <div className="grid gap-6">
             <PizzaCard 
               media={[
-                { type: "image", src: "/images/social/portafolioProye/img1.png" }
+                { type: "image", src: "/images/social/portafolioProye/img1.webp" }
               ]} 
               showDots={true} 
               autoOnHover={false}
@@ -53,7 +53,7 @@ export default function SocialPortfolio() {
             />
             <PizzaCard 
               media={[
-                { type: "image", src: "/images/social/portafolioProye/img5.png" }
+                { type: "image", src: "/images/social/portafolioProye/img5.webp" }
               ]} 
               autoOnHover={true}
               className="aspect-[3/4] transition-all duration-500 ease-in-out" 
@@ -63,7 +63,7 @@ export default function SocialPortfolio() {
           <div className="grid gap-6">
             <PizzaCard 
               media={[
-                { type: "image", src: "/images/social/portafolioProye/img3.png" }
+                { type: "image", src: "/images/social/portafolioProye/img3.webp" }
               ]}  
               autoOnHover={true}
               className="aspect-[3/4] transition-all duration-500 ease-in-out" 
