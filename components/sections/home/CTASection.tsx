@@ -192,8 +192,8 @@ const StatsAndCTA = () => {
           <div className="md:w-1/2 flex justify-center md:justify-end relative group">
             <div
               className="cta-image-wrapper relative 
-                            w-[280px] h-[170px]   /* Tamaño más grande */
-                            md:w-[450px] md:h-[250px] 
+                            w-[280px] h-[200px]   /* Tamaño más grande */
+                            xl:w-[450px] xl:h-[250px] 
                             z-30 drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]"
             >
               <Image

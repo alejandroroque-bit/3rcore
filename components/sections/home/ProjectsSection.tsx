@@ -301,7 +301,7 @@ export default function ProjectsSection() {
         
         @media screen and (min-width: 1024px) {
           .contenedor-imagenes-hovers {
-            height: 500px;
+            height:400px;
           }
           .titulo-hover {
             height:250px
