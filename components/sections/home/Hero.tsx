@@ -457,12 +457,11 @@ export default function HeroHome() {
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-[#16021B] overflow-hidden">
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
-
-      <canvas 
+      {/**<canvas 
         ref={lettersCanvasRef} 
         className="absolute inset-0 w-full h-full pointer-events-none z-[8] hidden md:block"
-      />
-
+      /> */}
+       
       <canvas 
         ref={particlesCanvasRef} 
         className="absolute inset-0 w-full h-full pointer-events-none z-10"
