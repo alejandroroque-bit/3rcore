@@ -18,6 +18,7 @@ import PageLoader from '@/components/layout/PageLoader';
 
 import WhatsAppBtn from '@/components/ui/WhatsAppBtn';
 import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
+import ReviewsSection from "@/components/layout/ReviewsSection";
 export default function WebDeveploment(){
   
   useScrollToSection(); 
@@ -46,6 +47,7 @@ export default function WebDeveploment(){
         <WebImgSection/>
 
         <ClientSection />
+        <ReviewsSection/>
         <div id="contacto">
           <ContactForm/>
         </div>

@@ -20,7 +20,7 @@ const Tools = () => {
   ];
 
   return (
-    <section className=" py-10 pt-32 md:pt-20"> 
+    <section className=" py-10 pt-32 md:pt-5"> 
       
       <div className="max-w-4xl mx-auto px-4">  
         <div className="flex flex-col items-center mb-16">

@@ -16,6 +16,7 @@ import PageLoader from '@/components/layout/PageLoader';
 
 import WhatsAppBtn from '@/components/ui/WhatsAppBtn';
 import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
+import ReviewsSection from '@/components/layout/ReviewsSection';
 
 export default function Home() {
 
@@ -43,6 +44,7 @@ export default function Home() {
         <StatsAndCTA />
         <MosaicoParallax />
         <ClientSection />
+        <ReviewsSection/>
         <NewsSection />
         <div id="contacto">
           <ContactForm />

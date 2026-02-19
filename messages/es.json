@@ -17,7 +17,10 @@
   "TeamSection": {
     "title": "Somos un equipo",
     "subtitle": "Profesional y Nativo Digital",
-    "description": "En 3R CORE AGENCIA DE MARKETING Somos un equipo de profesionales con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la Experiencia, la Visión y la Tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresa"
+    "subray1":"En 3R CORE AGENCIA DE MARKETING",
+    "description": "Somos un equipo de profesionales y nativos digitales con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan",
+    "description2":"la Experiencia, la Visión y la Tecnología",
+    "description3":"en estrategias de marketing Digital, personalizadas de acuerdo a tu empresa"
   }
   ,
   "Hovers": {
@@ -26,7 +29,7 @@
   }
   ,
   "CTA": {
-    "titleLine1": "Posiciónate e Inserta",
+    "titleLine1": "Posiciona tu marca",
     "titleLine2": "tu marca en el mercado",
     "ctaButton": "Contáctanos",
     "labelClients": "MARCAS TRABAJADAS",
@@ -96,7 +99,9 @@
   "AboutSection": {
     "title": "Nosotros",
     "subtitle": "Potenciamos tus resultados",
-    "description": "Somos equipo de profesionales y nativos digitales que conjugamos la Experiencia, la Visión y la Tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes"
+    "description": "Somos equipo de profesionales y nativos digitales que conjugamos",
+    "description1": "la Experiencia, la Visión y la Tecnología",
+    "description2": "enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes"
   }
   ,
   "OurTeamSection": {
@@ -196,7 +201,7 @@
     "Recla":"Reclamaciones",
     "termsConditions": "Términos y condiciones",
     "copyright": "© 2026 3R CORE. Todos los derechos reservados",
-    "A":" Atención: Lunes a Viernes"
+    "A":"Lunes a Viernes"
   }
   ,
   "cooke": {
@@ -402,7 +407,9 @@
   ,
   "SEOMETO": {
     "title": "Nuestra metodología de trabajo",
-    "subtitle": "En 3R CORE no improvisamos. <br /> Trabajamos con una metodología clara y probada:",
+    "subtitle1": "En",
+    "subtitle2": "3R CORE",
+    "subtitle3": "no improvisamos. <br /> Trabajamos con una metodología clara y probada:",
     "step1_title": "ANÁLISIS INICIAL",
     "step1_desc": "Estudiamos tu negocio, tu web, tu mercado y tu competencia.",
     "step2_title": "DEFINICIÓN DE ESTRATEGIA",
@@ -420,7 +427,7 @@
   }
   ,
   "WebHero": {
-    "slogan": "Nos asociamos con las mejores plataformas de comercio electrónico del mercado, como <shopify>Shopify</shopify> y <woo></woo>, que ofrecen la escalabilidad, robustez y flexibilidad para adaptarse a cualquier negocio en tiempo récord, acelerar los mercados digitales y evitar implementaciones prolongadas.",
+    "slogan": "Nos asociamos con las mejores plataformas de comercio electrónico del mercado, como <shopify>Shopify</shopify> y <woo></woo>, que ofrecen la <bold>escalabilidad</bold>, <bold>robustez</bold> y <bold>flexibilidad</bold> para adaptarse a cualquier negocio en tiempo récord, acelerar los mercados digitales y evitar implementaciones prolongadas.",
 
     "protitle": "La mejor tecnologia para cada proyecto",
     "prosubtitle": "tu sitio funcionará a velocidad, será seguro, fácil de mantener y preparado para crecer",
@@ -598,7 +605,7 @@
   "ThirdLandingSection": {
     "number": "03.",
     "heading": "¿Cuándo se empiezan a ver resultados?",
-    "description": "El SEO es una estrategia constante, muy efectiva. Los primeros avances suelen observarse a partir del tercer mes, dependiendo del rubro, competencia y estado inicial del sitio web.",
+    "description": "El SEO es una estrategia constante muy efectiva. Los primeros avances suelen observarse dependiendo del rubro, competencia y estado inicial del sitio web.",
     "quote": {
       "line1": "Las grandes empresas lo hacen",
       "line2": "Prometemos resultados reales"

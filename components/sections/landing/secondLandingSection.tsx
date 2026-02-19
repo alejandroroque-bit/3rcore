@@ -69,8 +69,8 @@ export default function SecondLandingSection() {
   const baseContainer = "relative w-full aspect-[16/9] md:aspect-auto md:h-[450px] flex justify-center items-center bg-gradient-to-r from-[#4c0046] to-[#24032D] overflow-hidden";
   
   return (
-    <section ref={sectionRef} className="relative min-h-screen w-full py-20 overflow-hidden ">
-      <div className="relative max-w-7xl mx-auto px-10 md:px-6 mb-16 lg:px-24">
+    <section ref={sectionRef} className="relative min-h-screen w-full  py-5 overflow-hidden ">
+      <div className="relative max-w-7xl mx-auto  mb-16 ">
         <div className="mb-8">
           <h3 className="header-anim text-[#A21F8A] text-4xl lg:text-5xl xl:text-6xl font-bold italic tracking-tight">{t('number')}</h3>
           <div className="line-grow w-30 h-[2px] bg-white mt-2"></div>

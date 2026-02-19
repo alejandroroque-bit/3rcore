@@ -15,6 +15,7 @@ export function SeoClients() {
             className="object-cover"
             sizes="100vw"
           />
+          
         </section>
   );
 }

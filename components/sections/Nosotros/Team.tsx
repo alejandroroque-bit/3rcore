@@ -8,29 +8,32 @@ import { useTranslations } from "next-intl";
 gsap.registerPlugin(ScrollTrigger);
 const members = [
   { id: 1, name: "Maria Fernanda", role: "Directora de Operaciones", image: "/images/Equipo/Mafer.webp", area:"commercial" },
-  { id: 2, name: "Gimena", role: "Commercial", image: "/images/Equipo/Gimena.webp", area:"commercial"},
-  { id: 3, name: "Diana", role:"Commercial Supervisor", image:"/images/Equipo/Diana.webp", area:"commercial"},
+  { id: 2, name: "Diana", role:"Commercial Supervisor", image:"/images/Equipo/Diana.webp", area:"commercial"},
+  { id: 3, name: "Gimena", role: "Commercial", image: "/images/Equipo/Gimena.webp", area:"commercial"},
+  { id: 4, name: "Mariajose", role: "Commercial", image: "/images/Equipo/new.webp", area:"commercial"},
+  
 
-  { id: 4, name: "Elizabeth", role: "Creative Design Supervisor", image: "/images/Equipo/Elizabeth.webp", area:"branding"},
-  { id: 5, name: "Odeth", role: "Brand Designer", image: "/images/Equipo/Odeth.webp", area:"branding"},
+  { id: 5, name: "Elizabeth", role: "Creative Design Supervisor", image: "/images/Equipo/Elizabeth.webp", area:"branding"},
   { id: 6, name: "Nadia", role: "Brand Manager", image: "/images/Equipo/Nadia.webp", area:"branding" },
+  { id: 7, name: "Odeth", role: "Brand Designer", image: "/images/Equipo/Odeth.webp", area:"branding"},
+  { id: 8, name: "Sara", role: "Brand Designer", image: "/images/Equipo/Sara.webp", area:"branding" },
 
-  { id: 7, name: "Grecia", role: "Social Media Manager", image: "/images/Equipo/Grecia.webp", area:"social media"},
-  { id: 8, name: "Nicole", role: "Social Media", image: "/images/Equipo/Nicole.webp", area:"social media"},
-  { id: 9, name: "Claudia", role: "Social Media", image: "/images/Equipo/Claudia.webp", area:"social media"},
+  { id: 9, name: "Grecia", role: "Social Media Manager", image: "/images/Equipo/Grecia.webp", area:"social media"},
+  { id: 10, name: "Nicole", role: "Content Manager", image: "/images/Equipo/Nicole.webp", area:"social media"},
+  { id: 11, name: "Claudia", role: "Content Manager", image: "/images/Equipo/Claudia.webp", area:"social media"},
 
-  { id: 10, name: "Josue", role: "Post-Production", image: "/images/Equipo/Josue.webp", area:"design multimedia"},
-  { id: 11, name: "Sofia", role: "Film Maker & Designer", image: "/images/Equipo/Sofia.webp", area:"design multimedia"},
-  { id: 12, name: "Aaron", role: "Designer", image: "/images/Equipo/Aaron.webp", area:"design multimedia" },
-  { id: 13, name: "Franco", role: "Designer", image: "/images/Equipo/franco-2.webp", area:"design multimedia"},
-  { id: 14, name: "Stefany", role: "Designer", image: "/images/Equipo/Stefany.webp", area:"design multimedia"},
-  { id: 15, name: "Sara", role: "Designer", image: "/images/Equipo/Sara.webp", area:"design multimedia" },
-  { id: 16, name: "Karol", role: "Designer", image: "/images/Equipo/Karol.webp", area:"design multimedia"},
-  { id: 17, name: "Franco", role: "Designer", image: "/images/Equipo/Franco.webp", area:"design multimedia" },
+  { id: 12, name: "Josue", role: "Post-Production", image: "/images/Equipo/Josue.webp", area:"design multimedia"},
+  { id: 13, name: "Sofia", role: "Film Maker & Designer", image: "/images/Equipo/Sofia.webp", area:"design multimedia"},
+  { id: 14, name: "Aaron", role: "Designer", image: "/images/Equipo/Aaron.webp", area:"design multimedia" },
+  { id: 15, name: "Franco", role: "Designer", image: "/images/Equipo/franco-2.webp", area:"design multimedia"},
+  { id: 16, name: "Stefany", role: "Designer", image: "/images/Equipo/Stefany.webp", area:"design multimedia"},
+  
+  { id: 17, name: "Karol", role: "Designer", image: "/images/Equipo/Karol.webp", area:"design multimedia"},
+  { id: 18, name: "Franco", role: "Designer", image: "/images/Equipo/Franco.webp", area:"design multimedia" },
    
 
-  { id: 18, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web development & IT"},
-  { id: 19, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web development & IT" },
+  { id: 19, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web development & IT"},
+  { id: 20, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web development & IT" },
 
 ];
 

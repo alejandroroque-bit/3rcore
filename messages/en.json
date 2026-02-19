@@ -16,7 +16,10 @@
   "TeamSection": {
     "title": "We are a team",
     "subtitle": "Professional and Digital Native",
-    "description": "At 3R CORE MARKETING AGENCY, we are a team of professionals with a 3-generation vision focused on the same goal, highly trained to combine Experience, Vision, and Technology focused on digital marketing strategies, customized according to your business."
+    "subray1":"At 3R CORE MARKETING AGENCY",
+    "description": "we are a team of professionals with a 3-generation vision focused on the same goal, highly trained to combine",
+    "description2":"Experience, Vision, and Technology",
+    "description3":"into digital marketing strategies, customized to fit your company's needs."
   }
   ,
   "Hovers": {
@@ -25,7 +28,7 @@
   }
   ,
   "CTA": {
-    "titleLine1": "Position and Insert",
+    "titleLine1": "Position your brand",
     "titleLine2": "your brand in the market",
     "ctaButton": "Contact Us",
     "labelClients": "BRANDS WE'VE WORKED WITH",
@@ -96,7 +99,9 @@
   "AboutSection": {
     "title": "About Us",
     "subtitle": "We boost your results",
-    "description": "We are a team of professionals and digital natives who combine Experience, Vision, and Technology focused on providing digital marketing strategies, oriented towards optimizing your return on investment, enhancing the positioning and competitive advantages of our clients."
+    "description": "We are a team of professionals and digital natives who combine",
+    "descripttion1":"Experience, Vision, and Technology",
+    "descripttion2":"focused on providing digital marketing strategies, oriented towards optimizing your return on investment, enhancing the positioning and competitive advantages of our clients."
   }
   ,
   "OurTeamSection": {
@@ -200,7 +205,7 @@
     "Recla":"Complaints",
     "termsConditions": "Terms and Conditions",
     "copyright": "© 2026 3R CORE. All rights reserved",
-    "A":" Hours: Monday to Friday"
+    "A":"Monday to Friday"
   }
   ,
   "CookieBanner": {
@@ -396,7 +401,9 @@
   ,
   "SEOMETO": {
     "title": "Our working methodology",
-    "subtitle": "At 3R CORE we don't improvise. <br /> We work with a clear and proven methodology:",
+    "subtitle1": "At",
+    "subtitle2": "3R CORE",
+    "subtitle3": "we don't improvise. <br /> We work with a clear and proven methodology:",
     "step1_title": "INITIAL ANALYSIS",
     "step1_desc": "We study your business, your website, your market, and your competition.",
     "step2_title": "STRATEGY DEFINITION",
@@ -414,7 +421,7 @@
   }
   ,
   "WebHero": {
-    "slogan": "We partner with market-leading e-commerce platforms like <shopify>Shopify</shopify> and <woo></woo>. These solutions provide the scalability, robustness, and flexibility to adapt to any business in record time, accelerating digital market entry and eliminating lengthy implementation cycles.",
+    "slogan": "We partner with market-leading e-commerce platforms like <shopify>Shopify</shopify> and <woo></woo>. These solutions provide the <bold>scalability</bold>, <bold>robustness</bold>, and <bold>flexibility</bold> to adapt to any business in record time, accelerating digital market entry and eliminating lengthy implementation cycles.",
 
     "protitle": "The best technology for every project",
     "prosubtitle": "Your site will run at high speed, be secure, easy to maintain, and ready to scale",
@@ -581,7 +588,7 @@
   "ThirdLandingSection": {
     "number": "03.",
     "heading": "When do you start seeing results?",
-    "description": "SEO is a medium-term strategy. Initial progress is typically observed starting from the third month, depending on the industry, competition, and the initial state of the website.",
+    "description": "SEO is a medium-term strategy. Initial progress is typically observed depending on the industry, competition, and the initial state of the website.",
     "quote": {
       "line1": "Big companies do it",
       "line2": "We promise real results"

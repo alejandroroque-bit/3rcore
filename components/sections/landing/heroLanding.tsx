@@ -18,9 +18,8 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
   const brTextRef = useRef(null);
   const lineRef = useRef(null);
   const sloganRef = useRef(null);
-  const sectionRef = useRef(null);
-  
-
+    const scrollIndicatorRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById('contacto');
@@ -29,8 +28,23 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
     }
   };
   useEffect(() => {
-
     
+    gsap.set(scrollIndicatorRef.current, { opacity: 0 });
+  
+    gsap.to(scrollIndicatorRef.current, {
+      opacity: 1,
+      duration: 0.5,
+      delay: 2.5,
+      onComplete: () => {
+        gsap.to(scrollIndicatorRef.current, {
+          y: 10,
+          duration: 1.2,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut',
+        });
+      }
+    });
     const playAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -197,7 +211,34 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
 
         </div>
       </div>
-
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#16021B] via-[#16021B]/50 to-transparent z-[6] pointer-events-none" />
+      <div
+        ref={scrollIndicatorRef}
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer group"
+        onClick={() => {
+          const next = sectionRef.current?.nextElementSibling as HTMLElement;
+          next?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <span className="text-white/60 text-xs tracking-[0.3em] uppercase font-light ">
+          Navegar
+        </span>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          className="text-white/60 "
+        >
+          <path
+            d="M10 3v14M4 11l6 6 6-6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
     </section>
   );
 }

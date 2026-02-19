@@ -128,7 +128,7 @@ export default function FirstLandingSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen w-full py-20 px-10 md:px-12 lg:px-24 overflow-hidden"
+      className="relative  w-full  px-10 md:px-12 lg:px-24 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-12">
@@ -160,7 +160,7 @@ export default function FirstLandingSection() {
 
         <div 
           ref={quoteRef}
-          className="relative max-w-5xl mx-auto my-24"
+          className="relative max-w-5xl mx-auto my-10"
         >
           <div className="absolute -left-8 md:-left-16 top-0 w-24 h-24 md:w-32 md:h-32 bg-[#24032D] scale-x-[-1]"
             style={{
@@ -183,7 +183,7 @@ export default function FirstLandingSection() {
             }}>
           </div>
 
-          <div className="relative index-3 text-center px-1 md:px-16 py-12">
+          <div className="relative index-3 text-center px-1 md:px-16 py-8">
             <p className="text-white/90 text-xl md:text-2xl 2xl:text-3xl italic mb-1 font-light">
               {t('quote.line1')}
             </p>
@@ -193,46 +193,7 @@ export default function FirstLandingSection() {
           </div>
         </div>
 
-        <div 
-          ref={priceCardRef}
-          className="relative max-w-7xl mx-auto mt-20"
-        >
-          <div className="bg-[#24032D] rounded-[3rem] p-8 md:p-12 md:px-40 transition-shadow duration-500">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-center md:text-center">
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-pink-400 text-xl  xl:text-3xl 2xl:text-5xl italic font-medium mb-3 tracking-wide">
-                  {t('pricing.label')}
-                </p>
-                <p className="text-white text-3xl md:text-4xl 2xl:text-5xl font-semibold tracking-tight">
-                  {t('pricing.amount')}
-                </p>
-              </div>
-
-              <div className="hidden md:block w-[2px] h-32 bg-white"></div>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <p className="text-gray-200 text-base md:text-lg">
-                    {t('pricing.feature1')}
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <p className="text-gray-200 text-base md:text-lg">
-                    {t('pricing.feature2')}
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <p className="text-gray-200 text-base md:text-lg">
-                    {t('pricing.feature3')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

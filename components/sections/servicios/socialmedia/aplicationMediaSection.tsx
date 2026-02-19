@@ -21,7 +21,7 @@ export default function MediaApplications() {
 
         <div className="relative w-full h-auto mt-4 md:mt-0">
           <img 
-            src="/images/social/AplicPost2.webp" 
+            src="/images/social/AplicPost3.webp" 
             alt="Brand Applications Mockup"
             className="w-full h-auto object-contain max-h-[300px] md:max-h-none"
           />

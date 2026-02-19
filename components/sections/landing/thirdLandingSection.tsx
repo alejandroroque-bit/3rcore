@@ -143,7 +143,7 @@ export default function FirstLandingSection() {
 
         <div 
           ref={quoteRef}
-          className="relative max-w-5xl mx-auto my-24"
+          className="relative max-w-5xl mx-auto my-3"
         >
           <div className="absolute -left-8 md:-left-16 top-0 w-24 h-24 md:w-32 md:h-32 bg-[#24032D] scale-x-[-1]"
             style={{
@@ -166,7 +166,7 @@ export default function FirstLandingSection() {
             }}>
           </div>
 
-          <div className="text-center px-1 md:px-16 py-12">
+          <div className="text-center px-1 md:px-16 py-8">
             <p 
               ref={quoteText1Ref}
               className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light"

@@ -26,20 +26,7 @@ const TeamSection = () => {
 
   const titleWords = t('title').split(" ");
   const descriptionWords = t('description').split(" ");
-  
-  // 1. Identificar el corte inicial (Agencia)
-  const stopIndex = descriptionWords.findIndex(word => 
-    word.toLowerCase() === "somos" || word.toLowerCase() === "we"
-  );
-
-  const keywordsToHighlight = [
-    "Experiencia", "Experiencia,", 
-    "Visión", "Visión,", // Solo con V mayúscula como en tu JSON
-    "Tecnología", "Tecnología,",
-    "Experience", "Experience,",
-    "Vision", "Vision,",
-    "Technology", "Technology,"
-  ];
+ 
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -80,34 +67,22 @@ const TeamSection = () => {
         </h2>
 
         <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-2xl sm:text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-10 tracking-tight will-change-transform`}>
+          
           {t('subtitle')}
         </h3>
 
         <div className="team-line w-full max-w-3xl mx-auto h-[1px] bg-white/40 my-10 origin-center will-change-transform"></div>
 
-        <p className={`${montserrat.className} text-white text-sm sm:text-sm md:text-sm xl:text-sm 2xl:text-lg leading-relaxed max-w-5xl mx-auto px-4`}>
-          {descriptionWords.map((word, index) => {
-            const isInitialHighlight = index < stopIndex;
-            
-            const isKeywordHighlight = keywordsToHighlight.includes(word);
-
-            const shouldHighlight = isInitialHighlight || isKeywordHighlight;
-
-            return (
-              <span 
-                key={index} 
-                className={`word-anim inline-block mr-[0.3em] ${shouldHighlight ? 'px-1' : ''}`}
-                style={shouldHighlight ? { 
+        <p className={`${montserrat.className} text-white text-base sm:text-sm md:text-sm xl:text-sm 2xl:text-xl leading-relaxed max-w-5xl mx-auto px-4`}>
+          <span style={{ 
                   backgroundColor: '#A21F8A', 
-                  fontWeight: '500',
-                  lineHeight: '1.4',
-                  borderRadius: '2px'
-                } : {}}
-              >
-                {word}
-              </span>
-            );
-          })}
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>{t('subray1')}</span> {t('description')} <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>{t('description2')}</span> {t('description3')}
         </p>
 
       </div>

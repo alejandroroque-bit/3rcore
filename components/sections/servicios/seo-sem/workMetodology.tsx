@@ -42,10 +42,20 @@ const WorkMethodology = () => {
         <h2 className="text-3xl md:text-4xl font-serif italic mb-8">
           {t('title')}
         </h2>
-        <p 
-          className="text-sm md:text-lg font-light tracking-wide leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: t('subtitle') }}
-        />
+        <p className={`text-sm md:text-lg font-light tracking-wide leading-relaxed`}>
+          {t('subtitle1')}
+          <span 
+            style={{ 
+              backgroundColor: '#A21F8A', 
+              padding: '2px 10px', 
+              borderRadius: '2px',
+              margin: '0 4px' 
+            }}
+          >
+            {t('subtitle2')}
+          </span>
+          <span dangerouslySetInnerHTML={{ __html: t('subtitle3') }} />
+        </p>
       </div>
 
       <div className="w-full max-w-4xl border-t border-white/80 border-line">

@@ -8,7 +8,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WebTypesSection = () => {
   const t = useTranslations('WebSection');
+  const R = useTranslations('WebHero');
+  const phoneNumber = "51986889147";
+  const message = "Hola vengo de la página web, quiero agendar una reunión.";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
+  const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, '_blank');
+  };
   const containerRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -298,8 +305,20 @@ const WebTypesSection = () => {
             </div>
           </div>
         </div>
-
+        <div className="pt-4 flex justify-center">
+            <button 
+              onClick={handleWhatsAppClick}
+              className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-xs xl:text-xl tracking-[0.1em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent hover:cursor-pointer"
+            >
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
+              
+              <span className="relative z-10">
+                 { R('pobot')}
+              </span>
+            </button>
+          </div>          
       </div>
+      
     </section>
   );
 };

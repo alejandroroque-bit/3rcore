@@ -15,6 +15,7 @@ import PageLoader from '@/components/layout/PageLoader';
 
 import WhatsAppBtn from '@/components/ui/WhatsAppBtn';
 import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
+import ReviewsSection from "@/components/layout/ReviewsSection";
 export default function Seosem(){
   
   useScrollToSection(); 
@@ -37,6 +38,7 @@ export default function Seosem(){
         <SeoSemCall/>
         <SeoSemSection/>
         <SeoClients />
+        <ReviewsSection/>
         <WorkMethodology/>
         <ToolsCarousel/>
         <div id="contacto">

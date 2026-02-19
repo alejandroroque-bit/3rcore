@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         hostname: '3rcore.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      }
     ],
   },
   experimental: {

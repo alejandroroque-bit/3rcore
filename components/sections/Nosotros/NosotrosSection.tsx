@@ -105,27 +105,11 @@ const NosotrosSection = () => {
         <div className="team-line w-full max-w-xl 2xl:max-w-5xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
 
         <p className={`${montserrat.className} text-white text-xs ms:text-sm lg:text-[12px] 2xl:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
-          {paragraphText.map((word, index) => {
-            
-            const shouldHighlight = keywordsToHighlight.includes(word);
-
-            return (
-              <span 
-                key={index} 
-                className="char-anim inline-block mr-[0.25em]" 
-                style={{ whiteSpace: "pre-wrap" }} 
-              >
-                <span style={shouldHighlight ? {
-                  backgroundColor: '#A21F8A',
-                  padding: '2px 6px',
-                  borderRadius: '2px',
-                  fontWeight: '500'
-                } : {}}>
-                  {word}
-                </span>
-              </span>
-            );
-          })}
+           {t('description')} <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>{t('description1')}</span> {t('description2')}
         </p>
 
       </div>

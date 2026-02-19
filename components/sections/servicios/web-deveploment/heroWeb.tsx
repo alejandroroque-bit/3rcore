@@ -143,17 +143,18 @@ export default function HeroWeb() {
             ref={lineRef}
             className="w-full ms:w-2/3 lg:w-3/5 2xl:w-1/2 h-[1px] bg-white/50 my-8"
           ></div>
-
+          
           <p 
             ref={sloganRef}
             className="text-white text-xs xl:text-sm font-light ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
           >
             {t.rich('slogan', {
+              bold: (chunks) => <strong className="font-bold text-white">{chunks}</strong>,
               shopify: (chunks) => (
                 <span className="inline-flex items-center gap-1 font-semibold text-white">
                   <Image 
                     src="/icons/shop.svg" 
-                    alt="WooCommerce"
+                    alt="Shopify"
                     width={30}
                     height={10}
                     className="inline brightness-0 invert"

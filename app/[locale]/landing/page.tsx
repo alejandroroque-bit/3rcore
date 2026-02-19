@@ -1,46 +1,74 @@
-"use client"
-import LandingContact from "@/components/layout/landingContact";
-import FirstLandingSection from "@/components/sections/landing/firstLandingSection";
-import FiveLandingSection from "@/components/sections/landing/fiveLandingSection";
-import FourthLandingSection from "@/components/sections/landing/fourthLandingSection";
-import HeroLanding from "@/components/sections/landing/heroLanding";
-import SecondLandingSection from "@/components/sections/landing/secondLandingSection";
-import SixLandingSection from "@/components/sections/landing/sixLandingSection";
-import ThirdLandingSection from "@/components/sections/landing/thirdLandingSection";
-import Tools from "@/components/sections/landing/Tools";
-import { SeoClients } from "@/components/sections/servicios/seo-sem/seoClients";
-import WhatsAppBtnLanding from '@/components/ui/WhatsAppBtnLanding'
-import { useEffect, useState } from "react";
+// app/[locale]/landing/page.tsx
+import { getMessages } from "next-intl/server"
+import type { Metadata } from "next"
+import LandingClient from "./LandingClient"
 
-export default function Landing() {
-  const [isLoading, setIsLoading] = useState(true);
-    
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 100);
-    return () => clearTimeout(timer);
-  }, []);
-    
-  const handleImageLoaded = () => {
-    setIsLoading(false);
-  };
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { locale } = await params
+  
+  return {
+    title: locale === 'en' 
+      ? "SEO Positioning on Google | 3R Core" 
+      : "Posicionamiento SEO en Google | 3R Core",
+    description: locale === 'en'
+      ? "Boost your business on Google and attract customers who are actively looking for what you offer."
+      : "Impulsa tu negocio en Google y atrae clientes que sí buscan lo que ofreces.",
+    alternates: {
+      canonical: `https://www.3rcore.com/${locale}/landing`,
+    }
+  }
+}
+
+export default async function LandingPage({ params }: { params: any }) {
+  const { locale } = await params
+  const messages = await getMessages()
+  const m = messages as any
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": locale === 'en' ? "SEO Positioning Service" : "Servicio de Posicionamiento SEO",
+    "provider": {
+      "@type": "Organization",
+      "name": "3R Core Marketing Agency",
+      "url": "https://www.3rcore.com"
+    },
+    "description": m.SEOSEM.description.paragraph1,
+    "offers": {
+      "@type": "Offer",
+      "price": locale === 'en' ? "450" : "1500",
+      "priceCurrency": locale === 'en' ? "USD" : "PEN",
+      "description": m.FiveLandingSection.description
+    },
+    "areaServed": ["PE", "US"],
+    "serviceType": "SEO / Search Engine Optimization",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": locale === 'en' ? "SEO Services" : "Servicios SEO",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": m.SecondLandingSection.cards.audit.title,
+        },
+        {
+          "@type": "Offer", 
+          "name": m.SecondLandingSection.cards.interlinks.title,
+        },
+        {
+          "@type": "Offer",
+          "name": m.SecondLandingSection.cards.scaling.title,
+        }
+      ]
+    }
+  }
+
   return (
-    <main>
-      <div id="hero">
-        <HeroLanding  onImageLoad={handleImageLoaded} />
-      </div>
-      <Tools/>
-      <FirstLandingSection/>
-      <SecondLandingSection/>
-      <ThirdLandingSection/>
-      <FourthLandingSection/>
-      <SeoClients/>
-      <FiveLandingSection/>
-      <SixLandingSection/>
-      <div  id="contacto">
-        <LandingContact/>
-      </div>
-      <WhatsAppBtnLanding/>
-    </main>
-
-  );
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <LandingClient />
+    </>
+  )
 }

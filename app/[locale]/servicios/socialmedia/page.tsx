@@ -15,6 +15,7 @@ import PageLoader from '@/components/layout/PageLoader';
 
 import WhatsAppBtn from '@/components/ui/WhatsAppBtn';
 import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
+import ReviewsSection from "@/components/layout/ReviewsSection";
 export default function socialmedia(){
   
   useScrollToSection(); 
@@ -40,6 +41,7 @@ export default function socialmedia(){
         <MediaApplications/>
         
         <ClientSection />
+        <ReviewsSection/>
         <div id="contacto">
           <ContactForm/>
         </div>

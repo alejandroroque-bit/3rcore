@@ -94,7 +94,7 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full text-white pt-24 font-sans flex flex-col items-center overflow-hidden">
+    <section ref={sectionRef} className="w-full text-white pt-5 font-sans flex flex-col items-center overflow-hidden">
       <div className="max-w-6xl lg:max-w-4xl xl:max-w-6xl w-full px-10 space-y-24">
         
         <div className="text-center space-y-5">
