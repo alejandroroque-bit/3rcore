@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   
   try {
     const prefix = lang === 'en' ? '/en' : '';
-    const wpUrl = `https://3rcore.com${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
+    const wpUrl = `https://3rcore-server.com.pe${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
     
     
     const res = await fetch(wpUrl, {
