@@ -185,7 +185,7 @@ const Navbar = () => {
 
               <Link
                 href="/"
-                onClick={() => { setIsOpen(false); handleScrollTop("/"); }}
+                onClick={() => handleScrollTop("/")}
               >
                 <div className="relative h-10 w-28 cursor-pointer">
                   <Image
