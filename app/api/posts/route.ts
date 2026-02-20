@@ -20,8 +20,8 @@ export async function GET(request: Request) {
         'Accept-Language': 'en-US,en;q=0.9',
         'Accept-Encoding': 'gzip, deflate, br',
         'Cache-Control': 'no-cache',
-        'Referer': 'https://3rcore.com/',
-        'Origin': 'https://3rcore.com',
+        'Referer': 'https://3rcore-server.com.pe/',
+        'Origin': 'https://3rcore-server.com.pe',
       },
       cache: 'no-store', 
     });

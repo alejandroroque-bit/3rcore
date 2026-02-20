@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const logoUrl = 'https://3-rcore.vercel.app/icons/LOGO3R.png';
+const logoUrl = 'https://3rcore.com/icons/LOGO3R.png';
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
                   <!-- Footer -->
                   <div style="background-color: #f9fafb; padding: 25px; text-align: center; border-top: 1px solid #e5e7eb;" class="dark-mode-card dark-mode-border">
                     <p style="font-size: 12px; color: #9ca3af; margin: 0;">Enviado desde 3RCORE System</p>
-                    <p style="font-size: 11px; color: #d1d5db; margin: 8px 0 0 0;">https://3-rcore.vercel.app/</p>
+                    <p style="font-size: 11px; color: #d1d5db; margin: 8px 0 0 0;">https://3rcore.com/</p>
                   </div>
                 </div>
               </div>

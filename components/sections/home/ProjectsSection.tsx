@@ -92,8 +92,7 @@ export default function ProjectsSection() {
       slides: [
         "/images/tituloCarru/webCarrubg.webp",
         "/images/tituloCarru/webCarru1.webp",
-        "/images/tituloCarru/webCarru2.webp",
-        "/images/tituloCarru/webCarru3.webp"
+        "/images/tituloCarru/webCarru2.webp"
       ]
     }
   ];
