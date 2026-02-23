@@ -9,8 +9,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ContactForm = () => {
   const [isInteractive, setIsInteractive] = useState(false);
-const mapRef = useRef<HTMLDivElement>(null); // Referencia al contenedor
-
+const mapRef = useRef<HTMLDivElement>(null); 
   const t = useTranslations('ContactSection');
   
 
@@ -19,16 +18,13 @@ const mapRef = useRef<HTMLDivElement>(null); // Referencia al contenedor
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Si el clic NO fue dentro del contenedor del mapa, lo bloqueamos
       if (mapRef.current && !mapRef.current.contains(event.target as Node)) {
         setIsInteractive(false);
       }
     };
 
-    // Escuchamos clics en toda la página
     document.addEventListener("mousedown", handleClickOutside);
     
-    // Limpiamos el evento al desmontar el componente para no gastar memoria
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -135,7 +131,7 @@ const mapRef = useRef<HTMLDivElement>(null); // Referencia al contenedor
           <div 
             ref={mapRef}
             className="w-full lg:h-[300px] 2xl:h-[400px] min-h-[500px] relative overflow-hidden border-2 border-white/20 group rounded-[20px] shadow-xl cursor-pointer"
-            onClick={() => setIsInteractive(true)} // Activa el mapa al hacer clic
+            onClick={() => setIsInteractive(true)}
           >
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3044063260063!2d-76.9519657249382!3d-12.09130088814899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c710419b833d%3A0xd38447313365f798!2s3R%20Core%20-%20Agencia%20de%20Marketing!5e0!3m2!1ses-419!2spe!4v1768342086873!5m2!1ses-419!2spe" 
@@ -146,7 +142,6 @@ const mapRef = useRef<HTMLDivElement>(null); // Referencia al contenedor
               title="Mapa de ubicación"
             ></iframe>
 
-            {/* Capa de bloqueo: Si no es interactivo, se muestra esto arriba */}
             {!isInteractive && (
               <div className=" text-black absolute inset-0 z-10 bg-black/10 flex items-center justify-center group-hover:bg-black/0 transition-all duration-500">
                 <span className="bg-white/10 backdrop-blur-md text-black/80 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity ">
