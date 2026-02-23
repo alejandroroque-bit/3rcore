@@ -153,7 +153,7 @@ const Navbar = () => {
     { name: t("nav.home"), href: "/" },
     { name: t("nav.about us"), href: "/nosotros" },
     { name: t("nav.services"), href: "/#servicios" },
-    { name: t("nav.blogs"), href: "https://3rcore.com/blog" },
+    { name: t("nav.blogs"), href: "https://3rcore-server.com.pe/" },
     { name: t("nav.contact"), href: "#contacto", isContact: true },
   ];
 
