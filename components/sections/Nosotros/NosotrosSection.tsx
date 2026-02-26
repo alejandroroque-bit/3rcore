@@ -83,7 +83,7 @@ const NosotrosSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full py-20 px-10 flex justify-center items-center overflow-hidden">
+    <section ref={containerRef} className="w-full py-20 px-5 flex justify-center items-center overflow-hidden">
       <div className="max-w-6xl lg:max-w-xl 2xl:max-w-6xl mx-auto text-center">
         
         <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl mb-6 tracking-wide`}>

@@ -150,7 +150,7 @@ const StatsAndCTA = () => {
 
         <div className="cta-content relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-12">
           <div className="flex flex-col items-start text-left md:w-1/2 space-y-8">
-            <div className="text-white text-xl md:text-xl 2xl:text-4xl leading-tight mb-2">
+            <div className="text-white text-xl md:text-xl 2xl:text-4xl leading-tight mb-2 hidden md:block">
               <h3 className={`${poppins.className}  font-normal mb-4 text-white `}>
                 <span style={{ 
                   backgroundColor: '#A21F8A', 
@@ -172,7 +172,7 @@ const StatsAndCTA = () => {
                 className={`
                 ${poppins.className}  
                 relative inline-flex items-center justify-center px-5 xl:px-10 py-2 xl:py-4 
-                overflow-hidden text-[10px] xl:text-xs font-bold uppercase tracking-[0.2em] text-white 
+                overflow-hidden text-[16px] md:text-[10px] xl:text-xs md:font-bold uppercase tracking-[0.2em] text-white 
                 border border-white/30 rounded-[10px] transition-all duration-500 
                 group/btn hover:border-transparent 
               `}
@@ -186,7 +186,7 @@ const StatsAndCTA = () => {
             </a>
           </div>
 
-          <div className="md:w-1/2 flex justify-center md:justify-end relative group">
+          <div className="md:w-1/2 flex justify-center hidden md:block md:justify-end relative group">
             <div
               className="cta-image-wrapper relative 
                             w-[280px] h-[200px]   /* Tamaño más grande */

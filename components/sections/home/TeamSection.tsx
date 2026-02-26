@@ -54,7 +54,7 @@ const TeamSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full pt-20 px-10 flex justify-center items-center overflow-hidden">
+    <section ref={containerRef} className="relative w-full pt-20 px-5 flex justify-center items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-18 bg-gradient-to-t from-[#16021B] via-[#16021B]/10 to-black/90 z-0 pointer-events-none" />
       <div className="max-w-3xl 2xl:max-w-7xl mx-auto text-center">
         
@@ -73,7 +73,7 @@ const TeamSection = () => {
 
         <div className="team-line w-full max-w-3xl mx-auto h-[1px] bg-white/40 my-10 origin-center will-change-transform"></div>
 
-        <p className={`${montserrat.className} text-white text-base sm:text-sm md:text-sm xl:text-sm 2xl:text-xl leading-relaxed max-w-5xl mx-auto px-4`}>
+        <p className={`${montserrat.className} text-white text-sm sm:text-sm md:text-sm xl:text-sm 2xl:text-xl leading-relaxed max-w-5xl mx-auto md:px-4`}>
           <span style={{ 
                   backgroundColor: '#A21F8A', 
                   padding: '2px 10px', 

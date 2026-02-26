@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   }
 }
 
-export default async function LandingPage({ params }: { params: any }) {
+export default async function Posicionamientoseo({ params }: { params: any }) {
   const { locale } = await params
   const messages = await getMessages()
   const m = messages as any

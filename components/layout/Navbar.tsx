@@ -152,7 +152,7 @@ const Navbar = () => {
   const links = [
     { name: t("nav.home"), href: "/" },
     { name: t("nav.about us"), href: "/nosotros" },
-    { name: t("nav.services"), href: "/#servicios" },
+    { name: t("nav.services"), href: "/servicios#servicios" },
     { name: t("nav.blogs"), href: "https://3rcore-server.com.pe/" },
     { name: t("nav.contact"), href: "#contacto", isContact: true },
   ];
@@ -187,9 +187,9 @@ const Navbar = () => {
                 href="/"
                 onClick={() => handleScrollTop("/")}
               >
-                <div className="relative h-10 w-28 cursor-pointer">
+                <div className="relative h-15 w-28 cursor-pointer">
                   <Image
-                    src="/icons/LogoFull.webp"
+                    src="/icons/LogoLetrasBlanco.webp"
                     alt="3RCORE Logo"
                     fill
                     className="object-contain object-left"

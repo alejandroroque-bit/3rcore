@@ -27,9 +27,8 @@ const members = [
   { id: 14, name: "Sofia", role: "Film Maker & Designer", image: "/images/Equipo/Sofia.webp", area:"design multimedia"},
   { id: 15, name: "Aaron", role: "Designer", image: "/images/Equipo/Aaron.webp", area:"design multimedia" },
   { id: 16, name: "Franco", role: "Designer", image: "/images/Equipo/franco-2.webp", area:"design multimedia"},
-  { id: 17, name: "Stefany", role: "Designer", image: "/images/Equipo/Stefany.webp", area:"design multimedia"},
-  
-  { id: 18, name: "Karol", role: "Designer", image: "/images/Equipo/Karol.webp", area:"design multimedia"},
+  { id: 17, name: "Stefany", role: "Film Maker &Designer", image: "/images/Equipo/Stefany.webp", area:"design multimedia"},
+  { id: 18, name: "Karol", role: "Film Maker & Designer", image: "/images/Equipo/Karol.webp", area:"design multimedia"},
   { id: 19, name: "Franco", role: "Designer", image: "/images/Equipo/Franco.webp", area:"design multimedia" },
    
 
@@ -67,7 +66,7 @@ useEffect(() => {
   }, (context) => {
     const isMobile = context.conditions?.isMobile;
 
-    const totalScroll = container.offsetHeight - window.innerHeight + 200;
+    const totalScroll = container.offsetHeight - window.innerHeight + (isMobile ? 100 : 0);
     
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -108,7 +107,7 @@ useEffect(() => {
 }, []);
 
 return (
-    <section ref={sectionRef} className="relative flex flex-col md:flex-row h-[80vh] w-full overflow-hidden text-white">
+    <section ref={sectionRef} className="relative flex flex-col md:flex-row h-[100vh] w-full overflow-hidden text-white">
       <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-10 md:px-16 pt-30 md:pt-0 z-20">
         <h2 className="text-4xl  xl:text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
         <p className="text-sm max-w-xs leading-relaxed">
@@ -117,7 +116,7 @@ return (
       </div>
 
       <div className="relative w-full md:w-3/4 ">
-        <div ref={containerRef} className="pt-[20vh] pb-[1vh] px-6 md:px-10"style={{ willChange: 'transform' }} >
+        <div ref={containerRef} className="pt-[20vh] pb-[8vh] px-6 md:px-10"style={{ willChange: 'transform' }} >
           
           {Object.entries(groupedMembers).map(([area, areaMembers]) => (
             <div key={area} className="mb-20">
