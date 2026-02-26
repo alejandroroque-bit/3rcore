@@ -55,7 +55,7 @@ export default function ReviewsSection() {
   )
 
   // Filtrar solo 4 y 5 estrellas
-  const goodReviews = (data?.reviews ?? []).filter(r => r.rating >= 4)
+  const goodReviews = data?.reviews ?? []
 
   if (!data || goodReviews.length === 0) return null
 

@@ -5,7 +5,6 @@ export async function GET() {
   const PLACE_ID = process.env.GOOGLE_PLACE_ID
   const API_KEY = process.env.GOOGLE_PLACES_API_KEY
 
-
   try {
     const res = await fetch(
       `https://places.googleapis.com/v1/places/${PLACE_ID}`,
@@ -14,7 +13,8 @@ export async function GET() {
         headers: {
           "Content-Type": "application/json",
           "X-Goog-Api-Key": API_KEY!,
-          "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews"
+          "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews",
+          "X-Goog-Reviews-Sort": "HIGHEST_RATING"
         },
         next: { revalidate: 86400 }
       }
@@ -30,7 +30,7 @@ export async function GET() {
       name: data.displayName?.text,
       rating: data.rating,
       user_ratings_total: data.userRatingCount,
-      reviews: data.reviews ?? []
+      reviews: (data.reviews ?? []).filter((r: any) => r.rating >= 4)
     })
 
   } catch (error) {
