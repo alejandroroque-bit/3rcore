@@ -600,7 +600,7 @@
     "servicios": "Services"
   },
   "HiddenH1": {
-    "home": "Digital marketing agency, web design and social media management in Lima, Peru",
+    "home": "Online store, SEO and Google Ads (SEM) agency in Lima, Peru",
     "branding": "Corporate branding agency and brand identity design in Lima, Peru",
     "webdev": "Web design and development agency in Lima, Peru: online stores, landing pages and corporate websites",
     "googleads": "Certified Google Ads agency and SEM campaign management in Lima, Peru",
@@ -612,7 +612,8 @@
     "emailmarketing": "Email marketing and automation agency in Lima, Peru",
     "clinicas": "Digital marketing agency for clinics and medical offices in Lima, Peru",
     "inmobiliarias": "Digital marketing agency for real estate in Lima, Peru",
-    "ecommerce": "Digital marketing agency for e-commerce and online stores in Peru"
+    "ecommerce": "Digital marketing agency for e-commerce and online stores in Peru",
+    "tiendasvirtuales": "Online store / e-commerce agency and store creation in Lima, Peru: Shopify, WooCommerce and Tiendanube"
   },
   "HomeFAQ": {
     "badge": "Frequently Asked Questions",
@@ -1746,6 +1747,11 @@
     "cta": "View service",
     "items": [
       {
+        "title": "Online Stores (E-commerce)",
+        "description": "We build your online store on Shopify, WooCommerce or Tiendanube, ready to sell with local payments.",
+        "href": "/servicios/tiendas-virtuales"
+      },
+      {
         "title": "Meta Ads (Facebook & Instagram)",
         "description": "Facebook and Instagram campaigns with advanced targeting and measurable ROAS.",
         "href": "/servicios/meta-ads"
@@ -1781,5 +1787,123 @@
         "href": "/servicios/marketing-ecommerce"
       }
     ]
+  },
+  "TiendasVirtualesLanding": {
+    "hero": {
+      "badge": "Online Stores · E-commerce",
+      "title": "Online store agency in Lima that builds stores ready to sell",
+      "subtitle": "We design and develop your e-commerce on Shopify, WooCommerce or Tiendanube: local payments, loaded catalog, technical SEO and speed. You focus on selling; we make it convert.",
+      "cta": "Get a store quote"
+    },
+    "intro": {
+      "title": "We build your online store and leave it ready to sell",
+      "p1": "3R Core is an online store agency in Lima and across Peru. We don't hand over an empty template: we build your full e-commerce —design, catalog, local payment gateways, shipping and measurement— so you can start selling from day one. We work with Shopify, WooCommerce and Tiendanube depending on what best fits your business, catalog and budget.",
+      "p2": "Every project starts by understanding what you sell, to whom and how your customer buys. From there we choose the right platform, design a fast and clear store, integrate local payments, set up shipping and leave everything measured with Google Analytics 4 and your campaign pixels. A beautiful store that doesn't sell is useless: ours is built to convert.",
+      "p3": "And we don't leave you alone. We train your team to load products and edit content independently, and we can add SEO and Google Ads / Google Shopping so your store doesn't just exist — it receives traffic that buys."
+    },
+    "benefits": {
+      "badge": "What's included",
+      "title": "Everything we set up in your online store",
+      "items": [
+        {
+          "title": "The right platform",
+          "description": "We pick Shopify, WooCommerce or Tiendanube based on your catalog, integrations and budget."
+        },
+        {
+          "title": "Local payments integrated",
+          "description": "Culqi, Niubiz, Izipay, Yape and Mercado Pago configured and tested for frictionless checkout in Peru."
+        },
+        {
+          "title": "Catalog loaded and organized",
+          "description": "We upload your products with photos, variants, categories and search-optimized copy."
+        },
+        {
+          "title": "Technical SEO included",
+          "description": "Clean URLs, product schema, speed, sitemap and metadata so Google understands your store."
+        },
+        {
+          "title": "Shipping and operations",
+          "description": "Zones, rates and couriers, plus automated order confirmation and tracking emails."
+        },
+        {
+          "title": "Training and support",
+          "description": "We teach you to run your store and stay available with support and continuous-improvement plans."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How we work",
+      "title": "From idea to a selling store in 5 steps",
+      "steps": [
+        {
+          "title": "Diagnosis and platform",
+          "description": "We understand your business, catalog and goals, and recommend the right platform."
+        },
+        {
+          "title": "Store design",
+          "description": "We design a clear, fast, mobile-first store aligned to your brand and built to guide toward purchase."
+        },
+        {
+          "title": "Development and integrations",
+          "description": "We build the store, load the catalog and integrate payments, shipping, WhatsApp and tracking."
+        },
+        {
+          "title": "Testing and launch",
+          "description": "We test every checkout flow on mobile and desktop, verify real payments and go live."
+        },
+        {
+          "title": "Training and growth",
+          "description": "We train you and, if you want, add SEO and Google Ads to scale sales with buying traffic."
+        }
+      ]
+    }
+  },
+  "TiendasVirtualesFAQ": {
+    "badge": "FAQ",
+    "title": "Online stores in Peru: what clients ask most",
+    "faqs": {
+      "q1": {
+        "question": "How much does it cost to build an online store in Peru?",
+        "answer": "Professional implementation starts from $420 and includes design, catalog upload, payments and setup. Larger catalogs, integrations or custom development range from $1,100 to $7,000. The platform's monthly cost is separate (Shopify from $39/mo, Tiendanube from ~$24/mo) or hosting for WooCommerce."
+      },
+      "q2": {
+        "question": "Shopify, WooCommerce or Tiendanube — which is best for me?",
+        "answer": "It depends. Shopify is the fastest and most stable to start selling with no technical headaches. WooCommerce gives full control and custom integrations. Tiendanube is strong on local payments and accessible plans. In the diagnosis we recommend the right one, without bias."
+      },
+      "q3": {
+        "question": "Do you integrate Peruvian payments like Yape, Culqi or Niubiz?",
+        "answer": "Yes. We configure and test Culqi, Niubiz, Izipay, Yape, PagoEfectivo and Mercado Pago based on your platform, so customers pay the way they're used to in Peru."
+      },
+      "q4": {
+        "question": "How long until my store is ready?",
+        "answer": "A standard Shopify or Tiendanube store is usually ready in 2 to 4 weeks. A custom WooCommerce store or one with many integrations can take 5 to 8 weeks, depending on catalog size and how fast you provide photos and content."
+      },
+      "q5": {
+        "question": "Will the store show up on Google?",
+        "answer": "We build it with baseline technical SEO (URLs, product schema, speed, sitemap). To truly rank and compete for buying searches we recommend adding our SEO service and/or Google Ads and Google Shopping campaigns."
+      },
+      "q6": {
+        "question": "Can I manage the store myself afterwards?",
+        "answer": "Yes. We train you to load products, change prices and edit content independently. If you prefer, we offer monthly support and maintenance plans."
+      },
+      "q7": {
+        "question": "Can I migrate my current store without losing sales or SEO?",
+        "answer": "Yes. We handle migrations carefully — 301 redirects, URLs and product data — so you don't lose ranking or orders during the switch."
+      },
+      "q8": {
+        "question": "Do you work with businesses outside Lima?",
+        "answer": "Yes, we work remotely with companies across Peru. The whole process (design, reviews, training) happens over video calls and shared access."
+      }
+    }
+  },
+  "TiendasVirtualesSEO": {
+    "seoTitle": "Online store agency in Lima focused on sales",
+    "p1": "As an online store agency in Lima, 3R Core builds e-commerce that doesn't just look good — it sells. In Peru buyers want to pay with Yape, Culqi or Niubiz, receive orders fast and trust the store before entering a card. So every store we build integrates local payments, clear shipping and trust signals from day one.",
+    "p2": "Choosing the platform well is half the success. We build on Shopify when the business wants speed and zero technical pain, WooCommerce when full control and custom integrations are needed, and Tiendanube when the priority is an accessible start with native local payments. We recommend based on your catalog, operation and budget.",
+    "p3": "A professional online store is more than a nice design: a well-loaded catalog with variants and categories, optimized product pages, load speed, product schema for Google's rich results, and a flawless mobile checkout. Most traffic in Peru is mobile, so we design mobile-first or not at all.",
+    "p4": "The cost of building an online store in Peru depends on scope. A standard implementation starts from $420 and includes design, catalog and payments; a custom build with many integrations or a large catalog can reach $7,000. What matters isn't the lowest price but how much the store sells.",
+    "p5": "Building the store is step one; getting buying traffic is step two. That's why we connect your e-commerce with our SEO service — to appear when people search what you sell — and with Google Ads and Google Shopping — to capture immediate purchase demand. That store + SEO + SEM combination is exactly what grows e-commerce in Peru.",
+    "p6": "If you're thinking about selling online, building your first store or migrating your current one, 3R Core walks with you end to end: design, development, payments, training and growth. Let's talk about your project and we'll honestly tell you which platform and investment make sense.",
+    "relatedTitle": "Related services"
   }
 }

@@ -616,7 +616,7 @@
     "servicios": "Servicios"
   },
   "HiddenH1": {
-    "home": "Agencia de marketing digital, diseño web y manejo de redes sociales en Lima, Perú",
+    "home": "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú",
     "branding": "Agencia de branding corporativo y diseño de identidad de marca en Lima, Perú",
     "webdev": "Agencia de diseño y desarrollo web en Lima, Perú: tiendas online, landing pages y sitios corporativos",
     "googleads": "Agencia certificada en Google Ads y campañas SEM en Lima, Perú",
@@ -628,7 +628,8 @@
     "emailmarketing": "Agencia de email marketing y automatización en Lima, Perú",
     "clinicas": "Agencia de marketing digital para clínicas y consultorios en Lima, Perú",
     "inmobiliarias": "Agencia de marketing digital para inmobiliarias en Lima, Perú",
-    "ecommerce": "Agencia de marketing digital para e-commerce y tiendas online en Perú"
+    "ecommerce": "Agencia de marketing digital para e-commerce y tiendas online en Perú",
+    "tiendasvirtuales": "Agencia de tiendas virtuales y creación de tiendas online (e-commerce) en Lima, Perú: Shopify, WooCommerce y Tiendanube"
   },
   "HomeFAQ": {
     "badge": "Preguntas Frecuentes",
@@ -1762,6 +1763,11 @@
     "cta": "Ver servicio",
     "items": [
       {
+        "title": "Tiendas Virtuales (E-commerce)",
+        "description": "Creamos tu tienda online en Shopify, WooCommerce o Tiendanube, lista para vender con pagos locales.",
+        "href": "/servicios/tiendas-virtuales"
+      },
+      {
         "title": "Meta Ads (Facebook e Instagram)",
         "description": "Campañas en Facebook e Instagram con segmentación avanzada y ROAS medible.",
         "href": "/servicios/meta-ads"
@@ -1797,5 +1803,123 @@
         "href": "/servicios/marketing-ecommerce"
       }
     ]
+  },
+  "TiendasVirtualesLanding": {
+    "hero": {
+      "badge": "Tiendas Virtuales · E-commerce",
+      "title": "Agencia de tiendas virtuales en Lima que crea tiendas listas para vender",
+      "subtitle": "Diseñamos y desarrollamos tu tienda online en Shopify, WooCommerce o Tiendanube: pagos locales, catálogo cargado, SEO técnico y velocidad. Tú te enfocas en vender; nosotros en que la tienda convierta.",
+      "cta": "Cotizar mi tienda"
+    },
+    "intro": {
+      "title": "Creamos tu tienda online y la dejamos lista para facturar",
+      "p1": "En 3R Core somos una agencia de tiendas virtuales en Lima y todo el Perú. No entregamos una plantilla vacía: montamos tu e-commerce completo —diseño, catálogo, pasarelas de pago peruanas, envíos y medición— para que puedas empezar a vender desde el día uno. Trabajamos con Shopify, WooCommerce y Tiendanube según lo que más convenga a tu negocio, tu catálogo y tu presupuesto.",
+      "p2": "Cada proyecto arranca entendiendo qué vendes, a quién y cómo compra tu cliente. Con eso elegimos la plataforma correcta, diseñamos una tienda rápida y clara, integramos Culqi, Niubiz, Izipay, Yape y Mercado Pago, configuramos envíos y dejamos todo medido con Google Analytics 4 y el píxel de tus campañas. Una tienda bonita que no vende no sirve: la nuestra está pensada para convertir.",
+      "p3": "Y no te dejamos solo. Capacitamos a tu equipo para que cargues productos y edites contenido sin depender de nadie, y podemos sumar posicionamiento SEO y campañas de Google Ads y Google Shopping para que tu tienda no solo exista, sino que reciba tráfico que compra."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Todo lo que dejamos listo en tu tienda virtual",
+      "items": [
+        {
+          "title": "Plataforma a tu medida",
+          "description": "Elegimos entre Shopify, WooCommerce o Tiendanube según tu catálogo, integraciones y presupuesto — sin casarte con una moda."
+        },
+        {
+          "title": "Pagos locales integrados",
+          "description": "Culqi, Niubiz, Izipay, Yape, PagoEfectivo y Mercado Pago configurados y probados para que cobres sin fricción en Perú."
+        },
+        {
+          "title": "Catálogo cargado y ordenado",
+          "description": "Subimos tus productos con fotos, variantes, categorías y textos optimizados para búsqueda y conversión."
+        },
+        {
+          "title": "SEO técnico incluido",
+          "description": "URLs limpias, schema de producto, velocidad, sitemap y metadatos para que Google entienda y muestre tu tienda."
+        },
+        {
+          "title": "Envíos y operación",
+          "description": "Configuración de zonas, tarifas y couriers, más los correos automáticos de confirmación y seguimiento de pedidos."
+        },
+        {
+          "title": "Capacitación y soporte",
+          "description": "Te enseñamos a administrar tu tienda y quedamos disponibles con planes de soporte y mejora continua."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "De la idea a tu tienda vendiendo, en 5 pasos",
+      "steps": [
+        {
+          "title": "Diagnóstico y plataforma",
+          "description": "Entendemos tu negocio, catálogo y objetivos, y recomendamos la plataforma correcta (Shopify, WooCommerce o Tiendanube)."
+        },
+        {
+          "title": "Diseño de la tienda",
+          "description": "Diseñamos una tienda clara, rápida y mobile-first, alineada a tu marca y pensada para guiar hacia la compra."
+        },
+        {
+          "title": "Desarrollo e integraciones",
+          "description": "Montamos la tienda, cargamos el catálogo e integramos pagos locales, envíos, WhatsApp y medición."
+        },
+        {
+          "title": "Pruebas y lanzamiento",
+          "description": "Probamos cada flujo de compra en móvil y escritorio, verificamos pagos reales y publicamos tu tienda."
+        },
+        {
+          "title": "Capacitación y crecimiento",
+          "description": "Te capacitamos y, si quieres, sumamos SEO y Google Ads para escalar las ventas con tráfico que compra."
+        }
+      ]
+    }
+  },
+  "TiendasVirtualesFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Tiendas virtuales en Perú: lo que más nos preguntan",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto cuesta crear una tienda virtual en Perú?",
+        "answer": "La implementación profesional arranca desde S/1,500 e incluye diseño, carga de catálogo, pagos y configuración. Una tienda con más productos, integraciones o desarrollo a medida va de S/4,000 a S/25,000. Aparte está el costo mensual de la plataforma (Shopify desde USD 39/mes, Tiendanube desde S/89/mes) o el hosting si es WooCommerce."
+      },
+      "q2": {
+        "question": "¿Shopify, WooCommerce o Tiendanube: cuál me conviene?",
+        "answer": "Depende de tu caso. Shopify es la más rápida y estable para vender ya, sin dolores técnicos. WooCommerce da control total y es ideal si necesitas integraciones a medida o ya usas WordPress. Tiendanube es fuerte en pagos locales y planes accesibles para arrancar en Perú. En el diagnóstico te recomendamos la correcta, sin sesgo."
+      },
+      "q3": {
+        "question": "¿Integran pagos peruanos como Yape, Culqi o Niubiz?",
+        "answer": "Sí. Configuramos y probamos Culqi, Niubiz, Izipay, Yape, PagoEfectivo y Mercado Pago según tu plataforma, para que tus clientes paguen como están acostumbrados en Perú."
+      },
+      "q4": {
+        "question": "¿En cuánto tiempo tengo mi tienda lista?",
+        "answer": "Una tienda estándar con Shopify o Tiendanube suele estar lista en 2 a 4 semanas. Una tienda WooCommerce a medida o con muchas integraciones puede tomar de 5 a 8 semanas. Todo depende de la cantidad de productos y de qué tan rápido nos entregues fotos y contenido."
+      },
+      "q5": {
+        "question": "¿La tienda va a aparecer en Google?",
+        "answer": "La construimos con SEO técnico de base (URLs, schema de producto, velocidad, sitemap). Para posicionar de verdad y competir por búsquedas de compra recomendamos sumar nuestro servicio de posicionamiento SEO y/o campañas de Google Ads y Google Shopping."
+      },
+      "q6": {
+        "question": "¿Puedo administrar la tienda yo mismo después?",
+        "answer": "Sí. Te capacitamos para que cargues productos, cambies precios y edites contenido sin depender de nosotros. Si prefieres, ofrecemos planes de soporte y mantenimiento mensual."
+      },
+      "q7": {
+        "question": "¿Puedo migrar mi tienda actual sin perder ventas ni SEO?",
+        "answer": "Sí. Hacemos migraciones (por ejemplo de una tienda vieja o de otra plataforma) cuidando redirecciones 301, URLs y datos de productos para no perder posicionamiento ni pedidos durante el cambio."
+      },
+      "q8": {
+        "question": "¿Trabajan con negocios fuera de Lima?",
+        "answer": "Sí, trabajamos con empresas de todo el Perú de forma remota. Todo el proceso (diseño, revisiones, capacitación) se hace por videollamada y accesos compartidos."
+      }
+    }
+  },
+  "TiendasVirtualesSEO": {
+    "seoTitle": "Agencia de tiendas virtuales en Lima con foco en ventas",
+    "p1": "Como agencia de tiendas virtuales en Lima, en 3R Core creamos e-commerce que no solo se ven bien: venden. Sabemos que en Perú el comprador quiere pagar con Yape, Culqi o Niubiz, recibir su pedido rápido y confiar en la tienda antes de dar su tarjeta. Por eso cada tienda online que desarrollamos integra pagos locales, envíos claros y señales de confianza desde el primer día.",
+    "p2": "Elegir bien la plataforma es la mitad del éxito. Montamos tiendas en Shopify cuando el negocio quiere velocidad y cero dolores técnicos, en WooCommerce cuando se necesita control total e integraciones a medida, y en Tiendanube cuando la prioridad es arrancar accesible con pagos locales nativos. No te empujamos una moda: recomendamos según tu catálogo, tu operación y tu presupuesto.",
+    "p3": "Una tienda virtual profesional incluye mucho más que un diseño bonito: catálogo bien cargado con variantes y categorías, fichas de producto optimizadas, velocidad de carga, schema de producto para los resultados enriquecidos de Google, y una experiencia de compra móvil impecable. En Perú la mayoría del tráfico es móvil, así que diseñamos mobile-first o no diseñamos.",
+    "p4": "El costo de crear una tienda online en Perú varía según el alcance. Una implementación estándar arranca desde S/1,500 e incluye diseño, catálogo y pagos; una tienda con desarrollo a medida, muchas integraciones o catálogo grande puede llegar a S/25,000. Lo importante no es el precio más bajo, sino cuánto vende la tienda: una tienda barata que no convierte termina costando más al rehacerla.",
+    "p5": "Crear la tienda es el primer paso; que reciba tráfico que compra es el segundo. Por eso conectamos tu e-commerce con nuestros servicios de posicionamiento SEO —para aparecer cuando alguien busca lo que vendes— y de Google Ads y Google Shopping —para captar demanda de compra inmediata. Esa combinación de tienda + SEO + SEM es justo lo que hace crecer un e-commerce en Perú.",
+    "p6": "Si estás pensando en vender online, en crear tu primera tienda virtual o en migrar la que ya tienes, en 3R Core te acompañamos de principio a fin: diseño, desarrollo, pagos, capacitación y crecimiento. Conversemos sobre tu proyecto y te decimos con honestidad qué plataforma e inversión tienen sentido para tu negocio.",
+    "relatedTitle": "Servicios relacionados"
   }
 }
