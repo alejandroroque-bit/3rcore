@@ -153,11 +153,12 @@ const Navbar = () => {
   }, [isOpen]);
 
   const services = [
-    { href: "/servicios/branding", label: "Branding" },
+    { href: "/servicios/tiendas-virtuales", label: "Tiendas Virtuales" },
+    { href: "/posicionamiento-seo", label: "Posicionamiento SEO" },
+    { href: "/servicios/google-ads", label: "Google Ads / SEM" },
+    { href: "/servicios/web-development", label: "Diseño Web" },
     { href: "/servicios/socialmedia", label: "Social Media" },
-    { href: "/servicios/google-ads", label: "Google Ads" },
-    { href: "/servicios/web-development", label: "Web Development" },
-    { href: "/posicionamiento-seo", label: "Servicio SEO" },
+    { href: "/servicios/branding", label: "Branding" },
   ];
 
   const links = [

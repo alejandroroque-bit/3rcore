@@ -6,6 +6,7 @@
  */
 
 import { EXTRA_POSTS_2026_07 } from "./posts-extra-2026-07"
+import { TIENDAS_POSTS_2026_07 } from "./posts-tiendas-2026-07"
 
 export interface SeedPost {
   title: string
@@ -2984,4 +2985,5 @@ export const SEED_POSTS: SeedPost[] = [
 <p>CAC, LTV y ROAS son el tablero mínimo para saber si tu marketing gana o pierde. Controla los tres, apunta a un LTV de al menos 3 veces tu CAC, y decide con números. En 3R Core montamos la medición y gestionamos tu <a href="/es/servicios/performance-marketing">performance marketing</a> mirando estas métricas, no solo los clics. Si quieres saber si tu inversión rinde de verdad, <a href="/es#contacto">conversemos</a> y revisamos tus números.</p>`,
   },
   ...EXTRA_POSTS_2026_07,
+  ...TIENDAS_POSTS_2026_07,
 ]

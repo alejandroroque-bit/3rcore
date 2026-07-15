@@ -8,6 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/nosotros', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/servicios', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/servicios/tiendas-virtuales', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/servicios/branding', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/servicios/socialmedia', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/servicios/google-ads', priority: 0.8, changeFrequency: 'monthly' as const },

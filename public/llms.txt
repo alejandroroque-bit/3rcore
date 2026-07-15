@@ -13,6 +13,7 @@
 - Tax ID (RUC): 2060900821
 
 ## Services
+- [Online Stores / E-commerce](https://3rcore.com/es/servicios/tiendas-virtuales): We build online stores on Shopify, WooCommerce and Tiendanube with local payments (Culqi, Niubiz, Izipay, Yape), technical SEO and ready to sell. From S/1,500.
 - [Branding](https://3rcore.com/es/servicios/branding): Visual identity design, brand manuals, logos, and brand applications
 - [Social Media Management](https://3rcore.com/es/servicios/socialmedia): Content strategy, post design, editorial grids, and social media management
 - [Web Development](https://3rcore.com/es/servicios/web-development): Websites, e-commerce (Shopify/WooCommerce), landing pages, e-learning platforms
