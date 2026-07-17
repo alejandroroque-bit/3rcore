@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import { createServerClient } from "@/lib/supabase/server"
 import type { BlogPost } from "@/lib/supabase/types"
 import BlogPostView from "./BlogPostView"
@@ -36,6 +36,22 @@ async function getPost(slug: string, locale: string): Promise<BlogPost | null> {
   return data
 }
 
+// Locales que REALMENTE existen publicados para este slug (evita hreflang/enlaces
+// a versiones inexistentes; los posts hoy son solo 'es').
+async function getPublishedLocales(slug: string): Promise<string[]> {
+  try {
+    const supabase = createServerClient()
+    const { data } = await supabase
+      .from('blog_posts')
+      .select('locale')
+      .eq('slug', slug)
+      .eq('status', 'published')
+    return Array.from(new Set((data || []).map((r: any) => r.locale)))
+  } catch {
+    return []
+  }
+}
+
 async function getRelatedPosts(currentId: string, categoryId: string | null, locale: string, limit = 3): Promise<BlogPost[]> {
   const supabase = createServerClient()
   let query = supabase
@@ -69,16 +85,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const canonical = `${BASE_URL}/${locale}/blogs/${slug}`
   const image = post.og_image || post.featured_image
 
+  // hreflang solo para los idiomas publicados de este slug (no declarar 'en'
+  // si no existe: evita hreflang a página rota / 404).
+  const availableLocales = await getPublishedLocales(slug)
+  const languages: Record<string, string> = {}
+  for (const loc of availableLocales) {
+    languages[loc] = `${BASE_URL}/${loc}/blogs/${slug}`
+  }
+  languages['x-default'] = languages['es'] || languages[locale] || canonical
+
   return {
     title: post.meta_title || `${post.title} | 3R Core`,
     description: post.meta_description || post.excerpt || '',
     alternates: {
       canonical,
-      languages: {
-        'es': `${BASE_URL}/es/blogs/${slug}`,
-        'en': `${BASE_URL}/en/blogs/${slug}`,
-        'x-default': `${BASE_URL}/es/blogs/${slug}`,
-      },
+      languages,
     },
     robots: post.robots || 'index, follow',
     openGraph: {
@@ -107,7 +128,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params
   const post = await getPost(slug, locale)
-  if (!post) notFound()
+  if (!post) {
+    // Si el idioma pedido no existe pero SÍ hay otra versión publicada de este
+    // slug, redirige a esa (evita 404 desde el selector de idioma / enlaces).
+    const locales = await getPublishedLocales(slug)
+    if (locales.length && !locales.includes(locale)) {
+      const target = locales.includes('es') ? 'es' : locales[0]
+      redirect(`/${target}/blogs/${slug}`)
+    }
+    notFound()
+  }
 
   const canonical = `${BASE_URL}/${locale}/blogs/${slug}`
   const isEn = locale === 'en'

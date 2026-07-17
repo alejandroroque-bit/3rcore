@@ -11,6 +11,11 @@ const Navbar = () => {
   const t = useTranslations("Navbar");
   const pathname = usePathname();
 
+  // En un post de blog concreto (/blogs/{slug}) no todos los idiomas existen,
+  // así que el cambio de idioma va al listado /blogs (200) en vez de a un
+  // /en/blogs/{slug} inexistente (404). En el resto de páginas conserva la ruta.
+  const localeSwitchHref = /^\/blogs\/[^/]+$/.test(pathname) ? "/blogs" : pathname;
+
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -302,14 +307,14 @@ const Navbar = () => {
                 } text-gray-400`}
               >
                 <Link
-                  href={pathname}
+                  href={localeSwitchHref}
                   locale="es"
                   className="hover:text-[#E91E63] transition-colors cursor-pointer uppercase"
                 >
                   ES
                 </Link>
                 <Link
-                  href={pathname}
+                  href={localeSwitchHref}
                   locale="en"
                   className="hover:text-[#E91E63] transition-colors cursor-pointer uppercase"
                 >
