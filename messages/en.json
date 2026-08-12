@@ -122,7 +122,17 @@
     "description": "Meet the people who make our success possible."
   },
   "MomentsSection": {
-    "highlightText": "MOMENTS THAT STRENGTHEN OUR BOND"
+    "highlightText": "MOMENTS THAT STRENGTHEN OUR BOND",
+    "items": [
+      "The founders",
+      "Team Mounstroso",
+      "Branding team",
+      "Team Domus",
+      "Anyone up for football?",
+      "Anyone up for roast chicken?",
+      "I'm STARVING!!!!!!",
+      "Meetings"
+    ]
   },
   "ScheduleSection": {
     "title": "Business Hours",
@@ -2283,5 +2293,27 @@
     "p5": "We also produce in Spanish, which matters for brands targeting U.S. Hispanic audiences. Producing that content with a native Spanish-speaking team avoids the translated-copy problem — the tonal flatness that audiences read as inauthentic even when the grammar is correct.",
     "p6": "If you're weighing a U.S. retainer against building internal capacity, there's a third option worth pricing. Send us your current scope and spend, and we'll come back with what the same budget buys in output volume.",
     "relatedTitle": "Related services"
+  },
+  "ServiceLinks": {
+    "byHref": {
+      "/posicionamiento-seo": "SEO",
+      "/servicios/google-ads": "Google Ads",
+      "/tiendas-virtuales-lima": "Online Stores",
+      "/servicios/web-development": "Web Design",
+      "/servicios/socialmedia": "Social Media",
+      "/servicios/branding": "Branding",
+      "/servicios/ugc": "UGC Content",
+      "/servicios/influencer-marketing": "Influencer Marketing",
+      "/servicios/relaciones-publicas": "Public Relations",
+      "/servicios/meta-ads": "Meta Ads",
+      "/servicios/tiktok-ads": "TikTok Ads",
+      "/servicios/performance-marketing": "Performance Marketing",
+      "/servicios/email-marketing": "Email Marketing",
+      "/servicios/marketing-ecommerce": "E-commerce Marketing",
+      "/servicios/marketing-clinicas": "Marketing for Clinics",
+      "/servicios/marketing-inmobiliarias": "Real Estate Marketing",
+      "/precios": "Pricing",
+      "/servicios": "Services"
+    }
   }
 }

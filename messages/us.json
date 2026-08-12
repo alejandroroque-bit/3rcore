@@ -268,5 +268,27 @@
     "pricing": {
       "amount": "$800"
     }
+  },
+  "ServiceLinks": {
+    "byHref": {
+      "/posicionamiento-seo": "Posicionamiento SEO",
+      "/servicios/google-ads": "Google Ads",
+      "/tiendas-virtuales-lima": "Tiendas Online",
+      "/servicios/web-development": "Diseño Web",
+      "/servicios/socialmedia": "Redes Sociales",
+      "/servicios/branding": "Branding",
+      "/servicios/ugc": "Contenido UGC",
+      "/servicios/influencer-marketing": "Influencer Marketing",
+      "/servicios/relaciones-publicas": "Relaciones Públicas",
+      "/servicios/meta-ads": "Meta Ads",
+      "/servicios/tiktok-ads": "TikTok Ads",
+      "/servicios/performance-marketing": "Performance Marketing",
+      "/servicios/email-marketing": "Email Marketing",
+      "/servicios/marketing-ecommerce": "Marketing E-commerce",
+      "/servicios/marketing-clinicas": "Marketing para Clínicas",
+      "/servicios/marketing-inmobiliarias": "Marketing Inmobiliario",
+      "/precios": "Precios",
+      "/servicios": "Servicios"
+    }
   }
 }

@@ -122,7 +122,17 @@
     "description": "Conoce a las personas que hacen posible nuestro éxito."
   },
   "MomentsSection": {
-    "highlightText": "MOMENTOS QUE FORTALECEN NUESTRO VÍNCULO"
+    "highlightText": "MOMENTOS QUE FORTALECEN NUESTRO VÍNCULO",
+    "items": [
+      "Fundadores",
+      "Equipo Mounstroso",
+      "Equipo Branding",
+      "Equipo Domus",
+      "Sale fulbo?",
+      "Sale pollito?",
+      "Tengo HAMBRE!!!!!!",
+      "Reuniones"
+    ]
   },
   "ScheduleSection": {
     "title": "Horario de Atención",
@@ -2180,5 +2190,27 @@
     "p5": "La gestión de crisis se prepara antes de necesitarla. Tener definido quién habla, por qué canal y con qué mensaje reduce el daño de forma decisiva, porque el agravante habitual de una crisis no es el hecho original sino las respuestas contradictorias emitidas en las primeras horas por personas distintas.",
     "p6": "Si tu marca ya tiene resultados que contar pero nadie fuera de la empresa los conoce, ese es exactamente el punto donde las relaciones públicas rinden más. Conversemos sobre qué hay dentro de tu negocio que un medio querría publicar.",
     "relatedTitle": "Servicios relacionados"
+  },
+  "ServiceLinks": {
+    "byHref": {
+      "/posicionamiento-seo": "Posicionamiento SEO",
+      "/servicios/google-ads": "Google Ads",
+      "/tiendas-virtuales-lima": "Tiendas Virtuales",
+      "/servicios/web-development": "Diseño Web",
+      "/servicios/socialmedia": "Redes Sociales",
+      "/servicios/branding": "Branding",
+      "/servicios/ugc": "Contenido UGC",
+      "/servicios/influencer-marketing": "Influencer Marketing",
+      "/servicios/relaciones-publicas": "Relaciones Públicas",
+      "/servicios/meta-ads": "Meta Ads",
+      "/servicios/tiktok-ads": "TikTok Ads",
+      "/servicios/performance-marketing": "Performance Marketing",
+      "/servicios/email-marketing": "Email Marketing",
+      "/servicios/marketing-ecommerce": "Marketing E-commerce",
+      "/servicios/marketing-clinicas": "Marketing para Clínicas",
+      "/servicios/marketing-inmobiliarias": "Marketing Inmobiliario",
+      "/precios": "Precios",
+      "/servicios": "Servicios"
+    }
   }
 }

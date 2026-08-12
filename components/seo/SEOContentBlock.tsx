@@ -16,6 +16,12 @@ interface Props {
 
 export default function SEOContentBlock({ namespace, paragraphs, relatedLinks, showRelated = true }: Props) {
   const t = useTranslations(namespace)
+  // Los nombres de los servicios relacionados venían fijados en cada page.tsx
+  // ("Diseño Web", "Redes Sociales", "Tiendas Virtuales"), así que salían en
+  // español dentro de /en. Ahora se resuelven por href contra ServiceLinks,
+  // y el label literal queda solo como respaldo.
+  const tl = useTranslations("ServiceLinks")
+  const byHref = tl.raw("byHref") as Record<string, string>
 
   const items = Array.from({ length: paragraphs }, (_, i) => i + 1)
 
@@ -46,7 +52,7 @@ export default function SEOContentBlock({ namespace, paragraphs, relatedLinks, s
                     href={link.href}
                     className="inline-block px-4 py-2 rounded-full border border-[#E91E63]/50 text-white text-sm hover:bg-gradient-to-r hover:from-[#E91E63] hover:to-[#9C27B0] hover:border-transparent transition-all duration-300"
                   >
-                    {link.label}
+                    {byHref?.[link.href] ?? link.label}
                   </Link>
                 </li>
               ))}

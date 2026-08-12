@@ -2,9 +2,26 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { WA_LANDING } from '@/lib/contact';
+import { useLocale } from 'next-intl';
 import { gsap } from 'gsap';
 
+const COPY = {
+  es: {
+    title: 'Contáctanos', close: 'Cerrar formulario', name: 'Nombre *', phone: 'Número *',
+    site: 'https://ejemplo.com', email: 'Correo *', project: 'Cuéntanos de tu proyecto *',
+    send: 'Enviar mensaje',
+  },
+  en: {
+    title: 'Contact us', close: 'Close form', name: 'Full name *', phone: 'Phone number *',
+    site: 'https://example.com', email: 'Email *', project: 'Tell us about your project *',
+    send: 'Send message',
+  },
+} as const
+
 const WhatsAppBtnLanding = () => {
+  const locale = useLocale();
+  // 'us' es español: comparte los textos de Perú, solo /en cambia de idioma.
+  const t = COPY[locale === 'en' ? 'en' : 'es'];
   const [isExpanded, setIsExpanded] = useState(false);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [formData, setFormData] = useState({
@@ -235,11 +252,11 @@ const WhatsAppBtnLanding = () => {
         className={`absolute inset-0 p-6 opacity-0 ${!isExpanded ? 'pointer-events-none' : ''}`}
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-bold text-[#25d366]">Contáctanos</h3>
+          <h3 className="text-lg font-bold text-[#25d366]">{t.title}</h3>
           <button 
             onClick={toggleExpanded}
             className="text-[#25d366] hover:text-[#128c7e] transition-colors p-1"
-            aria-label="Cerrar formulario"
+            aria-label={t.close}
             type="button"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -255,7 +272,7 @@ const WhatsAppBtnLanding = () => {
               name="nombre"
               value={formData.nombre}
               onChange={handleInputChange}
-              placeholder="Nombre *"
+              placeholder={t.name}
               required
               className="w-full px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 placeholder-gray-500 transition-all"
             />
@@ -323,7 +340,7 @@ const WhatsAppBtnLanding = () => {
               name="numero"
               value={formData.numero}
               onChange={handleInputChange}
-              placeholder="Número *"
+              placeholder={t.phone}
               required
               className="flex-1 px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 placeholder-gray-500 transition-all"
             />
@@ -335,7 +352,7 @@ const WhatsAppBtnLanding = () => {
               name="paginaWeb"
               value={formData.paginaWeb}
               onChange={handleInputChange}
-              placeholder="https://example.com"
+              placeholder={t.site}
               required
               className="w-full px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 placeholder-gray-500 transition-all"
             />
@@ -347,7 +364,7 @@ const WhatsAppBtnLanding = () => {
               name="correo"
               value={formData.correo}
               onChange={handleInputChange}
-              placeholder="Correo *"
+              placeholder={t.email}
               required
               className="w-full px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 placeholder-gray-500 transition-all"
             />
@@ -358,7 +375,7 @@ const WhatsAppBtnLanding = () => {
               name="proyecto"
               value={formData.proyecto}
               onChange={handleInputChange}
-              placeholder="Cuéntanos de tu proyecto *"
+              placeholder={t.project}
               required
               rows={3}
               className="w-full px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white resize-none text-sm text-gray-800 placeholder-gray-500 transition-all"
@@ -369,7 +386,7 @@ const WhatsAppBtnLanding = () => {
             type="submit"
             className="w-full bg-[#25d366] text-white py-3 rounded-lg font-bold hover:bg-[#128c7e] transition-colors duration-300 text-sm"
           >
-            Enviar mensaje
+            {t.send}
           </button>
         </form>
       </div>
