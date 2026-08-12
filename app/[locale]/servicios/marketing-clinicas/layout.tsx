@@ -12,6 +12,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: "Digital Marketing for Clinics & Medical Offices in Lima, Peru | 3R Core",
     descriptionEs: "Agencia de marketing digital para clínicas y consultorios en Lima, Perú: Google Ads de salud, SEO local, Google Business Profile y captación de pacientes con citas medibles.",
     descriptionEn: "Digital marketing agency for clinics and medical offices in Lima, Peru: healthcare Google Ads, local SEO, Google Business Profile and measurable patient acquisition.",
+    titleUs: 'Marketing Digital para Clínicas y Consultorios en EE.UU. | 3R Core',
+    descriptionUs: 'Marketing digital en español para clínicas y consultorios en Estados Unidos: Google Ads de salud, SEO local, Google Business Profile y captación de pacientes hispanos con citas medibles.',
   })
 }
 

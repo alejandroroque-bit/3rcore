@@ -101,9 +101,16 @@ function pushDL(payload: Record<string, unknown>) {
 
 export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: string; locale: string; variant?: 'end' | 'inline' | 'top' }) {
   const isEn = locale === 'en'
+  // es-US comparte los textos en español, pero no los importes en soles.
+  const isUs = locale === 'us'
   const key: ServiceKey = serviceForSlug(slug)
   const svc = SERVICES[key]
-  const t = isEn ? svc.en : svc.es
+  const base = isEn ? svc.en : svc.es
+  // Los CTA en español citan precios de Perú. En /us se sustituyen por la
+  // tarifa en dólares publicada en /us/precios.
+  const t = isUs
+    ? { ...base, sub: base.sub.replace('desde S/1,500', 'desde $500 al mes').replace(/S\/\s?[\d,]+/g, '') }
+    : base
   const guides = guidesFor(slug, 2)
   const ref = useRef<HTMLDivElement>(null)
   const seen = useRef(false)

@@ -77,12 +77,51 @@ const COPY = {
       { q: 'How much should I invest in Google Ads spend?', a: 'On top of the management fee (from $800/month), we recommend a minimum ad spend of $400/month, paid directly to Google.' },
       { q: 'Are prices final? Are there mandatory contracts?', a: 'Prices are net; each proposal is tailored after an initial meeting. We do not use mandatory contracts: the service is monthly, with reports and progressive results.' },
     ],
+  },
+  // es-US: mismo idioma que Perú, mercado y moneda distintos. Sin IGV, sin
+  // pasarelas peruanas y con los precios en dólares del bloque 'en'.
+  us: {
+    hero: 'Precios de Marketing Digital para Negocios en Estados Unidos',
+    sub: 'Branding desde $500, SEO $500/mes, Social Media $800/mes, gestión de Google Ads $800/mes y páginas web desde $850. Precios netos en dólares para clientes en Estados Unidos.',
+    contactCta: 'Conversemos sobre tu proyecto',
+    contactPath: '/#contacto',
+    note: 'Sin contratos forzosos, con reportes mensuales y resultados progresivos. Los precios son referenciales según paquetes base; cada propuesta se ajusta tras una reunión inicial.',
+    tiers: [
+      { name: 'Branding inicial', price: 'desde $500', period: '/ proyecto', desc: 'Diseño de identidad visual con entrega de propuesta tras sesión inicial de descubrimiento.', feats: ['Logotipo','Manual de marca','Paleta cromática','Tipografía corporativa','Aplicaciones esenciales'], href: '/servicios/branding', cta: 'Ver branding' },
+      { name: 'Social Media', price: '$800', period: '/ mes', desc: 'Manejo de TikTok, Instagram, Facebook y LinkedIn con 8–12 piezas mensuales, en español o bilingüe.', feats: ['8–12 piezas / mes','TikTok + IG + FB + LinkedIn','Reels / TikToks editados','Community management','Reporte mensual'], href: '/servicios/socialmedia', cta: 'Ver redes sociales' },
+      { name: 'Posicionamiento SEO', price: '$500', period: '/ mes', desc: 'Auditoría, planificación, optimización, escalamiento y reportes mensuales. Estrategia continua sin contratos forzosos.', feats: ['Auditoría inicial','Planificación','Optimización on-page','Escalamiento','Reporte mensual'], href: '/posicionamiento-seo', cta: 'Ver SEO', highlight: true },
+      { name: 'Google Ads gestión', price: '$800', period: '/ mes', desc: 'Fee de gestión de campañas Search, Performance Max, YouTube, Display, Shopping y Remarketing.', feats: ['Configuración de campañas','Optimización continua','Tracking de conversiones','Reporte mensual'], href: '/servicios/google-ads', cta: 'Ver Google Ads', extra: '+ presupuesto mínimo de pauta de $400/mes pagado directamente a Google.' },
+    ],
+    webTitle: 'Diseño y desarrollo web',
+    webNote: 'Cotización a medida tras reunión inicial. Cada propuesta incluye diseño en Figma, desarrollo responsive, SEO técnico básico, formulario de contacto y conexión a Google Analytics. El primer año incluye dominio, SSL y hosting.',
+    webTiers: [
+      { name: 'Landing page profesional', price: 'desde $850', desc: 'Landing page con diseño a medida, SEO técnico básico y formulario de contacto.' },
+      { name: 'Web corporativa', price: 'desde $1,200', desc: 'Sitio corporativo con 5–8 secciones. Rango $1,200–$2,400 según alcance.' },
+      { name: 'E-commerce Shopify / WooCommerce', price: 'desde $1,750', desc: 'Tienda online con catálogo, pasarela de pago, gestión de inventario y panel de administración.' },
+    ],
+    refTitle: 'Inversión mensual de referencia',
+    refList: [
+      { t: 'Negocios que empiezan', d: '$750 – $1,400 / mes (cubre redes + Ads básico)' },
+      { t: 'Pequeñas y medianas empresas', d: '$1,500 – $3,600 / mes (estrategia integral con redes, Ads, SEO y mejoras web)' },
+      { t: 'Empresas medianas', d: '$3,600 – $9,000 / mes (marketing completo con producción de contenido y CRO)' },
+    ],
+    refNote: 'Lo importante no es el presupuesto sino que el ROI sea positivo desde el mes 3.',
+    contact: '¿Tu proyecto necesita un mix distinto?',
+    contactDesc: 'Cuéntanos tu objetivo y armamos una cotización personalizada en la primera reunión.',
+    faqTitle: 'Preguntas frecuentes sobre precios',
+    faqs: [
+      { q: '¿Cuánto cuesta contratar una agencia de marketing digital?', a: 'Depende del mix de servicios. Como referencia mensual: negocios que empiezan $750–$1,400, pymes $1,500–$3,600 y empresas medianas $3,600–$9,000. Por servicio: SEO $500/mes, gestión de Google Ads desde $800/mes (más la pauta), Social Media $800/mes, branding desde $500 y páginas web desde $850.' },
+      { q: '¿Cuánto cuesta crear una tienda online?', a: 'Una tienda completa en Shopify o WooCommerce arranca desde $1,750, con catálogo, pasarela de pago, gestión de inventario y panel de administración.' },
+      { q: '¿Cuánto cuesta el posicionamiento SEO?', a: 'El servicio de SEO cuesta $500 al mes e incluye auditoría, planificación, optimización on-page, escalamiento y reporte mensual. Sin contratos forzosos y con resultados progresivos.' },
+      { q: '¿Cuánto debo invertir en pauta de Google Ads?', a: 'Además del fee de gestión (desde $800/mes), recomendamos un presupuesto mínimo de pauta de $400/mes, que se paga directamente a Google.' },
+      { q: '¿Los precios son finales? ¿Hay contratos forzosos?', a: 'Los precios son netos en dólares y cada propuesta se ajusta tras una reunión inicial. No trabajamos con contratos forzosos: el servicio es mensual, con reportes y resultados progresivos.' },
+    ],
   }
 }
 
 export default async function PreciosPage({ params }: Props) {
   const { locale } = await params
-  const t = (COPY as any)[locale === 'en' ? 'en' : 'es']
+  const t = (COPY as any)[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
   const isEn = locale === 'en'
   const faqSchema = buildFAQPageSchema((t.faqs || []).map((f: any) => ({ question: f.q, answer: f.a })))
 

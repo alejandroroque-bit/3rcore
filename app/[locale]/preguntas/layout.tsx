@@ -14,6 +14,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Frequently Asked Questions — Digital Marketing, SEO, Google Ads & Web | 3R Core',
     descriptionEs: 'Respuestas a las preguntas más frecuentes sobre nuestros servicios de marketing digital en Lima, Perú: precios, plazos, contratos, branding, social media, Google Ads, SEO y desarrollo web.',
     descriptionEn: 'Answers to the most frequently asked questions about our digital marketing services in Lima, Peru: pricing, timelines, contracts, branding, social media, Google Ads, SEO and web development.',
+    titleUs: 'Preguntas Frecuentes — Marketing Digital en Español para EE.UU. | 3R Core',
+    descriptionUs: 'Respuestas a las preguntas más frecuentes sobre nuestros servicios para negocios en Estados Unidos: precios en dólares, plazos, contratos, contenido UGC, Google Ads, SEO y desarrollo web.',
   })
 }
 

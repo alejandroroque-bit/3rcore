@@ -12,6 +12,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Google Ads Agency in Lima, Peru — SEM Campaigns with ROI | 3R Core',
     descriptionEs: 'Agencia Google Ads en Lima, Perú: campañas Search, Performance Max, YouTube, Display, Shopping y Remarketing. Gestión profesional desde S/1,800/mes con reportes mensuales.',
     descriptionEn: 'Google Ads agency for US clients: Search, Performance Max, YouTube, Display, Shopping and Remarketing campaigns. Professional management from $800/month with monthly reports.',
+    titleUs: 'Agencia de Google Ads en Español para Negocios en EE.UU. | 3R Core',
+    descriptionUs: 'Campañas de Google Ads segmentadas por idioma y ciudad para llegar al público hispano en Estados Unidos: Search, Performance Max, YouTube, Display y Shopping. Gestión desde $800/mes con reportes mensuales.',
     ogImage: {
       url: 'https://3rcore.com/og/google-ads.jpg',
       width: 1200,

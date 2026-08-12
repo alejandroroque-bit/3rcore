@@ -109,7 +109,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPost(slug, locale)
   if (!post) return { title: "Post not found" }
 
-  const canonical = `${BASE_URL}/${locale}/blogs/${slug}`
+  // El canonical va al locale REAL del post, no al de la URL. /us sirve los
+  // posts en español (no hay versión es-US propia), así que /us/blogs/x y
+  // /es/blogs/x devuelven el mismo texto: con canonical propio serían ~140
+  // duplicados compitiendo entre sí.
+  const canonicalLocale = locale === 'en' ? 'en' : 'es'
+  const canonical = `${BASE_URL}/${canonicalLocale}/blogs/${slug}`
   const image = post.og_image || post.featured_image
 
   // hreflang solo para los idiomas publicados de este slug (no declarar 'en'

@@ -12,6 +12,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Digital Marketing Blog in Peru: SEO, Branding & Ads | 3R Core',
     descriptionEs: 'Artículos, guías y casos reales sobre marketing digital en Perú: posicionamiento SEO en Google, branding corporativo, campañas de Google Ads, manejo de redes sociales y desarrollo web. Actualizado semanalmente por 3R Core.',
     descriptionEn: 'Articles, guides and real cases about digital marketing in Peru: SEO positioning, corporate branding, Google Ads campaigns, social media management and web development. Updated weekly by 3R Core.',
+    titleUs: 'Blog de Marketing Digital en Español | 3R Core',
+    descriptionUs: 'Artículos y guías sobre marketing digital en español: contenido UGC, influencer marketing, relaciones públicas, posicionamiento SEO, campañas de Google Ads y tiendas online.',
   })
 }
 

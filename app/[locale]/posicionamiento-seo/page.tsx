@@ -14,6 +14,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'SEO Agency in Lima — Organic Web Positioning on Google | 3R Core',
     descriptionEs: 'Agencia de posicionamiento SEO en Lima, Perú. Auditoría, optimización, interlinks, contenido y escalamiento mensual. Inversión desde S/1,800/mes sin contratos forzosos.',
     descriptionEn: 'SEO positioning agency for US-based clients. Audit, optimization, interlinks, content and monthly scaling. Investment from $500/month with no forced contracts.',
+    titleUs: 'Agencia de Posicionamiento SEO en Español para EE.UU. | 3R Core',
+    descriptionUs: 'Posicionamiento SEO en español e inglés para negocios en Estados Unidos: keyword research, SEO técnico, contenido y SEO local. Las búsquedas en español suelen tener menos competencia. Desde $500/mes sin contratos forzosos.',
     ogImage: {
       url: 'https://3rcore.com/og/posicionamiento-seo.jpg',
       width: 1200,

@@ -15,7 +15,7 @@ import { Link } from '@/i18n/navigation'
 
 type Pillar = { h: string; p: string; href: string; cta: string }
 
-const COPY: Record<'es' | 'en', {
+const COPY: Record<'es' | 'en' | 'us', {
   eyebrow: string
   h2: string
   intro: string
@@ -70,6 +70,49 @@ const COPY: Record<'es' | 'en', {
       '¿Tienes un negocio y quieres vender más online? Conversemos: armamos una propuesta a tu medida en la primera reunión, sin compromiso.',
     quoteCta: 'Calcula el estimado de tu proyecto',
   },
+  // es-US: mismo idioma que Perú, otro mercado. Sin soles, sin pasarelas
+  // peruanas y sin los distritos de Lima como señal local — aquí la señal
+  // local es la comunidad hispana de EE.UU. y el huso horario compartido.
+  us: {
+    eyebrow: 'Agencia de marketing digital en español para Estados Unidos',
+    h2: 'Campañas, contenido y tiendas online que traen clientes, no solo visitas',
+    intro:
+      'En 3R Core ayudamos a negocios en Estados Unidos a vender más entre el público hispano: producimos video UGC en español, gestionamos tus campañas de Google Ads y Meta, te posicionamos en Google para búsquedas en español y creamos tu tienda online. Todo con medición real, reportes mensuales y foco en el retorno de tu inversión, no en métricas de vanidad.',
+    definition:
+      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque que atiende a empresas de Estados Unidos con un equipo propio en Lima, Perú, en horario compatible con las zonas horarias estadounidenses. Está especializada en producción de video UGC, campañas de Google Ads y Meta, posicionamiento SEO en español e inglés (desde $500/mes) y tiendas online sobre Shopify y WooCommerce (desde $1,750), con precios publicados en dólares y sin contratos forzosos.',
+    pillars: [
+      {
+        h: 'Contenido UGC en español',
+        p: 'Producimos video con creadores hispanohablantes para tus campañas de Meta, TikTok y YouTube: ángulos de venta, guion, grabación, edición y variantes por plataforma. Derechos de uso publicitario incluidos por contrato.',
+        href: '/servicios/ugc',
+        cta: 'Ver producción de UGC',
+      },
+      {
+        h: 'Campañas en español que sí convierten',
+        p: 'Google Ads y Meta segmentados por idioma y ciudad, con anuncios escritos en español y no traducidos del inglés. La competencia por las búsquedas en español suele ser menor, así que el costo por clic tiende a ser más bajo para una intención de compra equivalente.',
+        href: '/servicios/google-ads',
+        cta: 'Ver servicio de Google Ads',
+      },
+      {
+        h: 'SEO para búsquedas en español',
+        p: 'Posicionamos tu sitio para lo que tu cliente busca en su idioma dentro de tu área de servicio, con la versión en español correctamente marcada para que Google la muestre a quien corresponde. Reportes mensuales y sin contratos forzosos.',
+        href: '/posicionamiento-seo',
+        cta: 'Ver servicio de SEO',
+      },
+    ],
+    secondaryH3: 'También te acompañamos en',
+    secondary: [
+      { h: 'Diseño y desarrollo web', p: 'Sitios bilingües rápidos, con SEO técnico y formularios que capturan leads en los dos idiomas.', href: '/servicios/web-development' },
+      { h: 'Branding e identidad', p: 'Logo, manual de marca y aplicaciones para una marca que se recuerda y vende.', href: '/servicios/branding' },
+      { h: 'Influencer marketing', p: 'Campañas con creadores hispanos medidas por ventas, con atribución por enlace y código.', href: '/servicios/influencer-marketing' },
+    ],
+    localH3: 'Marketing en español para negocios hispanos en Estados Unidos',
+    local:
+      'Trabajamos con negocios en las áreas de mayor población hispana del país —Miami, Los Ángeles, Nueva York, Houston, Chicago y Dallas, entre otras— adaptando el español a la comunidad que atiendes en lugar de usar un español neutro que no le suena natural a nadie. Nuestro equipo está en Lima y opera en horario compatible con Estados Unidos: la diferencia con la costa este es de cero a una hora.',
+    closing:
+      '¿Tu publicidad está solo en inglés y tus clientes buscan en español? Conversemos: armamos una propuesta a tu medida, con precios en dólares, en la primera reunión.',
+    quoteCta: 'Calcula el estimado de tu proyecto',
+  },
   en: {
     eyebrow: 'Digital marketing agency in Lima, Peru',
     h2: 'Online stores, SEO and Google Ads that bring clients, not just visits',
@@ -113,7 +156,7 @@ const COPY: Record<'es' | 'en', {
 }
 
 export default function HomeSeoSection({ locale }: { locale: string }) {
-  const t = COPY[locale === 'en' ? 'en' : 'es']
+  const t = COPY[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
 
   return (
     <section

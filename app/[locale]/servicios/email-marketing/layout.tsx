@@ -12,6 +12,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: "Email Marketing & Automation in Lima, Peru | 3R Core",
     descriptionEs: "Agencia de email marketing y automatización en Lima, Perú: flujos automáticos, newsletters, segmentación y CRM. Recupera carritos, fideliza clientes y vende en piloto automático.",
     descriptionEn: "Email marketing and automation agency in Lima, Peru: automated flows, newsletters, segmentation and CRM. Recover carts, retain customers and sell on autopilot.",
+    titleUs: 'Agencia de Email Marketing y Automatización para EE.UU. | 3R Core',
+    descriptionUs: 'Email marketing y automatización en español e inglés para negocios en Estados Unidos: flujos automáticos, newsletters, segmentación y CRM. Recupera carritos y fideliza clientes.',
   })
 }
 

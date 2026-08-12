@@ -8,6 +8,18 @@ import { buildServiceItemList, buildSpeakableSchema } from "@/lib/seoSchemas"
 // en "Servicios"). Ahora solo lo consume servicios/page.tsx.
 export function buildServiciosIndexSchemas(locale: string) {
   const isEn = locale === 'en'
+  // 'us' comparte el texto en español pero no la moneda: las descripciones
+  // citaban tarifas en soles y salían en el JSON-LD de /us.
+  const usd = (t: string) =>
+    locale === 'us'
+      ? t
+          .replace('Desde S/500 con entrega', 'Desde $500 con entrega')
+          .replace('Fee de gestión desde S/1,800/mes', 'Fee de gestión desde $800/mes')
+          .replace('Desde S/1,500/mes', 'Desde $800/mes')
+          .replace('Desde S/1,800/mes', 'Desde $500/mes')
+          .replace('Desde S/1,800', 'Desde $850')
+          .replace('desde S/1,500', 'desde $650')
+      : t
 
   const breadcrumbSchema = generateBreadcrumbSchema(
     [
@@ -25,28 +37,28 @@ export function buildServiciosIndexSchemas(locale: string) {
         path: '/servicios/branding',
         description: isEn
           ? 'Logo, brand manual, color palette, corporate typography and brand applications. From $500 USD for US clients, delivery in 7 days.'
-          : 'Logotipo, manual de marca, paleta cromática, tipografía corporativa y aplicaciones. Desde S/500 con entrega en 7 días.',
+          : usd('Logotipo, manual de marca, paleta cromática, tipografía corporativa y aplicaciones. Desde S/500 con entrega en 7 días.'),
       },
       {
         name: isEn ? 'Social Media Management' : 'Manejo de Redes Sociales',
         path: '/servicios/socialmedia',
         description: isEn
           ? 'Content strategy, post design, Reels & TikTok editing, copywriting and community management for Instagram, Facebook, TikTok and LinkedIn. From $800/month for US clients.'
-          : 'Estrategia, diseño, Reels y TikToks, copywriting y community management para Instagram, Facebook, TikTok y LinkedIn. Desde S/1,500/mes.',
+          : usd('Estrategia, diseño, Reels y TikToks, copywriting y community management para Instagram, Facebook, TikTok y LinkedIn. Desde S/1,500/mes.'),
       },
       {
         name: isEn ? 'Google Ads & SEM' : 'Google Ads y Campañas SEM',
         path: '/servicios/google-ads',
         description: isEn
           ? 'Search, Performance Max, YouTube, Display, Shopping and Remarketing campaigns. Management fee starting at $800/month for US clients.'
-          : 'Campañas de Search, Performance Max, YouTube, Display, Shopping y Remarketing. Fee de gestión desde S/1,800/mes.',
+          : usd('Campañas de Search, Performance Max, YouTube, Display, Shopping y Remarketing. Fee de gestión desde S/1,800/mes.'),
       },
       {
         name: isEn ? 'SEO Positioning' : 'Posicionamiento SEO',
         path: '/posicionamiento-seo',
         description: isEn
           ? 'Organic SEO: keyword research, on-page optimization, content strategy, technical SEO, link building and monthly reports. From $500/month for US clients.'
-          : 'SEO orgánico: keyword research, on-page, contenidos, SEO técnico, link building y reportes mensuales. Desde S/1,800/mes.',
+          : usd('SEO orgánico: keyword research, on-page, contenidos, SEO técnico, link building y reportes mensuales. Desde S/1,800/mes.'),
       },
       {
         name: isEn ? 'Web Design & Development' : 'Diseño y Desarrollo Web',

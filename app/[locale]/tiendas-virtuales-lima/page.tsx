@@ -6,7 +6,7 @@ interface Props { params: Promise<{ locale: string }> }
 // Money page del pilar Tiendas Virtuales. Todo el contenido de precios,
 // plazos y plataformas reusa EXACTAMENTE lo ya publicado en /precios y en el
 // FAQPage schema de esta misma página (layout.tsx) — nada inventado.
-const COPY = {
+const COPY: Record<string, any> = {
   es: {
     eyebrow: '3R Core · Tiendas Virtuales · Lima · Perú',
     h1: 'Agencia de Tiendas Virtuales en Lima, Perú',
@@ -73,6 +73,80 @@ const COPY = {
       { title: 'Pasarelas de pago para tu tienda online en Perú', path: '/blogs/pasarelas-pago-tienda-online-peru' },
       { title: 'Shopify vs WooCommerce vs Tiendanube: cuál elegir', path: '/blogs/shopify-woocommerce-tiendanube-peru-cual-elegir' },
       { title: 'Errores al crear una tienda virtual en Perú', path: '/blogs/errores-crear-tienda-virtual-peru' },
+      { title: '¿Cuánto cuesta mantener una tienda virtual?', path: '/blogs/cuanto-cuesta-mantener-tienda-virtual-peru-2026' },
+      { title: '¿Tienda virtual propia o vender en marketplace?', path: '/blogs/tienda-virtual-o-vender-en-marketplace-peru' },
+    ],
+    contact: 'Cotización gratuita para tu tienda',
+    contactCta: 'Cuéntanos qué vendes y a quién. Te recomendamos la plataforma correcta, te damos un presupuesto claro y, si quieres, un plan para traer tráfico que compra con SEO y Google Ads.',
+    service: 'una tienda virtual',
+  },
+  // es-US: mismo texto en español, mercado y moneda de EE.UU.
+  us: {
+    eyebrow: '3R Core · Tiendas Virtuales · Lima · Perú',
+    h1: 'Agencia de Tiendas Virtuales en Estados Unidos',
+    heroH2: 'Tu tienda online en Shopify, WooCommerce o BigCommerce, lista para vender',
+    sub: 'Creamos tu tienda online en Shopify, WooCommerce o BigCommerce: pagos locales (Stripe, PayPal, Shopify Payments, Yape), catálogo cargado, SEO técnico y lista para vender. Desde $650 de implementación, sin plantillas genéricas.',
+    cta: 'Cotiza tu tienda online',
+    why: 'Tienda + SEO + Google Ads bajo un mismo techo',
+    whyDesc: 'A diferencia de quienes solo entregan una plantilla vacía, en 3R Core montamos tu e-commerce completo y lo conectamos con posicionamiento SEO y campañas de Google Ads y Google Shopping, para que tu tienda no solo exista: reciba tráfico que compra y venda desde el día uno. Una tienda sin tráfico es un local abierto en una calle vacía; por eso el mismo equipo que la construye es el que después la posiciona en Google y le trae compradores con publicidad medible.',
+    pillars: 'Todo lo que dejamos listo en tu tienda',
+    pillarsList: [
+      { title: 'Plataforma a tu medida', desc: 'Elegimos entre Shopify (velocidad), WooCommerce (control total) o BigCommerce (pagos locales, accesible) según tu catálogo, integraciones y presupuesto — sin sesgo.' },
+      { title: 'Pagos estadounidenses integrados', desc: 'Stripe, PayPal, Shopify Payments, Yape, PagoEfectivo y Mercado Pago configurados y probados para que cobres sin fricción en Estados Unidos.' },
+      { title: 'SEO técnico de base', desc: 'URLs limpias, schema de producto, velocidad (Core Web Vitals), sitemap y metadatos para que Google entienda y muestre tu tienda.' },
+      { title: 'Catálogo, envíos y medición', desc: 'Carga de productos con variantes y categorías, zonas y tarifas de envío, correos automáticos de pedido y Google Analytics 4 + píxeles listos.' },
+    ],
+    platforms: '¿Shopify, WooCommerce o BigCommerce? Te lo decimos sin sesgo',
+    platformsIntro: 'No trabajamos casados con una sola plataforma: la elegimos según tu catálogo, tus integraciones y tu presupuesto. Esto es lo que pesa en la decisión:',
+    platformsList: [
+      { title: 'Shopify', desc: 'La más rápida y estable para empezar a vender ya. Hosting incluido, checkout probado y cientos de apps. Ideal si quieres velocidad de lanzamiento y un catálogo que crece. La mensualidad de la plataforma parte desde USD 39/mes.' },
+      { title: 'WooCommerce', desc: 'Control total sobre WordPress: integraciones a medida, sin mensualidad de plataforma (pagas tu hosting) y libertad completa de diseño y funcionalidades. Ideal para catálogos con lógica propia o integraciones con tu sistema.' },
+      { title: 'BigCommerce', desc: 'Fuerte en pagos locales y planes accesibles (desde ~$25/mes). Pensada para Latinoamérica: métodos de pago y envíos locales resueltos. Ideal para emprendimientos que quieren empezar simple sin sacrificar cobros estadounidenses.' },
+    ],
+    platformsMore: 'Comparamos las tres a fondo en nuestra guía',
+    platformsMoreLink: '/blogs/shopify-vs-woocommerce-peru-2026',
+    platformsMoreAnchor: 'Shopify vs WooCommerce Perú 2026',
+    pricing: '¿Cuánto cuesta crear una tienda virtual?',
+    pricingIntro: 'Precios netos de implementación en soles estadounidenses (la factura electrónica suma 18% de impuestos por estado). Aparte va la mensualidad de la plataforma y las comisiones de la pasarela de pago.',
+    pricingTiers: [
+      { name: 'Tienda básica', price: 'desde $650', platform: 'Shopify o BigCommerce', desc: 'Diseño sobre la plataforma, carga inicial de catálogo, pagos locales configurados y capacitación para administrarla.' },
+      { name: 'Tienda profesional', price: 'desde $1,100', platform: 'WooCommerce', desc: 'Control total sobre WordPress: diseño alineado a tu marca, catálogo con variantes, pagos y envíos configurados.' },
+      { name: 'Tienda avanzada', price: 'desde $1,750', platform: 'Shopify / WooCommerce', desc: 'Catálogos grandes, integraciones (facturación, inventario), automatizaciones y optimización de conversión.' },
+      { name: 'E-commerce a medida', price: 'desde $3,200', platform: 'A medida', desc: 'Desarrollo a medida con lógica propia: B2B, suscripciones, multialmacén o integraciones con tu ERP.' },
+    ],
+    pricingNote: 'Una tienda estándar con Shopify o BigCommerce suele estar lista en 2 a 4 semanas; una WooCommerce a medida o con muchas integraciones, de 5 a 8 semanas según el tamaño del catálogo y la entrega de contenido.',
+    pricingLinks: 'Detalle completo en',
+    methodology: 'Cómo trabajamos contigo',
+    methodologyList: [
+      { step: 'Paso 1', title: 'Diagnóstico y plataforma', desc: 'Entendemos tu negocio, catálogo y objetivos, y recomendamos la plataforma correcta (Shopify, WooCommerce o BigCommerce).' },
+      { step: 'Paso 2', title: 'Diseño mobile-first', desc: 'Diseñamos una tienda clara, rápida y pensada para el celular (donde compra la mayoría en Estados Unidos) y alineada a tu marca.' },
+      { step: 'Paso 3', title: 'Desarrollo e integraciones', desc: 'Montamos la tienda, cargamos el catálogo e integramos pagos locales, envíos, WhatsApp y medición.' },
+      { step: 'Paso 4', title: 'Pruebas y lanzamiento', desc: 'Probamos cada flujo de compra en móvil y escritorio, verificamos pagos reales y publicamos tu tienda.' },
+      { step: 'Paso 5', title: 'Capacitación y crecimiento', desc: 'Te capacitamos para administrarla y, si quieres, sumamos SEO y Google Ads para escalar las ventas con tráfico que compra.' },
+    ],
+    growth: 'Y cuando tu tienda está lista: tráfico que compra',
+    growthDesc: 'Construir la tienda es la mitad del trabajo. La otra mitad es que aparezca cuando tus clientes buscan lo que vendes. Por eso los tres pilares de 3R Core trabajan juntos:',
+    growthList: [
+      { title: 'Posicionamiento SEO', desc: 'Optimizamos categorías, fichas de producto y contenido para que tu tienda aparezca en Google cuando buscan lo que vendes — tráfico orgánico que no depende de pauta.', path: '/posicionamiento-seo', anchor: 'Ver servicio de SEO' },
+      { title: 'Google Ads y Google Shopping', desc: 'Campañas de búsqueda y Shopping con tus productos, presupuesto optimizado y conversiones medidas de punta a punta.', path: '/servicios/google-ads', anchor: 'Ver servicio de Google Ads' },
+    ],
+    coverage: 'Plataformas y pasarelas de pago que integramos',
+    coverageList: ['Shopify', 'WooCommerce', 'BigCommerce', 'Culqi', 'Niubiz', 'Izipay', 'Yape', 'PagoEfectivo', 'Mercado Pago', 'Google Analytics 4'],
+    faq: 'Preguntas frecuentes sobre tiendas virtuales',
+    faqList: [
+      { q: '¿Cuánto cuesta crear una tienda virtual en Estados Unidos?', a: 'La implementación profesional arranca desde $650 e incluye diseño, carga de catálogo, pagos y configuración sobre Shopify o BigCommerce. Un e-commerce completo en Shopify o WooCommerce (catálogo amplio, pasarela de pago, inventario y panel de administración) arranca desde $1,750, y con más integraciones o desarrollo a medida el rango llega hasta $7,000. Aparte está la mensualidad de la plataforma (Shopify desde USD 39/mes, BigCommerce desde $25/mes) o el hosting si es WooCommerce. El detalle completo está publicado en nuestra página de precios.' },
+      { q: '¿Shopify, WooCommerce o BigCommerce: cuál me conviene?', a: 'Como agencia Shopify, WooCommerce y BigCommerce en Estados Unidos no trabajamos casados con una sola plataforma: depende de tu caso. Shopify es la más rápida y estable para vender ya. WooCommerce da control total e integraciones a medida. BigCommerce es fuerte en pagos locales y planes accesibles. En el diagnóstico te recomendamos la correcta, sin sesgo.' },
+      { q: '¿Integran pagos en dólares como Yape, Culqi o Niubiz?', a: 'Sí. Configuramos y probamos Stripe, PayPal, Shopify Payments, Yape, PagoEfectivo y Mercado Pago según tu plataforma, para que tus clientes paguen como están acostumbrados en Estados Unidos.' },
+      { q: '¿En cuánto tiempo tengo mi tienda lista?', a: 'Una tienda estándar con Shopify o BigCommerce suele estar lista en 2 a 4 semanas. Una tienda WooCommerce a medida o con muchas integraciones puede tomar de 5 a 8 semanas, según la cantidad de productos y la entrega de contenido.' },
+      { q: '¿La tienda va a aparecer en Google?', a: 'La construimos con SEO técnico de base (URLs, schema de producto, velocidad, sitemap). Para posicionar de verdad y competir por búsquedas de compra recomendamos sumar nuestro servicio de posicionamiento SEO y/o campañas de Google Ads y Google Shopping.' },
+      { q: '¿Trabajan con negocios fuera de Lima?', a: 'Sí, trabajamos con empresas de todo el Perú de forma remota. Todo el proceso (diseño, revisiones, capacitación) se hace por videollamada y accesos compartidos.' },
+    ],
+    guides: 'Guías para decidir con datos',
+    guidesList: [
+      { title: '¿Cuánto cuesta una tienda virtual en Estados Unidos? Precios 2026', path: '/blogs/cuanto-cuesta-tienda-virtual-peru-2026' },
+      { title: 'Pasarelas de pago para tu tienda online en Estados Unidos', path: '/blogs/pasarelas-pago-tienda-online-peru' },
+      { title: 'Shopify vs WooCommerce vs BigCommerce: cuál elegir', path: '/blogs/shopify-woocommerce-tiendanube-peru-cual-elegir' },
+      { title: 'Errores al crear una tienda virtual en Estados Unidos', path: '/blogs/errores-crear-tienda-virtual-peru' },
       { title: '¿Cuánto cuesta mantener una tienda virtual?', path: '/blogs/cuanto-cuesta-mantener-tienda-virtual-peru-2026' },
       { title: '¿Tienda virtual propia o vender en marketplace?', path: '/blogs/tienda-virtual-o-vender-en-marketplace-peru' },
     ],
@@ -157,7 +231,7 @@ const COPY = {
 
 export default async function TiendasVirtualesLimaPage({ params }: Props) {
   const { locale } = await params
-  const t = (COPY as any)[locale === 'en' ? 'en' : 'es']
+  const t = (COPY as any)[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -223,7 +297,7 @@ export default async function TiendasVirtualesLimaPage({ params }: Props) {
           {t.pricingLinks}{' '}
           <Link href={`/${locale}/precios`} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Pricing' : 'Precios'}</Link>
           {' · '}
-          <Link href={`/${locale}/blogs/cuanto-cuesta-tienda-virtual-peru-2026`} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Online store cost guide' : 'Guía de precios de tiendas virtuales'}</Link>
+          <Link href={locale === 'us' ? `/us/precios` : `/${locale}/blogs/cuanto-cuesta-tienda-virtual-peru-2026`} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Online store cost guide' : locale === 'us' ? 'Precios de tiendas online' : 'Guía de precios de tiendas virtuales'}</Link>
         </p>
       </section>
 

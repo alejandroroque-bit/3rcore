@@ -12,6 +12,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Branding Agency in Lima — Brand Identity Design | 3R Core',
     descriptionEs: 'Diseño de identidad visual, logotipo, manual de marca y aplicaciones corporativas. Agencia de branding en Lima, Perú con proyectos integrales desde S/500 y entrega en 7 días.',
     descriptionEn: 'Visual identity design, logo, brand manual and corporate applications. Branding services for US clients starting at $500 USD, 7-day delivery.',
+    titleUs: 'Agencia de Branding e Identidad de Marca para EE.UU. | 3R Core',
+    descriptionUs: 'Diseño de identidad visual, logotipo, manual de marca y aplicaciones corporativas para negocios en Estados Unidos. Proyectos integrales desde $500, con propuesta tras una sesión inicial de descubrimiento.',
     ogImage: {
       url: 'https://3rcore.com/og/branding.jpg',
       width: 1200,

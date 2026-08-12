@@ -13,6 +13,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Online Stores in Lima: Shopify, WooCommerce & Tiendanube | 3R Core',
     descriptionEs: 'Creamos tu tienda online en Shopify, WooCommerce o Tiendanube con pagos peruanos (Yape, Culqi, Izipay), catálogo cargado y SEO técnico. Desde S/1,500.',
     descriptionEn: 'We build your online store on Shopify, WooCommerce or Tiendanube with local payments, loaded catalog and technical SEO. From $420.',
+    titleUs: 'Creación de Tiendas Online Shopify y WooCommerce para EE.UU. | 3R Core',
+    descriptionUs: 'Creamos tu tienda online en Shopify o WooCommerce con pasarela de pago, catálogo cargado, cálculo de impuestos y SEO técnico. Tienda bilingüe lista para vender en Estados Unidos. Desde $1,750.',
     ogImage: {
       url: 'https://3rcore.com/og/default.jpg',
       width: 1200,
@@ -54,6 +56,8 @@ export default async function TiendasVirtualesLimaLayout({ children, params }: {
       question: isEn ? 'How much does it cost to build an online store in Peru?' : '¿Cuánto cuesta crear una tienda virtual en Perú?',
       answer: isEn
         ? 'Professional implementation starts from $420 and includes design, catalog upload, payments and setup. A complete e-commerce on Shopify or WooCommerce (large catalog, payment gateway, inventory and admin panel) starts from $1,750, and larger catalogs, integrations or custom development range up to $7,000. The platform monthly cost is separate (Shopify from $39/mo, Tiendanube from ~$24/mo) or hosting for WooCommerce.'
+        : locale === 'us'
+        ? 'La implementación profesional arranca desde $650 e incluye diseño, carga de catálogo, pagos y configuración sobre Shopify. Un e-commerce completo en Shopify o WooCommerce (catálogo amplio, pasarela de pago, inventario y panel de administración) arranca desde $1,750, y con más integraciones o desarrollo a medida el rango llega hasta $7,000. Aparte está la mensualidad de la plataforma (Shopify desde USD 39/mes) o el hosting si es WooCommerce. El detalle completo está publicado en nuestra página de precios.'
         : 'La implementación profesional arranca desde S/1,500 e incluye diseño, carga de catálogo, pagos y configuración sobre Shopify o Tiendanube. Un e-commerce completo en Shopify o WooCommerce (catálogo amplio, pasarela de pago, inventario y panel de administración) arranca desde S/6,500, y con más integraciones o desarrollo a medida el rango llega hasta S/25,000. Aparte está la mensualidad de la plataforma (Shopify desde USD 39/mes, Tiendanube desde S/89/mes) o el hosting si es WooCommerce. El detalle completo está publicado en nuestra página de precios.',
     },
     {

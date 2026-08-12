@@ -133,5 +133,140 @@
     "p5": "El canal de contacto también cambia. El público hispano tiende a escribir por WhatsApp antes que a completar un formulario largo, y ofrecer esa opción de forma visible suele aumentar los contactos de inmediato. Lo que no se puede omitir es medirlo: un canal que produce clientes pero no queda registrado hace que toda la inversión parezca infructuosa.",
     "p6": "Si tu negocio atiende a clientes hispanos en Estados Unidos y toda tu publicidad está en inglés, ahí hay una oportunidad que casi nadie de tu competencia está trabajando bien. Conversemos sobre tu mercado y armamos la propuesta con precios en dólares.",
     "relatedTitle": "Servicios relacionados"
+  },
+  "webFAQ": {
+    "faqs": {
+      "q7": {
+        "answer": "En 3R Core el diseño y desarrollo web arranca en $850 para landing pages y sitios corporativos de hasta 6 secciones, incluyendo diseño en Figma, desarrollo responsive, SEO técnico básico, formulario de contacto y conexión a Google Analytics. Sitios corporativos completos van de $1,200 a $2,400 y los e-commerce desde $1,750. En la primera reunión te damos una propuesta económica precisa según tu alcance."
+      },
+      "q8": {
+        "answer": "Una tienda online profesional con catálogo hasta 100 productos, pasarela de pago integrada (Stripe, PayPal o Shopify Payments), gestión de inventario y panel de administración arranca desde $1,750 en Shopify o WooCommerce. Si necesitas integraciones con tu ERP, cálculo de impuestos por estado o múltiples métodos de envío, el rango sube según la complejidad. Incluye capacitación para que administres la tienda."
+      },
+      "q10": {
+        "answer": "El primer año incluimos dominio .com, certificado SSL y hosting profesional sin costo adicional dentro del paquete. A partir del año 2 el hosting se cobra aparte (entre $10 y $35 al mes según tráfico y plataforma) o puedes migrarlo a tu propio proveedor sin penalización. Todo queda a tu nombre desde el día uno."
+      }
+    }
+  },
+  "HomeFAQ": {
+    "faqs": {
+      "q3": {
+        "answer": "Depende del servicio y del alcance. Como referencia: nuestro plan SEO arranca en $500 al mes; las campañas de Google Ads desde $800 más el presupuesto de pauta; el manejo de redes sociales desde $800 al mes; páginas web desde $850. En la primera reunión te damos una propuesta económica a la medida de tu negocio."
+      },
+      "q9": {
+        "answer": "Como referencia para 2026: negocios que empiezan $750–$1,400 al mes (cubre redes + Ads básico), pequeñas y medianas empresas $1,500–$3,600 (estrategia integral con redes, Ads, SEO y mejoras web), empresas medianas $3,600–$9,000 (marketing completo con producción de contenido y CRO). Lo importante no es el presupuesto sino que el ROI sea positivo desde el mes 3."
+      }
+    }
+  },
+  "BrandingFAQ": {
+    "faqs": {
+      "q3": {
+        "answer": "Los proyectos de branding en 3R Core arrancan desde $500 para negocios que empiezan y pueden escalar según el alcance corporativo. Te entregamos cotización formal con detalle de entregables después de una sesión inicial de descubrimiento."
+      }
+    }
+  },
+  "WebDevFAQ": {
+    "faqs": {
+      "q1": {
+        "answer": "Una landing page profesional arranca en $850. Una web corporativa con 5–8 secciones desde $1,200. Un e-commerce con Shopify o WooCommerce desde $1,750 según catálogo, pasarelas de pago e integraciones. Cada propuesta es a la medida y la cotizamos tras una reunión inicial."
+      }
+    }
+  },
+  "WebDevSEO": {
+    "p2": "Hacemos páginas web corporativas para empresas que necesitan proyectar autoridad, landing pages especializadas para campañas de Google Ads, y tiendas online (e-commerce) en Shopify y WooCommerce listas para procesar pagos en dólares, cobrar impuestos por estado y vender en varios países."
+  },
+  "GoogleAdsFAQ": {
+    "faqs": {
+      "q1": {
+        "answer": "Recomendamos un presupuesto mínimo de pauta de $400 al mes para tener data accionable, sumado al fee de gestión que arranca en $800 mensuales. En sectores muy competidos (legal, inmobiliario, salud) sugerimos arrancar con $1,500 o más de pauta para no quedarte fuera de las subastas."
+      },
+      "q10": {
+        "answer": "Agencia: cuando inviertes menos de $4,000 al mes, cuando no tienes especialista certificado en el equipo, o cuando manejas varias campañas a la vez (Search + Performance Max + Shopping + YouTube). Equipo propio: cuando inviertes más de $8,000 al mes y la operación amerita un Performance Manager dedicado a tiempo completo. La mayoría de negocios pequeños y medianos están en el primer caso."
+      }
+    }
+  },
+  "GoogleAdsSEO": {
+    "p2": "Trabajamos con cuentas de todos los tamaños: desde negocios que empiezan con $400 de presupuesto mensual hasta empresas medianas con inversiones de cinco cifras. Lo que no negociamos es el rigor: investigación de palabras clave, redacción de anuncios, segmentación geográfica, exclusiones, landing pages alineadas y medición de conversiones bien instaladas."
+  },
+  "SocialMediaFAQ": {
+    "faqs": {
+      "q1": {
+        "answer": "Los planes de manejo de redes sociales en 3R Core arrancan desde $800 mensuales (TikTok + Instagram + Facebook + LinkedIn con 8–12 piezas) y escalan a partir de ahí según frecuencia, plataformas y producción audiovisual. Te entregamos propuesta detallada en la primera reunión."
+      },
+      "q7": {
+        "answer": "Un freelance funciona si solo necesitas publicar contenido en una plataforma y ya tienes el material producido. La agencia conviene si necesitas estrategia, diseño, edición de video, copy, community management y reportes en una sola operación. Para dos o más plataformas con video, la agencia sale mejor casi siempre."
+      }
+    }
+  },
+  "SEOFAQ": {
+    "faqs": {
+      "q1": {
+        "answer": "La inversión mensual del servicio de posicionamiento SEO en 3R Core es de $500. Este monto incluye auditoría, planificación, optimización, escalamiento y reportes mensuales. Es una estrategia continua enfocada en resultados sostenibles, sin contratos forzosos y con resultados progresivos."
+      }
+    }
+  },
+  "SEOSEOBlock": {
+    "p4": "Hemos trabajado estrategias SEO para rubros muy distintos, desde joyería hasta entretenimiento. La inversión mensual es de $500 e incluye auditoría, planificación, optimización, escalamiento y reportes mensuales, sin contratos forzosos. Si buscas construir presencia digital sólida y tráfico constante en Google, conversemos."
+  },
+  "MetaAdsFAQ": {
+    "faqs": {
+      "q1": {
+        "answer": "Recomendamos un presupuesto de pauta mínimo de $400 al mes para tener datos accionables, más el fee de gestión desde $800. En rubros muy competidos conviene arrancar con $800 o más de pauta para salir rápido de la fase de aprendizaje del algoritmo."
+      }
+    }
+  },
+  "TikTokAdsFAQ": {
+    "faqs": {
+      "q2": {
+        "answer": "Sugerimos un presupuesto de pauta desde $400 al mes más el fee de gestión desde $800. Al ser un canal aún poco saturado, los costos por mil impresiones (CPM) suelen ser competitivos frente a Meta."
+      }
+    }
+  },
+  "PerformanceLanding": {
+    "hero": {
+      "title": "Performance marketing que se mide en dólares, no en impresiones"
+    }
+  },
+  "PerformanceFAQ": {
+    "faqs": {
+      "q4": {
+        "answer": "Depende de tu margen y ticket, pero solemos empezar desde $1,000 de pauta mensual para tener suficiente data. El fee de gestión arranca en $900 según la cantidad de canales y la complejidad."
+      }
+    }
+  },
+  "MarketingInmobiliariasFAQ": {
+    "faqs": {
+      "q4": {
+        "answer": "Depende del ticket y la velocidad de venta esperada, pero para proyectos activos solemos recomendar desde $1,000 de pauta mensual por proyecto para mantener un flujo constante de leads calificados."
+      }
+    }
+  },
+  "MarketingEcommerceFAQ": {
+    "faqs": {
+      "q5": {
+        "answer": "Depende de tu margen y catálogo, pero para escalar de forma sostenida solemos empezar desde $800 de pauta mensual, ajustando según el ROAS objetivo de tu negocio."
+      }
+    }
+  },
+  "UgcLanding": {
+    "intro": {
+      "p2": "La ventaja no es estética, es económica. Un spot tradicional cuesta miles de dólares y produce una sola pieza; con el mismo presupuesto un lote de UGC produce entre 8 y 20 variantes. Y en plataformas que optimizan por creatividad —Meta y TikTok— tener volumen de variantes es exactamente lo que baja el costo por resultado."
+    }
+  },
+  "InfluencerFAQ": {
+    "faqs": {
+      "q4": {
+        "answer": "El rango es amplio porque la variable no es el seguidor sino el entregable. Un creador mediano con audiencia hispana real en Estados Unidos puede cerrar una historia y un reel entre $300 y $2,500 según nicho y exclusividad. Lo que conviene presupuestar no es una acción suelta sino una campaña de varios creadores y varias publicaciones, porque una mención aislada rara vez mueve la aguja."
+      }
+    }
+  },
+  "FirstLandingSection": {
+    "pricing": {
+      "amount": "$800"
+    }
+  },
+  "FiveLandingSection": {
+    "pricing": {
+      "amount": "$800"
+    }
   }
 }

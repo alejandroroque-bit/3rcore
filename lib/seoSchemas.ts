@@ -222,10 +222,16 @@ export interface PricingTier {
   path: string
   descriptionEs: string
   descriptionEn: string
+  /** es-US: español con importes en dólares. */
+  descriptionUs?: string
 }
 
 export function buildOfferCatalogSchema(locale: string, tiers: PricingTier[]) {
   const isEn = locale === 'en'
+  // 'us' es español pero vende en dólares: precio y moneda van con 'en',
+  // el texto con 'es' salvo que el tier traiga descriptionUs.
+  const isUs = locale === 'us'
+  const usd = isEn || isUs
   return {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
@@ -235,15 +241,15 @@ export function buildOfferCatalogSchema(locale: string, tiers: PricingTier[]) {
     "itemListElement": tiers.map((t) => ({
       "@type": "Offer",
       "name": t.name,
-      "price": isEn ? t.priceEn : t.priceEs,
-      "priceCurrency": isEn ? 'USD' : 'PEN',
+      "price": usd ? t.priceEn : t.priceEs,
+      "priceCurrency": usd ? 'USD' : 'PEN',
       "availability": "https://schema.org/InStock",
       "url": `${BASE_URL}/${locale}${t.path}`,
       "itemOffered": {
         "@type": "Service",
         "name": t.name,
         "serviceType": t.serviceType,
-        "description": isEn ? t.descriptionEn : t.descriptionEs,
+        "description": isEn ? t.descriptionEn : isUs ? (t.descriptionUs ?? t.descriptionEs) : t.descriptionEs,
         "provider": { "@id": `${BASE_URL}/#organization` },
         "url": `${BASE_URL}/${locale}${t.path}`,
       },

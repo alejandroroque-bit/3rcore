@@ -60,8 +60,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // únicamente como alternate. Ahora los tres locales entran como <loc>.
   const LOCALES = ['es', 'en', 'us'] as const
 
+  // Rutas que no deben listarse fuera de /es:
+  //  - /blogs en /us sirve los mismos posts en español y canonicaliza a /es.
+  //  - /reclamaciones es el libro de reclamaciones exigido por Indecopi:
+  //    obligación peruana, sin sentido para un comprador de EE.UU.
+  const SKIP: Record<string, string[]> = {
+    us: ['/blogs', '/reclamaciones'],
+    en: ['/reclamaciones'],
+  }
+
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
-    LOCALES.map((loc) => ({
+    LOCALES.filter((loc) => !(SKIP[loc] ?? []).includes(page.path)).map((loc) => ({
       url: `${baseUrl}/${loc}${page.path}`,
       lastModified: new Date(),
       changeFrequency: page.changeFrequency,

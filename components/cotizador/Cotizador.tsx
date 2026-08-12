@@ -26,14 +26,17 @@ type Service = {
   scopesEn: Scope[]
   note?: string
   noteEn?: string
+  /** es-US: español con la tarifa en dólares. */
+  noteUs?: string
 }
 
-// Fuente de precios: /es/precios (valores "desde", en soles netos, sin IGV).
+// Fuente de precios: /precios. `scopes` en soles (Perú) y `scopesEn` en
+// dólares (EE.UU.). Antes ambos llevaban el mismo número en soles.
 const SERVICES: Service[] = [
   {
     key: 'tienda', label: 'Tienda virtual / e-commerce', labelEn: 'Online store / e-commerce', kind: 'setup',
     scopes: [{ id: 'ecom', label: 'Tienda online (Shopify / WooCommerce / Tiendanube)', from: 6500 }],
-    scopesEn: [{ id: 'ecom', label: 'Online store (Shopify / WooCommerce / Tiendanube)', from: 6500 }],
+    scopesEn: [{ id: 'ecom', label: 'Online store (Shopify / WooCommerce / Tiendanube)', from: 1750 }],
     note: 'Con pasarela de pago local, catálogo e inventario.', noteEn: 'With local payment gateway, catalog and inventory.',
   },
   {
@@ -43,21 +46,22 @@ const SERVICES: Service[] = [
       { id: 'corp', label: 'Web corporativa (5–8 secciones)', from: 4500 },
     ],
     scopesEn: [
-      { id: 'landing', label: 'Professional landing page', from: 1800 },
-      { id: 'corp', label: 'Corporate website (5–8 sections)', from: 4500 },
+      { id: 'landing', label: 'Professional landing page', from: 850 },
+      { id: 'corp', label: 'Corporate website (5–8 sections)', from: 1200 },
     ],
   },
   {
     key: 'seo', label: 'Posicionamiento SEO', labelEn: 'SEO positioning', kind: 'monthly',
     scopes: [{ id: 'seo', label: 'SEO mensual (auditoría, on-page, contenido y reporte)', from: 1800 }],
-    scopesEn: [{ id: 'seo', label: 'Monthly SEO (audit, on-page, content and report)', from: 1800 }],
+    scopesEn: [{ id: 'seo', label: 'Monthly SEO (audit, on-page, content and report)', from: 500 }],
   },
   {
     key: 'ads', label: 'Google Ads / SEM', labelEn: 'Google Ads / SEM', kind: 'monthly',
     scopes: [{ id: 'ads', label: 'Gestión de campañas Google Ads', from: 1800 }],
-    scopesEn: [{ id: 'ads', label: 'Google Ads campaign management', from: 1800 }],
+    scopesEn: [{ id: 'ads', label: 'Google Ads campaign management', from: 800 }],
     note: '+ presupuesto de pauta aparte (mínimo referencial S/1,500/mes a Google).',
-    noteEn: '+ separate ad budget (reference minimum S/1,500/mo paid to Google).',
+    noteUs: '+ presupuesto de pauta aparte (mínimo referencial $400/mes a Google).',
+    noteEn: '+ separate ad budget (reference minimum $400/mo paid to Google).',
   },
   {
     key: 'branding', label: 'Branding e identidad', labelEn: 'Branding & identity', kind: 'setup',
@@ -67,7 +71,7 @@ const SERVICES: Service[] = [
   {
     key: 'social', label: 'Redes sociales', labelEn: 'Social media', kind: 'monthly',
     scopes: [{ id: 'social', label: 'Gestión de redes (8–12 piezas/mes)', from: 1500 }],
-    scopesEn: [{ id: 'social', label: 'Social management (8–12 pieces/mo)', from: 1500 }],
+    scopesEn: [{ id: 'social', label: 'Social management (8–12 pieces/mo)', from: 800 }],
   },
 ]
 
@@ -103,15 +107,21 @@ const COPY = {
     name: 'Your name',
     phone: 'Your WhatsApp',
     cta: 'Get a quote on WhatsApp',
-    disclaimer: '100% reference estimate, not the final quote. Net prices in soles, IGV not included. The exact price is confirmed on WhatsApp.',
+    disclaimer: '100% reference estimate, not the final quote. Net prices in U.S. dollars. The exact price is confirmed on WhatsApp.',
     needName: 'Enter your name and WhatsApp so we can send your quote.',
   },
 }
 
-const fmt = (n: number) => 'S/ ' + n.toLocaleString('es-PE')
+// Antes formateaba SIEMPRE en soles: el cotizador de /en mostraba "S/ 1,800"
+// a un visitante estadounidense. La moneda va con el mercado, no con el idioma.
+const fmt = (n: number, usd: boolean) =>
+  usd ? '$ ' + n.toLocaleString('en-US') : 'S/ ' + n.toLocaleString('es-PE')
 
 export default function Cotizador({ locale }: { locale: string }) {
   const isEn = locale === 'en'
+  // es-US: textos en español, tarifas y moneda de EE.UU.
+  const isUs = locale === 'us'
+  const isUsd = isEn || isUs
   const t = COPY[isEn ? 'en' : 'es']
   // selección: { [serviceKey]: scopeId }
   const [selected, setSelected] = useState<Record<string, string>>({})
@@ -120,7 +130,7 @@ export default function Cotizador({ locale }: { locale: string }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const scopesOf = (s: Service) => (isEn ? s.scopesEn : s.scopes)
+  const scopesOf = (s: Service) => (isUsd ? s.scopesEn : s.scopes)
 
   const toggle = (s: Service, scopeId: string) => {
     setSelected((prev) => {
@@ -222,15 +232,15 @@ export default function Cotizador({ locale }: { locale: string }) {
                             <span className="flex items-center justify-between gap-3">
                               <span>{sc.label}</span>
                               <span className="text-[11px] whitespace-nowrap opacity-80">
-                                {t.from} {fmt(sc.from)}{s.kind === 'monthly' ? t.perMonth : ''}
+                                {t.from} {fmt(sc.from, isUsd)}{s.kind === 'monthly' ? t.perMonth : ''}
                               </span>
                             </span>
                           </button>
                         )
                       })}
                     </div>
-                    {(isEn ? s.noteEn : s.note) && (
-                      <p className="text-white/40 text-xs mt-3">{isEn ? s.noteEn : s.note}</p>
+                    {(isEn ? s.noteEn : isUs ? (s.noteUs ?? s.note) : s.note) && (
+                      <p className="text-white/40 text-xs mt-3">{isEn ? s.noteEn : isUs ? (s.noteUs ?? s.note) : s.note}</p>
                     )}
                   </div>
                 )
@@ -249,13 +259,13 @@ export default function Cotizador({ locale }: { locale: string }) {
                 {setupTotal > 0 && (
                   <div className="flex items-end justify-between border-b border-white/10 pb-3">
                     <span className="text-white/60 text-sm">{t.setupLabel}</span>
-                    <span className="text-2xl font-bold">{t.from} {fmt(setupTotal)}</span>
+                    <span className="text-2xl font-bold">{t.from} {fmt(setupTotal, isUsd)}</span>
                   </div>
                 )}
                 {monthlyTotal > 0 && (
                   <div className="flex items-end justify-between border-b border-white/10 pb-3">
                     <span className="text-white/60 text-sm">{t.monthlyLabel}</span>
-                    <span className="text-2xl font-bold">{t.from} {fmt(monthlyTotal)}<span className="text-sm font-normal text-white/50">{t.perMonth}</span></span>
+                    <span className="text-2xl font-bold">{t.from} {fmt(monthlyTotal, isUsd)}<span className="text-sm font-normal text-white/50">{t.perMonth}</span></span>
                   </div>
                 )}
                 <ul className="text-white/55 text-xs space-y-1 pt-1">
