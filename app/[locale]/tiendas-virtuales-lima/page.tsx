@@ -217,12 +217,12 @@ const COPY: Record<string, any> = {
     ],
     guides: 'Guides to decide with data',
     guidesList: [
-      { title: 'How much does an online store cost in Peru? 2026 prices', path: '/blogs/cuanto-cuesta-tienda-virtual-peru-2026' },
-      { title: 'Payment gateways for your online store in Peru', path: '/blogs/pasarelas-pago-tienda-online-peru' },
-      { title: 'Shopify vs WooCommerce vs Tiendanube: which one', path: '/blogs/shopify-woocommerce-tiendanube-peru-cual-elegir' },
-      { title: 'Mistakes when building an online store in Peru', path: '/blogs/errores-crear-tienda-virtual-peru' },
-      { title: 'How much does it cost to maintain an online store?', path: '/blogs/cuanto-cuesta-mantener-tienda-virtual-peru-2026' },
-      { title: 'Your own store or selling on a marketplace?', path: '/blogs/tienda-virtual-o-vender-en-marketplace-peru' },
+      { title: 'How much should a small business spend on marketing?', path: '/blogs/marketing-budget-for-small-business' },
+      { title: '12 questions to ask a marketing agency before you sign', path: '/blogs/questions-to-ask-a-marketing-agency' },
+      { title: 'A creative testing framework for paid social', path: '/blogs/creative-testing-framework-paid-social' },
+      { title: 'How much does UGC content cost in 2026?', path: '/blogs/how-much-does-ugc-content-cost' },
+      { title: 'Spanish SEO for U.S. businesses', path: '/blogs/spanish-seo-for-us-businesses' },
+      { title: 'Nearshore vs offshore marketing teams', path: '/blogs/nearshore-vs-offshore-marketing-team' },
     ],
     contact: 'Free quote for your store',
     contactCta: 'Tell us what you sell and to whom. We recommend the right platform, give you a clear budget and, if you want, a plan to bring buying traffic with SEO and Google Ads.',
@@ -298,9 +298,14 @@ export default async function TiendasVirtualesLimaPage({ params }: Props) {
           {t.pricingLinks}{' '}
           <Link href="/precios" className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Pricing' : 'Precios'}</Link>
           {' · '}
-          <Link href={locale === "us"
-              ? "/precios"
-              : { pathname: "/blogs/[slug]", params: { slug: "cuanto-cuesta-tienda-virtual-peru-2026" } }} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Online store cost guide' : locale === 'us' ? 'Precios de tiendas online' : 'Guía de precios de tiendas virtuales'}</Link>
+          <Link
+            href={locale === "es"
+              ? { pathname: "/blogs/[slug]", params: { slug: "cuanto-cuesta-tienda-virtual-peru-2026" } }
+              : locale === "en"
+                ? { pathname: "/blogs/[slug]", params: { slug: "marketing-budget-for-small-business" } }
+                : "/cotizar"}
+            className="text-white underline underline-offset-4 hover:text-white/80 transition"
+          >{locale === 'en' ? 'How to size your budget' : locale === 'us' ? 'Calcula tu presupuesto' : 'Guía de precios de tiendas virtuales'}</Link>
         </p>
       </section>
 
