@@ -1,5 +1,6 @@
 "use client"
 import { useTranslations } from "next-intl";
+import { useLocale } from 'next-intl';
 import { useRef, useEffect } from "react";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -7,6 +8,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WebApplications() {
+  const locale = useLocale();
+  const imgAlt = locale === "en" ? "Brand application mockups for web design and development - 3R Core" : "Mockup de aplicaciones de marca para diseño y desarrollo web - 3R Core Lima";
   const t = useTranslations('WebHero');
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -112,7 +115,7 @@ export default function WebApplications() {
         >
           <img
             src="/images/web/mono.webp"
-            alt="Mockup de aplicaciones de marca para diseño y desarrollo web - 3R Core Lima"
+            alt={imgAlt}
             className="w-full h-auto object-contain max-h-[300px] md:max-h-none"
           />
         </div>

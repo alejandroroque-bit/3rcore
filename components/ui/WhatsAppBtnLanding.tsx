@@ -26,7 +26,7 @@ const WhatsAppBtnLanding = () => {
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [formData, setFormData] = useState({
     nombre: '',
-    codigoPais: '+51',
+    codigoPais: locale === 'es' ? '+51' : '+1',
     numero: '',
     paginaWeb: '',
     correo: '',
@@ -39,7 +39,8 @@ const WhatsAppBtnLanding = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const phoneNumber = WA_LANDING;
 
-  const codigosPais = [
+  const paisEn: Record<string, string> = { us: 'United States', br: 'Brazil', pe: 'Peru' };
+  const codigosPaisBase = [
     { codigo: '+1', pais: 'Estados Unidos', iso: 'us' },
     { codigo: '+54', pais: 'Argentina', iso: 'ar' },
     { codigo: '+591', pais: 'Bolivia', iso: 'bo' },
@@ -52,8 +53,11 @@ const WhatsAppBtnLanding = () => {
     { codigo: '+598', pais: 'Uruguay', iso: 'uy' },
     { codigo: '+58', pais: 'Venezuela', iso: 've' },
   ];
+  const codigosPais = codigosPaisBase.map((c) =>
+    locale === 'en' ? { ...c, pais: paisEn[c.iso] ?? c.pais } : c
+  );
 
-  const paisSeleccionado = codigosPais.find(p => p.codigo === formData.codigoPais) || codigosPais[8];
+  const paisSeleccionado = codigosPais.find(p => p.codigo === formData.codigoPais) || codigosPais[0];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -205,7 +209,7 @@ const WhatsAppBtnLanding = () => {
       
       setFormData({
         nombre: '',
-        codigoPais: '+51',
+        codigoPais: locale === 'es' ? '+51' : '+1',
         numero: '',
         paginaWeb: '',
         correo: '',

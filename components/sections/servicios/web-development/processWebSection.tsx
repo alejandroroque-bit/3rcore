@@ -1,5 +1,6 @@
 'use client';
 import { playfair as trirong } from "@/lib/fonts"
+import { useLocale } from 'next-intl';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -9,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const ProcessWebSection = () => {
+  const locale = useLocale();
+  const imgAlt = locale === "en" ? "Step-by-step professional web design and development process - 3R Core" : "Proceso de diseño y desarrollo web profesional paso a paso - 3R Core Lima";
 
   const t = useTranslations('WebHero');
   
@@ -123,7 +126,7 @@ const ProcessWebSection = () => {
         <img
           ref={imageRef}
           src="/images/web/fondoWeb.webp"
-          alt="Proceso de diseño y desarrollo web profesional paso a paso - 3R Core Lima"
+          alt={imgAlt}
           className="w-full h-full object-cover"
         />
       </div>

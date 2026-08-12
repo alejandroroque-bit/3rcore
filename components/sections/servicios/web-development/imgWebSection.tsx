@@ -1,5 +1,6 @@
 'use client';
 import { playfair as trirong } from "@/lib/fonts"
+import { useLocale } from 'next-intl';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -9,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const ImgWebSection = () => {
+  const locale = useLocale();
+  const imgAlt = locale === "en" ? "Professional web design for U.S. businesses - 3R Core agency" : "Diseño web profesional para empresas en Lima, Perú - agencia 3R Core";
 
   const t = useTranslations('WebHero');
   
@@ -52,7 +55,7 @@ const ImgWebSection = () => {
         <img
           ref={imageRef}
           src="/images/web/fondoWeb2.webp"
-          alt="Diseño web profesional para empresas en Lima, Perú - agencia 3R Core"
+          alt={imgAlt}
           className="w-full h-full "
         />
       </div>
