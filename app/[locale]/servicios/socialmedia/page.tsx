@@ -1,5 +1,6 @@
 'use client';
 import ContactForm from "@/components/layout/ContactForm";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import ClientSection from "@/components/layout/ClientSection";
 import MediaApplications from "@/components/sections/servicios/socialmedia/aplicationMediaSection";
 import HeroSocialMedia from "@/components/sections/servicios/socialmedia/heroSocialMedia";
@@ -57,9 +58,9 @@ export default function socialmedia(){
             { href: "/posicionamiento-seo", label: "SEO" },
           ]}
         />
-        <div id="contacto">
+        <ContactAnchor>
           <ContactForm/>
-        </div>
+        </ContactAnchor>
         <ScrollContactBtn />
       </main>
 

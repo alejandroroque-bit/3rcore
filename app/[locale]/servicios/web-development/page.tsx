@@ -1,5 +1,6 @@
 'use client';
 import ContactForm from "@/components/layout/ContactForm";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import ClientSection from "@/components/layout/ClientSection";
 import HeroWeb from "@/components/sections/servicios/web-development/heroWeb";
 import ProcessWebSection from "@/components/sections/servicios/web-development/processWebSection";
@@ -64,9 +65,9 @@ export default function WebDeveploment(){
             { href: "/servicios/socialmedia", label: "Redes Sociales" },
           ]}
         />
-        <div id="contacto">
+        <ContactAnchor>
           <ContactForm/>
-        </div>
+        </ContactAnchor>
         <ScrollContactBtn />
       </main>
     </>

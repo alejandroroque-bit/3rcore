@@ -258,7 +258,69 @@ export const SERVICE_GUIDES: Record<ServiceKey, { slug: string; title: string }[
 }
 
 // Guías del mismo servicio, excluyendo el post actual (para "Sigue leyendo").
-export function guidesFor(slug: string, max = 2): { slug: string; title: string }[] {
+
+/**
+ * Guías equivalentes en inglés. Sin esto, un post de /en enlazaba a artículos
+ * en español que devuelven 307 hacia /es: el CTA sacaba al lector del idioma
+ * justo en el punto donde más atención tiene.
+ */
+export const SERVICE_GUIDES_EN: Record<ServiceKey, { slug: string; title: string }[]> = {
+  tiendas: [
+    { slug: 'marketing-budget-for-small-business', title: 'How much should a small business spend on marketing?' },
+    { slug: 'questions-to-ask-a-marketing-agency', title: '12 questions to ask a marketing agency before you sign' },
+  ],
+  seo: [
+    { slug: 'spanish-seo-for-us-businesses', title: 'Spanish SEO for U.S. businesses: the traffic nobody is bidding on' },
+    { slug: 'questions-to-ask-a-marketing-agency', title: '12 questions to ask a marketing agency before you sign' },
+  ],
+  web: [
+    { slug: 'questions-to-ask-a-marketing-agency', title: '12 questions to ask a marketing agency before you sign' },
+    { slug: 'nearshore-vs-offshore-marketing-team', title: 'Nearshore vs offshore marketing teams: what actually changes' },
+  ],
+  branding: [
+    { slug: 'nearshore-vs-offshore-marketing-team', title: 'Nearshore vs offshore marketing teams: what actually changes' },
+    { slug: 'marketing-budget-for-small-business', title: 'How much should a small business spend on marketing?' },
+  ],
+  social: [
+    { slug: 'creative-testing-framework-paid-social', title: 'A creative testing framework for paid social' },
+    { slug: 'how-much-does-ugc-content-cost', title: 'How much does UGC content cost in 2026?' },
+  ],
+  'meta-ads': [
+    { slug: 'creative-testing-framework-paid-social', title: 'A creative testing framework for paid social' },
+    { slug: 'how-much-does-ugc-content-cost', title: 'How much does UGC content cost in 2026?' },
+  ],
+  'tiktok-ads': [
+    { slug: 'how-much-does-ugc-content-cost', title: 'How much does UGC content cost in 2026?' },
+    { slug: 'ugc-usage-rights-explained', title: 'UGC usage rights explained: what you are actually buying' },
+  ],
+  'google-ads': [
+    { slug: 'marketing-budget-for-small-business', title: 'How much should a small business spend on marketing?' },
+    { slug: 'spanish-seo-for-us-businesses', title: 'Spanish SEO for U.S. businesses' },
+  ],
+  performance: [
+    { slug: 'creative-testing-framework-paid-social', title: 'A creative testing framework for paid social' },
+    { slug: 'marketing-budget-for-small-business', title: 'How much should a small business spend on marketing?' },
+  ],
+  email: [
+    { slug: 'marketing-budget-for-small-business', title: 'How much should a small business spend on marketing?' },
+    { slug: 'questions-to-ask-a-marketing-agency', title: '12 questions to ask a marketing agency before you sign' },
+  ],
+  clinicas: [
+    { slug: 'why-translated-spanish-ads-underperform', title: 'Why translated Spanish ads underperform in the U.S.' },
+    { slug: 'marketing-budget-for-small-business', title: 'How much should a small business spend on marketing?' },
+  ],
+  inmobiliarias: [
+    { slug: 'why-translated-spanish-ads-underperform', title: 'Why translated Spanish ads underperform in the U.S.' },
+    { slug: 'questions-to-ask-a-marketing-agency', title: '12 questions to ask a marketing agency before you sign' },
+  ],
+  ecommerce: [
+    { slug: 'creative-testing-framework-paid-social', title: 'A creative testing framework for paid social' },
+    { slug: 'how-much-does-ugc-content-cost', title: 'How much does UGC content cost in 2026?' },
+  ],
+}
+
+export function guidesFor(slug: string, max = 2, locale = 'es'): { slug: string; title: string }[] {
   const key = serviceForSlug(slug)
-  return (SERVICE_GUIDES[key] || []).filter((g) => g.slug !== slug).slice(0, max)
+  const table = locale === 'en' ? SERVICE_GUIDES_EN : SERVICE_GUIDES
+  return (table[key] || []).filter((g) => g.slug !== slug).slice(0, max)
 }

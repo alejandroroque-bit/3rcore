@@ -1,5 +1,6 @@
 'use client';
 import ContactForm from "@/components/layout/ContactForm";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import ClientSection from "@/components/layout/ClientSection";
 import ReviewsSection from "@/components/layout/ReviewsSection";
 import ServiceLanding from "@/components/sections/servicios/generic/ServiceLanding";
@@ -42,9 +43,9 @@ export default function NearshoreMarketingAgency() {
         />
         <ReviewsSection/>
         <ClientSection />
-        <div id="contacto">
+        <ContactAnchor>
           <ContactForm/>
-        </div>
+        </ContactAnchor>
         <ScrollContactBtn />
       </main>
     </>

@@ -1,6 +1,7 @@
 'use client';
 
 import TeamSection from '@/components/sections/home/TeamSection'
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import StatsAndCTA from '@/components/sections/home/CTASection'
 import Hero from '@/components/sections/home/Hero'
 import ClientSection from '@/components/layout/ClientSection';
@@ -45,9 +46,9 @@ export default function HomeClient() {
         <ClientSection />
         <ReviewsSection/>
         <NewsSection />
-        <div id="contacto">
+        <ContactAnchor>
           <ContactForm />
-        </div>
+        </ContactAnchor>
         <ScrollContactBtn />
       </main>
     </>

@@ -1,5 +1,5 @@
 "use client"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 
 interface ContentItem {
   title: string
@@ -11,6 +11,8 @@ interface Props {
 }
 
 export default function ServiceLanding({ namespace }: Props) {
+  // En /en el ancla del formulario es #contact.
+  const contactHash = useLocale() === "en" ? "#contact" : "#contacto";
   const t = useTranslations(namespace)
   const benefits = t.raw("benefits.items") as ContentItem[]
   const steps = t.raw("process.steps") as ContentItem[]
@@ -32,7 +34,7 @@ export default function ServiceLanding({ namespace }: Props) {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href="#contacto"
+              href={contactHash}
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-white font-semibold hover:opacity-90 transition-all duration-300"
             >
               {t("hero.cta")}

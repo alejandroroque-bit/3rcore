@@ -42,7 +42,7 @@ const Navbar = () => {
 
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const target = document.getElementById("contacto");
+    const target = document.getElementById("contacto") ?? document.getElementById("contact");
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
@@ -184,7 +184,7 @@ const Navbar = () => {
     { name: t("nav.about us"), href: "/nosotros" },
     { name: t("nav.services"), href: "/servicios", hash: "#servicios", isServices: true },
     { name: t("nav.blogs"), href: "/blogs" },
-    { name: t("nav.contact"), href: "/", hash: "#contacto", isContact: true },
+    { name: t("nav.contact"), href: "/", hash: currentLocale === "en" ? "#contact" : "#contacto", isContact: true },
   ];
 
   const socialLinks = [

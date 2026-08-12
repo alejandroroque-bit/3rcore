@@ -1,5 +1,6 @@
 "use client"
 import LandingContact from "@/components/layout/landingContact";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import ReviewsSection from "@/components/layout/ReviewsSection";
 import FirstLandingSection from "@/components/sections/landing/firstLandingSection";
 import FiveLandingSection from "@/components/sections/landing/fiveLandingSection";
@@ -51,9 +52,9 @@ export default function Landing() {
           { href: "/servicios/socialmedia", label: "Redes Sociales" },
         ]}
       />
-      <div  id="contacto">
+      <ContactAnchor>
         <LandingContact/>
-      </div>
+      </ContactAnchor>
       <WhatsAppBtnLanding/>
     </main>
 

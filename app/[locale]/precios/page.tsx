@@ -46,7 +46,7 @@ const COPY = {
     hero: 'Digital Marketing Pricing for US Clients',
     sub: 'Branding from $500 USD, SEO $500/month, Social Media $800/month, Google Ads management $800/month and websites from $850 USD. Net prices in US Dollars for clients based in the United States. Peru-based pricing in Peruvian Soles is shown on our Spanish pricing page.',
     contactCta: 'Let’s talk about your project',
-    contactPath: '/#contacto',
+    contactPath: '/#contact',
     note: 'No mandatory contracts, monthly reports and progressive results. Prices shown are reference packages; each proposal is tailored after an initial meeting.',
     tiers: [
       { name: 'Starter branding', price: 'from $500 USD', period: '/ project', desc: 'Visual identity design. Detailed proposal after an initial discovery session.', feats: ['Logo','Brand manual','Color palette','Corporate typography','Essential applications'], href: '/servicios/branding', cta: 'See branding' },

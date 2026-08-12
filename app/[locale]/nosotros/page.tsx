@@ -1,5 +1,6 @@
 "use client"
 import ContactForm from "@/components/layout/ContactForm";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import { DraggableCardDemo } from "@/components/sections/Nosotros/Activities";
 import Founders from "@/components/sections/Nosotros/Founders";
 import Gallery from "@/components/sections/Nosotros/Gallery";
@@ -33,9 +34,9 @@ export default function Nosotros() {
       <Team />
       <DraggableCardDemo/>
       <Gallery/>
-      <div  id="contacto">
+      <ContactAnchor>
         <ContactForm/>
-      </div>
+      </ContactAnchor>
       <ScrollContactBtn />
     </main>
     </>

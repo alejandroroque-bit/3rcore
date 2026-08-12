@@ -112,7 +112,7 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
   const t = isUs
     ? { ...base, sub: base.sub.replace('desde S/1,500', 'desde $500 al mes').replace(/S\/\s?[\d,]+/g, '') }
     : base
-  const guides = guidesFor(slug, 2)
+  const guides = guidesFor(slug, 2, locale)
   const ref = useRef<HTMLDivElement>(null)
   const seen = useRef(false)
 

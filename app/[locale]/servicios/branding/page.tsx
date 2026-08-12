@@ -1,6 +1,7 @@
 'use client';
 
 import ContactForm from "@/components/layout/ContactForm";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import ClientSection from "@/components/layout/ClientSection";
 import ProcessSection from "@/components/sections/servicios/branding/processSection";
 import BrandManualSection from "@/components/sections/servicios/branding/brandManualSection";
@@ -59,9 +60,9 @@ export default function Branding() {
           { href: "/posicionamiento-seo", label: "SEO" },
         ]}
       />
-      <div id="contacto">
+      <ContactAnchor>
         <ContactForm />
-      </div>
+      </ContactAnchor>
       <ScrollContactBtn />
     </>
   );

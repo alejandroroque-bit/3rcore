@@ -1,8 +1,11 @@
 "use client";
 
 import React from 'react';
+import { useLocale } from "next-intl";
 
 const ScrollNavBtn = () => {
+  // En /en el ancla del formulario es #contact.
+  const contactHash = useLocale() === "en" ? "#contact" : "#contacto";
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById('contacto');
@@ -17,7 +20,7 @@ const ScrollNavBtn = () => {
 
   return (
     <a
-      href="#contacto" 
+      href={contactHash} 
       onClick={scrollToContact} 
       className="fixed bottom-24 right-6 w-13 h-13 rounded-full z-50 flex items-center justify-center 
                  transition-all duration-500 ease-in-out border border-transparent

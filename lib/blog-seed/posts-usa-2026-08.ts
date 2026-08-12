@@ -114,7 +114,7 @@ export const USA_POSTS_2026_08: SeedPost[] = [
 <p>If a creator is posting it on their own account, yes — the FTC requires clear and conspicuous disclosure of material connections. If you're running it as an ad from your own brand account, the ad label itself handles it.</p>
 
 <h2>Where to start</h2>
-<p>If you're pricing UGC for the first time, start with the rights you need and the number of angles you want to test — those two decisions determine the budget more than any rate card. If you'd like a scoped quote in USD for a batch, <a href="/en/servicios/ugc">see how we produce UGC</a> or tell us your monthly ad spend and we'll size the volume your account actually needs.</p>`,
+<p>If you're pricing UGC for the first time, start with the rights you need and the number of angles you want to test — those two decisions determine the budget more than any rate card. If you'd like a scoped quote in USD for a batch, <a href="/en/services/ugc-content">see how we produce UGC</a> or tell us your monthly ad spend and we'll size the volume your account actually needs.</p>`,
   },
   {
     slug: "nearshore-vs-offshore-marketing-team",
@@ -269,7 +269,7 @@ export const USA_POSTS_2026_08: SeedPost[] = [
 
 <h2>How we handle it</h2>
 <p>Every creator agreement we run includes paid-media usage for the agreed term and platforms, editing rights, raw footage delivery and warranties on music and third-party appearances, settled before filming. It's administrative work that looks unnecessary right up until the moment it isn't.</p>
-<p>If you're setting up UGC production and want the rights structure handled properly from the first batch, <a href="/en/servicios/ugc">see how we produce UGC</a>. Related reading: <a href="/en/blogs/how-much-does-ugc-content-cost">what UGC actually costs in 2026</a>.</p>`,
+<p>If you're setting up UGC production and want the rights structure handled properly from the first batch, <a href="/en/services/ugc-content">see how we produce UGC</a>. Related reading: <a href="/en/blogs/how-much-does-ugc-content-cost">what UGC actually costs in 2026</a>.</p>`,
   },
   {
     slug: "why-translated-spanish-ads-underperform",

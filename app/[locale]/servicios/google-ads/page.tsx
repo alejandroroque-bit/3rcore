@@ -1,5 +1,6 @@
 'use client';
 import ContactForm from "@/components/layout/ContactForm";
+import ContactAnchor from "@/components/layout/ContactAnchor";
 import HeroSeo from "@/components/sections/servicios/google-ads/heroSeo";
 import SeoSemSection from "@/components/sections/servicios/google-ads/seoSemSection";
 import SeoSemCall from "@/components/sections/servicios/google-ads/seoSemCall";
@@ -56,9 +57,9 @@ export default function GoogleAds(){
             { href: "/servicios/branding", label: "Branding" },
           ]}
         />
-        <div id="contacto">
+        <ContactAnchor>
           <ContactForm/>
-        </div>
+        </ContactAnchor>
         <ScrollContactBtn />
       </main>
 
