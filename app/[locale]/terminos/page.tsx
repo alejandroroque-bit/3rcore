@@ -90,7 +90,7 @@ export default function Terminos() {
                       <div className="relative bg-[#130218] p-6 rounded-[14px]">
                         <h4 className="text-white font-bold mb-2 uppercase text-xs tracking-widest">{t('sections.s5.physical')}</h4>
                         <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0]">Sede Central</p>
-                        <p className="text-sm text-gray-300">Calle Las Caobas 170, Ofic. 400, La Molina, Lima.</p>
+                        <p className="text-sm text-gray-300">Alameda de la Paz 187, primer piso, La Molina, Lima.</p>
                       </div>
                     </div>
                     

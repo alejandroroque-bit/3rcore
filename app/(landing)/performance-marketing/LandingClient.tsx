@@ -730,7 +730,7 @@ export default function LandingClient() {
             <div className="foot-col">
               <h4>Contacto</h4>
               <ul>
-                <li>Calle Las Caobas 170, Of. 400, Urb. El Remanso, La Molina, Lima</li>
+                <li>Alameda de la Paz 187, primer piso, La Molina, Lima</li>
                 <li><a href={WA_INFO} target="_blank" rel="noopener">WhatsApp: +51 969 791 251</a></li>
                 <li>Lun a Vie: 9am a 6pm</li>
               </ul>

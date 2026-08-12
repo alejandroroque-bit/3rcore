@@ -36,7 +36,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     // Párrafo-definición citable (GEO): responde "¿qué es 3R Core?" con datos
     // concretos ya publicados en el sitio, en un solo pasaje autosuficiente.
     definition:
-      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque, con oficina en La Molina, Lima (Calle Las Caobas 170, Of. 400), que atiende a empresas de todo el Perú y de Estados Unidos. Está especializada en tiendas virtuales sobre Shopify, WooCommerce y Tiendanube (implementación desde S/1,500), posicionamiento SEO (S/1,800/mes) y gestión de Google Ads (desde S/1,800/mes), además de branding, redes sociales y desarrollo web, con precios publicados y sin contratos forzosos.',
+      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque, con oficina en La Molina, Lima (Alameda de la Paz 187, primer piso), que atiende a empresas de todo el Perú y de Estados Unidos. Está especializada en tiendas virtuales sobre Shopify, WooCommerce y Tiendanube (implementación desde S/1,500), posicionamiento SEO (S/1,800/mes) y gestión de Google Ads (desde S/1,800/mes), además de branding, redes sociales y desarrollo web, con precios publicados y sin contratos forzosos.',
     pillars: [
       {
         h: 'Tiendas virtuales y e-commerce',
@@ -65,7 +65,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     ],
     localH3: 'Marketing digital en Lima y todo el Perú',
     local:
-      'Nuestra oficina está en La Molina (Calle Las Caobas 170, Of. 400) y trabajamos con negocios de todos los distritos de Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— y de provincias en todo el Perú. Atención de lunes a viernes de 9:00 a 18:00.',
+      'Nuestra oficina está en La Molina (Alameda de la Paz 187, primer piso) y trabajamos con negocios de todos los distritos de Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— y de provincias en todo el Perú. Atención de lunes a viernes de 9:00 a 18:00.',
     closing:
       '¿Tienes un negocio y quieres vender más online? Conversemos: armamos una propuesta a tu medida en la primera reunión, sin compromiso.',
     quoteCta: 'Calcula el estimado de tu proyecto',
@@ -119,7 +119,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     intro:
       'At 3R Core we help businesses in Peru sell more online with three pillars that work together: we build your online store, rank you on Google with SEO and run your Google Ads campaigns. Everything with real measurement, monthly reports and a focus on return on investment (ROI), not vanity metrics.',
     definition:
-      '3R Core is a digital marketing agency founded by brothers Alejandro, Bruno and Piero Roque, based in La Molina, Lima, Peru (Calle Las Caobas 170, Of. 400), serving businesses across Peru and the United States. It specializes in online stores on Shopify, WooCommerce and Tiendanube (implementation from $420), SEO positioning ($500/month) and Google Ads management (from $800/month), plus branding, social media and web development, with published pricing and no forced contracts.',
+      '3R Core is a digital marketing agency founded by brothers Alejandro, Bruno and Piero Roque, based in La Molina, Lima, Peru (Alameda de la Paz 187, primer piso), serving businesses across Peru and the United States. It specializes in online stores on Shopify, WooCommerce and Tiendanube (implementation from $420), SEO positioning ($500/month) and Google Ads management (from $800/month), plus branding, social media and web development, with published pricing and no forced contracts.',
     pillars: [
       {
         h: 'Online stores & e-commerce',
@@ -148,7 +148,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     ],
     localH3: 'Digital marketing in Lima and all of Peru',
     local:
-      'Our office is in La Molina (Calle Las Caobas 170, Of. 400) and we work with businesses across every district of Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— and throughout Peru. Open Monday to Friday, 9:00 to 18:00.',
+      'Our office is in La Molina (Alameda de la Paz 187, primer piso) and we work with businesses across every district of Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— and throughout Peru. Open Monday to Friday, 9:00 to 18:00.',
     closing:
       'Have a business and want to sell more online? Let’s talk: we build a tailored proposal in the first meeting, no commitment.',
     quoteCta: 'Estimate your project',

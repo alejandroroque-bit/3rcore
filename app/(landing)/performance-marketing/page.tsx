@@ -48,7 +48,7 @@ const jsonLd = {
     areaServed: "Lima, Perú",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Calle Las Caobas 170, Of. 400, Urb. El Remanso",
+      streetAddress: "Alameda de la Paz 187, primer piso",
       addressLocality: "La Molina",
       addressRegion: "Lima",
       addressCountry: "PE",

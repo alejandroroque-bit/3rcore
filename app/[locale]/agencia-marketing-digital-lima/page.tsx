@@ -6,7 +6,7 @@ const COPY = {
   es: {
     hero: 'Agencia de Marketing Digital en Lima, Perú',
     sub: 'Branding, manejo de redes sociales, Google Ads, posicionamiento SEO y desarrollo web para empresas en Perú y Estados Unidos.',
-    addr: '📍 Calle Las Caobas 170, Ofic. 400, Urb El Remanso, La Molina, Lima 15024',
+    addr: '📍 Alameda de la Paz 187, primer piso, La Molina, Lima 15024',
     phone: '📞 +51 986 889 147',
     email: '✉️ info@3rcore.com',
     cta: 'Solicita tu cotización',
@@ -29,7 +29,7 @@ const COPY = {
   en: {
     hero: 'Digital Marketing Agency in Lima, Peru',
     sub: 'Branding, social media management, Google Ads, SEO positioning and web development for businesses in Peru and the United States.',
-    addr: '📍 Calle Las Caobas 170, Ofic. 400, Urb El Remanso, La Molina, Lima 15024',
+    addr: '📍 Alameda de la Paz 187, primer piso, La Molina, Lima 15024',
     phone: '📞 +51 986 889 147',
     email: '✉️ info@3rcore.com',
     cta: 'Request a proposal',

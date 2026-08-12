@@ -38,7 +38,7 @@ const Footer = () => {
             <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">{ t('agency')}</h3>
             <div className="text-gray-200 text-sm lg:text-xs xl:text-sm leading-relaxed space-y-1">
               <p>
-                Calle Las Caobas 170, Ofic. 400
+                Alameda de la Paz 187, primer piso
                 <br />
                  Urb El Remanso,La Molina. Lima - Perú
               </p>

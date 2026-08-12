@@ -147,7 +147,7 @@ export default async function RootLayout({
       : "Agencia de marketing digital en Lima, Perú. Combinamos Experiencia, Visión y Tecnología en estrategias: Branding, Social Media, SEO, Google Ads y Desarrollo Web.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle Las Caobas 170, Ofic. 400, Urb El Remanso",
+      "streetAddress": "Alameda de la Paz 187, primer piso",
       "addressLocality": "La Molina",
       "addressRegion": "Lima",
       "postalCode": "15024",

@@ -58,7 +58,7 @@ export default async function LimaLandingLayout({ children, params }: { children
     "priceRange": "S/500 - S/15,000",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle Las Caobas 170, Ofic. 400, Urb El Remanso",
+      "streetAddress": "Alameda de la Paz 187, primer piso",
       "addressLocality": "La Molina",
       "addressRegion": "Lima",
       "postalCode": "15024",
