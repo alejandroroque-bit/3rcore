@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   // existen.
   if (locale !== 'en') return { robots: { index: false, follow: false } }
 
-  const title = "Nearshore Marketing Agency for U.S. Brands — Lima, Peru | 3R Core"
-  const description = "Hire a nearshore marketing team in U.S. time zones: UGC video, paid media, SEO and Shopify builds delivered from Lima, Peru. English-speaking leads, fixed scopes in USD, you keep every asset and account."
+  const title = "Nearshore Marketing Agency in Latin America | 3R Core"
+  const description = "Hire a nearshore marketing team on U.S. hours: UGC video, paid media, SEO and Shopify builds from Lima. Fixed scopes in USD, and you keep every account."
 
   return {
     title,
