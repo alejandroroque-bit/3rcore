@@ -157,13 +157,20 @@ const Navbar = () => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
+  // Los labels salen de messages/{locale}.json. Antes estaban hardcodeados en
+  // español y el menú de /en mostraba "Posicionamiento SEO" / "Tiendas
+  // Virtuales" / "Diseño Web" a visitantes en inglés (rebote 69,4% en /en vs
+  // 39,6% en /es). Los href se mantienen: son las rutas reales del App Router.
   const services = [
-    { href: "/posicionamiento-seo", label: "Posicionamiento SEO" },
-    { href: "/servicios/google-ads", label: "Google Ads / SEM" },
-    { href: "/tiendas-virtuales-lima", label: "Tiendas Virtuales" },
-    { href: "/servicios/web-development", label: "Diseño Web" },
-    { href: "/servicios/socialmedia", label: "Social Media" },
-    { href: "/servicios/branding", label: "Branding" },
+    { href: "/posicionamiento-seo", label: t("services.seo") },
+    { href: "/servicios/google-ads", label: t("services.googleAds") },
+    { href: "/tiendas-virtuales-lima", label: t("services.ecommerce") },
+    { href: "/servicios/web-development", label: t("services.webDesign") },
+    { href: "/servicios/ugc", label: t("services.ugc") },
+    { href: "/servicios/influencer-marketing", label: t("services.influencers") },
+    { href: "/servicios/relaciones-publicas", label: t("services.pr") },
+    { href: "/servicios/socialmedia", label: t("services.socialMedia") },
+    { href: "/servicios/branding", label: t("services.branding") },
   ];
 
   const links = [

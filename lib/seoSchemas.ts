@@ -40,10 +40,14 @@ interface ServiceSchemaParams {
 }
 
 export function buildServiceSchema(p: ServiceSchemaParams) {
+  // 'us' es español, pero factura en dólares: comparte el texto de 'es' y el
+  // precio en USD de 'en'. Sin esta distinción /us publicaba precios en soles
+  // a un comprador estadounidense.
   const isEn = p.locale === "en"
+  const usdPricing = isEn || p.locale === "us"
   const url = `${BASE_URL}/${p.locale}${p.path}`
   const offers: any = {}
-  if (p.offerPriceEs && !isEn) {
+  if (p.offerPriceEs && !usdPricing) {
     offers.offers = {
       "@type": "Offer",
       "price": p.offerPriceEs,
@@ -60,7 +64,7 @@ export function buildServiceSchema(p: ServiceSchemaParams) {
       } : {}),
     }
   }
-  if (p.offerPriceEn && isEn) {
+  if (p.offerPriceEn && usdPricing) {
     offers.offers = {
       "@type": "Offer",
       "price": p.offerPriceEn,

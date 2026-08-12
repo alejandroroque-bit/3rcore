@@ -78,7 +78,7 @@
     "buttonSending": "Sending..."
   },
   "Navbar": {
-    "title": "Navegador",
+    "title": "Navigation",
     "regular": "Your Success",
     "bold": "OUR SUCCESS",
     "nav": {
@@ -88,7 +88,18 @@
       "blogs": "BLOGS",
       "contact": "CONTACT US"
     },
-    "clo": "CLOSE"
+    "clo": "CLOSE",
+    "services": {
+      "seo": "SEO",
+      "googleAds": "Google Ads / PPC",
+      "ecommerce": "Online Stores",
+      "webDesign": "Web Design",
+      "ugc": "UGC Content",
+      "influencers": "Influencer Marketing",
+      "pr": "Public Relations",
+      "socialMedia": "Social Media",
+      "branding": "Branding"
+    }
   },
   "FoundersSection": {
     "badge": "Founders",
@@ -612,7 +623,11 @@
     "emailmarketing": "Email marketing and automation agency in Lima, Peru",
     "clinicas": "Digital marketing agency for clinics and medical offices in Lima, Peru",
     "inmobiliarias": "Digital marketing agency for real estate in Lima, Peru",
-    "ecommerce": "Digital marketing agency for e-commerce and online stores in Peru"
+    "ecommerce": "Digital marketing agency for e-commerce and online stores in Peru",
+    "ugc": "UGC content production agency for U.S. brands — in-house creators, nearshore rates",
+    "influencers": "Influencer marketing agency for U.S. brands with per-creator attribution",
+    "pr": "Public relations agency for press coverage, reputation and crisis response",
+    "nearshore": "Nearshore marketing agency in Latin America for U.S. brands — UGC, paid media and SEO"
   },
   "HomeFAQ": {
     "badge": "Frequently Asked Questions",
@@ -1746,6 +1761,21 @@
     "cta": "View service",
     "items": [
       {
+        "title": "UGC Content",
+        "description": "Creator-style video from our in-house team for Meta, TikTok and YouTube campaigns.",
+        "href": "/servicios/ugc"
+      },
+      {
+        "title": "Influencer Marketing",
+        "description": "Creator campaigns measured in sales, with per-creator link and code attribution.",
+        "href": "/servicios/influencer-marketing"
+      },
+      {
+        "title": "Public Relations",
+        "description": "Press, reputation and crisis response with earned media coverage.",
+        "href": "/servicios/relaciones-publicas"
+      },
+      {
         "title": "Meta Ads (Facebook & Instagram)",
         "description": "Facebook and Instagram campaigns with advanced targeting and measurable ROAS.",
         "href": "/servicios/meta-ads"
@@ -1781,5 +1811,477 @@
         "href": "/servicios/marketing-ecommerce"
       }
     ]
+  },
+  "UgcLanding": {
+    "hero": {
+      "badge": "UGC Content · In-house creators",
+      "title": "UGC video that reads like a recommendation, not an ad",
+      "subtitle": "Creator-style video for your Meta, TikTok and YouTube campaigns: angles, scripts, filming, editing and test-ready variations. In-house team, batch delivery, usage rights included, priced in USD.",
+      "cta": "Request samples and pricing"
+    },
+    "intro": {
+      "title": "Why UGC beats polished production on cost per result",
+      "p1": "UGC is advertising shot to look like organic content: vertical, natural light, a real person talking to camera. It doesn't replace your brand film. It replaces the ad people scroll past.",
+      "p2": "The advantage is economic, not aesthetic. A traditional spot costs thousands and yields one asset. The same budget in UGC yields eight to twenty variations — and on platforms that optimize by creative, volume of variations is precisely what drives cost per result down.",
+      "p3": "We work with in-house creators in Lima, not a marketplace. That means we control the brief, the turnaround and the reshoot. If an angle underperforms, we shoot it again without renegotiating rates with a third party — and you get U.S.-agency output at nearshore cost."
+    },
+    "benefits": {
+      "badge": "What's included",
+      "title": "How we deliver UGC",
+      "items": [
+        {
+          "title": "Angle research",
+          "description": "Before anyone films, we define the selling angles: problem, objection, comparison, demonstration and social proof. Each angle is a testable hypothesis, not a mood board."
+        },
+        {
+          "title": "Scripted, hook first",
+          "description": "Every video ships with a written script: a hook in the first three seconds, a body and a close. Hooks are written for sound-off viewing, because that's how most of the audience watches."
+        },
+        {
+          "title": "Creator matched to buyer",
+          "description": "We cast by your customer profile — age, tone, context. The same face shouldn't be selling supplements and B2B software."
+        },
+        {
+          "title": "Editing and variations",
+          "description": "Each shoot yields several cuts: different hooks, different lengths, captioned and clean. That's what lets you test without paying to produce again."
+        },
+        {
+          "title": "Platform-native formats",
+          "description": "9:16 for Reels, TikTok and Shorts, 1:1 for feed, 16:9 when the campaign needs it — cut for the format, not force-cropped from one master."
+        },
+        {
+          "title": "Usage rights in writing",
+          "description": "The creator agreement includes paid-media usage rights for the agreed term and platforms. Without that clause, scaling spend behind a video is a legal exposure."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How we work",
+      "title": "The process, batch by batch",
+      "steps": [
+        {
+          "title": "Brief and angles",
+          "description": "One working session on product, real customer objections and what you've already tested. We leave with a prioritized angle list."
+        },
+        {
+          "title": "Scripts and sign-off",
+          "description": "You approve scripts before we shoot. That's the stage where changes are free."
+        },
+        {
+          "title": "Casting and filming",
+          "description": "One creator per angle, whole batch filmed in a block — that's what keeps cost per asset low."
+        },
+        {
+          "title": "Editing and handoff",
+          "description": "You get the assets and their variations in a folder, named by angle and hook, so you can upload and read results without guessing which is which."
+        },
+        {
+          "title": "Read and reload",
+          "description": "Two weeks later we review which hook retained and which angle converted, and the next batch is built on what already won."
+        }
+      ]
+    }
+  },
+  "UgcFAQ": {
+    "badge": "FAQ",
+    "title": "UGC content — frequently asked questions",
+    "faqs": {
+      "q1": {
+        "question": "What exactly is UGC content?",
+        "answer": "It's paid advertising shot in the visual language of organic content: vertical format, natural light, a real person speaking to camera. It's produced specifically to run on Meta, TikTok and YouTube, and its advantage is that viewers consume it as a recommendation rather than an ad, which holds retention through the opening seconds where most ads lose the audience."
+      },
+      "q2": {
+        "question": "How many videos do I need to start?",
+        "answer": "A first batch of six to ten assets is the practical minimum. Below that you have nothing to compare: if you test two videos and both underperform, you can't tell whether the format or the angle failed. With eight assets covering four distinct angles, the campaign tells you within two weeks which direction to push."
+      },
+      "q3": {
+        "question": "Does UGC work for B2B or only consumer products?",
+        "answer": "Both, but the creator and the angle change. Consumer responds to demonstration and before/after. B2B responds to a usage testimonial, a specific operational problem explained plainly, and a comparison with the old way of doing things. What doesn't change is the principle: real face, direct tone, hook in the first seconds."
+      },
+      "q4": {
+        "question": "Who owns the videos?",
+        "answer": "You do. The creator agreement assigns paid-media usage rights for the agreed term — typically twelve months, renewable — across the platforms we specify. We settle this in writing before filming, because putting real budget behind a video without documented rights is exactly the kind of exposure that surfaces once the campaign starts working."
+      },
+      "q5": {
+        "question": "What's the turnaround on a batch?",
+        "answer": "Ten to fifteen business days from script approval to edited delivery. The slow part isn't filming, it's locking the angles. When the brief arrives with real customer objections already identified, delivery lands at the short end of that range."
+      },
+      "q6": {
+        "question": "Can I run the same video on Meta and TikTok?",
+        "answer": "You can, but it underperforms. Each platform has its own grammar: TikTok rewards a spoken hook and fast cuts, Meta tolerates a slightly longer build and leans harder on captions. That's why we ship per-platform variations rather than one re-cropped master — force-cropping is the single most common way we've seen a good video underperform."
+      },
+      "q7": {
+        "question": "How do I know if the UGC is working?",
+        "answer": "Three metrics, in this order: three-second retention tells you whether the hook works, click-through tells you whether the promise lands, and cost per acquisition tells you whether the angle sells. A video with strong retention and poor CPA isn't a bad video — it's a good hook on the wrong promise, and that gets fixed in the next script."
+      },
+      "q8": {
+        "question": "Do you work with U.S. brands?",
+        "answer": "Yes. We produce in Lima and deliver for brands in the United States and Mexico, in English or Spanish depending on the market. Our team works U.S.-compatible hours, communication runs in English, and invoicing is issued in U.S. dollars. This is the core of our nearshore model: U.S.-standard output without U.S.-agency overhead."
+      }
+    }
+  },
+  "UgcSEO": {
+    "seoTitle": "UGC content production for U.S. brands, produced nearshore",
+    "p1": "UGC stopped being an experiment and became the default format for social advertising. The mechanics are straightforward: Meta and TikTok distribute impressions by rewarding retention, and content that looks like content retains better than content that looks like an ad. Producing it continuously, rather than once, is what separates accounts that scale from accounts that plateau.",
+    "p2": "3R Core produces UGC with in-house creators in Lima for brands in the United States. The difference against a marketplace is control: we own the brief, we correct scripts before filming, and we reshoot a failing angle without renegotiating with an intermediary. For the advertiser that means predictable turnaround and a cost per asset that falls as batch volume rises.",
+    "p3": "Every batch starts with angles, not cameras. An angle is a hypothesis about why someone buys: solving a problem, breaking an objection, comparing against the alternative, or showing the product in use. We script each angle, film several versions of the hook, and deliver the variations separately so the campaign can decide on data instead of opinion.",
+    "p4": "Measurement is part of the deliverable. Files are named by angle and hook, so when you read the campaign report you learn which idea worked, not just which file did. The second batch is then built on evidence: winning angles get reinforced, weak hooks get rewritten, and hypotheses the audience already rejected get dropped.",
+    "p5": "Usage rights are documented from the first batch. The creator agreement covers paid usage for the agreed term and platforms, with a renewal option. It's an administrative detail that becomes critical at the worst possible moment — when an asset starts performing and you want to multiply spend behind it.",
+    "p6": "If you're already spending on Meta or TikTok and performance has flattened, the bottleneck is rarely targeting. It's creative fatigue. A steady flow of UGC is the cheapest way to refresh creative inventory without rebuilding the strategy. Tell us your monthly ad spend and we'll size the batch volume your account actually needs.",
+    "relatedTitle": "Related services"
+  },
+  "InfluencerLanding": {
+    "hero": {
+      "badge": "Influencer Marketing · Measurable campaigns",
+      "title": "Creator campaigns measured in sales, not followers",
+      "subtitle": "Audience-first selection, rate negotiation, briefing, deliverable control and attribution through your own links and codes. No paying for vanity metrics.",
+      "cta": "Build my campaign"
+    },
+    "intro": {
+      "title": "The problem with influencer marketing isn't cost — it's attribution",
+      "p1": "Most creator campaigns fail for the same reason: nobody defined what would be measured before spending. Reach gets paid for, posts go live, view counts get celebrated, and no one can say how many sales came in. That's not a campaign, it's an expense.",
+      "p2": "We invert the order. First we define the outcome — sales, sign-ups, qualified visits — then the attribution mechanism (tracked links, named discount codes, a dedicated landing page), and only then do we choose creators capable of producing it.",
+      "p3": "Selection runs on audience data, not the number on the profile. Where that audience lives, how old it is and how much real engagement it produces — because a 300,000-follower account whose audience sits outside your market sells you nothing."
+    },
+    "benefits": {
+      "badge": "What's included",
+      "title": "How we run a creator campaign",
+      "items": [
+        {
+          "title": "Audience-first selection",
+          "description": "We review demographics, location and real engagement before proposing anyone. Follower count is the last criterion, not the first."
+        },
+        {
+          "title": "Negotiation and contracts",
+          "description": "Rate, deliverables, timelines, exclusivity and paid-usage rights, all in writing. No handshake deals over DMs."
+        },
+        {
+          "title": "Briefs with creative latitude",
+          "description": "We supply the must-hit points and the hard nos, and leave the rest to the creator. Content that sounds like corporate copy underperforms, and their audience notices."
+        },
+        {
+          "title": "Attribution from day one",
+          "description": "Every creator gets a UTM-tagged link and a named code, so the report says who sold, not just who posted."
+        },
+        {
+          "title": "Paid amplification",
+          "description": "Assets that perform get licensed and turned into ads. That's where a campaign stops being a one-day spike."
+        },
+        {
+          "title": "Per-creator reporting",
+          "description": "We close with cost per result creator by creator, so you know who to rebook and who to drop."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How we work",
+      "title": "Campaign process",
+      "steps": [
+        {
+          "title": "Objective and metric",
+          "description": "We define what counts as success and how it will be measured before contacting anyone."
+        },
+        {
+          "title": "Long list and filtering",
+          "description": "We build a wide list and narrow it on real audience data, past collaborations and brand fit."
+        },
+        {
+          "title": "Negotiation and close",
+          "description": "Rates, deliverables and rights under contract, with a locked publishing calendar."
+        },
+        {
+          "title": "Production and review",
+          "description": "We support the brief, review before publication and verify the mention meets what was agreed."
+        },
+        {
+          "title": "Measure and amplify",
+          "description": "We read results per creator and put paid budget behind what worked."
+        }
+      ]
+    }
+  },
+  "InfluencerFAQ": {
+    "badge": "FAQ",
+    "title": "Influencer marketing — frequently asked questions",
+    "faqs": {
+      "q1": {
+        "question": "One large influencer or several smaller ones?",
+        "answer": "It depends on the objective. For launch awareness, a large account concentrates attention fast. For sales, several mid-tier creators usually perform better: proportional engagement is higher, rates are more negotiable, and splitting budget gives you several readings instead of one bet. When budget is limited, we almost always start with the second route."
+      },
+      "q2": {
+        "question": "How do you verify an audience is real?",
+        "answer": "We cross several signals: engagement-to-follower ratio, how consistent that ratio is across posts, comment quality, declared audience location and historical growth pattern. Sharp step-shaped growth alongside generic comments is the classic purchased-audience signature, and it's enough to disqualify a profile no matter how impressive the reach looks."
+      },
+      "q3": {
+        "question": "How is a sale attributed if the buyer doesn't purchase immediately?",
+        "answer": "Three complementary layers: a UTM-tagged link per creator, a named discount code, and a source question at checkout or on the form. None is perfect alone — people switch devices, watch a story and search the brand days later — but together they give attribution good enough to decide who to rebook."
+      },
+      "q4": {
+        "question": "What does a creator campaign cost?",
+        "answer": "The range is wide because the variable is the deliverable, not the follower count. A mid-tier U.S. creator typically closes a story-plus-reel package between $300 and $2,500 depending on niche and exclusivity. What's worth budgeting isn't a single activation but a campaign across several creators and several posts, since an isolated mention rarely moves the needle."
+      },
+      "q5": {
+        "question": "Can I use the creator's content in my ads?",
+        "answer": "Only if it's contracted. Paid-usage licensing is negotiated separately from the organic post and carries its own price, usually a percentage on top of the base rate for a defined term. We include it in the initial negotiation, because asking afterward — once the asset has proven it works — costs considerably more."
+      },
+      "q6": {
+        "question": "What if the creator posts something off-brief?",
+        "answer": "The contract includes pre-publication review and a correction window. If the published asset misses the mandatory points, we request a correction or a repost; if that doesn't happen, payment is withheld as agreed. This clause rarely needs enforcing, but it's exactly what prevents disputes when something goes wrong."
+      },
+      "q7": {
+        "question": "Does the partnership have to be disclosed?",
+        "answer": "Yes. In the United States, the FTC requires that material connections be disclosed clearly and conspicuously, and every platform provides a paid-partnership label for it. Beyond being mandatory, disclosure doesn't hurt performance: audiences already assume a commercial arrangement exists and respond well to it being stated."
+      },
+      "q8": {
+        "question": "How long before results show?",
+        "answer": "Traffic peaks in the first 48 hours after each post, but the useful read comes at three to four weeks, once every creator has published and cost per result can be compared across them. Closing a campaign before that point usually means dropping creators who only needed a second post."
+      }
+    }
+  },
+  "InfluencerSEO": {
+    "seoTitle": "Influencer marketing agency for U.S. brands, run on attribution",
+    "p1": "Influencer marketing has moved from experimental channel to a permanent budget line for brands selling to consumers. What hasn't professionalized at the same pace is measurement: paying for reach and closing a campaign without knowing which creator produced which sale is still routine.",
+    "p2": "3R Core runs creator campaigns starting from the end: the outcome first, then the mechanism that will attribute it, and only then the selection of profiles. That order changes every decision downstream, because it disqualifies from the outset creators whose audience doesn't match the advertiser's market.",
+    "p3": "Selection rests on audience data rather than the visible follower number: location, age, engagement ratio and comment quality. A profile with an audience outside your country, or with purchased growth, can show impressive reach and deliver no commercial value — a difference only visible in the detail.",
+    "p4": "Every agreement closes under contract covering rate, deliverables, calendar, exclusivity and paid-usage rights. Licensing for paid media is negotiated from the start, because it's what turns a post that worked into a sustained ad instead of a single-day spike.",
+    "p5": "Attribution is built before anything publishes: per-creator tracked links, named codes and a source question on the form. The closing report then speaks in cost per result creator by creator, which is the only information that helps decide the next campaign.",
+    "p6": "If you've worked with creators before and couldn't tell whether it was worth it, the problem was rarely which profiles you picked. It's that nobody set up measurement before starting. Tell us your objective and we'll build the campaign with attribution solved from day one.",
+    "relatedTitle": "Related services"
+  },
+  "PrLanding": {
+    "hero": {
+      "badge": "Public Relations · Press and reputation",
+      "title": "Get covered by the outlets your buyers already read",
+      "subtitle": "Press strategy, writing, media relations and crisis response. Earned coverage, not paid placements dressed up as editorial.",
+      "cta": "Talk to the PR team"
+    },
+    "intro": {
+      "title": "PR is still the cheapest asset a brand can own",
+      "p1": "A mention in an authoritative outlet does three things no ad does: it lends credibility, it leaves behind a link that supports your rankings, and it stays in search results for years.",
+      "p2": "The common mistake is treating press like advertising. A journalist doesn't publish because your product is good — they publish because there's a story their audience cares about. Our job is to find that story inside your business and tell it in the form the outlet needs.",
+      "p3": "We work from a media map ordered by relevance to your buyer, not by general popularity. A trade publication read by two hundred decision-makers is worth more to a B2B company than a mass headline none of them read."
+    },
+    "benefits": {
+      "badge": "What's included",
+      "title": "Our public relations service",
+      "items": [
+        {
+          "title": "Media map",
+          "description": "We identify the outlets, sections and reporters covering your sector, ranked by relevance to your customer."
+        },
+        {
+          "title": "Newsworthy angles",
+          "description": "We find what actually qualifies as news inside the business: proprietary data, verifiable milestones, market shifts, or a position worth disagreeing with."
+        },
+        {
+          "title": "Writing and materials",
+          "description": "Press release, media kit, spokesperson bios and publication-ready assets, in the format each newsroom asks for."
+        },
+        {
+          "title": "Outreach and follow-up",
+          "description": "One-to-one contact, sending and follow-up. Coverage is won in the follow-up, not the blast."
+        },
+        {
+          "title": "Spokesperson prep",
+          "description": "Short training before interviews: key messages, hard questions, and what not to say."
+        },
+        {
+          "title": "Crisis management",
+          "description": "A response protocol and hands-on support when the conversation turns, with a written position in hours rather than days."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How we work",
+      "title": "Press campaign process",
+      "steps": [
+        {
+          "title": "Reputation audit",
+          "description": "We review what currently appears when someone searches your brand, and what's been published before."
+        },
+        {
+          "title": "Story and angles",
+          "description": "We define the narrative and the angles an outlet would actually want to run."
+        },
+        {
+          "title": "Materials",
+          "description": "We write the release and prepare supporting assets."
+        },
+        {
+          "title": "Media relations",
+          "description": "We pitch, follow up and coordinate interviews."
+        },
+        {
+          "title": "Coverage report",
+          "description": "You get the list of mentions, their reach and the links earned."
+        }
+      ]
+    }
+  },
+  "PrFAQ": {
+    "badge": "FAQ",
+    "title": "Public relations — frequently asked questions",
+    "faqs": {
+      "q1": {
+        "question": "What's the difference between PR and advertising?",
+        "answer": "In advertising you buy the space and control the message. In PR you earn the space and give up part of that control in exchange for credibility: the reader knows the outlet chose to publish it. That difference is exactly why an editorial mention carries more weight than an ad of the same size, and also why publication can never be guaranteed."
+      },
+      "q2": {
+        "question": "Can you guarantee coverage in a specific outlet?",
+        "answer": "No, and be wary of anyone who does. What's guaranteed is the work: the media map, the angles, the materials, the outreach and the follow-up. The decision to publish belongs to the outlet. When someone guarantees a placement, what they're actually selling is paid space — a legitimate product, but a different one, with far less credibility value."
+      },
+      "q3": {
+        "question": "What counts as news inside my company?",
+        "answer": "More than most people think, but almost never what the company wants to say. Launching a product isn't news. Proprietary data that reveals something about the market is. So is an industry figure nobody has published, a verifiable milestone, a contestable position, or a specific human story. Finding that inside the business is part of the work."
+      },
+      "q4": {
+        "question": "Does PR help SEO?",
+        "answer": "Yes, two ways. First, links: a mention in an authoritative outlet is among the hardest links to earn and among the heaviest in weight. Second, brand: when people start searching your name after reading about you, Google reads those searches as a signal of a recognized entity, which benefits rankings across the whole domain."
+      },
+      "q5": {
+        "question": "How long until results?",
+        "answer": "First coverage typically lands between weeks three and six, counting from when materials are ready. PR compounds: the second mention costs less effort than the first because the reporter already knows you, and from month three you start receiving inbound requests instead of only sending pitches."
+      },
+      "q6": {
+        "question": "What happens during a reputation crisis?",
+        "answer": "The first rule is not improvising while it's hot. We establish verified facts, decide who speaks and through which channel, draft a position, and respond quickly but once — avoiding feeding the cycle. Most crises worsen not because of the original event but because of contradictory responses issued by several people in the first hours."
+      },
+      "q7": {
+        "question": "Do you work with U.S. media?",
+        "answer": "Yes. Alongside Latin American press, we run coverage in U.S. and regional outlets, in English or Spanish depending on the target audience. For brands entering the U.S. market, English-language trade press usually opens more commercial doors than high-reach general press."
+      },
+      "q8": {
+        "question": "How is a press campaign measured?",
+        "answer": "By mentions earned, outlet authority, links acquired, movement in branded search volume, and referral traffic. We report all five. Estimated reach, which many agencies present as the headline result, is the least reliable of the set and we don't use it as proof of success."
+      }
+    }
+  },
+  "PrSEO": {
+    "seoTitle": "Public relations agency for press, reputation and crisis response",
+    "p1": "Public relations is the channel most underestimated precisely when it's needed most. An editorial mention in an authoritative outlet lends credibility, leaves behind a link that's hard to earn any other way, and stays visible in search results for years — long after the paid campaign has gone dark.",
+    "p2": "The starting point isn't the press release, it's the story. A journalist publishes because something interests their audience, not because a company wants to appear. So the work begins inside the business, hunting for the proprietary data, the verifiable milestone or the contestable position that genuinely merits coverage.",
+    "p3": "The media map is ordered by commercial relevance, not popularity. For a B2B company, a trade publication read by two hundred sector decision-makers can generate more opportunity than a mass headline. Working that distinction avoids spending effort on impressive coverage that moves nothing.",
+    "p4": "Media relations is follow-up work, not send-and-hope. We prepare what each newsroom needs — release, media kit, bios, assets — and make contact one to one. Most coverage is won on the second or third touch, which is exactly where outreach gets abandoned when nobody owns it.",
+    "p5": "Crisis management is prepared before it's needed. Having decided in advance who speaks, through which channel and with what message reduces damage decisively, because what usually escalates a crisis isn't the original event but contradictory statements issued in the first hours by different people.",
+    "p6": "If your brand already has results worth talking about and nobody outside the company knows them, that's the exact point where PR pays off most. Let's talk about what's inside your business that an outlet would want to publish.",
+    "relatedTitle": "Related services"
+  },
+  "NearshoreLanding": {
+    "hero": {
+      "badge": "Nearshore · U.S. time zones · USD",
+      "title": "Your marketing team, in your time zone, at a third of the U.S. rate",
+      "subtitle": "UGC video, paid media, SEO and Shopify builds delivered by an in-house team in Lima — overlapping U.S. business hours, English-speaking leads, fixed scopes invoiced in dollars.",
+      "cta": "Get a scoped proposal"
+    },
+    "intro": {
+      "title": "Why nearshore beats both offshore and a U.S. retainer",
+      "p1": "U.S. brands usually choose between two bad options: a domestic agency whose retainer is mostly overhead, or an offshore shop twelve hours out of sync where every clarification costs a day. Nearshore is the third answer — a team close enough in time and culture to work like an in-house extension.",
+      "p2": "Lima runs on Eastern Time minus zero to one hour depending on daylight saving. A brief sent from New York at 9am is being worked on at 9am, not the following night. Standups happen live. Revisions land the same day. That single fact changes what a remote team can actually be trusted with.",
+      "p3": "What you're buying isn't cheap labor, it's a different cost structure. The same senior work carries Lima's operating costs instead of Manhattan's, and the difference goes into output volume: more creative variations, more tests, more iterations per month for the same budget."
+    },
+    "benefits": {
+      "badge": "What we run",
+      "title": "Services U.S. brands buy from us",
+      "items": [
+        {
+          "title": "UGC video production",
+          "description": "In-house creators producing batches of scripted, platform-native video for Meta, TikTok and YouTube — with paid usage rights included."
+        },
+        {
+          "title": "Paid media management",
+          "description": "Google Ads, Meta and TikTok managed against CAC and ROAS, with tracking built before spend starts."
+        },
+        {
+          "title": "SEO and content",
+          "description": "Technical fixes, content built for search intent, and the internal linking that makes it compound."
+        },
+        {
+          "title": "Shopify and web builds",
+          "description": "Storefronts and landing pages built for speed and conversion, handed over with documentation rather than lock-in."
+        },
+        {
+          "title": "Influencer campaigns",
+          "description": "Creator sourcing, contracting and attribution — measured per creator, not in aggregate reach."
+        },
+        {
+          "title": "Analytics and reporting",
+          "description": "GA4, Tag Manager and conversion tracking configured properly, plus a monthly report you can read without a translator."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How engagement works",
+      "title": "From first call to first deliverable",
+      "steps": [
+        {
+          "title": "Scoping call",
+          "description": "One call to understand the business, current spend and what's already been tried. No discovery invoice."
+        },
+        {
+          "title": "Fixed-scope proposal",
+          "description": "You receive a written scope with deliverables, timeline and price in USD. No open-ended hourly billing."
+        },
+        {
+          "title": "Onboarding week",
+          "description": "Access, tracking audit and a baseline of current numbers, so improvement is measured against something real."
+        },
+        {
+          "title": "First delivery",
+          "description": "First batch or first campaign live within two to three weeks depending on the service."
+        },
+        {
+          "title": "Monthly cycle",
+          "description": "Delivery, reporting and a working session where the next month is decided on what the data actually showed."
+        }
+      ]
+    }
+  },
+  "NearshoreFAQ": {
+    "badge": "FAQ",
+    "title": "Working with a nearshore agency — frequently asked questions",
+    "faqs": {
+      "q1": {
+        "question": "What does nearshore actually mean here?",
+        "answer": "It means the team is in Latin America rather than in the U.S. or across the Pacific. Concretely for us: Lima, Peru, which runs on Eastern Time or one hour behind depending on daylight saving. The whole U.S. business day overlaps with ours, so briefs, revisions and calls happen in real time instead of in overnight batches."
+      },
+      "q2": {
+        "question": "Does the team speak English?",
+        "answer": "The leads on your account do, and all written communication, documentation and reporting run in English. Deliverables are produced in whichever language the campaign targets — we produce in both English and Spanish, which is part of why brands selling to U.S. Hispanic audiences work with us."
+      },
+      "q3": {
+        "question": "How do you handle contracts and payment from the U.S.?",
+        "answer": "Scopes are fixed and quoted in U.S. dollars, invoiced monthly against agreed deliverables. Payment is by international transfer or card. Contracts specify deliverables, timelines, revision rounds and ownership of the work, so there's no ambiguity about what transfers to you."
+      },
+      "q4": {
+        "question": "Who owns the work when the engagement ends?",
+        "answer": "You do. Creative assets, ad accounts, tracking configuration, website code and documentation are yours and get handed over. We don't hold accounts hostage as retention strategy — everything is built inside your own ad accounts and properties from the start, which is also better practice for your historical data."
+      },
+      "q5": {
+        "question": "How is this different from hiring freelancers?",
+        "answer": "Coordination. With freelancers you're the project manager: you brief each one, chase revisions, and absorb the risk when someone disappears mid-project. Here that coordination is the service. There's a single point of contact, a defined scope and continuity — if one person is out, the work still ships."
+      },
+      "q6": {
+        "question": "Isn't cheaper usually worse?",
+        "answer": "Cheaper labor usually is. A different cost structure isn't the same thing. The senior people on your account do the same work they'd do at a U.S. agency; what changes is the operating cost behind them — office, overhead and local salaries in Lima rather than a U.S. metro. Judge it on the output, which is why we lead with samples rather than a rate card."
+      },
+      "q7": {
+        "question": "Can you work with our existing internal team?",
+        "answer": "That's the most common arrangement. Usually there's an internal marketing lead who owns strategy and needs execution capacity — creative volume, campaign management, technical SEO. We plug in underneath that person rather than replacing them, working from their priorities and reporting into their cadence."
+      },
+      "q8": {
+        "question": "What's the minimum engagement?",
+        "answer": "For production work like UGC batches, a single batch is a valid starting point — many clients start there before committing further. For managed services like paid media or SEO, three months is the practical minimum, simply because a shorter window doesn't produce enough data to distinguish a real improvement from normal fluctuation."
+      }
+    }
+  },
+  "NearshoreSEO": {
+    "seoTitle": "Nearshore marketing agency for U.S. brands, based in Lima",
+    "p1": "Nearshore outsourcing solves a specific problem for U.S. marketing teams: the need for execution capacity that doesn't carry U.S. agency overhead and doesn't come with the coordination penalty of a team half a day out of sync. Latin America sits in the middle of that trade-off, and time zone alignment is the reason.",
+    "p2": "3R Core operates from Lima, Peru, on Eastern Time or one hour behind. The practical effect is that the U.S. business day and ours are the same day. A brief sent in the morning gets worked that morning; a revision requested at 2pm can ship before close. Teams that have tried offshore arrangements recognize immediately how much that changes.",
+    "p3": "The services U.S. brands buy from us cluster around execution volume: UGC video batches, paid media management across Google, Meta and TikTok, technical and content SEO, Shopify and landing page builds, and influencer campaigns with per-creator attribution. These are the areas where output quantity directly drives result, and where a different cost structure translates into more tests per month.",
+    "p4": "Engagements run on fixed scopes quoted in U.S. dollars, not open-ended hourly billing. Each scope specifies deliverables, timeline, revision rounds and ownership. Assets, ad accounts, tracking and code stay in your properties throughout, so there's nothing to reclaim if the relationship ends.",
+    "p5": "We also produce in Spanish, which matters for brands targeting U.S. Hispanic audiences. Producing that content with a native Spanish-speaking team avoids the translated-copy problem — the tonal flatness that audiences read as inauthentic even when the grammar is correct.",
+    "p6": "If you're weighing a U.S. retainer against building internal capacity, there's a third option worth pricing. Send us your current scope and spend, and we'll come back with what the same budget buys in output volume.",
+    "relatedTitle": "Related services"
   }
 }

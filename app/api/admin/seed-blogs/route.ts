@@ -52,6 +52,10 @@ export async function POST(req: NextRequest) {
   const errors: { slug: string; error: string }[] = []
 
   for (const post of SEED_POSTS) {
+    // Los posts antiguos no declaran locale: siguen siendo 'es'. Los escritos
+    // para EE.UU. lo traen como 'en' y se publican en ese locale, con su
+    // canonical apuntando a /en/ y no a /es/.
+    const locale = post.locale ?? "es"
     const record = {
       title: post.title,
       slug: post.slug,
@@ -60,13 +64,13 @@ export async function POST(req: NextRequest) {
       featured_image: post.featured_image,
       featured_image_alt: post.featured_image_alt,
       status: "published" as const,
-      locale: "es" as const,
+      locale,
       meta_title: post.meta_title,
       meta_description: post.meta_description,
       og_title: post.og_title,
       og_description: post.og_description,
       og_image: post.featured_image,
-      canonical_url: `https://3rcore.com/es/blogs/${post.slug}`,
+      canonical_url: `https://3rcore.com/${locale}/blogs/${post.slug}`,
       robots: "index, follow",
       focus_keyword: post.focus_keyword,
       author_name: post.author_name,
@@ -78,7 +82,7 @@ export async function POST(req: NextRequest) {
       .from("blog_posts")
       .select("id, content, meta_title, meta_description, title")
       .eq("slug", post.slug)
-      .eq("locale", "es")
+      .eq("locale", locale)
       .maybeSingle()
 
     if (existing?.id) {
@@ -120,7 +124,10 @@ export async function POST(req: NextRequest) {
     ...inserted,
     ...skipped.filter((s) => s.endsWith("(updated)")).map((s) => s.replace(" (updated)", "")),
   ]
-  const blogUrls = changedSlugs.map((slug) => `https://3rcore.com/es/blogs/${slug}`)
+  const localeBySlug = new Map(SEED_POSTS.map((p) => [p.slug, p.locale ?? "es"]))
+  const blogUrls = changedSlugs.map(
+    (slug) => `https://3rcore.com/${localeBySlug.get(slug) ?? "es"}/blogs/${slug}`
+  )
   const indexnowResults = blogUrls.length ? await pingIndexNow(blogUrls) : []
 
   return NextResponse.json({

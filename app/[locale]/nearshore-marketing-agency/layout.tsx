@@ -1,0 +1,85 @@
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
+import { buildFAQPageSchema, buildServiceSchema } from "@/lib/seoSchemas"
+import { getMessages } from "next-intl/server"
+
+const PATH = '/nearshore-marketing-agency'
+
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { locale } = await params
+  // Página de un solo mercado: no tiene versión en español, así que no lleva
+  // bloque de alternates ni x-default. Declararlos apuntaría a URLs que no
+  // existen.
+  if (locale !== 'en') return { robots: { index: false, follow: false } }
+
+  const title = "Nearshore Marketing Agency for U.S. Brands — Lima, Peru | 3R Core"
+  const description = "Hire a nearshore marketing team in U.S. time zones: UGC video, paid media, SEO and Shopify builds delivered from Lima, Peru. English-speaking leads, fixed scopes in USD, you keep every asset and account."
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${BASE_URL}/en${PATH}` },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/en${PATH}`,
+      siteName: '3R Core',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: `${BASE_URL}/og/default.jpg`, width: 1200, height: 630, alt: '3R Core - Nearshore Marketing Agency' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${BASE_URL}/og/default.jpg`],
+    },
+  }
+}
+
+export default async function NearshoreLayout({ children, params }: { children: React.ReactNode; params: any }) {
+  const { locale } = await params
+  // Solo existe en inglés. En /es y /us devuelve 404 en lugar de servir una
+  // copia sin traducir que competiría con /servicios/*.
+  if (locale !== 'en') notFound()
+
+  const messages = (await getMessages()) as any
+  const faqMessages = messages?.NearshoreFAQ?.faqs ?? {}
+
+  const serviceSchema = buildServiceSchema({
+    locale,
+    path: PATH,
+    nameEs: "Agencia de Marketing Nearshore para Marcas de Estados Unidos",
+    nameEn: "Nearshore Marketing Agency for U.S. Brands",
+    descriptionEs: "Equipo de marketing nearshore en Lima, Perú para marcas de Estados Unidos: producción de video UGC, gestión de medios pagados, SEO y desarrollo de tiendas Shopify, en horario compatible con EE.UU. y con alcances cerrados facturados en dólares.",
+    descriptionEn: "Nearshore marketing team in Lima, Peru for U.S. brands: UGC video production, paid media management across Google, Meta and TikTok, technical and content SEO, and Shopify and landing page builds — delivered in overlapping U.S. business hours under fixed scopes invoiced in U.S. dollars.",
+    serviceType: "Nearshore Marketing Services / Outsourced Marketing Team",
+    offerPriceEn: 1200,
+    audienceTypes: ["E-commerce", "D2C brands", "B2B", "SaaS", "Agencies"],
+  })
+
+  const faqItems = Object.values(faqMessages).map((q: any) => ({
+    question: q.question,
+    answer: q.answer,
+  }))
+  const faqSchema = buildFAQPageSchema(faqItems)
+
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    [
+      { name: 'Home', path: '' },
+      { name: 'Nearshore Marketing Agency', path: PATH },
+    ],
+    locale
+  )
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, faqSchema, breadcrumbSchema]) }}
+      />
+      {children}
+    </>
+  )
+}

@@ -11,10 +11,18 @@ import { LEADS_POSTS_2026_07 } from "./posts-leads-2026-07"
 import { LEADS2_POSTS_2026_07 } from "./posts-leads2-2026-07"
 import { LEADS3_POSTS_2026_07 } from "./posts-leads3-2026-07"
 import { REFRESH_POSTS_2026_07_28 } from "./posts-refresh-2026-07-28"
+import { USA_POSTS_2026_08 } from "./posts-usa-2026-08"
+import { UGC_PR_POSTS_2026_08 } from "./posts-ugc-pr-2026-08"
 
 export interface SeedPost {
   title: string
   slug: string
+  /**
+   * Idioma del post. Por omisión 'es' — así los ~60 posts peruanos existentes
+   * no cambian de comportamiento. Los posts escritos para EE.UU. lo declaran
+   * como 'en' y el seed los publica en ese locale con su canonical /en/.
+   */
+  locale?: "es" | "en"
   excerpt: string
   content: string
   featured_image: string
@@ -3000,4 +3008,6 @@ export const SEED_POSTS: SeedPost[] = [
   ...LEADS2_POSTS_2026_07,
   ...LEADS3_POSTS_2026_07,
   ...REFRESH_POSTS_2026_07_28,
+  ...USA_POSTS_2026_08,
+  ...UGC_PR_POSTS_2026_08,
 ]

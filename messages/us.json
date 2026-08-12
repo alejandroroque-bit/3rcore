@@ -1,0 +1,137 @@
+{
+  "Navbar": {
+    "services": {
+      "seo": "Posicionamiento SEO",
+      "googleAds": "Google Ads",
+      "ecommerce": "Tiendas Online",
+      "webDesign": "Diseño Web",
+      "ugc": "Contenido UGC",
+      "influencers": "Influencer Marketing",
+      "pr": "Relaciones Públicas",
+      "socialMedia": "Social Media",
+      "branding": "Branding"
+    }
+  },
+  "HiddenH1": {
+    "home": "Agencia de marketing digital en español para negocios hispanos en Estados Unidos",
+    "hispanic": "Marketing digital en español para negocios hispanos en Estados Unidos"
+  },
+  "HispanicLanding": {
+    "hero": {
+      "badge": "Marketing en español · Estados Unidos",
+      "title": "Marketing digital en español para tu negocio en Estados Unidos",
+      "subtitle": "Campañas, contenido y páginas web pensadas para el cliente hispano que vive en EE.UU. Contenido en español real, no traducido, con precios en dólares y atención en tu horario.",
+      "cta": "Pedir una propuesta"
+    },
+    "intro": {
+      "title": "Tu cliente busca en español, pero tu publicidad le habla en inglés traducido",
+      "p1": "Hay más de 40 millones de personas que hablan español en Estados Unidos, y una buena parte busca, compara y compra en su idioma. Sin embargo, la mayoría de negocios que quieren llegar a ese público lo hace traduciendo su anuncio en inglés, que es justo lo que la audiencia detecta y descarta.",
+      "p2": "El español de Estados Unidos tiene su propia forma. Mezcla registros de México, Centroamérica, el Caribe y Sudamérica, convive con el inglés en la misma frase y cambia según la ciudad. Escribir para ese público no es traducir: es escribir de nuevo, sabiendo a quién le hablas.",
+      "p3": "En 3R Core producimos ese contenido con equipo nativo en español, con campañas medidas en dólares y con la misma disciplina de medición que aplicamos en inglés. El resultado no es una versión traducida de tu marketing, sino una que suena hecha para tu cliente."
+    },
+    "benefits": {
+      "badge": "Qué hacemos",
+      "title": "Servicios para negocios hispanos en EE.UU.",
+      "items": [
+        {
+          "title": "Campañas en español",
+          "description": "Google Ads y Meta segmentadas por idioma y ciudad, con anuncios escritos en español y no traducidos automáticamente."
+        },
+        {
+          "title": "Video UGC en español",
+          "description": "Creadores hispanohablantes grabando contenido para tus campañas, con el tono que tu comprador reconoce como propio."
+        },
+        {
+          "title": "SEO en español",
+          "description": "Posicionamiento para búsquedas en español dentro de tu área de servicio, que casi siempre tienen menos competencia que sus equivalentes en inglés."
+        },
+        {
+          "title": "Páginas web bilingües",
+          "description": "Sitios con versión en inglés y en español bien separadas y correctamente marcadas, para que Google muestre la correcta a cada usuario."
+        },
+        {
+          "title": "WhatsApp y captación",
+          "description": "Los clientes hispanos escriben por WhatsApp antes que llenar un formulario. Montamos ese canal y lo medimos como cualquier otro."
+        },
+        {
+          "title": "Reportes claros",
+          "description": "Reporte mensual en español que dice cuánto se invirtió, cuántos clientes entraron y cuánto costó cada uno."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "Cómo empezamos",
+      "steps": [
+        {
+          "title": "Diagnóstico",
+          "description": "Revisamos qué tienes hoy: campañas, página web y de dónde llegan tus clientes actuales."
+        },
+        {
+          "title": "Propuesta cerrada",
+          "description": "Recibes alcance, plazos y precio en dólares por escrito, sin cobro por hora abierto."
+        },
+        {
+          "title": "Medición primero",
+          "description": "Antes de invertir un dólar dejamos el seguimiento funcionando, para que después se pueda saber qué funcionó."
+        },
+        {
+          "title": "Lanzamiento",
+          "description": "Salen las campañas y el contenido, con seguimiento semanal las primeras semanas."
+        },
+        {
+          "title": "Optimización mensual",
+          "description": "Cada mes se revisa el costo por cliente y se ajusta dónde va el presupuesto."
+        }
+      ]
+    }
+  },
+  "HispanicFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes",
+    "faqs": {
+      "q1": {
+        "question": "¿Por qué no me sirve traducir mis anuncios del inglés?",
+        "answer": "Porque el traductor conserva el significado pero pierde el tono, y el tono es lo que genera confianza. Un anuncio traducido literalmente suena correcto y ajeno a la vez, y la audiencia hispana en Estados Unidos está acostumbrada a distinguir entre una marca que le habla y una que le tradujo un texto. La diferencia se nota directamente en la tasa de clics."
+      },
+      "q2": {
+        "question": "¿Conviene hacer campañas separadas en español?",
+        "answer": "Casi siempre sí. Separar la campaña por idioma permite escribir anuncios propios, presupuestar aparte y leer resultados sin que se mezclen con los del inglés. Además, la competencia por las búsquedas en español suele ser menor, así que el costo por clic tiende a ser más bajo para una intención de compra equivalente."
+      },
+      "q3": {
+        "question": "¿Ustedes están en Estados Unidos?",
+        "answer": "Nuestro equipo está en Lima, Perú, y trabajamos en horario compatible con las zonas horarias de Estados Unidos: la diferencia con la costa este es de cero a una hora según la época del año. Facturamos en dólares y la comunicación es en español o inglés según prefieras. Muchos clientes nos eligen justamente por eso: mismo horario de trabajo, costos de operación distintos."
+      },
+      "q4": {
+        "question": "¿Manejan el idioma de mi región?",
+        "answer": "El español de Estados Unidos no es uno solo: no se habla igual en Miami que en Los Ángeles o Houston. Antes de escribir definimos a qué comunidad le hablas principalmente y ajustamos vocabulario y tono a esa audiencia. Cuando el negocio atiende a varias, se producen variantes en lugar de buscar un español neutro que no le suena natural a nadie."
+      },
+      "q5": {
+        "question": "¿Cómo miden si funciona?",
+        "answer": "Con el costo por cliente nuevo, no con impresiones. Antes de lanzar dejamos configurado el seguimiento de formularios, llamadas y mensajes de WhatsApp, y a partir de ahí el reporte mensual dice cuánto se invirtió, cuántos contactos entraron y cuánto costó cada uno. Si esa cifra no mejora con los meses, el trabajo no está funcionando y hay que cambiarlo."
+      },
+      "q6": {
+        "question": "¿Necesito una página web nueva?",
+        "answer": "No siempre. Muchas veces alcanza con crear una sección en español bien hecha dentro del sitio actual y marcarla correctamente para que Google la muestre a quien busca en español. Rehacer todo el sitio solo se justifica cuando el actual es lento, no funciona bien en el celular o no permite medir nada, que son problemas que ninguna campaña puede compensar."
+      },
+      "q7": {
+        "question": "¿Por qué insisten tanto en WhatsApp?",
+        "answer": "Porque es el canal que el público hispano usa de forma natural para contactar a un negocio, mientras que un formulario largo le genera fricción. Poner WhatsApp como opción visible suele subir la cantidad de contactos de forma inmediata. Lo importante es medirlo igual que cualquier otro canal, porque si no queda registrado parece que la campaña no produjo nada."
+      },
+      "q8": {
+        "question": "¿Cuánto cuesta empezar?",
+        "answer": "Depende del servicio, pero trabajamos con alcances cerrados y precio en dólares acordado por escrito antes de empezar, no con horas abiertas. Para campañas, el mínimo razonable son tres meses: en menos tiempo no hay datos suficientes para distinguir una mejora real de una variación normal del mercado."
+      }
+    }
+  },
+  "HispanicSEO": {
+    "seoTitle": "Agencia de marketing digital en español para Estados Unidos",
+    "p1": "El mercado hispano de Estados Unidos es uno de los públicos con más poder de compra del país y, al mismo tiempo, uno de los peor atendidos en publicidad digital. La razón habitual no es falta de presupuesto sino de enfoque: se traduce la campaña en inglés en lugar de escribir una nueva, y el resultado suena correcto pero ajeno.",
+    "p2": "Trabajar este público bien empieza por aceptar que el español de Estados Unidos tiene forma propia. Convive con el inglés, mezcla registros de distintos países y cambia de una ciudad a otra. Escribir para él exige decidir a qué comunidad le hablas, y esa decisión cambia el vocabulario, el tono y hasta los ejemplos que usas.",
+    "p3": "En campañas pagadas conviene separar el español en su propia estructura. Permite escribir anuncios propios en lugar de traducciones, controlar el presupuesto por separado y leer los resultados sin mezclarlos. Además, la competencia por las búsquedas en español suele ser menor que por sus equivalentes en inglés, lo que abarata el costo por clic para una intención de compra parecida.",
+    "p4": "En posicionamiento orgánico pasa algo similar. Muchas búsquedas en español dentro de una misma área de servicio tienen menos competencia que las mismas búsquedas en inglés, y una sección en español bien construida y correctamente marcada puede posicionar en meses donde la versión en inglés llevaría años.",
+    "p5": "El canal de contacto también cambia. El público hispano tiende a escribir por WhatsApp antes que a completar un formulario largo, y ofrecer esa opción de forma visible suele aumentar los contactos de inmediato. Lo que no se puede omitir es medirlo: un canal que produce clientes pero no queda registrado hace que toda la inversión parezca infructuosa.",
+    "p6": "Si tu negocio atiende a clientes hispanos en Estados Unidos y toda tu publicidad está en inglés, ahí hay una oportunidad que casi nadie de tu competencia está trabajando bien. Conversemos sobre tu mercado y armamos la propuesta con precios en dólares.",
+    "relatedTitle": "Servicios relacionados"
+  }
+}

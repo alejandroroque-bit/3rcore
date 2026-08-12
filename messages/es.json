@@ -88,7 +88,18 @@
       "blogs": "BLOGS",
       "contact": "CONTACTO"
     },
-    "clo": "CERRAR"
+    "clo": "CERRAR",
+    "services": {
+      "seo": "Posicionamiento SEO",
+      "googleAds": "Google Ads / SEM",
+      "ecommerce": "Tiendas Virtuales",
+      "webDesign": "Diseño Web",
+      "ugc": "Contenido UGC",
+      "influencers": "Influencer Marketing",
+      "pr": "Relaciones Públicas",
+      "socialMedia": "Social Media",
+      "branding": "Branding"
+    }
   },
   "FoundersSection": {
     "badge": "Fundadores",
@@ -628,7 +639,10 @@
     "emailmarketing": "Agencia de email marketing y automatización en Lima, Perú",
     "clinicas": "Agencia de marketing digital para clínicas y consultorios en Lima, Perú",
     "inmobiliarias": "Agencia de marketing digital para inmobiliarias en Lima, Perú",
-    "ecommerce": "Agencia de marketing digital para e-commerce y tiendas online en Perú"
+    "ecommerce": "Agencia de marketing digital para e-commerce y tiendas online en Perú",
+    "ugc": "Agencia de producción de contenido UGC para campañas en Lima, Perú",
+    "influencers": "Agencia de influencer marketing y campañas con creadores en Lima, Perú",
+    "pr": "Agencia de relaciones públicas, prensa y gestión de reputación en Lima, Perú"
   },
   "HomeFAQ": {
     "badge": "Preguntas Frecuentes",
@@ -1762,6 +1776,21 @@
     "cta": "Ver servicio",
     "items": [
       {
+        "title": "Contenido UGC",
+        "description": "Video con creadores propios para tus campañas de Meta, TikTok y YouTube.",
+        "href": "/servicios/ugc"
+      },
+      {
+        "title": "Influencer Marketing",
+        "description": "Campañas con creadores medidas por ventas, con atribución por enlace y código.",
+        "href": "/servicios/influencer-marketing"
+      },
+      {
+        "title": "Relaciones Públicas",
+        "description": "Prensa, reputación y gestión de crisis con cobertura real en medios.",
+        "href": "/servicios/relaciones-publicas"
+      },
+      {
         "title": "Meta Ads (Facebook e Instagram)",
         "description": "Campañas en Facebook e Instagram con segmentación avanzada y ROAS medible.",
         "href": "/servicios/meta-ads"
@@ -1797,5 +1826,359 @@
         "href": "/servicios/marketing-ecommerce"
       }
     ]
+  },
+  "UgcLanding": {
+    "hero": {
+      "badge": "Contenido UGC · Creadores propios",
+      "title": "Video UGC que se ve como una recomendación, no como un anuncio",
+      "subtitle": "Producimos contenido generado por creadores para tus campañas de Meta, TikTok y Google: guion, grabación, edición y variantes listas para testear. Equipo propio en Lima, entregas por lote y derechos de uso incluidos.",
+      "cta": "Pedir muestras y precios"
+    },
+    "intro": {
+      "title": "Por qué el UGC rinde más barato que el spot publicitario",
+      "p1": "El contenido UGC (user generated content) es video grabado en formato vertical, con luz natural y tono de persona real, pensado para que el usuario lo consuma antes de darse cuenta de que es publicidad. No sustituye a la marca: sustituye al anuncio que la gente salta.",
+      "p2": "La ventaja no es estética, es económica. Un spot tradicional cuesta miles de soles y produce una sola pieza; con el mismo presupuesto un lote de UGC produce entre 8 y 20 variantes. Y en plataformas que optimizan por creatividad —Meta y TikTok— tener volumen de variantes es exactamente lo que baja el costo por resultado.",
+      "p3": "En 3R Core trabajamos con creadores propios, no con un marketplace. Eso significa que controlamos el brief, el plazo y la corrección, y que si un ángulo no funciona lo volvemos a grabar sin renegociar tarifas con un tercero."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Cómo entregamos el contenido UGC",
+      "items": [
+        {
+          "title": "Investigación de ángulos",
+          "description": "Antes de grabar definimos los ángulos de venta: problema, objeción, comparación, demostración y prueba social. Cada ángulo es una hipótesis medible, no una ocurrencia."
+        },
+        {
+          "title": "Guion por pieza",
+          "description": "Cada video sale con guion escrito: gancho en los primeros 3 segundos, desarrollo y cierre con llamada a la acción. El gancho se escribe pensando en el sonido apagado, que es como se ve la mayoría."
+        },
+        {
+          "title": "Creadores seleccionados",
+          "description": "Elegimos al creador según el perfil de tu comprador: edad, tono y contexto. No mandamos la misma cara a vender suplementos y software B2B."
+        },
+        {
+          "title": "Edición y variantes",
+          "description": "De cada grabación salen varias versiones: distinto gancho, distinta duración, con y sin subtítulos. Es lo que permite testear sin volver a producir."
+        },
+        {
+          "title": "Formatos por plataforma",
+          "description": "Entregamos 9:16 para Reels, TikTok y Shorts, 1:1 para feed y 16:9 cuando la campaña lo pide, con los cortes hechos, no reencuadrados a la fuerza."
+        },
+        {
+          "title": "Derechos de uso por escrito",
+          "description": "El contrato con el creador incluye la cesión para uso publicitario pagado por el plazo acordado. Sin esa cláusula, escalar la inversión en un video es un riesgo legal."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "El proceso, lote a lote",
+      "steps": [
+        {
+          "title": "Brief y ángulos",
+          "description": "Una sesión para entender producto, objeciones reales del cliente y lo que ya se probó. Salimos con la lista de ángulos priorizada."
+        },
+        {
+          "title": "Guiones y aprobación",
+          "description": "Te enviamos los guiones antes de grabar. Corriges ahí, que es donde corregir sale gratis."
+        },
+        {
+          "title": "Casting y grabación",
+          "description": "Asignamos creador por ángulo y grabamos el lote completo en bloque, que es lo que mantiene el costo por pieza bajo."
+        },
+        {
+          "title": "Edición y entrega",
+          "description": "Recibes las piezas y sus variantes en carpeta, nombradas por ángulo y gancho para que puedas subirlas y leer los resultados sin adivinar cuál es cuál."
+        },
+        {
+          "title": "Lectura y siguiente lote",
+          "description": "A las dos semanas revisamos qué gancho retuvo y qué ángulo convirtió, y el siguiente lote se construye sobre lo que ya ganó."
+        }
+      ]
+    }
+  },
+  "UgcFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes sobre contenido UGC",
+    "faqs": {
+      "q1": {
+        "question": "¿Qué es exactamente el contenido UGC?",
+        "answer": "Es video publicitario grabado con estética de contenido orgánico: formato vertical, luz natural y una persona real hablando a cámara. Se produce para usarse en campañas pagadas de Meta, TikTok y YouTube, y su ventaja es que se consume como recomendación y no como anuncio, lo que sostiene la retención en los primeros segundos."
+      },
+      "q2": {
+        "question": "¿Cuántos videos necesito para empezar?",
+        "answer": "Un lote inicial de entre 6 y 10 piezas es lo mínimo razonable para tener señal. Con menos de eso no hay con qué comparar: si pruebas dos videos y ambos rinden mal, no sabes si falla el formato o el ángulo. Con 8 piezas cubriendo 4 ángulos distintos, la campaña te dice en dos semanas por dónde seguir."
+      },
+      "q3": {
+        "question": "¿El UGC sirve para negocios B2B o solo para productos de consumo?",
+        "answer": "Sirve para ambos, pero cambia el creador y el ángulo. En consumo funciona la demostración y el antes/después; en B2B funciona el testimonio de uso, la explicación de un problema operativo concreto y la comparación con la forma antigua de hacer las cosas. Lo que no cambia es el principio: cara real, tono directo y gancho en los primeros segundos."
+      },
+      "q4": {
+        "question": "¿Quién es dueño de los videos?",
+        "answer": "Tú. El contrato con el creador incluye la cesión de derechos para uso publicitario pagado durante el plazo pactado, normalmente 12 meses renovables, con alcance en las plataformas acordadas. Lo dejamos por escrito antes de grabar porque escalar inversión sobre un video sin cesión es exponerte a un reclamo justo cuando la campaña empieza a funcionar."
+      },
+      "q5": {
+        "question": "¿Cuánto demora un lote?",
+        "answer": "Entre 10 y 15 días hábiles desde la aprobación de guiones hasta la entrega editada. La parte lenta no es grabar sino cerrar los ángulos: cuando el brief llega con las objeciones del cliente ya identificadas, el plazo baja al extremo corto del rango."
+      },
+      "q6": {
+        "question": "¿Puedo usar el mismo video en Meta y en TikTok?",
+        "answer": "Puedes, pero rinde menos. Cada plataforma tiene su gramática: TikTok premia el gancho hablado y el corte rápido, Meta tolera un desarrollo algo más largo y depende más del subtítulo. Por eso entregamos variantes por plataforma en lugar de un master reencuadrado, que es el error que más veces hemos visto hundir el rendimiento de un buen video."
+      },
+      "q7": {
+        "question": "¿Cómo mido si el UGC está funcionando?",
+        "answer": "Con tres métricas en este orden: retención a 3 segundos (dice si el gancho sirve), CTR (dice si la promesa engancha) y costo por adquisición (dice si el ángulo vende). Un video con retención alta y CPA malo no es un mal video: es un buen gancho sobre una promesa equivocada, y eso se corrige en el guion siguiente."
+      },
+      "q8": {
+        "question": "¿Trabajan con marcas fuera del Perú?",
+        "answer": "Sí. Producimos en Lima y entregamos para marcas de Estados Unidos y México, en español o en inglés según el mercado. El equipo trabaja en horario compatible con las zonas horarias de América y la facturación se emite en dólares cuando el cliente está fuera del Perú."
+      }
+    }
+  },
+  "UgcSEO": {
+    "seoTitle": "Producción de contenido UGC para campañas en Lima y el Perú",
+    "p1": "El contenido UGC dejó de ser un experimento para convertirse en el formato por defecto de la publicidad en redes. La razón es simple: los algoritmos de Meta y TikTok reparten impresiones premiando la retención, y una pieza que parece contenido retiene más que una pieza que parece anuncio. Producir ese contenido de forma sostenida, y no una vez, es lo que separa a las cuentas que escalan de las que se estancan.",
+    "p2": "En 3R Core producimos UGC con creadores propios en Lima. La diferencia frente a contratar por marketplace es el control: definimos el brief, corregimos el guion antes de grabar y volvemos a grabar si un ángulo falla, sin renegociar con un intermediario. Para el anunciante eso se traduce en plazos predecibles y en un costo por pieza que baja a medida que crece el volumen del lote.",
+    "p3": "Cada lote arranca por los ángulos de venta, no por la cámara. Un ángulo es una hipótesis sobre por qué alguien compra: resolver un problema, romper una objeción, compararse con la alternativa o mostrar el producto en uso. Escribimos guion para cada ángulo, grabamos varias versiones del gancho y entregamos las variantes por separado para que la campaña pueda decidir con datos y no con opiniones.",
+    "p4": "La medición es parte del entregable. Nombramos cada archivo por ángulo y por gancho, de modo que al leer el reporte de la campaña se pueda saber qué idea funcionó, no solo qué archivo. Con eso, el segundo lote se construye sobre evidencia: se refuerzan los ángulos ganadores, se reescriben los ganchos flojos y se descartan las hipótesis que la audiencia ya respondió que no.",
+    "p5": "Los derechos de uso van por escrito desde el primer lote. El contrato con el creador contempla el uso publicitario pagado por el plazo y las plataformas acordadas, con opción de renovación. Es un detalle administrativo que se vuelve crítico justo en el peor momento: cuando una pieza empieza a rendir y quieres multiplicar la inversión sobre ella.",
+    "p6": "Si ya estás invirtiendo en Meta Ads o TikTok Ads y el rendimiento se aplanó, el cuello de botella rara vez es la segmentación: es la creatividad, que se desgasta. Un flujo constante de UGC es la forma más barata de renovar el inventario creativo sin rehacer la estrategia. Conversemos sobre el volumen que tu cuenta necesita al mes.",
+    "relatedTitle": "Servicios relacionados"
+  },
+  "InfluencerLanding": {
+    "hero": {
+      "badge": "Influencer Marketing · Campañas medibles",
+      "title": "Campañas con creadores que se miden en ventas, no en seguidores",
+      "subtitle": "Selección por audiencia real, negociación de tarifas, briefing, control de entregables y medición con enlaces y códigos propios. Sin pagar por vanidad.",
+      "cta": "Armar mi campaña"
+    },
+    "intro": {
+      "title": "El problema del influencer marketing no es el precio, es la atribución",
+      "p1": "La mayoría de campañas con creadores fracasan por la misma razón: nadie definió antes qué se iba a medir. Se paga por alcance, se publica, se aplaude el número de vistas y nadie sabe cuántas ventas entraron. Eso no es una campaña, es un gasto.",
+      "p2": "Nosotros invertimos el orden. Primero definimos el resultado —ventas, registros o visitas cualificadas—, después el mecanismo de atribución (enlace propio, código de descuento, landing dedicada) y solo al final elegimos a los creadores que pueden producirlo.",
+      "p3": "La selección se hace sobre datos de audiencia, no sobre el número que aparece en el perfil. Nos importa de dónde es esa audiencia, qué edad tiene y cuánta interacción real produce, porque un perfil de 300.000 seguidores con audiencia fuera de tu mercado no te vende nada."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Cómo gestionamos una campaña con creadores",
+      "items": [
+        {
+          "title": "Selección por audiencia",
+          "description": "Revisamos demografía, ubicación e interacción real antes de proponer a nadie. El número de seguidores es el último criterio, no el primero."
+        },
+        {
+          "title": "Negociación y contrato",
+          "description": "Cerramos tarifa, entregables, plazos, exclusividad y derechos de uso publicitario por escrito. Sin acuerdos de palabra por mensaje directo."
+        },
+        {
+          "title": "Briefing con libertad creativa",
+          "description": "Damos los puntos obligatorios y las prohibiciones, y dejamos el resto al creador. El contenido que suena a guion corporativo rinde peor, y su audiencia lo detecta."
+        },
+        {
+          "title": "Atribución desde el día uno",
+          "description": "Cada creador recibe su enlace con parámetros UTM y su código propio. Así el reporte dice quién vendió, no solo quién publicó."
+        },
+        {
+          "title": "Amplificación pagada",
+          "description": "Las piezas que rinden se convierten en anuncio con licencia del creador. Ahí es donde una campaña deja de ser un pico de un día."
+        },
+        {
+          "title": "Reporte por creador",
+          "description": "Cierre con costo por resultado creador a creador, para saber a quién repetir y a quién no."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "El proceso de una campaña",
+      "steps": [
+        {
+          "title": "Objetivo y métrica",
+          "description": "Definimos qué cuenta como éxito y cómo se va a medir antes de contactar a nadie."
+        },
+        {
+          "title": "Long list y filtrado",
+          "description": "Armamos una lista amplia y la reducimos revisando audiencia real, historial de colaboraciones y afinidad con la marca."
+        },
+        {
+          "title": "Negociación y cierre",
+          "description": "Tarifas, entregables y derechos por contrato, con calendario de publicación cerrado."
+        },
+        {
+          "title": "Producción y revisión",
+          "description": "Acompañamos el brief, revisamos antes de publicar y validamos que la mención cumpla lo pactado."
+        },
+        {
+          "title": "Medición y amplificación",
+          "description": "Leemos resultados por creador y llevamos a pauta lo que funcionó."
+        }
+      ]
+    }
+  },
+  "InfluencerFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes sobre influencer marketing",
+    "faqs": {
+      "q1": {
+        "question": "¿Conviene más un influencer grande o varios pequeños?",
+        "answer": "Depende del objetivo. Para notoriedad de lanzamiento, un perfil grande concentra atención rápido. Para venta, varios creadores medianos suelen rendir mejor: la interacción proporcional es más alta, la tarifa es más negociable y al repartir el presupuesto obtienes varias lecturas en lugar de una sola apuesta. Cuando el presupuesto es limitado, empezamos casi siempre por el segundo camino."
+      },
+      "q2": {
+        "question": "¿Cómo saben si los seguidores de un perfil son reales?",
+        "answer": "Cruzamos varias señales: proporción entre interacciones y seguidores, coherencia de esa proporción entre publicaciones, calidad de los comentarios, ubicación declarada de la audiencia y ritmo de crecimiento histórico. Un crecimiento en escalones bruscos junto a comentarios genéricos es el patrón clásico de audiencia comprada, y basta para descartar un perfil por bueno que parezca su alcance."
+      },
+      "q3": {
+        "question": "¿Cómo se mide la venta si el usuario no compra en el momento?",
+        "answer": "Con tres capas complementarias: enlace con parámetros UTM propios por creador, código de descuento nominal y una pregunta de origen en el formulario o el checkout. Ninguna de las tres es perfecta por separado —el usuario cambia de dispositivo, ve la historia y busca la marca en Google días después— pero combinadas dan una atribución suficientemente buena para decidir a quién repetir."
+      },
+      "q4": {
+        "question": "¿Cuánto cuesta una campaña con creadores en el Perú?",
+        "answer": "El rango es amplio porque la variable no es el seguidor sino el entregable. Un creador mediano con audiencia peruana real puede cerrar por una historia y un reel entre S/400 y S/2,500 según nicho y exclusividad. Lo que conviene presupuestar no es una acción suelta sino una campaña de varios creadores y varias publicaciones, porque una mención aislada rara vez mueve la aguja."
+      },
+      "q5": {
+        "question": "¿Puedo usar el contenido del creador en mis anuncios?",
+        "answer": "Solo si está pactado por contrato. La cesión para pauta pagada se negocia aparte de la publicación orgánica y tiene precio propio, normalmente un porcentaje adicional sobre la tarifa por un plazo definido. Lo incluimos siempre en la negociación inicial porque pedirlo después, cuando la pieza ya demostró que funciona, sale mucho más caro."
+      },
+      "q6": {
+        "question": "¿Qué pasa si el creador publica algo que no cumple lo acordado?",
+        "answer": "El contrato contempla revisión previa a la publicación y un plazo de corrección. Si la pieza publicada no cumple los puntos obligatorios, se solicita la corrección o la republicación; si no ocurre, se retiene el pago según lo pactado. Este tipo de cláusula rara vez hay que ejecutarla, pero es justo lo que evita las discusiones cuando algo sale mal."
+      },
+      "q7": {
+        "question": "¿Hay que declarar que la publicación es publicidad?",
+        "answer": "Sí. En el Perú, Indecopi exige que la publicidad sea identificable como tal, y las plataformas ofrecen etiquetas de colaboración pagada para cumplirlo. Además de ser obligatorio, la evidencia muestra que la mención transparente no daña el rendimiento: la audiencia ya asume que hay acuerdo comercial y valora que se diga."
+      },
+      "q8": {
+        "question": "¿Cuánto tarda en verse el resultado?",
+        "answer": "El pico de tráfico ocurre en las primeras 48 horas de cada publicación, pero la lectura útil de la campaña se hace a las tres o cuatro semanas, cuando ya publicaron todos los creadores y se puede comparar costo por resultado entre ellos. Cerrar la campaña antes de ese punto suele llevar a descartar creadores que solo necesitaban una segunda publicación."
+      }
+    }
+  },
+  "InfluencerSEO": {
+    "seoTitle": "Agencia de influencer marketing en Lima con medición real",
+    "p1": "El influencer marketing dejó de ser un canal experimental para convertirse en una línea fija del presupuesto de las marcas que venden a consumidor. Lo que no se ha profesionalizado al mismo ritmo es la medición: sigue siendo habitual pagar por alcance y cerrar la campaña sin saber cuántas ventas produjo cada creador.",
+    "p2": "En 3R Core gestionamos campañas con creadores empezando por el final: primero el resultado que se quiere obtener, después el mecanismo que permitirá atribuirlo y solo entonces la selección de perfiles. Ese orden cambia por completo las decisiones, porque descarta desde el inicio a los creadores cuya audiencia no coincide con el mercado del anunciante.",
+    "p3": "La selección se apoya en datos de audiencia y no en el número visible del perfil: ubicación, edad, proporción de interacción y calidad de los comentarios. Un perfil con seguidores fuera del país o con crecimiento comprado puede tener alcance impresionante y valor comercial nulo, y esa diferencia solo se ve revisando el detalle.",
+    "p4": "Cada acuerdo se cierra por contrato con tarifa, entregables, calendario, exclusividad y derechos de uso publicitario. La cesión para pauta pagada se negocia desde el inicio, porque es la que permite convertir una publicación que funcionó en un anuncio sostenido en lugar de un pico de un solo día.",
+    "p5": "La atribución se monta antes de publicar: enlaces con parámetros propios por creador, códigos nominales y una pregunta de origen en el formulario. Con eso el reporte de cierre no habla de impresiones sino de costo por resultado creador a creador, que es la única información que sirve para decidir la siguiente campaña.",
+    "p6": "Si ya trabajaste con creadores y no lograste saber si valió la pena, el problema casi nunca fue la elección de los perfiles: fue que nadie montó la medición antes de empezar. Conversemos sobre tu objetivo y armamos la campaña con la atribución resuelta desde el primer día.",
+    "relatedTitle": "Servicios relacionados"
+  },
+  "PrLanding": {
+    "hero": {
+      "badge": "Relaciones Públicas · Prensa y reputación",
+      "title": "Que hablen de tu marca los medios que tus clientes ya leen",
+      "subtitle": "Estrategia de prensa, redacción de notas, gestión de medios y respuesta ante crisis. Cobertura real, no notas pagadas disfrazadas.",
+      "cta": "Hablar con el equipo de PR"
+    },
+    "intro": {
+      "title": "Las relaciones públicas siguen siendo el activo más barato de la marca",
+      "p1": "Una mención en un medio con autoridad hace tres cosas que ningún anuncio hace: da credibilidad prestada, deja un enlace que sostiene el posicionamiento y permanece en los resultados de búsqueda durante años.",
+      "p2": "El error habitual es tratar la prensa como publicidad. Un periodista no publica porque tu producto sea bueno, publica porque tiene una historia con interés para su audiencia. Nuestro trabajo es encontrar esa historia dentro de tu negocio y contarla en el formato que el medio necesita.",
+      "p3": "Trabajamos con un mapa de medios ordenado por relevancia para tu comprador, no por popularidad general. Una publicación sectorial que leen doscientos decisores vale más para una empresa B2B que un titular masivo que no lee ninguno."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Nuestro servicio de relaciones públicas",
+      "items": [
+        {
+          "title": "Mapa de medios",
+          "description": "Identificamos publicaciones, secciones y periodistas que cubren tu sector, ordenados por relevancia para tu cliente."
+        },
+        {
+          "title": "Ángulos noticiables",
+          "description": "Buscamos dentro del negocio lo que sí es noticia: datos propios, hitos, cambios de mercado o una postura con la que se pueda discrepar."
+        },
+        {
+          "title": "Redacción y materiales",
+          "description": "Nota de prensa, dossier, biografías de voceros y material gráfico listo para publicar, en el formato que cada redacción pide."
+        },
+        {
+          "title": "Gestión y seguimiento",
+          "description": "Contacto, envío y seguimiento uno a uno. La cobertura se consigue en el seguimiento, no en el envío masivo."
+        },
+        {
+          "title": "Preparación de voceros",
+          "description": "Entrenamiento breve antes de entrevistas: mensajes clave, preguntas difíciles y qué no decir."
+        },
+        {
+          "title": "Gestión de crisis",
+          "description": "Protocolo de respuesta y acompañamiento cuando la conversación se vuelve en contra, con posición redactada en horas y no en días."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "El proceso de una campaña de prensa",
+      "steps": [
+        {
+          "title": "Diagnóstico de reputación",
+          "description": "Revisamos qué aparece hoy al buscar tu marca y qué se ha publicado antes."
+        },
+        {
+          "title": "Historia y ángulos",
+          "description": "Definimos la narrativa y los ángulos que un medio querría publicar."
+        },
+        {
+          "title": "Materiales",
+          "description": "Redactamos la nota y preparamos el material de apoyo."
+        },
+        {
+          "title": "Gestión con medios",
+          "description": "Enviamos, hacemos seguimiento y coordinamos entrevistas."
+        },
+        {
+          "title": "Reporte de cobertura",
+          "description": "Entregamos el listado de menciones, su alcance y los enlaces obtenidos."
+        }
+      ]
+    }
+  },
+  "PrFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes sobre relaciones públicas",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuál es la diferencia entre relaciones públicas y publicidad?",
+        "answer": "En publicidad pagas el espacio y controlas el mensaje. En relaciones públicas ganas el espacio y cedes parte del control a cambio de credibilidad: el lector sabe que el medio decidió publicarlo. Esa diferencia es exactamente la que hace que una mención editorial pese más que un anuncio del mismo tamaño, y también la que explica por qué no se puede garantizar la publicación."
+      },
+      "q2": {
+        "question": "¿Pueden garantizar que salga en un medio concreto?",
+        "answer": "No, y desconfía de quien lo garantice. Lo que se garantiza es el trabajo: el mapa de medios, los ángulos, los materiales, la gestión y el seguimiento. La decisión de publicar es del medio. Cuando alguien garantiza una portada, lo que está vendiendo en realidad es un espacio pagado, que es un producto legítimo pero distinto y con mucho menos valor de credibilidad."
+      },
+      "q3": {
+        "question": "¿Qué es noticia dentro de mi empresa?",
+        "answer": "Más de lo que suele pensarse, pero casi nunca lo que la empresa quiere contar. No es noticia que lances un producto; sí lo es un dato propio que revele algo del mercado, una cifra de tu sector que nadie había publicado, un hito verificable, una toma de posición discutible o una historia humana concreta. Parte de nuestro trabajo consiste precisamente en encontrar eso dentro del negocio."
+      },
+      "q4": {
+        "question": "¿Sirve para el posicionamiento en Google?",
+        "answer": "Sí, y por dos vías. La primera es el enlace: una mención en un medio con autoridad es de los enlaces más difíciles de conseguir y de los que más pesan. La segunda es la marca: cuando la gente empieza a buscar tu nombre después de leerte, Google interpreta esas búsquedas como una señal de entidad reconocida, y eso beneficia al posicionamiento de todo el dominio."
+      },
+      "q5": {
+        "question": "¿Cuánto tarda en verse resultado?",
+        "answer": "La primera cobertura suele llegar entre la tercera y la sexta semana, contando desde que los materiales están listos. Las relaciones públicas funcionan por acumulación: la segunda mención cuesta menos que la primera porque el periodista ya te conoce, y a partir del tercer mes empiezan a llegar solicitudes en lugar de solo salir propuestas."
+      },
+      "q6": {
+        "question": "¿Qué hacemos si hay una crisis de reputación?",
+        "answer": "Lo primero es no improvisar en caliente. Establecemos los hechos verificados, definimos quién habla y por qué canal, redactamos una posición y respondemos rápido pero una sola vez, evitando alimentar el ciclo. La mayoría de crisis empeoran no por el hecho original sino por respuestas contradictorias emitidas por varias personas en las primeras horas."
+      },
+      "q7": {
+        "question": "¿Trabajan con medios internacionales?",
+        "answer": "Sí. Además de la prensa peruana, gestionamos cobertura en medios de Estados Unidos y de la región, en inglés o español según el público objetivo. Para marcas que buscan entrar al mercado estadounidense, la prensa sectorial en inglés suele abrir más puertas comerciales que la prensa generalista de gran alcance."
+      },
+      "q8": {
+        "question": "¿Cómo se mide el resultado de una campaña de prensa?",
+        "answer": "Con menciones obtenidas, autoridad del medio, enlaces conseguidos, evolución de las búsquedas de marca y tráfico de referencia. Reportamos las cinco. La métrica de alcance estimado, que muchas agencias presentan como resultado principal, es la menos fiable de todas y no la usamos como argumento de éxito."
+      }
+    }
+  },
+  "PrSEO": {
+    "seoTitle": "Agencia de relaciones públicas en Lima: prensa, reputación y crisis",
+    "p1": "Las relaciones públicas son el canal que más se subestima justo cuando más falta hace. Una mención editorial en un medio con autoridad aporta credibilidad prestada, deja un enlace difícil de conseguir por otras vías y permanece visible en los resultados de búsqueda durante años, mucho después de que la campaña pagada se haya apagado.",
+    "p2": "El punto de partida no es la nota de prensa sino la historia. Un periodista publica porque tiene algo que interesa a su audiencia, no porque una empresa quiera aparecer. Por eso el trabajo empieza dentro del negocio, buscando el dato propio, el hito verificable o la postura discutible que sí merece cobertura.",
+    "p3": "El mapa de medios se ordena por relevancia comercial y no por popularidad. Para una empresa B2B, una publicación sectorial que leen doscientos decisores del rubro puede generar más oportunidades que un titular masivo. Trabajar esa distinción evita gastar esfuerzo en coberturas vistosas que no mueven el negocio.",
+    "p4": "La gestión con medios es un trabajo de seguimiento, no de envío. Preparamos los materiales que cada redacción necesita —nota, dossier, biografías, material gráfico— y hacemos el contacto uno a uno. La mayoría de coberturas se consiguen en el segundo o tercer contacto, que es exactamente donde se abandona cuando no hay un equipo detrás.",
+    "p5": "La gestión de crisis se prepara antes de necesitarla. Tener definido quién habla, por qué canal y con qué mensaje reduce el daño de forma decisiva, porque el agravante habitual de una crisis no es el hecho original sino las respuestas contradictorias emitidas en las primeras horas por personas distintas.",
+    "p6": "Si tu marca ya tiene resultados que contar pero nadie fuera de la empresa los conoce, ese es exactamente el punto donde las relaciones públicas rinden más. Conversemos sobre qué hay dentro de tu negocio que un medio querría publicar.",
+    "relatedTitle": "Servicios relacionados"
   }
 }

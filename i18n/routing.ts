@@ -2,7 +2,11 @@ import {defineRouting} from 'next-intl/routing';
 import {createNavigation} from 'next-intl/navigation';
  
 export const routing = defineRouting({
-  locales: ['en', 'es'],
+  // 'us' = es-US: español para el negocio hispano de EE.UU. No se reutiliza /es
+  // porque ese habla de soles, RUC, Yape y +51. Los mensajes de 'us' heredan de
+  // es.json por deep-merge (ver i18n/request.ts) y solo sobrescriben lo que
+  // cambia de mercado, así ninguna clave puede quedar sin traducir.
+  locales: ['en', 'es', 'us'],
 
   defaultLocale: 'es',
 

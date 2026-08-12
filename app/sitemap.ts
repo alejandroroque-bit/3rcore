@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
+import { hreflangFor } from '@/lib/metadata'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://3rcore.com'
@@ -13,6 +14,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/servicios/web-development', priority: 0.92, changeFrequency: 'weekly' as const },
     { path: '/servicios/socialmedia', priority: 0.92, changeFrequency: 'weekly' as const },
     { path: '/servicios/branding', priority: 0.92, changeFrequency: 'weekly' as const },
+    // Línea UGC / influencers / PR: es el rubro al que gira el negocio y hasta
+    // ahora no tenía una sola URL viva (todas daban 404 en producción).
+    { path: '/servicios/ugc', priority: 0.95, changeFrequency: 'weekly' as const },
+    { path: '/servicios/influencer-marketing', priority: 0.95, changeFrequency: 'weekly' as const },
+    { path: '/servicios/relaciones-publicas', priority: 0.9, changeFrequency: 'weekly' as const },
     { path: '/precios', priority: 0.9, changeFrequency: 'weekly' as const },
     { path: '/cotizar', priority: 0.85, changeFrequency: 'monthly' as const },
     // Reversión (2026-07-15): las páginas de servicio /servicios/* y
@@ -38,22 +44,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/reclamaciones', priority: 0.3, changeFrequency: 'yearly' as const },
   ]
 
-  const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
-    url: `${baseUrl}/es${page.path}`,
+  // Páginas que solo existen para un mercado concreto (devuelven 404 en los
+  // otros locales), así que van sin bloque de alternates.
+  // Deliberadamente UNA por mercado: "ugc content agency" y "hire a marketing
+  // team in latin america" son el mismo eje que /servicios/ugc y que esta
+  // página, y publicarlas por separado sería canibalizar en inglés justo lo
+  // que acabamos de abrir.
+  const marketOnlyPages: { url: string; priority: number }[] = [
+    { url: `${baseUrl}/en/nearshore-marketing-agency`, priority: 0.95 },
+    { url: `${baseUrl}/us/marketing-para-negocios-hispanos`, priority: 0.95 },
+  ]
+
+  // Antes el sitemap listaba SOLO /es (163 URLs, cero /en como <loc>): las
+  // versiones en inglés existían pero Google nunca las recibió como URL propia,
+  // únicamente como alternate. Ahora los tres locales entran como <loc>.
+  const LOCALES = ['es', 'en', 'us'] as const
+
+  const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
+    LOCALES.map((loc) => ({
+      url: `${baseUrl}/${loc}${page.path}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFrequency,
+      // /es mantiene su prioridad histórica; /en y /us arrancan un escalón por
+      // debajo salvo en la línea UGC, que es la apuesta para EE.UU.
+      priority: loc === 'es' ? page.priority : Math.round((page.priority - 0.05) * 100) / 100,
+      alternates: { languages: hreflangFor(page.path) },
+    }))
+  )
+
+  const marketEntries: MetadataRoute.Sitemap = marketOnlyPages.map((p) => ({
+    url: p.url,
     lastModified: new Date(),
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
-    alternates: {
-      languages: {
-        es: `${baseUrl}/es${page.path}`,
-        en: `${baseUrl}/en${page.path}`,
-        'x-default': `${baseUrl}/es${page.path}`,
-      },
-    },
+    changeFrequency: 'weekly' as const,
+    priority: p.priority,
   }))
 
   let blogEntries: MetadataRoute.Sitemap = []
-  let hasEnglishPosts = false
   try {
     const supabase = createServerClient()
     const { data: posts } = await supabase
@@ -76,24 +102,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     if (posts) {
       const livePosts = posts.filter((p) => !REDIRECTED_SLUGS.has(p.slug))
-      hasEnglishPosts = livePosts.some((p) => p.locale === 'en')
+      // Los posts NO son traducciones el uno del otro: los de 'en' son piezas
+      // escritas para EE.UU. y los de 'es' para Perú. Emitir hreflang entre
+      // ellos sería declarar equivalencias falsas, así que cada post va con su
+      // canonical y sin alternates.
       blogEntries = livePosts.map((post) => ({
         url: `${baseUrl}/${post.locale}/blogs/${post.slug}`,
         lastModified: new Date(post.updated_at),
         changeFrequency: 'weekly' as const,
         priority: 0.6,
-        alternates: {
-          languages: {
-            es: `${baseUrl}/es/blogs/${post.slug}`,
-            ...(hasEnglishPosts && { en: `${baseUrl}/en/blogs/${post.slug}` }),
-            'x-default': `${baseUrl}/es/blogs/${post.slug}`,
-          },
-        },
       }))
     }
   } catch {
     // Silently fail
   }
 
-  return [...staticEntries, ...blogEntries]
+  return [...staticEntries, ...marketEntries, ...blogEntries]
 }

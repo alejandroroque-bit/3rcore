@@ -26,34 +26,58 @@ const lenisOptions = {
 
 const BASE_URL = 'https://3rcore.com'
 
+// Un solo sitio, tres audiencias distintas:
+//   /es → Perú (es-PE): soles, RUC, Yape/Plin.
+//   /en → marcas de EE.UU. que compran producción nearshore en inglés.
+//   /us → negocio hispano en EE.UU. (es-US): español, USD, sin referencias peruanas.
+// El bloque hreflang es idéntico en las tres para que Google resuelva el cluster.
+export const HREFLANG = (path = '') => ({
+  'es': `${BASE_URL}/es${path}`,
+  'es-PE': `${BASE_URL}/es${path}`,
+  'es-US': `${BASE_URL}/us${path}`,
+  'en': `${BASE_URL}/en${path}`,
+  'en-US': `${BASE_URL}/en${path}`,
+  // x-default pasa de /es a /en: el visitante sin idioma resuelto es, por
+  // volumen, internacional (USA = 400 sesiones/89 d sin trabajar el mercado).
+  'x-default': `${BASE_URL}/en${path}`,
+})
+
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params;
 
+  const title = locale === 'en'
+    ? "Nearshore Marketing Agency for U.S. Brands — UGC, SEO & Google Ads | 3R Core"
+    : locale === 'us'
+      ? "Agencia de Marketing Digital para Negocios Hispanos en EE.UU. | 3R Core"
+      : "Agencia de Tiendas Virtuales, SEO y Google Ads en Lima, Perú | 3R Core"
+
+  const description = locale === 'en'
+    ? "U.S. brands work with our in-house team for UGC video, influencer campaigns, SEO, Google Ads and Shopify builds — U.S. time zones, English-speaking leads, agency output at nearshore rates. Fixed scopes in USD, monthly reporting."
+    : locale === 'us'
+      ? "Agencia de marketing digital en español para negocios hispanos en Estados Unidos. Video UGC, campañas de Google Ads y Meta, SEO en español y tiendas online. Precios en dólares, atención en tu horario y reportes mensuales."
+      : "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú. Creamos tu tienda online (Shopify, WooCommerce, Tiendanube), te posicionamos en Google y gestionamos campañas que venden. ROI medible y reportes mensuales."
+
   return {
-    title: locale === 'en'
-      ? "Online Store, SEO & Google Ads Agency in Lima, Peru | 3R Core"
-      : "Agencia de Tiendas Virtuales, SEO y Google Ads en Lima, Perú | 3R Core",
-    description: locale === 'en'
-      ? "E-commerce, SEO and SEM agency in Lima, Peru. We build online stores (Shopify, WooCommerce, Tiendanube), position your site on Google (SEO) and run Google Ads campaigns that sell. Real ROI, monthly reports."
-      : "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú. Creamos tu tienda online (Shopify, WooCommerce, Tiendanube), te posicionamos en Google y gestionamos campañas que venden. ROI medible y reportes mensuales.",
+    title,
+    description,
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
-      languages: {
-        'es': `${BASE_URL}/es`,
-        'en': `${BASE_URL}/en`,
-        'x-default': `${BASE_URL}/es`,
-      }
+      languages: HREFLANG(),
     },
     openGraph: {
       title: locale === 'en'
-        ? "3R Core | Digital Marketing Agency in Lima"
-        : "3R Core | Agencia de Marketing Digital en Lima",
+        ? "3R Core | Nearshore Marketing & UGC Studio for U.S. Brands"
+        : locale === 'us'
+          ? "3R Core | Marketing Digital en Español para EE.UU."
+          : "3R Core | Agencia de Marketing Digital en Lima",
       description: locale === 'en'
-        ? "Digital marketing agency in Lima, Peru. Web design, social media management, Google Ads, SEO and branding with measurable ROI."
-        : "Agencia de marketing digital en Lima, Perú. Diseño web, manejo de redes sociales, Google Ads, posicionamiento SEO y branding con ROI medible.",
+        ? "In-house UGC creators, influencer campaigns, SEO, Google Ads and Shopify builds for U.S. brands. U.S. hours, English-speaking leads, nearshore rates."
+        : locale === 'us'
+          ? "Marketing digital en español para negocios hispanos en Estados Unidos: video UGC, Google Ads, Meta Ads, SEO y tiendas online. Precios en dólares."
+          : "Agencia de marketing digital en Lima, Perú. Diseño web, manejo de redes sociales, Google Ads, posicionamiento SEO y branding con ROI medible.",
       url: `${BASE_URL}/${locale}`,
       siteName: "3R Core",
-      locale: locale === 'en' ? 'en_US' : 'es_PE',
+      locale: locale === 'en' ? 'en_US' : locale === 'us' ? 'es_US' : 'es_PE',
       type: 'website',
       images: [
         {
@@ -61,7 +85,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
           width: 1200,
           height: 630,
           alt: locale === 'en'
-            ? '3R Core - Digital Marketing Agency'
+            ? '3R Core - Nearshore Marketing & UGC Studio'
             : '3R Core - Agencia de Marketing Digital',
         },
       ],
@@ -69,10 +93,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     twitter: {
       card: 'summary_large_image',
       title: locale === 'en'
-        ? "3R Core - Digital Marketing Agency"
+        ? "3R Core - Nearshore Marketing & UGC Studio"
         : "3R Core - Agencia de Marketing Digital",
       description: locale === 'en'
-        ? "We combine Experience, Vision, and Technology into digital marketing strategies."
+        ? "UGC video, influencer campaigns, SEO and paid media for U.S. brands — in-house team, nearshore rates."
         : "Combinamos Experiencia, Visión y Tecnología en estrategias de marketing digital.",
       images: [`${BASE_URL}/og/default.jpg`],
     },
@@ -417,20 +441,27 @@ export default async function RootLayout({
         { name: "Corporate Branding", url: `${BASE_URL}/en/servicios/branding` },
         { name: "Google Ads", url: `${BASE_URL}/en/servicios/google-ads` },
         { name: "SEO Positioning", url: `${BASE_URL}/en/posicionamiento-seo` },
+        { name: "UGC Content Production", url: `${BASE_URL}/en/servicios/ugc` },
+        { name: "Influencer Marketing", url: `${BASE_URL}/en/servicios/influencer-marketing` },
+        { name: "Public Relations", url: `${BASE_URL}/en/servicios/relaciones-publicas` },
         { name: "Blog", url: `${BASE_URL}/en/blogs` },
         { name: "FAQ", url: `${BASE_URL}/en/preguntas` },
       ]
     : [
-        { name: "Inicio", url: `${BASE_URL}/es` },
-        { name: "Nosotros", url: `${BASE_URL}/es/nosotros` },
-        { name: "Servicios", url: `${BASE_URL}/es/servicios` },
-        { name: "Diseño y Desarrollo Web", url: `${BASE_URL}/es/servicios/web-development` },
-        { name: "Manejo de Redes Sociales", url: `${BASE_URL}/es/servicios/socialmedia` },
-        { name: "Branding Corporativo", url: `${BASE_URL}/es/servicios/branding` },
-        { name: "Google Ads", url: `${BASE_URL}/es/servicios/google-ads` },
-        { name: "Posicionamiento SEO", url: `${BASE_URL}/es/posicionamiento-seo` },
-        { name: "Blog", url: `${BASE_URL}/es/blogs` },
-        { name: "Preguntas Frecuentes", url: `${BASE_URL}/es/preguntas` },
+        // Vale para /es y /us: el prefijo sale del locale, no está fijado a "es".
+        { name: "Inicio", url: `${BASE_URL}/${locale}` },
+        { name: "Nosotros", url: `${BASE_URL}/${locale}/nosotros` },
+        { name: "Servicios", url: `${BASE_URL}/${locale}/servicios` },
+        { name: "Diseño y Desarrollo Web", url: `${BASE_URL}/${locale}/servicios/web-development` },
+        { name: "Manejo de Redes Sociales", url: `${BASE_URL}/${locale}/servicios/socialmedia` },
+        { name: "Branding Corporativo", url: `${BASE_URL}/${locale}/servicios/branding` },
+        { name: "Google Ads", url: `${BASE_URL}/${locale}/servicios/google-ads` },
+        { name: "Posicionamiento SEO", url: `${BASE_URL}/${locale}/posicionamiento-seo` },
+        { name: "Contenido UGC", url: `${BASE_URL}/${locale}/servicios/ugc` },
+        { name: "Influencer Marketing", url: `${BASE_URL}/${locale}/servicios/influencer-marketing` },
+        { name: "Relaciones Públicas", url: `${BASE_URL}/${locale}/servicios/relaciones-publicas` },
+        { name: "Blog", url: `${BASE_URL}/${locale}/blogs` },
+        { name: "Preguntas Frecuentes", url: `${BASE_URL}/${locale}/preguntas` },
       ]
 
   const siteNavigationSchema = navItems.map((item) => ({
@@ -441,7 +472,7 @@ export default async function RootLayout({
   }))
 
   return (
-    <html lang={locale}>
+    <html lang={locale === 'us' ? 'es-US' : locale === 'es' ? 'es-PE' : 'en-US'}>
       <head>
         <script
           type="application/ld+json"

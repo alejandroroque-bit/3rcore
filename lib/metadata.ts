@@ -9,6 +9,24 @@ export const DEFAULT_OG_IMAGE = {
   alt: '3R Core - Agencia de Marketing Digital',
 }
 
+/**
+ * hreflang del cluster completo. Se usa en TODAS las páginas core para que
+ * Google vea un grupo coherente: mismo set de alternates en las tres versiones.
+ * x-default apunta a /en (no a /es): el visitante sin idioma resuelto es, por
+ * volumen medido, internacional — EE.UU. dio 400 sesiones en 89 días sin haber
+ * trabajado nunca ese mercado.
+ */
+export function hreflangFor(path: string) {
+  return {
+    'es': `${BASE_URL}/es${path}`,
+    'es-PE': `${BASE_URL}/es${path}`,
+    'es-US': `${BASE_URL}/us${path}`,
+    'en': `${BASE_URL}/en${path}`,
+    'en-US': `${BASE_URL}/en${path}`,
+    'x-default': `${BASE_URL}/en${path}`,
+  }
+}
+
 interface PageMetadataOptions {
   locale: string
   path: string
@@ -16,15 +34,19 @@ interface PageMetadataOptions {
   titleEn: string
   descriptionEs: string
   descriptionEn: string
+  /** es-US. Si no se pasa, cae al texto de Perú. */
+  titleUs?: string
+  descriptionUs?: string
   noindex?: boolean
   ogImage?: { url: string; width?: number; height?: number; alt?: string }
 }
 
 export function generatePageMetadata(options: PageMetadataOptions): Metadata {
-  const { locale, path, titleEs, titleEn, descriptionEs, descriptionEn, noindex, ogImage } = options
+  const { locale, path, titleEs, titleEn, descriptionEs, descriptionEn, titleUs, descriptionUs, noindex, ogImage } = options
   const isEn = locale === 'en'
-  const title = isEn ? titleEn : titleEs
-  const description = isEn ? descriptionEn : descriptionEs
+  const isUs = locale === 'us'
+  const title = isEn ? titleEn : isUs ? (titleUs ?? titleEs) : titleEs
+  const description = isEn ? descriptionEn : isUs ? (descriptionUs ?? descriptionEs) : descriptionEs
   const image = ogImage ?? DEFAULT_OG_IMAGE
 
   return {
@@ -32,18 +54,14 @@ export function generatePageMetadata(options: PageMetadataOptions): Metadata {
     description,
     alternates: {
       canonical: `${BASE_URL}/${locale}${path}`,
-      languages: {
-        'es': `${BASE_URL}/es${path}`,
-        'en': `${BASE_URL}/en${path}`,
-        'x-default': `${BASE_URL}/es${path}`,
-      },
+      languages: hreflangFor(path),
     },
     openGraph: {
       title,
       description,
       url: `${BASE_URL}/${locale}${path}`,
       siteName: '3R Core',
-      locale: isEn ? 'en_US' : 'es_PE',
+      locale: isEn ? 'en_US' : isUs ? 'es_US' : 'es_PE',
       type: 'website',
       images: [
         {
