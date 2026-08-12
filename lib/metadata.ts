@@ -103,7 +103,10 @@ export function generatePageMetadata(options: PageMetadataOptions): Metadata {
       description,
       images: [image.url],
     },
-    ...(noindex && { robots: { index: false, follow: false } }),
+    // noindex pero SÍ follow: estas páginas no compiten en el índice de /en
+    // y /us, pero sus enlaces internos deben seguir repartiendo autoridad
+    // hacia las tres que sí se venden allí.
+    ...(noindex && { robots: { index: false, follow: true } }),
   }
 }
 

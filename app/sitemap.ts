@@ -71,9 +71,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   //  - /blogs en /us sirve los mismos posts en español y canonicaliza a /es.
   //  - /reclamaciones es el libro de reclamaciones exigido por Indecopi:
   //    obligación peruana, sin sentido para un comprador de EE.UU.
+  // En EE.UU. solo se venden tres servicios: páginas web, SEO y tiendas online.
+  // El resto del catálogo se mantiene vivo para /es —donde sí se vende— pero
+  // fuera del sitemap de /en y /us: veinte páginas de servicio compitiendo
+  // entre sí diluyen el foco justo en el mercado que se está abriendo.
+  const NOT_SOLD_IN_US = [
+    '/servicios/google-ads', '/servicios/socialmedia', '/servicios/branding',
+    '/servicios/ugc', '/servicios/influencer-marketing', '/servicios/relaciones-publicas',
+    '/servicios/meta-ads', '/servicios/tiktok-ads', '/servicios/performance-marketing',
+    '/servicios/email-marketing', '/servicios/marketing-clinicas',
+    '/servicios/marketing-inmobiliarias', '/servicios/marketing-ecommerce',
+  ]
+
   const SKIP: Record<string, string[]> = {
-    us: ['/blogs', '/reclamaciones'],
-    en: ['/reclamaciones'],
+    us: ['/blogs', '/reclamaciones', ...NOT_SOLD_IN_US],
+    en: ['/reclamaciones', ...NOT_SOLD_IN_US],
   }
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
@@ -85,7 +97,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: page.changeFrequency,
       // /es mantiene su prioridad histórica; /en y /us arrancan un escalón por
       // debajo salvo en la línea UGC, que es la apuesta para EE.UU.
-      priority: loc === 'es' ? page.priority : Math.round((page.priority - 0.05) * 100) / 100,
+      // Los tres servicios que sí se venden en EE.UU. conservan prioridad
+      // máxima también fuera de /es.
+      priority: loc === 'es' || ['/posicionamiento-seo', '/tiendas-virtuales-lima', '/servicios/web-development'].includes(page.path)
+        ? page.priority
+        : Math.round((page.priority - 0.05) * 100) / 100,
       alternates: { languages: hreflangFor(page.path) },
     }))
   )

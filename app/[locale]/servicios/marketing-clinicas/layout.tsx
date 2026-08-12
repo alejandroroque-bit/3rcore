@@ -20,6 +20,13 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
       height: 630,
       alt: '3R Core - Marketing for Clinics',
     },
+    // En EE.UU. solo se venden web, SEO y tiendas online. Esta página
+
+    // sigue viva para /es; en /en y /us no entra al índice para no
+
+    // diluir el foco del mercado que se está abriendo.
+
+    noindex: locale !== 'es',
   })
 }
 

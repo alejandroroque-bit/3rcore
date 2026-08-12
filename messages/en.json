@@ -408,103 +408,103 @@
     "title": "TOOLS WE USE"
   },
   "WebHero": {
-    "slogan": "We partner with market-leading e-commerce platforms like <shopify>Shopify</shopify> and <woo></woo>. These solutions provide the <bold>scalability</bold>, <bold>robustness</bold>, and <bold>flexibility</bold> to adapt to any business in record time, accelerating digital market entry and eliminating lengthy implementation cycles.",
-    "protitle": "The best technology for every project",
-    "prosubtitle": "Your site will run at high speed, be secure, easy to maintain, and ready to scale",
-    "proIn": "Strategy",
-    "proEs": "Architecture",
-    "proAr": "Figma Design",
-    "proDi": "Programming",
-    "proPu": "Optimization",
-    "proGes": "Launch",
-    "poTitle": "Full Workflow Process",
-    "poParraf1": "We start with a consultation to deeply understand your business, goals, competition, and budget. Then, we design a clear strategy outlining the site’s structure and functionalities.",
-    "poParraf2": "We create complete visual designs in Figma for your approval before writing a single line of code. Once the design is approved, we develop the site using professional quality standards. We perform exhaustive testing across all browsers and both mobile and desktop devices.",
-    "poParraf3": "Finally, we launch your site.",
-    "poPreg": "Shall we discuss your next big step on social media?",
-    "pobot": "Contact us",
-    "griPost": "Ready to transform your online brand?",
-    "griParraf": "Book your free 30-minute strategy session. We’ll audit your brand, find growth opportunities, and build a roadmap for you.",
-    "titPost": "Some of our projects",
-    "videoBadge": "Behind the scenes",
-    "videoTitle": "This is how we design your next website",
-    "videoSubtitle": "A quick look at the creative and technical process behind every web project we deliver at 3R Core."
+    "slogan": "We build on the platforms your customers already trust, <shopify>Shopify</shopify> and <woo></woo>, so your site gets the <bold>speed</bold>, <bold>security</bold> and <bold>flexibility</bold> a growing U.S. business needs without a rebuild in eighteen months.",
+    "protitle": "Websites built to be measured, not just admired",
+    "prosubtitle": "Designed and developed by our team in Lima, on your business hours",
+    "proIn": "Research",
+    "proEs": "Strategy",
+    "proAr": "Architecture",
+    "proDi": "Design",
+    "proPu": "Launch",
+    "proGes": "Management",
+    "poTitle": "Most sites fail on the same three things",
+    "poParraf1": "They load slowly on a phone, they were never instrumented so nobody knows which page produces revenue, and the copy describes the company instead of answering what the visitor came to find out. None of those are design problems, which is why redesigns so often change nothing.",
+    "poParraf2": "We start from what the site has to produce — leads, orders, calls — and work backwards. That decides the structure, the copy and the technical budget, in that order. A five-page site that converts beats a twenty-page site that impresses nobody in particular.",
+    "poParraf3": "Everything ships instrumented. Analytics, tag management and conversion events are configured before launch, in your accounts, so the first month already tells you something. Sites handed over without tracking waste their most informative period, and that period never comes back.",
+    "poPreg": "Do you know which page on your site brings in revenue?",
+    "pobot": "Let's talk",
+    "griPost": "What every project includes",
+    "griParraf": "Custom design, fast mobile rendering, clean technical foundations for search, forms that notify by email and WhatsApp, and analytics wired up from day one. First year of domain, SSL and hosting included, all in your name.",
+    "titPost": "Selected work",
+    "videoBadge": "How we work",
+    "videoTitle": "From the first call to a live site",
+    "videoSubtitle": "Fixed scope, price in USD and dates in writing before anything starts"
   },
   "WebSection": {
     "header": {
-      "subtitle": "TYPES OF WEBSITES",
-      "description": "We design and develop all types of websites tailored to your needs:"
+      "subtitle": "TYPES OF SITE",
+      "description": "We build the kind of site your business actually needs, not a filled-in template:"
     },
     "landing": {
-      "title": "Landing Pages",
-      "description": "Optimized landing pages designed to convert visitors into customers, ideal for marketing campaigns and product launches."
+      "title": "Landing pages",
+      "description": "One page built around a single campaign, with a short form and full measurement. The right choice when you are about to spend on ads and need every dollar to land somewhere accountable."
     },
     "info": {
-      "title": "Informational & Corporate Sites",
-      "description": "Professional portals that project your company's image and effectively communicate your services."
+      "title": "Corporate websites",
+      "description": "Five to eight sections for businesses that need to project credibility and capture qualified leads, with a Spanish version where the audience justifies it."
     },
     "Ecomm": {
-      "title": "E-commerce",
-      "description": "Complete online stores featuring shopping carts, integrated payment gateways, and inventory management."
+      "title": "Online stores",
+      "description": "Shopify or WooCommerce with payment gateway, loaded catalog, state-level tax setup and shipping rules configured. Built to sell, not just to launch."
     },
     "Elearn": {
-      "title": "E-Learning Platforms",
-      "description": "Online learning systems with course management, student tracking, and educational content."
+      "title": "Course platforms",
+      "description": "Learning sites with per-user access, recurring billing and progress tracking, for businesses selling knowledge rather than physical products."
     },
     "Servic": {
-      "title": "Service-Based Sites",
-      "description": "Websites featuring smart forms, appointment systems, and automated scheduling."
+      "title": "Local service sites",
+      "description": "For businesses with a service area: pages per area served, Google Business Profile connected, and contact by call, form and WhatsApp."
     },
     "Blogs": {
-      "title": "Blogs & Content Portals",
-      "description": "Platforms optimized for content publishing and distribution."
+      "title": "Blogs and content",
+      "description": "The part that keeps bringing visitors months later. Structured for search and built so your team can publish without coming back to us."
     }
   },
   "webFAQ": {
-    "title": "Frequently Asked Questions",
-    "topBadge": "FAQ - Answering your questions",
-    "par": "We have been creating websites for over 8 years, with more than 150 successful design and development projects completed. Our team is certified in UX/UI design and modern web development. Satisfaction guaranteed.",
-    "tipar": "SUCCESS STORIES",
+    "title": "Frequently asked questions",
+    "topBadge": "FAQ · Answers before you ask",
+    "par": "Eight years building websites and over 150 projects delivered. Our team is in Lima, Peru and works U.S. business hours; U.S. clients contract through our U.S. subsidiary.",
+    "tipar": "Another question? Write to us and you will have an answer the same day.",
     "faqs": {
       "q1": {
-        "question": "How long does it take?",
-        "answer": "Typically 4-12 weeks depending on complexity. We provide clear timelines from the very start."
+        "question": "What does a website cost?",
+        "answer": "A professional landing page starts at $850, a five-to-eight section corporate site from $1,200, and an online store from $1,750. What moves the price is integrations, not page count. You get a fixed scope and a written price after the first call, before any work begins."
       },
       "q2": {
-        "question": "Can I see the design before development?",
-        "answer": "Absolutely. We create full prototypes in Figma for your approval before development begins. You'll know exactly how your site will look."
+        "question": "How long does it take?",
+        "answer": "Three to six weeks for a landing page or corporate site, five to eight for a store with a catalog. What usually stretches a timeline is not development but waiting on copy, photos and access, so at kickoff we tell you exactly what we need from you and when."
       },
       "q3": {
-        "question": "Can I update the content myself?",
-        "answer": "Yes, completely. We'll train you on the admin panel so you can easily update text, images, and content."
+        "question": "Who owns the site and the code?",
+        "answer": "You do, from day one. Domain, hosting, repository, analytics and ad accounts are registered in your name with us granted access. There is nothing to reclaim if the relationship ends, and no part of the build is held as leverage. It is also better practice for your historical data."
       },
       "q4": {
-        "question": "What happens after the launch?",
-        "answer": "We offer maintenance and support plans. We’re always available for updates, optimizations, and troubleshooting."
+        "question": "Can we manage it ourselves afterwards?",
+        "answer": "Yes. The site ships with an admin panel for text, images and posts, plus a recorded handover session. Ongoing maintenance is available as a separate service, but it is an option rather than a condition — you are not required to keep paying us to keep the site running."
       },
       "q5": {
-        "question": "Is Google ranking (SEO) included?",
-        "answer": "We deliver your site with basic SEO implemented, optimized for speed and correct technical structure. For advanced SEO services to boost your traffic and ranking, we offer dedicated plans separately."
+        "question": "Is domain and hosting included?",
+        "answer": "For the first year: domain, SSL certificate and professional hosting are in the package. From year two hosting is billed separately, roughly $10 to $35 per month depending on traffic and platform, or you can move it to your own provider with no penalty."
       },
       "q6": {
-        "question": "What if I need specific functionalities?",
-        "answer": "We can design and integrate almost anything: payment gateways, booking systems, CRM integrations, automations, and more."
+        "question": "Does it include SEO?",
+        "answer": "The technical foundation does: speed, clean URL structure, metadata, structured data and analytics wired up at launch. Ongoing SEO — monthly content, links, tracking — is a separate service, because it is continuous work rather than a deliverable. Building the foundation in from the start is far cheaper than retrofitting it."
       },
       "q7": {
-        "question": "How much does it cost to build a website in Lima, Peru?",
-        "answer": "At 3R Core, web design and development for US clients starts at $850 for landing pages and corporate sites up to 6 sections, including Figma design, responsive development, basic technical SEO, contact form and Google Analytics integration. Full corporate sites range from $1,200 to $2,500 and e-commerce from $2,000. In the first meeting we deliver an accurate quote based on your scope."
+        "question": "We already have a site. Rebuild or fix?",
+        "answer": "We look before recommending. Often a rebuild is not needed: fixing speed, correcting structure and adding what is missing costs considerably less and keeps the authority the domain already earned. A rebuild is justified when the current site is slow, fails on mobile or cannot be measured — problems no amount of content will offset."
       },
       "q8": {
-        "question": "How much does an online store (e-commerce) cost in Peru?",
-        "answer": "A professional online store with a catalog of up to 100 products, integrated payment gateway (Culqi, Niubiz, Izipay or Mercado Pago), inventory management and admin panel starts at $2,000 on Shopify or WooCommerce. SUNAT electronic invoicing, ERP integrations or multiple shipping methods raise the price according to complexity. Training is included so you can manage the store yourself."
+        "question": "How does payment work?",
+        "answer": "In U.S. dollars, usually half at kickoff and half at launch, by transfer or card, invoiced through our U.S. subsidiary. Scope, dates and revision rounds are written down before we start, so nothing changes shape halfway through."
       },
       "q9": {
-        "question": "Which is better for my business: Shopify or WooCommerce?",
-        "answer": "Shopify works best if you want to launch fast, without worrying about hosting or technical maintenance, and you plan to sell between 50 and 5,000 products. WooCommerce (on WordPress) is better if you need maximum customization, full code control, specific ERP integrations or you already have content on WordPress. We work with both platforms: in the first meeting we recommend which one fits your Peruvian business model better."
+        "question": "What if we need changes later?",
+        "answer": "Every project includes two revision rounds before launch and thirty days of warranty on anything that breaks afterwards. Changes that come up later are quoted separately or covered by a maintenance plan, depending on how much work they involve."
       },
       "q10": {
-        "question": "Does it include hosting, domain and SSL certificate?",
-        "answer": "The first year we include a .com or .pe domain, SSL certificate (Let's Encrypt or equivalent) and professional hosting at no additional cost as part of the package. From year 2 onwards hosting is billed separately ($8 to $35 per month depending on traffic and platform) or you can migrate it to your own provider with no penalty. Everything is registered under your name from day one."
+        "question": "Do you handle U.S. payments and sales tax?",
+        "answer": "Yes. We configure the gateway you use — Stripe, PayPal or the platform's own — and set up state-level tax calculation, which is the piece most commonly left broken. Filing returns remains yours; what we make sure of is that collection is correct from the first order."
       }
     }
   },
@@ -523,99 +523,99 @@
     "buttonSending": "Sending..."
   },
   "LandingHero": {
-    "titleLine1": "SEARCH ENGINE",
-    "titleLine2": "POSITIONING",
-    "slogan": "Boost your business on Google and attract customers who are actually looking for what you offer",
-    "buttonText": "CONTACT SERVICE",
-    "whatsappMessage": "Hi, I'm coming from the website, I'd like to schedule a meeting."
+    "titleLine1": "SEO that",
+    "titleLine2": "compounds",
+    "slogan": "Organic rankings built by a team in Lima that works your hours, so the work ships daily instead of overnight.",
+    "buttonText": "Get a scoped plan",
+    "whatsappMessage": "Hi, I would like to talk about SEO for my business"
   },
   "FirstLandingSection": {
     "number": "01.",
-    "heading": "Google SEO Positioning for companies seeking real results",
-    "description": "We improve your website's visibility on Google with a professional SEO strategy,tailored to your industry and sales opportunities for sustainable growth",
+    "heading": "SEO is a volume game, and volume is a cost problem",
+    "description": "Ranking is won by consistent output: pages published, issues fixed, links earned, month after month. Most programs stall because that output is expensive at U.S. agency rates.",
     "quote": {
-      "line1": "SEO is not advertising or social media",
-      "line2": "it is a medium-term strategy that builds authority, ranking, and progressive results on Google"
+      "line1": "Same senior work, different operating costs",
+      "line2": "so the budget buys more pages, more fixes and more tests each month."
     },
     "pricing": {
-      "label": "Monthly Investment",
+      "label": "Monthly investment",
       "amount": "$500",
-      "feature1": "Professional SEO strategy",
-      "feature2": "No forced contracts",
-      "feature3": "Progressive results"
+      "feature1": "Technical fixes and audit",
+      "feature2": "Content built for intent",
+      "feature3": "Reporting you can read"
     }
   },
   "SecondLandingSection": {
     "number": "02.",
-    "title": "Why invest in SEO Positioning?",
-    "subtitle": "We work under a clear, measurable, and results-oriented methodology.",
+    "title": "What runs every month",
+    "subtitle": "Continuous work on your site, not a report that gets filed",
     "cards": {
       "audit": {
-        "title": "SEO Audit & Planning",
+        "title": "Technical foundation",
         "items": [
-          "Core keyword analysis for your business",
-          "Direct competitor research on Google",
-          "Basic website structure review",
-          "Monthly editorial calendar proposal (8 - 15 optimized titles)",
-          "Monthly performance report"
+          "Crawl and index audit: what Google can actually reach",
+          "Core Web Vitals, mobile rendering and speed fixes",
+          "Correct canonicals, hreflang and structured data",
+          "Log-level check of what gets crawled and how often",
+          "A measured baseline, so improvement means something"
         ]
       },
       "interlinks": {
-        "title": "Interlinking Optimization",
+        "title": "Content and internal linking",
         "items": [
-          "Internal site structure analysis",
-          "Internal linking strategy between content",
-          "User journey optimization",
-          "Authority improvement for key landing pages"
+          "Pages built for real search intent, not keyword counts",
+          "One page per intent, so nothing competes with itself",
+          "Internal links that push authority toward money pages",
+          "Existing pages refreshed before new ones get written"
         ]
       },
       "scaling": {
-        "title": "SEO Scaling",
+        "title": "Scaling",
         "items": [
-          "Identification of new ranking opportunities",
-          "Continuous optimization of existing content",
-          "Reinforcement of high-performing pages",
-          "Growth reporting and future action planning"
+          "Expansion into terms adjacent to what already ranks",
+          "Reinforcement of pages sitting on page two",
+          "Digital PR and links from publications in your sector",
+          "Monthly reallocation based on what the data shows"
         ]
       }
     }
   },
   "ThirdLandingSection": {
     "number": "03.",
-    "heading": "When do you start seeing results?",
-    "description": "SEO is a medium-term strategy. Initial progress is typically observed depending on the industry, competition, and the initial state of the website.",
+    "heading": "Why the time zone matters here",
+    "description": "SEO is iterative work: a crawl issue found Tuesday should be fixed Tuesday, not next week. Our team is in Lima, on Eastern Time or one hour behind, so your business day and ours are the same day.",
     "quote": {
-      "line1": "Big companies do it",
-      "line2": "We promise real results"
+      "line1": "A question asked at 10am",
+      "line2": "is answered at 10:15, not tomorrow."
     }
   },
   "FourthLandingSection": {
     "number": "04.",
-    "heading": "SEO success stories",
-    "description": "We have implemented SEO strategies for various industries, achieving top rankings for key searches such as:",
+    "heading": "How we report",
+    "description": "Not rank screenshots. The two numbers that decide whether this is working:",
     "successCases": {
-      "case1": "Argentaria - Jewelry and silversmithing",
-      "case2": "As de Oros - Casino and entertainment"
+      "case1": "Qualified leads from organic search, month over month",
+      "case2": "Cost per acquisition from organic vs paid"
     },
     "quote": {
-      "line1": "Every project begins with a real analysis",
-      "line2": "and a personalized strategy tailored to the business"
+      "line1": "If cost per lead has not moved by month six,",
+      "line2": "the approach is wrong and we change it."
     }
   },
   "FiveLandingSection": {
     "number": "05.",
-    "heading": "SEO Service Investment",
-    "description": "This service includes audit, planning, optimization, scaling, and monthly reporting.",
+    "heading": "What it costs",
+    "description": "Audit, planning, technical work, content and monthly reporting. No forced contracts.",
     "pricing": {
-      "label": "Monthly Investment",
+      "label": "Monthly investment",
       "amount": "$500",
-      "footer": "It is a continuous strategy focused on sustainable results."
+      "footer": "Compounding work: each month builds on the last."
     }
   },
   "SixLandingSection": {
     "number": "06.",
-    "heading": "Is your business ready to rank on Google",
-    "description": "If you are looking for immediate results, this service is not for you.<br/>If you are looking to build a solid digital presence and consistent traffic, we can help."
+    "heading": "Is your site ready to earn organic traffic",
+    "description": "If you need results in three weeks, this is not the service.<br/>If you want traffic that keeps arriving after you stop paying for it, let's talk."
   },
   "servicesButton": {
     "servicios": "Services"
@@ -778,12 +778,14 @@
     }
   },
   "WebDevSEO": {
-    "seoTitle": "Web Design in Lima: pages that sell, not just look good",
-    "p1": "A professional website is the most profitable tool of your digital marketing: it works 24/7, doesn't take vacations and converts visits into customers while you sleep. At 3R Core we design tailor-made websites in Lima, Peru, focused on conversion, speed and SEO from day one.",
-    "p2": "We build corporate websites for companies that need authority projection, specialized landing pages for Google Ads campaigns, and online stores (e-commerce) on Shopify and WooCommerce ready to process payments in soles, dollars and ship internationally.",
-    "p3": "Every web development project includes custom UX/UI design, mobile optimization (Google ranks mobile version first), technical SEO, integration with Google Analytics and Google Tag Manager, and forms connected to your email or WhatsApp so leads arrive instantly.",
-    "p4": "If you already have a site but it's slow, has no SEO or doesn't convert, we run audits and redesigns. The first consultation is free: we review your current site, tell you what to fix and build a concrete proposal for your digital investment to start paying off.",
-    "relatedTitle": "Combine your website with our other services"
+    "seoTitle": "Web design and development for U.S. brands, built in Lima",
+    "p1": "A website is the only marketing asset you own rather than rent. Advertising stops existing the moment you stop paying; the site keeps working. That is why we build from what it has to produce — leads, orders, calls — instead of from how many sections it should have.",
+    "p2": "Most sites underperform for three reasons that have nothing to do with design: they load slowly on a phone, they were never instrumented so nobody knows which page produces revenue, and the copy describes the company instead of answering the question the visitor arrived with. A redesign that ignores those changes the look and not the result.",
+    "p3": "Everything we build ships instrumented. Analytics, tag management and conversion events are configured before launch and live in your accounts, so the first month of traffic already teaches you something. Sites handed over without tracking waste their most informative period, and that period does not come back.",
+    "p4": "The technical foundation is included and not negotiable: mobile speed, clean URL structure, correct metadata and structured data, and the internal linking that lets content rank later. Retrofitting any of it costs roughly double, which is why it belongs in the build rather than in a later project.",
+    "p5": "We are a Peruvian agency and the work is made by our team in Lima, on Eastern Time or one hour behind. U.S. clients contract and invoice through our U.S. subsidiary. In practice that means the same senior work at a different operating cost, and a design review that happens live instead of by ticket overnight.",
+    "p6": "Where the audience justifies it, we build the Spanish version as a real indexable section rather than a translation toggle — for many U.S. businesses that is the cheapest qualified traffic available. Tell us what you sell and to whom, and we will tell you which kind of site that actually calls for.",
+    "relatedTitle": "Related services"
   },
   "GoogleAdsFAQ": {
     "badge": "Frequently Asked Questions",
@@ -894,50 +896,52 @@
     "relatedTitle": "Services that boost your social media"
   },
   "SEOFAQ": {
-    "badge": "Frequently Asked Questions",
-    "title": "Everything about our SEO Positioning service",
+    "badge": "FAQ",
+    "title": "SEO — frequently asked questions",
     "faqs": {
       "q1": {
-        "question": "What is the monthly investment for the SEO service at 3R Core?",
-        "answer": "The monthly investment for the SEO Positioning service at 3R Core is $500 for US clients. This includes audit, planning, optimization, scaling and monthly reporting. It is a continuous strategy focused on sustainable results, with no forced contracts and progressive outcomes."
+        "question": "What does SEO cost?",
+        "answer": "From $500 per month, including the technical audit, keyword and intent research, on-page work, content and monthly reporting. No forced contracts — the engagement is monthly and holds on results rather than on a lock-in period. Larger sites with bigger content programs scale from there."
       },
       "q2": {
-        "question": "What does the SEO Positioning service include?",
-        "answer": "SEO Audit & Planning (core keyword analysis, direct competitor research on Google, basic website structure review, monthly editorial calendar of 8 to 15 optimized titles and monthly performance report), Interlinking Optimization (internal site structure analysis, internal linking strategy between content, user journey optimization and authority improvement for key landing pages) and SEO Scaling (identification of new ranking opportunities, continuous optimization of existing content, reinforcement of high-performing pages and growth reporting with future action planning)."
+        "question": "How long before it works?",
+        "answer": "First ranking movement usually shows between months two and three; meaningful lead volume between four and six. Anyone promising page one in weeks is describing paid advertising, not organic search. What we can promise inside the first month is the technical baseline fixed and a measured starting point."
       },
       "q3": {
-        "question": "When do you start seeing SEO results?",
-        "answer": "SEO is a medium-term strategy. Initial progress is typically observed depending on the industry, competition, and the initial state of the website. SEO and branding consolidate within 3 to 6 months, while paid campaigns deliver results from month one."
+        "question": "Who actually does the work?",
+        "answer": "Our team in Lima, Peru, working U.S. business hours. For U.S. clients the commercial side runs through our U.S. subsidiary, so contracting and invoicing work the way you expect. You get a named point of contact, not a rotating pool — context is most of the value in an SEO engagement."
       },
       "q4": {
-        "question": "What is the difference between SEO and Google Ads?",
-        "answer": "SEO makes your website appear organically in Google when someone searches for your services or products. With Google Ads we achieve immediate results through strategically segmented ads. SEO is ideal to build authority, trust and sustainable results over time; Google Ads brings clients from day one. We recommend combining both so cost per lead decreases over time."
+        "question": "Do we keep the work if we stop?",
+        "answer": "Yes. Everything is built in your properties: your site, your Search Console, your analytics, your Google Business Profile. Content, technical fixes and documentation are yours and stay in place. We do not build inside accounts you cannot access, which is also better practice for your historical data."
       },
       "q5": {
-        "question": "Do you have SEO success stories?",
-        "answer": "Yes. We have implemented SEO strategies for various industries, achieving top rankings for key searches such as Argentaria (jewelry and silversmithing) and As de Oros (casino and entertainment). Every project begins with a real analysis and a personalized strategy tailored to the business."
+        "question": "What if our site is technically a mess?",
+        "answer": "That is normal and it is where the first month goes. Crawl and index problems, slow pages, duplicate content and broken canonicals routinely cap a site well below what its content deserves. Fixing them often produces the first visible movement, before a single new page is published."
       },
       "q6": {
-        "question": "Do you serve clients outside Lima or only in Peru?",
-        "answer": "We serve clients across Peru and the United States. We work remotely with video meetings and online reports. If your brand is outside Lima, no problem: 60% of our projects run 100% remotely."
+        "question": "Can you work alongside our internal team?",
+        "answer": "That is the most common arrangement. Usually there is an internal marketing lead who owns strategy and needs execution capacity — technical work, content volume, ongoing optimization. We plug in underneath, work from their priorities and report into their cadence rather than replacing them."
       },
       "q7": {
-        "question": "Does SEO require long-term forced contracts?",
-        "answer": "No. We work without forced contracts. SEO is a medium-term strategy that builds authority, ranking, and progressive results on Google, but service continuity depends on satisfaction with the results, month after month."
+        "question": "Do you also handle Spanish-language SEO?",
+        "answer": "Yes, and for many U.S. businesses it is the faster win. Spanish-language queries in a given service area typically face a fraction of the competing content their English equivalents do. We produce that content with native Spanish speakers rather than translating, because translated copy reads flat to the audience it is meant to convince."
       },
       "q8": {
-        "question": "What type of businesses benefit most from SEO?",
-        "answer": "If you are looking for immediate results, this service is not for you. If you are looking to build a solid digital presence and consistent traffic, we can help. SEO is not advertising or social media: it is a medium-term strategy that builds authority, ranking and progressive results on Google."
+        "question": "What does the monthly report contain?",
+        "answer": "What was done, what changed, what comes next, and the numbers that matter: organic leads, cost per acquisition, and movement on the terms tied to revenue. Impressions and average position appear as diagnostics, never as the headline — they do not tell you whether the business sold more."
       }
     }
   },
   "SEOSEOBlock": {
-    "seoTitle": "SEO Agency in Lima: organic positioning that actually builds traffic",
-    "p1": "At 3R Core we help your brand appear in the first Google results, both organically (SEO) and through paid ads (Google Ads). Our goal is simple: for more people to find your business, trust your brand and contact you. We improve your website's visibility on Google with a professional SEO strategy, tailored to your industry and sales opportunities for sustainable growth.",
-    "p2": "We work on positioning from an integral strategy, combining analysis, content, advertising and constant optimization, so that your investment generates real and measurable results. SEO is not advertising or social media: it is a medium-term strategy that builds authority, ranking and progressive results on Google.",
-    "p3": "Our service is structured in three blocks: SEO Audit & Planning (core keywords, competitor research, site structure, monthly editorial calendar of 8 to 15 optimized titles and monthly report), Interlinking Optimization (internal structure, internal linking between content and authority of key landing pages) and SEO Scaling (new ranking opportunities, continuous optimization of existing content and reinforcement of high-performing pages).",
-    "p4": "We have implemented SEO strategies for various industries, achieving top rankings for key searches such as Argentaria (jewelry and silversmithing) and As de Oros (casino and entertainment). The monthly investment is $500 for US clients, includes audit, planning, optimization, scaling and monthly reports, with no forced contracts. If you are looking to build a solid digital presence and consistent traffic on Google, let's talk.",
-    "relatedTitle": "Services that complement your SEO strategy"
+    "seoTitle": "SEO for U.S. brands, delivered from Lima, Peru",
+    "p1": "Search rankings are earned through sustained output: technical problems fixed, pages published for real intent, internal links rebuilt, authority earned. The reason most programs stall is not strategy but volume — that work is expensive at U.S. agency rates, so it gets rationed until it stops compounding.",
+    "p2": "3R Core is a Peruvian agency and we run SEO for U.S. brands from our team in Lima, through our U.S. subsidiary. The point is not cheaper labor: it is the same senior work carrying a different operating cost, so the same budget buys more pages, more fixes and more tests each month. In a channel that rewards consistency, that difference decides outcomes.",
+    "p3": "Time zone is what makes the arrangement work day to day. Lima runs on Eastern Time or one hour behind depending on daylight saving, so a crawl issue found on Tuesday morning is being fixed Tuesday morning. Teams that have tried arrangements twelve hours out recognize immediately how much that changes, because SEO is iterative and every ambiguity otherwise costs two days.",
+    "p4": "The first month goes to the foundation, because content published on a broken site is wasted money. Crawl and index coverage, Core Web Vitals, canonicals, structured data and internal link architecture routinely cap a site well below what its existing content deserves — and fixing them often produces the first visible movement before anything new is written.",
+    "p5": "Everything is built in your own properties. Your site, your Search Console, your analytics, your Business Profile. If the engagement ends, the content, the fixes and the documentation stay with you. There is nothing to reclaim, which is how it should be and is not always how it works.",
+    "p6": "We also produce in Spanish, which matters more than most U.S. brands realize: the Spanish version of a commercial query in your service area usually faces far less competition than the English one. Tell us your market and we will tell you what six months can realistically look like.",
+    "relatedTitle": "Related services"
   },
   "MetaAdsLanding": {
     "hero": {

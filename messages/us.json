@@ -14,7 +14,11 @@
   },
   "HiddenH1": {
     "home": "Agencia de marketing digital en español para negocios hispanos en Estados Unidos",
-    "hispanic": "Marketing digital en español para negocios hispanos en Estados Unidos"
+    "hispanic": "Marketing digital en español para negocios hispanos en Estados Unidos",
+    "webdev": "Diseño y desarrollo de sitios web bilingües para negocios en Estados Unidos",
+    "seo": "Posicionamiento SEO en español para negocios en Estados Unidos",
+    "tiendas": "Creación de tiendas online para negocios en Estados Unidos",
+    "ecommerce": "Marketing digital para tiendas online en Estados Unidos"
   },
   "HispanicLanding": {
     "hero": {
@@ -135,15 +139,50 @@
     "relatedTitle": "Servicios relacionados"
   },
   "webFAQ": {
+    "title": "Preguntas frecuentes",
+    "topBadge": "FAQ · Resolvemos tus dudas",
+    "par": "Llevamos ocho años construyendo sitios web y más de 150 proyectos entregados. Nuestro equipo está en Lima y trabaja en horario compatible con Estados Unidos.",
+    "tipar": "¿Tienes otra pregunta? Escríbenos y te respondemos el mismo día.",
     "faqs": {
+      "q1": {
+        "question": "¿Cuánto cuesta un sitio web?",
+        "answer": "Una landing page profesional arranca en $850, un sitio corporativo de cinco a ocho secciones desde $1,200 y una tienda online desde $1,750. El precio final depende de las integraciones, no del número de páginas. Te damos alcance cerrado y precio por escrito tras la primera reunión."
+      },
+      "q2": {
+        "question": "¿Cuánto demora?",
+        "answer": "Entre tres y seis semanas para una landing o un sitio corporativo, y de cinco a ocho para una tienda con catálogo. Lo que suele alargar el plazo no es el desarrollo sino la espera de textos, fotos y accesos, así que al arrancar te decimos exactamente qué necesitamos de ti y cuándo."
+      },
+      "q3": {
+        "question": "¿El sitio queda en español o en inglés?",
+        "answer": "En los dos, si tu negocio atiende a los dos públicos. Y no con un botón que traduce: cada idioma tiene sus propias direcciones y su marcado correcto, que es lo que permite que Google muestre la versión adecuada a cada persona. Los formularios y los correos automáticos también van en ambos."
+      },
+      "q4": {
+        "question": "¿Puedo administrar el sitio yo mismo?",
+        "answer": "Sí. Entregamos el sitio con un panel para que edites textos, imágenes y publicaciones sin depender de nadie, más una sesión de capacitación grabada. Si prefieres que lo llevemos nosotros, existe el servicio de mantenimiento, pero es una opción y no una condición."
+      },
+      "q5": {
+        "question": "¿Incluye el dominio y el alojamiento?",
+        "answer": "El primer año sí: dominio, certificado de seguridad y alojamiento profesional entran en el paquete. A partir del segundo año el alojamiento se cobra aparte, entre $10 y $35 al mes según el tráfico y la plataforma, o puedes llevarlo a tu propio proveedor sin ninguna penalidad. Todo queda a tu nombre desde el primer día."
+      },
+      "q6": {
+        "question": "¿Trabajan la parte de buscadores?",
+        "answer": "La base técnica va incluida en todos los proyectos: velocidad, estructura de direcciones, etiquetas, marcado para buscadores y conexión a las herramientas de medición. El posicionamiento continuo —contenido mensual, enlaces, seguimiento— es un servicio aparte, porque es un trabajo permanente y no una entrega."
+      },
       "q7": {
-        "answer": "En 3R Core el diseño y desarrollo web arranca en $850 para landing pages y sitios corporativos de hasta 6 secciones, incluyendo diseño en Figma, desarrollo responsive, SEO técnico básico, formulario de contacto y conexión a Google Analytics. Sitios corporativos completos van de $1,200 a $2,400 y los e-commerce desde $1,750. En la primera reunión te damos una propuesta económica precisa según tu alcance."
+        "question": "¿Y si ya tengo un sitio?",
+        "answer": "Lo revisamos antes de proponer nada. Muchas veces no hace falta rehacerlo entero: se corrige la velocidad, se arregla la estructura y se añade la versión en español, que cuesta bastante menos y conserva el historial que el dominio ya acumuló. Rehacer se justifica cuando el sitio actual es lento, no funciona bien en el celular o no permite medir."
       },
       "q8": {
-        "answer": "Una tienda online profesional con catálogo hasta 100 productos, pasarela de pago integrada (Stripe, PayPal o Shopify Payments), gestión de inventario y panel de administración arranca desde $1,750 en Shopify o WooCommerce. Si necesitas integraciones con tu ERP, cálculo de impuestos por estado o múltiples métodos de envío, el rango sube según la complejidad. Incluye capacitación para que administres la tienda."
+        "question": "¿Cómo se paga?",
+        "answer": "En dólares, normalmente en dos partes: la mitad al arrancar y la mitad al publicar. Aceptamos transferencia y tarjeta. El alcance, las fechas y las rondas de corrección quedan por escrito antes de empezar, así que no hay sorpresas a mitad del proyecto."
+      },
+      "q9": {
+        "question": "¿Qué pasa si necesito cambios después?",
+        "answer": "Cada proyecto incluye dos rondas de corrección antes de publicar y treinta días de garantía sobre cualquier fallo posterior. Los cambios que aparecen más adelante se cotizan aparte o entran en el plan de mantenimiento, según cuánto trabajo supongan."
       },
       "q10": {
-        "answer": "El primer año incluimos dominio .com, certificado SSL y hosting profesional sin costo adicional dentro del paquete. A partir del año 2 el hosting se cobra aparte (entre $10 y $35 al mes según tráfico y plataforma) o puedes migrarlo a tu propio proveedor sin penalización. Todo queda a tu nombre desde el día uno."
+        "question": "¿Aparecen bien los pagos e impuestos de Estados Unidos?",
+        "answer": "Sí. Configuramos la pasarela que uses —Stripe, PayPal o la de la propia plataforma— y dejamos el cálculo de impuestos por estado funcionando, que es lo que suele quedar mal cuando el sitio lo hizo alguien de fuera. La declaración sigue siendo tuya; lo que garantizamos es que el cobro salga correcto."
       }
     }
   },
@@ -172,7 +211,14 @@
     }
   },
   "WebDevSEO": {
-    "p2": "Hacemos páginas web corporativas para empresas que necesitan proyectar autoridad, landing pages especializadas para campañas de Google Ads, y tiendas online (e-commerce) en Shopify y WooCommerce listas para procesar pagos en dólares, cobrar impuestos por estado y vender en varios países."
+    "seoTitle": "Diseño y desarrollo web para negocios en Estados Unidos",
+    "p1": "Un sitio web es la única pieza de tu marketing que trabaja sin parar y que no alquilas: la publicidad deja de existir cuando dejas de pagarla, y el sitio sigue ahí. Por eso lo construimos pensando en lo que tiene que producir —contactos, pedidos, llamadas— y no en cuántas secciones tiene.",
+    "p2": "Para un negocio que atiende a clientes hispanos en Estados Unidos hay una decisión que lo cambia todo: si el español es una versión propia del sitio o un botón que traduce. Solo la primera se indexa, y solo la primera aparece cuando alguien busca en su idioma. Construimos las dos versiones como páginas independientes, correctamente marcadas para que el buscador muestre la que corresponde.",
+    "p3": "El recorrido completo tiene que sostenerse en un solo idioma. Una página en español que lleva a un formulario en inglés, con un correo de confirmación en inglés y una llamada de vuelta en inglés, pierde al cliente justo en el momento de decidir. Los formularios, los avisos y los correos automáticos se entregan en ambos idiomas desde el primer día.",
+    "p4": "Sumamos el canal que tu cliente usa de verdad. El público hispano escribe por WhatsApp antes que completar un formulario largo, y ofrecerlo de forma visible suele subir los contactos de inmediato. Lo importante es medirlo igual que cualquier otro canal: un canal que produce clientes pero no queda registrado hace que toda la inversión parezca infructuosa.",
+    "p5": "La parte técnica va incluida y no es negociable: velocidad en celular, estructura de direcciones limpia, marcado para buscadores y conexión a las herramientas de medición desde la publicación. Es lo que hace que el sitio pueda posicionar después, y corregirlo más tarde cuesta el doble.",
+    "p6": "Trabajamos con alcance cerrado y precio en dólares acordado por escrito antes de empezar. El dominio, el certificado y el alojamiento del primer año entran en el paquete, y todo queda a tu nombre. Cuéntanos qué vendes y a quién, y te decimos qué tipo de sitio necesitas de verdad.",
+    "relatedTitle": "Servicios relacionados"
   },
   "GoogleAdsFAQ": {
     "faqs": {
@@ -198,14 +244,52 @@
     }
   },
   "SEOFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes sobre SEO en español",
     "faqs": {
       "q1": {
-        "answer": "La inversión mensual del servicio de posicionamiento SEO en 3R Core es de $500. Este monto incluye auditoría, planificación, optimización, escalamiento y reportes mensuales. Es una estrategia continua enfocada en resultados sostenibles, sin contratos forzosos y con resultados progresivos."
+        "question": "¿Cuánto cuesta el servicio de SEO?",
+        "answer": "La inversión mensual es de $500 e incluye diagnóstico, plan de palabras clave sobre búsquedas reales de tu zona, corrección técnica del sitio, contenido y reporte mensual. Sin contratos forzosos: el servicio es mes a mes y se sostiene por resultados, no por permanencia."
+      },
+      "q2": {
+        "question": "¿En cuánto tiempo se ven resultados?",
+        "answer": "En español suele notarse antes que en inglés porque hay menos competencia. Los primeros movimientos de posición aparecen entre el mes 2 y el 3; el aumento de contactos, entre el 4 y el 6. Cualquiera que prometa primera página en semanas está describiendo publicidad pagada, no posicionamiento."
+      },
+      "q3": {
+        "question": "¿Sirve si mi sitio está solo en inglés?",
+        "answer": "Sí, y muchas veces es el mejor punto de partida. No hace falta rehacer el sitio: se crea una sección en español bien construida y marcada con hreflang para que Google la muestre a quien busca en ese idioma. Rehacer todo solo se justifica si el sitio actual es lento, no funciona en el celular o no permite medir nada."
+      },
+      "q4": {
+        "question": "¿Se puede posicionar solo en mi ciudad?",
+        "answer": "Sí, y para un negocio de servicios es lo más rentable. Trabajamos la ficha de Google Business Profile en español, las páginas de las zonas donde realmente atiendes y las señales locales que decidan el mapa. Aparecer en tres códigos postales que te compran vale más que aparecer en todo el estado."
+      },
+      "q5": {
+        "question": "¿Qué pasa si mi competencia también empieza a hacerlo?",
+        "answer": "Por eso el momento importa. La ventaja actual existe porque el mercado está desatendido, y se estrecha a medida que otros lo notan. Quien lleva un año de contenido acumulado en español tiene una posición difícil de alcanzar para quien empieza hoy, igual que ocurrió en inglés hace años."
+      },
+      "q6": {
+        "question": "¿Cómo eligen las palabras clave?",
+        "answer": "No traducimos las palabras clave del inglés: eso produce términos que nadie busca. Partimos de las consultas reales que ya llegan a tu sitio, del vocabulario que usa la comunidad a la que atiendes —no se habla igual en Miami que en Los Ángeles o Houston— y de lo que la gente teclea de verdad, mezcla de idiomas incluida."
+      },
+      "q7": {
+        "question": "¿Qué me entregan cada mes?",
+        "answer": "Un reporte que dice qué se hizo, qué cambió y qué sigue, con las cifras separadas por idioma: contactos, de dónde vienen y cuánto costó cada uno. Nada de capturas de posiciones sueltas ni gráficos de impresiones, que no dicen si el negocio vendió más."
+      },
+      "q8": {
+        "question": "¿Necesito contratar también publicidad pagada?",
+        "answer": "No es obligatorio, pero se complementan bien. La publicidad da resultados desde el primer día y deja de darlos cuando dejas de pagar; el posicionamiento tarda meses y sigue trabajando después. Lo habitual es empezar con pauta para tener contactos mientras el SEO madura, y reducirla cuando el orgánico sostiene el volumen."
       }
     }
   },
   "SEOSEOBlock": {
-    "p4": "Hemos trabajado estrategias SEO para rubros muy distintos, desde joyería hasta entretenimiento. La inversión mensual es de $500 e incluye auditoría, planificación, optimización, escalamiento y reportes mensuales, sin contratos forzosos. Si buscas construir presencia digital sólida y tráfico constante en Google, conversemos."
+    "seoTitle": "Posicionamiento SEO en español para negocios en Estados Unidos",
+    "p1": "Hay un desequilibrio medible en casi todas las áreas de servicio de Estados Unidos: la versión en inglés de una búsqueda comercial tiene años de contenido compitiendo, y la misma búsqueda en español devuelve directorios, una traducción automática y contenido de otro país. Mismo comprador, misma intención, una fracción de la competencia.",
+    "p2": "Ese hueco es la razón por la que trabajamos el español como un frente propio y no como una traducción. Traducir las palabras clave del inglés produce términos que nadie teclea; partimos de las consultas reales que ya recibe el sitio y del vocabulario de la comunidad concreta a la que atiendes, porque el español de Miami, el de Los Ángeles y el de Houston no son el mismo.",
+    "p3": "La parte técnica decide si el trabajo sirve de algo. Cada idioma necesita su propia URL indexable, no un botón que cambia el texto en la misma dirección, y el marcado hreflang tiene que declararse en ambos sentidos y apuntar a páginas que existan. Es el fallo silencioso más común: una anotación que apunta a una URL que redirige queda descartada y Google decide por su cuenta qué versión mostrar.",
+    "p4": "Para un negocio con zona de servicio, lo local es donde el español rinde más rápido. La ficha de Google Business Profile en español, las páginas de las zonas donde realmente atiendes y las reseñas respondidas en el idioma en que se escribieron son señales que casi ningún competidor está trabajando, y pesan en el mapa.",
+    "p5": "Medimos por costo por cliente, no por posiciones. El reporte separa español e inglés porque mezclarlos esconde la historia: es habitual ver el español con un costo por contacto más bajo y una conversión en el sitio peor, y ese cruce señala exactamente dónde se cae la experiencia después del clic.",
+    "p6": "Si tu negocio atiende a clientes hispanos y toda tu presencia está en inglés, ahí hay una ventaja que tu competencia todavía no está tomando. Conversemos sobre tu zona y tu servicio, y te decimos qué se puede alcanzar en seis meses.",
+    "relatedTitle": "Servicios relacionados"
   },
   "MetaAdsFAQ": {
     "faqs": {
@@ -260,13 +344,29 @@
     }
   },
   "FirstLandingSection": {
+    "number": "01.",
+    "heading": "Tu cliente busca en español y encuentra a otro",
+    "description": "Más de 40 millones de personas hablan español en Estados Unidos y buscan servicios en su idioma. Casi toda tu competencia publica solo en inglés, así que esa búsqueda queda sin dueño.",
+    "quote": {
+      "line1": "La misma intención de compra, en el otro idioma",
+      "line2": "cuesta una fracción y tiene una fracción de la competencia. Esa ventaja no va a durar para siempre."
+    },
     "pricing": {
-      "amount": "$800"
+      "label": "Inversión mensual",
+      "amount": "$500",
+      "feature1": "Investigación de búsquedas reales",
+      "feature2": "Contenido y SEO técnico",
+      "feature3": "Reporte mensual claro"
     }
   },
   "FiveLandingSection": {
+    "number": "05.",
+    "heading": "Inversión del servicio",
+    "description": "Incluye diagnóstico, plan, ejecución mensual, contenido y reporte. Sin contratos forzosos.",
     "pricing": {
-      "amount": "$800"
+      "label": "Inversión mensual",
+      "amount": "$500",
+      "footer": "Es un trabajo acumulativo: cada mes construye sobre el anterior."
     }
   },
   "ServiceLinks": {
@@ -289,6 +389,128 @@
       "/servicios/marketing-inmobiliarias": "Marketing Inmobiliario",
       "/precios": "Precios",
       "/servicios": "Servicios"
+    }
+  },
+  "LandingHero": {
+    "titleLine1": "SEO en español",
+    "titleLine2": "USA",
+    "slogan": "Posiciona tu negocio en las búsquedas que tu cliente hispano hace todos los días, donde casi nadie compite.",
+    "buttonText": "Quiero posicionarme",
+    "whatsappMessage": "Hola, quiero posicionar mi negocio en Google en español"
+  },
+  "SecondLandingSection": {
+    "number": "02.",
+    "title": "Qué hacemos cada mes",
+    "subtitle": "Trabajo continuo sobre tu sitio, no un informe que se archiva",
+    "cards": {
+      "audit": {
+        "title": "Diagnóstico y base técnica",
+        "items": [
+          "Revisión de qué encuentra Google hoy en tu sitio",
+          "Corrección de velocidad, móvil y errores de rastreo",
+          "Marcado hreflang para que muestre la versión correcta",
+          "Búsquedas reales de tu zona, no traducciones",
+          "Punto de partida medido para comparar después"
+        ]
+      },
+      "interlinks": {
+        "title": "Contenido y enlazado",
+        "items": [
+          "Páginas para las preguntas que tu cliente hace de verdad",
+          "Una URL por intención, sin páginas que compitan entre sí",
+          "Enlaces internos que reparten fuerza hacia lo que vende",
+          "Ficha de Google Business Profile en español"
+        ]
+      },
+      "scaling": {
+        "title": "Crecimiento",
+        "items": [
+          "Ampliación a las zonas donde ya aparecen resultados",
+          "Refuerzo de las páginas que empiezan a mover",
+          "Menciones y enlaces de sitios de tu sector",
+          "Ajuste mensual según lo que muestran los datos"
+        ]
+      }
+    }
+  },
+  "ThirdLandingSection": {
+    "number": "03.",
+    "heading": "Por qué el español rinde antes",
+    "description": "Una página en inglés compite con años de contenido de tus competidores. La misma página en español compite, muchas veces, con dos directorios y una traducción automática. El plazo hasta el primer resultado cambia por completo.",
+    "quote": {
+      "line1": "Menos competencia, mismo comprador",
+      "line2": "y un costo por clic más bajo."
+    }
+  },
+  "FourthLandingSection": {
+    "number": "04.",
+    "heading": "Cómo medimos que funciona",
+    "description": "No reportamos posiciones sueltas. Reportamos lo que cambia el negocio:",
+    "successCases": {
+      "case1": "Contactos por mes, separados español e inglés",
+      "case2": "Costo por cliente nuevo desde búsqueda orgánica"
+    },
+    "quote": {
+      "line1": "Si a los seis meses no bajó el costo por cliente,",
+      "line2": "el trabajo no está funcionando y se cambia."
+    }
+  },
+  "SixLandingSection": {
+    "number": "06.",
+    "heading": "¿Tu negocio atiende en español y no aparece en Google",
+    "description": "Si esperas resultados en tres semanas, este servicio no es para ti.<br/>Si quieres que tu cliente hispano te encuentre antes que a tu competencia, conversemos."
+  },
+  "WebHero": {
+    "slogan": "Trabajamos con las plataformas que tu cliente ya conoce, <shopify>Shopify</shopify> y <woo></woo>, para que tu sitio tenga la <bold>velocidad</bold>, la <bold>seguridad</bold> y la <bold>flexibilidad</bold> que necesita un negocio que vende en Estados Unidos en dos idiomas.",
+    "protitle": "Sitios web bilingües para negocios en Estados Unidos",
+    "prosubtitle": "Diseño, desarrollo y medición desde nuestro equipo en Lima",
+    "proIn": "Investigación",
+    "proEs": "Estrategia",
+    "proAr": "Arquitectura",
+    "proDi": "Diseño",
+    "proPu": "Publicación",
+    "proGes": "Gestión",
+    "poTitle": "Un sitio que le habla a tus dos públicos",
+    "poParraf1": "La mayoría de negocios que atienden a clientes hispanos en Estados Unidos tienen un sitio en inglés y, como mucho, un botón que traduce. Google indexa una sola versión, así que quien busca en español encuentra a otro.",
+    "poParraf2": "Construimos las dos versiones como páginas propias, cada una con su dirección y correctamente marcadas, para que el buscador muestre la correcta a cada persona. Los formularios, los correos de confirmación y los mensajes de error también van en los dos idiomas: un sitio en español con un checkout en inglés pierde al cliente justo cuando iba a comprar.",
+    "poParraf3": "Y sumamos el canal que de verdad usa tu cliente. El público hispano escribe por WhatsApp antes que llenar un formulario largo, así que lo dejamos visible y, sobre todo, medido: un canal que trae clientes pero no queda registrado hace parecer que la inversión no sirvió.",
+    "poPreg": "¿Tu sitio atiende igual de bien en los dos idiomas?",
+    "pobot": "Conversemos",
+    "griPost": "Lo que incluye cada proyecto",
+    "griParraf": "Diseño propio, desarrollo rápido en celular, estructura preparada para buscadores, formularios que avisan por correo y WhatsApp, y conexión a Google Analytics desde el primer día. El primer año incluye dominio, certificado de seguridad y alojamiento.",
+    "titPost": "Nuestro trabajo",
+    "videoBadge": "Cómo trabajamos",
+    "videoTitle": "De la primera reunión al sitio publicado",
+    "videoSubtitle": "Alcance cerrado, precio en dólares y fechas por escrito antes de empezar"
+  },
+  "WebSection": {
+    "header": {
+      "subtitle": "TIPOS DE SITIO",
+      "description": "Construimos el tipo de sitio que tu negocio necesita, no una plantilla rellenada:"
+    },
+    "landing": {
+      "title": "Landing pages",
+      "description": "Una sola página enfocada en una campaña concreta, con un formulario corto y medición completa. Es lo que conviene cuando vas a invertir en publicidad y necesitas que cada dólar aterrice bien."
+    },
+    "info": {
+      "title": "Sitios corporativos",
+      "description": "De cinco a ocho secciones para negocios que necesitan proyectar solidez y captar contactos. Con versión en español e inglés cuando atiendes a los dos públicos."
+    },
+    "Ecomm": {
+      "title": "Tiendas online",
+      "description": "Shopify o WooCommerce con pasarela de pago, catálogo cargado, cálculo de impuestos por estado y envíos configurados. Listas para vender, no solo para verse bien."
+    },
+    "Elearn": {
+      "title": "Plataformas de cursos",
+      "description": "Sitios de formación con acceso por usuario, pagos recurrentes y seguimiento de avance, para quien vende conocimiento y no productos físicos."
+    },
+    "Servic": {
+      "title": "Sitios de servicios locales",
+      "description": "Para negocios con zona de atención: páginas por área servida, ficha de Google Business Profile conectada y contacto por WhatsApp y llamada."
+    },
+    "Blogs": {
+      "title": "Blogs y contenido",
+      "description": "La parte que hace que el sitio siga trayendo visitas meses después. Estructura pensada para buscadores y para publicar sin depender de nosotros."
     }
   }
 }
