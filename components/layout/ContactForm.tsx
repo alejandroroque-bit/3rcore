@@ -2,11 +2,18 @@
 import { montserrat } from "@/lib/fonts"
 
 import { useEffect, useRef, useState } from "react"; 
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 
 
 
 const ContactForm = () => {
+  // El formulario respondía SIEMPRE en español: un lead de EE.UU. enviaba sus
+  // datos y leía "¡Mensaje enviado con éxito!".
+  const locale = useLocale();
+  const MSG = locale === "en"
+    ? { ok: "Message sent successfully!", err: "Couldn't send. Please try again." }
+    : { ok: "¡Mensaje enviado con éxito!", err: "Error al enviar. Intenta de nuevo." };
+
   const [isInteractive, setIsInteractive] = useState(false);
 const mapRef = useRef<HTMLDivElement>(null); 
   const t = useTranslations('ContactSection');
@@ -53,7 +60,7 @@ const mapRef = useRef<HTMLDivElement>(null);
     // ni correo, ni panel, ni evento generate_lead (dejaba de contaminar GA4).
     const elapsed = Date.now() - mountedAt.current;
     if (data.sitio_web || elapsed < 3000) {
-      setStatus({ type: "success", message: "¡Mensaje enviado con éxito!" });
+      setStatus({ type: "success", message: MSG.ok });
       formEl.reset();
       setLoading(false);
       return;
@@ -61,12 +68,12 @@ const mapRef = useRef<HTMLDivElement>(null);
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, locale }),
         headers: { 'Content-Type': 'application/json' },
       });
 
       if (response.ok) {
-        setStatus({ type: "success", message: "¡Mensaje enviado con éxito!" });
+        setStatus({ type: "success", message: MSG.ok });
         formEl.reset();
         // Lead medible en GA4/GTM (antes el formulario era invisible en Analytics).
         if (typeof window !== 'undefined') {
@@ -81,7 +88,7 @@ const mapRef = useRef<HTMLDivElement>(null);
         throw new Error();
       }
     } catch (error) {
-      setStatus({ type: "error", message: "Error al enviar. Intenta de nuevo." });
+      setStatus({ type: "error", message: MSG.err });
     } finally {
       setLoading(false);
     }

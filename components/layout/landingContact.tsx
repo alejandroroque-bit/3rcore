@@ -2,11 +2,17 @@
 import { montserrat } from "@/lib/fonts"
 
 import { useState } from "react"; 
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 import { useRouter } from "next/navigation";
 
 
 const LandingContact = () => {
+  // Este formulario vive en /en/seo-agency: sus avisos salían en español.
+  const locale = useLocale();
+  const MSG = locale === "en"
+    ? { ok: "Message sent successfully!", err: "Couldn't send. Please try again." }
+    : { ok: "¡Mensaje enviado con éxito!", err: "Error al enviar. Intenta de nuevo." };
+
   const router = useRouter();
   const t = useTranslations('LandingContactSection');
   
@@ -50,14 +56,14 @@ const LandingContact = () => {
         e.currentTarget.reset();
 
       if (response.ok) {
-        setStatus({ type: "success", message: "¡Mensaje enviado con éxito!" });
+        setStatus({ type: "success", message: MSG.ok });
 
         
       } else {
         throw new Error();
       }
     } catch (error) {
-      setStatus({ type: "error", message: "Error al enviar. Intenta de nuevo." });
+      setStatus({ type: "error", message: MSG.err });
     } finally {
       setLoading(false);
     }

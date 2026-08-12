@@ -9,11 +9,17 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/influencer-marketing',
     titleEs: "Agencia de Influencer Marketing en Lima, Perú — Campañas con Creadores | 3R Core",
-    titleEn: "Influencer Marketing Agency for U.S. Brands — Measured in Sales | 3R Core",
+    titleEn: 'Influencer Marketing Agency for U.S. Brands | 3R Core',
     titleUs: "Agencia de Influencer Marketing en Español para EE.UU. | 3R Core",
     descriptionEs: "Campañas con influencers y creadores en el Perú: selección por audiencia real, negociación por contrato, derechos de uso y atribución por enlace y código. Medimos ventas, no seguidores.",
-    descriptionEn: "Influencer campaigns for U.S. brands: audience-first creator selection, contracted rates and usage rights, per-creator attribution with tracked links and named codes. Measured in sales, not reach.",
+    descriptionEn: 'Creator campaigns measured in sales: audience-first selection, contracted usage rights and per-creator attribution with tracked links and codes.',
     descriptionUs: "Campañas con creadores hispanohablantes para tu negocio en Estados Unidos: selección por audiencia real, contrato con derechos de uso y atribución por creador. Precios en dólares.",
+    ogImage: {
+      url: 'https://3rcore.com/og/socialmedia.jpg',
+      width: 1200,
+      height: 630,
+      alt: '3R Core - Influencer Marketing',
+    },
   })
 }
 

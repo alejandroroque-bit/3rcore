@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/socialmedia',
     titleEs: 'Agencia de Redes Sociales en Lima, Perú — Community Manager | 3R Core',
-    titleEn: 'Social Media Management for U.S. Brands — In-house Team | 3R Core',
+    titleEn: 'Social Media Management for U.S. Brands | 3R Core',
     descriptionEs: 'Manejo profesional de redes sociales en Lima, Perú: TikTok, LinkedIn, Instagram y Facebook. Estrategia, diseño, copy y reportes mensuales desde S/1,500 con 8–12 piezas por red.',
-    descriptionEn: 'Social media management for U.S. businesses: TikTok, Instagram, Facebook and LinkedIn. Strategy, design, copy and monthly reporting from $800/month with 8–12 pieces per channel.',
+    descriptionEn: 'TikTok, Instagram, Facebook and LinkedIn managed for U.S. businesses. Strategy, design, copy and reporting from $800/month, 8-12 pieces monthly.',
     titleUs: 'Agencia de Redes Sociales en Español para EE.UU. | 3R Core',
     descriptionUs: 'Manejo de redes sociales en español para negocios en Estados Unidos: TikTok, Instagram, Facebook y LinkedIn. Estrategia, diseño, copy y reportes mensuales desde $800 con 8–12 piezas al mes.',
     ogImage: {
@@ -55,9 +55,6 @@ export default async function SocialMediaLayout({ children, params }: { children
     locale
   )
 
-  const hiddenH1 = locale === 'en'
-    ? 'Social media management agency in Lima, Peru — Instagram, TikTok, Facebook and LinkedIn for businesses'
-    : 'Agencia de manejo de redes sociales en Lima, Perú — Instagram, TikTok, Facebook y LinkedIn para empresas'
 
   return (
     <>
@@ -65,7 +62,6 @@ export default async function SocialMediaLayout({ children, params }: { children
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, faqSchema, breadcrumbSchema]) }}
       />
-      <h1 className="sr-only">{hiddenH1}</h1>
       {children}
     </>
   )

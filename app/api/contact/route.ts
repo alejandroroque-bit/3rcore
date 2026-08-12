@@ -39,7 +39,11 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    const { nombre, apellido, email, telefono, mensaje, page, sitio_web } = await request.json();
+    const { nombre, apellido, email, telefono, mensaje, page, sitio_web, locale } = await request.json();
+    // El correo de respuesta al lead salía SIEMPRE en español. Un contacto
+    // desde /en recibía su primer mensaje de la agencia en un idioma que
+    // puede no entender.
+    const isEn = locale === 'en';
 
     if (!nombre || !email || !mensaje) {
       return NextResponse.json({ error: 'Faltan campos requeridos' }, { status: 400 });
@@ -158,7 +162,7 @@ export async function POST(request: Request) {
       {
         from: 'Sistema 3RCORE <administracion@3rcore.com>',
         to: email,
-        subject: `¡Hola ${nombre}! Qué bueno saludarte`,
+        subject: isEn ? `Hi ${nombre}, thanks for reaching out` : `¡Hola ${nombre}! Qué bueno saludarte`,
         html: `
           <html>
             <head>${responsiveStyles}</head>
@@ -173,35 +177,35 @@ export async function POST(request: Request) {
                   
                   <!-- Body -->
                   <div class="inner-padding" style="padding: 50px 45px;">
-                    <h1 style="font-size: 26px; margin-bottom: 20px; color: #111827; font-weight: 700; letter-spacing: -0.5px;" class="dark-mode-text">¡Recibido, ${nombre}!</h1>
+                    <h1 style="font-size: 26px; margin-bottom: 20px; color: #111827; font-weight: 700; letter-spacing: -0.5px;" class="dark-mode-text">${isEn ? `Got it, ${nombre}!` : `¡Recibido, ${nombre}!`}</h1>
                     
                     <p style="font-size: 16px; line-height: 1.7; color: #4b5563; margin-bottom: 15px;" class="dark-mode-text">
-                      Muchas gracias por escribirnos y por el interés en lo que estamos creando en <strong style="color: #E91E63;">3RCORE</strong>.
+                      ${isEn ? 'Thanks for getting in touch and for your interest in what we are building at' : 'Muchas gracias por escribirnos y por el interés en lo que estamos creando en'} <strong style="color: #E91E63;">3RCORE</strong>.
                     </p>
                     
                     <p style="font-size: 16px; line-height: 1.7; color: #4b5563;" class="dark-mode-text">
-                      Ya tengo tu mensaje en mi bandeja de entrada. Voy a leerlo con calma y te daré una respuesta en menos de <strong style="color: #111827;" class="dark-mode-text">24 horas</strong>.
+                      ${isEn ? 'Your message is already in my inbox. I will read it properly and get back to you within' : 'Ya tengo tu mensaje en mi bandeja de entrada. Voy a leerlo con calma y te daré una respuesta en menos de'} <strong style="color: #111827;" class="dark-mode-text">${isEn ? '24 hours' : '24 horas'}</strong>.
                     </p>
                     
                     <!-- Quote Card -->
                     <div style="margin: 35px 0; padding: 25px; background: linear-gradient(135deg, #fef2f2 0%, #fce7f3 100%); border-radius: 16px; border-left: 4px solid #E91E63;">
                       <p style="margin: 0; color: #374151; font-weight: 500; line-height: 1.6; font-size: 15px; font-style: italic;" class="dark-mode-text">
-                        "Estamos convencidos de que podemos aportar valor a tu proyecto. Hablamos muy pronto."
+                        ${isEn ? '"We are confident we can add real value to your project. Talk soon."' : '"Estamos convencidos de que podemos aportar valor a tu proyecto. Hablamos muy pronto."'}
                       </p>
                       <p style="margin: 10px 0 0 0; color: #E91E63; font-weight: 600; font-size: 14px;">— Piero Roque, 3RCORE</p>
                     </div>
 
                     <!-- Info Box -->
                     <div style="background-color: #f9fafb; padding: 25px; border-radius: 14px; margin: 30px 0; border: 1px solid #e5e7eb;" class="dark-mode-card dark-mode-border">
-                      <h4 style="margin-top: 0; color: #111827; font-size: 16px; font-weight: 600; margin-bottom: 12px;" class="dark-mode-text">Mientras tanto...</h4>
+                      <h4 style="margin-top: 0; color: #111827; font-size: 16px; font-weight: 600; margin-bottom: 12px;" class="dark-mode-text">${isEn ? 'In the meantime…' : 'Mientras tanto...'}</h4>
                       <p style="color: #4b5563; line-height: 1.7; margin: 0; font-size: 14px;" class="dark-mode-text">
-                        Si necesitas algo urgente o tienes alguna pregunta adicional, no dudes en responder a este correo. Estamos aquí para ayudarte.
+                        ${isEn ? 'If anything is urgent or you have another question, just reply to this email. We are here to help.' : 'Si necesitas algo urgente o tienes alguna pregunta adicional, no dudes en responder a este correo. Estamos aquí para ayudarte.'}
                       </p>
                     </div>
 
                     <p style="font-size: 15px; color: #6b7280; margin-top: 35px; line-height: 1.6;">
                       Un saludo,<br/>
-                      <strong style="color: #111827;" class="dark-mode-text">Piero de 3RCORE</strong>
+                      <strong style="color: #111827;" class="dark-mode-text">${isEn ? 'Piero from 3RCORE' : 'Piero de 3RCORE'}</strong>
                     </p>
                   </div>
                   
@@ -212,7 +216,7 @@ export async function POST(request: Request) {
                       <p style="margin: 8px 0; font-size: 14px; color: #d1d5db;"> www.3rcore.com</p>
                     </div>
                     <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                      <p style="margin: 0; opacity: 0.6; font-size: 12px; color: #9ca3af;">© 2026 3RCORE. Hecho con pasión por la tecnología.</p>
+                      <p style="margin: 0; opacity: 0.6; font-size: 12px; color: #9ca3af;">${isEn ? '© 2026 3RCORE. Built with a passion for technology.' : '© 2026 3RCORE. Hecho con pasión por la tecnología.'}</p>
                     </div>
                   </div>
                 </div>

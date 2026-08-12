@@ -9,11 +9,17 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/marketing-inmobiliarias',
     titleEs: "Marketing Digital para Inmobiliarias en Lima, Perú | 3R Core",
-    titleEn: 'Digital Marketing for Real Estate Agents & Developers in the U.S. | 3R Core',
+    titleEn: 'Real Estate Marketing for U.S. Agents | 3R Core',
     descriptionEs: "Agencia de marketing digital para inmobiliarias y proyectos en Lima, Perú: Meta Ads y Google Ads para captar leads de departamentos, CRM y seguimiento por WhatsApp con costo por lead medible.",
-    descriptionEn: 'Lead generation for U.S. real estate: Meta Ads and Google Ads for listings and developments, CRM and follow-up, in English and Spanish, with measurable cost per lead.',
+    descriptionEn: 'Lead generation for U.S. real estate: Meta and Google Ads for listings and developments, CRM follow-up and measurable cost per qualified lead.',
     titleUs: 'Marketing Digital para Inmobiliarias y Agentes en EE.UU. | 3R Core',
     descriptionUs: 'Marketing digital en español para inmobiliarias y agentes en Estados Unidos: Meta Ads y Google Ads para captar compradores hispanos, CRM y seguimiento por WhatsApp con costo por lead medible.',
+    ogImage: {
+      url: 'https://3rcore.com/og/google-ads.jpg',
+      width: 1200,
+      height: 630,
+      alt: '3R Core - Real Estate Marketing',
+    },
   })
 }
 

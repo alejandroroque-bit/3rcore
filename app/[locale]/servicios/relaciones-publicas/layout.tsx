@@ -9,11 +9,17 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/relaciones-publicas',
     titleEs: "Agencia de Relaciones Públicas en Lima, Perú — Prensa y Reputación | 3R Core",
-    titleEn: "Public Relations Agency — Press, Reputation and Crisis Response | 3R Core",
+    titleEn: 'Public Relations Agency — Press & Reputation | 3R Core',
     titleUs: "Agencia de Relaciones Públicas en Español para EE.UU. | 3R Core",
     descriptionEs: "Relaciones públicas en Lima: estrategia de prensa, ángulos noticiables, redacción de notas, gestión con medios, preparación de voceros y gestión de crisis. Cobertura real, no notas pagadas.",
-    descriptionEn: "Public relations for brands entering or growing in the U.S.: media mapping, newsworthy angles, press materials, one-to-one outreach, spokesperson prep and crisis response. Earned coverage, not paid placements.",
+    descriptionEn: 'Media mapping, newsworthy angles, press materials and one-to-one outreach for U.S. coverage. Spokesperson prep and crisis response included.',
     descriptionUs: "Relaciones públicas en español para negocios en Estados Unidos: mapa de medios hispanos, ángulos noticiables, redacción, gestión con periodistas y manejo de crisis.",
+    ogImage: {
+      url: 'https://3rcore.com/og/branding.jpg',
+      width: 1200,
+      height: 630,
+      alt: '3R Core - Public Relations',
+    },
   })
 }
 

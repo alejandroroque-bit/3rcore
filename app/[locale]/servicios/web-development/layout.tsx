@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/web-development',
     titleEs: 'Diseño y Creación de Páginas Web en Lima, Perú — E-commerce | 3R Core',
-    titleEn: 'Web Design & Development for U.S. Brands — Sites & E-commerce | 3R Core',
+    titleEn: 'Web Design & Development for U.S. Brands | 3R Core',
     descriptionEs: 'Diseño y creación de páginas web en Lima, Perú: sitios corporativos, landing pages, e-commerce (Shopify, WooCommerce), e-learning y blogs. SEO técnico incluido desde S/1,800.',
-    descriptionEn: 'Web design and development for U.S. businesses: corporate sites, landing pages and e-commerce on Shopify or WooCommerce, bilingual where you need it. Technical SEO included from $850.',
+    descriptionEn: 'Corporate sites, landing pages and e-commerce for U.S. businesses, bilingual where you need it. Technical SEO included, from $850 with hosting.',
     titleUs: 'Diseño y Creación de Páginas Web Bilingües para EE.UU. | 3R Core',
     descriptionUs: 'Diseño y desarrollo de sitios corporativos, landing pages y e-commerce bilingües (inglés y español) con hreflang correcto y SEO técnico incluido. Desde $850, con el primer año de dominio y hosting.',
     ogImage: {

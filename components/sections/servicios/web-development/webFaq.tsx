@@ -205,7 +205,8 @@ export default function WebFaq() {
       <div className="max-w-4xl mx-auto">
 
         <header ref={headerRef} className="mb-12 pb-8 text-center relative">
-          <h1 
+          {/* Era <h1>: la página ya tiene el suyo y dos H1 compiten. */}
+          <h2 
             ref={titleRef}
             className={`
               leading-tight
@@ -218,7 +219,7 @@ export default function WebFaq() {
             `}
           >
             {t('title')}
-          </h1>
+          </h2>
           <p 
             ref={subtitleRef}
             className="text-white text-lg uppercase tracking-widest font-light mb-6"

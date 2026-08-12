@@ -46,13 +46,13 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   const { locale } = await params;
 
   const title = locale === 'en'
-    ? "Nearshore Marketing Agency for U.S. Brands — UGC, SEO & Google Ads | 3R Core"
+    ? "Nearshore Marketing Agency for U.S. Brands | 3R Core"
     : locale === 'us'
       ? "Agencia de Marketing Digital para Negocios Hispanos en EE.UU. | 3R Core"
       : "Agencia de Tiendas Virtuales, SEO y Google Ads en Lima, Perú | 3R Core"
 
   const description = locale === 'en'
-    ? "U.S. brands work with our in-house team for UGC video, influencer campaigns, SEO, Google Ads and Shopify builds — U.S. time zones, English-speaking leads, agency output at nearshore rates. Fixed scopes in USD, monthly reporting."
+    ? "UGC video, influencer campaigns, SEO and Google Ads for U.S. brands. In-house team on U.S. hours, fixed scopes in USD, monthly reporting."
     : locale === 'us'
       ? "Agencia de marketing digital en español para negocios hispanos en Estados Unidos. Video UGC, campañas de Google Ads y Meta, SEO en español y tiendas online. Precios en dólares, atención en tu horario y reportes mensuales."
       : "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú. Creamos tu tienda online (Shopify, WooCommerce, Tiendanube), te posicionamos en Google y gestionamos campañas que venden. ROI medible y reportes mensuales."

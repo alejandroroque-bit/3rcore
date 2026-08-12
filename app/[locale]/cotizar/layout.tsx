@@ -7,9 +7,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/cotizar',
     titleEs: 'Cotizador online — Calcula el estimado de tu proyecto | 3R Core',
-    titleEn: 'Instant Quote Calculator — Estimate Your Project in USD | 3R Core',
+    titleEn: 'Instant Quote Calculator in USD | 3R Core',
     descriptionEs: 'Calcula al instante un estimado referencial para tu tienda virtual, página web, SEO, Google Ads, branding o redes sociales en Lima, Perú. El precio exacto lo confirmamos por WhatsApp.',
-    descriptionEn: 'Instantly estimate a reference price in U.S. dollars for your online store, website, SEO, Google Ads, branding or social media. The exact price is confirmed over WhatsApp.',
+    descriptionEn: 'Estimate a reference price in U.S. dollars for your online store, website, SEO, Google Ads, branding or social media in under a minute.',
     titleUs: 'Cotizador online — Calcula el estimado de tu proyecto | 3R Core',
     descriptionUs: 'Calcula al instante un estimado referencial en dólares para tu tienda online, página web, SEO, Google Ads, branding o redes sociales. El precio exacto lo confirmamos por WhatsApp.',
   })

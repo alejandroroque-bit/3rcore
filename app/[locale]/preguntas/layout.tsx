@@ -11,9 +11,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/preguntas',
     titleEs: 'Preguntas Frecuentes — Marketing Digital, SEO, Google Ads y Web | 3R Core',
-    titleEn: 'Frequently Asked Questions — Working with a Nearshore Agency | 3R Core',
+    titleEn: 'FAQ — Working With a Nearshore Agency | 3R Core',
     descriptionEs: 'Respuestas a las preguntas más frecuentes sobre nuestros servicios de marketing digital en Lima, Perú: precios, plazos, contratos, branding, social media, Google Ads, SEO y desarrollo web.',
-    descriptionEn: 'Answers to the most common questions from U.S. clients: pricing in USD, timelines, contracts, who owns the work, time zones, and how UGC, Google Ads, SEO and web projects run.',
+    descriptionEn: 'Pricing in USD, timelines, contracts, who owns the work and how time zones actually play out when you hire a marketing team in Latin America.',
     titleUs: 'Preguntas Frecuentes — Marketing Digital en Español para EE.UU. | 3R Core',
     descriptionUs: 'Respuestas a las preguntas más frecuentes sobre nuestros servicios para negocios en Estados Unidos: precios en dólares, plazos, contratos, contenido UGC, Google Ads, SEO y desarrollo web.',
   })
@@ -59,7 +59,6 @@ export default async function PreguntasLayout({ children, params }: { children: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, breadcrumbSchema]) }}
       />
-      <h1 className="sr-only">{hiddenH1}</h1>
       {children}
     </>
   )

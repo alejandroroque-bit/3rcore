@@ -9,11 +9,17 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/marketing-ecommerce',
     titleEs: "Marketing Digital para E-commerce y Tiendas Online en Perú | 3R Core",
-    titleEn: 'Digital Marketing for E-commerce & Online Stores in the U.S. | 3R Core',
+    titleEn: 'E-commerce Marketing for U.S. Online Stores | 3R Core',
     descriptionEs: "Agencia de marketing digital para e-commerce y tiendas online en Perú: Google Shopping, Meta Ads, catálogos, email marketing y CRO para escalar ventas con ROAS medible.",
-    descriptionEn: 'E-commerce growth for U.S. stores: Google Shopping, Meta Ads, catalog feeds, email marketing and CRO to scale sales with measurable ROAS.',
+    descriptionEn: 'Google Shopping, Meta Ads, catalog feeds, email flows and CRO to scale a U.S. online store with measurable ROAS, in English and Spanish.',
     titleUs: 'Marketing Digital para E-commerce y Tiendas Online en EE.UU. | 3R Core',
     descriptionUs: 'Marketing digital para tiendas online en Estados Unidos: Google Shopping, Meta Ads, catálogos, email marketing y CRO para escalar ventas con ROAS medible, en español e inglés.',
+    ogImage: {
+      url: 'https://3rcore.com/og/web-development.jpg',
+      width: 1200,
+      height: 630,
+      alt: '3R Core - E-commerce Marketing',
+    },
   })
 }
 

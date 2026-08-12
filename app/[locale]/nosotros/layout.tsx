@@ -10,9 +10,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/nosotros',
     titleEs: 'Nosotros — Agencia de Marketing Digital en Lima, Perú | 3R Core',
-    titleEn: 'About Us — The Team Behind Your Nearshore Marketing | 3R Core',
+    titleEn: 'About Us — Your Nearshore Marketing Team | 3R Core',
     descriptionEs: 'Conoce al equipo de 3R Core: Alejandro, Bruno y Piero Roque. Agencia familiar de marketing digital en La Molina, Lima, Perú. Branding, SEO, Google Ads, redes sociales y desarrollo web con visión de 3 generaciones.',
-    descriptionEn: 'Meet the 3R Core team: Alejandro, Bruno and Piero Roque. Family-owned agency with an in-house team for U.S. Brands serving U.S. brands in overlapping business hours, invoiced in U.S. dollars.',
+    descriptionEn: 'Meet the 3R Core team: an in-house studio serving U.S. brands on overlapping business hours, invoiced in U.S. dollars, with work you keep.',
     titleUs: 'Nosotros — Agencia de Marketing Digital para EE.UU. | 3R Core',
     descriptionUs: 'Conoce al equipo de 3R Core: Alejandro, Bruno y Piero Roque. Agencia familiar con equipo propio en Lima que atiende a negocios de Estados Unidos en horario compatible y facturando en dólares.',
   })

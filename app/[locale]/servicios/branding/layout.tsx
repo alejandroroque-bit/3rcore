@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/branding',
     titleEs: 'Agencia de Branding en Lima — Diseño de Identidad de Marca | 3R Core',
-    titleEn: 'Branding Agency for U.S. Brands — Brand Identity Design | 3R Core',
+    titleEn: 'Branding Agency for U.S. Brands | 3R Core',
     descriptionEs: 'Diseño de identidad visual, logotipo, manual de marca y aplicaciones corporativas. Agencia de branding en Lima, Perú con proyectos integrales desde S/500 y entrega en 7 días.',
-    descriptionEn: 'Visual identity design, logo, brand manual and corporate applications for U.S. businesses. Full identity projects from $500 USD, delivered in about a week.',
+    descriptionEn: 'Visual identity, logo, brand manual and corporate applications for U.S. businesses. Full identity projects from $500, delivered in about a week.',
     titleUs: 'Agencia de Branding e Identidad de Marca para EE.UU. | 3R Core',
     descriptionUs: 'Diseño de identidad visual, logotipo, manual de marca y aplicaciones corporativas para negocios en Estados Unidos. Proyectos integrales desde $500, con propuesta tras una sesión inicial de descubrimiento.',
     ogImage: {
@@ -55,9 +55,6 @@ export default async function BrandingLayout({ children, params }: { children: R
     locale
   )
 
-  const hiddenH1 = locale === 'en'
-    ? 'Branding agency in Lima, Peru — logo design, brand manual, visual identity and corporate applications'
-    : 'Agencia de branding en Lima, Perú — diseño de logotipo, manual de marca, identidad visual y aplicaciones corporativas'
 
   return (
     <>
@@ -65,7 +62,6 @@ export default async function BrandingLayout({ children, params }: { children: R
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, faqSchema, breadcrumbSchema]) }}
       />
-      <h1 className="sr-only">{hiddenH1}</h1>
       {children}
     </>
   )
