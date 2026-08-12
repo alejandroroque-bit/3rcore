@@ -13,7 +13,7 @@
     }
   },
   "HiddenH1": {
-    "home": "Agencia de marketing digital en español para negocios hispanos en Estados Unidos",
+    "home": "Sitios web, posicionamiento SEO y tiendas online para negocios hispanos en Estados Unidos",
     "hispanic": "Marketing digital en español para negocios hispanos en Estados Unidos",
     "webdev": "Diseño y desarrollo de sitios web bilingües para negocios en Estados Unidos",
     "seo": "Posicionamiento SEO en español para negocios en Estados Unidos",
@@ -24,42 +24,42 @@
     "hero": {
       "badge": "Marketing en español · Estados Unidos",
       "title": "Marketing digital en español para tu negocio en Estados Unidos",
-      "subtitle": "Campañas, contenido y páginas web pensadas para el cliente hispano que vive en EE.UU. Contenido en español real, no traducido, con precios en dólares y atención en tu horario.",
+      "subtitle": "Sitios web, posicionamiento en Google y tiendas online pensados para el cliente hispano que vive en Estados Unidos. Contenido en español real, no traducido, con precios en dólares y atención en tu horario.",
       "cta": "Pedir una propuesta"
     },
     "intro": {
       "title": "Tu cliente busca en español, pero tu publicidad le habla en inglés traducido",
-      "p1": "Hay más de 40 millones de personas que hablan español en Estados Unidos, y una buena parte busca, compara y compra en su idioma. Sin embargo, la mayoría de negocios que quieren llegar a ese público lo hace traduciendo su anuncio en inglés, que es justo lo que la audiencia detecta y descarta.",
+      "p1": "Hay más de 40 millones de personas que hablan español en Estados Unidos, y una buena parte busca, compara y compra en su idioma. Sin embargo, casi todos los negocios que quieren llegar a ese público tienen su sitio solo en inglés, así que esa búsqueda queda sin dueño.",
       "p2": "El español de Estados Unidos tiene su propia forma. Mezcla registros de México, Centroamérica, el Caribe y Sudamérica, convive con el inglés en la misma frase y cambia según la ciudad. Escribir para ese público no es traducir: es escribir de nuevo, sabiendo a quién le hablas.",
       "p3": "En 3R Core producimos ese contenido con equipo nativo en español, con campañas medidas en dólares y con la misma disciplina de medición que aplicamos en inglés. El resultado no es una versión traducida de tu marketing, sino una que suena hecha para tu cliente."
     },
     "benefits": {
       "badge": "Qué hacemos",
-      "title": "Servicios para negocios hispanos en EE.UU.",
+      "title": "Tres servicios para tu negocio en Estados Unidos",
       "items": [
         {
-          "title": "Campañas en español",
-          "description": "Google Ads y Meta segmentadas por idioma y ciudad, con anuncios escritos en español y no traducidos automáticamente."
+          "title": "Sitios web bilingües",
+          "description": "Español e inglés con direcciones propias y marcado correcto, para que Google muestre la versión adecuada a cada persona."
         },
         {
-          "title": "Video UGC en español",
-          "description": "Creadores hispanohablantes grabando contenido para tus campañas, con el tono que tu comprador reconoce como propio."
+          "title": "Posicionamiento en español",
+          "description": "Las búsquedas en español dentro de tu zona tienen mucha menos competencia que las mismas en inglés. Ahí está la oportunidad."
         },
         {
-          "title": "SEO en español",
-          "description": "Posicionamiento para búsquedas en español dentro de tu área de servicio, que casi siempre tienen menos competencia que sus equivalentes en inglés."
+          "title": "Tiendas online",
+          "description": "Shopify o WooCommerce con pasarela de pago, impuestos por estado y catálogo cargado. Listas para cobrar."
         },
         {
-          "title": "Páginas web bilingües",
-          "description": "Sitios con versión en inglés y en español bien separadas y correctamente marcadas, para que Google muestre la correcta a cada usuario."
+          "title": "WhatsApp que se mide",
+          "description": "Tu cliente escribe antes que llenar un formulario. Lo dejamos visible y medido, para que sepas cuántos clientes trae."
         },
         {
-          "title": "WhatsApp y captación",
-          "description": "Los clientes hispanos escriben por WhatsApp antes que llenar un formulario. Montamos ese canal y lo medimos como cualquier otro."
+          "title": "Todo a tu nombre",
+          "description": "Dominio, alojamiento, analítica y cuentas quedan registradas a tu nombre desde el primer día."
         },
         {
-          "title": "Reportes claros",
-          "description": "Reporte mensual en español que dice cuánto se invirtió, cuántos clientes entraron y cuánto costó cada uno."
+          "title": "Precio cerrado en dólares",
+          "description": "Alcance, fechas y rondas de corrección por escrito antes de empezar. Sin cobro por hora abierto."
         }
       ]
     },
@@ -132,7 +132,7 @@
     "seoTitle": "Agencia de marketing digital en español para Estados Unidos",
     "p1": "El mercado hispano de Estados Unidos es uno de los públicos con más poder de compra del país y, al mismo tiempo, uno de los peor atendidos en publicidad digital. La razón habitual no es falta de presupuesto sino de enfoque: se traduce la campaña en inglés en lugar de escribir una nueva, y el resultado suena correcto pero ajeno.",
     "p2": "Trabajar este público bien empieza por aceptar que el español de Estados Unidos tiene forma propia. Convive con el inglés, mezcla registros de distintos países y cambia de una ciudad a otra. Escribir para él exige decidir a qué comunidad le hablas, y esa decisión cambia el vocabulario, el tono y hasta los ejemplos que usas.",
-    "p3": "En campañas pagadas conviene separar el español en su propia estructura. Permite escribir anuncios propios en lugar de traducciones, controlar el presupuesto por separado y leer los resultados sin mezclarlos. Además, la competencia por las búsquedas en español suele ser menor que por sus equivalentes en inglés, lo que abarata el costo por clic para una intención de compra parecida.",
+    "p3": "Trabajamos tres servicios y nada más: sitios web, posicionamiento en Google y tiendas online. Los tres se apoyan en lo mismo —un sitio rápido, bien estructurado y medible— y se refuerzan entre sí, que es la razón de preferir hacer tres cosas bien antes que ofrecer doce.",
     "p4": "En posicionamiento orgánico pasa algo similar. Muchas búsquedas en español dentro de una misma área de servicio tienen menos competencia que las mismas búsquedas en inglés, y una sección en español bien construida y correctamente marcada puede posicionar en meses donde la versión en inglés llevaría años.",
     "p5": "El canal de contacto también cambia. El público hispano tiende a escribir por WhatsApp antes que a completar un formulario largo, y ofrecer esa opción de forma visible suele aumentar los contactos de inmediato. Lo que no se puede omitir es medirlo: un canal que produce clientes pero no queda registrado hace que toda la inversión parezca infructuosa.",
     "p6": "Si tu negocio atiende a clientes hispanos en Estados Unidos y toda tu publicidad está en inglés, ahí hay una oportunidad que casi nadie de tu competencia está trabajando bien. Conversemos sobre tu mercado y armamos la propuesta con precios en dólares.",
@@ -512,5 +512,27 @@
       "title": "Blogs y contenido",
       "description": "La parte que hace que el sitio siga trayendo visitas meses después. Estructura pensada para buscadores y para publicar sin depender de nosotros."
     }
+  },
+  "MoreServices": {
+    "badge": "Qué hacemos",
+    "title": "Tres servicios, bien hechos",
+    "cta": "Ver servicio",
+    "items": [
+      {
+        "title": "Diseño y desarrollo web",
+        "description": "Sitios corporativos, landing pages y versiones bilingües, con la medición lista antes de publicar.",
+        "href": "/servicios/web-development"
+      },
+      {
+        "title": "Posicionamiento SEO",
+        "description": "Base técnica, contenido para lo que tu cliente busca de verdad y los enlaces que lo sostienen.",
+        "href": "/posicionamiento-seo"
+      },
+      {
+        "title": "Tiendas online",
+        "description": "Shopify y WooCommerce con pagos, impuestos por estado y seguimiento de compra funcionando.",
+        "href": "/tiendas-virtuales-lima"
+      }
+    ]
   }
 }

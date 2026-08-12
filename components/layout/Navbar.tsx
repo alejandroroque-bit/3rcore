@@ -165,7 +165,11 @@ const Navbar = () => {
   // español y el menú de /en mostraba "Posicionamiento SEO" / "Tiendas
   // Virtuales" / "Diseño Web" a visitantes en inglés (rebote 69,4% en /en vs
   // 39,6% en /es). Los href se mantienen: son las rutas reales del App Router.
-  const services: { href: AppPathname; label: string }[] = [
+  // En Estados Unidos solo se venden tres servicios: web, SEO y tiendas online.
+  // El menú de /en y /us ofrecía los nueve, así que prometía un catálogo que
+  // allí no existe y repartía los enlaces internos entre nueve destinos en vez
+  // de concentrarlos en los tres que venden.
+  const ALL_SERVICES: { href: AppPathname; label: string }[] = [
     { href: "/posicionamiento-seo", label: t("services.seo") },
     { href: "/servicios/google-ads", label: t("services.googleAds") },
     { href: "/tiendas-virtuales-lima", label: t("services.ecommerce") },
@@ -176,6 +180,15 @@ const Navbar = () => {
     { href: "/servicios/socialmedia", label: t("services.socialMedia") },
     { href: "/servicios/branding", label: t("services.branding") },
   ];
+  const US_SERVICES: AppPathname[] = [
+    "/servicios/web-development",
+    "/posicionamiento-seo",
+    "/tiendas-virtuales-lima",
+  ];
+  const services =
+    currentLocale === "es"
+      ? ALL_SERVICES
+      : US_SERVICES.map((h) => ALL_SERVICES.find((s) => s.href === h)!);
 
   // '/servicios#servicios' y '#contacto' no son rutas: el primero se separa
   // en pathname + hash y el segundo es un ancla de la misma página.

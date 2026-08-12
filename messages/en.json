@@ -621,7 +621,7 @@
     "servicios": "Services"
   },
   "HiddenH1": {
-    "home": "Peru-based marketing agency serving U.S. brands: UGC video, SEO, Google Ads and online stores",
+    "home": "Peru-based agency serving U.S. brands: websites, SEO and online stores",
     "branding": "Corporate branding and brand identity design for U.S. brands, from our studio in Lima, Peru",
     "webdev": "Web design and development for U.S. brands, built by our team in Lima, Peru",
     "googleads": "Certified Google Ads and PPC management for U.S. brands, run from Lima, Peru",
@@ -1770,59 +1770,24 @@
     "relatedTitle": "Related services"
   },
   "MoreServices": {
-    "badge": "More services",
-    "title": "Explore all our digital marketing services",
-    "cta": "View service",
+    "badge": "What we do",
+    "title": "Three services, done properly",
+    "cta": "See service",
     "items": [
       {
-        "title": "UGC Content",
-        "description": "Creator-style video from our in-house team for Meta, TikTok and YouTube campaigns.",
-        "href": "/servicios/ugc"
+        "title": "Web Design & Development",
+        "description": "Corporate sites, landing pages and bilingual builds, instrumented before launch.",
+        "href": "/servicios/web-development"
       },
       {
-        "title": "Influencer Marketing",
-        "description": "Creator campaigns measured in sales, with per-creator link and code attribution.",
-        "href": "/servicios/influencer-marketing"
+        "title": "SEO",
+        "description": "Technical foundations, content built for intent and the links that make it compound.",
+        "href": "/posicionamiento-seo"
       },
       {
-        "title": "Public Relations",
-        "description": "Press, reputation and crisis response with earned media coverage.",
-        "href": "/servicios/relaciones-publicas"
-      },
-      {
-        "title": "Meta Ads (Facebook & Instagram)",
-        "description": "Facebook and Instagram campaigns with advanced targeting and measurable ROAS.",
-        "href": "/servicios/meta-ads"
-      },
-      {
-        "title": "TikTok Ads",
-        "description": "Native video, Spark Ads and UGC creators to reach young audiences.",
-        "href": "/servicios/tiktok-ads"
-      },
-      {
-        "title": "Performance Marketing",
-        "description": "Multichannel acquisition measured by CAC and ROAS, with continuous optimization.",
-        "href": "/servicios/performance-marketing"
-      },
-      {
-        "title": "Email Marketing & Automation",
-        "description": "Automated flows, newsletters and segmentation that sell on autopilot.",
-        "href": "/servicios/email-marketing"
-      },
-      {
-        "title": "Marketing for Clinics",
-        "description": "Patient acquisition with healthcare Google Ads, local SEO and landing pages.",
-        "href": "/servicios/marketing-clinicas"
-      },
-      {
-        "title": "Marketing for Real Estate",
-        "description": "Qualified leads for your projects with Meta Ads, Google Ads and CRM.",
-        "href": "/servicios/marketing-inmobiliarias"
-      },
-      {
-        "title": "Marketing for E-commerce",
-        "description": "Google Shopping, catalogs, email and CRO to scale your online store.",
-        "href": "/servicios/marketing-ecommerce"
+        "title": "Online Stores",
+        "description": "Shopify and WooCommerce with payments, state tax and purchase tracking configured.",
+        "href": "/tiendas-virtuales-lima"
       }
     ]
   },
@@ -2184,7 +2149,7 @@
     "hero": {
       "badge": "Peruvian agency · U.S. subsidiary · U.S. hours",
       "title": "A Peruvian agency serving U.S. brands, with a U.S. subsidiary",
-      "subtitle": "We are based in Lima, Peru, and we work with U.S. brands remotely through our U.S. subsidiary: UGC video, paid media, SEO and Shopify builds, delivered in overlapping business hours, in English, invoiced in U.S. dollars.",
+      "subtitle": "We are based in Lima, Peru, and we work with U.S. brands remotely through our U.S. subsidiary on three services: websites, SEO and online stores. Delivered in overlapping business hours, in English, invoiced in U.S. dollars.",
       "cta": "Get a scoped proposal"
     },
     "intro": {
@@ -2195,31 +2160,31 @@
     },
     "benefits": {
       "badge": "What we run",
-      "title": "Services U.S. brands buy from us",
+      "title": "The three things we do for U.S. brands",
       "items": [
         {
-          "title": "UGC video production",
-          "description": "In-house creators producing batches of scripted, platform-native video for Meta, TikTok and YouTube — with paid usage rights included."
+          "title": "Websites that get measured",
+          "description": "Corporate sites, landing pages and bilingual builds, with analytics and conversion tracking configured before launch rather than after."
         },
         {
-          "title": "Paid media management",
-          "description": "Google Ads, Meta and TikTok managed against CAC and ROAS, with tracking built before spend starts."
+          "title": "SEO that compounds",
+          "description": "Technical foundations fixed first, then content built for real intent and the internal linking that makes it accumulate month over month."
         },
         {
-          "title": "SEO and content",
-          "description": "Technical fixes, content built for search intent, and the internal linking that makes it compound."
+          "title": "Online stores that clear payments",
+          "description": "Shopify or WooCommerce with gateway, catalog, state-level sales tax and purchase tracking working from the first order."
         },
         {
-          "title": "Shopify and web builds",
-          "description": "Storefronts and landing pages built for speed and conversion, handed over with documentation rather than lock-in."
+          "title": "Spanish where it pays",
+          "description": "A real indexable Spanish version, not a translation toggle — usually the cheapest qualified traffic available to a U.S. business."
         },
         {
-          "title": "Influencer campaigns",
-          "description": "Creator sourcing, contracting and attribution — measured per creator, not in aggregate reach."
+          "title": "Work you keep",
+          "description": "Domain, hosting, repository, analytics and search properties in your name from day one. Nothing to reclaim if we stop."
         },
         {
-          "title": "Analytics and reporting",
-          "description": "GA4, Tag Manager and conversion tracking configured properly, plus a monthly report you can read without a translator."
+          "title": "Fixed scopes in USD",
+          "description": "Deliverables, timelines and revision rounds written down before anything starts, invoiced through our U.S. subsidiary."
         }
       ]
     },
@@ -2229,23 +2194,23 @@
       "steps": [
         {
           "title": "Scoping call",
-          "description": "One call to understand the business, current spend and what's already been tried. No discovery invoice."
+          "description": "One call on the business, the current numbers and what has already been tried. No discovery invoice."
         },
         {
           "title": "Fixed-scope proposal",
-          "description": "You receive a written scope with deliverables, timeline and price in USD. No open-ended hourly billing."
+          "description": "Deliverables, timeline and price in USD, in writing. No open-ended hourly billing."
         },
         {
           "title": "Onboarding week",
-          "description": "Access, tracking audit and a baseline of current numbers, so improvement is measured against something real."
+          "description": "Access, a tracking audit and a measured baseline, so improvement is compared against something real."
         },
         {
-          "title": "First delivery",
-          "description": "First batch or first campaign live within two to three weeks depending on the service."
+          "title": "Build or first cycle",
+          "description": "Site live, store live or the first SEO cycle shipped, depending on the service."
         },
         {
-          "title": "Monthly cycle",
-          "description": "Delivery, reporting and a working session where the next month is decided on what the data actually showed."
+          "title": "Monthly rhythm",
+          "description": "Delivery, reporting and a working session where next month is decided on what the data showed."
         }
       ]
     }
@@ -2292,7 +2257,7 @@
     "seoTitle": "A Peruvian marketing agency serving U.S. brands",
     "p1": "3R Core is a Peruvian agency based in Lima that works with brands in the United States remotely, through its U.S. subsidiary. We are explicit about that because it is the point: the work is made by a team in Lima, and the commercial relationship runs the way a U.S. client expects it to.",
     "p2": "The reason a remote arrangement works here is time zone. Lima sits on Eastern Time or one hour behind depending on daylight saving, so the U.S. business day and ours are the same day. A brief sent in the morning gets worked that morning; a revision requested at 2pm can ship before close. Teams that have tried offshore arrangements recognize immediately how much that changes.",
-    "p3": "The services U.S. brands buy from us cluster around execution volume: UGC video batches, paid media management across Google, Meta and TikTok, technical and content SEO, Shopify and landing page builds, and influencer campaigns with per-creator attribution. These are the areas where output quantity directly drives result, and where a different cost structure translates into more tests per month.",
+    "p3": "What U.S. brands buy from us is deliberately narrow: websites, SEO and online stores. Those three share the same foundation — a fast, correctly structured, measurable site — and reinforce each other, which is why we would rather do three things properly than list twelve.",
     "p4": "Engagements run on fixed scopes quoted in U.S. dollars, not open-ended hourly billing. Each scope specifies deliverables, timeline, revision rounds and ownership. Assets, ad accounts, tracking and code stay in your properties throughout, so there's nothing to reclaim if the relationship ends.",
     "p5": "We also produce in Spanish, which matters for brands targeting U.S. Hispanic audiences. Producing that content with a native Spanish-speaking team avoids the translated-copy problem — the tonal flatness that audiences read as inauthentic even when the grammar is correct.",
     "p6": "If you're weighing a U.S. retainer against building internal capacity, there's a third option worth pricing. Send us your current scope and spend, and we'll come back with what the same budget buys in output volume.",

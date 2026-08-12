@@ -76,36 +76,36 @@ const COPY: Record<'es' | 'en' | 'us', {
   // local es la comunidad hispana de EE.UU. y el huso horario compartido.
   us: {
     eyebrow: 'Agencia de marketing digital en español para Estados Unidos',
-    h2: 'Campañas, contenido y tiendas online que traen clientes, no solo visitas',
+    h2: 'Sitios web, posicionamiento y tiendas online que traen clientes, no solo visitas',
     intro:
-      'En 3R Core ayudamos a negocios en Estados Unidos a vender más entre el público hispano: producimos video UGC en español, gestionamos tus campañas de Google Ads y Meta, te posicionamos en Google para búsquedas en español y creamos tu tienda online. Todo con medición real, reportes mensuales y foco en el retorno de tu inversión, no en métricas de vanidad.',
+      'En 3R Core ayudamos a negocios en Estados Unidos a vender más entre el público hispano con tres cosas: te construimos el sitio web en los dos idiomas, te posicionamos en Google para las búsquedas en español —donde casi nadie compite— y creamos tu tienda online. Todo con medición real y foco en el retorno, no en métricas de vanidad.',
     definition:
-      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque que atiende a empresas de Estados Unidos con un equipo propio en Lima, Perú, en horario compatible con las zonas horarias estadounidenses. Está especializada en producción de video UGC, campañas de Google Ads y Meta, posicionamiento SEO en español e inglés (desde $500/mes) y tiendas online sobre Shopify y WooCommerce (desde $1,750), con precios publicados en dólares y sin contratos forzosos.',
+      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque que atiende a empresas de Estados Unidos con un equipo propio en Lima, Perú, en horario compatible con las zonas horarias estadounidenses. Para el mercado estadounidense trabaja tres servicios: desarrollo de sitios web bilingües (desde $850), posicionamiento SEO en español e inglés (desde $500/mes) y tiendas online sobre Shopify y WooCommerce (desde $1,750), con precios publicados en dólares y sin contratos forzosos.',
     pillars: [
       {
-        h: 'Contenido UGC en español',
-        p: 'Producimos video con creadores hispanohablantes para tus campañas de Meta, TikTok y YouTube: ángulos de venta, guion, grabación, edición y variantes por plataforma. Derechos de uso publicitario incluidos por contrato.',
-        href: '/servicios/ugc',
-        cta: 'Ver producción de UGC',
+        h: 'Sitios web bilingües',
+        p: 'Construimos tu sitio en español e inglés como dos versiones propias, cada una con sus direcciones y correctamente marcadas, para que Google muestre la adecuada a cada persona. Con formularios, avisos y correos automáticos en los dos idiomas.',
+        href: '/servicios/web-development',
+        cta: 'Ver desarrollo web',
       },
       {
-        h: 'Campañas en español que sí convierten',
-        p: 'Google Ads y Meta segmentados por idioma y ciudad, con anuncios escritos en español y no traducidos del inglés. La competencia por las búsquedas en español suele ser menor, así que el costo por clic tiende a ser más bajo para una intención de compra equivalente.',
-        href: '/servicios/google-ads',
-        cta: 'Ver servicio de Google Ads',
-      },
-      {
-        h: 'SEO para búsquedas en español',
-        p: 'Posicionamos tu sitio para lo que tu cliente busca en su idioma dentro de tu área de servicio, con la versión en español correctamente marcada para que Google la muestre a quien corresponde. Reportes mensuales y sin contratos forzosos.',
+        h: 'Posicionamiento en español',
+        p: 'Las búsquedas en español dentro de tu área de servicio tienen una fracción de la competencia que las mismas en inglés. Trabajamos esa oportunidad con contenido escrito, no traducido, y la base técnica que hace falta para que Google lo entienda.',
         href: '/posicionamiento-seo',
         cta: 'Ver servicio de SEO',
+      },
+      {
+        h: 'Tiendas online',
+        p: 'Shopify o WooCommerce con pasarela de pago, catálogo cargado, impuestos por estado configurados y seguimiento de compra funcionando desde el primer pedido. Listas para cobrar, no solo para verse bien.',
+        href: '/tiendas-virtuales-lima',
+        cta: 'Ver tiendas online',
       },
     ],
     secondaryH3: 'También te acompañamos en',
     secondary: [
-      { h: 'Diseño y desarrollo web', p: 'Sitios bilingües rápidos, con SEO técnico y formularios que capturan leads en los dos idiomas.', href: '/servicios/web-development' },
-      { h: 'Branding e identidad', p: 'Logo, manual de marca y aplicaciones para una marca que se recuerda y vende.', href: '/servicios/branding' },
-      { h: 'Influencer marketing', p: 'Campañas con creadores hispanos medidas por ventas, con atribución por enlace y código.', href: '/servicios/influencer-marketing' },
+      { h: 'Medición desde el primer día', p: 'Analítica y seguimiento de contactos configurados antes de publicar, en tus propias cuentas.', href: '/servicios/web-development' },
+      { h: 'Contenido en español', p: 'Páginas escritas para lo que tu cliente busca de verdad, con el vocabulario de su comunidad.', href: '/posicionamiento-seo' },
+      { h: 'Cobros e impuestos de EE.UU.', p: 'Pasarela configurada y cálculo de impuestos por estado, la parte que suele quedar mal.', href: '/tiendas-virtuales-lima' },
     ],
     localH3: 'Marketing en español para negocios hispanos en Estados Unidos',
     local:
@@ -123,29 +123,29 @@ const COPY: Record<'es' | 'en' | 'us', {
       '3R Core is a digital marketing agency founded by brothers Alejandro, Bruno and Piero Roque, based in La Molina, Lima, Peru (Alameda de la Paz 187, primer piso), serving businesses across Peru and the United States. It specializes in online stores on Shopify, WooCommerce and Tiendanube (implementation from $420), SEO positioning ($500/month) and Google Ads management (from $800/month), plus branding, social media and web development, with published pricing and no forced contracts.',
     pillars: [
       {
-        h: 'Online stores & e-commerce',
-        p: 'We design and build your online store on Shopify, WooCommerce or Tiendanube with local Peruvian payment gateways (Culqi, Niubiz, Izipay, Yape and Mercado Pago), ready to sell from day one. Mobile-first, fast and built to turn visits into orders.',
-        href: '/tiendas-virtuales-lima',
-        cta: 'See online stores in Lima',
+        h: 'Web design and development',
+        p: 'Corporate sites, landing pages and bilingual builds, instrumented before launch so the first month of traffic already tells you which page produces revenue. Fast on mobile, structured for search, and handed over in your own accounts.',
+        href: '/servicios/web-development',
+        cta: 'See web development',
       },
       {
-        h: 'SEO positioning on Google',
-        p: 'We grow your organic ranking with keyword strategy, content and technical SEO so your clients find you when they search for what you sell. Monthly reports and progressive results, no forced contracts.',
+        h: 'SEO that compounds',
+        p: 'Technical foundations fixed first, then content written for real search intent and the internal linking that makes it accumulate. Reported on cost per acquisition, not on rank screenshots.',
         href: '/posicionamiento-seo',
         cta: 'See SEO service',
       },
       {
-        h: 'Google Ads & SEM campaigns',
-        p: 'We manage your Google Ads campaigns (Search, Performance Max, Shopping, YouTube and Remarketing) with buying intent and optimized budget, to show up right when your client is ready to buy.',
-        href: '/servicios/google-ads',
-        cta: 'See Google Ads service',
+        h: 'Online stores',
+        p: 'Shopify or WooCommerce with payment gateway, loaded catalog, state-level sales tax and purchase tracking working from the first order. Built to sell, not just to launch.',
+        href: '/tiendas-virtuales-lima',
+        cta: 'See e-commerce development',
       },
     ],
     secondaryH3: 'We also support you with',
     secondary: [
-      { h: 'Web design & development', p: 'Fast corporate websites and landing pages, with technical SEO and lead-capturing forms.', href: '/servicios/web-development' },
-      { h: 'Branding & identity', p: 'Logo, brand manual and applications for a brand people remember and buy from.', href: '/servicios/branding' },
-      { h: 'Social media', p: 'Strategy, content and social management that build brand and community.', href: '/servicios/socialmedia' },
+      { h: 'Measurement from day one', p: 'Analytics and conversion tracking configured before launch, in your own accounts.', href: '/servicios/web-development' },
+      { h: 'Spanish where it pays', p: 'A real indexable Spanish version — usually the cheapest qualified traffic a U.S. business can reach.', href: '/posicionamiento-seo' },
+      { h: 'U.S. payments and sales tax', p: 'Gateway configured and state-level tax calculation working, the piece most commonly left broken.', href: '/tiendas-virtuales-lima' },
     ],
     localH3: 'Digital marketing in Lima and all of Peru',
     local:

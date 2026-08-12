@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
       : "Agencia de Tiendas Virtuales, SEO y Google Ads en Lima, Perú | 3R Core"
 
   const description = locale === 'en'
-    ? "Peruvian agency with a U.S. subsidiary: UGC video, influencer campaigns, SEO and Google Ads run remotely from Lima on U.S. hours, invoiced in USD."
+    ? "Peruvian agency with a U.S. subsidiary: websites, SEO and online stores for U.S. brands, built remotely from Lima on U.S. hours and invoiced in USD."
     : locale === 'us'
       ? "Agencia de marketing digital en español para negocios hispanos en Estados Unidos. Video UGC, campañas de Google Ads y Meta, SEO en español y tiendas online. Precios en dólares, atención en tu horario y reportes mensuales."
       : "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú. Creamos tu tienda online (Shopify, WooCommerce, Tiendanube), te posicionamos en Google y gestionamos campañas que venden. ROI medible y reportes mensuales."
@@ -66,12 +66,12 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     },
     openGraph: {
       title: locale === 'en'
-        ? "3R Core | Nearshore Marketing & UGC Studio for U.S. Brands"
+        ? "3R Core | Websites, SEO and Online Stores for U.S. Brands"
         : locale === 'us'
           ? "3R Core | Marketing Digital en Español para EE.UU."
           : "3R Core | Agencia de Marketing Digital en Lima",
       description: locale === 'en'
-        ? "In-house UGC creators, influencer campaigns, SEO, Google Ads and Shopify builds for U.S. brands. U.S. hours, English-speaking leads, nearshore rates."
+        ? "Websites, SEO and online stores for U.S. brands, built by our team in Lima through our U.S. subsidiary. U.S. hours, fixed scopes in USD."
         : locale === 'us'
           ? "Marketing digital en español para negocios hispanos en Estados Unidos: video UGC, Google Ads, Meta Ads, SEO y tiendas online. Precios en dólares."
           : "Agencia de marketing digital en Lima, Perú. Diseño web, manejo de redes sociales, Google Ads, posicionamiento SEO y branding con ROI medible.",
@@ -85,7 +85,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
           width: 1200,
           height: 630,
           alt: locale === 'en'
-            ? '3R Core - Nearshore Marketing & UGC Studio'
+            ? '3R Core - Websites, SEO and Online Stores'
             : '3R Core - Agencia de Marketing Digital',
         },
       ],
@@ -93,10 +93,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     twitter: {
       card: 'summary_large_image',
       title: locale === 'en'
-        ? "3R Core - Nearshore Marketing & UGC Studio"
+        ? "3R Core - Websites, SEO and Online Stores"
         : "3R Core - Agencia de Marketing Digital",
       description: locale === 'en'
-        ? "UGC video, influencer campaigns, SEO and paid media for U.S. brands — in-house team, nearshore rates."
+        ? "Websites, SEO and online stores for U.S. brands — Peruvian team, U.S. subsidiary, fixed scopes in USD."
         : "Combinamos Experiencia, Visión y Tecnología en estrategias de marketing digital.",
       images: [`${BASE_URL}/og/default.jpg`],
     },

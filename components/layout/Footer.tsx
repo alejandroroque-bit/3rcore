@@ -4,11 +4,31 @@ import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import type { AppPathname } from "@/i18n/routing";
 
 const Footer = () => {
 
   const t = useTranslations('Footer');
+  // El footer listaba cuatro servicios fijados a mano. En /en y /us solo se
+  // venden web, SEO y tiendas online, así que ofrecer branding, social media
+  // y Google Ads allí promete un catálogo que no existe.
+  const tn = useTranslations('Navbar');
+  const locale = useLocale();
+  const footerServices: { href: AppPathname; label: string }[] =
+    locale === 'es'
+      ? [
+          { href: '/servicios/branding', label: tn('services.branding') },
+          { href: '/servicios/socialmedia', label: tn('services.socialMedia') },
+          { href: '/servicios/google-ads', label: tn('services.googleAds') },
+          { href: '/servicios/web-development', label: tn('services.webDesign') },
+        ]
+      : [
+          { href: '/servicios/web-development', label: tn('services.webDesign') },
+          { href: '/posicionamiento-seo', label: tn('services.seo') },
+          { href: '/tiendas-virtuales-lima', label: tn('services.ecommerce') },
+        ];
+
 
   const pathname = usePathname();
 
@@ -52,42 +72,17 @@ const Footer = () => {
             <div className="2xl:w-[60%]">
               <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">{ t('services')}</h3>
               <ul className="space-y-3 text-sm lg:text-xs xl:text-sm text-gray-200">
-                <li>
-                  <Link
-                    href="/servicios/branding"
-                    onClick={() => handleScrollTop("/servicios/branding")}
-                    className="hover:text-pink-500 transition-colors duration-300"
-                  >
-                    Branding
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/servicios/socialmedia"
-                    onClick={() => handleScrollTop("/servicios/socialmedia")}
-                    className="hover:text-pink-500 transition-colors duration-300"
-                  >
-                    Social Media
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/servicios/google-ads"
-                    onClick={() => handleScrollTop("/servicios/google-ads")}
-                    className="hover:text-pink-500 transition-colors duration-300"
-                  >
-                    Google Ads
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/servicios/web-development"
-                    onClick={() => handleScrollTop("/servicios/web-development")}
-                    className="hover:text-pink-500 transition-colors duration-300"
-                  >
-                    Web Development
-                  </Link>
-                </li>
+                {footerServices.map((sv) => (
+                  <li key={sv.href}>
+                    <Link
+                      href={sv.href}
+                      onClick={() => handleScrollTop(sv.href)}
+                      className="hover:text-pink-500 transition-colors duration-300"
+                    >
+                      {sv.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
