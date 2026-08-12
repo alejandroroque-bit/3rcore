@@ -104,9 +104,9 @@ const COPY: Record<string, any> = {
       { title: 'WooCommerce', desc: 'Control total sobre WordPress, sin recargo por transacción de la plataforma y con libertad para integrar lo que necesites. A cambio, el mantenimiento es tuyo: actualizaciones, seguridad y conflictos entre extensiones. Conviene cuando tu producto no encaja en un catálogo estándar.' },
       { title: '¿Cuál te conviene?', desc: 'Con menos de $100,000 al mes de facturación, el recargo de Shopify rara vez justifica cargar con el mantenimiento. Por encima, vale la pena hacer el cálculo con tus cifras reales. Y si nadie va a mantener el sitio dentro de un año, la respuesta es Shopify.' },
     ],
-    platformsMore: 'Comparamos las dos a fondo en nuestra guía',
-    platformsMoreLink: '/blogs/shopify-vs-woocommerce-for-us-brands',
-    platformsMoreAnchor: 'Shopify vs WooCommerce para Estados Unidos',
+    platformsMore: 'Te decimos cuál te conviene en la primera reunión.',
+    platformsMoreLink: '/precios',
+    platformsMoreAnchor: 'Ver precios y qué incluye cada plan',
     pricing: '¿Cuánto cuesta montar la tienda?',
     pricingIntro: 'Precios netos de implementación en dólares. Aparte va la mensualidad de la plataforma y las comisiones de la pasarela, que se pagan directamente a cada proveedor.',
     pricingTiers: [
@@ -144,7 +144,6 @@ const COPY: Record<string, any> = {
     ],
     guides: 'Guías para decidir con datos',
     guidesList: [
-      { title: 'Shopify vs WooCommerce para Estados Unidos', path: '/blogs/shopify-vs-woocommerce-for-us-brands' },
       { title: 'Cuánto cuesta el contenido UGC', path: '/blogs/cuanto-cuesta-contenido-ugc-peru-2026' },
     ],
     contact: 'Cotización sin compromiso',

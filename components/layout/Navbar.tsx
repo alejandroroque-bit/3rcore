@@ -18,7 +18,17 @@ const Navbar = () => {
   // /en/blogs/{slug} inexistente (404). En el resto de páginas conserva la ruta.
   // usePathname() con `pathnames` devuelve la ruta interna (en español), que
   // es justo lo que Link necesita para reescribirla al slug del otro locale.
-  const localeSwitchHref = (/^\/blogs\/[^/]+$/.test(pathname) ? "/blogs" : pathname) as AppPathname;
+  // Rutas que existen en UN solo mercado: /nearshore-marketing-agency solo en
+  // /en y /marketing-para-negocios-hispanos solo en /us. Mantener la ruta al
+  // cambiar de idioma llevaba a un 404, así que el selector cae a la home.
+  const MARKET_ONLY = ["/nearshore-marketing-agency", "/marketing-para-negocios-hispanos"];
+  const localeSwitchHref = (
+    /^\/blogs\/[^/]+$/.test(pathname)
+      ? "/blogs"
+      : MARKET_ONLY.includes(pathname)
+        ? "/"
+        : pathname
+  ) as AppPathname;
 
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
