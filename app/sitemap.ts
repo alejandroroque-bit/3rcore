@@ -2,6 +2,13 @@ import type { MetadataRoute } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
 import { hreflangFor, localizedUrl } from '@/lib/metadata'
 
+/**
+ * El sitemap se generaba en el BUILD (○ Static), así que los posts
+ * publicados después por /api/admin/seed-blogs no aparecían hasta el
+ * siguiente despliegue. Con revalidación horaria se refresca solo.
+ */
+export const revalidate = 3600
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://3rcore.com'
 
