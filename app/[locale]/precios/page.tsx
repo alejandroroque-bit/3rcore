@@ -1,4 +1,5 @@
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
+import type { AppPathname } from "@/i18n/routing"
 import { buildFAQPageSchema } from "@/lib/seoSchemas"
 
 interface Props { params: Promise<{ locale: string }> }
@@ -137,7 +138,7 @@ export default async function PreciosPage({ params }: Props) {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mb-4">{t.sub}</p>
         <p className="text-sm text-white/50 max-w-3xl mb-6">{t.note}</p>
         <Link
-          href={`/${locale}/cotizar`}
+          href="/cotizar"
           className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition"
         >
           {isEn ? 'Calculate your estimate' : 'Calcula tu estimado'}
@@ -161,7 +162,7 @@ export default async function PreciosPage({ params }: Props) {
                   <li key={j}>· {f}</li>
                 ))}
               </ul>
-              <Link href={`/${locale}${tier.href}`} className="text-center bg-white text-black px-5 py-3 rounded-full font-semibold hover:bg-white/90 transition mt-auto">{tier.cta}</Link>
+              <Link href={tier.href as AppPathname} className="text-center bg-white text-black px-5 py-3 rounded-full font-semibold hover:bg-white/90 transition mt-auto">{tier.cta}</Link>
             </div>
           ))}
         </div>
@@ -212,7 +213,7 @@ export default async function PreciosPage({ params }: Props) {
       <section className="px-6 md:px-10 lg:px-20 py-20 max-w-6xl mx-auto border-t border-white/10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.contact}</h2>
         <p className="text-white/70 max-w-2xl mx-auto mb-8">{t.contactDesc}</p>
-        <Link href={`/${locale}${t.contactPath}`} className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition">{t.contactCta}</Link>
+        <Link href={t.contactPath as AppPathname} className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition">{t.contactCta}</Link>
       </section>
     </main>
   )

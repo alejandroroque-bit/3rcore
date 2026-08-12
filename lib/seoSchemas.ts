@@ -1,4 +1,4 @@
-import { BASE_URL } from "./metadata"
+import { BASE_URL, localizedUrl } from "./metadata"
 
 export interface FAQItem {
   question: string
@@ -45,7 +45,7 @@ export function buildServiceSchema(p: ServiceSchemaParams) {
   // a un comprador estadounidense.
   const isEn = p.locale === "en"
   const usdPricing = isEn || p.locale === "us"
-  const url = `${BASE_URL}/${p.locale}${p.path}`
+  const url = localizedUrl(p.path, p.locale)
   const offers: any = {}
   if (p.offerPriceEs && !usdPricing) {
     offers.offers = {
@@ -118,7 +118,7 @@ interface SpeakableWebPageParams {
 // engines know which passages (H1 + intro) are best to read aloud.
 export function buildSpeakableWebPage(p: SpeakableWebPageParams) {
   const isEn = p.locale === "en"
-  const url = `${BASE_URL}/${p.locale}${p.path}`
+  const url = localizedUrl(p.path, p.locale)
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -147,7 +147,7 @@ export function buildServiceItemList(p: ItemListServiceParams) {
     "itemListElement": p.items.map((item, i) => ({
       "@type": "ListItem",
       "position": i + 1,
-      "url": `${BASE_URL}/${p.locale}${item.path}`,
+      "url": localizedUrl(item.path, p.locale),
       "name": item.name,
       "description": item.description,
     })),
@@ -194,8 +194,8 @@ export function buildBlogSchema(locale: string, posts: BlogListItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "@id": `${BASE_URL}/${locale}/blogs#blog`,
-    "url": `${BASE_URL}/${locale}/blogs`,
+    "@id": `${localizedUrl("/blogs", locale)}#blog`,
+    "url": localizedUrl("/blogs", locale),
     "name": locale === 'en' ? '3R Core Blog' : 'Blog 3R Core',
     "description": locale === 'en'
       ? 'Articles on digital marketing, SEO, branding, social media, Google Ads and web development.'
@@ -235,23 +235,23 @@ export function buildOfferCatalogSchema(locale: string, tiers: PricingTier[]) {
   return {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
-    "@id": `${BASE_URL}/${locale}/precios#catalog`,
+    "@id": `${localizedUrl("/precios", locale)}#catalog`,
     "name": isEn ? '3R Core Pricing — Digital Marketing Services' : 'Precios 3R Core — Servicios de Marketing Digital',
-    "url": `${BASE_URL}/${locale}/precios`,
+    "url": localizedUrl("/precios", locale),
     "itemListElement": tiers.map((t) => ({
       "@type": "Offer",
       "name": t.name,
       "price": usd ? t.priceEn : t.priceEs,
       "priceCurrency": usd ? 'USD' : 'PEN',
       "availability": "https://schema.org/InStock",
-      "url": `${BASE_URL}/${locale}${t.path}`,
+      "url": localizedUrl(t.path, locale),
       "itemOffered": {
         "@type": "Service",
         "name": t.name,
         "serviceType": t.serviceType,
         "description": isEn ? t.descriptionEn : isUs ? (t.descriptionUs ?? t.descriptionEs) : t.descriptionEs,
         "provider": { "@id": `${BASE_URL}/#organization` },
-        "url": `${BASE_URL}/${locale}${t.path}`,
+        "url": localizedUrl(t.path, locale),
       },
     })),
   }

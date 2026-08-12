@@ -1,4 +1,5 @@
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
+import type { AppPathname } from "@/i18n/routing"
 import PillarWaCapture from "@/components/ui/PillarWaCapture"
 
 interface Props { params: Promise<{ locale: string }> }
@@ -275,7 +276,7 @@ export default async function TiendasVirtualesLimaPage({ params }: Props) {
         </ul>
         <p className="text-white/60 mt-6">
           {t.platformsMore}:{' '}
-          <Link href={`/${locale}${t.platformsMoreLink}`} className="text-white underline underline-offset-4 hover:text-white/80 transition">{t.platformsMoreAnchor}</Link>.
+          <Link href={t.platformsMoreLink as AppPathname} className="text-white underline underline-offset-4 hover:text-white/80 transition">{t.platformsMoreAnchor}</Link>.
         </p>
       </section>
 
@@ -295,9 +296,11 @@ export default async function TiendasVirtualesLimaPage({ params }: Props) {
         <p className="text-white/60 mt-8 max-w-3xl">{t.pricingNote}</p>
         <p className="text-white/60 mt-2">
           {t.pricingLinks}{' '}
-          <Link href={`/${locale}/precios`} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Pricing' : 'Precios'}</Link>
+          <Link href="/precios" className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Pricing' : 'Precios'}</Link>
           {' · '}
-          <Link href={locale === 'us' ? `/us/precios` : `/${locale}/blogs/cuanto-cuesta-tienda-virtual-peru-2026`} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Online store cost guide' : locale === 'us' ? 'Precios de tiendas online' : 'Guía de precios de tiendas virtuales'}</Link>
+          <Link href={locale === "us"
+              ? "/precios"
+              : { pathname: "/blogs/[slug]", params: { slug: "cuanto-cuesta-tienda-virtual-peru-2026" } }} className="text-white underline underline-offset-4 hover:text-white/80 transition">{locale === 'en' ? 'Online store cost guide' : locale === 'us' ? 'Precios de tiendas online' : 'Guía de precios de tiendas virtuales'}</Link>
         </p>
       </section>
 
@@ -322,7 +325,7 @@ export default async function TiendasVirtualesLimaPage({ params }: Props) {
             <li key={i} className="border border-white/10 rounded-2xl p-6">
               <h3 className="text-xl font-semibold mb-2">{g.title}</h3>
               <p className="text-white/70 mb-4">{g.desc}</p>
-              <Link href={`/${locale}${g.path}`} className="text-white underline underline-offset-4 hover:text-white/80 transition font-semibold">{g.anchor}</Link>
+              <Link href={g.path as AppPathname} className="text-white underline underline-offset-4 hover:text-white/80 transition font-semibold">{g.anchor}</Link>
             </li>
           ))}
         </ul>
@@ -354,7 +357,7 @@ export default async function TiendasVirtualesLimaPage({ params }: Props) {
         <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {t.guidesList.map((g: any, i: number) => (
             <li key={i}>
-              <Link href={`/${locale}${g.path}`} className="block border border-white/10 rounded-2xl p-6 hover:border-white/30 transition h-full">
+              <Link href={g.path as AppPathname} className="block border border-white/10 rounded-2xl p-6 hover:border-white/30 transition h-full">
                 <span className="text-white/90 font-medium">{g.title}</span>
               </Link>
             </li>

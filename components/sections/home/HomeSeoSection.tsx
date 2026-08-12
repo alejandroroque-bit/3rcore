@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/navigation'
+import type { AppPathname } from "@/i18n/routing";
 
 /**
  * HomeSeoSection — bloque de contenido del home renderizado 100% en el SERVIDOR.
@@ -13,7 +14,7 @@ import { Link } from '@/i18n/navigation'
  * experiencia animada de HomeClient. Es aditiva y reversible.
  */
 
-type Pillar = { h: string; p: string; href: string; cta: string }
+type Pillar = { h: string; p: string; href: AppPathname; cta: string }
 
 const COPY: Record<'es' | 'en' | 'us', {
   eyebrow: string
@@ -22,7 +23,7 @@ const COPY: Record<'es' | 'en' | 'us', {
   definition: string
   pillars: Pillar[]
   secondaryH3: string
-  secondary: { h: string; p: string; href: string }[]
+  secondary: { h: string; p: string; href: AppPathname }[]
   localH3: string
   local: string
   closing: string

@@ -50,6 +50,40 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── SLUGS EN INGLÉS PARA /en (2026-08-12) ─────────────────────────────
+      // Las URLs de /en eran las españolas (/en/posicionamiento-seo,
+      // /en/tiendas-virtuales-lima…): la URL desmentía al contenido. Ahora
+      // next-intl sirve el slug inglés y estas 301 conservan lo acumulado y
+      // evitan que la versión vieja quede accesible como duplicado.
+      { source: '/en/posicionamiento-seo', destination: '/en/seo-agency', permanent: true },
+      { source: '/en/tiendas-virtuales-lima', destination: '/en/ecommerce-development', permanent: true },
+      { source: '/en/servicios', destination: '/en/services', permanent: true },
+      { source: '/en/servicios/google-ads', destination: '/en/services/google-ads', permanent: true },
+      { source: '/en/servicios/web-development', destination: '/en/services/web-development', permanent: true },
+      { source: '/en/servicios/socialmedia', destination: '/en/services/social-media', permanent: true },
+      { source: '/en/servicios/branding', destination: '/en/services/branding', permanent: true },
+      { source: '/en/servicios/ugc', destination: '/en/services/ugc-content', permanent: true },
+      { source: '/en/servicios/influencer-marketing', destination: '/en/services/influencer-marketing', permanent: true },
+      { source: '/en/servicios/relaciones-publicas', destination: '/en/services/public-relations', permanent: true },
+      { source: '/en/servicios/meta-ads', destination: '/en/services/meta-ads', permanent: true },
+      { source: '/en/servicios/tiktok-ads', destination: '/en/services/tiktok-ads', permanent: true },
+      { source: '/en/servicios/performance-marketing', destination: '/en/services/performance-marketing', permanent: true },
+      { source: '/en/servicios/email-marketing', destination: '/en/services/email-marketing', permanent: true },
+      { source: '/en/servicios/marketing-clinicas', destination: '/en/services/healthcare-marketing', permanent: true },
+      { source: '/en/servicios/marketing-inmobiliarias', destination: '/en/services/real-estate-marketing', permanent: true },
+      { source: '/en/servicios/marketing-ecommerce', destination: '/en/services/ecommerce-marketing', permanent: true },
+      { source: '/en/nosotros', destination: '/en/about', permanent: true },
+      { source: '/en/precios', destination: '/en/pricing', permanent: true },
+      { source: '/en/cotizar', destination: '/en/quote', permanent: true },
+      { source: '/en/preguntas', destination: '/en/faq', permanent: true },
+      { source: '/en/gracias', destination: '/en/thank-you', permanent: true },
+      { source: '/en/politicas', destination: '/en/privacy-policy', permanent: true },
+      { source: '/en/terminos', destination: '/en/terms', permanent: true },
+      // /us usa los mismos slugs que /es salvo estos tres.
+      { source: '/us/tiendas-virtuales-lima', destination: '/us/tiendas-online', permanent: true },
+      { source: '/us/servicios/web-development', destination: '/us/servicios/desarrollo-web', permanent: true },
+      { source: '/us/servicios/socialmedia', destination: '/us/servicios/redes-sociales', permanent: true },
+      { source: '/us/servicios/marketing-inmobiliarias', destination: '/us/servicios/marketing-inmobiliario', permanent: true },
       // ── REVERSIÓN a páginas de servicio (2026-07-15) ──────────────────────
       // El equipo comercial vende con las páginas /servicios/* y
       // /posicionamiento-seo (mejor diseñadas: hero, proceso, portafolio,

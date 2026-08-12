@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
-import { hreflangFor } from '@/lib/metadata'
+import { hreflangFor, localizedUrl } from '@/lib/metadata'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://3rcore.com'
@@ -71,7 +71,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
     LOCALES.filter((loc) => !(SKIP[loc] ?? []).includes(page.path)).map((loc) => ({
-      url: `${baseUrl}/${loc}${page.path}`,
+      // El <loc> lleva el slug real del locale: en /en es /seo-agency, no
+      // /posicionamiento-seo (que redirige).
+      url: localizedUrl(page.path, loc),
       lastModified: new Date(),
       changeFrequency: page.changeFrequency,
       // /es mantiene su prioridad histórica; /en y /us arrancan un escalón por

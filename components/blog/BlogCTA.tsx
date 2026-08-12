@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import type { AppPathname } from "@/i18n/routing";
 import { Link } from '@/i18n/navigation'
 import { serviceForSlug, guidesFor, type ServiceKey } from '@/lib/blog-cta-map'
 import { WA_LEADS } from '@/lib/contact'
@@ -20,7 +21,7 @@ import { WA_LEADS } from '@/lib/contact'
 const WA_PHONE = WA_LEADS
 
 interface ServiceCTA {
-  path: string
+  path: AppPathname
   es: { eyebrow: string; headline: string; sub: string; btn: string; wa: string }
   en: { eyebrow: string; headline: string; sub: string; btn: string; wa: string }
 }
@@ -227,7 +228,7 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
             <span key={g.slug}>
               {i > 0 && ' · '}
               <Link
-                href={`/blogs/${g.slug}`}
+                href={{ pathname: "/blogs/[slug]", params: { slug: g.slug } }}
                 className="text-white/80 underline decoration-[#A21F8A]/60 underline-offset-4 hover:text-white transition-colors"
               >
                 {g.title}

@@ -1,20 +1,24 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import type { AppPathname } from "@/i18n/routing";
 import Image from "next/image";
 import gsap from "gsap";
 
 import { Link, usePathname } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
   const pathname = usePathname();
+  const currentLocale = useLocale();
 
   // En un post de blog concreto (/blogs/{slug}) no todos los idiomas existen,
   // así que el cambio de idioma va al listado /blogs (200) en vez de a un
   // /en/blogs/{slug} inexistente (404). En el resto de páginas conserva la ruta.
-  const localeSwitchHref = /^\/blogs\/[^/]+$/.test(pathname) ? "/blogs" : pathname;
+  // usePathname() con `pathnames` devuelve la ruta interna (en español), que
+  // es justo lo que Link necesita para reescribirla al slug del otro locale.
+  const localeSwitchHref = (/^\/blogs\/[^/]+$/.test(pathname) ? "/blogs" : pathname) as AppPathname;
 
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -161,7 +165,7 @@ const Navbar = () => {
   // español y el menú de /en mostraba "Posicionamiento SEO" / "Tiendas
   // Virtuales" / "Diseño Web" a visitantes en inglés (rebote 69,4% en /en vs
   // 39,6% en /es). Los href se mantienen: son las rutas reales del App Router.
-  const services = [
+  const services: { href: AppPathname; label: string }[] = [
     { href: "/posicionamiento-seo", label: t("services.seo") },
     { href: "/servicios/google-ads", label: t("services.googleAds") },
     { href: "/tiendas-virtuales-lima", label: t("services.ecommerce") },
@@ -173,12 +177,14 @@ const Navbar = () => {
     { href: "/servicios/branding", label: t("services.branding") },
   ];
 
-  const links = [
+  // '/servicios#servicios' y '#contacto' no son rutas: el primero se separa
+  // en pathname + hash y el segundo es un ancla de la misma página.
+  const links: { name: string; href: AppPathname; hash?: string; isServices?: boolean; isContact?: boolean }[] = [
     { name: t("nav.home"), href: "/" },
     { name: t("nav.about us"), href: "/nosotros" },
-    { name: t("nav.services"), href: "/servicios#servicios", isServices: true },
+    { name: t("nav.services"), href: "/servicios", hash: "#servicios", isServices: true },
     { name: t("nav.blogs"), href: "/blogs" },
-    { name: t("nav.contact"), href: "#contacto", isContact: true },
+    { name: t("nav.contact"), href: "/", hash: "#contacto", isContact: true },
   ];
 
   const socialLinks = [
@@ -313,17 +319,31 @@ const Navbar = () => {
                   isOpen ? "opacity-0 delay-0" : "opacity-100 delay-300"
                 } text-gray-400`}
               >
+                {/* Tres versiones, no dos. 'US' es el español de Estados
+                    Unidos (es-US): mismo idioma que PE, otro mercado y otra
+                    moneda. Se etiqueta por país y no por idioma porque PE y US
+                    comparten idioma y el usuario distingue por su mercado. */}
                 <Link
                   href={localeSwitchHref}
                   locale="es"
-                  className="hover:text-[#E91E63] transition-colors cursor-pointer uppercase"
+                  title="Perú — español"
+                  className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'es' ? 'text-white' : ''}`}
                 >
-                  ES
+                  PE
+                </Link>
+                <Link
+                  href={localeSwitchHref}
+                  locale="us"
+                  title="Estados Unidos — español"
+                  className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'us' ? 'text-white' : ''}`}
+                >
+                  US
                 </Link>
                 <Link
                   href={localeSwitchHref}
                   locale="en"
-                  className="hover:text-[#E91E63] transition-colors cursor-pointer uppercase"
+                  title="English"
+                  className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'en' ? 'text-white' : ''}`}
                 >
                   EN
                 </Link>

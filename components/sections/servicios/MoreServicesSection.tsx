@@ -1,11 +1,12 @@
 "use client"
 import { useTranslations } from "next-intl"
+import type { AppPathname } from "@/i18n/routing";
 import { Link } from "@/i18n/routing"
 
 interface ServiceLink {
   title: string
   description: string
-  href: string
+  href: AppPathname
 }
 
 export default function MoreServicesSection() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pathnames } from "@/i18n/routing"
 
 export const BASE_URL = 'https://3rcore.com'
 
@@ -10,20 +11,44 @@ export const DEFAULT_OG_IMAGE = {
 }
 
 /**
+ * Traduce una ruta interna (siempre en español, como las carpetas de
+ * app/[locale]) al slug que ve el usuario en ese locale.
+ * `/posicionamiento-seo` + 'en' -> `/seo-agency`.
+ */
+export function localizedPath(path: string, locale: string): string {
+  const entry = (pathnames as Record<string, string | Record<string, string>>)[path]
+  if (!entry) return path
+  if (typeof entry === 'string') return entry
+  return entry[locale] ?? path
+}
+
+/** URL absoluta y ya localizada. */
+export function localizedUrl(path: string, locale: string): string {
+  const p = localizedPath(path, locale)
+  return `${BASE_URL}/${locale}${p === '/' ? '' : p}`
+}
+
+/**
  * hreflang del cluster completo. Se usa en TODAS las páginas core para que
  * Google vea un grupo coherente: mismo set de alternates en las tres versiones.
+ * Cada alternate apunta al slug REAL de su locale — declarar
+ * `/en/posicionamiento-seo` cuando esa URL redirige a `/en/seo-agency` sería
+ * un hreflang hacia una redirección, que Google descarta.
  * x-default apunta a /en (no a /es): el visitante sin idioma resuelto es, por
  * volumen medido, internacional — EE.UU. dio 400 sesiones en 89 días sin haber
  * trabajado nunca ese mercado.
  */
 export function hreflangFor(path: string) {
+  const es = localizedUrl(path, 'es')
+  const us = localizedUrl(path, 'us')
+  const en = localizedUrl(path, 'en')
   return {
-    'es': `${BASE_URL}/es${path}`,
-    'es-PE': `${BASE_URL}/es${path}`,
-    'es-US': `${BASE_URL}/us${path}`,
-    'en': `${BASE_URL}/en${path}`,
-    'en-US': `${BASE_URL}/en${path}`,
-    'x-default': `${BASE_URL}/en${path}`,
+    'es': es,
+    'es-PE': es,
+    'es-US': us,
+    'en': en,
+    'en-US': en,
+    'x-default': en,
   }
 }
 
@@ -53,13 +78,13 @@ export function generatePageMetadata(options: PageMetadataOptions): Metadata {
     title,
     description,
     alternates: {
-      canonical: `${BASE_URL}/${locale}${path}`,
+      canonical: localizedUrl(path, locale),
       languages: hreflangFor(path),
     },
     openGraph: {
       title,
       description,
-      url: `${BASE_URL}/${locale}${path}`,
+      url: localizedUrl(path, locale),
       siteName: '3R Core',
       locale: isEn ? 'en_US' : isUs ? 'es_US' : 'es_PE',
       type: 'website',
@@ -90,7 +115,7 @@ export function generateBreadcrumbSchema(items: { name: string; path: string }[]
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `${BASE_URL}/${locale}${item.path}`,
+      "item": localizedUrl(item.path, locale),
     })),
   }
 }

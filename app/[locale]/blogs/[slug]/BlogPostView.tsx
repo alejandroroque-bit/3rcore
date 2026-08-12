@@ -187,7 +187,7 @@ export default function BlogPostView({ post, locale, minutesRead, relatedPosts =
                 const img = rp.featured_image || rp.og_image || '/images/placeholder.png'
                 return (
                   <li key={rp.id}>
-                    <Link href={`/blogs/${rp.slug}`} className="group block">
+                    <Link href={{ pathname: "/blogs/[slug]", params: { slug: rp.slug } }} className="group block">
                       <article className="bg-[#2F0729] rounded-[18px] overflow-hidden border border-white/5 transition-all duration-500 hover:border-[#A21F8A]/40 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(162,31,138,0.2)]">
                         <div className="relative h-40 w-full overflow-hidden">
                           <Image src={img} alt={rp.featured_image_alt || rp.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />

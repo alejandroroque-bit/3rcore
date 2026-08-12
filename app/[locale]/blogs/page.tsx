@@ -228,7 +228,7 @@ export default async function BlogsPage(
                 .toUpperCase()
 
               return (
-                <Link key={post.id} href={`/blogs/${post.slug}`} className="group block">
+                <Link key={post.id} href={{ pathname: "/blogs/[slug]", params: { slug: post.slug } }} className="group block">
                   <article className="bg-[#2F0729] rounded-[20px] overflow-hidden flex flex-col h-full border border-white/5 transition-all duration-500 hover:border-[#A21F8A]/40 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(162,31,138,0.2)]">
                     {/* Image */}
                     <div className="relative h-56 w-full overflow-hidden">

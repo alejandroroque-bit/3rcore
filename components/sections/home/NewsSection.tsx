@@ -138,7 +138,7 @@ interface WPPost {
 
               return (
                 <SwiperSlide key={index}>
-                  <Link href={`/blogs/${postSlug}`} className="block h-full">
+                  <Link href={{ pathname: "/blogs/[slug]", params: { slug: postSlug } }} className="block h-full">
                     <div className="group bg-[#2F0729] backdrop-blur-xl rounded-[20px] overflow-hidden flex flex-col lg:h-[400px] xl:h-[450px] 2xl:min-h-[620px] border border-white/5 transition-all duration-500 hover:border-white/10">
                       <div className="relative h-70 lg:h-80 2xl:h-80 w-full">
                         <div className="relative w-full h-full overflow-hidden rounded-t-[20px]">

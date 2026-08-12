@@ -1,9 +1,10 @@
 "use client"
 import { useTranslations } from "next-intl"
+import type { AppPathname } from "@/i18n/routing";
 import { Link } from "@/i18n/routing"
 
 interface RelatedLink {
-  href: string
+  href: AppPathname
   label: string
 }
 
