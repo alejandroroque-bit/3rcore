@@ -13,6 +13,7 @@ import { LEADS3_POSTS_2026_07 } from "./posts-leads3-2026-07"
 import { REFRESH_POSTS_2026_07_28 } from "./posts-refresh-2026-07-28"
 import { USA_POSTS_2026_08 } from "./posts-usa-2026-08"
 import { USA2_POSTS_2026_08 } from "./posts-usa2-2026-08"
+import { USA3_POSTS_2026_08 } from "./posts-usa3-2026-08"
 import { UGC_PR_POSTS_2026_08 } from "./posts-ugc-pr-2026-08"
 
 export interface SeedPost {
@@ -3011,5 +3012,6 @@ export const SEED_POSTS: SeedPost[] = [
   ...REFRESH_POSTS_2026_07_28,
   ...USA_POSTS_2026_08,
   ...USA2_POSTS_2026_08,
+  ...USA3_POSTS_2026_08,
   ...UGC_PR_POSTS_2026_08,
 ]

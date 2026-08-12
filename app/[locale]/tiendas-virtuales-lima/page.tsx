@@ -178,7 +178,7 @@ const COPY: Record<string, any> = {
       { title: 'Tiendanube', desc: 'Strong on local payments and accessible plans (from ~$24/mo). Built for Latin America: local payment methods and shipping solved.' },
     ],
     platformsMore: 'We compare all three in depth in our guide',
-    platformsMoreLink: '/blogs/shopify-vs-woocommerce-peru-2026',
+    platformsMoreLink: '/blogs/shopify-vs-woocommerce-for-us-brands',
     platformsMoreAnchor: 'Shopify vs WooCommerce Peru 2026',
     pricing: 'How much does an online store cost?',
     pricingIntro: 'Net implementation prices. Platform monthly fees and payment gateway commissions are separate.',
