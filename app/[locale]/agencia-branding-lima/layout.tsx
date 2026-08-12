@@ -38,7 +38,7 @@ export default async function BrandingLimaLayout({ children, params }: { childre
     locale,
     path: '/agencia-branding-lima',
     nameEs: 'Agencia de Branding en Lima',
-    nameEn: 'Branding Agency in Lima',
+    nameEn: 'Branding Agency for U.S. Brands',
     descriptionEs: 'Diseño de identidad de marca, logotipo, paleta cromática, tipografía, manual de marca, naming y aplicaciones desde Lima, Perú.',
     descriptionEn: 'Brand identity design, logo, color palette, typography, brand manual, naming and applications from Lima, Peru.',
     serviceType: 'Branding and Visual Identity',

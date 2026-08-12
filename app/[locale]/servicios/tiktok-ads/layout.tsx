@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios/tiktok-ads',
     titleEs: "Agencia de TikTok Ads en Lima, Perú — Campañas que venden | 3R Core",
-    titleEn: "TikTok Ads Agency in Lima, Peru — Campaigns that Sell | 3R Core",
+    titleEn: 'TikTok Ads Agency for U.S. Brands — Native Video & UGC | 3R Core',
     descriptionEs: "Agencia de TikTok Ads en Lima, Perú: Spark Ads, video nativo, creadores UGC y segmentación para llegar a audiencias jóvenes con ROAS medible. Gestión desde S/1,500/mes.",
-    descriptionEn: "TikTok Ads agency in Lima, Peru: Spark Ads, native video, UGC creators and targeting to reach young audiences with measurable ROAS. Managed from $420/month.",
+    descriptionEn: 'TikTok Ads for U.S. businesses: Spark Ads, native video and in-house UGC creators to reach younger audiences with measurable ROAS. Managed from $800/month.',
     titleUs: 'Agencia de TikTok Ads en Español para EE.UU. | 3R Core',
     descriptionUs: 'TikTok Ads para el público hispano en Estados Unidos: Spark Ads, video nativo con creadores hispanohablantes y segmentación por ciudad. Gestión con ROAS medible desde $800/mes.',
   })

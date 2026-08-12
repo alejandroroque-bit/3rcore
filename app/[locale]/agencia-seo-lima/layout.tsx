@@ -38,7 +38,7 @@ export default async function SeoLimaLayout({ children, params }: { children: Re
     locale,
     path: '/agencia-seo-lima',
     nameEs: 'Agencia SEO en Lima',
-    nameEn: 'SEO Agency in Lima',
+    nameEn: 'SEO Agency for U.S. Brands',
     descriptionEs: 'Posicionamiento orgánico en Google con auditoría técnica, keyword research, contenidos, link building y SEO local para Lima, Perú.',
     descriptionEn: 'Organic Google positioning with technical audit, keyword research, content, link building and local SEO for Lima, Peru.',
     serviceType: 'Search Engine Optimization',

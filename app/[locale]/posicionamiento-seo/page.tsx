@@ -11,9 +11,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/posicionamiento-seo',
     titleEs: 'Agencia SEO en Lima, Perú — Posicionamiento Web en Google | 3R Core',
-    titleEn: 'SEO Agency in Lima — Organic Web Positioning on Google | 3R Core',
+    titleEn: 'SEO Agency for U.S. Brands — Organic Google Rankings | 3R Core',
     descriptionEs: 'Agencia de posicionamiento SEO en Lima, Perú. Auditoría, optimización, interlinks, contenido y escalamiento mensual. Inversión desde S/1,800/mes sin contratos forzosos.',
-    descriptionEn: 'SEO positioning agency for US-based clients. Audit, optimization, interlinks, content and monthly scaling. Investment from $500/month with no forced contracts.',
+    descriptionEn: 'SEO for U.S. businesses: keyword research, technical SEO, content and link building, in English and Spanish. Nearshore team in U.S. hours. From $500/month with no forced contracts.',
     titleUs: 'Agencia de Posicionamiento SEO en Español para EE.UU. | 3R Core',
     descriptionUs: 'Posicionamiento SEO en español e inglés para negocios en Estados Unidos: keyword research, SEO técnico, contenido y SEO local. Las búsquedas en español suelen tener menos competencia. Desde $500/mes sin contratos forzosos.',
     ogImage: {
@@ -34,9 +34,9 @@ export default async function Posicionamientoseo({ params }: { params: any }) {
     locale,
     path: '/posicionamiento-seo',
     nameEs: 'Agencia de Posicionamiento SEO en Lima',
-    nameEn: 'SEO Positioning Agency in Lima',
+    nameEn: 'SEO Positioning Agency for U.S. Brands',
     descriptionEs: 'Servicio mensual de posicionamiento SEO orgánico en Google para empresas en Lima, Perú: auditoría, palabras clave, optimización on-page, interlinks, contenido y escalamiento con reporte mensual.',
-    descriptionEn: 'Monthly organic SEO positioning service on Google for companies in Lima, Peru: audit, keyword research, on-page optimization, interlinks, content and scaling with monthly reporting.',
+    descriptionEn: 'Monthly organic SEO positioning service on Google for companies for U.S. Brands: audit, keyword research, on-page optimization, interlinks, content and scaling with monthly reporting.',
     serviceType: 'SEO / Search Engine Optimization',
     minPriceEs: 1800,
     offerPriceEs: 1800,
@@ -77,7 +77,7 @@ export default async function Posicionamientoseo({ params }: { params: any }) {
     locale,
     path: '/posicionamiento-seo',
     nameEs: 'Agencia de Posicionamiento SEO en Lima — 3R Core',
-    nameEn: 'SEO Positioning Agency in Lima — 3R Core',
+    nameEn: 'SEO Positioning Agency for U.S. Brands — 3R Core',
     cssSelector: ['h1', 'h2', '.faq-answer'],
   })
 

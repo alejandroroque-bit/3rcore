@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/servicios',
     titleEs: 'Servicios de Marketing Digital en Lima, Perú — Branding, SEO, Google Ads, Redes y Web | 3R Core',
-    titleEn: 'Digital Marketing Services in Lima, Peru — Branding, SEO, Google Ads, Social Media & Web | 3R Core',
+    titleEn: 'Digital Marketing Services for U.S. Brands — UGC, Ads, SEO & Web | 3R Core',
     descriptionEs: 'Catálogo completo de servicios de marketing digital de 3R Core en Lima, Perú: branding, manejo de redes sociales, Google Ads, posicionamiento SEO y desarrollo web. Estrategias personalizadas con reportes mensuales y resultados medibles.',
-    descriptionEn: 'Full catalog of 3R Core digital marketing services in Lima, Peru: branding, social media management, Google Ads, SEO positioning and web development. Personalized strategies with monthly reports and measurable results.',
+    descriptionEn: 'Full catalog of 3R Core services for U.S. businesses: UGC video production, influencer campaigns, public relations, Google Ads, Meta Ads, SEO, branding and web development. Priced in USD.',
     titleUs: 'Servicios de Marketing Digital en Español para EE.UU. | 3R Core',
     descriptionUs: 'Catálogo completo de servicios de 3R Core para negocios en Estados Unidos: contenido UGC, influencer marketing, relaciones públicas, Google Ads, Meta Ads, SEO, branding y desarrollo web. Precios en dólares.',
   })
