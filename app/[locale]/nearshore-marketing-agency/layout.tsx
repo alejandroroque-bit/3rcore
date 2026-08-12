@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   // existen.
   if (locale !== 'en') return { robots: { index: false, follow: false } }
 
-  const title = "Nearshore Marketing Agency in Latin America | 3R Core"
-  const description = "Hire a nearshore marketing team on U.S. hours: UGC video, paid media, SEO and Shopify builds from Lima. Fixed scopes in USD, and you keep every account."
+  const title = "Peruvian Marketing Agency Serving U.S. Brands | 3R Core"
+  const description = "A Peruvian agency in Lima serving U.S. brands remotely through its U.S. subsidiary: UGC video, paid media, SEO and Shopify builds, billed in USD."
 
   return {
     title,
@@ -51,9 +51,9 @@ export default async function NearshoreLayout({ children, params }: { children: 
     locale,
     path: PATH,
     nameEs: "Agencia de Marketing Nearshore para Marcas de Estados Unidos",
-    nameEn: "Nearshore Marketing Agency for U.S. Brands",
+    nameEn: "Peruvian Marketing Agency for U.S. Brands",
     descriptionEs: "Equipo de marketing nearshore en Lima, Perú para marcas de Estados Unidos: producción de video UGC, gestión de medios pagados, SEO y desarrollo de tiendas Shopify, en horario compatible con EE.UU. y con alcances cerrados facturados en dólares.",
-    descriptionEn: "Nearshore marketing team in Lima, Peru for U.S. brands: UGC video production, paid media management across Google, Meta and TikTok, technical and content SEO, and Shopify and landing page builds — delivered in overlapping U.S. business hours under fixed scopes invoiced in U.S. dollars.",
+    descriptionEn: "Peruvian marketing agency based in Lima serving U.S. brands remotely through its U.S. subsidiary: UGC video production, paid media across Google, Meta and TikTok, technical and content SEO, and Shopify and landing page builds — delivered in overlapping U.S. business hours under fixed scopes invoiced in U.S. dollars.",
     serviceType: "Nearshore Marketing Services / Outsourced Marketing Team",
     offerPriceEn: 1200,
     audienceTypes: ["E-commerce", "D2C brands", "B2B", "SaaS", "Agencies"],

@@ -621,23 +621,23 @@
     "servicios": "Services"
   },
   "HiddenH1": {
-    "home": "Nearshore marketing agency for U.S. brands: UGC video, SEO, Google Ads and online stores",
-    "branding": "Corporate branding and brand identity design agency for U.S. brands",
-    "webdev": "Web design and development agency for U.S. brands: online stores, landing pages and corporate sites",
-    "googleads": "Certified Google Ads and PPC campaign agency for U.S. brands",
-    "socialmedia": "Social media management and community management agency for U.S. brands",
-    "seo": "SEO and organic Google positioning agency for U.S. businesses",
-    "metaads": "Meta Ads agency (Facebook and Instagram) for U.S. brands",
-    "tiktokads": "TikTok Ads agency for U.S. brands with native video and UGC creators",
-    "performance": "Performance marketing agency for U.S. brands measured by CAC and ROAS",
-    "emailmarketing": "Email marketing and automation agency for U.S. brands",
-    "clinicas": "Digital marketing agency for clinics and medical practices in the United States",
-    "inmobiliarias": "Digital marketing agency for real estate agents and developers in the United States",
-    "ecommerce": "Digital marketing agency for e-commerce and online stores in the United States",
-    "ugc": "UGC content production agency for U.S. brands — in-house creators, nearshore rates",
-    "influencers": "Influencer marketing agency for U.S. brands with per-creator attribution",
-    "pr": "Public relations agency for press coverage, reputation and crisis response",
-    "nearshore": "Nearshore marketing agency in Latin America for U.S. brands — UGC, paid media and SEO"
+    "home": "Peru-based marketing agency serving U.S. brands: UGC video, SEO, Google Ads and online stores",
+    "branding": "Corporate branding and brand identity design for U.S. brands, from our studio in Lima, Peru",
+    "webdev": "Web design and development for U.S. brands, built by our team in Lima, Peru",
+    "googleads": "Certified Google Ads and PPC management for U.S. brands, run from Lima, Peru",
+    "socialmedia": "Social media management and community management for U.S. brands, run from Lima, Peru",
+    "seo": "SEO and organic Google positioning for U.S. businesses, delivered from Lima, Peru",
+    "metaads": "Meta Ads management (Facebook and Instagram) for U.S. brands, run from Lima, Peru",
+    "tiktokads": "TikTok Ads for U.S. brands with in-house UGC creators in Lima, Peru",
+    "performance": "Performance marketing for U.S. brands measured by CAC and ROAS, run from Lima, Peru",
+    "emailmarketing": "Email marketing and automation for U.S. brands, built from Lima, Peru",
+    "clinicas": "Digital marketing for clinics and medical practices in the United States, run from Lima, Peru",
+    "inmobiliarias": "Digital marketing for U.S. real estate agents and developers, run from Lima, Peru",
+    "ecommerce": "Digital marketing for U.S. e-commerce and online stores, run from Lima, Peru",
+    "ugc": "UGC content production for U.S. brands with in-house creators in Lima, Peru",
+    "influencers": "Influencer marketing for U.S. brands with per-creator attribution, run from Lima, Peru",
+    "pr": "Public relations, press coverage and reputation management for U.S. brands, run from Lima, Peru",
+    "nearshore": "Peruvian marketing agency serving U.S. brands remotely through its U.S. subsidiary"
   },
   "HomeFAQ": {
     "badge": "Frequently Asked Questions",
@@ -2178,16 +2178,16 @@
   },
   "NearshoreLanding": {
     "hero": {
-      "badge": "Nearshore · U.S. time zones · USD",
-      "title": "Your marketing team, in your time zone, at a third of the U.S. rate",
-      "subtitle": "UGC video, paid media, SEO and Shopify builds delivered by an in-house team in Lima — overlapping U.S. business hours, English-speaking leads, fixed scopes invoiced in dollars.",
+      "badge": "Peruvian agency · U.S. subsidiary · U.S. hours",
+      "title": "A Peruvian agency serving U.S. brands, with a U.S. subsidiary",
+      "subtitle": "We are based in Lima, Peru, and we work with U.S. brands remotely through our U.S. subsidiary: UGC video, paid media, SEO and Shopify builds, delivered in overlapping business hours, in English, invoiced in U.S. dollars.",
       "cta": "Get a scoped proposal"
     },
     "intro": {
-      "title": "Why nearshore beats both offshore and a U.S. retainer",
-      "p1": "U.S. brands usually choose between two bad options: a domestic agency whose retainer is mostly overhead, or an offshore shop twelve hours out of sync where every clarification costs a day. Nearshore is the third answer — a team close enough in time and culture to work like an in-house extension.",
-      "p2": "Lima runs on Eastern Time minus zero to one hour depending on daylight saving. A brief sent from New York at 9am is being worked on at 9am, not the following night. Standups happen live. Revisions land the same day. That single fact changes what a remote team can actually be trusted with.",
-      "p3": "What you're buying isn't cheap labor, it's a different cost structure. The same senior work carries Lima's operating costs instead of Manhattan's, and the difference goes into output volume: more creative variations, more tests, more iterations per month for the same budget."
+      "title": "Where we are, and why it works for you",
+      "p1": "3R Core is a Peruvian agency. Our studio, our creators and our specialists are in Lima, and that is where the work gets made. What we added for the U.S. market is a subsidiary there, so American clients contract, invoice and operate the way they normally would.",
+      "p2": "Lima runs on Eastern Time, or one hour behind depending on daylight saving. That is the part that makes remote work feel local: a brief sent from New York at 9am is being worked at 9am, standups happen live and revisions land the same day, not the following night.",
+      "p3": "What you are buying is not cheap labor. It is the same senior work carrying Lima's operating costs instead of a U.S. metro's, and the difference goes into output: more creative variations, more tests, more iterations per month for the same budget."
     },
     "benefits": {
       "badge": "What we run",
@@ -2251,16 +2251,16 @@
     "title": "Working with a nearshore agency — frequently asked questions",
     "faqs": {
       "q1": {
-        "question": "What does nearshore actually mean here?",
-        "answer": "It means the team is in Latin America rather than in the U.S. or across the Pacific. Concretely for us: Lima, Peru, which runs on Eastern Time or one hour behind depending on daylight saving. The whole U.S. business day overlaps with ours, so briefs, revisions and calls happen in real time instead of in overnight batches."
+        "question": "Where is your team actually based?",
+        "answer": "In Lima, Peru. That is where our studio, our in-house creators and our specialists work, and we say so openly because it is the reason the model works: Lima runs on Eastern Time or one hour behind depending on daylight saving, so the entire U.S. business day overlaps with ours. For U.S. clients we operate through our U.S. subsidiary, which is what handles the commercial relationship on that side."
       },
       "q2": {
         "question": "Does the team speak English?",
         "answer": "The leads on your account do, and all written communication, documentation and reporting run in English. Deliverables are produced in whichever language the campaign targets — we produce in both English and Spanish, which is part of why brands selling to U.S. Hispanic audiences work with us."
       },
       "q3": {
-        "question": "How do you handle contracts and payment from the U.S.?",
-        "answer": "Scopes are fixed and quoted in U.S. dollars, invoiced monthly against agreed deliverables. Payment is by international transfer or card. Contracts specify deliverables, timelines, revision rounds and ownership of the work, so there's no ambiguity about what transfers to you."
+        "question": "How do contracts and payment work from the U.S.?",
+        "answer": "Through our U.S. subsidiary, so you contract and pay the way you would with any domestic supplier. Scopes are fixed and quoted in U.S. dollars, invoiced monthly against agreed deliverables. Contracts specify deliverables, timelines, revision rounds and ownership of the work, so there is no ambiguity about what transfers to you."
       },
       "q4": {
         "question": "Who owns the work when the engagement ends?",
@@ -2285,9 +2285,9 @@
     }
   },
   "NearshoreSEO": {
-    "seoTitle": "Nearshore marketing agency for U.S. brands, based in Lima",
-    "p1": "Nearshore outsourcing solves a specific problem for U.S. marketing teams: the need for execution capacity that doesn't carry U.S. agency overhead and doesn't come with the coordination penalty of a team half a day out of sync. Latin America sits in the middle of that trade-off, and time zone alignment is the reason.",
-    "p2": "3R Core operates from Lima, Peru, on Eastern Time or one hour behind. The practical effect is that the U.S. business day and ours are the same day. A brief sent in the morning gets worked that morning; a revision requested at 2pm can ship before close. Teams that have tried offshore arrangements recognize immediately how much that changes.",
+    "seoTitle": "A Peruvian marketing agency serving U.S. brands",
+    "p1": "3R Core is a Peruvian agency based in Lima that works with brands in the United States remotely, through its U.S. subsidiary. We are explicit about that because it is the point: the work is made by a team in Lima, and the commercial relationship runs the way a U.S. client expects it to.",
+    "p2": "The reason a remote arrangement works here is time zone. Lima sits on Eastern Time or one hour behind depending on daylight saving, so the U.S. business day and ours are the same day. A brief sent in the morning gets worked that morning; a revision requested at 2pm can ship before close. Teams that have tried offshore arrangements recognize immediately how much that changes.",
     "p3": "The services U.S. brands buy from us cluster around execution volume: UGC video batches, paid media management across Google, Meta and TikTok, technical and content SEO, Shopify and landing page builds, and influencer campaigns with per-creator attribution. These are the areas where output quantity directly drives result, and where a different cost structure translates into more tests per month.",
     "p4": "Engagements run on fixed scopes quoted in U.S. dollars, not open-ended hourly billing. Each scope specifies deliverables, timeline, revision rounds and ownership. Assets, ad accounts, tracking and code stay in your properties throughout, so there's nothing to reclaim if the relationship ends.",
     "p5": "We also produce in Spanish, which matters for brands targeting U.S. Hispanic audiences. Producing that content with a native Spanish-speaking team avoids the translated-copy problem — the tonal flatness that audiences read as inauthentic even when the grammar is correct.",

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEs: 'Agencia SEO en Lima, Perú — Posicionamiento Web en Google | 3R Core',
     titleEn: 'SEO Agency for U.S. Brands | 3R Core',
     descriptionEs: 'Agencia de posicionamiento SEO en Lima, Perú. Auditoría, optimización, interlinks, contenido y escalamiento mensual. Inversión desde S/1,800/mes sin contratos forzosos.',
-    descriptionEn: 'SEO for U.S. businesses: keyword research, technical SEO, content and link building in English and Spanish. From $500/month, no forced contracts.',
+    descriptionEn: 'SEO for U.S. businesses run from Lima, Peru through our U.S. subsidiary: keyword research, technical SEO, content and link building. From $500/month.',
     titleUs: 'Agencia de Posicionamiento SEO en Español para EE.UU. | 3R Core',
     descriptionUs: 'Posicionamiento SEO en español e inglés para negocios en Estados Unidos: keyword research, SEO técnico, contenido y SEO local. Las búsquedas en español suelen tener menos competencia. Desde $500/mes sin contratos forzosos.',
     ogImage: {
@@ -36,7 +36,7 @@ export default async function Posicionamientoseo({ params }: { params: any }) {
     nameEs: 'Agencia de Posicionamiento SEO en Lima',
     nameEn: 'SEO Positioning Agency for U.S. Brands',
     descriptionEs: 'Servicio mensual de posicionamiento SEO orgánico en Google para empresas en Lima, Perú: auditoría, palabras clave, optimización on-page, interlinks, contenido y escalamiento con reporte mensual.',
-    descriptionEn: 'Monthly organic SEO positioning service on Google for companies for U.S. Brands: audit, keyword research, on-page optimization, interlinks, content and scaling with monthly reporting.',
+    descriptionEn: 'Monthly organic SEO positioning service on Google for U.S. companies, delivered from Lima, Peru: audit, keyword research, on-page optimization, interlinks, content and scaling with monthly reporting.',
     serviceType: 'SEO / Search Engine Optimization',
     minPriceEs: 1800,
     offerPriceEs: 1800,

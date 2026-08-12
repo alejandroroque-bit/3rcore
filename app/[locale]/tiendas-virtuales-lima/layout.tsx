@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEs: 'Tiendas Virtuales en Lima: Shopify, WooCommerce y Tiendanube | 3R Core',
     titleEn: 'Shopify & WooCommerce Development | 3R Core',
     descriptionEs: 'Creamos tu tienda online en Shopify, WooCommerce o Tiendanube con pagos peruanos (Yape, Culqi, Izipay), catálogo cargado y SEO técnico. Desde S/1,500.',
-    descriptionEn: 'Online stores built on Shopify or WooCommerce with payment gateway, catalog, tax setup and technical SEO. Bilingual storefronts from $1,750.',
+    descriptionEn: 'Online stores built in Lima, Peru for U.S. brands: payment gateway, catalog, tax setup and technical SEO. Bilingual storefronts from $1,750 in USD.',
     titleUs: 'Creación de Tiendas Online Shopify y WooCommerce para EE.UU. | 3R Core',
     descriptionUs: 'Creamos tu tienda online en Shopify o WooCommerce con pasarela de pago, catálogo cargado, cálculo de impuestos y SEO técnico. Tienda bilingüe lista para vender en Estados Unidos. Desde $1,750.',
     ogImage: {
@@ -42,7 +42,7 @@ export default async function TiendasVirtualesLimaLayout({ children, params }: {
     nameEs: 'Agencia de Tiendas Virtuales (E-commerce) en Lima',
     nameEn: 'Online Store / E-commerce Agency for U.S. Brands',
     descriptionEs: 'Diseño y desarrollo de tiendas virtuales para empresas en Lima y Perú: Shopify, WooCommerce y Tiendanube, pasarelas de pago locales, SEO técnico, velocidad y conversión, con soporte y capacitación.',
-    descriptionEn: 'Design and development of online stores for companies for U.S. Brands and Peru: Shopify, WooCommerce and Tiendanube, local payment gateways, technical SEO, speed and conversion, with support and training.',
+    descriptionEn: 'Design and development of online stores for U.S. companies, built by our team in Lima, Peru: Shopify, WooCommerce and Tiendanube, local payment gateways, technical SEO, speed and conversion, with support and training.',
     serviceType: 'E-commerce development / Online store creation',
     minPriceEs: 1500,
     maxPriceEs: 25000,

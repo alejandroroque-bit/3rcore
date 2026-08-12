@@ -11,9 +11,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     locale,
     path: '/preguntas',
     titleEs: 'Preguntas Frecuentes — Marketing Digital, SEO, Google Ads y Web | 3R Core',
-    titleEn: 'FAQ — Working With a Nearshore Agency | 3R Core',
+    titleEn: 'FAQ — Working With Our Peru-Based Team | 3R Core',
     descriptionEs: 'Respuestas a las preguntas más frecuentes sobre nuestros servicios de marketing digital en Lima, Perú: precios, plazos, contratos, branding, social media, Google Ads, SEO y desarrollo web.',
-    descriptionEn: 'Pricing in USD, timelines, contracts, who owns the work and how time zones actually play out when you hire a marketing team in Latin America.',
+    descriptionEn: 'How a Peruvian agency serves U.S. clients: pricing in USD, time zones, contracts, invoicing through our U.S. subsidiary and who owns the work.',
     titleUs: 'Preguntas Frecuentes — Marketing Digital en Español para EE.UU. | 3R Core',
     descriptionUs: 'Respuestas a las preguntas más frecuentes sobre nuestros servicios para negocios en Estados Unidos: precios en dólares, plazos, contratos, contenido UGC, Google Ads, SEO y desarrollo web.',
   })

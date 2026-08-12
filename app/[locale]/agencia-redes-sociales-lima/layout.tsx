@@ -40,7 +40,7 @@ export default async function RedesSocialesLimaLayout({ children, params }: { ch
     nameEs: 'Agencia de Redes Sociales en Lima',
     nameEn: 'Social Media Agency for U.S. Brands',
     descriptionEs: 'Estrategia, contenido, community management y pauta en redes sociales para empresas en Lima, Perú.',
-    descriptionEn: 'Strategy, content, community management and paid social for companies for U.S. Brands.',
+    descriptionEn: 'Strategy, content, community management and paid social for U.S. companies, delivered from Lima, Peru.',
     serviceType: 'Social Media Management',
     minPriceEs: 1500,
     maxPriceEs: 8000,

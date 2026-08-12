@@ -40,7 +40,7 @@ export default async function GoogleAdsLimaLayout({ children, params }: { childr
     nameEs: 'Agencia Google Ads en Lima',
     nameEn: 'Google Ads Agency for U.S. Brands',
     descriptionEs: 'Gestión profesional de campañas Google Ads (Search, PMax, YouTube, Display y Shopping) para empresas en Lima, Perú.',
-    descriptionEn: 'Professional Google Ads campaign management (Search, PMax, YouTube, Display and Shopping) for companies for U.S. Brands.',
+    descriptionEn: 'Professional Google Ads campaign management (Search, PMax, YouTube, Display and Shopping) for U.S. companies, delivered from Lima, Peru.',
     serviceType: 'Google Ads / SEM Management',
     minPriceEs: 1800,
     maxPriceEs: 15000,
