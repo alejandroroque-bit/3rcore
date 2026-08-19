@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/routing"
 import type { AppPathname } from "@/i18n/routing"
 import { buildFAQPageSchema } from "@/lib/seoSchemas"
+import ProtoPage from "@/components/proto/ProtoPage"
 
 interface Props { params: Promise<{ locale: string }> }
 
@@ -125,6 +126,19 @@ export default async function PreciosPage({ params }: Props) {
   const t = (COPY as any)[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
   const isEn = locale === 'en'
   const faqSchema = buildFAQPageSchema((t.faqs || []).map((f: any) => ({ question: f.q, answer: f.a })))
+
+  // Rediseño aprobado (mix 18-ago): es sirve el prototipo; us y en, su versión propia
+  if (locale === 'es') {
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <ProtoPage frag="precios" />
+      </>
+    )
+  }
 
   return (
     <main className="min-h-screen bg-black text-white">

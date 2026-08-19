@@ -21,7 +21,7 @@ const Navbar = () => {
   // Rutas que existen en UN solo mercado: /nearshore-marketing-agency solo en
   // /en y /marketing-para-negocios-hispanos solo en /us. Mantener la ruta al
   // cambiar de idioma llevaba a un 404, así que el selector cae a la home.
-  const MARKET_ONLY = ["/nearshore-marketing-agency", "/marketing-para-negocios-hispanos"];
+  const MARKET_ONLY = ["/nearshore-marketing-agency", "/marketing-para-negocios-hispanos", "/casos-de-exito"];
   const localeSwitchHref = (
     /^\/blogs\/[^/]+$/.test(pathname)
       ? "/blogs"
@@ -206,6 +206,8 @@ const Navbar = () => {
     { name: t("nav.home"), href: "/" },
     { name: t("nav.about us"), href: "/nosotros" },
     { name: t("nav.services"), href: "/servicios", hash: "#servicios", isServices: true },
+    // Solo /es: la página vive únicamente en el mercado peruano
+    ...(currentLocale === "es" ? [{ name: t("nav.cases"), href: "/casos-de-exito" as AppPathname }] : []),
     { name: t("nav.blogs"), href: "/blogs" },
     { name: t("nav.contact"), href: "/", hash: currentLocale === "en" ? "#contact" : "#contacto", isContact: true },
   ];

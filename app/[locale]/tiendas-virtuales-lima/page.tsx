@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/routing"
 import type { AppPathname } from "@/i18n/routing"
 import PillarWaCapture from "@/components/ui/PillarWaCapture"
+import ProtoPage from "@/components/proto/ProtoPage"
 
 interface Props { params: Promise<{ locale: string }> }
 
@@ -225,6 +226,11 @@ const COPY: Record<string, any> = {
 export default async function TiendasVirtualesLimaPage({ params }: Props) {
   const { locale } = await params
   const t = (COPY as any)[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
+
+  // Rediseño aprobado (mix 18-ago): es sirve el prototipo; us y en, su versión propia
+  if (locale === 'es') {
+    return <ProtoPage frag="tiendas-virtuales-lima" />
+  }
 
   return (
     <main className="min-h-screen bg-black text-white">

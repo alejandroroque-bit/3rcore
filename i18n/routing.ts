@@ -45,6 +45,8 @@ export const pathnames = {
   // Páginas ancla de un solo mercado
   '/nearshore-marketing-agency': '/nearshore-marketing-agency',
   '/marketing-para-negocios-hispanos': '/marketing-para-negocios-hispanos',
+  // Solo en /es: la página del prototipo habla de marcas trabajadas desde Lima
+  '/casos-de-exito': '/casos-de-exito',
 
   // Institucionales
   '/nosotros': {es: '/nosotros', us: '/nosotros', en: '/about'},

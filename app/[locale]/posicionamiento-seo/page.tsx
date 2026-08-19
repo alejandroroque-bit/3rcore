@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { generatePageMetadata, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildFAQPageSchema, buildServiceSchema, buildSpeakableWebPage } from "@/lib/seoSchemas"
 import LandingClient from "./LandingClient"
+import ProtoPage from "@/components/proto/ProtoPage"
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params
@@ -87,7 +88,8 @@ export default async function Posicionamientoseo({ params }: { params: any }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, serviceSchema, faqSchema, breadcrumbSchema]) }}
       />
-      <LandingClient />
+      {/* Rediseño aprobado (mix 18-ago): es sirve el prototipo; us y en, su versión propia */}
+      {locale === 'es' ? <ProtoPage frag="posicionamiento-seo" /> : <LandingClient />}
     </>
   )
 }

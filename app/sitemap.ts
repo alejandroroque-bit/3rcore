@@ -60,6 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const marketOnlyPages: { url: string; priority: number }[] = [
     { url: `${baseUrl}/en/nearshore-marketing-agency`, priority: 0.95 },
     { url: `${baseUrl}/us/marketing-para-negocios-hispanos`, priority: 0.95 },
+    { url: `${baseUrl}/es/casos-de-exito`, priority: 0.8 },
   ]
 
   // Antes el sitemap listaba SOLO /es (163 URLs, cero /en como <loc>): las

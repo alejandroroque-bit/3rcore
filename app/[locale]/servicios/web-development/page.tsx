@@ -1,75 +1,10 @@
-'use client';
-import ContactForm from "@/components/layout/ContactForm";
-import ContactAnchor from "@/components/layout/ContactAnchor";
-import ClientSection from "@/components/layout/ClientSection";
-import HeroWeb from "@/components/sections/servicios/web-development/heroWeb";
-import ProcessWebSection from "@/components/sections/servicios/web-development/processWebSection";
-import WebInfoSection from "@/components/sections/servicios/web-development/webInfoSection";
-import ImgWebSection from "@/components/sections/servicios/web-development/imgWebSection";
-import WebTypesSection from "@/components/sections/servicios/web-development/webTypesSection";
-import WebApplications from "@/components/sections/servicios/web-development/aplicationWebSection";
-import WebFaq from "@/components/sections/servicios/web-development/webFaq";
-import WebImgSection from "@/components/sections/servicios/web-development/webimgSection";
-import TikTokVideoSection from "@/components/sections/servicios/web-development/tiktokVideoSection";
-import { useScrollToSection } from '@/components/ui/useScrollToSection';
-import { useTranslations } from 'next-intl';
+import ProtoPage from '@/components/proto/ProtoPage'
+import Original from './Original'
 
-import {useIndividualPageLoader} from '@/components/layout/useIndividualPageLoader'
-import { AnimatePresence } from 'framer-motion';
-import PageLoader from '@/components/layout/PageLoader';
-
-
-import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
-import ReviewsSection from "@/components/layout/ReviewsSection";
-import SEOContentBlock from "@/components/seo/SEOContentBlock";
-export default function WebDeveploment(){
-
-  useScrollToSection();
-  const isLoading = useIndividualPageLoader({
-      timeout: 4000,
-      minLoadingTime: 1200,
-      checkVideos: true
-    });
-  const tH1 = useTranslations('HiddenH1');
-
-
-  return(
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading && <PageLoader key="home-loader" />}
-      </AnimatePresence>
-      <main >
-        <h1 className="sr-only">{tH1('webdev')}</h1>
-        <div id="hero">
-          <HeroWeb />
-        </div>
-        <ProcessWebSection/>
-        <WebInfoSection/>
-        <ImgWebSection/>
-        <WebTypesSection/>
-        <WebApplications/>
-        <TikTokVideoSection/>
-        <WebFaq/>
-        <WebImgSection/>
-
-        <ClientSection />
-        <ReviewsSection/>
-        <SEOContentBlock
-          namespace="WebDevSEO"
-          paragraphs={4}
-          relatedLinks={[
-            { href: "/tiendas-virtuales-lima", label: "Tiendas Virtuales" },
-            { href: "/posicionamiento-seo", label: "SEO" },
-            { href: "/servicios/google-ads", label: "Google Ads" },
-            { href: "/servicios/branding", label: "Branding" },
-            { href: "/servicios/socialmedia", label: "Redes Sociales" },
-          ]}
-        />
-        <ContactAnchor>
-          <ContactForm/>
-        </ContactAnchor>
-        <ScrollContactBtn />
-      </main>
-    </>
-  );
+// Rediseño aprobado (mix 18-ago): el mercado peruano (es) sirve la página del
+// prototipo; us y en conservan su versión propia. La metadata y el schema
+// siguen viviendo en el layout.tsx de esta ruta, igual para los tres locales.
+export default async function Page({ params }: { params: any }) {
+  const { locale } = await params
+  return locale === 'es' ? <ProtoPage frag="servicios__web-development" /> : <Original />
 }

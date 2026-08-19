@@ -1,68 +1,10 @@
-'use client';
-import ContactForm from "@/components/layout/ContactForm";
-import ContactAnchor from "@/components/layout/ContactAnchor";
-import HeroSeo from "@/components/sections/servicios/google-ads/heroSeo";
-import SeoSemSection from "@/components/sections/servicios/google-ads/seoSemSection";
-import SeoSemCall from "@/components/sections/servicios/google-ads/seoSemCall";
-import { SeoClients } from "@/components/sections/servicios/google-ads/seoClients";
-import WorkMethodology from "@/components/sections/servicios/google-ads/workMetodology";
-import ToolsCarousel from "@/components/sections/servicios/google-ads/toolsCarru";
-import { useScrollToSection } from '@/components/ui/useScrollToSection';
-import { useTranslations } from 'next-intl';
+import ProtoPage from '@/components/proto/ProtoPage'
+import Original from './Original'
 
-import {useIndividualPageLoader} from '@/components/layout/useIndividualPageLoader'
-import { AnimatePresence } from 'framer-motion';
-import PageLoader from '@/components/layout/PageLoader';
-
-
-import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
-import ReviewsSection from "@/components/layout/ReviewsSection";
-import ServiceFAQ from "@/components/seo/ServiceFAQ";
-import SEOContentBlock from "@/components/seo/SEOContentBlock";
-export default function GoogleAds(){
-
-  useScrollToSection();
-  const isLoading = useIndividualPageLoader({
-      timeout: 4000,
-      minLoadingTime: 1200,
-      checkVideos: true
-    });
-  const tH1 = useTranslations('HiddenH1');
-
-
-  return(
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading && <PageLoader key="home-loader" />}
-      </AnimatePresence>
-      <main >
-        <h1 className="sr-only">{tH1('googleads')}</h1>
-        <div id="hero">
-          <HeroSeo />
-        </div>
-        <SeoSemCall/>
-        <SeoSemSection/>
-        <SeoClients />
-        <ReviewsSection/>
-        <WorkMethodology/>
-        <ToolsCarousel/>
-        <ServiceFAQ namespace="GoogleAdsFAQ" count={10} />
-        <SEOContentBlock
-          namespace="GoogleAdsSEO"
-          paragraphs={4}
-          relatedLinks={[
-            { href: "/posicionamiento-seo", label: "SEO Orgánico" },
-            { href: "/servicios/web-development", label: "Diseño Web" },
-            { href: "/servicios/socialmedia", label: "Redes Sociales" },
-            { href: "/servicios/branding", label: "Branding" },
-          ]}
-        />
-        <ContactAnchor>
-          <ContactForm/>
-        </ContactAnchor>
-        <ScrollContactBtn />
-      </main>
-
-    </>
-  );
+// Rediseño aprobado (mix 18-ago): el mercado peruano (es) sirve la página del
+// prototipo; us y en conservan su versión propia. La metadata y el schema
+// siguen viviendo en el layout.tsx de esta ruta, igual para los tres locales.
+export default async function Page({ params }: { params: any }) {
+  const { locale } = await params
+  return locale === 'es' ? <ProtoPage frag="servicios__google-ads" /> : <Original />
 }

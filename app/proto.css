@@ -1,0 +1,2598 @@
+/* ════════════════════════════════════════════════════════════════
+   3R CORE — estilo "High Contrast Landing Page"
+   Replicado de superdesign.dev/library (high-contrast-landing-page):
+   fondo #130218 · tinta #FFFFFF · Clash Display (titulares) + Satoshi (cuerpo)
+   titulares gigantes con tracking -.05em · nav minimalista · botones pill outline
+   Acento de marca 3R Core: magenta #D11E68, usado con cuentagotas.
+   ════════════════════════════════════════════════════════════════ */
+
+.proto{
+  /* ── TIPOGRAFÍA REAL DE 3rcore.com (medida en producción, 18-ago-2026) ──
+     Poppins = titulares, navegación y cifras · Montserrat = cuerpo, tarjetas y
+     antetítulos en versalitas · Playfair = los momentos serif heredados.
+     Sustituye a Clash Display + Satoshi del prototipo. */
+  --f-disp:'Poppins','Poppins Fallback',system-ui,sans-serif;
+  --f-text:'Montserrat','Montserrat Fallback',system-ui,sans-serif;
+  --f-ui:'Poppins','Poppins Fallback',system-ui,sans-serif;
+  --f-serif:'Playfair Display',Georgia,serif;
+
+  /* Paleta real de 3rcore.com */
+  --paper:#130218;        /* fondo del sitio */
+  --paper-2:#1D0525;      /* superficie de tarjeta */
+  --paper-3:#2F0729;      /* superficie elevada (la suya) */
+  --ink:#FFFFFF;
+  --ink-2:#FFFFFF;
+  --gris:rgba(255,255,255,.58);
+  --gris-2:rgba(255,255,255,.34);
+  --linea:rgba(255,255,255,.16);
+  --linea-s:rgba(255,255,255,.08);
+
+  --mag:#D11E68;
+  --mag-2:#E91E63;
+  --pur:#9C27B0;
+  --grad:linear-gradient(to right,#E91E63 0%,#9C27B0 100%);
+  --wa:#25D366;
+
+  --e:cubic-bezier(.32,.72,0,1);
+  --e-out:cubic-bezier(.16,1,.3,1);
+
+  --nav-h:96px;
+  --pb:34px;
+}
+
+.proto *{box-sizing:border-box}
+.proto{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+.proto{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f-text);
+  font-size:16px;line-height:1.62;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.proto img{max-width:100%;display:block}
+.proto a{color:inherit;text-decoration:none}
+.proto svg{width:20px;height:20px;flex:0 0 auto;max-width:100%;fill:none;stroke:currentColor}
+.proto ::selection{background:var(--mag);color:#fff}
+.proto .page{position:relative;z-index:1}
+
+/* ── TIPOGRAFÍA: la escala REAL de 3rcore.com ──────────────────
+   Medida en producción (18-ago-2026): los titulares de sección tope en 48px
+   Poppins 700 (no en 86px de Clash Display), interlínea 1.25 y tracking -.02em.
+   Poppins es más ancha que Clash Display: mantener el clamp viejo dejaba
+   titulares de cinco líneas en móvil. */
+.proto h1,.proto h2,.proto h3,.proto h4{font-family:var(--f-disp);margin:0 0 .38em;color:var(--ink-2)}
+.proto h1{font-weight:700;font-size:clamp(2rem,4.4vw,3.25rem);letter-spacing:-.025em;line-height:1.1;max-width:20ch;overflow-wrap:break-word}
+/* el titular de marca sí va grande: es corto. 60px/600/-3px en su home */
+.proto h1:has(.echo){font-weight:600;font-size:clamp(2.6rem,8vw,5.5rem);letter-spacing:-.05em;line-height:1;max-width:none}
+.proto .echo{font-size:inherit}
+.proto h2{font-weight:700;font-size:clamp(1.6rem,3.2vw,3rem);letter-spacing:-.02em;line-height:1.25}
+.proto h3{font-weight:600;font-size:clamp(1.05rem,1.4vw,1.25rem);letter-spacing:normal;line-height:1.4}
+.proto h4{font-weight:600;font-size:1rem;letter-spacing:normal}
+.proto p{margin:0 0 1.1em}
+.proto .lede{font-size:clamp(1rem,1.15vw,1.06rem);color:var(--gris);max-width:56ch;line-height:1.65}
+.proto .dim{color:var(--gris-2);font-size:.8rem;line-height:1.6}
+.proto .mg{color:var(--mag)}
+
+.proto .eyebrow{display:block;font-family:var(--f-ui);font-size:.72rem;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gris);margin-bottom:1.5rem}
+
+.proto .wrap{max-width:1320px;margin:0 auto;padding:0 clamp(1.2rem,3.4vw,2.6rem)}
+.proto section{padding:clamp(4rem,8vw,8.5rem) 0;position:relative}
+.proto .head{max-width:46rem;margin-bottom:clamp(2.4rem,4.4vw,3.8rem)}
+.proto .slim{padding-top:0!important}
+
+/* ── NAV minimalista ─────────────────────────────────────────── */
+.proto .nav{position:fixed;top:var(--pb);left:0;right:0;z-index:60;height:var(--nav-h);
+  background:#130218;
+  border-bottom:1px solid transparent;transition:border-color .5s var(--e),background .5s var(--e)}
+.proto .nav.solid{border-bottom-color:var(--linea-s);background:#130218}
+.proto .nav .wrap{display:flex;align-items:center;gap:1.2rem;height:100%}
+.proto .nav .logo{height:60px;width:auto;max-width:112px;object-fit:contain;flex:0 0 auto}
+.proto .nav .links{display:flex;gap:.2rem;margin-left:auto;align-items:center}
+.proto .nav .links > a,.proto .drop > button{font-family:var(--f-ui);font-size:.625rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);padding:.375rem .75rem;
+  border-radius:999px;
+  background:none;border:0;cursor:pointer;transition:color .4s var(--e);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.35rem}
+.proto .nav .links > a:hover,.proto .drop > button:hover,.proto .nav .links > a.on,.proto .drop > button.on{color:#fff;background:rgba(255,255,255,.08)}
+.proto .drop > button svg{width:10px;height:10px;stroke-width:2;transition:transform .4s var(--e)}
+.proto .drop:hover > button svg{transform:rotate(180deg)}
+.proto .drop{position:relative}
+.proto .drop .panel{position:absolute;top:100%;left:50%;width:min(93vw,620px);transform:translateX(-50%) translateY(-.5rem);
+  background:var(--paper-2);border:1px solid var(--linea);padding:.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:.15rem;opacity:0;visibility:hidden;
+  box-shadow:0 30px 60px -22px rgba(0,0,0,.22);transition:opacity .4s var(--e),transform .45s var(--e),visibility .4s}
+.proto .drop:hover .panel,.proto .drop:focus-within .panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.proto .drop .panel a{display:flex;gap:.75rem;align-items:center;padding:.6rem .8rem;
+  font-family:var(--f-ui);font-size:.75rem;font-weight:500;color:rgba(255,255,255,.7);
+  transition:background .35s var(--e),color .35s var(--e)}
+.proto .drop .panel a:hover{color:#fff}
+.proto .drop .panel a:hover{background:var(--paper-3)}
+.proto .drop .panel .pi{width:30px;height:30px;flex:0 0 auto;display:grid;place-items:center;
+  border:1px solid var(--linea);border-radius:50%}
+.proto .drop .panel .pi svg{width:15px;height:15px;stroke:var(--mag);stroke-width:1.4}
+.proto .drop .panel b{display:block;font-family:var(--f-disp);font-size:.85rem;font-weight:600;color:var(--ink-2);margin-bottom:.1rem;letter-spacing:0;text-transform:none}
+.proto .drop .panel span{display:block;font-size:.72rem;color:var(--gris);line-height:1.42;letter-spacing:0;text-transform:none}
+.proto .navcta{margin-left:.6rem}
+@media(max-width:1140px){.proto .nav .links{display:none}.proto .navcta{display:none}}
+
+.proto .burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:999px;
+  border:1px solid var(--linea);background:transparent;cursor:pointer;position:relative}
+.proto .burger i{position:absolute;left:13px;width:20px;height:1.5px;background:#fff;transition:transform .5s var(--e),opacity .3s}
+.proto .burger i:nth-child(1){top:16px}.proto .burger i:nth-child(2){top:22px}.proto .burger i:nth-child(3){top:28px}
+.proto.menu .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.proto.menu .burger i:nth-child(2){opacity:0}
+.proto.menu .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1140px){.proto .burger{display:block}}
+
+/* 🚨 El menú NO puede centrarse con justify-content:center teniendo
+   overflow-y:auto: cuando el contenido supera el alto de la ventana, el
+   centrado reparte el sobrante arriba Y abajo, y la parte de arriba queda
+   FUERA del área desplazable (no hay scroll negativo). Resultado: "Inicio"
+   cortado bajo la barra y el pie de redes perdido. Se centra con
+   `margin-block:auto` sobre el hijo, que centra cuando sobra sitio y se
+   resuelve a 0 cuando falta, dejando todo el desbordamiento abajo y
+   alcanzable con scroll. */
+.proto .sheet{position:fixed;inset:0;z-index:55;background:var(--paper);
+  opacity:0;visibility:hidden;transition:opacity .5s var(--e),visibility .5s;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:calc(var(--nav-h) + var(--pb) + 1.4rem) 1.4rem 2rem;
+  overflow-y:auto;overscroll-behavior:contain}
+.proto .sheet .sh{margin-block:auto}
+.proto.menu .sheet{opacity:1;visibility:visible}
+.proto .sheet a{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid var(--linea-s);
+  font-family:var(--f-disp);font-size:clamp(1.5rem,7vw,2.6rem);font-weight:600;letter-spacing:-.03em;color:var(--ink-2);
+  opacity:0;transform:translateY(1.5rem);transition:opacity .6s var(--e-out),transform .7s var(--e-out),color .35s}
+.proto .sheet a svg{width:18px;height:18px;stroke:var(--gris-2);stroke-width:1.6;transition:stroke .35s,transform .45s var(--e)}
+.proto .sheet a:hover{color:var(--mag)}
+.proto .sheet a:hover svg{stroke:var(--mag);transform:translateX(4px)}
+.proto.menu .sheet a{opacity:1;transform:none}
+.proto.menu .sheet a:nth-child(1){transition-delay:.05s}.proto.menu .sheet a:nth-child(2){transition-delay:.09s}
+.proto.menu .sheet a:nth-child(3){transition-delay:.13s}.proto.menu .sheet a:nth-child(4){transition-delay:.17s}
+.proto.menu .sheet a:nth-child(5){transition-delay:.21s}.proto.menu .sheet a:nth-child(6){transition-delay:.25s}
+.proto.menu .sheet a:nth-child(7){transition-delay:.29s}.proto.menu .sheet a:nth-child(8){transition-delay:.33s}
+.proto.menu .sheet a:nth-child(9){transition-delay:.37s}.proto.menu .sheet a:nth-child(10){transition-delay:.41s}
+.proto.menu{overflow:hidden}
+
+/* ── BOTONES: pill outline, como la referencia ───────────────── */
+.proto .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--f-ui);font-size:.85rem;font-weight:500;letter-spacing:.02em;text-transform:uppercase;
+  padding:.95rem 1.9rem;border-radius:999px;border:1px solid var(--ink);cursor:pointer;
+  min-height:50px;transition:all .45s var(--e);background:transparent;color:var(--ink);line-height:1.2}
+.proto .btn svg{width:14px;height:14px;stroke-width:1.8;transition:transform .45s var(--e)}
+.proto .btn:hover{background:#fff;color:#130218;border-color:#fff}
+.proto .btn:hover svg{transform:translateX(3px)}
+.proto .btn:active{transform:scale(.98)}
+.proto .btn-1{background:var(--grad);color:#fff;border-color:transparent}
+.proto .btn-1:hover{background:var(--mag);border-color:transparent;color:#fff;box-shadow:0 12px 34px -12px rgba(209,30,104,.7)}
+.proto .btn-o{background:transparent}
+.proto .btn-w{background:#fff;color:#130218;border-color:#fff}
+.proto .btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.proto .btn-wa:hover{background:var(--ink);border-color:var(--ink)}
+.proto .btn-s{min-height:44px;padding:.72rem 1.35rem;font-size:.76rem}
+.proto .btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.2rem}
+
+/* ── HERO: titular descomunal con eco ────────────────────────── */
+.proto .hero{position:relative;padding:calc(var(--nav-h) + var(--pb) + clamp(3rem,7vw,6rem)) 0 clamp(3rem,6vw,5rem);overflow:hidden}
+/* El hero muestra la imagen real, atenuada bajo el texto */
+.proto .hero{position:relative;isolation:isolate;overflow:hidden}
+.proto .hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.proto .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.3;
+  filter:saturate(.85) contrast(1.1) brightness(.75);
+  transform:scale(1.05);animation:kenb 26s var(--e-out) infinite alternate}
+@keyframes kenb{to{transform:scale(1.14)}}
+.proto .hero-bg::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(72% 62% at 68% 38%,rgba(156,39,176,.4),transparent 66%),
+             linear-gradient(100deg,var(--paper) 4%,rgba(19,2,24,.85) 44%,rgba(19,2,24,.5) 100%),
+             linear-gradient(180deg,transparent 42%,var(--paper) 96%)}
+@media(prefers-reduced-motion:reduce){.proto .hero-bg img{animation:none}}
+.proto .hero h1{margin-bottom:.22em}
+/* eco escalonado detrás del titular, como la referencia */
+.proto .echo{position:relative;display:block}
+.proto .echo .layer{position:absolute;inset:0;color:var(--mag);opacity:.3;pointer-events:none;z-index:-1;
+  transform:translate(var(--dx),var(--dy))}
+.proto .echo .layer:nth-of-type(1){--dx:-.055em;--dy:-.05em;opacity:.16}
+.proto .echo .layer:nth-of-type(2){--dx:-.11em;--dy:-.1em;opacity:.1}
+.proto .echo .layer:nth-of-type(3){--dx:-.165em;--dy:-.15em;opacity:.06}
+
+.proto .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.8rem,3.6vw,3.4rem);align-items:center}
+@media(max-width:940px){.proto .split{grid-template-columns:1fr;gap:2rem}}
+
+.proto .trust{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.proto .trust span{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:500;min-height:44px;
+  color:var(--gris);border:1px solid var(--linea);border-radius:999px;padding:.5rem 1.1rem}
+.proto .trust svg{width:13px;height:13px;stroke:var(--mag);stroke-width:2}
+.proto .ptag{display:inline-flex;align-items:baseline;gap:.6rem;margin-top:1.6rem;
+  border-left:2px solid var(--mag);padding:.15rem 0 .15rem 1rem}
+.proto .ptag b{font-family:var(--f-disp);font-size:1.6rem;font-weight:600;letter-spacing:-.03em}
+.proto .ptag small{font-size:.76rem;color:var(--gris)}
+.proto .scrollcue{display:none}
+
+/* ── FORMULARIO ──────────────────────────────────────────────── */
+.proto .fform{background:var(--paper-2);border:1px solid var(--linea);padding:clamp(1.5rem,2.6vw,2.2rem)}
+.proto .fform h3{font-size:1.3rem;margin-bottom:.25rem}
+.proto .fform .mini{font-size:.8rem;color:var(--gris);margin-bottom:1.4rem}
+.proto .field{margin-bottom:.9rem}
+.proto .field label{display:block;font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:.45rem}
+.proto .field input,.proto .field select,.proto .field textarea{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--linea);
+  padding:.85rem 1rem;color:var(--ink);font-family:var(--f-ui);font-size:.94rem;min-height:50px;appearance:none;
+  transition:border-color .4s var(--e)}
+.proto .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23D11E68' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.4rem}
+.proto .field input:focus,.proto .field select:focus{outline:0;border-color:var(--mag)}
+.proto .field input::placeholder{color:var(--gris-2)}
+.proto .fform .btn{width:100%;margin-top:.4rem}
+
+/* ── REJILLAS ────────────────────────────────────────────────── */
+.proto .grid{display:grid;gap:1px;background:var(--linea-s)}
+.proto .g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.proto .g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
+.proto .g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr))}
+.proto .grid > *,.proto .plans > *,.proto .steps > *{min-width:0}
+
+/* Tarjetas: papel blanco separado por hairlines */
+.proto .card{background:var(--paper-2);padding:clamp(1.6rem,2.4vw,2.2rem);display:block;height:100%;
+  transition:background .45s var(--e),transform .5s var(--e)}
+.proto .card:hover{background:var(--paper-3);transform:none}
+.proto .card:hover h3{color:#fff}
+.proto .card:hover .from{color:#FF6FA0}
+.proto .card:hover p{color:rgba(255,255,255,.72)}
+.proto .card:hover .go{color:#fff}
+.proto .card:hover .ico{border-color:rgba(209,30,104,.55);background:rgba(209,30,104,.12)}
+.proto .card:hover .ico svg{stroke:#FF6FA0}
+.proto .card h3{margin-bottom:.6rem;transition:color .45s var(--e)}
+.proto .card p{font-size:.9rem;color:var(--gris);line-height:1.62;margin-bottom:1rem;transition:color .45s var(--e)}
+.proto .ico{width:46px;height:46px;border-radius:999px;display:grid;place-items:center;margin-bottom:1.4rem;
+  border:1px solid var(--linea);transition:border-color .45s var(--e)}
+.proto .ico svg{width:20px;height:20px;stroke:var(--mag);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;transition:stroke .45s var(--e)}
+.proto .from{font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mag);transition:color .45s var(--e)}
+.proto .go{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;min-height:2.75rem;
+  font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);transition:color .45s var(--e)}
+.proto .go svg{width:14px;height:14px;stroke-width:1.6;transition:transform .45s var(--e)}
+.proto .card:hover .go svg{transform:translateX(4px)}
+
+/* Métricas */
+.proto .stat{background:var(--paper-2);padding:1.8rem 1.6rem}
+.proto .stat b{display:block;font-family:var(--f-disp);font-size:clamp(2.4rem,4vw,3.6rem);font-weight:700;
+  letter-spacing:-.05em;line-height:1;margin-bottom:.5rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.proto .stat span{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+
+/* Logos */
+.proto .clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(46%,9.5rem),1fr));gap:1px;background:var(--linea-s)}
+.proto .client{background:var(--paper-2);padding:1.4rem .9rem;display:grid;place-items:center;min-height:6rem;transition:background .4s var(--e)}
+.proto .client:hover{background:var(--paper-3)}
+.proto .client img{max-height:2.1rem;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.45;transition:opacity .4s var(--e)}
+.proto .client:hover img{opacity:1}
+.proto .client small{display:block;font-size:.58rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--gris-2);margin-top:.6rem;text-align:center}
+
+/* Cinta infinita */
+.proto .marquee{overflow:hidden;position:relative;--gap:1px;background:var(--linea-s);
+  -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.proto .marquee .track{display:flex;gap:var(--gap);width:max-content;animation:slide 50s linear infinite;will-change:transform}
+.proto .marquee:hover .track{animation-play-state:paused}
+.proto .marquee .client{width:10rem;flex:0 0 auto}
+@keyframes slide{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-50% - var(--gap)/2),0,0)}}
+
+/* Testimonios */
+.proto .quote{background:var(--paper-2);border-left:2px solid var(--mag);padding:1.8rem}
+.proto .quote p{font-family:var(--f-disp);font-size:1.2rem;font-weight:500;line-height:1.38;
+  letter-spacing:-.02em;color:var(--ink-2);margin-bottom:1.2rem}
+.proto .quote .who{display:flex;align-items:center;gap:.75rem}
+.proto .quote .av{width:2.4rem;height:2.4rem;border-radius:50%;background:var(--grad);color:#fff;
+  display:grid;place-items:center;font-weight:600;font-size:.82rem;flex:0 0 auto}
+.proto .quote .who b{display:block;font-size:.84rem;font-weight:600}
+.proto .quote .who span{font-size:.72rem;color:var(--gris)}
+
+/* Proceso */
+.proto .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1px;background:var(--linea-s);counter-reset:s}
+.proto .step{background:var(--paper-2);padding:1.8rem 1.6rem;counter-increment:s}
+.proto .step::before{content:'0' counter(s);display:block;font-family:var(--f-disp);font-size:2.6rem;
+  font-weight:700;letter-spacing:-.05em;color:var(--mag);opacity:.65;line-height:1;margin-bottom:.9rem}
+.proto .step h4{margin-bottom:.45rem}
+.proto .step p{font-size:.86rem;color:var(--gris);margin:0;line-height:1.6}
+.proto .step .t{display:block;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-2);margin-top:1rem}
+
+/* Planes */
+.proto .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1px;background:var(--linea-s)}
+.proto .plan{background:var(--paper-2);padding:2rem 1.7rem;display:flex;flex-direction:column;position:relative}
+.proto .plan.best{background:var(--grad);color:#fff;border:0}
+.proto .plan.best h3,.proto .plan.best .p{color:#fff}
+.proto .plan .who{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.proto .plan.best .who{color:rgba(255,255,255,.75)}
+.proto .plan .p{font-family:var(--f-disp);font-size:2.4rem;font-weight:700;letter-spacing:-.05em;
+  margin:.6rem 0 .1rem;line-height:1;color:var(--ink-2)}
+.proto .plan .u{font-size:.75rem;color:var(--gris);margin-bottom:1.5rem}
+.proto .plan.best .u{color:rgba(255,255,255,.72)}
+.proto .plan ul{list-style:none;padding:0;margin:0 0 1.8rem;font-size:.87rem;color:var(--gris)}
+.proto .plan.best ul{color:rgba(255,255,255,.9)}
+.proto .plan li{padding:.36rem 0 .36rem 1.3rem;position:relative;line-height:1.5}
+.proto .plan li::before{content:'';position:absolute;left:0;top:.78rem;width:6px;height:1px;background:var(--mag)}
+.proto .plan.best li::before{background:#fff}
+.proto .plan.best .btn{border-color:#fff;color:#fff}
+.proto .plan.best .btn:hover{background:#fff;color:#130218}
+.proto .plan .btn{width:100%;margin-top:auto}
+.proto .badge{position:absolute;top:1.2rem;right:1.2rem;background:#fff;color:#130218;font-size:.58rem;
+  font-weight:600;letter-spacing:.12em;padding:.3rem .7rem;border-radius:999px}
+
+/* FAQ */
+.proto .faq details{background:var(--paper-2);border-bottom:1px solid var(--linea-s);overflow:hidden}
+.proto .faq summary{padding:1.5rem 1.7rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  gap:1.2rem;align-items:center;min-height:3.8rem;font-family:var(--f-disp);font-size:1.05rem;
+  font-weight:600;letter-spacing:-.015em;transition:color .35s var(--e)}
+.proto .faq summary::-webkit-details-marker{display:none}
+.proto .faq summary:hover{color:var(--mag)}
+.proto .faq summary .pm{position:relative;width:1rem;height:1rem;flex:0 0 auto}
+.proto .faq summary .pm::before,.proto .faq summary .pm::after{content:'';position:absolute;background:var(--mag);transition:transform .5s var(--e),opacity .35s}
+.proto .faq summary .pm::before{top:.47rem;left:0;width:1rem;height:1.5px}
+.proto .faq summary .pm::after{left:.47rem;top:0;width:1.5px;height:1rem}
+.proto .faq details[open] summary .pm::after{transform:rotate(90deg);opacity:0}
+.proto .faq .a{padding:0 1.7rem 1.6rem;font-size:.9rem;color:var(--gris);line-height:1.7;max-width:62ch}
+.proto .faq .a p:last-child{margin:0}
+
+/* Cierre */
+.proto .closing{background:var(--paper-3);color:#fff;border:1px solid var(--linea-s);padding:clamp(1.8rem,4vw,3.6rem)}
+.proto .closing h2{color:#fff}
+.proto .closing .lede{color:rgba(255,255,255,.66)}
+.proto .closing .eyebrow{color:rgba(255,255,255,.5)}
+.proto .closing .btn{border-color:rgba(255,255,255,.5);color:#fff}
+.proto .closing .btn:hover{background:#fff;color:#130218}
+.proto .closing .btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.proto .closing .fform{background:rgba(0,0,0,.28);border-color:var(--linea-s)}
+.proto .contactline{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.6rem;font-size:.86rem}
+.proto .contactline a,.proto .contactline span{display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.66);min-height:2.6rem;transition:color .35s var(--e)}
+.proto .contactline a:hover{color:#fff}
+.proto .contactline svg{width:14px;height:14px;stroke:var(--mag);stroke-width:1.6}
+.proto .contactline b{color:#fff;font-weight:500}
+
+/* Barra móvil */
+.proto .actionbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;grid-template-columns:1fr 1fr 1fr;
+  background:#0A010D;border-top:1px solid var(--linea-s);padding-bottom:env(safe-area-inset-bottom)}
+.proto .actionbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.22rem;min-height:3.4rem;
+  font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff;
+  border-right:1px solid var(--linea-s)}
+.proto .actionbar a:last-child{border-right:0}
+.proto .actionbar a svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.6}
+.proto .actionbar .w{background:var(--wa)}
+.proto .actionbar .c{background:var(--grad)}
+@media(max-width:940px){.proto .actionbar{display:grid}.proto{padding-bottom:3.8rem}}
+
+/* Cookies */
+.proto .cookies{position:fixed;right:1.2rem;bottom:1.2rem;z-index:45;max-width:21rem;background:var(--paper-2);
+  border:1px solid var(--linea);padding:1.2rem 1.3rem;box-shadow:0 24px 56px -20px rgba(0,0,0,.2);
+  font-size:.78rem;color:var(--gris);line-height:1.55;opacity:0;transform:translateY(.8rem);
+  animation:ck .7s 1.5s var(--e-out) forwards}
+@keyframes ck{to{opacity:1;transform:none}}
+.proto .cookies .r{display:flex;gap:.5rem;margin-top:.9rem}
+.proto .cookies button{flex:1;min-height:2.75rem;border-radius:999px;border:1px solid var(--linea);background:transparent;
+  color:#fff;font-family:var(--f-ui);font-size:.72rem;font-weight:500;cursor:pointer;transition:all .35s var(--e)}
+.proto .cookies button.ok{background:var(--grad);border-color:transparent;color:#fff}
+@media(max-width:940px){.proto .cookies{bottom:4.3rem;left:.9rem;right:.9rem;max-width:none}}
+
+/* Footer */
+.proto footer{border-top:1px solid var(--linea);padding:clamp(3rem,5vw,4.5rem) 0 2.4rem;font-size:.86rem;color:var(--gris)}
+.proto footer .cols{display:grid;grid-template-columns:1.7fr repeat(4,1fr);gap:2rem;margin-bottom:2.6rem}
+@media(max-width:1000px){.proto footer .cols{grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr))}}
+.proto footer h4{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:1rem;font-family:var(--f-ui);font-weight:500}
+.proto footer a{display:block;padding:.3rem 0;color:var(--gris);transition:color .35s var(--e)}
+.proto footer a:hover{color:var(--mag)}
+
+/* ── Bloque "Nuestra Agencia" y fila legal: el reparto del pie real ──── */
+.proto footer .fa img{max-width:150px;height:auto}
+.proto footer .fdir{font-size:.82rem;line-height:1.7;color:var(--gris);margin:0 0 .9rem}
+.proto footer .fdir b{color:var(--ink);font-weight:600}
+.proto footer .fredes{display:flex;flex-wrap:wrap;gap:.2rem 1.2rem}
+.proto footer .fredes a{font-size:.82rem}
+.proto footer .fpie{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:1rem;padding-top:1.6rem;border-top:1px solid var(--linea-s)}
+.proto footer .flegal{display:flex;flex-wrap:wrap;gap:1.6rem}
+.proto footer .flegal a{padding:0;font-size:.8rem}
+.proto footer .fcopy{margin:0;font-size:.78rem;color:var(--gris-2);letter-spacing:.02em}
+.proto footer .fnota{font-size:.73rem;margin:1.4rem 0 0;color:var(--gris-2)}
+
+
+/* ── ANIMACIONES ─────────────────────────────────────────────── */
+.proto .rv{opacity:0;transform:translateY(2rem);transition:opacity .9s var(--e-out),transform 1s var(--e-out)}
+.proto .rv.in{opacity:1;transform:none}
+.proto .rv-d1{transition-delay:.06s}.proto .rv-d2{transition-delay:.12s}.proto .rv-d3{transition-delay:.18s}
+.proto .rv-d4{transition-delay:.24s}.proto .rv-d5{transition-delay:.3s}.proto .rv-d6{transition-delay:.36s}
+
+.proto .mask{display:block;overflow:hidden;padding-bottom:.06em}
+.proto .mask > span{display:block;transform:translateY(112%);opacity:0;
+  transition:transform 1.15s var(--e-out),opacity .7s ease}
+.proto .in .mask > span,.proto .mask.in > span{transform:translateY(0);opacity:1}
+.proto .brandline .mask:nth-child(1) > span{transition-delay:.06s}
+.proto .brandline .mask:nth-child(2) > span{transition-delay:.16s}
+.proto .brandline .mask:nth-child(3) > span{transition-delay:.26s}
+.proto .brandline .mask:nth-child(4) > span{transition-delay:.36s}
+
+.proto .reveal-img{position:relative;overflow:hidden}
+.proto .reveal-img::after{content:'';position:absolute;inset:0;background:var(--grad);
+  transform:scaleX(1);transform-origin:right;transition:transform 1.1s var(--e-out)}
+.proto .reveal-img.in::after{transform:scaleX(0)}
+.proto .reveal-img img{transform:scale(1.12);transition:transform 1.5s var(--e-out)}
+.proto .reveal-img.in img{transform:scale(1)}
+
+.proto .head h2{position:relative;display:inline-block}
+.proto .head h2::after{content:'';position:absolute;left:0;bottom:-.14em;height:2px;width:100%;background:var(--grad);
+  transform:scaleX(0);transform-origin:left;transition:transform 1s var(--e-out) .25s}
+.proto .head.in h2::after,.proto .in .head h2::after{transform:scaleX(1)}
+
+/* Barra del prototipo */
+.protobar{position:fixed;top:0;left:0;right:0;z-index:61;background:#0A010D;color:rgba(255,255,255,.5);border-bottom:1px solid var(--linea-s);
+  font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  padding:.6rem 1rem;text-align:center;height:var(--pb);display:flex;align-items:center;justify-content:center;gap:.5rem}
+.protobar a{color:var(--mag);border-bottom:1px solid rgba(209,30,104,.5)}
+.proto .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+
+@media(prefers-reduced-motion:reduce){
+  .proto *,.proto *::before,.proto *::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .proto .rv{opacity:1;transform:none}
+  .proto .mask > span{transform:none;opacity:1}
+  .proto .reveal-img::after{transform:scaleX(0)}
+  .proto .reveal-img img{transform:none}
+  .proto .head h2::after{transform:scaleX(1)}
+  .proto .marquee .track{animation:none}
+}
+
+@media(max-width:640px){
+  .proto{--nav-h:68px;--pb:30px}
+  .proto section{padding:3rem 0}
+  .proto .card{padding:1.4rem 1.2rem}
+  .proto .g2,.proto .g3,.proto .g4{grid-template-columns:1fr 1fr}
+  .proto .clients{grid-template-columns:repeat(3,1fr)}
+  .proto .client{min-height:4.6rem;padding:.9rem .5rem}
+  .proto .client img{max-height:1.5rem}
+  .proto .client small{font-size:.5rem;margin-top:.35rem}
+  .proto .btn{width:100%}
+  .proto .plans,.proto .steps{grid-template-columns:1fr}
+  .proto .faq summary{padding:1.1rem 1.1rem;font-size:.94rem}
+  .proto .faq .a{padding:0 1.1rem 1.1rem;font-size:.86rem}
+  .proto footer .cols{grid-template-columns:1fr 1fr}
+  .proto .marquee .client{width:7.5rem}
+}
+@media(max-width:420px){
+  .proto .g2,.proto .g3,.proto .g4{grid-template-columns:1fr}
+  .proto .clients{grid-template-columns:repeat(2,1fr)}
+  .proto .wrap{padding:0 1rem}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA DE RIQUEZA VISUAL — profundidad, textura y jerarquía
+   Todo sobre la paleta de 3rcore. Solo transform/opacity en animación.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Atmósfera: orbes de luz + ruido, fijos y sin eventos ─────── */
+.proto .atmos{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.proto .atmos i{position:absolute;border-radius:50%;filter:blur(100px);display:block}
+.proto .atmos i:nth-child(1){width:46vw;height:46vw;top:-14vw;right:-10vw;
+  background:radial-gradient(circle,rgba(233,30,99,.30),transparent 68%)}
+.proto .atmos i:nth-child(2){width:40vw;height:40vw;top:42vh;left:-14vw;
+  background:radial-gradient(circle,rgba(156,39,176,.26),transparent 68%)}
+.proto .atmos i:nth-child(3){width:34vw;height:34vw;bottom:-10vw;right:10vw;
+  background:radial-gradient(circle,rgba(162,31,138,.20),transparent 70%)}
+.proto .noise{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(/proto/%23n)'/%3E%3C/svg%3E")}
+
+/* Rejilla técnica de fondo, muy sutil */
+.proto .page::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:88px 88px}
+
+/* ── Secciones con tratamiento alterno, para romper la monotonía ── */
+.proto .sec-alt{background:linear-gradient(180deg,transparent,rgba(47,7,41,.5) 18%,rgba(47,7,41,.5) 82%,transparent);
+  position:relative}
+.proto .sec-dark{background:#0C0110;position:relative}
+.proto .sec-line{position:relative}
+.proto .sec-line::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(209,30,104,.5),transparent)}
+
+/* Número gigante de fondo que marca cada sección */
+.proto .sec-num{position:absolute;top:clamp(1rem,3vw,2.5rem);right:clamp(1rem,4vw,4rem);z-index:0;
+  font-family:var(--f-disp);font-weight:700;font-size:clamp(6rem,16vw,17rem);
+  line-height:.8;letter-spacing:-.06em;pointer-events:none;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.055);opacity:.9}
+@media(max-width:900px){.proto .sec-num{font-size:clamp(4rem,22vw,9rem);opacity:.6}}
+
+/* ── Tarjetas con borde de degradado y profundidad ───────────── */
+.proto .card{position:relative;border:1px solid var(--linea-s);
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset, 0 22px 50px -28px rgba(0,0,0,.9)}
+.proto .card::after{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;z-index:0;
+  background:linear-gradient(140deg,rgba(233,30,99,.6),rgba(156,39,176,.35) 42%,transparent 72%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .55s var(--e);pointer-events:none}
+.proto .card:hover::after{opacity:1}
+.proto .card:hover{transform:translateY(-4px)}
+
+/* Tarjeta destacada del bento: ocupa el doble y lleva imagen */
+.proto .card-hero{grid-column:span 2;position:relative;overflow:hidden;min-height:22rem;
+  display:flex;flex-direction:column;justify-content:flex-end}
+.proto .card-hero .bgimg{position:absolute;inset:0;z-index:0}
+.proto .card-hero .bgimg img{width:100%;height:100%;object-fit:cover;opacity:.32;
+  transition:transform 1.2s var(--e-out),opacity .6s var(--e)}
+.proto .card-hero:hover .bgimg img{transform:scale(1.07);opacity:.45}
+.proto .card-hero .bgimg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(19,2,24,.45),rgba(19,2,24,.92))}
+.proto .card-hero > *{position:relative;z-index:1}
+.proto .card-hero h3{font-size:clamp(1.4rem,2.3vw,2rem);font-family:var(--f-disp);font-weight:600}
+@media(max-width:720px){.proto .card-hero{grid-column:span 1;min-height:16rem}}
+
+/* Pill de etiqueta sobre la tarjeta */
+.proto .tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:#FF7FB5;
+  background:rgba(209,30,104,.14);border:1px solid rgba(209,30,104,.32);
+  border-radius:999px;padding:.34rem .8rem;margin-bottom:1rem;width:max-content}
+
+/* ── Titulares de sección con índice y línea ─────────────────── */
+.proto .head{position:relative}
+.proto .head .idx{display:inline-flex;align-items:center;gap:.7rem;margin-bottom:1.2rem}
+.proto .head .idx b{font-family:var(--f-disp);font-size:.8rem;font-weight:700;color:var(--mag);letter-spacing:.06em}
+.proto .head .idx s{display:block;width:clamp(2.5rem,7vw,5rem);height:1px;background:var(--linea);text-decoration:none}
+.proto .head .idx span{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+
+/* Titular con palabra en contorno (outline) para dar contraste */
+.proto .stroke{color:transparent;-webkit-text-stroke:1.4px var(--mag)}
+
+/* ── Franja de datos con separadores ─────────────────────────── */
+.proto .databar{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,11rem),1fr));
+  border:1px solid var(--linea-s);background:rgba(47,7,41,.34);backdrop-filter:blur(6px)}
+.proto .databar > div{padding:1.7rem 1.5rem;border-right:1px solid var(--linea-s);position:relative}
+.proto .databar > div:last-child{border-right:0}
+.proto .databar b{display:block;font-family:var(--f-disp);font-size:clamp(1.9rem,3.2vw,2.9rem);
+  font-weight:700;letter-spacing:-.045em;line-height:1;margin-bottom:.4rem;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.proto .databar span{font-size:.68rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--gris)}
+@media(max-width:720px){.proto .databar > div{border-right:0;border-bottom:1px solid var(--linea-s)}
+  .proto .databar > div:last-child{border-bottom:0}}
+
+/* ── Cita destacada a gran tamaño ────────────────────────────── */
+.proto .pull{position:relative;padding:clamp(2rem,4vw,3.4rem) 0;text-align:center;max-width:52rem;margin:0 auto}
+.proto .pull p{font-family:var(--f-disp);font-size:clamp(1.5rem,3.4vw,2.6rem);font-weight:500;
+  line-height:1.2;letter-spacing:-.03em;color:#fff;margin:0}
+.proto .pull::before{content:'“';position:absolute;top:-.2em;left:50%;transform:translateX(-50%);
+  font-family:var(--f-disp);font-size:clamp(5rem,12vw,10rem);line-height:1;
+  color:var(--mag);opacity:.18;pointer-events:none}
+
+/* ── Ritmo: separador de degradado entre secciones ───────────── */
+.proto .rule{height:1px;background:linear-gradient(90deg,transparent,var(--linea),transparent);margin:0}
+
+/* Puntos de referencia junto a los pasos */
+.proto .steps{position:relative}
+.proto .step{position:relative;overflow:hidden}
+.proto .step::after{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--grad);
+  transition:width .8s var(--e-out)}
+.proto .step:hover::after{width:100%}
+
+/* ── Botón con relleno que sube desde abajo ──────────────────── */
+.proto .btn{position:relative;overflow:hidden;z-index:1}
+.proto .btn > *{position:relative;z-index:1}
+.proto .btn::before{content:'';position:absolute;inset:0;z-index:0;background:var(--grad);
+  transform:translateY(101%);transition:transform .55s var(--e)}
+.proto .btn:hover::before{transform:translateY(0)}
+.proto .btn-1::before{background:#fff}
+.proto .btn-1:hover{color:#130218}
+.proto .btn-wa::before{background:#0E6B39}
+
+/* ── Enlaces del pie con subrayado que crece ─────────────────── */
+.proto footer a{position:relative;width:max-content}
+.proto footer a::after{content:'';position:absolute;left:0;bottom:.15rem;height:1px;width:0;
+  background:var(--mag);transition:width .45s var(--e)}
+.proto footer a:hover::after{width:100%}
+
+
+/* ═══ BANDA DE TRABAJO REAL — los 22 mockups del cliente ═══ */
+.proto .band{position:relative;overflow:hidden;padding:clamp(2.6rem,5vw,4.4rem) 0}
+.proto .band-rail{position:relative;width:116%;margin-left:-8%;overflow:hidden;padding:1rem 0;
+  transform:rotate(-2.6deg);
+  -webkit-mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+          mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.proto .band-row{overflow:hidden;margin-bottom:12px}
+.proto .band-row:last-child{margin-bottom:0}
+.proto .band-t{display:flex;gap:12px;width:max-content;will-change:transform;animation:bandgo 52s linear infinite}
+.proto .band-rev .band-t{animation-direction:reverse;animation-duration:66s}
+.proto .band:hover .band-t{animation-play-state:paused}
+@keyframes bandgo{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.proto .band-t figure{position:relative;flex:0 0 auto;margin:0;overflow:hidden;
+  width:clamp(8.5rem,14vw,14rem);aspect-ratio:4/3;background:var(--paper-2);
+  border:1px solid var(--linea-s)}
+.proto .band-t img{width:100%;height:100%;object-fit:cover;
+  filter:saturate(.72) contrast(1.08) brightness(.9);
+  transition:filter .55s var(--e),transform .8s var(--e-out)}
+.proto .band-t figure::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(209,30,104,.18),rgba(156,39,176,.1));
+  mix-blend-mode:color;opacity:.55;transition:opacity .5s var(--e);pointer-events:none}
+.proto .band-t figure:hover img{filter:none;transform:scale(1.06)}
+.proto .band-t figure:hover::after{opacity:0}
+@media(prefers-reduced-motion:reduce){.proto .band-t{animation:none}}
+@media(max-width:640px){.proto .band-t figure{width:7.5rem}.proto .band-row{margin-bottom:8px}}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 7 — LA HOME REAL DE 3RCORE, COMPLETA
+   Bombilla con scrub de scroll (193 frames), chips que convergen,
+   paneles de servicios con etiqueta vertical, contadores serif,
+   banda blanca de mockups, videos reales, fundadores y equipo.
+   ════════════════════════════════════════════════════════════════ */
+
+.proto .serif{font-family:var(--f-serif);font-weight:400;letter-spacing:.025em}
+
+/* ── FOCO: la animación de la bombilla, cuadro a cuadro ───────── */
+.proto .foco{position:relative;height:380vh;z-index:1}
+@media(max-width:640px){.proto .foco{height:300vh}}
+.proto .foco-sticky{position:sticky;top:0;height:100vh;min-height:34rem;overflow:hidden;background:#0B0110}
+.proto .foco-canvas,.proto .foco-fall{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.proto .foco-fall{opacity:0;transition:opacity .8s var(--e)}
+.proto .foco.nojs .foco-fall,.proto .foco.rm .foco-fall{opacity:1}
+.proto .foco-veil{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 52% at 50% 44%,transparent 30%,rgba(11,1,16,.55) 78%,#0B0110 100%)}
+.proto .foco-stars{position:absolute;inset:0;pointer-events:none;opacity:.85}
+.proto .foco-stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#FF5C97;opacity:.7;
+  box-shadow:14vw 8vh 0 -1px #E91E63,28vw 64vh 0 0 #FF87B5,7vw 38vh 0 -1px rgba(255,255,255,.8),
+   44vw 12vh 0 -1px #C9407F,52vw 78vh 0 0 #E91E63,61vw 30vh 0 -1px rgba(255,255,255,.65),
+   70vw 56vh 0 0 #FF6FA0,78vw 16vh 0 -1px #D11E68,86vw 68vh 0 0 rgba(255,255,255,.7),
+   92vw 40vh 0 -1px #FF87B5,20vw 86vh 0 0 #B03574,36vw 44vh 0 -1px rgba(255,255,255,.55),
+   57vw 90vh 0 0 #E91E63,83vw 84vh 0 -1px #FF6FA0,11vw 70vh 0 0 rgba(255,255,255,.5),
+   66vw 6vh 0 0 #FF87B5,31vw 22vh 0 -1px #D11E68,90vw 22vh 0 0 rgba(255,255,255,.6),
+   48vw 50vh 0 -1px #FF9CC2,4vw 54vh 0 0 #C9407F;
+  animation:twinkle 5.5s ease-in-out infinite alternate}
+.proto .foco-stars i:nth-child(2){transform:translate(3vw,55vh) scale(.8);animation-delay:2.2s;animation-duration:7s}
+.proto .foco-stars i:nth-child(3){transform:translate(55vw,25vh) scale(.6);animation-delay:1.1s;animation-duration:4.4s}
+@keyframes twinkle{from{opacity:.35}to{opacity:.9}}
+
+/* chips de palabras que convergen hacia el filamento */
+.proto .foco-chips{position:absolute;inset:0;pointer-events:none;z-index:3}
+.proto .chip{position:absolute;left:50%;top:46%;white-space:nowrap;
+  font-family:var(--f-ui);font-weight:500;font-size:clamp(.8rem,1.5vw,1.35rem);color:#fff;
+  padding:.42em 1em;border-radius:.45em;background:rgba(209,30,104,.34);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  opacity:calc(var(--cop,1)*var(--co,1));
+  transform:translate(-50%,-50%) translate3d(calc(var(--tx)*(1 - var(--k,0))),calc(var(--ty)*(1 - var(--k,0))),0) scale(calc(1 - var(--k,0)*.35))}
+.proto .chip.b{background:rgba(255,255,255,.16);color:rgba(255,255,255,.86)}
+.proto .chip.c{background:rgba(156,39,176,.36)}
+.proto .chip > span{display:block;animation:bob 6s ease-in-out infinite alternate;animation-delay:var(--bd,0s)}
+@keyframes bob{from{transform:translateY(-.35em)}to{transform:translateY(.35em)}}
+
+/* titular por etapas, abajo a la izquierda, como el real */
+.proto .foco-title{position:absolute;left:clamp(1.2rem,5vw,4.5rem);bottom:clamp(5.2rem,13vh,8.5rem);z-index:4;pointer-events:none}
+.proto .foco-title .l{display:block;overflow:hidden;padding-bottom:.05em}
+.proto .foco-title .l > span{display:block;transform:translateY(115%);opacity:0;
+  transition:transform 1s var(--e-out),opacity .6s ease}
+.proto .foco-title .l1 > span{font-family:var(--f-disp);font-weight:700;letter-spacing:-.045em;line-height:.95;
+  font-size:clamp(3rem,8.5vw,7.5rem);background:linear-gradient(92deg,#FF2D78,#D11E68 55%,#9C27B0);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.proto .foco-title .l2 > span{font-family:var(--f-ui);font-weight:400;color:#fff;line-height:1.04;
+  font-size:clamp(2rem,5.4vw,4.6rem);letter-spacing:-.02em}
+.proto .foco-title .l2 em{font-family:var(--f-serif);font-style:italic;font-weight:500}
+.proto .foco-title .l3 > span{font-family:var(--f-disp);font-weight:700;letter-spacing:-.04em;line-height:1;
+  font-size:clamp(2.4rem,7vw,6.2rem);background:linear-gradient(92deg,#FF2D78 10%,#B0299C);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.proto .foco.t1 .l1 > span,.proto .foco.t2 .l2 > span,.proto .foco.t3 .l3 > span{transform:none;opacity:1}
+.proto .foco.t2 .l2 > span{transition-delay:.08s}.proto .foco.t3 .l3 > span{transition-delay:.1s}
+
+/* CTA que aparece al completarse la animación */
+.proto .foco-cta{position:absolute;right:clamp(1.2rem,5vw,4.5rem);bottom:clamp(13rem,24vh,16rem);z-index:5;
+  display:flex;flex-direction:column;align-items:flex-end;gap:.8rem;
+  opacity:0;transform:translateY(1.4rem);pointer-events:none;
+  transition:opacity .8s var(--e-out),transform .9s var(--e-out)}
+.proto .foco.done .foco-cta{opacity:1;transform:none;pointer-events:auto}
+.proto .foco-cta .eyebrow{margin:0;text-align:right}
+@media(max-width:820px){
+  .proto .foco-cta{left:clamp(1.2rem,5vw,4.5rem);right:auto;align-items:flex-start;bottom:1.6rem}
+  .proto .foco-cta .eyebrow{text-align:left}
+  .proto .foco-title{bottom:clamp(9rem,26vh,13rem)}
+}
+
+/* pista de scroll */
+.proto .foco-cue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:5;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--gris);
+  font-size:.64rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  transition:opacity .6s var(--e)}
+.proto .foco-cue::after{content:'';width:1px;height:2.6rem;background:linear-gradient(180deg,var(--mag),transparent);
+  animation:cue 1.8s var(--e) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.proto .foco.done .foco-cue{opacity:0}
+
+/* barra de progreso de carga de frames, discretísima */
+.proto .foco-load{position:absolute;left:0;right:0;bottom:0;height:2px;z-index:6;background:rgba(255,255,255,.06)}
+.proto .foco-load i{display:block;height:100%;width:0;background:var(--grad);transition:width .4s ease}
+.proto .foco.ready .foco-load{opacity:0;transition:opacity 1s ease .6s}
+
+/* ── SOMOS UN EQUIPO: serif + resaltes magenta ────────────────── */
+.proto .somos{text-align:center;max-width:56rem;margin:0 auto}
+.proto .somos h2{font-family:var(--f-serif);font-weight:400;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.025em;
+  letter-spacing:.01em;line-height:1.06}
+.proto .somos .sub{font-family:var(--f-disp);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  font-size:clamp(.8rem,1.4vw,1.05rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;margin-top:.6rem}
+.proto .somos p{margin-top:1.8rem;font-size:clamp(.95rem,1.2vw,1.08rem);line-height:1.85;color:var(--gris)}
+.proto .hl{background:var(--grad);color:#fff;padding:.12em .5em;border-radius:.3em;font-weight:500;white-space:nowrap}
+@media(max-width:640px){.proto .hl{white-space:normal}}
+
+/* ── PANELES DE SERVICIOS con etiqueta vertical (como el real) ── */
+.proto .svcp{display:flex;gap:2px;height:clamp(24rem,64vh,36rem)}
+.proto .svcp a{position:relative;flex:1;overflow:hidden;background:var(--paper-2);min-width:0;
+  transition:flex .85s var(--e)}
+.proto .svcp a:hover,.proto .svcp a:focus-visible{flex:2.7}
+.proto .svcp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;
+  filter:saturate(.7) contrast(1.05) brightness(.8);transform:scale(1.04);
+  transition:opacity .7s var(--e),filter .7s var(--e),transform 1.2s var(--e-out)}
+.proto .svcp a:hover img{opacity:.85;filter:saturate(1) contrast(1.05) brightness(.95);transform:scale(1)}
+.proto .svcp a::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(19,2,24,.14),rgba(19,2,24,.86) 88%)}
+.proto .svcp .vlab{position:absolute;right:.4rem;bottom:1.1rem;z-index:2;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:var(--f-disp);font-weight:600;font-size:clamp(1.15rem,1.9vw,1.7rem);
+  letter-spacing:.1em;text-transform:uppercase;color:#fff;line-height:1;
+  border-left:2px solid var(--mag);padding-left:.55rem}
+.proto .svcp .info{position:absolute;left:1.3rem;right:3.4rem;bottom:1.3rem;z-index:2;opacity:0;
+  transform:translateY(.9rem);transition:opacity .6s var(--e) .12s,transform .7s var(--e) .12s}
+.proto .svcp a:hover .info{opacity:1;transform:none}
+.proto .svcp .info p{font-size:.85rem;color:rgba(255,255,255,.88);line-height:1.55;margin:0 0 .55rem;
+  max-width:30ch}
+.proto .svcp .info .from{color:#FF87B5}
+@media(max-width:900px){
+  .proto .svcp{flex-direction:column;height:auto;gap:2px}
+  .proto .svcp a{min-height:5.2rem;flex:none;transition:min-height .7s var(--e)}
+  .proto .svcp a:hover{flex:none;min-height:15rem}
+  .proto .svcp .vlab{writing-mode:horizontal-tb;transform:none;right:auto;left:1.1rem;top:50%;bottom:auto;
+    transform:translateY(-50%);border-left:0;border-bottom:2px solid var(--mag);padding:0 0 .3rem;font-size:1.05rem}
+  .proto .svcp a:hover .vlab{top:1.4rem;transform:none}
+  .proto .svcp .info{left:1.1rem;bottom:1.1rem;right:1.1rem}
+}
+
+/* ── CONTADORES serif italic con degradado, como el real ──────── */
+.proto .counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1.4rem;text-align:center}
+.proto .counters b{display:block;font-family:var(--f-serif);font-style:italic;font-weight:600;
+  font-size:clamp(3.4rem,7.5vw,6.2rem);line-height:1;letter-spacing:-.01em;
+  background:linear-gradient(120deg,#FF6FA0 5%,#E91E63 45%,#C13584);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.55rem;
+  font-variant-numeric:tabular-nums}
+.proto .counters span{font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+
+/* ── POSICIONA TU MARCA: tarjeta degradada con sello y monitor ── */
+.proto .posiciona{position:relative;overflow:hidden;border-radius:1.4rem;
+  background:linear-gradient(120deg,#3A0A33,#5A1049 45%,#7E156B);
+  border:1px solid rgba(255,255,255,.14);padding:clamp(1.8rem,4vw,3.2rem);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+.proto .posiciona::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(70% 90% at 85% 20%,rgba(233,30,99,.35),transparent 60%)}
+.proto .posiciona h2{font-size:clamp(1.7rem,3.4vw,2.8rem);margin-bottom:.5rem}
+.proto .posiciona .hl{white-space:normal}
+.proto .posiciona p{color:rgba(255,255,255,.75);font-size:.95rem;max-width:46ch}
+.proto .posiciona .art{position:relative;min-height:14rem}
+.proto .posiciona .art .mon{position:absolute;right:0;bottom:-18%;width:min(30rem,100%);opacity:.96;
+  filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))}
+.proto .posiciona .art .sello{position:absolute;top:-1rem;right:min(52%,17rem);width:clamp(6rem,9vw,8.5rem);z-index:2;
+  animation:spin 16s linear infinite;filter:drop-shadow(0 10px 24px rgba(0,0,0,.45))}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:820px){.proto .posiciona{grid-template-columns:1fr}.proto .posiciona .art{min-height:11rem}
+  .proto .posiciona .art .sello{right:auto;left:0;top:auto;bottom:-.6rem}}
+@media(prefers-reduced-motion:reduce){.proto .posiciona .art .sello{animation:none}}
+
+/* ── BANDA BLANCA de mockups, inclinada como el real ──────────── */
+.proto .band.lite{padding:clamp(3.4rem,7vw,6rem) 0;overflow:hidden}
+.proto .band.lite .band-rail{transform:rotate(-3.2deg);background:#fff;padding:14px 0;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.55);
+  -webkit-mask:none;mask:none}
+.proto .band.lite .band-row{margin-bottom:14px}
+.proto .band.lite .band-row:last-child{margin-bottom:0}
+.proto .band.lite .band-t{gap:14px}
+.proto .band.lite .band-t figure{border:0;background:#eee;border-radius:4px;width:clamp(9.5rem,16vw,16rem)}
+.proto .band.lite .band-t img{filter:none}
+.proto .band.lite .band-t figure::after{display:none}
+
+/* ── BLOQUES DE VIDEO ─────────────────────────────────────────── */
+.proto .vidblock{position:relative;overflow:hidden;background:#050008;border:1px solid var(--linea-s);border-radius:1rem}
+.proto .vidblock video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.proto .vidblock .cap{position:absolute;left:1.4rem;bottom:1.2rem;z-index:2;display:flex;align-items:center;gap:.7rem;
+  font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.proto .vidblock .cap::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--mag);
+  box-shadow:0 0 0 0 rgba(209,30,104,.65);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(209,30,104,0)}100%{box-shadow:0 0 0 0 rgba(209,30,104,0)}}
+.proto .vidblock::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 62%,rgba(5,0,8,.66))}
+.proto .vgrid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;align-items:stretch}
+.proto .vgrid .vidblock video{height:100%}
+@media(max-width:820px){.proto .vgrid{grid-template-columns:1fr}}
+
+/* marco de teléfono para el video móvil */
+.proto .phone{width:min(300px,78vw);border-radius:2.6rem;border:1px solid var(--linea);
+  padding:.55rem;background:#0A010D;margin:0 auto;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 1px 0 rgba(255,255,255,.08) inset}
+.proto .phone video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:2.1rem;display:block}
+
+/* ── FUNDADORES: foto que se convierte en video ───────────────── */
+.proto .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:14px}
+.proto .fcard{position:relative;aspect-ratio:3/3.6;overflow:hidden;border-radius:1rem;
+  background:var(--paper-2);border:1px solid var(--linea-s)}
+.proto .fcard img,.proto .fcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+.proto .fcard video{opacity:0;transition:opacity .6s var(--e)}
+.proto .fcard.play video,.proto .fcard:hover video{opacity:1}
+.proto .fcard .meta{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.2rem 1.3rem 1.1rem;
+  background:linear-gradient(180deg,transparent,rgba(10,1,13,.88) 60%)}
+.proto .fcard .meta b{display:block;font-family:var(--f-disp);font-weight:600;font-size:1.25rem;letter-spacing:-.015em}
+.proto .fcard .meta span{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#FF87B5}
+.proto .fcard .vivo{position:absolute;top:1rem;right:1rem;z-index:2;font-size:.58rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:rgba(209,30,104,.8);border-radius:999px;padding:.3rem .7rem;
+  opacity:0;transition:opacity .5s var(--e)}
+.proto .fcard.play .vivo,.proto .fcard:hover .vivo{opacity:1}
+
+/* ── EQUIPO por áreas ─────────────────────────────────────────── */
+.proto .area-h{display:flex;align-items:baseline;gap:1rem;margin:2.6rem 0 1rem}
+.proto .area-h h3{font-family:var(--f-serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.4rem,2.6vw,2rem);text-transform:capitalize;margin:0;
+  background:linear-gradient(120deg,#FF6FA0,#C13584);-webkit-background-clip:text;background-clip:text;color:transparent}
+.proto .area-h s{flex:1;height:1px;background:var(--linea-s);text-decoration:none}
+.proto .area-h small{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gris-2)}
+.proto .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(46%,9.5rem),1fr));gap:1px;background:var(--linea-s)}
+.proto .tcard{background:var(--paper-2);padding:1rem .9rem 1.1rem;text-align:center;transition:background .4s var(--e)}
+.proto .tcard:hover{background:var(--paper-3)}
+.proto .tcard .ph{width:100%;aspect-ratio:1;overflow:hidden;border-radius:.7rem;margin-bottom:.7rem;position:relative;background:var(--paper-3)}
+.proto .tcard .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;
+  filter:saturate(.85);transition:transform .8s var(--e-out),filter .5s var(--e)}
+.proto .tcard:hover .ph img{transform:scale(1.06);filter:none}
+.proto .tcard .avi{position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--f-disp);font-weight:700;font-size:2.2rem;color:#fff;background:var(--grad)}
+.proto .tcard b{display:block;font-size:.88rem;font-weight:600;letter-spacing:0}
+.proto .tcard span{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-2);margin-top:.15rem}
+
+/* ── GALERÍA mosaico ──────────────────────────────────────────── */
+.proto .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(6.5rem,12.5vw,11.5rem);gap:10px}
+.proto .gal figure{margin:0;overflow:hidden;border-radius:.6rem;position:relative;background:var(--paper-2)}
+.proto .gal figure.big{grid-column:span 2;grid-row:span 2}
+.proto .gal img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);
+  transition:transform .9s var(--e-out),filter .5s var(--e)}
+.proto .gal figure:hover img{transform:scale(1.07);filter:none}
+.proto .gal figure::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(160deg,rgba(209,30,104,.14),transparent 55%);
+  opacity:.6;transition:opacity .5s var(--e)}
+.proto .gal figure:hover::after{opacity:0}
+@media(max-width:640px){.proto .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:8rem}}
+
+/* ── CASOS / PROYECTOS: tira horizontal con snap ──────────────── */
+.proto .cases{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(15rem,26vw,22rem);gap:14px;
+  overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;
+  scrollbar-width:thin;scrollbar-color:var(--mag) transparent}
+.proto .cases::-webkit-scrollbar{height:6px}
+.proto .cases::-webkit-scrollbar-thumb{background:var(--mag);border-radius:3px}
+.proto .cases::-webkit-scrollbar-track{background:rgba(255,255,255,.06)}
+.proto .case{scroll-snap-align:start;position:relative;border-radius:.9rem;overflow:hidden;
+  aspect-ratio:4/4.6;border:1px solid var(--linea-s);background:var(--paper-2);display:block}
+.proto .case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform 1s var(--e-out),opacity .6s var(--e)}
+.proto .case .b{opacity:0}
+.proto .case:hover .a{opacity:0}
+.proto .case:hover .b{opacity:1;transform:scale(1.04)}
+.proto .case .meta{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.1rem 1.2rem;
+  background:linear-gradient(180deg,transparent,rgba(10,1,13,.9) 62%)}
+.proto .case .meta b{display:block;font-family:var(--f-disp);font-weight:600;font-size:1.05rem}
+.proto .case .meta span{font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#FF87B5}
+
+/* ── NOTICIAS / BLOG cards con portada ────────────────────────── */
+.proto .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:14px}
+.proto .ncard{display:flex;flex-direction:column;border:1px solid var(--linea-s);border-radius:.9rem;overflow:hidden;
+  background:var(--paper-2);transition:transform .5s var(--e),background .45s var(--e)}
+.proto .ncard:hover{transform:translateY(-5px);background:var(--paper-3)}
+.proto .ncard .cover{aspect-ratio:16/10;overflow:hidden}
+.proto .ncard .cover img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--e-out)}
+.proto .ncard:hover .cover img{transform:scale(1.06)}
+.proto .ncard .tx{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.proto .ncard .k{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mag)}
+.proto .ncard h3{font-size:1.02rem;line-height:1.35;margin:0}
+.proto .ncard p{font-size:.84rem;color:var(--gris);margin:0;line-height:1.55}
+.proto .ncard .go{margin-top:auto;padding-top:.6rem}
+
+/* collage de actividades del equipo */
+.proto .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.proto .acts figure{margin:0;overflow:hidden;border-radius:.7rem;aspect-ratio:4/3;background:var(--paper-2)}
+.proto .acts figure:nth-child(1){grid-row:span 2;aspect-ratio:auto}
+.proto .acts img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);transition:transform .9s var(--e-out),filter .5s var(--e)}
+.proto .acts figure:hover img{transform:scale(1.05);filter:none}
+@media(max-width:640px){.proto .acts{grid-template-columns:1fr 1fr}.proto .acts figure:nth-child(1){grid-row:auto}}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 8 — IDENTIDAD PROPIA POR PÁGINA + ARQUITECTURA SEO VISIBLE
+   Migas de pan, tablas comparativas, listas editoriales, chat vivo,
+   SERP simulada, gráfico de crecimiento, blueprint, cotizador.
+   ════════════════════════════════════════════════════════════════ */
+
+/* correcciones de sistema: nada de side-stripes ni degradado en texto fuera del foco */
+.proto .quote{border-left:0;background:linear-gradient(160deg,rgba(209,30,104,.12),rgba(47,7,41,.5) 55%);border:1px solid var(--linea-s);position:relative;padding-top:2.6rem}
+.proto .quote::before{content:'“';position:absolute;top:.4rem;left:1.4rem;font-family:var(--f-disp);
+  font-size:3.2rem;line-height:1;color:var(--mag);opacity:.8}
+.proto .counters b,.proto .databar b,.proto .somos .sub,.proto .area-h h3{background:none;-webkit-background-clip:initial;background-clip:initial;color:#FF6FA0}
+.proto .ptag{border-left:0;padding:.15rem 0}
+.proto .ptag b{color:#FF6FA0}
+
+/* ── MIGAS DE PAN ─────────────────────────────────────────────── */
+.proto .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;font-size:.74rem;color:var(--gris-2);
+  margin-bottom:1.6rem;letter-spacing:.02em}
+.proto .crumbs a{color:var(--gris);transition:color .3s var(--e);min-height:auto}
+.proto .crumbs a:hover{color:var(--mag)}
+.proto .crumbs i{font-style:normal;opacity:.5}
+.proto .crumbs b{color:var(--ink);font-weight:500}
+
+/* ── GRAMÁTICA de sección v8: titular grande + intro, sin kicker repetido ── */
+.proto .sec-h{max-width:52rem;margin-bottom:clamp(2rem,4vw,3.2rem)}
+.proto .sec-h h2{margin-bottom:.35em}
+.proto .sec-h .intro{font-size:clamp(.98rem,1.15vw,1.06rem);color:var(--gris);max-width:58ch;line-height:1.7;margin:0}
+
+/* ── LISTA EDITORIAL NUMERADA (sustituye a los grids de tarjetas) ── */
+.proto .numlist{counter-reset:nl;display:grid;gap:0;border-top:1px solid var(--linea-s)}
+.proto .numlist > div{counter-increment:nl;display:grid;grid-template-columns:5.5rem 1fr;gap:1.4rem;
+  padding:1.6rem 0;border-bottom:1px solid var(--linea-s);align-items:start;transition:background .4s var(--e)}
+.proto .numlist > div:hover{background:rgba(47,7,41,.35)}
+.proto .numlist > div::before{content:'0' counter(nl);font-family:var(--f-disp);font-weight:700;
+  font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.04em;line-height:1;color:var(--mag);opacity:.85;
+  padding-left:.2rem}
+.proto .numlist h3{font-size:clamp(1.05rem,1.5vw,1.3rem);margin-bottom:.35rem}
+.proto .numlist p{font-size:.92rem;color:var(--gris);margin:0;max-width:62ch;line-height:1.65}
+.proto .numlist .x{display:inline-block;margin-top:.55rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#FF6FA0}
+@media(max-width:640px){.proto .numlist > div{grid-template-columns:3rem 1fr;gap:.9rem;padding:1.2rem 0}}
+
+/* ── TABLA COMPARATIVA (SEO real, no tarjetas) ────────────────── */
+.proto .tbl{overflow-x:auto;border:1px solid var(--linea);background:var(--paper-2)}
+.proto .tbl table{width:100%;border-collapse:collapse;min-width:34rem;font-size:.9rem}
+.proto .tbl th{font-family:var(--f-disp);font-weight:600;font-size:.95rem;letter-spacing:-.01em;
+  text-align:left;padding:1.1rem 1.2rem;border-bottom:1px solid var(--linea);color:var(--ink);
+  background:rgba(209,30,104,.09)}
+.proto .tbl td{padding:1rem 1.2rem;border-bottom:1px solid var(--linea-s);color:var(--gris);vertical-align:top;line-height:1.55}
+.proto .tbl tr:last-child td{border-bottom:0}
+.proto .tbl td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+.proto .tbl tr:hover td{background:rgba(47,7,41,.4)}
+.proto .tbl .si{color:#7BE0A8;font-weight:600}
+
+/* ── SPLIT alternado con imagen real ──────────────────────────── */
+.proto .feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,4vw,4rem);align-items:center;
+  padding:clamp(1.8rem,3.5vw,3rem) 0}
+.proto .feat + .feat{border-top:1px solid var(--linea-s)}
+.proto .feat:nth-child(even){direction:rtl}
+.proto .feat > *{direction:ltr}
+.proto .feat h3{font-size:clamp(1.25rem,2vw,1.7rem);margin-bottom:.5rem}
+.proto .feat p{font-size:.95rem;color:var(--gris);line-height:1.7;max-width:52ch}
+.proto .feat .pic{position:relative;overflow:hidden;border-radius:.8rem;border:1px solid var(--linea-s);aspect-ratio:16/11}
+.proto .feat .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--e-out)}
+.proto .feat:hover .pic img{transform:scale(1.04)}
+@media(max-width:820px){.proto .feat{grid-template-columns:1fr;gap:1.2rem}.proto .feat:nth-child(even){direction:ltr}}
+
+/* ── CHECKLIST a dos columnas ─────────────────────────────────── */
+.proto .cklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:.2rem 2.4rem;
+  list-style:none;padding:0;margin:0}
+.proto .cklist li{display:grid;grid-template-columns:1.5rem 1fr;gap:.8rem;padding:.85rem 0;
+  border-bottom:1px solid var(--linea-s);align-items:start}
+.proto .cklist li::before{content:'';width:1.15rem;height:1.15rem;margin-top:.2rem;border-radius:50%;
+  background:rgba(209,30,104,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 12.5l5 5 10-11' stroke='%23FF6FA0' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.proto .cklist b{display:block;font-weight:600;font-size:.95rem;color:var(--ink)}
+.proto .cklist span{font-size:.86rem;color:var(--gris);line-height:1.55}
+
+/* ── BADGES DE PAGO peruanos ──────────────────────────────────── */
+.proto .paybadges{display:flex;flex-wrap:wrap;gap:.6rem}
+.proto .paybadges span{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-disp);
+  font-weight:600;font-size:.92rem;letter-spacing:.01em;color:var(--ink);
+  border:1px solid var(--linea);border-radius:.6rem;padding:.65rem 1.1rem;background:var(--paper-2)}
+.proto .paybadges span::before{content:'';width:.6rem;height:.6rem;border-radius:50%;background:var(--pb-c,#FF6FA0)}
+
+/* ── FLUJO horizontal (checkout / proceso corto) ──────────────── */
+.proto .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--linea);background:var(--paper-2)}
+.proto .flow > div{padding:1.5rem 1.4rem;position:relative;border-right:1px solid var(--linea-s)}
+.proto .flow > div:last-child{border-right:0}
+.proto .flow > div::after{content:'→';position:absolute;right:-.55rem;top:1.5rem;z-index:2;color:var(--mag);
+  font-size:1.1rem;background:var(--paper-2);line-height:1}
+.proto .flow > div:last-child::after{display:none}
+.proto .flow b{display:block;font-family:var(--f-disp);font-weight:600;font-size:1rem;margin-bottom:.3rem}
+.proto .flow span{font-size:.8rem;color:var(--gris);line-height:1.5;display:block}
+@media(max-width:820px){.proto .flow{grid-template-columns:1fr 1fr}.proto .flow > div:nth-child(2)::after{display:none}
+  .proto .flow > div:nth-child(odd){border-right:1px solid var(--linea-s)}.proto .flow > div:nth-child(even){border-right:0}}
+@media(max-width:480px){.proto .flow{grid-template-columns:1fr}.proto .flow > div{border-right:0!important}.proto .flow > div::after{display:none}}
+
+/* ── MARCO DE NAVEGADOR ───────────────────────────────────────── */
+.proto .bframe{border:1px solid var(--linea);border-radius:.8rem;overflow:hidden;background:#0A010D;
+  box-shadow:0 36px 80px -32px rgba(0,0,0,.8)}
+.proto .bframe .bar{display:flex;align-items:center;gap:.45rem;padding:.7rem 1rem;background:var(--paper-2);
+  border-bottom:1px solid var(--linea-s)}
+.proto .bframe .bar i{width:.65rem;height:.65rem;border-radius:50%;background:rgba(255,255,255,.14)}
+.proto .bframe .bar i:first-child{background:rgba(233,30,99,.55)}
+.proto .bframe .bar .url{margin-left:.6rem;flex:1;max-width:22rem;font-size:.68rem;color:var(--gris-2);
+  background:rgba(0,0,0,.3);border-radius:.4rem;padding:.3rem .8rem;letter-spacing:.03em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.proto .bframe img,.proto .bframe video{width:100%;display:block}
+
+/* ── CHAT DEMO WhatsApp (página IA) ───────────────────────────── */
+.proto .chatdemo{max-width:26rem;margin:0 auto;background:#0B141A;border:1px solid var(--linea);border-radius:1.2rem;
+  overflow:hidden;box-shadow:0 40px 90px -35px rgba(0,0,0,.85)}
+.proto .chatdemo .chead{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.1rem;background:#1F2C34}
+.proto .chatdemo .chead .cav{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--grad);
+  display:grid;place-items:center;font-weight:700;font-size:.8rem;color:#fff}
+.proto .chatdemo .chead b{display:block;font-size:.88rem;color:#E9EDEF;font-weight:600}
+.proto .chatdemo .chead span{display:block;font-size:.68rem;color:#8696A0}
+.proto .chatdemo .cbody{padding:1.1rem .9rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;min-height:19rem;
+  background:radial-gradient(120% 100% at 50% 0%,rgba(209,30,104,.05),transparent 60%),#0B141A}
+.proto .msg{max-width:82%;padding:.6rem .85rem;border-radius:.7rem;font-size:.84rem;line-height:1.5;color:#E9EDEF;
+  opacity:0;transform:translateY(.9rem) scale(.97);transition:opacity .5s var(--e-out),transform .6s var(--e-out)}
+.proto .msg.in{opacity:1;transform:none}
+.proto .msg.c{align-self:flex-end;background:#005C4B;border-bottom-right-radius:.2rem}
+.proto .msg.a{align-self:flex-start;background:#1F2C34;border-bottom-left-radius:.2rem}
+.proto .msg .who{display:block;font-size:.62rem;font-weight:700;letter-spacing:.06em;color:#FF6FA0;margin-bottom:.15rem;text-transform:uppercase}
+.proto .msg time{display:block;font-size:.58rem;color:#8696A0;text-align:right;margin-top:.25rem}
+.proto .chatdemo .typing{align-self:flex-start;display:inline-flex;gap:.3rem;padding:.7rem .9rem;background:#1F2C34;border-radius:.7rem}
+.proto .chatdemo .typing i{width:.4rem;height:.4rem;border-radius:50%;background:#8696A0;animation:tp 1.2s infinite}
+.proto .chatdemo .typing i:nth-child(2){animation-delay:.2s}.proto .chatdemo .typing i:nth-child(3){animation-delay:.4s}
+@keyframes tp{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-.2rem)}}
+
+/* ── SERP SIMULADA (página SEO) ───────────────────────────────── */
+.proto .serp{max-width:34rem;background:#202124;border:1px solid rgba(255,255,255,.1);border-radius:1rem;
+  padding:1.4rem 1.5rem;box-shadow:0 36px 80px -32px rgba(0,0,0,.8)}
+.proto .serp .q{display:flex;align-items:center;gap:.7rem;background:#303134;border-radius:999px;
+  padding:.65rem 1.1rem;font-size:.85rem;color:#E8EAED;margin-bottom:1.2rem}
+.proto .serp .q::before{content:'';width:1rem;height:1rem;flex:0 0 auto;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5' stroke='%239AA0A6' stroke-width='2' fill='none'/%3E%3Cpath d='M15.5 15.5L21 21' stroke='%239AA0A6' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat}
+.proto .serp .res{padding:.9rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.proto .serp .site{display:flex;align-items:center;gap:.55rem;margin-bottom:.3rem}
+.proto .serp .fav{width:1.6rem;height:1.6rem;border-radius:50%;background:var(--grad);display:grid;place-items:center;
+  font-size:.6rem;font-weight:700;color:#fff}
+.proto .serp .site b{display:block;font-size:.78rem;color:#E8EAED;font-weight:500}
+.proto .serp .site span{display:block;font-size:.68rem;color:#9AA0A6}
+.proto .serp h3{font-size:1.12rem;font-weight:400;color:#8AB4F8;margin:0 0 .25rem;font-family:var(--f-ui);letter-spacing:0;line-height:1.3}
+.proto .serp p{font-size:.8rem;color:#BDC1C6;line-height:1.5;margin:0}
+.proto .serp .stars{color:#FBBC04;font-size:.74rem;letter-spacing:.12em;margin:.2rem 0}
+.proto .serp .stars small{color:#9AA0A6;letter-spacing:0;margin-left:.4rem}
+.proto .serp .pos{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:#7BE0A8;margin-bottom:.6rem}
+.proto .serp .pos::before{content:'▲'}
+.proto .serp .res.dim2 h3{color:#5f6b7a}.proto .serp .res.dim2 p,.proto .serp .res.dim2 .site b{color:#525a66}
+
+/* ── GRÁFICO DE CRECIMIENTO (SVG que se dibuja) ───────────────── */
+.proto .growth{position:relative;border:1px solid var(--linea-s);background:var(--paper-2);border-radius:.9rem;
+  padding:clamp(1.2rem,2.5vw,2rem);overflow:hidden}
+.proto .growth svg{width:100%;height:auto;display:block}
+.proto .growth .line{fill:none;stroke:#FF4F93;stroke-width:2.5;stroke-linecap:round;
+  stroke-dasharray:620;stroke-dashoffset:620;transition:stroke-dashoffset 2.4s var(--e-out) .2s}
+.proto .growth.in .line{stroke-dashoffset:0}
+.proto .growth .area{fill:url(#gfill);opacity:0;transition:opacity 1.2s ease 1.6s}
+.proto .growth.in .area{opacity:1}
+.proto .growth .dot{fill:#FF4F93;opacity:0;transition:opacity .5s ease}
+.proto .growth.in .dot{opacity:1}
+.proto .growth.in .dot:nth-of-type(1){transition-delay:.8s}.proto .growth.in .dot:nth-of-type(2){transition-delay:1.3s}
+.proto .growth.in .dot:nth-of-type(3){transition-delay:1.8s}.proto .growth.in .dot:nth-of-type(4){transition-delay:2.3s}
+.proto .growth text{font-family:var(--f-ui);font-size:11px;fill:rgba(255,255,255,.5)}
+.proto .growth .lab{font-weight:700;fill:#7BE0A8;font-size:12px}
+
+/* ── BLUEPRINT DE MÓDULOS (página software) ───────────────────── */
+.proto .blueprint{position:relative;border:1px solid var(--linea);background:
+  linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:36px 36px;background-color:#0C0113;border-radius:.9rem;
+  padding:clamp(1.4rem,3vw,2.6rem);display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.proto .bp-node{border:1px solid rgba(209,30,104,.4);background:rgba(19,2,24,.85);border-radius:.6rem;
+  padding:1.1rem 1.2rem;position:relative;transition:border-color .4s var(--e),transform .5s var(--e)}
+.proto .bp-node:hover{border-color:#FF6FA0;transform:translateY(-3px)}
+.proto .bp-node b{display:block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.8rem;font-weight:700;
+  letter-spacing:.04em;color:#FF6FA0;margin-bottom:.3rem}
+.proto .bp-node span{font-size:.78rem;color:var(--gris);line-height:1.5;display:block}
+.proto .bp-node.core{grid-column:2;border-color:#FF6FA0;background:rgba(209,30,104,.13);
+  box-shadow:0 0 0 1px rgba(209,30,104,.25),0 0 40px -8px rgba(209,30,104,.4)}
+.proto .bp-link{position:absolute;left:50%;bottom:-1rem;width:1px;height:1rem;background:rgba(209,30,104,.5)}
+@media(max-width:720px){.proto .blueprint{grid-template-columns:1fr 1fr}.proto .bp-node.core{grid-column:1 / -1}}
+
+/* ── COTIZADOR con cierre a WhatsApp ──────────────────────────── */
+.proto .cotiza{border:1px solid var(--linea);background:var(--paper-2);border-radius:1rem;overflow:hidden}
+.proto .cotiza .cz-h{padding:1.6rem 1.8rem 0}
+.proto .cotiza .opts{display:flex;flex-wrap:wrap;gap:.55rem;padding:1.1rem 1.8rem 0}
+.proto .cotiza .opts button{font-family:var(--f-ui);font-size:.84rem;font-weight:500;color:var(--ink);
+  background:transparent;border:1px solid var(--linea);border-radius:999px;padding:.6rem 1.15rem;
+  cursor:pointer;min-height:44px;transition:all .35s var(--e)}
+.proto .cotiza .opts button:hover{border-color:var(--mag)}
+.proto .cotiza .opts button[aria-pressed="true"]{background:var(--mag);border-color:var(--mag);color:#fff}
+.proto .cotiza .cz-out{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2rem;justify-content:space-between;
+  margin-top:1.5rem;padding:1.4rem 1.8rem;background:rgba(209,30,104,.09);border-top:1px solid var(--linea-s)}
+.proto .cotiza .cz-p{font-family:var(--f-disp);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);
+  letter-spacing:-.04em;color:#FF6FA0;line-height:1}
+.proto .cotiza .cz-p small{display:block;font-family:var(--f-ui);font-weight:500;font-size:.7rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin-top:.45rem}
+@media(max-width:640px){.proto .cotiza .cz-h,.proto .cotiza .opts{padding-left:1.2rem;padding-right:1.2rem}
+  .proto .cotiza .cz-out{padding:1.2rem}}
+
+/* ── BLOQUE LOCAL (SEO local visible) ─────────────────────────── */
+.proto .localb{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.6rem,3.5vw,3rem);align-items:center;
+  border:1px solid var(--linea-s);background:linear-gradient(140deg,rgba(47,7,41,.65),rgba(19,2,24,.4));
+  border-radius:1rem;padding:clamp(1.6rem,3.5vw,2.8rem)}
+.proto .localb h2{font-size:clamp(1.5rem,2.6vw,2.2rem)}
+.proto .localb p{font-size:.94rem;color:var(--gris);line-height:1.75;margin:0}
+.proto .localb .pic{overflow:hidden;border-radius:.8rem;border:1px solid var(--linea-s);aspect-ratio:4/3}
+.proto .localb .pic img{width:100%;height:100%;object-fit:cover}
+.proto .localb .zones{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.1rem}
+.proto .localb .zones span{font-size:.72rem;font-weight:500;color:var(--gris);border:1px solid var(--linea-s);
+  border-radius:999px;padding:.35rem .85rem}
+.proto .localb .zones span.hot{border-color:rgba(123,224,168,.4);color:#7BE0A8}
+@media(max-width:820px){.proto .localb{grid-template-columns:1fr}}
+
+/* ── PUENTES INTERNOS (enlaces con contexto, no tarjetas) ─────── */
+.proto .bridges{border-top:1px solid var(--linea-s)}
+.proto .bridges > p{padding:1.15rem 0;margin:0;border-bottom:1px solid var(--linea-s);font-size:.94rem;
+  color:var(--gris);line-height:1.65;max-width:72ch}
+.proto .bridges a{color:#FF6FA0;font-weight:500;border-bottom:1px solid rgba(255,111,160,.35);transition:border-color .3s var(--e),color .3s var(--e)}
+.proto .bridges a:hover{color:#fff;border-color:#fff}
+
+/* precios: fila destacada de la tabla maestra */
+.proto .tbl tr.hot td{background:rgba(209,30,104,.12)}
+.proto .tbl tr.hot td:first-child{color:#FF6FA0}
+
+/* ── HERO v8: asimétrico, migas + titular + artefacto de firma ── */
+.proto .hero8{position:relative;isolation:isolate;overflow:hidden;
+  padding:calc(var(--nav-h) + var(--pb) + clamp(2.4rem,5vw,4rem)) 0 clamp(3rem,6vw,5rem)}
+.proto .hero8 .hbg{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.proto .hero8 .hbg img{width:100%;height:100%;object-fit:cover;opacity:.16;filter:saturate(.8) brightness(.7)}
+.proto .hero8 .hbg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--paper) 30%,rgba(19,2,24,.72) 62%,rgba(19,2,24,.45)),
+             linear-gradient(180deg,transparent 55%,var(--paper) 97%)}
+.proto .hero8 .grid8{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(2rem,4.5vw,4.5rem);align-items:center}
+.proto .hero8 h1{font-size:clamp(2.3rem,4.6vw,4.1rem);max-width:16ch}
+.proto .hero8 .lede{max-width:52ch}
+.proto .hero8 .art8{position:relative;min-width:0}
+.proto .hero8 .art8 > *{margin:0 auto}
+@media(max-width:940px){.proto .hero8 .grid8{grid-template-columns:1fr;gap:2.4rem}.proto .hero8 h1{max-width:none}}
+
+/* El titular del foco ES el H1 visible (regla #1 de la auditoría) */
+.proto h1.foco-title{margin:0;max-width:none;font-size:inherit;letter-spacing:normal;line-height:normal}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 9 — PULIDO FINO (doctrina Emil + polish impeccable)
+   Estados de interacción completos, foco visible, micro-feedback,
+   cascadas escalonadas y detalles invisibles que suman.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Botones: transición explícita (nada de "all") + feedback de presión real */
+.proto .btn{transition:background-color .35s var(--e),color .35s var(--e),border-color .35s var(--e),
+  box-shadow .35s var(--e),transform .16s var(--e-out)}
+.proto .btn:active{transform:scale(.97)!important;transition-duration:.1s}
+.proto .cotiza .opts button{transition:background-color .3s var(--e),border-color .3s var(--e),
+  color .3s var(--e),transform .14s var(--e-out)}
+.proto .cotiza .opts button:active{transform:scale(.96)}
+.proto .faq summary:active{opacity:.85}
+.proto .actionbar a:active{opacity:.8}
+
+/* Foco de teclado visible en TODO (nunca quitar sin sustituto) */
+.proto :focus-visible{outline:2px solid #FF6FA0;outline-offset:3px;border-radius:4px}
+.proto .btn:focus-visible{outline-offset:2px}
+.proto input:focus-visible,.proto select:focus-visible{outline-offset:0;outline:0}
+
+/* Las anclas nunca quedan bajo el nav fijo */
+.proto [id]{scroll-margin-top:calc(var(--nav-h) + var(--pb) + 1.2rem)}
+
+/* Saltar al contenido (a11y pro) */
+.proto .skip{position:fixed;top:calc(var(--pb) + .6rem);left:.8rem;z-index:100;background:var(--mag);color:#fff;
+  padding:.7rem 1.2rem;border-radius:999px;font-size:.8rem;font-weight:600;
+  transform:translateY(-300%);transition:transform .25s var(--e-out)}
+.proto .skip:focus-visible{transform:none;outline-color:#fff}
+
+/* Nav: subrayado del enlace activo + barra de progreso de lectura */
+.proto .nav .links > a{position:relative}
+.proto .nav .links > a::after{content:'';position:absolute;left:.95rem;right:.95rem;bottom:.25rem;height:2px;
+  background:var(--mag);border-radius:2px;transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--e-out)}
+.proto .nav .links > a.on::after,.proto .nav .links > a:hover::after{transform:scaleX(1)}
+.proto .navprog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--grad);
+  transform:scaleX(0);transform-origin:left;pointer-events:none}
+
+/* Cookies: recuerda la decisión (motion la muestra solo si no hay registro) */
+.proto .cookies{display:none}
+.proto .cookies.show{display:block}
+
+/* Tabla en móvil: pista de que se puede deslizar */
+@media(max-width:640px){
+  .proto .tbl{position:relative}
+  .proto .tbl::after{content:'';position:absolute;top:0;right:0;bottom:0;width:2.6rem;pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(19,2,24,.85))}
+}
+
+/* Cascadas escalonadas: los ítems de listas entran en fila (30-80ms) */
+.proto .numlist.rv > div,.proto .cklist.rv li,.proto .flow.rv > div,.proto .paybadges.rv span{
+  opacity:0;transform:translateY(12px);
+  transition:opacity .6s var(--e-out),transform .7s var(--e-out)}
+.proto .numlist.rv.in > div,.proto .cklist.rv.in li,.proto .flow.rv.in > div,.proto .paybadges.rv.in span{opacity:1;transform:none}
+.proto .numlist.rv.in > div:nth-child(2),.proto .cklist.rv.in li:nth-child(2),.proto .flow.rv.in > div:nth-child(2),.proto .paybadges.rv.in span:nth-child(2){transition-delay:.05s}
+.proto .numlist.rv.in > div:nth-child(3),.proto .cklist.rv.in li:nth-child(3),.proto .flow.rv.in > div:nth-child(3),.proto .paybadges.rv.in span:nth-child(3){transition-delay:.1s}
+.proto .numlist.rv.in > div:nth-child(4),.proto .cklist.rv.in li:nth-child(4),.proto .flow.rv.in > div:nth-child(4),.proto .paybadges.rv.in span:nth-child(4){transition-delay:.15s}
+.proto .numlist.rv.in > div:nth-child(5),.proto .cklist.rv.in li:nth-child(5),.proto .paybadges.rv.in span:nth-child(5){transition-delay:.2s}
+.proto .numlist.rv.in > div:nth-child(6),.proto .cklist.rv.in li:nth-child(6){transition-delay:.25s}
+.proto .numlist.rv.in > div:nth-child(n+7),.proto .cklist.rv.in li:nth-child(n+7){transition-delay:.3s}
+
+/* Scrollbar discreta acorde al tema */
+.proto ::-webkit-scrollbar{width:11px}
+.proto ::-webkit-scrollbar-track{background:#0C0111}
+.proto ::-webkit-scrollbar-thumb{background:#3A0F35;border-radius:6px;border:2px solid #0C0111}
+.proto ::-webkit-scrollbar-thumb:hover{background:#5A1049}
+
+/* El zoom por hover solo donde hay cursor de verdad */
+@media(hover:none){
+  .proto .gal figure:hover img,.proto .feat:hover .pic img,.proto .tcard:hover .ph img,.proto .band-t figure:hover img{transform:none}
+}
+
+/* Chips del cotizador y trust: tap target mínimo */
+.proto .trust span,.proto .crumbs a{min-height:2.4rem;display:inline-flex;align-items:center}
+
+@media(prefers-reduced-motion:reduce){
+  .proto .numlist.rv > div,.proto .cklist.rv li,.proto .flow.rv > div,.proto .paybadges.rv span{opacity:1;transform:none}
+  .proto .navprog{display:none}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 10 — CORRECCIONES DEL PANEL DE CRÍTICA (88 hallazgos)
+   Cada bloque cierra un hallazgo verificado en captura o en código.
+   ════════════════════════════════════════════════════════════════ */
+
+/* P0 · Ningún fondo puede tener texto legible (el hero mostraba código) */
+.proto .hero8 .hbg img{opacity:.13;filter:saturate(.75) brightness(.6) blur(3px);transform:scale(1.06)}
+
+/* P0 · Clash Display con tracking negativo se comía el espacio entre palabras */
+.proto h1,.proto h2,.proto .foco-title,.proto .sheet a{word-spacing:.14em}
+.proto .somos h2,.proto .counters b,.proto .area-h h3{word-spacing:normal}
+
+/* P0 · El grid del equipo pintaba paneles fantasma en las celdas vacías */
+.proto .tgrid{background:none;gap:1px;position:relative}
+.proto .tcard{box-shadow:0 0 0 1px var(--linea-s)}
+
+/* P0 · En móvil el monitor tapaba el titular de "Posiciona tu marca" */
+@media(max-width:820px){
+  .proto .posiciona{padding-bottom:0}
+  .proto .posiciona .art{min-height:0;margin-top:1.4rem}
+  .proto .posiciona .art .mon{position:static;width:100%;max-width:26rem;margin:0 auto;bottom:auto}
+}
+
+/* P0 · El chat se veía medio vacío: cuerpo a la altura de su contenido */
+.proto .chatdemo .cbody{min-height:0;justify-content:flex-end;padding-bottom:1.1rem}
+.proto .hero8 .art8 .chatdemo{max-width:24rem}
+
+/* P0 · Cada video con SU proporción real (1186x320 no es 16/9) */
+.proto .vidblock video{aspect-ratio:var(--ar,16/9)}
+.proto .vidblock.banda{--ar:1186/320}
+.proto .vgrid{grid-template-columns:1fr}
+.proto .vgrid .vidblock video{height:auto}
+
+/* P0 · Maqueta de app en CSS: honesta, sin inventar capturas que no existen */
+.proto .appscreen{position:absolute;inset:0;background:linear-gradient(180deg,#1A0421,#12020F);
+  display:flex;flex-direction:column;border-radius:2.1rem;overflow:hidden;font-size:.72rem}
+.proto .appscreen .ah{padding:2.4rem 1.1rem .9rem;background:linear-gradient(135deg,#D11E68,#9C27B0);color:#fff}
+.proto .appscreen .ah b{display:block;font-family:var(--f-disp);font-size:1.05rem;letter-spacing:-.01em}
+.proto .appscreen .ah span{font-size:.66rem;opacity:.85}
+.proto .appscreen .abody{flex:1;padding:.9rem;display:flex;flex-direction:column;gap:.5rem;overflow:hidden}
+.proto .appscreen .row{display:flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:.6rem .7rem}
+.proto .appscreen .row i{width:1.9rem;height:1.9rem;border-radius:.45rem;flex:0 0 auto;
+  background:rgba(209,30,104,.22);display:grid;place-items:center;font-style:normal;font-size:.8rem}
+.proto .appscreen .row b{display:block;font-size:.72rem;font-weight:600;color:#fff}
+.proto .appscreen .row span{display:block;font-size:.62rem;color:rgba(255,255,255,.5)}
+.proto .appscreen .row em{margin-left:auto;font-style:normal;font-size:.6rem;font-weight:700;letter-spacing:.06em;
+  color:#7BE0A8;background:rgba(123,224,168,.12);border-radius:999px;padding:.2rem .5rem}
+.proto .appscreen .row.wait em{color:#FFC46B;background:rgba(255,196,107,.12)}
+.proto .appscreen .atab{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.09);
+  background:rgba(0,0,0,.4);padding:.55rem 0 .8rem}
+.proto .appscreen .atab span{text-align:center;font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(255,255,255,.35)}
+.proto .appscreen .atab span.on{color:#FF6FA0}
+.proto .appscreen .atab span::before{content:'';display:block;width:1.05rem;height:1.05rem;margin:0 auto .25rem;
+  border-radius:.28rem;border:1.4px solid currentColor;opacity:.85}
+.proto .phone{position:relative}
+.proto .phone .screen{position:relative;width:100%;aspect-ratio:9/16;border-radius:2.1rem;overflow:hidden}
+
+/* P0 · Escaparate real de tienda: responde "qué construyen" mejor que una foto */
+.proto .storefront{border:1px solid var(--linea);border-radius:1rem;overflow:hidden;background:var(--paper-2)}
+.proto .storefront .sh{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;
+  border-bottom:1px solid var(--linea-s);background:rgba(0,0,0,.25)}
+.proto .storefront .sh b{font-family:var(--f-disp);font-size:.9rem}
+.proto .storefront .sh .cart{margin-left:auto;display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;
+  color:#FF6FA0;border:1px solid rgba(209,30,104,.35);border-radius:999px;padding:.28rem .7rem}
+.proto .storefront .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea-s)}
+.proto .storefront .p{background:var(--paper-2);padding:.7rem}
+.proto .storefront .p .im{aspect-ratio:1;border-radius:.5rem;overflow:hidden;margin-bottom:.55rem;background:#0F0113}
+.proto .storefront .p img{width:100%;height:100%;object-fit:cover}
+.proto .storefront .p b{display:block;font-size:.72rem;font-weight:600;line-height:1.3;margin-bottom:.15rem}
+.proto .storefront .p span{display:block;font-size:.78rem;font-weight:700;color:#FF6FA0;font-family:var(--f-disp)}
+.proto .storefront .p .add{margin-top:.5rem;display:block;width:100%;text-align:center;font-size:.62rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(209,30,104,.25);
+  border:1px solid rgba(209,30,104,.4);border-radius:.4rem;padding:.42rem 0;transition:background .3s var(--e)}
+.proto .storefront .p:hover .add{background:var(--mag)}
+.proto .storefront .foot{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:.85rem 1.1rem;
+  border-top:1px solid var(--linea-s);font-size:.66rem;color:var(--gris)}
+@media(max-width:520px){.proto .storefront .prods{grid-template-columns:1fr 1fr}.proto .storefront .p:last-child{display:none}}
+
+/* P1 · Contraste AA: el magenta pequeño sobre morado no llegaba a 4,5:1 */
+.proto .from,.proto .ncard .k,.proto .case .meta span,.proto .fcard .meta span,.proto .tag{color:#FF77AC}
+.proto .serp .stars{color:#FFC85C}
+.proto .plan .who{color:rgba(255,255,255,.72)}
+
+/* P1 · Etiquetas de la barra móvil por debajo del mínimo legible */
+.proto .actionbar a{font-size:.72rem;letter-spacing:.04em;gap:.3rem}
+.proto .actionbar a svg{width:18px;height:18px}
+
+/* P1 · Medida de línea: ningún párrafo pasa de ~70 caracteres */
+.proto .somos p{max-width:62ch;margin-inline:auto}
+.proto .localb p,.proto .bridges > p{max-width:68ch}
+.proto .tbl td{max-width:34rem}
+
+/* P1 · Los CTA de una fila comparten línea base */
+.proto .card,.proto .ncard{display:flex;flex-direction:column}
+.proto .card .go,.proto .ncard .go{margin-top:auto}
+.proto .card-hero{justify-content:flex-end}
+
+/* P1 · Logos: mismo tratamiento para que ninguno desaparezca */
+.proto .client img{filter:brightness(0) invert(1);opacity:.55}
+.proto .client:hover img{opacity:1}
+.proto .client small{color:rgba(255,255,255,.5)}
+
+/* P1 · Huecos muertos entre secciones consecutivas del mismo bloque */
+.proto section + section.slim{padding-top:0}
+.proto section.slim + section{padding-top:clamp(2.6rem,5vw,4.2rem)}
+.proto .sec-h{margin-bottom:clamp(1.8rem,3.2vw,2.8rem)}
+
+/* P1 · Enlaces en prosa siempre reconocibles */
+.proto .bridges a,.proto .faq .a a,.proto .localb a{text-decoration:underline;text-underline-offset:3px;
+  text-decoration-color:rgba(255,111,160,.45);text-decoration-thickness:1px}
+.proto .bridges a:hover{text-decoration-color:currentColor}
+
+/* P2 · El aviso del prototipo no se enlaza a sí mismo */
+.protobar.self a{pointer-events:none;color:var(--gris-2);border-bottom:0}
+
+/* P2 · Zoom del hover solo con cursor real (ya cubierto) + foco del carrusel */
+.proto .cases:focus-visible{outline-offset:6px}
+
+/* ── BLOG: índice editorial (fuera las 4 tarjetas clónicas) ───── */
+.proto .bigpost{display:block;border:1px solid var(--linea-s);border-radius:1rem;overflow:hidden;
+  background:var(--paper-2);transition:transform .5s var(--e),border-color .4s var(--e)}
+.proto .bigpost:hover{transform:translateY(-4px);border-color:rgba(209,30,104,.45)}
+.proto .bigpost .cover{display:block;aspect-ratio:16/10;overflow:hidden}
+.proto .bigpost .cover img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--e-out)}
+.proto .bigpost:hover .cover img{transform:scale(1.05)}
+.proto .bigpost .tx{display:block;padding:1.3rem 1.4rem 1.5rem}
+.proto .bigpost .k{display:block;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#FF77AC;margin-bottom:.5rem}
+.proto .bigpost b{display:block;font-family:var(--f-disp);font-weight:600;font-size:clamp(1.1rem,1.7vw,1.4rem);
+  line-height:1.25;letter-spacing:-.02em;margin-bottom:.45rem}
+.proto .bigpost .d{display:block;font-size:.86rem;color:var(--gris);line-height:1.6;max-width:48ch}
+.proto .bigpost .go{margin-top:.9rem}
+
+.proto .postlist{border-top:1px solid var(--linea-s)}
+.proto .post{display:grid;grid-template-columns:4.5rem 1fr auto;gap:1.6rem;align-items:center;
+  padding:1.5rem 0;border-bottom:1px solid var(--linea-s);transition:background .4s var(--e)}
+.proto .post:hover{background:rgba(47,7,41,.4)}
+.proto .post .n{font-family:var(--f-disp);font-weight:700;font-size:clamp(1.5rem,2.4vw,2.1rem);
+  letter-spacing:-.04em;color:var(--mag);opacity:.8;line-height:1}
+.proto .post .meta{display:block;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris-2);margin-bottom:.4rem}
+.proto .post b{display:block;font-family:var(--f-disp);font-weight:600;font-size:clamp(1rem,1.5vw,1.28rem);
+  letter-spacing:-.015em;line-height:1.3;margin-bottom:.3rem;transition:color .35s var(--e)}
+.proto .post:hover b{color:#FF9CC2}
+.proto .post .d{display:block;font-size:.87rem;color:var(--gris);line-height:1.6;max-width:64ch}
+.proto .post .cta{display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;font-size:.72rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink);opacity:.75;transition:opacity .35s var(--e)}
+.proto .post:hover .cta{opacity:1}
+.proto .post .cta svg{width:13px;height:13px;transition:transform .4s var(--e)}
+.proto .post:hover .cta svg{transform:translate(3px,-3px)}
+@media(max-width:820px){
+  .proto .post{grid-template-columns:2.8rem 1fr;gap:1rem;row-gap:.7rem}
+  .proto .post .cta{grid-column:2;justify-self:start}
+}
+
+/* P0 · El bento no puede dejar celdas vacías. La destacada vale por dos y
+   .wide (que pone el generador solo si el total queda impar) cierra la
+   cuadrícula: con 7 servicios son 8 celdas exactas, sin hueco. */
+@media(min-width:1100px){
+  .proto .grid.g3.bento{grid-template-columns:repeat(4,1fr)}
+  .proto .bento .card-hero,.proto .bento > .wide{grid-column:span 2}
+}
+@media(min-width:641px) and (max-width:1099px){
+  .proto .grid.g3.bento{grid-template-columns:repeat(2,1fr)}
+  .proto .bento .card-hero{grid-column:span 2}
+  .proto .bento > .wide{grid-column:span 2}
+}
+@media(max-width:640px){.proto .bento .card-hero,.proto .bento > .wide{grid-column:span 1}}
+.proto .bento > .wide{justify-content:flex-end}
+
+/* P1 · Los chips del hero: todos con el mismo contraste sobre el glow */
+.proto .chip{background:rgba(19,2,24,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff}
+.proto .chip.a{background:rgba(209,30,104,.42)}
+.proto .chip.c{background:rgba(156,39,176,.42)}
+
+/* P1 · El avatar sin foto no puede brillar más que las fotos del equipo */
+.proto .tcard .avi{background:#241130;color:rgba(255,255,255,.32);font-size:1.9rem}
+
+/* P1 · El rol repetido bajo cada nombre era ruido: se oculta si repite el área */
+.proto .tcard span{font-size:.6rem;color:var(--gris-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* P2 · Encabezado de área: tipografía consistente con el resto */
+.proto .area-h h3{color:#FF9CC2}
+
+/* P1 · Ritmo: el cierre no queda flotando tras un bloque corto */
+.proto .closing{margin-top:clamp(1rem,2vw,2rem)}
+.proto .appscreen .row i svg{width:14px;height:14px;stroke:#FF9CC2;stroke-width:1.6}
+.proto .appscreen .atab span svg{display:block;margin:0 auto .25rem}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 11 — TIPOGRAFÍA v11
+   Escala fluida con tracking óptico por nivel, equilibrado de líneas
+   (text-wrap), contraste de grises subido y numerales tabulares.
+   Objetivo: que la letra se lea mejor y jerarquice sola.
+   ════════════════════════════════════════════════════════════════ */
+
+.proto{
+  /* grises con más cuerpo: el .58 se leía lavado sobre el morado */
+  --gris:rgba(255,255,255,.70);
+  --gris-2:rgba(255,255,255,.46);
+  --e-spring:cubic-bezier(.22,1.2,.36,1);
+}
+
+.proto{font-optical-sizing:auto}
+.proto{font-synthesis-weight:none;text-rendering:optimizeLegibility}
+
+/* Equilibrado de líneas: los titulares dejan de partirse en huérfanas
+   ("que sí / venden") y los párrafos ya no dejan una palabra sola al final. */
+.proto h1,.proto h2,.proto h3,.proto h4,.proto .somos h2,.proto .sec-h h2,.proto .bigpost b,.proto .post b{text-wrap:balance}
+.proto p,.proto .lede,.proto .intro,.proto .post .d,.proto .bigpost .d,.proto .tbl td,.proto li{text-wrap:pretty}
+
+/* Tracking óptico: cuanto más grande el tipo, más cerrado; los tamaños
+   pequeños necesitan lo contrario o se empastan. */
+.proto h1{letter-spacing:-.038em;line-height:1.0}
+.proto h2{letter-spacing:-.028em;line-height:1.05}
+.proto h3{letter-spacing:-.008em}
+.proto h4{letter-spacing:0}
+
+/* La escala de sección bajó un punto: 60px se comían tres líneas y
+   obligaban a leer en zigzag. Con 46-52px cabe la idea en dos. */
+.proto .sec-h h2{font-size:clamp(1.75rem,3.15vw,2.85rem);line-height:1.08;max-width:20ch}
+.proto .sec-h .intro{font-size:clamp(1rem,.62rem+.55vw,1.16rem);color:var(--gris);
+  max-width:66ch;line-height:1.68;margin-top:.9rem}
+.proto .head h2{font-size:clamp(2.1rem,4.1vw,3.4rem)}
+
+/* Entradilla: era 16px plano contra un titular de 66px. Ahora hay un
+   escalón intermedio de verdad. */
+.proto .lede{font-size:clamp(1.04rem,.66rem+.62vw,1.28rem);line-height:1.62;
+  color:var(--gris);max-width:58ch;letter-spacing:-.004em}
+.proto .hero8 .lede,.proto .hero .lede{font-size:clamp(1.08rem,.7rem+.72vw,1.35rem);line-height:1.58;max-width:54ch}
+.proto .closing .lede{max-width:46ch}
+
+/* Cuerpo: interlineado un pelo más alto sobre fondo oscuro */
+.proto p{line-height:1.68}
+.proto .card p,.proto .numlist p,.proto .cklist span,.proto .feat p{font-size:.95rem;line-height:1.66}
+
+/* Volanta con filete: deja de flotar suelta sobre el titular */
+.proto .eyebrow{display:flex;align-items:center;gap:.7rem;font-size:.7rem;letter-spacing:.2em;
+  color:var(--gris);font-weight:600}
+.proto .eyebrow::after{content:'';flex:1;height:1px;max-width:5.5rem;
+  background:linear-gradient(90deg,rgba(255,255,255,.28),transparent)}
+
+/* Cifras: numerales tabulares para que no bailen mientras cuentan */
+.proto .stat b,.proto .counters b,.proto .plan .p,.proto .cz-p .v,.proto .databar b,.proto .metric b,.proto .roi .v,.proto .tbl td b{
+  font-variant-numeric:tabular-nums;font-feature-settings:'tnum' 1}
+
+/* Énfasis magenta del titular: además del color, un trazo que se dibuja.
+   Va en background-size y no en un ::after absoluto: si el énfasis parte
+   en dos líneas, un pseudo-elemento absoluto pinta una barra fantasma
+   sobre el hueco; con box-decoration-break cada línea dibuja la suya. */
+.proto h1 .mg,.proto h2 .mg{color:#FF3D8B;
+  background-image:linear-gradient(90deg,#E91E63,#9C27B0);background-repeat:no-repeat;
+  background-position:0 100%;background-size:0% .055em;padding-bottom:.16em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  transition:background-size 1.05s var(--e-out) .5s}
+.proto .in h1 .mg,.proto .in h2 .mg,.proto h1.in .mg,.proto h2.in .mg{background-size:100% .055em}
+
+/* Palabra en contorno: se veía casi negra sobre el morado */
+.proto .stroke{-webkit-text-stroke:1.5px rgba(255,255,255,.55);color:transparent}
+
+/* Cita destacada: serif de acento, como los momentos "Somos un equipo" */
+.proto .pull p{font-family:var(--f-serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.24;letter-spacing:-.015em;max-width:22ch}
+
+/* Textos mínimos: nada por debajo de 13px real */
+.proto .mini,.proto .dim,.proto .from,.proto .trust span,.proto .crumbs{font-size:.82rem}
+.proto .card .from,.proto .ncard .k{font-size:.74rem;letter-spacing:.1em}
+
+/* Tabla: cabecera en versalitas y celdas con aire */
+.proto .tbl th{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-2);font-weight:600}
+.proto .tbl td{font-size:.94rem;line-height:1.62}
+.proto .tbl td:first-child{font-weight:600;color:var(--ink)}
+
+/* El hero interior arrancaba con 120px de vacío antes de las migas */
+.proto .hero8{padding-top:calc(var(--nav-h) + var(--pb) + clamp(1.4rem,3vw,2.6rem))}
+.proto .hero8 h1{font-size:clamp(2.35rem,4.4vw,4rem);max-width:15ch;margin-bottom:.5em}
+.proto .crumbs{margin-bottom:clamp(1.2rem,2.4vw,2rem)}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 12 — MOTION v11
+   Más movimiento, pero solo transform/opacity/clip: revelado palabra
+   a palabra, líneas de tiempo de scroll, foco que sigue al cursor,
+   pasos apilados y transición entre páginas.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── 1 · Transición entre páginas (el prototipo deja de parpadear) ── */
+@view-transition{navigation:auto}
+.proto ::view-transition-old(root){animation:vtOut .28s var(--e) both}
+.proto ::view-transition-new(root){animation:vtIn .42s var(--e-out) both}
+@keyframes vtOut{to{opacity:0;transform:translateY(-8px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
+.proto .nav{view-transition-name:vtnav}
+.proto .actionbar{view-transition-name:vtbar}
+.protobar{view-transition-name:vtproto}
+
+/* ── 2 · Titulares palabra a palabra ─────────────────────────────
+   El splitter de motion envuelve cada palabra en .w con su índice.  */
+.proto .ws .w{display:inline-block;opacity:0;transform:translateY(.44em) rotate(1.4deg);
+  filter:blur(5px);will-change:transform,opacity;
+  transition:opacity .62s var(--e-out),transform .82s var(--e-out),filter .5s ease;
+  transition-delay:calc(var(--i,0)*42ms)}
+.proto .ws.in .w,.proto .in .ws .w{opacity:1;transform:none;filter:none}
+.proto .ws.in,.proto .in .ws{will-change:auto}
+
+/* ── 3 · Revelados nuevos ────────────────────────────────────────── */
+.proto .rv-clip{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s var(--e-out)}
+.proto .rv-clip.in{clip-path:inset(0 0 0 0)}
+.proto .rv-l{opacity:0;transform:translateX(-2.2rem);transition:opacity .8s var(--e-out),transform 1s var(--e-out)}
+.proto .rv-l.in{opacity:1;transform:none}
+.proto .rv-s{opacity:0;transform:scale(.94);transition:opacity .7s var(--e-out),transform .9s var(--e-out)}
+.proto .rv-s.in{opacity:1;transform:none}
+.proto .rv-d7{transition-delay:.42s}.proto .rv-d8{transition-delay:.48s}
+
+/* ── 4 · Líneas de tiempo de scroll (donde el navegador las soporte).
+   Si no hay soporte, no se pierde nada: el elemento queda quieto. ── */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .proto .feat .pic img,.proto .localb .pic img,.proto .bigpost .cover img,.proto .ncard .cover img{
+      animation:parY linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes parY{from{transform:translateY(-4%) scale(1.12)}to{transform:translateY(4%) scale(1.12)}}
+    .proto .sec-num{animation:numDrift linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes numDrift{from{transform:translateY(2.5rem)}to{transform:translateY(-2.5rem)}}
+    .proto .gal figure:nth-child(odd) img{animation:parS linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes parS{from{transform:scale(1.16) translateY(-2%)}to{transform:scale(1.16) translateY(2%)}}
+    /* la banda de mockups se desplaza con el scroll, no sola */
+    .proto .band-rail{animation:railTilt linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes railTilt{from{transform:rotate(-2.6deg) translateX(-2.2%)}to{transform:rotate(-2.6deg) translateX(2.2%)}}
+  }
+}
+
+/* ── 5 · Foco que sigue al cursor en los héroes y el cierre ──────── */
+.proto .hero8,.proto .closing,.proto .cotiza,.proto .localb{position:relative}
+.proto .hero8::before,.proto .closing::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(38rem 26rem at var(--px,50%) var(--py,30%),rgba(209,30,104,.16),transparent 70%);
+  opacity:0;transition:opacity .6s var(--e)}
+.proto .hero8:hover::before,.proto .closing:hover::before{opacity:1}
+.proto .hero8 > *,.proto .closing > *{position:relative;z-index:1}
+
+/* ── 6 · Botones: barrido de luz + flecha viva ───────────────────── */
+/* El relleno de degradado vive en ::before (capa 6); el barrido va por
+   encima de todo o el propio relleno se lo come al pasar el cursor. */
+.proto .btn::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:45%;z-index:2;
+  pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);
+  transform:skewX(-18deg);transition:transform .75s var(--e);transform-origin:left}
+.proto .btn:hover::after{transform:skewX(-18deg) translateX(360%)}
+.proto .btn svg{transition:transform .45s var(--e-spring)}
+.proto .btn:hover svg{transform:translateX(3px)}
+.proto .btn-wa:hover svg{transform:scale(1.12) rotate(-6deg)}
+
+/* ── 7 · Nav: se compacta y difumina progresivamente al bajar ────── */
+.proto .nav{transition:height .4s var(--e),background-color .4s var(--e),backdrop-filter .4s var(--e)}
+.proto .nav.solid{backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);
+  background:rgba(12,1,16,.82);box-shadow:0 1px 0 rgba(255,255,255,.07),0 18px 40px -30px rgba(0,0,0,.9)}
+.proto .nav.solid .logo{transform:scale(.93);transition:transform .4s var(--e)}
+
+/* ── 8 · Banda cinética de texto (marca en movimiento) ───────────── */
+.proto .kmq{--dur:38s;overflow:hidden;padding:clamp(1.6rem,3vw,2.8rem) 0;position:relative;
+  border-top:1px solid var(--linea-s);border-bottom:1px solid var(--linea-s);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.proto .kmq .kt{display:flex;width:max-content;gap:0;animation:kmqRun var(--dur) linear infinite}
+.proto .kmq:hover .kt{animation-play-state:paused}
+.proto .kmq b,.proto .kmq i{font-family:var(--f-disp);font-weight:600;font-style:normal;
+  font-size:clamp(2rem,5.2vw,4.4rem);letter-spacing:-.035em;line-height:1;
+  padding:0 clamp(1rem,2vw,2rem);white-space:nowrap;display:inline-flex;align-items:center;gap:clamp(1rem,2vw,2rem)}
+.proto .kmq i{-webkit-text-stroke:1.4px rgba(255,255,255,.42);color:transparent}
+.proto .kmq b::after,.proto .kmq i::after{content:'';width:.34em;height:.34em;border-radius:50%;
+  background:var(--grad);flex:0 0 auto;opacity:.9}
+.proto .kmq.rev .kt{animation-direction:reverse}
+@keyframes kmqRun{to{transform:translateX(-50%)}}
+
+/* ── 9 · Pasos apilados: cada tarjeta se queda pegada y la siguiente
+       la cubre. Solo donde se pide con .stack, no en todos lados. ── */
+@media(min-width:900px){
+  .proto .steps.stack{display:block;position:relative}
+  .proto .steps.stack .step{position:sticky;top:calc(var(--nav-h) + var(--pb) + 2rem);
+    margin-bottom:1.1rem;background:var(--paper-2);
+    border:1px solid var(--linea-s);border-radius:1rem;padding:clamp(1.6rem,2.6vw,2.4rem)}
+  /* El escalón entre tarjetas tiene que dejar ver la fila del número y su
+     plazo: con 1,2rem se cortaba el titular por la mitad y parecía un fallo. */
+  .proto .steps.stack .step:nth-child(1){top:calc(var(--nav-h) + var(--pb) + 1.6rem);z-index:1}
+  .proto .steps.stack .step:nth-child(2){top:calc(var(--nav-h) + var(--pb) + 6rem);z-index:2}
+  .proto .steps.stack .step:nth-child(3){top:calc(var(--nav-h) + var(--pb) + 10.4rem);z-index:3}
+  .proto .steps.stack .step:nth-child(4){top:calc(var(--nav-h) + var(--pb) + 14.8rem);z-index:4}
+  .proto .steps.stack .step:nth-child(5){top:calc(var(--nav-h) + var(--pb) + 19.2rem);z-index:5}
+  .proto .steps.stack .step h4{font-size:clamp(1.25rem,2vw,1.7rem);font-family:var(--f-disp);
+    letter-spacing:-.02em;margin-bottom:.5rem}
+  .proto .steps.stack .step p{font-size:1.02rem;max-width:56ch}
+  .proto .steps.stack .step .t{position:absolute;top:clamp(1.6rem,2.6vw,2.4rem);right:clamp(1.6rem,2.6vw,2.4rem)}
+}
+
+/* ── 10 · Micro-interacciones de tabla, listas y tarjetas ────────── */
+.proto .tbl tbody tr{transition:background-color .3s var(--e)}
+.proto .tbl tbody tr:hover{background:rgba(209,30,104,.07)}
+.proto .numlist > div{transition:transform .45s var(--e),border-color .4s var(--e)}
+.proto .numlist > div:hover{transform:translateX(6px)}
+.proto .cklist li{transition:transform .4s var(--e)}
+.proto .cklist li:hover{transform:translateX(4px)}
+/* la inclinación 3D la escribe el JS en el atributo style: si el transform
+   lleva medio segundo de transición, el gesto se arrastra. 180 ms. */
+.proto .card{transition:transform .18s var(--e-out),border-color .4s var(--e),
+  background-color .4s var(--e),box-shadow .5s var(--e)}
+.proto .card:hover{box-shadow:0 30px 60px -40px rgba(209,30,104,.75)}
+
+/* ── 11 · Aparición escalonada de celdas de rejilla ──────────────── */
+.proto .stagger > *{opacity:0;transform:translateY(1.4rem);
+  transition:opacity .65s var(--e-out),transform .8s var(--e-out)}
+.proto .stagger.in > *{opacity:1;transform:none}
+.proto .stagger.in > *:nth-child(1){transition-delay:0s}
+.proto .stagger.in > *:nth-child(2){transition-delay:.06s}
+.proto .stagger.in > *:nth-child(3){transition-delay:.12s}
+.proto .stagger.in > *:nth-child(4){transition-delay:.18s}
+.proto .stagger.in > *:nth-child(5){transition-delay:.24s}
+.proto .stagger.in > *:nth-child(6){transition-delay:.3s}
+.proto .stagger.in > *:nth-child(n+7){transition-delay:.36s}
+
+/* ── 12 · Indicador de scroll del hero interior ──────────────────── */
+.proto .hint{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.6rem;
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-2)}
+.proto .hint i{width:1.6rem;height:1px;background:currentColor;display:block;
+  animation:hintRun 2.2s var(--e) infinite;transform-origin:left}
+@keyframes hintRun{0%,100%{transform:scaleX(.4)}50%{transform:scaleX(1)}}
+
+@media(prefers-reduced-motion:reduce){
+  .proto .ws .w{opacity:1;transform:none;filter:none}
+  .proto .kmq .kt{animation:none}
+  .proto .btn::after{display:none}
+  .proto .hint i{animation:none}
+  .proto .rv-clip{clip-path:none}
+  .proto .rv-l,.proto .rv-s{opacity:1;transform:none}
+  .proto .stagger > *{opacity:1;transform:none}
+  .proto h1 .mg,.proto h2 .mg{background-size:100% .055em}
+  .proto .ads .slot,.proto .chbars .bar i{opacity:1;transform:none}
+  .proto ::view-transition-old(root),.proto ::view-transition-new(root){animation:none!important}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 13 — PÁGINA SEM / GOOGLE ADS
+   Firma visual propia: la subasta de anuncios en vivo + la
+   calculadora de retorno. Nada de esto aparece en otra página.
+   ════════════════════════════════════════════════════════════════ */
+
+.proto .ads{border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);overflow:hidden;
+  box-shadow:0 40px 80px -60px rgba(0,0,0,.9)}
+.proto .ads .q{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.1rem;margin:1rem;
+  border:1px solid var(--linea);border-radius:999px;font-size:.88rem;color:var(--ink);background:rgba(0,0,0,.28)}
+.proto .ads .q::before{content:'';width:14px;height:14px;flex:0 0 auto;border-radius:50%;
+  border:1.6px solid var(--gris-2);box-shadow:5px 5px 0 -3.4px var(--gris-2)}
+.proto .ads .q .cur{width:1px;height:1.05em;background:var(--mag);animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.proto .ads .slot{padding:1rem 1.2rem;border-top:1px solid var(--linea-s);position:relative;
+  opacity:0;transform:translateY(10px);transition:opacity .6s var(--e-out),transform .7s var(--e-out)}
+.proto .ads.in .slot{opacity:1;transform:none}
+.proto .ads.in .slot:nth-child(2){transition-delay:.15s}
+.proto .ads.in .slot:nth-child(3){transition-delay:.35s}
+.proto .ads.in .slot:nth-child(4){transition-delay:.55s}
+.proto .ads .slot .tagad{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:#0B0110;background:#F5C518;border-radius:.25rem;padding:.1rem .38rem;margin-right:.5rem}
+.proto .ads .slot .dom{font-size:.75rem;color:var(--gris)}
+.proto .ads .slot h3{font-size:1.02rem;color:#9DB4FF;margin:.35rem 0 .3rem;font-family:var(--f-ui);
+  font-weight:500;letter-spacing:0}
+.proto .ads .slot p{font-size:.82rem;color:var(--gris);margin:0;line-height:1.55}
+.proto .ads .slot .ext{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.55rem}
+.proto .ads .slot .ext span{font-size:.72rem;color:#9DB4FF;border-bottom:1px solid rgba(157,180,255,.3)}
+.proto .ads .slot.mine{background:linear-gradient(90deg,rgba(209,30,104,.14),transparent 70%)}
+.proto .ads .slot.mine::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad)}
+.proto .ads .slot.rival{opacity:.55}
+.proto .ads.in .slot.rival{opacity:.5}
+.proto .ads .foot{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;padding:.85rem 1.2rem;
+  border-top:1px solid var(--linea-s);background:rgba(0,0,0,.25);font-size:.7rem;color:var(--gris-2)}
+.proto .ads .foot b{color:#7BE0A8;font-weight:600}
+
+/* Calculadora de retorno: mueve el presupuesto y todo se recalcula */
+.proto .roi{border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);
+  padding:clamp(1.3rem,2.4vw,1.9rem)}
+.proto .roi h3{font-size:1.2rem;margin-bottom:.25rem}
+.proto .roi .sub{font-size:.82rem;color:var(--gris);margin-bottom:1.3rem}
+.proto .roi label{display:flex;justify-content:space-between;align-items:baseline;
+  font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-2);margin-bottom:.5rem}
+.proto .roi label b{font-family:var(--f-disp);font-size:1.15rem;letter-spacing:-.02em;
+  color:#FF77AC;font-variant-numeric:tabular-nums}
+.proto .roi input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:4px;
+  background:linear-gradient(90deg,var(--mag) var(--fill,35%),rgba(255,255,255,.14) var(--fill,35%));
+  outline:none;margin:0 0 1.4rem}
+.proto .roi input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:#fff;border:5px solid var(--mag);cursor:grab;box-shadow:0 4px 14px rgba(0,0,0,.5);
+  transition:transform .2s var(--e-spring)}
+.proto .roi input[type=range]::-webkit-slider-thumb:active{transform:scale(1.15);cursor:grabbing}
+.proto .roi input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;
+  border:5px solid var(--mag);cursor:grab}
+.proto .roi .out{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea-s);
+  border:1px solid var(--linea-s);border-radius:.7rem;overflow:hidden;margin-bottom:1.1rem}
+.proto .roi .out > div{background:var(--paper-3);padding:.9rem .8rem;text-align:center}
+.proto .roi .v{display:block;font-family:var(--f-disp);font-weight:700;
+  font-size:clamp(1.3rem,2.6vw,1.9rem);letter-spacing:-.03em;line-height:1.1;
+  font-variant-numeric:tabular-nums;transition:color .3s var(--e)}
+.proto .roi .out > div span{display:block;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gris-2);margin-top:.3rem}
+.proto .roi .note{font-size:.72rem;color:var(--gris-2);line-height:1.6;margin:0 0 1.1rem}
+@media(max-width:480px){.proto .roi .out{grid-template-columns:1fr;gap:1px}}
+
+/* Barras comparativas de canal (dato real de su GA4) */
+.proto .chbars{display:grid;gap:1rem;margin-top:1.6rem}
+.proto .chbars .ch{display:grid;grid-template-columns:9rem 1fr auto;align-items:center;gap:1rem;font-size:.86rem}
+.proto .chbars .bar{height:.7rem;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}
+.proto .chbars .bar i{display:block;height:100%;border-radius:999px;background:var(--grad);
+  transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--e-out)}
+.proto .chbars.in .bar i{transform:scaleX(var(--w,.5))}
+.proto .chbars .ch:nth-child(2) .bar i{transition-delay:.12s}
+.proto .chbars .ch:nth-child(3) .bar i{transition-delay:.24s}
+.proto .chbars .ch b{font-variant-numeric:tabular-nums;font-family:var(--f-disp);letter-spacing:-.02em}
+.proto .chbars .ch.win b{color:#7BE0A8}
+@media(max-width:640px){.proto .chbars .ch{grid-template-columns:6.4rem 1fr auto;font-size:.78rem;gap:.7rem}}
+
+/* ── Escala óptica por longitud del titular ───────────────────────
+   El generador etiqueta el h1 según sus caracteres: un titular de 77
+   caracteres a 63 px salía en CINCO líneas y se leía en zigzag. */
+.proto .hero8 h1.h1-m,.proto .hero h1.h1-m{font-size:clamp(2.15rem,3.6vw,3.25rem);max-width:20ch}
+.proto .hero8 h1.h1-l,.proto .hero h1.h1-l{font-size:clamp(1.95rem,3.05vw,2.8rem);max-width:23ch;letter-spacing:-.03em}
+.proto .sec-h h2.h2-l{font-size:clamp(1.55rem,2.55vw,2.3rem);max-width:26ch;line-height:1.12}
+@media(max-width:640px){
+  .proto .hero8 h1.h1-l,.proto .hero h1.h1-l{max-width:none}
+  .proto .hero8 h1.h1-m,.proto .hero h1.h1-m{max-width:none}
+}
+
+/* Selector de rubro de la calculadora (mismo lenguaje que el cotizador) */
+.proto .roi .segs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.3rem}
+.proto .roi .segs button{font-family:var(--f-ui);font-size:.79rem;font-weight:500;color:var(--ink);
+  background:transparent;border:1px solid var(--linea);border-radius:999px;padding:.55rem 1rem;
+  cursor:pointer;min-height:42px;
+  transition:background-color .3s var(--e),border-color .3s var(--e),color .3s var(--e),transform .14s var(--e-out)}
+.proto .roi .segs button:hover{border-color:var(--mag)}
+.proto .roi .segs button:active{transform:scale(.96)}
+.proto .roi .segs button[aria-pressed="true"]{background:var(--mag);border-color:var(--mag);color:#fff}
+.proto .roi .note .sup{color:#FF9CC2;font-weight:600}
+
+/* Las cifras de la calculadora las estaba pisando la regla de las etiquetas
+   (`.roi .out > div span` es más específica que `.roi .v`): salían a 10 px. */
+.proto .roi .out > div span.v{font-size:clamp(1.35rem,2.4vw,1.85rem);font-weight:700;
+  font-family:var(--f-disp);letter-spacing:-.03em;color:var(--ink);
+  text-transform:none;margin-top:0}
+.proto .roi .out > div:nth-child(2) span.v{color:#FF77AC}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 14 — MENÚ DEL CLIENTE
+   El header conserva su diseño (barra fija, logo, desplegable, misma
+   tipografía y colores). Lo único que cambia es QUÉ dice: la estructura
+   enviada por 3R Core, con sus ocho entradas y sus nombres completos.
+   Los nombres son largos, así que el tamaño baja y el punto de colapso
+   sube: caben los ocho o no cabe ninguno.
+   ════════════════════════════════════════════════════════════════ */
+.proto .nav .wrap{gap:.8rem}
+.proto .nav .links{gap:0}
+.proto .nav .links > a,.proto .drop > a{font-size:.715rem;letter-spacing:.055em;padding:.6rem .62rem;
+  font-family:var(--f-ui);font-weight:500;text-transform:uppercase;color:var(--ink);
+  cursor:pointer;transition:color .4s var(--e);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.35rem}
+.proto .drop > a:hover,.proto .drop > a.on{color:var(--mag)}
+.proto .drop:hover > a svg,.proto .drop:focus-within > a svg{transform:rotate(180deg)}
+.proto .drop > a svg{width:10px;height:10px;stroke-width:2;transition:transform .4s var(--e)}
+.proto .drop .panel{grid-template-columns:1fr;width:min(93vw,340px);left:auto;right:0;transform:translateY(-.5rem)}
+.proto .drop:hover .panel,.proto .drop:focus-within .panel{transform:translateY(0)}
+
+/* «Contáctanos» es la última entrada del menú del cliente y hace de CTA:
+   así no hace falta un botón «Cotizar» aparte que duplique el destino. */
+.proto .nav .links > a.pill{background:var(--grad);border-radius:999px;color:#fff;
+  padding:.62rem 1.05rem;margin-left:.5rem;
+  transition:filter .35s var(--e),transform .16s var(--e-out)}
+.proto .nav .links > a.pill:hover{color:#fff;filter:brightness(1.12)}
+.proto .nav .links > a.pill:active{transform:scale(.97)}
+.proto .nav .links > a.pill::after{display:none}
+
+/* El subrayado del activo no cabe bajo un texto tan ajustado */
+.proto .nav .links > a::after{left:.62rem;right:.62rem;bottom:.18rem}
+
+/* Ocho entradas con nombres completos necesitan más sitio: el menú de
+   hamburguesa entra antes que en la versión anterior (1140 px). */
+@media(max-width:1279px){.proto .nav .links{display:none}.proto .burger{display:block}}
+@media(min-width:1280px){.proto .burger{display:none}}
+@media(min-width:1280px) and (max-width:1400px){
+  .proto .nav .links > a,.proto .drop > a{font-size:.685rem;padding:.6rem .5rem;letter-spacing:.04em}
+  .proto .nav .links > a.pill{padding:.6rem .9rem}
+}
+
+/* Los hijos de «Marketing digital» en el panel móvil, sangrados */
+.proto .sheet a.sub{font-size:clamp(1rem,4.4vw,1.5rem);padding-left:1.6rem;opacity:.85;
+  border-bottom-style:dashed}
+.proto .sheet a.sub::before{content:'';position:absolute;left:.3rem;width:.55rem;height:1px;
+  background:var(--gris-2)}
+.proto .sheet a{position:relative}
+.proto.menu .sheet a:nth-child(n+11){transition-delay:.45s}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 15 — FIRMAS VISUALES DE LAS PÁGINAS NUEVAS
+   Redes sociales = la parrilla · Influencer y UGC = el tablero de
+   casting · Branding = el manual de marca con sus activos reales.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── PARRILLA DE CONTENIDOS ───────────────────────────────────── */
+.proto .parrilla{border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);
+  padding:clamp(1rem,2vw,1.4rem);box-shadow:0 40px 80px -60px rgba(0,0,0,.9)}
+.proto .parrilla .ph{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  flex-wrap:wrap;margin-bottom:1rem}
+.proto .parrilla .ph b{font-family:var(--f-disp);font-size:1.05rem;letter-spacing:-.02em}
+.proto .parrilla .ph span{font-size:.72rem;color:var(--gris-2);letter-spacing:.08em;text-transform:uppercase}
+.proto .parrilla .pdias{display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem;margin-bottom:.35rem}
+.proto .parrilla .pdias span{text-align:center;font-size:.6rem;font-weight:700;letter-spacing:.1em;
+  color:var(--gris-2)}
+.proto .parrilla .pgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem}
+.proto .parrilla .pgrid i{display:grid;place-items:center;aspect-ratio:1;border-radius:.4rem;
+  font-style:normal;font-size:.53rem;font-weight:700;letter-spacing:.02em;text-align:center;
+  line-height:1.1;padding:.1rem;overflow:hidden}
+.proto .parrilla .pgrid i.off{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.07)}
+.proto .parrilla .pgrid i.reel{background:rgba(233,30,99,.9);color:#fff}
+.proto .parrilla .pgrid i.carrusel{background:rgba(156,39,176,.85);color:#fff}
+.proto .parrilla .pgrid i.story{background:rgba(255,111,160,.24);color:#FF9CC2;border:1px solid rgba(255,111,160,.4)}
+.proto .parrilla .pgrid i.foto{background:rgba(255,255,255,.14);color:#fff}
+.proto .parrilla .pgrid i.ugc{background:rgba(123,224,168,.2);color:#7BE0A8;border:1px solid rgba(123,224,168,.4)}
+.proto .parrilla .pleyenda{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin-top:1rem;
+  padding-top:.9rem;border-top:1px solid var(--linea-s)}
+.proto .parrilla .pleyenda span{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--gris)}
+.proto .parrilla .pleyenda span::before{content:'';width:.55rem;height:.55rem;border-radius:.15rem}
+.proto .parrilla .pleyenda .reel::before{background:#E91E63}
+.proto .parrilla .pleyenda .carrusel::before{background:#9C27B0}
+.proto .parrilla .pleyenda .story::before{background:#FF9CC2}
+.proto .parrilla .pleyenda .foto::before{background:rgba(255,255,255,.6)}
+.proto .parrilla .pleyenda .ugc::before{background:#7BE0A8}
+@media(max-width:420px){.proto .parrilla .pgrid i{font-size:.44rem}}
+
+/* ── TABLERO DE CASTING ───────────────────────────────────────── */
+.proto .casting{border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);
+  padding:clamp(1.1rem,2.2vw,1.6rem)}
+.proto .casting .ch{margin-bottom:1.1rem}
+.proto .casting .ch b{display:block;font-family:var(--f-disp);font-size:1.05rem;letter-spacing:-.02em}
+.proto .casting .ch span{font-size:.72rem;color:var(--gris-2);letter-spacing:.08em;text-transform:uppercase}
+.proto .casting .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.proto .cperfil{position:relative;border:1px solid var(--linea-s);border-radius:.7rem;
+  padding:.9rem .85rem;background:rgba(0,0,0,.22);
+  transition:border-color .4s var(--e),transform .4s var(--e)}
+.proto .cperfil:hover{border-color:rgba(209,30,104,.5);transform:translateY(-3px)}
+.proto .cperfil.on{border-color:rgba(209,30,104,.55);background:linear-gradient(160deg,rgba(209,30,104,.16),rgba(0,0,0,.2))}
+.proto .cperfil .sel{position:absolute;top:-.55rem;right:.7rem;font-size:.55rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--grad);
+  border-radius:999px;padding:.2rem .5rem}
+.proto .cperfil b{display:block;font-family:var(--f-disp);font-size:1rem;letter-spacing:-.02em;margin-bottom:.1rem}
+.proto .cperfil .rango{display:block;font-size:.78rem;font-weight:600;color:#FF77AC;
+  font-variant-numeric:tabular-nums;margin-bottom:.5rem}
+.proto .cperfil .eng{display:flex;align-items:center;gap:.35rem;font-size:.66rem;color:var(--gris);margin-bottom:.45rem}
+.proto .cperfil .eng i{width:.4rem;height:.4rem;border-radius:50%;background:#7BE0A8;flex:0 0 auto}
+.proto .cperfil .uso{display:block;font-size:.72rem;color:var(--gris);line-height:1.45;margin-bottom:.5rem}
+.proto .cperfil .plat{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris-2)}
+.proto .casting .cnota{font-size:.7rem;color:var(--gris-2);line-height:1.6;margin:1rem 0 0;max-width:52ch}
+@media(max-width:480px){.proto .casting .cgrid{grid-template-columns:1fr}}
+
+/* ── MANUAL DE MARCA ──────────────────────────────────────────── */
+.proto .manual{border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);overflow:hidden}
+.proto .manual .mh{padding:1.1rem 1.3rem;border-bottom:1px solid var(--linea-s);background:rgba(0,0,0,.25)}
+.proto .manual .mh b{display:block;font-family:var(--f-disp);font-size:1.05rem;letter-spacing:-.02em}
+.proto .manual .mh span{font-size:.7rem;color:var(--gris-2)}
+.proto .manual .mlogo{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1px;background:var(--linea-s)}
+.proto .manual .mbox{background:#0E0113;display:grid;place-items:center;padding:1.4rem .8rem;min-height:6.4rem}
+.proto .manual .mbox.lite{background:#fff}
+.proto .manual .mbox img{max-height:3.2rem;width:auto;object-fit:contain}
+.proto .manual .mpal{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--linea-s);
+  border-top:1px solid var(--linea-s)}
+.proto .manual .mpal span{background:var(--paper-2);padding:.7rem .5rem;text-align:center}
+.proto .manual .mpal i{display:block;height:2.6rem;border-radius:.35rem;background:var(--c);
+  border:1px solid rgba(255,255,255,.12);margin-bottom:.45rem}
+.proto .manual .mpal b{display:block;font-size:.62rem;font-weight:600;letter-spacing:.04em}
+.proto .manual .mpal small{display:block;font-size:.53rem;color:var(--gris-2);font-variant-numeric:tabular-nums}
+.proto .manual .mtipo{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea-s);
+  border-top:1px solid var(--linea-s)}
+.proto .manual .mtipo > div{background:var(--paper-2);padding:1rem 1.1rem}
+.proto .manual .mtipo .et{display:block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris-2);margin-bottom:.3rem}
+.proto .manual .mtipo b{display:block;line-height:1;margin-bottom:.35rem}
+.proto .manual .mtipo .t1{font-family:var(--f-disp);font-weight:700;font-size:2.6rem;letter-spacing:-.05em}
+.proto .manual .mtipo .t2{font-family:var(--f-ui);font-weight:500;font-size:2.4rem;letter-spacing:-.02em}
+.proto .manual .mtipo small{font-size:.62rem;color:var(--gris)}
+.proto .manual .maplic{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea-s);
+  border-top:1px solid var(--linea-s)}
+.proto .manual .maplic figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:#0E0113}
+.proto .manual .maplic img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--e-out)}
+.proto .manual .maplic figure:hover img{transform:scale(1.06)}
+@media(max-width:520px){
+  .proto .manual .mpal{grid-template-columns:repeat(3,1fr)}
+  .proto .manual .mlogo{grid-template-columns:1fr 1fr}
+  .proto .manual .mlogo .mbox:last-child{grid-column:span 2}
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PÁGINA INFLUENCER Y UGC — v13
+   Densidad y gramática de movimiento de referencia (publifyer.com),
+   con la paleta, la tipografía y el MATERIAL REAL de 3R Core.
+   Todo va prefijado .ug- : ninguna otra plantilla se entera.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1 · HERO con muro de contenido vertical ───────────────────── */
+.proto .ug-h8 .grid8{grid-template-columns:1.04fr .96fr;align-items:center}
+.proto .ug-h8 .art8{overflow:visible}
+.proto .ug-h8 h1{max-width:15ch}
+
+.proto .ug-chip{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;
+  padding:.38rem .85rem .38rem .55rem;border:1px solid var(--linea);border-radius:2rem;
+  background:rgba(233,30,99,.09);font-size:.68rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.86)}
+.proto .ug-chip i{width:.42rem;height:.42rem;border-radius:50%;background:var(--mag-2);flex:0 0 auto;
+  box-shadow:0 0 0 .28rem rgba(233,30,99,.22);animation:ugPulse 2.6s var(--e) infinite}
+@keyframes ugPulse{0%,100%{box-shadow:0 0 0 .22rem rgba(233,30,99,.24)}50%{box-shadow:0 0 0 .5rem rgba(233,30,99,0)}}
+
+.proto .ug-wall{--gap:13px;position:relative;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:var(--gap);height:clamp(26rem,44vw,36rem);overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 11%,#000 86%,transparent);
+  mask-image:linear-gradient(to bottom,transparent,#000 11%,#000 86%,transparent)}
+.proto .ug-col{display:flex;flex-direction:column;gap:var(--gap);will-change:transform;
+  animation:ugUp var(--d,48s) linear infinite}
+.proto .ug-col.rev{animation-name:ugDown}
+@keyframes ugUp{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,calc(-50% - var(--gap)/2),0)}}
+@keyframes ugDown{from{transform:translate3d(0,calc(-50% - var(--gap)/2),0)}to{transform:translate3d(0,0,0)}}
+.proto .ug-wall:hover .ug-col{animation-play-state:paused}
+.proto .ug-t{position:relative;flex:0 0 auto;margin:0;border-radius:.85rem;overflow:hidden;
+  border:1px solid var(--linea-s);background:var(--paper-3);
+  transition:transform .6s var(--e-out),border-color .4s var(--e)}
+.proto .ug-t img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;
+  filter:saturate(.94) contrast(1.02);transition:filter .6s var(--e)}
+.proto .ug-t::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(19,2,24,.42) 0%,transparent 34%,transparent 62%,rgba(19,2,24,.6) 100%)}
+.proto .ug-t .tag{position:absolute;left:.5rem;top:.5rem;z-index:2;padding:.2rem .5rem;border-radius:1rem;
+  background:rgba(19,2,24,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.16);
+  font-size:.53rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.proto .ug-t .who{position:absolute;left:.55rem;bottom:.5rem;z-index:2;font-size:.56rem;
+  letter-spacing:.06em;color:rgba(255,255,255,.78)}
+.proto .ug-t:hover{transform:translateY(-4px);border-color:rgba(233,30,99,.5)}
+.proto .ug-t:hover img{filter:none}
+.proto .ug-wallnote{font-size:.68rem;color:var(--gris-2);line-height:1.55;margin:.9rem 0 0;text-align:right}
+
+/* ── 2 · BANDA MAGENTA DE MARCAS ───────────────────────────────── */
+.proto .ug-strip{position:relative;overflow:hidden;background:var(--grad);
+  padding:clamp(1.55rem,2.4vw,2rem) 0 clamp(.9rem,1.8vw,1.4rem);border-block:1px solid rgba(255,255,255,.14)}
+.proto .ug-strip .st{display:flex;width:max-content;align-items:center;gap:clamp(2.2rem,4.4vw,4.6rem);
+  will-change:transform;animation:ugSlide 52s linear infinite}
+.proto .ug-strip:hover .st{animation-play-state:paused}
+@keyframes ugSlide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.proto .ug-strip img{height:clamp(1.35rem,2.2vw,2rem);width:auto;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.94}
+.proto .ug-striplab{position:absolute;left:50%;top:.42rem;transform:translateX(-50%);z-index:2;
+  font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+
+/* ── 3 · PANELES DE DOBLE PÚBLICO ──────────────────────────────── */
+.proto .ug-panel{position:relative;overflow:hidden;border:1px solid var(--linea);border-radius:1.5rem;
+  background:linear-gradient(165deg,var(--paper-3) 0%,var(--paper-2) 46%,rgba(19,2,24,.86) 100%);
+  padding:clamp(1.5rem,3.4vw,3.2rem);display:grid;
+  grid-template-columns:.92fr 1.08fr;gap:clamp(1.6rem,4vw,3.6rem);align-items:center;
+  margin-bottom:clamp(1.2rem,2.4vw,2rem)}
+.proto .ug-panel::before{content:'';position:absolute;width:34rem;height:34rem;border-radius:50%;
+  right:-14rem;top:-16rem;pointer-events:none;
+  background:radial-gradient(circle,rgba(233,30,99,.22),transparent 62%)}
+.proto .ug-panel.rev{grid-template-columns:1.08fr .92fr}
+.proto .ug-panel.rev .ug-art{order:2}
+.proto .ug-panel > *{position:relative;z-index:1;min-width:0}
+.proto .ug-panel h2{font-size:clamp(1.85rem,3.2vw,2.85rem);margin-bottom:.25em}
+.proto .ug-panel .sub{font-size:.94rem;color:var(--gris);margin-bottom:1.6rem;max-width:44ch}
+.proto .ug-rows > div{display:grid;grid-template-columns:2.9rem 1fr;gap:1.05rem;align-items:start;
+  padding:1.05rem 0;border-top:1px solid var(--linea-s)}
+.proto .ug-rows > div:first-child{border-top:0;padding-top:0}
+.proto .ug-rows .ic{width:2.9rem;height:2.9rem;border-radius:.85rem;display:grid;place-items:center;
+  border:1px solid rgba(233,30,99,.34);background:rgba(233,30,99,.12);color:#FF77AC;
+  transition:transform .5s var(--e),background .4s var(--e)}
+.proto .ug-rows > div:hover .ic{transform:translateY(-2px) scale(1.04);background:rgba(233,30,99,.2)}
+.proto .ug-rows b{display:block;font-family:var(--f-disp);font-weight:600;font-size:1rem;
+  letter-spacing:-.015em;margin-bottom:.16rem;line-height:1.3}
+.proto .ug-rows span{display:block;font-size:.85rem;color:var(--gris);line-height:1.55}
+.proto .ug-panel .btns{margin-top:1.7rem}
+
+/* Teléfono en CSS: maqueta del flujo de aprobación */
+.proto .ug-phone{position:relative;width:min(100%,17.5rem);margin:0 auto;aspect-ratio:9/18.6;
+  border-radius:2.2rem;padding:.55rem;background:linear-gradient(150deg,#3a3a41,#141418 42%,#2b2b31);
+  box-shadow:0 32px 70px -24px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.08);
+  animation:ugFloat 7s ease-in-out infinite}
+.proto .ug-phone .scr{position:relative;height:100%;border-radius:1.75rem;overflow:hidden;
+  background:#0E0113;display:flex;flex-direction:column}
+.proto .ug-phone .nub{position:absolute;left:50%;top:.45rem;transform:translateX(-50%);z-index:3;
+  width:4.2rem;height:1.15rem;border-radius:1rem;background:#000}
+.proto .ug-phone .ph-h{padding:1.5rem .85rem .7rem;background:var(--grad);color:#fff}
+.proto .ug-phone .ph-h b{display:block;font-family:var(--f-disp);font-size:.9rem;letter-spacing:-.01em}
+.proto .ug-phone .ph-h span{font-size:.6rem;opacity:.86}
+.proto .ug-phone .ph-b{padding:.7rem;display:flex;flex-direction:column;gap:.55rem;overflow:hidden}
+.proto .ug-phone .pc{border:1px solid var(--linea-s);border-radius:.7rem;background:var(--paper-2);padding:.6rem .65rem;
+  opacity:0;transform:translateY(.6rem);transition:opacity .6s var(--e-out),transform .6s var(--e-out)}
+.proto .in .ug-phone .pc{opacity:1;transform:none}
+.proto .in .ug-phone .pc:nth-child(2){transition-delay:.14s}
+.proto .in .ug-phone .pc:nth-child(3){transition-delay:.28s}
+.proto .ug-phone .pc .r1{display:flex;align-items:center;gap:.45rem;margin-bottom:.3rem}
+.proto .ug-phone .pc .av{width:1.5rem;height:1.5rem;border-radius:50%;background:var(--grad);flex:0 0 auto;
+  display:grid;place-items:center;font-size:.55rem;font-weight:700;color:#fff}
+.proto .ug-phone .pc b{font-family:var(--f-disp);font-size:.72rem;letter-spacing:-.01em}
+.proto .ug-phone .pc .m{margin-left:auto;font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;
+  color:#FF8AB8;border:1px solid rgba(233,30,99,.4);border-radius:1rem;padding:.08rem .38rem}
+.proto .ug-phone .pc p{margin:0;font-size:.6rem;color:var(--gris);line-height:1.45}
+.proto .ug-phone .pc .ok{display:flex;gap:.3rem;margin-top:.45rem}
+.proto .ug-phone .pc .ok i{flex:1;text-align:center;font-style:normal;font-size:.52rem;font-weight:600;
+  padding:.24rem 0;border-radius:.35rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.72)}
+.proto .ug-phone .pc .ok i.y{background:var(--grad);color:#fff}
+.proto .ug-phnote{display:block;text-align:center;font-size:.62rem;color:var(--gris-2);margin-top:.9rem}
+@keyframes ugFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* Órbita: retrato + plataformas girando */
+.proto .ug-orbit{position:relative;width:min(100%,21rem);aspect-ratio:1;margin:0 auto}
+.proto .ug-orbit .ring{position:absolute;inset:0;border:1px dashed rgba(255,255,255,.2);border-radius:50%;
+  animation:ugSpin 38s linear infinite}
+.proto .ug-orbit .ring.two{inset:11%;border-style:solid;border-color:rgba(233,30,99,.16);
+  animation-duration:26s;animation-direction:reverse}
+/* Los chips ORBITAN: giran dentro de .sat y su texto se contragira para
+   quedar siempre derecho. Si el chip lleva la animación él mismo, no orbita:
+   gira sobre su propio eje y el nombre se lee del revés. */
+.proto .ug-orbit .sat{position:absolute;inset:0;animation:ugSpin 38s linear infinite}
+.proto .ug-orbit .pl{position:absolute;width:3.2rem;height:3.2rem;margin:-1.6rem 0 0 -1.6rem;border-radius:50%;
+  background:var(--paper-3);border:1px solid var(--linea);display:grid;place-items:center;
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.8)}
+.proto .ug-orbit .pl i{display:block;font-style:normal;color:#fff;font-weight:700;letter-spacing:.02em;
+  animation:ugSpinBack 38s linear infinite}
+.proto .ug-orbit .pic{position:absolute;inset:19%;border-radius:50%;overflow:hidden;
+  background:var(--grad);box-shadow:0 22px 60px -20px rgba(233,30,99,.6)}
+.proto .ug-orbit .pic img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;opacity:.92}
+@keyframes ugSpin{to{transform:rotate(360deg)}}
+@keyframes ugSpinBack{to{transform:rotate(-360deg)}}
+
+/* ── 4 · INFLUENCER vs UGC: pestañas ───────────────────────────── */
+.proto .ug-vs{border:1px solid var(--linea);border-radius:1.2rem;overflow:hidden;background:var(--paper-2)}
+.proto .ug-tabs{position:relative;display:flex;gap:.4rem;padding:.4rem;background:rgba(0,0,0,.3);
+  border-bottom:1px solid var(--linea-s)}
+.proto .ug-tabs .ind{position:absolute;top:.4rem;bottom:.4rem;left:.4rem;width:calc(50% - .6rem);
+  border-radius:.75rem;background:var(--grad);transition:transform .55s var(--e);z-index:0}
+.proto .ug-tabs button{position:relative;z-index:1;flex:1;border:0;background:none;cursor:pointer;
+  padding:.85rem .7rem;border-radius:.75rem;font-family:var(--f-disp);font-size:.98rem;
+  font-weight:600;letter-spacing:-.01em;color:var(--gris);transition:color .4s var(--e)}
+.proto .ug-tabs button[aria-selected="true"]{color:#fff}
+.proto .ug-tabs button:active{transform:scale(.98)}
+.proto .ug-pane{display:none;padding:clamp(1.4rem,3vw,2.6rem)}
+.proto .ug-pane.on{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.4rem,3vw,2.8rem);
+  align-items:center;animation:ugFade .55s var(--e-out) both}
+@keyframes ugFade{from{opacity:0;transform:translateY(.8rem)}to{opacity:1;transform:none}}
+.proto .ug-pane h3{font-size:clamp(1.35rem,2.2vw,1.85rem);letter-spacing:-.025em;margin-bottom:.5rem}
+.proto .ug-pane p{font-size:.95rem;color:var(--gris);line-height:1.65;max-width:52ch}
+.proto .ug-pane .pill{display:inline-block;margin-bottom:1rem;padding:.28rem .7rem;border-radius:2rem;
+  font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid rgba(233,30,99,.42);color:#FF8AB8;background:rgba(233,30,99,.1)}
+.proto .ug-pane .lst{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.55rem}
+.proto .ug-pane .lst li{display:grid;grid-template-columns:1.15rem 1fr;gap:.6rem;font-size:.85rem;color:var(--gris)}
+.proto .ug-pane .lst svg{width:1.15rem;height:1.15rem;color:var(--mag-2);margin-top:.15rem}
+.proto .ug-diag{border:1px solid var(--linea-s);border-radius:1rem;background:rgba(0,0,0,.28);padding:1.3rem}
+.proto .ug-diag .dn{display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;align-items:center;
+  padding:.75rem;border:1px solid var(--linea-s);border-radius:.7rem;background:var(--paper-2)}
+.proto .ug-diag .dn b{display:block;font-family:var(--f-disp);font-size:.82rem}
+.proto .ug-diag .dn span{font-size:.68rem;color:var(--gris-2);line-height:1.4}
+.proto .ug-diag .dn i{width:2.4rem;height:2.4rem;border-radius:.6rem;display:grid;place-items:center;
+  background:rgba(233,30,99,.14);color:#FF8AB8}
+.proto .ug-diag .ar{display:grid;place-items:center;height:1.9rem;color:var(--mag);font-size:1rem}
+.proto .ug-diag .ar::after{content:'↓';animation:ugDrop 2.4s var(--e) infinite}
+@keyframes ugDrop{0%,100%{transform:translateY(-2px);opacity:.55}50%{transform:translateY(3px);opacity:1}}
+
+/* ── 5 · ACORDEÓN DE MODELOS ───────────────────────────────────── */
+.proto .ug-acc{display:grid;gap:.7rem}
+.proto .ug-acc details{border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);
+  overflow:hidden;transition:border-color .4s var(--e),background .4s var(--e)}
+.proto .ug-acc details[open]{border-color:rgba(233,30,99,.46);background:var(--paper-3)}
+.proto .ug-acc summary{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;
+  padding:1.1rem 1.3rem;cursor:pointer;list-style:none}
+.proto .ug-acc summary::-webkit-details-marker{display:none}
+.proto .ug-acc summary:hover .t{color:var(--mag-2)}
+.proto .ug-acc .n{font-family:var(--f-disp);font-size:.78rem;font-weight:600;
+  color:var(--mag-2);font-variant-numeric:tabular-nums}
+.proto .ug-acc .t{font-family:var(--f-disp);font-size:1.02rem;font-weight:600;
+  letter-spacing:-.015em;transition:color .35s var(--e)}
+.proto .ug-acc .t em{display:block;font-style:normal;font-family:var(--f-ui);font-size:.76rem;
+  font-weight:400;color:var(--gris-2);letter-spacing:0;margin-top:.15rem}
+.proto .ug-acc .pm{position:relative;width:1.9rem;height:1.9rem;border-radius:50%;flex:0 0 auto;
+  border:1px solid var(--linea);transition:background .4s var(--e),border-color .4s var(--e)}
+.proto .ug-acc .pm::before,.proto .ug-acc .pm::after{content:'';position:absolute;background:var(--mag-2);
+  transition:transform .5s var(--e),opacity .35s var(--e)}
+.proto .ug-acc .pm::before{top:.9rem;left:.48rem;width:.9rem;height:1.5px}
+.proto .ug-acc .pm::after{left:.9rem;top:.48rem;width:1.5px;height:.9rem}
+.proto .ug-acc details[open] .pm{background:var(--grad);border-color:transparent}
+.proto .ug-acc details[open] .pm::before,.proto .ug-acc details[open] .pm::after{background:#fff}
+.proto .ug-acc details[open] .pm::after{transform:rotate(90deg);opacity:0}
+.proto .ug-acc .body{padding:0 1.3rem 1.3rem;display:grid;grid-template-columns:1fr 1fr;
+  gap:1rem 1.6rem;border-top:1px solid var(--linea-s);padding-top:1.1rem;margin:0 1.3rem 1.3rem 1.3rem}
+.proto .ug-acc .body > div span{display:block;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--gris-2);margin-bottom:.3rem}
+.proto .ug-acc .body > div p{margin:0;font-size:.87rem;color:var(--gris);line-height:1.6}
+
+/* ── 6 · INFORME DE CIERRE (maqueta etiquetada) ────────────────── */
+.proto .ug-report{border:1px solid var(--linea);border-radius:1.2rem;background:var(--paper-2);overflow:hidden}
+.proto .ug-report .rh{display:flex;align-items:center;gap:.8rem;padding:.9rem 1.2rem;
+  background:rgba(0,0,0,.3);border-bottom:1px solid var(--linea-s)}
+.proto .ug-report .rh b{font-family:var(--f-disp);font-size:.95rem;letter-spacing:-.01em}
+.proto .ug-report .rh .ej{margin-left:auto;font-size:.55rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:#FFC7DE;border:1px solid rgba(233,30,99,.45);
+  background:rgba(233,30,99,.14);border-radius:1rem;padding:.2rem .55rem}
+.proto .ug-report .dots{display:flex;gap:.3rem}
+.proto .ug-report .dots i{width:.45rem;height:.45rem;border-radius:50%;background:var(--linea)}
+.proto .ug-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea-s)}
+.proto .ug-kpis > div{background:var(--paper-2);padding:1.1rem 1.15rem}
+.proto .ug-kpis b{display:block;font-family:var(--f-disp);font-weight:600;
+  font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.03em;line-height:1;
+  font-variant-numeric:tabular-nums;color:#fff}
+.proto .ug-kpis span{display:block;font-size:.66rem;color:var(--gris-2);margin-top:.35rem;line-height:1.4}
+.proto .ug-bars{padding:1.4rem 1.3rem 1.1rem;border-top:1px solid var(--linea-s)}
+.proto .ug-bars .bt{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gris-2);
+  margin-bottom:.9rem}
+.proto .ug-bars .b{display:grid;grid-template-columns:7.5rem 1fr auto;gap:.8rem;align-items:center;
+  margin-bottom:.55rem;font-size:.78rem}
+.proto .ug-bars .b span{color:var(--gris)}
+.proto .ug-bars .b em{font-style:normal;font-variant-numeric:tabular-nums;color:#fff;font-weight:600;font-size:.76rem}
+.proto .ug-bars .b s{display:block;height:.5rem;border-radius:1rem;background:rgba(255,255,255,.07);
+  text-decoration:none;overflow:hidden}
+.proto .ug-bars .b s i{display:block;height:100%;width:0;border-radius:1rem;background:var(--grad);
+  transition:width 1.4s var(--e-out)}
+.proto .ug-report.in .ug-bars .b s i{width:calc(var(--w) * 1%)}
+.proto .ug-bars .b:nth-child(2) s i{transition-delay:.1s}
+.proto .ug-bars .b:nth-child(3) s i{transition-delay:.2s}
+.proto .ug-bars .b:nth-child(4) s i{transition-delay:.3s}
+.proto .ug-bars .b:nth-child(5) s i{transition-delay:.4s}
+.proto .ug-rnote{font-size:.68rem;color:var(--gris-2);line-height:1.6;margin:0;padding:0 1.3rem 1.3rem}
+
+/* ── 7 · DERECHOS DE USO ───────────────────────────────────────── */
+.proto .ug-rights{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.proto .ug-doc{position:relative;border:1px solid var(--linea);border-radius:1rem;background:var(--paper-2);
+  padding:1.5rem 1.6rem;transform:rotate(-1.1deg);transition:transform .7s var(--e-out)}
+.proto .ug-doc:hover{transform:rotate(0)}
+.proto .ug-doc::before{content:'';position:absolute;inset:0;border-radius:1rem;pointer-events:none;
+  background:linear-gradient(150deg,rgba(233,30,99,.14),transparent 46%)}
+.proto .ug-doc .dh{display:flex;align-items:center;gap:.6rem;padding-bottom:.9rem;margin-bottom:1rem;
+  border-bottom:1px dashed var(--linea)}
+.proto .ug-doc .dh b{font-family:var(--f-disp);font-size:.95rem}
+.proto .ug-doc ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;position:relative}
+.proto .ug-doc li{display:grid;grid-template-columns:1.2rem 1fr;gap:.7rem;font-size:.85rem;color:var(--gris);
+  line-height:1.5}
+.proto .ug-doc li b{display:block;color:#fff;font-family:var(--f-ui);font-weight:600;font-size:.85rem}
+.proto .ug-doc li svg{width:1.2rem;height:1.2rem;color:var(--mag-2);margin-top:.1rem}
+.proto .ug-doc .sign{margin-top:1.2rem;padding-top:.9rem;border-top:1px dashed var(--linea);
+  display:flex;align-items:center;justify-content:space-between;font-size:.62rem;color:var(--gris-2)}
+
+/* ── 8 · DATOS DESTACADOS ──────────────────────────────────────── */
+.proto .ug-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea-s);
+  border:1px solid var(--linea);border-radius:1.1rem;overflow:hidden}
+.proto .ug-facts > div{background:var(--paper-2);padding:clamp(1.3rem,2.6vw,2rem);
+  transition:background .45s var(--e)}
+.proto .ug-facts > div:hover{background:var(--paper-3)}
+.proto .ug-facts > div.on{background:linear-gradient(160deg,rgba(233,30,99,.9),rgba(156,39,176,.82))}
+/* cifra en color sólido: el degradado sobre texto se reserva al titular del foco */
+.proto .ug-facts b{display:block;font-family:var(--f-disp);font-weight:600;
+  font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.04em;line-height:1;
+  font-variant-numeric:tabular-nums;color:#FF6FA0}
+.proto .ug-facts > div.on b{color:#fff}
+.proto .ug-facts span{display:block;font-size:.78rem;color:var(--gris);margin-top:.6rem;line-height:1.45}
+.proto .ug-facts > div.on span{color:rgba(255,255,255,.9)}
+
+/* ── 9 · RESPONSIVE ────────────────────────────────────────────── */
+@media(max-width:1080px){
+  .proto .ug-panel,.proto .ug-panel.rev{grid-template-columns:1fr;gap:2rem}
+  .proto .ug-panel.rev .ug-art{order:0}
+  .proto .ug-rights{grid-template-columns:1fr}
+  .proto .ug-pane.on{grid-template-columns:1fr}
+}
+@media(max-width:940px){
+  .proto .ug-h8 .grid8{grid-template-columns:1fr}
+  .proto .ug-wall{height:22rem;--gap:10px}
+  .proto .ug-wallnote{text-align:left}
+}
+@media(max-width:720px){
+  .proto .ug-kpis{grid-template-columns:1fr 1fr}
+  .proto .ug-facts{grid-template-columns:1fr 1fr}
+  .proto .ug-acc .body{grid-template-columns:1fr;gap:.9rem}
+  .proto .ug-bars .b{grid-template-columns:5.6rem 1fr auto;font-size:.72rem}
+}
+@media(max-width:480px){
+  .proto .ug-wall{height:19rem}
+  .proto .ug-tabs button{font-size:.86rem;padding:.75rem .4rem}
+  .proto .ug-facts{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .proto .ug-col,.proto .ug-strip .st,.proto .ug-phone,.proto .ug-orbit .ring,.proto .ug-orbit .sat,.proto .ug-orbit .pl i,.proto .ug-chip i,.proto .ug-diag .ar::after{animation:none}
+  .proto .ug-pane.on{animation:none}
+  .proto .ug-report .ug-bars .b s i{transition:none;width:calc(var(--w) * 1%)}
+  .proto .ug-phone .pc{opacity:1;transform:none}
+}
+
+/* Ritmo vertical de la página de influencer: 18 bloques con el padding
+   por defecto dejaban pantallas enteras vacías entre secciones. */
+.proto .ug-s{padding-top:clamp(3rem,5.2vw,5.5rem);padding-bottom:clamp(3rem,5.2vw,5.5rem)}
+.proto .ug-s.slim{padding-top:0!important}
+
+/* ══════════════════════════════════════════════════════════════════
+   v14 · LÍNEA PR + INFLUENCERS + UGC (plan del cliente, 7-ago-2026)
+   Todo el bloque va prefijado .pr- : ninguna plantilla anterior se
+   entera de que esto existe. Mismo sistema de color y de curvas.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Nota de prensa: la maqueta del hero de /relaciones-publicas.
+   Va etiquetada «Ejemplo» a propósito: no simula un medio real. ── */
+.proto .pr-doc{position:relative;border:1px solid var(--linea);border-radius:1.2rem;
+  background:var(--paper-2);overflow:hidden;box-shadow:0 30px 70px -40px rgba(0,0,0,.9)}
+.proto .pr-doc .dh{display:flex;align-items:center;gap:.7rem;padding:.85rem 1.15rem;
+  background:rgba(0,0,0,.3);border-bottom:1px solid var(--linea-s)}
+.proto .pr-doc .dh .dots{display:flex;gap:.3rem}
+.proto .pr-doc .dh .dots i{width:.45rem;height:.45rem;border-radius:50%;background:var(--linea)}
+.proto .pr-doc .dh small{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-2)}
+.proto .pr-doc .ej{margin-left:auto;font-size:.55rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:#FFC7DE;border:1px solid rgba(233,30,99,.45);
+  background:rgba(233,30,99,.14);border-radius:1rem;padding:.2rem .55rem}
+.proto .pr-doc .db{padding:1.5rem 1.4rem 1.6rem}
+.proto .pr-doc .kick{display:inline-block;font-size:.58rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:#FF77AC;border:1px solid rgba(233,30,99,.34);
+  border-radius:1rem;padding:.24rem .7rem;margin-bottom:1rem}
+.proto .pr-doc h3{font-family:var(--f-disp);font-weight:600;letter-spacing:-.02em;
+  word-spacing:.14em;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.25;margin:0 0 .5rem}
+.proto .pr-doc .meta{font-size:.72rem;color:var(--gris-2);margin:0 0 1.1rem}
+/* Las líneas del cuerpo se «escriben» al entrar: es tipografía falsa a
+   propósito, así que va aria-hidden y nunca contiene texto real. */
+.proto .pr-doc .lines{display:grid;gap:.5rem}
+.proto .pr-doc .lines i{display:block;height:.5rem;border-radius:.25rem;
+  background:linear-gradient(90deg,rgba(255,255,255,.15),rgba(255,255,255,.05));
+  transform-origin:left;transform:scaleX(0);transition:transform .7s var(--e-out)}
+.proto .pr-doc.in .lines i{transform:scaleX(1)}
+.proto .pr-doc .lines i:nth-child(1){width:100%;transition-delay:.05s}
+.proto .pr-doc .lines i:nth-child(2){width:96%;transition-delay:.13s}
+.proto .pr-doc .lines i:nth-child(3){width:99%;transition-delay:.21s}
+.proto .pr-doc .lines i:nth-child(4){width:62%;transition-delay:.29s}
+.proto .pr-doc .lines i:nth-child(5){width:93%;transition-delay:.37s}
+.proto .pr-doc .lines i:nth-child(6){width:47%;transition-delay:.45s}
+.proto .pr-doc .foot{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem;
+  padding-top:1.1rem;border-top:1px solid var(--linea-s)}
+.proto .pr-doc .foot span{font-size:.66rem;color:var(--gris);border:1px solid var(--linea-s);
+  border-radius:1rem;padding:.26rem .7rem;background:rgba(255,255,255,.03)}
+
+/* ── Secciones de medio a las que se propone la historia.
+   Son SECCIONES, no cabeceras: no se nombra ningún medio real. ── */
+.proto .pr-secs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+.proto .pr-secs span{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;
+  color:var(--gris);border:1px solid var(--linea-s);border-radius:1.6rem;
+  padding:.4rem .9rem;background:rgba(255,255,255,.03);
+  transition:color .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
+.proto .pr-secs span::before{content:'';width:.4rem;height:.4rem;border-radius:50%;background:var(--mag)}
+.proto .pr-secs span:hover{color:#fff;border-color:rgba(233,30,99,.45);transform:translateY(-2px)}
+
+/* ── Mosaico de portafolio: el artefacto del hero de /casos-de-exito ── */
+.proto .pr-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.proto .pr-mosaic figure{margin:0;overflow:hidden;border-radius:1rem;border:1px solid var(--linea-s);
+  aspect-ratio:1;background:var(--paper-2)}
+.proto .pr-mosaic figure:first-child{grid-column:span 2;aspect-ratio:16/10}
+.proto .pr-mosaic img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1.1s var(--e-out);will-change:transform}
+.proto .pr-mosaic figure:hover img{transform:scale(1.05)}
+
+/* ── Caso ancla: el bloque grande con la ficha del proyecto ── */
+.proto .pr-case{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,3.5vw,3rem);
+  align-items:center;border:1px solid var(--linea);border-radius:1.4rem;
+  background:var(--paper-2);padding:clamp(1.5rem,3vw,2.6rem);overflow:hidden}
+.proto .pr-case .pic{margin:0;border-radius:1.1rem;overflow:hidden;border:1px solid var(--linea-s)}
+.proto .pr-case .pic img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+.proto .pr-case h3{font-family:var(--f-disp);font-weight:600;letter-spacing:-.025em;
+  word-spacing:.14em;font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.15;margin:.7rem 0 .7rem}
+.proto .pr-case > div > p{color:var(--gris);line-height:1.7;max-width:58ch;margin:0}
+.proto .pr-case .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.3rem}
+.proto .pr-case .tags span{font-size:.68rem;letter-spacing:.06em;color:#FFC7DE;
+  border:1px solid rgba(233,30,99,.3);background:rgba(233,30,99,.1);
+  border-radius:1rem;padding:.28rem .75rem}
+/* Marcador honesto: las cifras del cliente NO están, y se dice. */
+.proto .pr-pend{display:inline-flex;align-items:flex-start;gap:.6rem;margin-top:1.4rem;
+  font-size:.76rem;line-height:1.55;color:var(--gris);border:1px dashed var(--linea);
+  border-radius:.9rem;padding:.7rem .9rem;background:rgba(255,255,255,.025)}
+.proto .pr-pend b{color:#FFC7DE;font-weight:600}
+@media(max-width:860px){
+  .proto .pr-case{grid-template-columns:1fr}
+  .proto .pr-case .pic{order:-1}
+}
+.proto .pr-case .pic figcaption{font-size:.68rem;line-height:1.5;color:var(--gris-2);
+  padding:.7rem .85rem;background:rgba(0,0,0,.34);border-top:1px solid var(--linea-s)}
+
+/* ════════════════════════════════════════════════════════════════
+   CAPA 16 — MENÚ CLONADO DE 3rcore.com (9-ago-2026)
+   Calca el header del sitio en producción: un solo desplegable
+   SERVICIOS pegado al logo, el claim centrado en absoluto, ES/EN y
+   el botón MENU de dos barras. Todo lo demás vive en el overlay.
+   Sustituye a la CAPA 14 (menú de ocho entradas sueltas): aquella
+   sigue en el fichero pero ya no tiene marcado al que agarrarse.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Producción monta la barra a 96 px (h-24). Todo el layout deriva de
+   esta variable, así que subirla recoloca heroes y anclas solo. */
+.proto{--nav-h:96px}
+@media(max-width:900px){.proto{--nav-h:76px}}
+
+.proto .nav .wrap{display:flex;align-items:center;gap:1.2rem;height:100%;position:relative}
+.proto .nav .nz{display:flex;align-items:center;gap:1.4rem;flex:0 0 auto;position:relative;z-index:2}
+.proto .nav .nd{display:flex;align-items:center;gap:1.5rem;margin-left:auto;flex:0 0 auto;position:relative;z-index:2}
+.proto .nav .logo{height:34px;width:auto;flex:0 0 auto}
+
+/* ── El claim, centrado sobre la barra y ajeno al flujo ── */
+.proto .nav .claim{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  margin:0;font-family:var(--f-ui);font-size:.78rem;letter-spacing:.02em;
+  white-space:nowrap;color:var(--ink);pointer-events:none;z-index:1}
+.proto .nav .claim b{font-weight:700;margin-left:.5rem;text-transform:uppercase}
+@media(max-width:1100px){.proto .nav .claim{display:none}}
+
+/* ── Desplegable SERVICIOS ── */
+.proto .nav .drop.srv > button{display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--f-ui);font-size:.66rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);background:none;border:0;
+  padding:.4rem .75rem;border-radius:999px;cursor:pointer;white-space:nowrap;
+  transition:color .25s var(--e),background-color .25s var(--e)}
+.proto .nav .drop.srv > button:hover,.proto .nav .drop.srv > button.on,.proto .nav .drop.srv:focus-within > button{color:#fff;background:rgba(255,255,255,.06)}
+.proto .nav .drop.srv > button svg{width:9px;height:9px;stroke-width:2.5;
+  transition:transform .3s ease}
+.proto .nav .drop.srv:hover > button svg,.proto .nav .drop.srv:focus-within > button svg{transform:rotate(180deg)}
+@media(max-width:768px){.proto .nav .drop.srv{display:none}}
+
+.proto .nav .drop.srv .panel{display:block;left:0;right:auto;top:calc(100% + 12px);
+  width:max-content;min-width:232px;max-width:min(92vw,300px);
+  transform:translateY(-.5rem);padding:.75rem .3rem;border-radius:.85rem;
+  border:1px solid rgba(255,255,255,.1);
+  background:linear-gradient(135deg,rgba(19,2,24,.98) 0%,rgba(30,4,40,.98) 100%);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:0 25px 50px -12px rgba(0,0,0,.6)}
+.proto .nav .drop.srv:hover .panel,.proto .nav .drop.srv:focus-within .panel{transform:translateY(0)}
+/* el filamento de gradiente que corona el panel en producción */
+.proto .nav .drop.srv .panel .hair{position:absolute;top:0;left:1rem;right:1rem;height:1px;
+  border-radius:999px;background:linear-gradient(to right,#9C27B0,#FF1A55)}
+.proto .nav .drop.srv .panel > a{display:flex;align-items:center;gap:.65rem;
+  padding:.5rem .75rem;margin:0 .4rem;border-radius:.5rem;
+  font-family:var(--f-ui);font-size:.78rem;font-weight:500;letter-spacing:0;
+  text-transform:none;color:rgba(255,255,255,.7);white-space:nowrap;
+  transition:color .2s var(--e),background-color .2s var(--e)}
+.proto .nav .drop.srv .panel > a:hover,.proto .nav .drop.srv .panel > a.on{color:#fff;background:rgba(255,255,255,.05)}
+.proto .nav .drop.srv .panel > a .dot{display:block;width:4px;height:4px;flex:0 0 auto;
+  border-radius:50%;background:linear-gradient(to right,#9C27B0,#FF1A55);
+  transition:transform .2s var(--e)}
+.proto .nav .drop.srv .panel > a:hover .dot{transform:scale(1.25)}
+
+/* ── ES / EN. EN no enlaza: el prototipo solo existe en español ── */
+.proto .nav .lang{display:flex;align-items:center;gap:.85rem;
+  font-family:var(--f-ui);font-size:.75rem;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;color:rgba(255,255,255,.7)}
+.proto .nav .lang a{transition:color .25s var(--e)}
+.proto .nav .lang a:hover,.proto .nav .lang a.on{color:#E91E63}
+.proto .nav .lang span{color:rgba(255,255,255,.22);cursor:default}
+@media(max-width:520px){.proto .nav .lang{display:none}}
+
+/* ── Botón MENU: dos barras, la de arriba crece al pasar por encima ── */
+.proto .nav .menub{display:inline-flex;align-items:center;gap:.75rem;background:none;border:0;
+  padding:.4rem 0;cursor:pointer;color:var(--ink);
+  font-family:var(--f-ui);font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;transition:color .25s var(--e)}
+.proto .nav .menub:hover{color:rgba(255,255,255,.65)}
+.proto .nav .menub i{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;
+  width:24px;height:24px;gap:5px}
+.proto .nav .menub i b{display:block;height:2px;background:#fff;
+  transition:width .5s var(--e),transform .5s var(--e),opacity .3s}
+.proto .nav .menub i b:nth-child(1){width:16px}
+.proto .nav .menub i b:nth-child(2){width:24px}
+.proto .nav .menub:hover i b:nth-child(1){width:24px}
+.proto.menu .nav .menub i b:nth-child(1){transform:translateY(3.5px) rotate(45deg);width:24px}
+.proto.menu .nav .menub i b:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+@media(max-width:520px){.proto .nav .menub span{display:none}}
+
+/* ── OVERLAY ── */
+.proto .sheet .sh{display:grid;grid-template-columns:1.1fr .9fr;
+  gap:clamp(1.6rem,4vw,4rem);width:100%;align-items:start}
+.proto .sheet .sh-pral a{font-size:clamp(1.4rem,5.4vw,2.5rem)}
+/* la columna de servicios va en letra de lista, no de titular */
+.proto .sheet .sh-srv{display:flex;flex-direction:column}
+@media(min-width:900px){
+  .proto .sheet .sh-srv{display:block}
+  .proto .sheet .sh-srv .lbl{display:block}
+  .proto .sheet .sh-srv .cols2{columns:2;column-gap:2rem}
+}
+.proto .sheet .sh-srv .lbl{font-family:var(--f-ui);font-size:.64rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gris-2);
+  padding-bottom:.7rem;margin-bottom:.3rem;border-bottom:1px solid var(--linea-s)}
+.proto .sheet .sh-srv a{justify-content:flex-start;gap:.7rem;break-inside:avoid;-webkit-column-break-inside:avoid;
+  font-family:var(--f-ui);font-size:.92rem;font-weight:500;letter-spacing:0;
+  padding:.42rem 0;border-bottom:0;color:var(--gris)}
+.proto .sheet .sh-srv a:hover,.proto .sheet .sh-srv a.on{color:#fff}
+.proto .sheet .sh-srv a .dot{display:block;width:4px;height:4px;flex:0 0 auto;border-radius:50%;
+  background:linear-gradient(to right,#9C27B0,#FF1A55)}
+/* el pie del overlay: redes y el botón de WhatsApp.
+   Todo alineado a la izquierda a propósito: con `space-between` el botón
+   se iba a la esquina inferior derecha, justo debajo del aviso de cookies,
+   que además de taparlo le robaba los clics. */
+.proto .sheet .sh-pie{grid-column:1/-1;display:flex;align-items:center;justify-content:flex-start;
+  flex-wrap:wrap;gap:1.2rem 2.4rem;margin-top:clamp(1.2rem,3vw,2.2rem);
+  padding-top:1.4rem;border-top:1px solid var(--linea-s)}
+.proto .sheet .sh-pie .rs{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem}
+.proto .sheet .sh-pie .rs a{font-family:var(--f-ui);font-size:.68rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gris-2);
+  padding:0;border-bottom:0}
+.proto .sheet .sh-pie .rs a:hover{color:#E91E63}
+/* el botón es un <a>, así que le caía encima la regla de los titulares del
+   overlay (2,6 rem, estirado y con borde inferior). Aquí se le devuelve
+   su tamaño de botón. */
+.proto .sheet .sh-pie .btn{width:auto;flex:0 0 auto;justify-content:center;
+  font-family:var(--f-ui);font-size:.85rem;font-weight:500;letter-spacing:.02em;
+  padding:.85rem 1.6rem;border-bottom:0;
+  opacity:0;transform:translateY(1.5rem);
+  transition:opacity .6s var(--e-out) .3s,transform .7s var(--e-out) .3s,filter .35s}
+.proto.menu .sheet .sh-pie .btn{opacity:1;transform:none}
+.proto .sheet .sh-pie .btn svg{width:18px;height:18px;stroke:currentColor}
+
+@media(max-width:820px){
+  .proto .sheet{justify-content:flex-start}
+  .proto .sheet .sh{grid-template-columns:1fr;gap:1.6rem}
+  .proto .sheet .sh-pie{flex-direction:column;align-items:flex-start;gap:1.2rem}
+}
+/* La barra fija de WhatsApp/Llamar/Cotizar flota sobre el overlay: sin este
+   colchón, las últimas entradas y el pie quedaban debajo y no se podían tocar. */
+@media(max-width:900px){
+  .proto .sheet{padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px) + 1.4rem)}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   PIEL REAL — secciones de la HOME y del NOSOTROS del cliente
+   Medidas tomadas del DOM de 3rcore.com el 18-ago-2026: los títulos de
+   sección van en Montserrat en versalitas con tracking .1em (así los
+   tiene él: "CONTÁCTANOS" 30px/ls 3px, "ENTÉRATE…" 16px/ls 1.6px), no
+   en el display gigante del prototipo.
+   ════════════════════════════════════════════════════════════════ */
+.proto .tt-wide{font-family:var(--f-text);font-weight:400;text-transform:uppercase;
+  letter-spacing:.1em;font-size:clamp(1.1rem,2.1vw,1.875rem);line-height:1.2;margin-bottom:1.6rem}
+
+/* ── Carrusel de servicios de su home: cuatro mundos ───────────────── */
+.proto .carru{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+.proto .carru-c{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;
+  border:1px solid var(--linea-s);background:var(--paper-2)}
+.proto .carru-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:.55;transition:transform 1.1s var(--e),opacity .6s var(--e)}
+.proto .carru-c:hover .carru-bg{transform:scale(1.06);opacity:.78}
+.proto .carru-t{position:absolute;left:1.4rem;right:1.4rem;bottom:3.4rem;width:auto;max-width:calc(100% - 2.8rem);height:auto;max-height:34px;object-fit:contain;object-position:left bottom}
+.proto .carru-go{position:absolute;right:1.2rem;bottom:1.2rem;width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--linea);display:grid;place-items:center;transition:all .4s var(--e)}
+.proto .carru-c:hover .carru-go{background:var(--mag-2);border-color:var(--mag-2)}
+
+/* ── Las tres cifras + "Posiciona tu marca" ───────────────────────── */
+.proto .cifras-g{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
+@media(max-width:900px){.proto .cifras-g{grid-template-columns:1fr}}
+.proto .cifras{display:grid;gap:1.8rem}
+.proto .cifra b{display:flex;align-items:baseline;font-family:var(--f-disp);font-weight:700;
+  font-size:clamp(2.6rem,5vw,4rem);letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.proto .cifra b i{font-style:normal;color:var(--mag-2);margin-right:.1em}
+.proto .cifra > span{display:block;font-family:var(--f-disp);font-size:.875rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gris);margin-top:.5rem}
+.proto .posiciona{position:relative;overflow:hidden;border:1px solid var(--linea-s)}
+.proto .posiciona img{width:100%;height:auto;display:block}
+.proto .posiciona-t{position:absolute;inset:auto 0 0 0;padding:clamp(1.2rem,3vw,2.2rem);
+  background:linear-gradient(to top,rgba(19,2,24,.94),transparent)}
+.proto .posiciona-t h2{margin-bottom:1rem}
+
+/* ── Banda blanca de trabajos (el mosaico de su home) ──────────────── */
+.proto .mosaico{background:#fff;padding:clamp(2rem,4vw,3.4rem) 0;overflow:hidden;display:grid;gap:1rem}
+.proto .mos-fila{display:flex;gap:1rem;width:max-content;animation:mos 62s linear infinite}
+.proto .mos-fila:nth-child(2){animation-duration:78s;animation-direction:reverse}
+.proto .mos-fila img{height:clamp(120px,15vw,200px);width:auto;object-fit:cover;border-radius:2px}
+@keyframes mos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.proto .mos-fila{animation:none}}
+
+/* ── Reseñas de Google ────────────────────────────────────────────── */
+.proto .gnota{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-bottom:2.2rem;
+  font-size:.9rem;color:var(--gris)}
+.proto .gnota b{font-family:var(--f-disp);font-size:1.5rem;font-weight:700;color:var(--ink)}
+.proto .gnota a{color:var(--mag-2);border-bottom:1px solid transparent;transition:border-color .3s}
+.proto .gnota a:hover{border-bottom-color:var(--mag-2)}
+.proto .stars{color:#FBBC04;letter-spacing:.12em}
+.proto .resenas{grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr))}
+.proto .resena{margin:0;padding:1.6rem;background:var(--paper-2);border:1px solid var(--linea-s)}
+.proto .resena blockquote{margin:.9rem 0 1.2rem;font-size:.9rem;line-height:1.7;color:var(--gris)}
+.proto .resena figcaption b{display:block;font-family:var(--f-disp);font-size:.95rem;color:var(--ink)}
+.proto .resena figcaption span{font-size:.78rem;color:var(--gris-2)}
+
+/* ── Noticias ─────────────────────────────────────────────────────── */
+.proto .noti{display:flex;flex-direction:column;gap:.7rem;padding:1.5rem;background:var(--paper-2);
+  border:1px solid var(--linea-s);transition:border-color .4s var(--e),transform .5s var(--e)}
+.proto .noti:hover{border-color:var(--mag-2);transform:translateY(-4px)}
+.proto .noti-f{font-family:var(--f-disp);font-size:.7rem;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gris-2)}
+.proto .noti h3{font-family:var(--f-text);font-size:.875rem;font-weight:600;line-height:1.4;
+  margin:0;color:rgba(255,255,255,.9)}
+.proto .noti-m{margin-top:auto;font-family:var(--f-text);font-size:.5rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--mag-2)}
+
+/* ── Bloque de los tres pilares (el que cierra su home) ───────────── */
+.proto .pilares{background:#0D0010}
+.proto .pilar{padding:1.8rem;background:var(--paper-2);border:1px solid var(--linea-s)}
+.proto .pilar p{font-size:.875rem;line-height:1.7;color:var(--gris)}
+.proto .pilar-go{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-disp);
+  font-size:.8rem;font-weight:600;color:var(--mag-2)}
+.proto .pilar-go svg{width:15px;height:15px}
+
+/* ── El formulario de seis campos del cliente ─────────────────────── */
+.proto .contacto-g{align-items:start}
+.proto .freal{background:var(--paper-2);border:1px solid var(--linea);padding:clamp(1.3rem,3vw,2rem)}
+.proto .freal-g{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.2rem}
+.proto .freal-g .fw{grid-column:1/-1}
+@media(max-width:620px){.proto .freal-g{grid-template-columns:1fr}}
+.proto .freal textarea{width:100%;background:var(--paper);border:1px solid var(--linea);
+  padding:.85rem 1rem;color:var(--ink);font-family:var(--f-text);font-size:.94rem;resize:vertical}
+.proto .cvias{display:grid;gap:.6rem;margin-top:1.6rem}
+.proto .cvias a{display:inline-flex;align-items:center;gap:.6rem;color:var(--ink);font-size:.92rem}
+.proto .cvias a:hover{color:var(--mag-2)}
+
+/* ── NOSOTROS: hero de vídeo, fundadores, equipo y momentos ───────── */
+.proto .nos-hero{position:relative;height:min(88vh,760px);overflow:hidden;
+  margin-top:calc(var(--nav-h) + var(--pb))}
+.proto .nos-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.proto .nos-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,2,24,.35),rgba(19,2,24,.9))}
+.proto .nos-hero .scrollcue{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%)}
+.proto .funds{gap:1.4rem}
+.proto .fund{margin:0}
+.proto .fund-m{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--linea-s);background:var(--paper-2)}
+.proto .fund-m img,.proto .fund-m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:opacity .6s var(--e)}
+.proto .fund-m video{opacity:0}
+.proto .fund:hover .fund-m video{opacity:1}
+.proto .fund:hover .fund-m img{opacity:0}
+.proto .fund figcaption{padding-top:.9rem}
+.proto .fund figcaption b{display:block;font-family:var(--f-disp);font-size:1.05rem;font-weight:600}
+.proto .fund figcaption span{font-size:.82rem;color:var(--gris)}
+.proto .area{margin-top:2.8rem}
+.proto .area-t{font-family:var(--f-text);font-size:.8rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mag-2);margin-bottom:1.2rem;
+  padding-bottom:.7rem;border-bottom:1px solid var(--linea-s)}
+.proto .equipo{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,9.5rem),1fr));gap:1.1rem}
+.proto .pers{margin:0}
+.proto .pers img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--linea-s);
+  transition:transform .5s var(--e)}
+.proto .pers:hover img{transform:translateY(-3px)}
+.proto .pers figcaption{padding-top:.6rem}
+.proto .pers figcaption b{display:block;font-family:var(--f-disp);font-size:.88rem;font-weight:600}
+.proto .pers figcaption span{font-size:.72rem;color:var(--gris);line-height:1.4;display:block}
+.proto .momentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1rem}
+.proto .momento{margin:0;position:relative;overflow:hidden;border:1px solid var(--linea-s)}
+.proto .momento img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .7s var(--e)}
+.proto .momento:hover img{transform:scale(1.05)}
+.proto .momento figcaption{position:absolute;inset:auto 0 0 0;padding:.9rem 1rem;
+  font-family:var(--f-disp);font-size:.82rem;font-weight:500;
+  background:linear-gradient(to top,rgba(19,2,24,.92),transparent)}
+
+
+/* ── MENÚ: que quepa entero en pantallas bajas ─────────────────────────
+   Medido con la ventana de Jose (1427×787 CSS): el menú pedía ~690px y
+   solo había ~635. Con Poppins (más alta que Clash Display) el contenido
+   creció justo por encima del umbral. Se compacta por ALTO, no por ancho. */
+@media(max-height:900px){
+  .proto .sheet{padding-top:calc(var(--nav-h) + var(--pb) + .7rem);padding-bottom:1.2rem}
+  .proto .sheet .sh{gap:1.2rem 3rem}
+  .proto .sheet .sh-pral a{font-size:clamp(1.25rem,3.4vw,2rem);padding:.48rem 0}
+  .proto .sheet .sh-srv a{font-size:.86rem;padding:.3rem 0}
+  .proto .sheet .sh-pie{padding-top:1rem;margin-top:.4rem}
+}
+/* 18-ago (2ª vez): el menú pasó de 6 entradas a las 10 REALES del cliente
+   y volvió a desbordar. Medido en la ventana de Jose (1427x787): pedía
+   935px de los 787 disponibles, y el pie con las redes y el botón de
+   WhatsApp quedaba fuera. Escalón nuevo antes del de 760. */
+@media(max-height:880px){
+  .proto .sheet .sh-pral a{font-size:clamp(1.05rem,2.6vw,1.5rem);padding:.28rem 0}
+  .proto .sheet .sh-srv a{font-size:.78rem;padding:.2rem 0}
+  .proto .sheet .sh{gap:.85rem 2.4rem}
+  .proto .sheet .sh-pie{padding-top:.7rem;margin-top:.2rem}
+  .proto .sheet{padding-bottom:.9rem}
+}
+@media(max-height:760px){
+  .proto .sheet .sh-pral a{font-size:clamp(1rem,2.4vw,1.32rem);padding:.2rem 0}
+  .proto .sheet .sh-srv a{font-size:.74rem;padding:.16rem 0}
+  .proto .sheet .sh{gap:.7rem 2rem}
+}
