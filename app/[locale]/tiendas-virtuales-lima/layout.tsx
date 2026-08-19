@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/tiendas-virtuales-lima',
-    titleEs: 'Tiendas Virtuales en Lima: Shopify, WooCommerce y Tiendanube | 3R Core',
+    titleEs: 'Tiendas Virtuales en Lima — Shopify y WooCommerce | 3R Core',
     titleEn: 'Shopify & WooCommerce Development | 3R Core',
     descriptionEs: 'Creamos tu tienda online en Shopify, WooCommerce o Tiendanube con pagos peruanos (Yape, Culqi, Izipay), catálogo cargado y SEO técnico. Desde S/1,500.',
     descriptionEn: 'Online stores built in Lima, Peru for U.S. brands: payment gateway, catalog, tax setup and technical SEO. Bilingual storefronts from $1,750 in USD.',

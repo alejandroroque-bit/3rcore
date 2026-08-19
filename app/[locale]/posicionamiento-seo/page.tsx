@@ -11,9 +11,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/posicionamiento-seo',
-    titleEs: 'Agencia SEO en Lima, Perú — Posicionamiento Web en Google | 3R Core',
+    titleEs: 'Agencia SEO en Lima, Perú — Posicionamiento Web | 3R Core',
     titleEn: 'SEO Agency for U.S. Brands | 3R Core',
-    descriptionEs: 'Agencia de posicionamiento SEO en Lima, Perú. Auditoría, optimización, interlinks, contenido y escalamiento mensual. Inversión desde S/1,800/mes sin contratos forzosos.',
+    descriptionEs: 'Agencia de posicionamiento SEO en Lima, Perú: auditoría, optimización, interlinks, contenido y escalamiento mensual. Desde S/1,800/mes.',
     descriptionEn: 'SEO for U.S. businesses run from Lima, Peru through our U.S. subsidiary: keyword research, technical SEO, content and link building. From $500/month.',
     titleUs: 'Agencia de Posicionamiento SEO en Español para EE.UU. | 3R Core',
     descriptionUs: 'Posicionamiento SEO en español e inglés para negocios en Estados Unidos: keyword research, SEO técnico, contenido y SEO local. Las búsquedas en español suelen tener menos competencia. Desde $500/mes sin contratos forzosos.',

@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   if (locale !== 'es') return { robots: { index: false, follow: false } }
 
   const title = "Casos de Éxito: Marcas que Trabajaron con Nosotros | 3R Core"
-  const description = "Marcas reales que pasaron por 3R Core, qué se hizo en cada una y qué se entregó: webs, tiendas online, SEO, Google Ads, redes y branding. Sin gráficos inventados ni porcentajes incomprobables."
+  const description = "Marcas reales que trabajaron con 3R Core y qué se les entregó: webs, tiendas online, SEO, Google Ads, redes y branding. Casos verificables."
 
   return {
     title,
