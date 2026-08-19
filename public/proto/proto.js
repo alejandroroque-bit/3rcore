@@ -119,23 +119,11 @@
     calc();
   });
 
-  /* Cerrar el menú con Escape y el acuse de los formularios de demostración
-     son funcionales: van antes del corte por reduced-motion. */
+  /* Cerrar el menú con Escape. El envío de los formularios lo gestiona ahora
+     el componente React ProtoLeadWiring (captura real en el panel + medición),
+     por eso aquí ya NO se enlaza el submit: hacerlo duplicaría el lead. */
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') document.body.classList.remove('menu');
-  });
-  document.querySelectorAll('form[data-demo]').forEach(function(f){
-    f.addEventListener('submit', function(e){
-      e.preventDefault();
-      var h = document.createElement('h3');
-      h.textContent = 'Listo, mensaje enviado';
-      var p = document.createElement('p');
-      p.className = 'mini';
-      p.style.margin = '0';
-      p.textContent = 'En el sitio real esto guarda el lead en el panel propio y dispara el evento form_submit, que hoy no se emite: hay 233 form_start y ningún envío registrado.';
-      f.innerHTML = '';
-      f.appendChild(h); f.appendChild(p);
-    });
   });
 
   if (RM) {

@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import Script from 'next/script';
 import '@/app/proto.css';
+import ProtoLeadWiring from './ProtoLeadWiring';
 
 export default function ProtoPage({ frag }: { frag: string }) {
   const ruta = path.join(process.cwd(), 'proto-html', `${frag}.html`);
@@ -13,6 +14,8 @@ export default function ProtoPage({ frag }: { frag: string }) {
   return (
     <>
       <div className="proto" dangerouslySetInnerHTML={{ __html: html }} />
+      {/* Conecta formularios y wa.me del prototipo a la captura real + medición */}
+      <ProtoLeadWiring />
       <Script src="/proto/proto.js" strategy="afterInteractive" />
     </>
   );

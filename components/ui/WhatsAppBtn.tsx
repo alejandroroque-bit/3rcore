@@ -12,10 +12,11 @@ const WhatsAppBtn = () => {
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-  // /posicionamiento-seo monta su propio widget de captura de WhatsApp
-  // (WhatsAppBtnLanding) en la misma esquina — ahí el botón global se oculta
-  // para no superponerse.
-  if (pathname.includes('/posicionamiento-seo')) return null;
+  // Solo /us y /en montan su propio widget de captura (WhatsAppBtnLanding) en
+  // esa esquina; ahí el botón global se oculta para no superponerse. En /es la
+  // página de SEO usa el diseño del prototipo (sin ese widget), así que el
+  // botón flotante SÍ debe aparecer para no dejar la money page sin CTA fijo.
+  if (pathname.includes('/posicionamiento-seo') && !pathname.startsWith('/es/')) return null;
 
   // WhatsApp es el canal que más leads reales trae — cada clic queda medido en
   // GA4/GTM con la página de origen (antes el botón era invisible en Analytics).
