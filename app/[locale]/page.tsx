@@ -54,11 +54,13 @@ export default async function HomePage({ params }: { params: any }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([itemListSchema, speakableSchema]) }}
       />
-      {/* El cliente descartó la home del prototipo: /es sirve el rediseño de
-          Aymar (HomeClientV2); us y en conservan la home original. Ambas
-          versiones comparten el h1 sr-only y el bloque semántico SSR. */}
+      {/* El cliente descartó la home del prototipo: /es y /us sirven el
+          rediseño de Aymar (HomeClientV2; en /us el grid baja a los 3
+          servicios de ese mercado con precios en dólares); /en conserva la
+          home original en inglés. Todas comparten el h1 sr-only y el bloque
+          semántico SSR. */}
       <h1 className="sr-only">{tH1("home")}</h1>
-      {locale === 'es' ? <HomeClientV2 /> : <HomeClient />}
+      {locale === 'en' ? <HomeClient /> : <HomeClientV2 />}
       {/* Contenido semántico del home renderizado en el servidor (SSR real):
           pilares + señales locales para Googlebot y bots de IA que no ejecutan
           JS. HomeClient (arriba) es 'use client' y se hidrata en el navegador. */}
