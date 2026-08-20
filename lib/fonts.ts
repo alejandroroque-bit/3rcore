@@ -1,4 +1,4 @@
-import { Montserrat, Poppins, Playfair_Display } from "next/font/google"
+import { Montserrat, Poppins, Playfair_Display, Josefin_Sans } from "next/font/google"
 
 /**
  * Fuente única de tipografías del sitio. Antes cada componente instanciaba la
@@ -21,5 +21,14 @@ export const poppins = Poppins({
 export const playfair = Playfair_Display({
   subsets: ["latin"],
   style: ["normal", "italic"],
+  display: "swap",
+})
+
+// Josefin Sans la introduce el rediseño de Aymar (TeamSection y NosotrosSection
+// v2). Solo los pesos que esas secciones usan de verdad: declarar los 7 con
+// itálicas precargaba 14 woff2 compitiendo con el video del hero.
+export const josefin = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
   display: "swap",
 })
