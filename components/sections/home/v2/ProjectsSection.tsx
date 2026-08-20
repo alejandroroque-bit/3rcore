@@ -54,7 +54,7 @@ const services: { id: string; title: string; desc: string; price: string; href: 
     id: 'ads',
     title: 'Google Ads',
     desc: 'Campañas de Search, Shopping y remarketing con el coste por lead a la vista.',
-    price: 'S/ 1,000 / MES',
+    price: 'S/ 1,800 / MES',
     href: '/servicios/google-ads',
     icon: (
       <svg className="w-6 h-6 text-[#f4266e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
