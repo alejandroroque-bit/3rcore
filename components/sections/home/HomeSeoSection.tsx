@@ -37,7 +37,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     // Párrafo-definición citable (GEO): responde "¿qué es 3R Core?" con datos
     // concretos ya publicados en el sitio, en un solo pasaje autosuficiente.
     definition:
-      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque, con oficina en La Molina, Lima (Alameda de la Paz 187, primer piso), que atiende a empresas de todo el Perú y de Estados Unidos. Está especializada en tiendas virtuales sobre Shopify, WooCommerce y Tiendanube (implementación desde S/1,500), posicionamiento SEO (S/1,800/mes) y gestión de Google Ads (desde S/1,800/mes), además de branding, redes sociales y desarrollo web, con precios publicados y sin contratos forzosos.',
+      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro y Piero Roque, con oficina en La Molina, Lima (Alameda de la Paz 187, primer piso), que atiende a empresas de todo el Perú y de Estados Unidos. Está especializada en tiendas virtuales sobre Shopify, WooCommerce y Tiendanube (implementación desde S/1,500), posicionamiento SEO (S/1,800/mes) y gestión de Google Ads (desde S/1,800/mes), además de branding, redes sociales y desarrollo web, con precios publicados y sin contratos forzosos.',
     pillars: [
       {
         h: 'Tiendas virtuales y e-commerce',
@@ -80,7 +80,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     intro:
       'En 3R Core ayudamos a negocios en Estados Unidos a vender más entre el público hispano con tres cosas: te construimos el sitio web en los dos idiomas, te posicionamos en Google para las búsquedas en español —donde casi nadie compite— y creamos tu tienda online. Todo con medición real y foco en el retorno, no en métricas de vanidad.',
     definition:
-      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro, Bruno y Piero Roque que atiende a empresas de Estados Unidos con un equipo propio en Lima, Perú, en horario compatible con las zonas horarias estadounidenses. Para el mercado estadounidense trabaja tres servicios: desarrollo de sitios web bilingües (desde $850), posicionamiento SEO en español e inglés (desde $500/mes) y tiendas online sobre Shopify y WooCommerce (desde $1,750), con precios publicados en dólares y sin contratos forzosos.',
+      '3R Core es una agencia de marketing digital fundada por los hermanos Alejandro y Piero Roque que atiende a empresas de Estados Unidos con un equipo propio en Lima, Perú, en horario compatible con las zonas horarias estadounidenses. Para el mercado estadounidense trabaja tres servicios: desarrollo de sitios web bilingües (desde $850), posicionamiento SEO en español e inglés (desde $500/mes) y tiendas online sobre Shopify y WooCommerce (desde $1,750), con precios publicados en dólares y sin contratos forzosos.',
     pillars: [
       {
         h: 'Sitios web bilingües',
@@ -120,7 +120,7 @@ const COPY: Record<'es' | 'en' | 'us', {
     intro:
       'At 3R Core we help businesses in Peru sell more online with three pillars that work together: we build your online store, rank you on Google with SEO and run your Google Ads campaigns. Everything with real measurement, monthly reports and a focus on return on investment (ROI), not vanity metrics.',
     definition:
-      '3R Core is a digital marketing agency founded by brothers Alejandro, Bruno and Piero Roque, based in La Molina, Lima, Peru (Alameda de la Paz 187, primer piso), serving businesses across Peru and the United States. It specializes in online stores on Shopify, WooCommerce and Tiendanube (implementation from $420), SEO positioning ($500/month) and Google Ads management (from $800/month), plus branding, social media and web development, with published pricing and no forced contracts.',
+      '3R Core is a digital marketing agency founded by brothers Alejandro and Piero Roque, based in La Molina, Lima, Peru (Alameda de la Paz 187, primer piso), serving businesses across Peru and the United States. It specializes in online stores on Shopify, WooCommerce and Tiendanube (implementation from $420), SEO positioning ($500/month) and Google Ads management (from $800/month), plus branding, social media and web development, with published pricing and no forced contracts.',
     pillars: [
       {
         h: 'Web design and development',

@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const result = await resend.batch.send([
       {
         from: 'Sistema 3RCORE <contacto@3rcore.com>',
-        to: 'bruno.roque@3rcore.com',
+        to: 'alejandro.roque@3rcore.com',
         subject: `Nueva Reclamación: ${tipoReclamacion} de ${nombre} ${apellido}`,
         html: `
           <html>
