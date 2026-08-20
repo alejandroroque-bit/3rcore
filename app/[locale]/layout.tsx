@@ -11,6 +11,7 @@ import { getMessages } from "next-intl/server";
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
 import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
 import { TEL_MAIN } from "@/lib/contact";
+import { localizedUrl } from "@/lib/metadata";
 import ReactLenis from "lenis/react";
 import Script from "next/script";
 
@@ -299,7 +300,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Corporate Branding" : "Branding Corporativo",
-            "url": `${BASE_URL}/${locale}/servicios/branding`,
+            "url": localizedUrl('/servicios/branding', locale),
             "serviceType": "Branding / Visual Identity"
           }
         },
@@ -308,7 +309,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Social Media Management" : "Gestión de Redes Sociales",
-            "url": `${BASE_URL}/${locale}/servicios/socialmedia`,
+            "url": localizedUrl('/servicios/socialmedia', locale),
             "serviceType": "Social Media Management"
           }
         },
@@ -317,7 +318,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Google Ads / SEM" : "Google Ads / SEM",
-            "url": `${BASE_URL}/${locale}/servicios/google-ads`,
+            "url": localizedUrl('/servicios/google-ads', locale),
             "serviceType": "Google Ads / SEM"
           }
         },
@@ -326,7 +327,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Web Development & E-commerce" : "Desarrollo Web y E-commerce",
-            "url": `${BASE_URL}/${locale}/servicios/web-development`,
+            "url": localizedUrl('/servicios/web-development', locale),
             "serviceType": "Web Development / E-commerce"
           }
         },
@@ -335,7 +336,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "SEO Positioning" : "Posicionamiento SEO",
-            "url": `${BASE_URL}/${locale}/posicionamiento-seo`,
+            "url": localizedUrl('/posicionamiento-seo', locale),
             "serviceType": "SEO / Search Engine Optimization"
           },
           "priceSpecification": {
@@ -350,7 +351,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Meta Ads (Facebook & Instagram)" : "Meta Ads (Facebook e Instagram)",
-            "url": `${BASE_URL}/${locale}/servicios/meta-ads`,
+            "url": localizedUrl('/servicios/meta-ads', locale),
             "serviceType": "Meta Ads / Facebook & Instagram Advertising"
           }
         },
@@ -359,7 +360,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": "TikTok Ads",
-            "url": `${BASE_URL}/${locale}/servicios/tiktok-ads`,
+            "url": localizedUrl('/servicios/tiktok-ads', locale),
             "serviceType": "TikTok Advertising"
           }
         },
@@ -368,7 +369,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": "Performance Marketing",
-            "url": `${BASE_URL}/${locale}/servicios/performance-marketing`,
+            "url": localizedUrl('/servicios/performance-marketing', locale),
             "serviceType": "Performance Marketing / ROI-ROAS"
           }
         },
@@ -377,7 +378,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": "Email Marketing",
-            "url": `${BASE_URL}/${locale}/servicios/email-marketing`,
+            "url": localizedUrl('/servicios/email-marketing', locale),
             "serviceType": "Email Marketing / Automation"
           }
         },
@@ -386,7 +387,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Marketing for Clinics" : "Marketing para Clínicas",
-            "url": `${BASE_URL}/${locale}/servicios/marketing-clinicas`,
+            "url": localizedUrl('/servicios/marketing-clinicas', locale),
             "serviceType": "Healthcare Marketing"
           }
         },
@@ -395,7 +396,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Marketing for Real Estate" : "Marketing para Inmobiliarias",
-            "url": `${BASE_URL}/${locale}/servicios/marketing-inmobiliarias`,
+            "url": localizedUrl('/servicios/marketing-inmobiliarias', locale),
             "serviceType": "Real Estate Marketing"
           }
         },
@@ -404,7 +405,7 @@ export default async function RootLayout({
           "itemOffered": {
             "@type": "Service",
             "name": locale === 'en' ? "Marketing for E-commerce" : "Marketing para E-commerce",
-            "url": `${BASE_URL}/${locale}/servicios/marketing-ecommerce`,
+            "url": localizedUrl('/servicios/marketing-ecommerce', locale),
             "serviceType": "E-commerce Marketing"
           }
         }
@@ -434,34 +435,34 @@ export default async function RootLayout({
   const navItems = locale === 'en'
     ? [
         { name: "Home", url: `${BASE_URL}/en` },
-        { name: "About Us", url: `${BASE_URL}/en/nosotros` },
-        { name: "Services", url: `${BASE_URL}/en/servicios` },
-        { name: "Web Design & Development", url: `${BASE_URL}/en/servicios/web-development` },
-        { name: "Social Media Management", url: `${BASE_URL}/en/servicios/socialmedia` },
-        { name: "Corporate Branding", url: `${BASE_URL}/en/servicios/branding` },
-        { name: "Google Ads", url: `${BASE_URL}/en/servicios/google-ads` },
-        { name: "SEO Positioning", url: `${BASE_URL}/en/posicionamiento-seo` },
-        { name: "UGC Content Production", url: `${BASE_URL}/en/servicios/ugc` },
-        { name: "Influencer Marketing", url: `${BASE_URL}/en/servicios/influencer-marketing` },
-        { name: "Public Relations", url: `${BASE_URL}/en/servicios/relaciones-publicas` },
+        { name: "About Us", url: localizedUrl('/nosotros', 'en') },
+        { name: "Services", url: localizedUrl('/servicios', 'en') },
+        { name: "Web Design & Development", url: localizedUrl('/servicios/web-development', 'en') },
+        { name: "Social Media Management", url: localizedUrl('/servicios/socialmedia', 'en') },
+        { name: "Corporate Branding", url: localizedUrl('/servicios/branding', 'en') },
+        { name: "Google Ads", url: localizedUrl('/servicios/google-ads', 'en') },
+        { name: "SEO Positioning", url: localizedUrl('/posicionamiento-seo', 'en') },
+        { name: "UGC Content Production", url: localizedUrl('/servicios/ugc', 'en') },
+        { name: "Influencer Marketing", url: localizedUrl('/servicios/influencer-marketing', 'en') },
+        { name: "Public Relations", url: localizedUrl('/servicios/relaciones-publicas', 'en') },
         { name: "Blog", url: `${BASE_URL}/en/blogs` },
-        { name: "FAQ", url: `${BASE_URL}/en/preguntas` },
+        { name: "FAQ", url: localizedUrl('/preguntas', 'en') },
       ]
     : [
         // Vale para /es y /us: el prefijo sale del locale, no está fijado a "es".
         { name: "Inicio", url: `${BASE_URL}/${locale}` },
-        { name: "Nosotros", url: `${BASE_URL}/${locale}/nosotros` },
-        { name: "Servicios", url: `${BASE_URL}/${locale}/servicios` },
-        { name: "Diseño y Desarrollo Web", url: `${BASE_URL}/${locale}/servicios/web-development` },
-        { name: "Manejo de Redes Sociales", url: `${BASE_URL}/${locale}/servicios/socialmedia` },
-        { name: "Branding Corporativo", url: `${BASE_URL}/${locale}/servicios/branding` },
-        { name: "Google Ads", url: `${BASE_URL}/${locale}/servicios/google-ads` },
-        { name: "Posicionamiento SEO", url: `${BASE_URL}/${locale}/posicionamiento-seo` },
-        { name: "Contenido UGC", url: `${BASE_URL}/${locale}/servicios/ugc` },
-        { name: "Influencer Marketing", url: `${BASE_URL}/${locale}/servicios/influencer-marketing` },
-        { name: "Relaciones Públicas", url: `${BASE_URL}/${locale}/servicios/relaciones-publicas` },
+        { name: "Nosotros", url: localizedUrl('/nosotros', locale) },
+        { name: "Servicios", url: localizedUrl('/servicios', locale) },
+        { name: "Diseño y Desarrollo Web", url: localizedUrl('/servicios/web-development', locale) },
+        { name: "Manejo de Redes Sociales", url: localizedUrl('/servicios/socialmedia', locale) },
+        { name: "Branding Corporativo", url: localizedUrl('/servicios/branding', locale) },
+        { name: "Google Ads", url: localizedUrl('/servicios/google-ads', locale) },
+        { name: "Posicionamiento SEO", url: localizedUrl('/posicionamiento-seo', locale) },
+        { name: "Contenido UGC", url: localizedUrl('/servicios/ugc', locale) },
+        { name: "Influencer Marketing", url: localizedUrl('/servicios/influencer-marketing', locale) },
+        { name: "Relaciones Públicas", url: localizedUrl('/servicios/relaciones-publicas', locale) },
         { name: "Blog", url: `${BASE_URL}/${locale}/blogs` },
-        { name: "Preguntas Frecuentes", url: `${BASE_URL}/${locale}/preguntas` },
+        { name: "Preguntas Frecuentes", url: localizedUrl('/preguntas', locale) },
       ]
 
   const siteNavigationSchema = navItems.map((item) => ({
