@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
 interface Review {
@@ -19,30 +19,69 @@ interface ReviewsData {
   reviews: Review[]
 }
 
+const AVATAR_COLORS = [
+  "linear-gradient(135deg, #E91E63, #9C27B0)",
+  "linear-gradient(135deg, #9C27B0, #673AB7)",
+  "linear-gradient(135deg, #E91E63, #FF6B9D)",
+  "linear-gradient(135deg, #673AB7, #E91E63)",
+]
+
+// Nombres exactos (como aparecen en Google) de reseñas que NO quieres mostrar.
+// Agrega o quita nombres de esta lista según necesites.
+const EXCLUDED_REVIEWERS = ["Luis Harold Diestra Solis"]
+
 export default function ReviewsSection() {
   const [data, setData] = useState<ReviewsData | null>(null)
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [progress, setProgress] = useState(0)
+  const trackRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetch("/api/reviews")
-      .then(res => res.json())
-      .then(json => {
+      .then(async (res) => {
+        const json = await res.json()
+        if (!res.ok) {
+          throw new Error(json.error ? JSON.stringify(json) : "Error desconocido")
+        }
+        return json
+      })
+      .then((json) => {
         setData(json)
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch((err) => {
+        console.error("Error cargando reseñas:", err)
+        setError(err.message)
+        setLoading(false)
+      })
   }, [])
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <span
         key={i}
-        className="text-base"
+        className="text-sm"
         style={{ color: i < rating ? "#E91E63" : "rgba(255,255,255,0.2)" }}
       >
         ★
       </span>
     ))
+  }
+
+  const handleScroll = () => {
+    const el = trackRef.current
+    if (!el) return
+    const max = el.scrollWidth - el.clientWidth
+    setProgress(max > 0 ? el.scrollLeft / max : 0)
+  }
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = trackRef.current
+    if (!el) return
+    const card = el.querySelector<HTMLElement>("[data-card]")
+    const width = card ? card.offsetWidth + 20 : 340
+    el.scrollBy({ left: dir * width, behavior: "smooth" })
   }
 
   if (loading) return (
@@ -54,13 +93,37 @@ export default function ReviewsSection() {
     </div>
   )
 
-  // Filtrar solo 4 y 5 estrellas
-  const goodReviews = data?.reviews ?? []
+  // Si Google Places falla (cuota, key, place id) la sección desaparece en
+  // silencio: un cajón de error con el JSON crudo no puede salir en el home
+  // de producción. El detalle queda en la consola (console.error del catch).
+  if (error) {
+    return null
+  }
 
+  const goodReviews = (data?.reviews ?? []).filter(
+    (r) => !EXCLUDED_REVIEWERS.includes(r.authorAttribution.displayName)
+  )
   if (!data || goodReviews.length === 0) return null
+
+  const mapsUrl =
+    "https://www.google.com/maps/place/3R+Core+-+Agencia+de+Marketing/@-12.0912956,-76.9519657,17z/data=!3m1!4b1!4m6!3m5!1s0x9105c710419b833d:0xd38447313365f798!8m2!3d-12.0913009!4d-76.9493908!16s%2Fg%2F11jps9mts_?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D"
 
   return (
     <section className="relative w-full py-12 md:py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+
+      <style jsx>{`
+        .review-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(233, 30, 99, 0.4) transparent;
+        }
+        .review-scroll::-webkit-scrollbar {
+          width: 4px;
+        }
+        .review-scroll::-webkit-scrollbar-thumb {
+          background: rgba(233, 30, 99, 0.4);
+          border-radius: 4px;
+        }
+      `}</style>
 
       {/* Fondo decorativo */}
       <div
@@ -70,119 +133,123 @@ export default function ReviewsSection() {
 
       <div className="relative max-w-7xl mx-auto">
 
-        {/* Header */}
-        <div className="mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-white/40 mb-3">Google Reviews</p>
-
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <h2 className="text-white text-3xl md:text-4xl xl:text-5xl font-bold leading-tight mb-4">
-                Lo que dicen{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0]">
-                  nuestros clientes
-                </span>
-              </h2>
-
-              {/* Rating global */}
-              <div className="flex items-center gap-3">
-                <div className="flex">{renderStars(Math.round(data.rating))}</div>
-                <span
-                  className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0]"
-                >
-                  {data.rating}
-                </span>
-                <span className="text-white/40 text-sm">
-                  · {data.user_ratings_total} reseñas
-                </span>
-
-                {/* Badge Google */}
-                <div className="flex items-center gap-1 ml-2 bg-white/5 border border-white/10 rounded-full px-3 py-1">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                  </svg>
-                  <span className="text-white/60 text-xs">Google</span>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href="https://www.google.com/maps/place/3R+Core+-+Agencia+de+Marketing/@-12.0912956,-76.9519657,17z/data=!3m1!4b1!4m6!3m5!1s0x9105c710419b833d:0xd38447313365f798!8m2!3d-12.0913009!4d-76.9493908!16s%2Fg%2F11jps9mts_?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 px-6 py-3 border border-white/20 rounded-xl text-xs tracking-widest uppercase text-white/60 hover:text-white transition-all duration-300 overflow-hidden self-start md:self-auto"
-            >
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-300" />
-              <span className="relative z-10">Ver en Google</span>
-              <svg className="relative z-10 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
+        {/* Eyebrow */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-xs font-bold tracking-widest" style={{ color: "#E91E63" }}>05</span>
+          <span className="w-8 h-px" style={{ background: "#E91E63" }} />
+          <span className="text-xs tracking-[0.3em] uppercase text-white/40">Lo que dicen</span>
         </div>
 
-        {/* Grid reseñas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Título */}
+        <h2 className="text-white text-3xl md:text-4xl xl:text-5xl font-black leading-tight mb-2">
+          Lo que dicen
+        </h2>
+        <h2
+          className="text-3xl md:text-4xl xl:text-5xl font-black leading-tight mb-4 pb-2 inline-block"
+          style={{
+            color: "transparent",
+            WebkitTextStroke: "1px rgba(255,255,255,0.15)",
+            borderBottom: "3px solid",
+            borderImage: "linear-gradient(90deg, #E91E63, #9C27B0) 1",
+          }}
+        >
+          nuestros clientes
+        </h2>
+
+        <p className="text-white/50 text-sm mb-10">
+          Reseñas reales del perfil de Google de {data.name}. Desliza para ver todas.
+        </p>
+
+        {/* Carrusel */}
+        <div
+          ref={trackRef}
+          onScroll={handleScroll}
+          className="flex gap-5 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide"
+          style={{ scrollbarWidth: "none" }}
+        >
           {goodReviews.map((review, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl p-px overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+              data-card
+              className="snap-start shrink-0 w-[85vw] sm:w-[360px] h-[280px] rounded-2xl p-6 flex flex-col gap-4"
+              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
-              {/* Borde gradiente */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: "linear-gradient(135deg, #E91E63, #9C27B0)" }}
-              />
-              <div className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-300 bg-white/10" />
+              <div className="flex gap-px shrink-0">{renderStars(review.rating)}</div>
 
-              {/* Contenido */}
-              <div className="relative bg-[#0d0014] rounded-2xl p-6 h-full flex flex-col gap-4">
+              <p className="text-white/70 text-sm leading-relaxed flex-1 overflow-y-auto pr-1 review-scroll">
+                «{review.text.text}»
+              </p>
 
-                {/* Comillas decorativas */}
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 shrink-0">
                 <div
-                  className="text-4xl font-serif leading-none select-none"
-                  style={{ color: "#E91E63", opacity: 0.3 }}
+                  className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 ring-1 ring-white/10 flex items-center justify-center text-white text-sm font-bold"
+                  style={{ background: AVATAR_COLORS[index % AVATAR_COLORS.length] }}
                 >
-                  "
+                  {review.authorAttribution.photoUri ? (
+                    <Image
+                      src={review.authorAttribution.photoUri}
+                      alt={review.authorAttribution.displayName}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    review.authorAttribution.displayName.charAt(0).toUpperCase()
+                  )}
                 </div>
-
-                {/* Texto */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1 line-clamp-5">
-                  {review.text.text}
-                </p>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-9 h-9 rounded-full overflow-hidden ring-1 ring-white/10">
-                      <Image
-                        src={review.authorAttribution.photoUri}
-                        alt={review.authorAttribution.displayName}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-white text-xs font-semibold leading-tight">
-                        {review.authorAttribution.displayName}
-                      </p>
-                      <p className="text-white/30 text-xs">
-                        {review.relativePublishTimeDescription}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Estrellas */}
-                  <div className="flex gap-px">
-                    {renderStars(review.rating)}
-                  </div>
+                <div>
+                  <p className="text-white text-xs font-semibold leading-tight">
+                    {review.authorAttribution.displayName}
+                  </p>
+                  <p className="text-white/30 text-xs">
+                    {review.relativePublishTimeDescription}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Navegación + progreso */}
+        <div className="flex items-center gap-4 mt-8">
+          <button
+            onClick={() => scrollByCard(-1)}
+            aria-label="Anterior"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/40 transition-colors shrink-0"
+          >
+            ‹
+          </button>
+
+          <div className="flex-1 h-[2px] bg-white/10 rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-150"
+              style={{
+                width: `${Math.max(progress * 100, 15)}%`,
+                background: "linear-gradient(90deg, #E91E63, #9C27B0)",
+              }}
+            />
+          </div>
+
+          <button
+            onClick={() => scrollByCard(1)}
+            aria-label="Siguiente"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/40 transition-colors shrink-0"
+          >
+            ›
+          </button>
+        </div>
+
+        {/* Link Google */}
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-8 text-xs tracking-widest uppercase text-white/50 hover:text-white transition-colors"
+        >
+          Ver todas las reseñas en Google
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
       </div>
     </section>
   )

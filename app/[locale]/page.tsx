@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server"
 import HomeClient from "./HomeClient"
+import HomeClientV2 from "./HomeClientV2"
 import HomeSeoSection from "@/components/sections/home/HomeSeoSection"
-import ProtoPage from "@/components/proto/ProtoPage"
 import { buildServiceItemList, buildSpeakableWebPage } from "@/lib/seoSchemas"
 
 export default async function HomePage({ params }: { params: any }) {
@@ -54,21 +54,15 @@ export default async function HomePage({ params }: { params: any }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([itemListSchema, speakableSchema]) }}
       />
-      {/* Rediseño aprobado: /es sirve la home del prototipo (SSR estático con su
-          propio h1 y su sección de contacto #contacto); us y en conservan la
-          home original con su h1 sr-only y el bloque semántico SSR. */}
-      {locale === 'es' ? (
-        <ProtoPage frag="home" />
-      ) : (
-        <>
-          <h1 className="sr-only">{tH1("home")}</h1>
-          <HomeClient />
-          {/* Contenido semántico del home renderizado en el servidor (SSR real):
-              pilares + señales locales para Googlebot y bots de IA que no ejecutan
-              JS. HomeClient (arriba) es 'use client' y se hidrata en el navegador. */}
-          <HomeSeoSection locale={locale} />
-        </>
-      )}
+      {/* El cliente descartó la home del prototipo: /es sirve el rediseño de
+          Aymar (HomeClientV2); us y en conservan la home original. Ambas
+          versiones comparten el h1 sr-only y el bloque semántico SSR. */}
+      <h1 className="sr-only">{tH1("home")}</h1>
+      {locale === 'es' ? <HomeClientV2 /> : <HomeClient />}
+      {/* Contenido semántico del home renderizado en el servidor (SSR real):
+          pilares + señales locales para Googlebot y bots de IA que no ejecutan
+          JS. HomeClient (arriba) es 'use client' y se hidrata en el navegador. */}
+      <HomeSeoSection locale={locale} />
     </>
   )
 }
