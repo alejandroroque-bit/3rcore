@@ -2,6 +2,7 @@
 
 import { Link } from '@/i18n/routing';
 import type { AppPathname } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 
 // Array de datos con la información exacta del diseño. Los href son las rutas
 // reales del App Router (el diseño traía /servicios/paginas-web,
@@ -54,7 +55,7 @@ const services: { id: string; title: string; desc: string; price: string; href: 
     id: 'ads',
     title: 'Google Ads',
     desc: 'Campañas de Search, Shopping y remarketing con el coste por lead a la vista.',
-    price: 'S/ 1,000 / MES',
+    price: 'S/ 1,800 / MES',
     href: '/servicios/google-ads',
     icon: (
       <svg className="w-6 h-6 text-[#f4266e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -131,7 +132,23 @@ const services: { id: string; title: string; desc: string; price: string; href: 
   }
 ];
 
+// En Estados Unidos solo se venden tres servicios (pedido del cliente,
+// 20-ago: «igual que el de Perú, solo que ahí son 3 servicios»). Mismas
+// tarjetas y mismo look, con el catálogo y los precios en dólares que ya
+// publican /us/precios y el bloque semántico del home. El orden es el que
+// dictó el cliente: tiendas, webs, SEO.
+const US_OVERRIDES = [
+  { id: 'ecommerce', desc: 'Shopify o WooCommerce con catálogo, pasarelas de pago y checkout listos para vender en EE. UU.', price: 'DESDE $1,750' },
+  { id: 'web', desc: 'Webs corporativas, landings y sitios a medida, en español e inglés, listos para Google.', price: 'DESDE $850' },
+  { id: 'seo', desc: 'Auditoría, contenido y enlaces en español e inglés, con reporte mensual de posiciones reales de Google.', price: '$500 / MES' },
+];
+
 export default function ServicesGridSection() {
+  const locale = useLocale();
+  const isUs = locale === 'us';
+  const cards = isUs
+    ? US_OVERRIDES.map((o) => ({ ...services.find((s) => s.id === o.id)!, ...o }))
+    : services;
   return (
     <section className="w-full text-white py-16 md:py-24 px-6 md:px-12 flex justify-center">
       <div className="max-w-7xl w-full">
@@ -148,7 +165,7 @@ export default function ServicesGridSection() {
             
             {/* Título Principal */}
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter">
-              Nueve servicios,<br />
+              {isUs ? 'Tres servicios,' : 'Nueve servicios,'}<br />
               <span 
                 className="text-transparent" 
                 style={{ WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.4)' }}
@@ -168,7 +185,7 @@ export default function ServicesGridSection() {
         <div className="w-full bg-white/10 border border-white/10 rounded-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] overflow-hidden">
           
           {/* Tarjetas de Servicios */}
-          {services.map((service) => (
+          {cards.map((service) => (
             <Link 
               key={service.id} 
               href={service.href}
@@ -194,7 +211,9 @@ export default function ServicesGridSection() {
             </Link>
           ))}
 
-          {/* Tarjeta Inferior de Casos de Éxito (Ocupa todo el ancho) */}
+          {/* Tarjeta Inferior de Casos de Éxito (solo /es: la página vive
+              únicamente en el mercado peruano) */}
+          {!isUs && (
           <Link 
             href="/casos-de-exito"
             className="bg-[#0a0211] p-8 lg:p-10 col-span-1 md:col-span-2 lg:col-span-3 flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-white/[0.03] transition-colors duration-300 group gap-6"
@@ -214,6 +233,7 @@ export default function ServicesGridSection() {
               <span className="text-lg font-normal">↗</span>
             </span>
           </Link>
+          )}
           
         </div>
       </div>

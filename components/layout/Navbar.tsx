@@ -243,17 +243,34 @@ const Navbar = () => {
     { href: "/servicios/relaciones-publicas", label: "RELACIONES PÚBLICAS" },
     { href: "/servicios/influencer-marketing", label: "INFLUENCER MARKETING" },
   ];
-  const sideLinks = currentLocale === "es" ? ES_SIDE_LINKS : links;
+  // /us: mismo menú que Perú pero con el catálogo de tres servicios de ese
+  // mercado (pedido del cliente, 20-ago) — sin desplegable de marketing ni
+  // casos de éxito, que solo existen en /es. El orden es el que dictó el
+  // cliente: tiendas, webs, SEO.
+  const US_SIDE_LINKS: typeof links = [
+    { name: "INICIO", href: "/" },
+    { name: "NOSOTROS", href: "/nosotros" },
+    { name: "DESARROLLO DE TIENDAS VIRTUALES", href: "/tiendas-virtuales-lima" },
+    { name: "DESARROLLO DE PÁGINAS WEBS", href: "/servicios/web-development" },
+    { name: "POSICIONAMIENTO SEO", href: "/posicionamiento-seo" },
+    { name: "PRECIOS", href: "/precios" },
+    { name: "BLOG", href: "/blogs" },
+    { name: "CONTÁCTANOS", href: "/", hash: "#contacto", isContact: true },
+  ];
+  const sideLinks =
+    currentLocale === "es" ? ES_SIDE_LINKS
+    : currentLocale === "us" ? US_SIDE_LINKS
+    : links;
   const sideSublinks = currentLocale === "es" ? ES_SIDE_SUBLINKS : services;
-  // El menú de /es tiene 10 entradas: tipografía y cascada más compactas para
-  // que quepa en un móvil; /en y /us conservan las 5 suyas a tamaño original.
+  // Los menús de /es (10 entradas) y /us (8) usan tipografía y cascada más
+  // compactas para caber en un móvil; /en conserva sus 5 a tamaño original.
   const sideItemSize =
-    currentLocale === "es"
-      ? "text-lg sm:text-2xl py-3 sm:py-4"
-      : "text-3xl sm:text-3xl py-4 sm:py-6";
-  const sideDelayStep = currentLocale === "es" ? 60 : 100;
+    currentLocale === "en"
+      ? "text-3xl sm:text-3xl py-4 sm:py-6"
+      : "text-lg sm:text-2xl py-3 sm:py-4";
+  const sideDelayStep = currentLocale === "en" ? 100 : 60;
   const sideSubItemSize =
-    currentLocale === "es" ? "py-1.5 text-xs sm:text-sm" : "py-2.5 text-base";
+    currentLocale === "en" ? "py-2.5 text-base" : "py-1.5 text-xs sm:text-sm";
 
   const socialLinks = [
     { name: "FACEBOOK", href: "https://www.facebook.com/3Rcore/" },
