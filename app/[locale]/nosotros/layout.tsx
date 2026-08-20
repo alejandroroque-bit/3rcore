@@ -72,7 +72,9 @@ export default async function NosotrosLayout({ children, params }: { children: R
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([aboutSchema, breadcrumbSchema, ...personSchemas]) }}
       />
-      <h1 className="sr-only">{hiddenH1}</h1>
+      {/* En /es la página del prototipo trae su propio h1 visible; duplicarlo
+          con el sr-only dejaría dos h1 en la misma página. */}
+      {locale !== 'es' && <h1 className="sr-only">{hiddenH1}</h1>}
       {children}
     </>
   )

@@ -1,0 +1,461 @@
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://3rcore.com/#organization","name":"3R Core Agencia de Marketing","url":"https://3rcore.com","telephone":"+51986889147","email":"contacto@3rcore.com","address":{"@type":"PostalAddress","streetAddress":"Calle Alameda de la Paz 187, Piso 1","addressLocality":"La Molina","addressRegion":"Lima","addressCountry":"PE"},"areaServed":[{"@type":"Country","name":"Perú"},{"@type":"Country","name":"México"}],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},"founder":[{"@type":"Person","name":"Alejandro Roque","jobTitle":"CEO / Director General"},{"@type":"Person","name":"Bruno Roque","jobTitle":"Director de Marketing"},{"@type":"Person","name":"Piero Roque","jobTitle":"Director SEO / Ads"}]}]}</script>
+
+<style>
+/* Texto para lectores de pantalla y buscadores, invisible en pantalla.
+   Su home hace lo mismo con `sr-only`: el titular grande del hero va en
+   <p> y el H1 real lleva la frase completa de posicionamiento. */
+.rvh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* ── HERO ── */
+.rhero{position:relative;width:100%;min-height:100svh;background:#16021B;overflow:hidden;display:flex;align-items:center}
+.rhero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.rhero-veil{position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:5;pointer-events:none}
+.rhero-in{position:relative;z-index:20;width:100%;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem);
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2.5rem}
+.rhero-l{width:100%;display:flex;flex-direction:column;align-items:flex-start}
+/* 🚨 DOS TRAMPAS DEL TEXTO EN DEGRADADO, las dos aprendidas aquí:
+   1) El atajo `background` RESETEA `background-clip` a border-box. Si una
+      regla posterior solo cambia el degradado, el recorte se pierde, queda
+      `color:transparent` y el texto DESAPARECE. Por eso cada regla que
+      toca el fondo repite el recorte.
+   2) El color de respaldo es sólido: solo se pone transparente cuando el
+      navegador confirma que sabe recortar. Así, en el peor caso se ve
+      rosa; nunca invisible. */
+.rhero-l .g1,.rhero-l .g2{background:linear-gradient(90deg,#a630cd,#f4266e);-webkit-background-clip:text;
+  background-clip:text;color:#f4266e;font-weight:700;letter-spacing:-.03em;line-height:1.05;margin:0}
+.rhero-l .g2{background:linear-gradient(90deg,#f4266e,#a630cd);
+  -webkit-background-clip:text;background-clip:text}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .rhero-l .g1,.rhero-l .g2{color:transparent}
+}
+.rhero-l .g1{font-size:clamp(2.5rem,9vw,6rem)}
+.rhero-l .g2{font-size:clamp(1.9rem,9vw,6rem)}
+.rhero-l .mid{font-size:clamp(1.5rem,6.5vw,4.5rem);font-weight:500;color:#fff;line-height:1.1;margin:.15em 0}
+.rhero-l .mid i{font-family:var(--f-serif);font-style:italic;font-weight:300}
+.rhero-r{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem}
+.rhero-r .eye{color:#fff;font-size:.7rem;letter-spacing:.25em;font-weight:600;text-transform:uppercase;margin:0}
+.rhero-btns{display:flex;flex-wrap:wrap;gap:.9rem}
+.rbtn{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;border-radius:999px;
+  padding:.9rem 2.2rem;font-weight:600;font-size:.72rem;letter-spacing:.08em;text-decoration:none;
+  transition:transform .3s ease,background .3s ease,border-color .3s ease}
+.rbtn-1{background:linear-gradient(90deg,#f4266e,#a630cd);color:#fff;box-shadow:0 10px 30px rgba(244,38,110,.2)}
+.rbtn-1:hover{transform:scale(1.05)}
+.rbtn-2{border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:700}
+.rbtn-2:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.rcue{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  display:flex;flex-direction:column;align-items:center;gap:.25rem;text-decoration:none}
+.rcue .mouse{width:1.65rem;height:2.4rem;border:1.5px solid #fff;border-radius:999px;
+  display:flex;align-items:flex-start;justify-content:center;padding:.25rem}
+.rcue .mouse b{width:.25rem;height:.38rem;background:rgba(255,255,255,.7);border-radius:999px;
+  display:block;animation:rbounce 1.4s infinite}
+@keyframes rbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(.35rem)}}
+/* En móvil la barra fija de WhatsApp/Llamar/Cotizar tapaba el «NAVEGAR».
+   Medido a 390x844: la barra ocupa ~72px, así que el indicador sube. */
+@media(max-width:760px){.rcue{bottom:5.6rem}}
+.rcue .lab{display:flex;align-items:center;gap:.4rem;margin-top:.5rem}
+.rcue .lab i{width:.25rem;height:.25rem;background:#f4266e;border-radius:999px;display:block}
+.rcue .lab span{color:#fff;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.rcue svg{width:1rem;height:1rem;color:#fff;margin-top:.25rem}
+@media(min-width:900px){
+  .rhero-in{flex-direction:row;justify-content:space-between;align-items:center;gap:0}
+  .rhero-l,.rhero-r{width:50%}
+  .rhero-r{align-items:flex-end}
+  .rhero-r .eye{text-align:right}
+}
+/* ── BLOQUE «SOMOS UN EQUIPO» / «NOSOTROS» ── */
+.rteam{padding:clamp(3.5rem,8vw,6rem) 1.25rem;display:flex;justify-content:center;text-align:center}
+.rteam-in{max-width:72rem;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.rteam h2{font-family:var(--f-serif);font-style:italic;font-weight:300;color:#fff;
+  font-size:clamp(2.25rem,5vw,3.75rem);letter-spacing:.02em;line-height:1.15;margin:0 0 .35rem}
+.rteam h3{color:#D11E68;font-weight:500;font-size:clamp(2.25rem,5vw,3.75rem);
+  letter-spacing:.02em;margin:0 0 2rem}
+.rteam .rline{width:100%;max-width:64rem;height:2px;background:rgba(255,255,255,.4);margin:0 auto 2rem}
+/* Su TeamSection y su NosotrosSection ponen esta descripción en Josefin
+   Sans light — es la cuarta familia que añade su `lib/fonts.ts`. */
+.rteam p{color:#fff;font-family:'Josefin Sans',var(--f-text),sans-serif;font-weight:300;
+  font-size:clamp(.95rem,1.6vw,1.6rem);line-height:1.6;max-width:80rem;margin:0}
+/* ── REJILLA DE SERVICIOS ── */
+.rsrv{padding:clamp(3.5rem,8vw,6rem) clamp(1.5rem,4vw,3rem);display:flex;justify-content:center;color:#fff}
+.rsrv-in{max-width:80rem;width:100%}
+.rsrv-head{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;
+  gap:2rem;margin-bottom:4rem}
+.rtag{display:flex;align-items:center;gap:1rem;color:#f4266e;font-size:.7rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase}
+.rtag i{width:3rem;height:1px;background:#f4266e;display:block}
+.rsrv-head h2{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin:0}
+.rstroke{color:rgba(255,255,255,.45);-webkit-text-stroke:1.5px rgba(255,255,255,.4)}
+@supports (-webkit-text-stroke:1px #000){.rstroke{color:transparent}}
+.rsrv-head .rlede{color:rgba(255,255,255,.6);font-size:clamp(.9rem,1.2vw,1rem);font-weight:300;line-height:1.7}
+.rgrid{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:2px;
+  display:grid;grid-template-columns:1fr;gap:1px;overflow:hidden}
+.rcard{background:#0a0211;padding:clamp(1.75rem,3vw,2.5rem);display:flex;flex-direction:column;
+  justify-content:space-between;min-height:20rem;text-decoration:none;color:inherit;transition:background .3s ease}
+.rcard:hover{background:rgba(255,255,255,.03)}
+.rcard svg{width:1.5rem;height:1.5rem;color:#f4266e}
+.rcard h3{font-size:clamp(1.15rem,1.6vw,1.5rem);font-weight:600;margin:1.25rem 0 0}
+.rcard p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.7;font-weight:300;margin:1.25rem 0 0}
+.rcard .rprice{color:#f4266e;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  margin-top:3rem;display:block}
+.rcard .rgo{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.8);margin-top:.75rem}
+.rcard:hover .rgo{color:#fff}
+.rcase{background:#0a0211;padding:clamp(1.75rem,3vw,2.5rem);display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:space-between;gap:1.5rem;text-decoration:none;color:inherit;
+  transition:background .3s ease}
+.rcase:hover{background:rgba(255,255,255,.03)}
+.rcase .rcase-l{display:flex;align-items:flex-start;gap:1.5rem}
+.rcase svg{width:2rem;height:2rem;color:#f4266e;flex-shrink:0}
+.rcase h3{font-size:clamp(1.15rem,1.6vw,1.5rem);font-weight:600;margin:0 0 .25rem}
+.rcase p{color:rgba(255,255,255,.6);font-size:.88rem;font-weight:300;margin:0}
+@media(min-width:760px){.rgrid{grid-template-columns:repeat(2,1fr)}.rcase{grid-column:span 2;flex-direction:row;align-items:center}}
+@media(min-width:1100px){.rgrid{grid-template-columns:repeat(3,1fr)}.rcase{grid-column:span 3}
+  .rsrv-head{flex-direction:row;align-items:flex-end}.rsrv-head .rlede{width:33%}}
+/* ── CARRUSEL INFINITO + CIFRAS ── */
+.rmq-wrap{width:100%;padding:clamp(2.5rem,5vw,4rem) 0;display:flex;flex-direction:column;
+  align-items:center;gap:clamp(3rem,7vw,6rem);overflow:hidden}
+.rmq{width:100%;overflow:hidden;white-space:nowrap;display:flex;align-items:center;padding:1rem 0}
+.rmq-t{display:flex;width:max-content;animation:rscroll 40s linear infinite}
+@keyframes rscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.rmq-t .it{display:flex;align-items:center}
+.rmq-t .it span{font-size:clamp(1.9rem,5vw,3.75rem);font-weight:700;padding:0 clamp(.75rem,2vw,2rem);
+  letter-spacing:-.03em;color:#fff}
+.rmq-t .it.alt span{color:rgba(255,255,255,.35);-webkit-text-stroke:1.5px rgba(255,255,255,.3)}
+@supports (-webkit-text-stroke:1px #000){.rmq-t .it.alt span{color:transparent}}
+.rmq-t .it b{color:#f4266e;font-size:clamp(1.25rem,2vw,1.9rem);padding:0 clamp(.5rem,1vw,1rem);font-weight:400}
+.rstats{display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:clamp(3rem,6vw,10rem);width:100%;max-width:80rem;padding:0 2rem}
+.rstat{text-align:center;display:flex;flex-direction:column;align-items:center}
+.rstat b{color:#D11E68;font-family:var(--f-serif);font-style:italic;font-weight:700;
+  font-size:clamp(3.5rem,8vw,6rem);margin-bottom:1rem;line-height:1}
+/* 🚨 `.rstat span` (sin el >) alcanzaba TAMBIÉN al <span data-count> que
+   vive dentro del <b>, y dejaba el número en 12px con el «+» gigante.
+   La etiqueta es hija DIRECTA; el contador va dentro del <b>. */
+.rstat > span{color:#fff;font-size:.75rem;letter-spacing:.2em;font-weight:500;opacity:.8;text-transform:uppercase}
+.rstat b span{font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;color:inherit;letter-spacing:inherit}
+@media(min-width:760px){.rstats{flex-direction:row}}
+/* ── PORTAFOLIO ── */
+.rport{padding:clamp(2.5rem,5vw,5rem) clamp(1.5rem,4vw,3rem)}
+.rport-in{max-width:72rem;margin:0 auto}
+.rport-head{margin-bottom:4rem}
+.rport h2{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;
+  color:#fff;margin:0 0 1rem}
+.rport .rlede{color:rgba(255,255,255,.6);font-size:clamp(.9rem,1.2vw,1rem);font-weight:300;
+  line-height:1.7;max-width:36rem}
+.rport-g{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media(min-width:760px){.rport-g{grid-template-columns:repeat(3,1fr)}}
+.rpz{position:relative;overflow:hidden;border-radius:4px;background:#0a0211;aspect-ratio:3/4}
+.rpz img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .5s ease}
+.rpz img.b{position:absolute;inset:0;opacity:0}
+.rpz:hover img.b{opacity:1}
+/* ── HERO DE NOSOTROS ── */
+.rnos{position:relative;width:100%;min-height:100svh;background:#16021B;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center}
+.rnos>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.rnos .rhero-veil{z-index:5}
+.rnos-t{position:relative;z-index:20;color:#fff;font-size:clamp(2.75rem,10vw,7rem);font-weight:700;
+  letter-spacing:-.03em;line-height:1.05;margin:0}
+.rnos-t em{font-family:var(--f-serif);font-style:italic;font-weight:300;
+  background:linear-gradient(90deg,#f4266e,#a630cd);-webkit-background-clip:text;background-clip:text;color:#f4266e}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){.rnos-t em{color:transparent}}
+</style>
+
+<header class="rnos">
+  <video autoplay muted loop playsinline poster="/proto/img/hero/poster-agencia.jpg" width="1920" height="1080" aria-hidden="true">
+    <source src="/proto/img/video/hero-nosotros.webm" type="video/webm">
+    <source src="/proto/img/video/final.mp4" type="video/mp4">
+  </video>
+  <div class="rhero-veil" aria-hidden="true"></div>
+  <h1 class="rnos-t">Un equipo <em>propio</em></h1>
+  <a class="rcue" href="#equipo" aria-label="Bajar al equipo">
+    <span class="mouse" aria-hidden="true"><b></b></span>
+    <span class="lab"><i aria-hidden="true"></i><span>Navegar</span></span>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</header>
+
+<section class="rteam sec-line" id="equipo">
+  <div class="rteam-in rv">
+    <h2>Nosotros</h2>
+    <h3>Potenciamos tus resultados</h3>
+    <div class="rline" aria-hidden="true"></div>
+    <p>Nos convertimos en el motor estratégico de tu negocio. Nuestra misión es dedicar todo nuestro
+    talento y ADN tecnológico a impulsar el crecimiento de tu empresa, acompañándote en cada paso de
+    la evolución digital con soluciones innovadoras que garantizan tu relevancia en el mercado actual.</p>
+  </div>
+</section>
+
+<section class="sec-line">
+  <div class="wrap">
+    <h2 class="tt-wide rv">Fundadores</h2>
+    <p class="lede rv">Pasa el cursor sobre cada fundador para conectar con su visión.</p>
+    <div class="grid g3 funds">
+      
+      <figure class="fund rv rv-d1">
+        <div class="fund-m">
+          <img src="/proto/img/fundadores/AlejandroAlta1.webp" alt="Alejandro Roque, CEO 3R Core de 3R Core" loading="lazy" width="600" height="800">
+          <video muted loop playsinline preload="none" width="600" height="800" aria-hidden="true">
+            <source src="/proto/img/fundadores/Alejandro2.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption><b>Alejandro Roque</b><span>CEO 3R Core</span></figcaption>
+      </figure>
+      <figure class="fund rv rv-d2">
+        <div class="fund-m">
+          <img src="/proto/img/fundadores/BrunoAlta.webp" alt="Bruno Roque, Director de Marketing de 3R Core" loading="lazy" width="600" height="800">
+          <video muted loop playsinline preload="none" width="600" height="800" aria-hidden="true">
+            <source src="/proto/img/fundadores/Bruno2.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption><b>Bruno Roque</b><span>Director de Marketing</span></figcaption>
+      </figure>
+      <figure class="fund rv rv-d3">
+        <div class="fund-m">
+          <img src="/proto/img/fundadores/PieroAlta.webp" alt="Piero Roque, Director SEO / Ads de 3R Core" loading="lazy" width="600" height="800">
+          <video muted loop playsinline preload="none" width="600" height="800" aria-hidden="true">
+            <source src="/proto/img/fundadores/Piero2.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption><b>Piero Roque</b><span>Director SEO / Ads</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec-line">
+  <div class="wrap">
+    <h2 class="tt-wide rv">Nuestro Equipo</h2>
+    <p class="lede rv">Conoce a las personas que hacen posible nuestro éxito.</p>
+    
+    <div class="area rv">
+      <h3 class="area-t">commercial</h3>
+      <div class="equipo">
+        
+        <figure class="pers">
+          <img src="/proto/img/equipo/Mafer.webp" alt="Maria Fernanda, Directora de Operaciones en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Maria Fernanda</b><span>Directora de Operaciones</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Diana.webp" alt="Diana, Commercial Supervisor en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Diana</b><span>Commercial Supervisor</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Gimena.webp" alt="Gimena, Commercial en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Gimena</b><span>Commercial</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/MAJO_RONDON.webp" alt="Mariajose, Commercial en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Mariajose</b><span>Commercial</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Angella.webp" alt="Angella, Project Manager en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Angella</b><span>Project Manager</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/KARLA_TOSCANO.webp" alt="Karla, Web Sales en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Karla</b><span>Web Sales</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="area rv">
+      <h3 class="area-t">branding</h3>
+      <div class="equipo">
+        
+        <figure class="pers">
+          <img src="/proto/img/equipo/Elizabeth.webp" alt="Elizabeth, Creative Design Supervisor en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Elizabeth</b><span>Creative Design Supervisor</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Nadia.webp" alt="Nadia, Brand Manager en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Nadia</b><span>Brand Manager</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Odeth.webp" alt="Odeth, Brand Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Odeth</b><span>Brand Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Sara.webp" alt="Sara, Brand Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Sara</b><span>Brand Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/novo.webp" alt="Tania, Brand Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Tania</b><span>Brand Designer</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="area rv">
+      <h3 class="area-t">social media</h3>
+      <div class="equipo">
+        
+        <figure class="pers">
+          <img src="/proto/img/equipo/Grecia.webp" alt="Grecia, Social Media Manager en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Grecia</b><span>Social Media Manager</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Nicole.webp" alt="Nicole, Content Manager en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Nicole</b><span>Content Manager</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Claudia.webp" alt="Claudia, Content Manager en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Claudia</b><span>Content Manager</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Sofia-new.webp" alt="Sofia, Content Media en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Sofia</b><span>Content Media</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Arianna.webp" alt="Arianna, Media Creator en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Arianna</b><span>Media Creator</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Valentina.webp" alt="Valentina, Content Media Creator en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Valentina</b><span>Content Media Creator</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Mateo.webp" alt="Mateo, Content Creator Jr. en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Mateo</b><span>Content Creator Jr.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="area rv">
+      <h3 class="area-t">design multimedia</h3>
+      <div class="equipo">
+        
+        <figure class="pers">
+          <img src="/proto/img/equipo/Josue.webp" alt="Josue, Post-Production en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Josue</b><span>Post-Production</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Sofia.webp" alt="Sofia, Film Maker & Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Sofia</b><span>Film Maker & Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Aaron.webp" alt="Aaron, Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Aaron</b><span>Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/franco-2.webp" alt="Franco, Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Franco</b><span>Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Stefany.webp" alt="Stefany, Film Maker & Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Stefany</b><span>Film Maker & Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Karol.webp" alt="Karol, Film Maker & Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Karol</b><span>Film Maker & Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Franco.webp" alt="Franco, Designer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Franco</b><span>Designer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Gianella.webp" alt="Gianella, Graphic Design & Audiovisual en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Gianella</b><span>Graphic Design & Audiovisual</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="area rv">
+      <h3 class="area-t">Web development & IT</h3>
+      <div class="equipo">
+        
+        <figure class="pers">
+          <img src="/proto/img/equipo/Aymar.webp" alt="Aymar, Software Engineer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Aymar</b><span>Software Engineer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/jose.webp" alt="Jose, Seo Manager en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Jose</b><span>Seo Manager</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/josue-1.webp" alt="Josue, Web Developer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Josue</b><span>Web Developer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Marxs.webp" alt="Marxs, Software Engineer en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Marxs</b><span>Software Engineer</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/Fabian.webp" alt="Fabián, Diseñador Web UI/UX en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Fabián</b><span>Diseñador Web UI/UX</span></figcaption>
+        </figure>
+        <figure class="pers">
+          <img src="/proto/img/equipo/bob.webp" alt="Bob, AI - Software Engineer Agent en 3R Core" loading="lazy" width="320" height="400">
+          <figcaption><b>Bob</b><span>AI - Software Engineer Agent</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-line">
+  <div class="wrap">
+    <h2 class="tt-wide rv">Momentos que fortalecen nuestro vínculo</h2>
+    <div class="momentos">
+      
+      <figure class="momento rv rv-d1">
+        <img src="/proto/img/actividades/3R-Team-alta-scaled.webp" alt="Fundadores — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>Fundadores</figcaption>
+      </figure>
+      <figure class="momento rv rv-d2">
+        <img src="/proto/img/actividades/image-63.webp" alt="Equipo Mounstroso — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>Equipo Mounstroso</figcaption>
+      </figure>
+      <figure class="momento rv rv-d3">
+        <img src="/proto/img/actividades/Brand-alta-scaled-e1767107339314.webp" alt="Equipo Branding — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>Equipo Branding</figcaption>
+      </figure>
+      <figure class="momento rv rv-d4">
+        <img src="/proto/img/actividades/domus-alta-scaled.webp" alt="Equipo Domus — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>Equipo Domus</figcaption>
+      </figure>
+      <figure class="momento rv rv-d1">
+        <img src="/proto/img/actividades/act-01.webp" alt="¿Sale fulbo? — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>¿Sale fulbo?</figcaption>
+      </figure>
+      <figure class="momento rv rv-d2">
+        <img src="/proto/img/actividades/act-02.webp" alt="¿Sale pollito? — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>¿Sale pollito?</figcaption>
+      </figure>
+      <figure class="momento rv rv-d3">
+        <img src="/proto/img/actividades/WhatsApp-Image-2023-05-08-at-16.47.46.webp" alt="¡Tengo HAMBRE! — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>¡Tengo HAMBRE!</figcaption>
+      </figure>
+      <figure class="momento rv rv-d4">
+        <img src="/proto/img/actividades/43a80682-ddcf-4cfa-b23a-7dea1cd33283-3.webp" alt="Reuniones — equipo de 3R Core" loading="lazy" width="600" height="450">
+        <figcaption>Reuniones</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec-line" id="contacto">
+  <div class="wrap">
+    <h2 class="tt-wide rv">Contáctanos</h2>
+    <div class="split contacto-g">
+      <div class="rv">
+        <p class="lede">Cuéntanos qué necesitas y te respondemos hoy mismo. Estamos en Alameda de la Paz 187, primer piso, La Molina, Lima.</p>
+        <div class="cvias">
+          <a href="tel:+51986889147"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1.2 1.2 0 011.2-.3c1.1.4 2.4.6 3.6.6.7 0 1.2.5 1.2 1.2v3.4c0 .7-.5 1.2-1.2 1.2A17.4 17.4 0 013 4.2C3 3.5 3.5 3 4.2 3h3.4c.7 0 1.2.5 1.2 1.2 0 1.3.2 2.5.6 3.6a1.2 1.2 0 01-.3 1.2l-2.5 1.8z"/></svg>+51 986 889 147</a>
+          <a href="mailto:contacto@3rcore.com"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="M3 6.5l9 6.2 9-6.2"/></svg>contacto@3rcore.com</a>
+          <a href="https://wa.me/51987216703?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20agendar%20una%20reuni%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8 8 0 01-8.5 8 9 9 0 01-3.6-.7L3.5 20.5l1.8-4.6a8 8 0 01-1.3-4.4 8 8 0 018.5-8 8 8 0 018 8z"/><path d="M9 9.4c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.5l-.5.6c-.1.2-.2.3-.1.5.5 1 1.4 1.6 2.5 2.1.2.1.4 0 .5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4a1.7 1.7 0 01-1.2 1.4c-.6.1-1.1.1-2.3-.4a8.2 8.2 0 01-3.9-3.5c-.4-.7-.7-1.4-.7-2.1 0-.5.1-.8.3-1z"/></svg>WhatsApp</a>
+        </div>
+      </div>
+      
+<form class="freal rv rv-d2" data-demo="1">
+  <div class="freal-g">
+    <div class="field"><label for="cw">Sitio web</label><input id="cw" placeholder="www.tuempresa.com"></div>
+    <div class="field"><label for="cn">Nombre y Apellido</label><input id="cn" required placeholder="Tu nombre"></div>
+    <div class="field"><label for="ce">Empresa</label><input id="ce" placeholder="Nombre de tu empresa"></div>
+    <div class="field"><label for="ct">Teléfono</label><input id="ct" type="tel" required placeholder="+51 999 999 999"></div>
+    <div class="field"><label for="cm">Email</label><input id="cm" type="email" required placeholder="tucorreo@empresa.com"></div>
+    <div class="field fw"><label for="cx">Mensaje</label><textarea id="cx" rows="4" placeholder="Cuéntanos qué necesitas"></textarea></div>
+  </div>
+  <button class="btn btn-1" type="submit">Enviar<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5"/></svg></button>
+</form>
+    </div>
+  </div>
+</section>
+
