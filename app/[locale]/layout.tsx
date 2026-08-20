@@ -280,12 +280,6 @@ export default async function RootLayout({
       },
       {
         "@type": "Person",
-        "name": "Bruno Roque",
-        "jobTitle": locale === 'en' ? "Marketing Director" : "Director de Marketing",
-        "worksFor": { "@id": `${BASE_URL}/#organization` }
-      },
-      {
-        "@type": "Person",
         "name": "Piero Roque",
         "jobTitle": locale === 'en' ? "SEO / Ads Director" : "Director SEO / Ads",
         "worksFor": { "@id": `${BASE_URL}/#organization` }
