@@ -5,6 +5,7 @@ import type { BlogPost } from "@/lib/supabase/types"
 import BlogPostView from "./BlogPostView"
 import { BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
+import { getBlogSeoOverride } from "@/lib/blog-seo-overrides"
 
 export const revalidate = 3600
 
@@ -126,17 +127,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   languages['x-default'] = languages['es'] || languages[locale] || canonical
 
+  // Snippet escrito a mano para las URLs que ya rankean en posición 4-7 y no
+  // reciben clics (ver lib/blog-seo-overrides.ts). Manda sobre lo que traiga
+  // el CMS; borrar la entrada devuelve el control a Supabase.
+  const seo = getBlogSeoOverride(slug, locale)
+
   return {
-    title: post.meta_title && !looksLikeSlug(post.meta_title) ? post.meta_title : `${post.title} | 3R Core`,
-    description: post.meta_description || post.excerpt || '',
+    title: seo?.title ?? (post.meta_title && !looksLikeSlug(post.meta_title) ? post.meta_title : `${post.title} | 3R Core`),
+    description: seo?.description ?? (post.meta_description || post.excerpt || ''),
     alternates: {
       canonical,
       languages,
     },
     robots: post.robots || 'index, follow',
     openGraph: {
-      title: post.og_title || post.title,
-      description: post.og_description || post.meta_description || post.excerpt || '',
+      title: seo?.title ?? (post.og_title || post.title),
+      description: seo?.description ?? (post.og_description || post.meta_description || post.excerpt || ''),
       url: canonical,
       siteName: '3R Core',
       images: image
@@ -150,8 +156,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.og_title || post.title,
-      description: post.og_description || post.meta_description || post.excerpt || '',
+      title: seo?.title ?? (post.og_title || post.title),
+      description: seo?.description ?? (post.og_description || post.meta_description || post.excerpt || ''),
       images: image ? [image] : [DEFAULT_OG_IMAGE.url],
     },
   }
