@@ -102,8 +102,16 @@ const nextConfig: NextConfig = {
       { source: '/diseno-web-lima', destination: '/es/servicios/web-development', permanent: true },
       { source: '/:locale(es|en)/agencia-seo-lima', destination: '/:locale/posicionamiento-seo', permanent: true },
       { source: '/agencia-seo-lima', destination: '/es/posicionamiento-seo', permanent: true },
-      { source: '/:locale(es|en)/agencia-marketing-digital-lima', destination: '/:locale/servicios', permanent: true },
-      { source: '/agencia-marketing-digital-lima', destination: '/es/servicios', permanent: true },
+      // La 301 de /agencia-marketing-digital-lima → /servicios se retira el
+      // 26-ago-2026. Motivo (Search Console, 90 días): «agencia de marketing
+      // digital lima» daba 179 impresiones en posición 68,7 y CERO clics, y la
+      // página que heredaba esa búsqueda era un índice de 395 palabras que
+      // Google no rastreaba desde el 23-jul. Ahora las dos existen con papeles
+      // distintos: /servicios es el CATÁLOGO (qué es cada cosa y cuánto cuesta)
+      // y /agencia-marketing-digital-lima es la página de AGENCIA EN LIMA (por
+      // qué contratarla, cómo trabaja, zonas, sectores y preguntas previas).
+      // Volver atrás = devolver estas dos líneas.
+      { source: '/agencia-marketing-digital-lima', destination: '/es/agencia-marketing-digital-lima', permanent: true },
       // ── 136 URLs de la web anterior en WordPress (2026-08-26) ────────────
       // La migración dejó 136 direcciones con formato `/AAAA/MM/DD/slug/`
       // devolviendo 404. Comprobado en el mapa del 25-ago: las 134 con destino

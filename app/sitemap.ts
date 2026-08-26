@@ -61,6 +61,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/en/nearshore-marketing-agency`, priority: 0.95 },
     { url: `${baseUrl}/us/marketing-para-negocios-hispanos`, priority: 0.95 },
     { url: `${baseUrl}/es/casos-de-exito`, priority: 0.8 },
+    // Página madre del negocio, recuperada el 26-ago-2026 (ya no 301 hacia
+    // /servicios). Solo /es: el slug es español y en /en el mercado se ataca
+    // con /nearshore-marketing-agency, que es otro eje.
+    { url: `${baseUrl}/es/agencia-marketing-digital-lima`, priority: 0.95 },
   ]
 
   // Antes el sitemap listaba SOLO /es (163 URLs, cero /en como <loc>): las

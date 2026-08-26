@@ -14,6 +14,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Digital Marketing Agency in Lima, Peru | 3R Core',
     descriptionEs: 'Agencia peruana con oficina en La Molina. Precios publicados, sin permanencia y el trabajo es tuyo desde el primer día. 4,7★ en 42 reseñas de Google.',
     descriptionEn: 'Peruvian agency in La Molina, Lima. Published pricing, no lock-in and you own the work from day one. 4.7 stars from 42 Google reviews.',
+    // Solo /es compite en el índice: el slug es español y en /en ese mercado lo
+    // ataca /nearshore-marketing-agency. /en y /us quedan noindex,follow para
+    // no canibalizar y seguir repartiendo autoridad por sus enlaces internos.
+    noindex: locale !== 'es',
     ogImage: {
       url: 'https://3rcore.com/og/default.jpg',
       width: 1200,
