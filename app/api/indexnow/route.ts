@@ -10,27 +10,59 @@ const ENDPOINTS = [
   "https://yandex.com/indexnow",
 ]
 
+// Lista revisada el 26-ago-2026 con Search Console en la mano.
+// Antes apuntaba a URLs de /en que hoy redirigen (/en/servicios/* → /en/services/*):
+// enviar redirecciones a IndexNow es gastar cuota en nada.
+// Ahora entran las que de verdad importan: las CINCO páginas que Google marcó
+// como «descubierta, actualmente sin indexar» y NUNCA rastreó, la página madre
+// recuperada, y las de venta cuyos títulos acaban de cambiar.
 const STATIC_URLS = [
-  "https://3rcore.com/es",
-  "https://3rcore.com/en",
-  "https://3rcore.com/es/servicios",
-  "https://3rcore.com/en/servicios",
-  "https://3rcore.com/es/servicios/branding",
-  "https://3rcore.com/en/servicios/branding",
-  "https://3rcore.com/es/servicios/web-development",
-  "https://3rcore.com/en/servicios/web-development",
-  "https://3rcore.com/es/servicios/socialmedia",
-  "https://3rcore.com/en/servicios/socialmedia",
-  "https://3rcore.com/es/servicios/google-ads",
-  "https://3rcore.com/en/servicios/google-ads",
-  "https://3rcore.com/es/posicionamiento-seo",
-  "https://3rcore.com/en/posicionamiento-seo",
-  "https://3rcore.com/es/nosotros",
-  "https://3rcore.com/en/nosotros",
+  // Página madre del negocio, recuperada el 26-ago.
+  "https://3rcore.com/es/agencia-marketing-digital-lima",
+  // Las cinco que Google nunca visitó (lastCrawlTime vacío).
+  "https://3rcore.com/es/casos-de-exito",
   "https://3rcore.com/es/preguntas",
-  "https://3rcore.com/en/preguntas",
+  "https://3rcore.com/es/servicios/meta-ads",
+  "https://3rcore.com/es/servicios/relaciones-publicas",
+  "https://3rcore.com/es/servicios/influencer-marketing",
+  // Índice de servicios: pasó de 395 a más de 1.200 palabras.
+  "https://3rcore.com/es/servicios",
+  // Portada y pilares.
+  "https://3rcore.com/es",
+  "https://3rcore.com/es/posicionamiento-seo",
+  "https://3rcore.com/es/tiendas-virtuales-lima",
+  "https://3rcore.com/es/servicios/web-development",
+  "https://3rcore.com/es/servicios/google-ads",
+  "https://3rcore.com/es/servicios/socialmedia",
+  "https://3rcore.com/es/servicios/branding",
+  "https://3rcore.com/es/servicios/tiktok-ads",
+  "https://3rcore.com/es/servicios/performance-marketing",
+  "https://3rcore.com/es/servicios/email-marketing",
+  "https://3rcore.com/es/servicios/ugc",
+  "https://3rcore.com/es/servicios/marketing-clinicas",
+  "https://3rcore.com/es/servicios/marketing-inmobiliarias",
+  "https://3rcore.com/es/servicios/marketing-ecommerce",
+  "https://3rcore.com/es/nosotros",
+  "https://3rcore.com/es/precios",
   "https://3rcore.com/es/blogs",
-  "https://3rcore.com/en/blogs",
+  // Los artículos del clúster «cuánto cuesta» con snippet nuevo.
+  "https://3rcore.com/es/blogs/cuanto-cuesta-pagina-web-peru-2026",
+  "https://3rcore.com/es/blogs/cuanto-cuesta-branding-peru-2026",
+  "https://3rcore.com/es/blogs/cuanto-cuesta-publicidad-facebook-instagram-peru-2026",
+  "https://3rcore.com/es/blogs/cuanto-cuesta-tienda-virtual-peru-2026",
+  "https://3rcore.com/es/blogs/cuanto-cuesta-community-manager-redes-lima-2026",
+  "https://3rcore.com/es/blogs/cuanto-cuesta-agencia-seo-lima-2026",
+  "https://3rcore.com/es/blogs/cuanto-cuesta-anunciar-tiktok-peru-cpm-cpa",
+  "https://3rcore.com/es/blogs/mejores-paginas-web-peruanas-2026",
+  // Mercado EE.UU.: los slugs REALES de /en, no los españoles que redirigen.
+  "https://3rcore.com/en",
+  "https://3rcore.com/en/services",
+  "https://3rcore.com/en/seo-agency",
+  "https://3rcore.com/en/ecommerce-development",
+  "https://3rcore.com/en/services/web-development",
+  "https://3rcore.com/en/nearshore-marketing-agency",
+  "https://3rcore.com/us",
+  "https://3rcore.com/us/marketing-para-negocios-hispanos",
 ]
 
 export async function GET(req: NextRequest) {

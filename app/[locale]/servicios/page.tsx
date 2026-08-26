@@ -7,9 +7,15 @@ import ServiceAbout from "@/components/sections/servicios/serviciesAbout";
 import MoreServicesSection from "@/components/sections/servicios/MoreServicesSection";
 import { buildSpeakableWebPage } from "@/lib/seoSchemas";
 import { buildServiciosIndexSchemas } from "@/lib/servicios-index-schema";
+import ServiciosSeoSection from "@/components/seo/ServiciosSeoSection";
+import { setRequestLocale } from "next-intl/server"
 
 export default async function Servicios({ params }: { params: any }) {
   const { locale } = await params;
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const isEn = locale === 'en';
 
   const speakableSchema = buildSpeakableWebPage({
@@ -40,6 +46,10 @@ export default async function Servicios({ params }: { params: any }) {
       <ServiceAbout></ServiceAbout>
       <FeaturesSection></FeaturesSection>
       <MoreServicesSection />
+      {/* Contenido SSR del índice: precios reales, los 16 servicios enlazados
+          (cinco estaban huérfanas y Google nunca las rastreó) y las respuestas
+          de dinero que ya rankean sin recibir clics. */}
+      <ServiciosSeoSection locale={locale} />
       <ProjectsSection/>
       <ClientsSection/>
       <ContactForm></ContactForm>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { generatePageMetadata, generateBreadcrumbSchema, BASE_URL } from "@/lib/metadata"
 import { buildServiceItemList, buildSpeakableSchema } from "@/lib/seoSchemas"
+import { COPY } from "./copy"
 
 export const revalidate = 3600
 
@@ -9,10 +10,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/agencia-marketing-digital-lima',
-    titleEs: 'Agencia de Marketing Digital en Lima, Perú — Branding, SEO, Google Ads, Redes y Web | 3R Core',
-    titleEn: 'Digital Marketing Agency in Lima, Peru — Branding, SEO, Google Ads, Social Media & Web | 3R Core',
-    descriptionEs: '3R Core es una agencia de marketing digital en La Molina, Lima, Perú. Branding, manejo de redes sociales, Google Ads, posicionamiento SEO y desarrollo web para empresas en Perú y Estados Unidos.',
-    descriptionEn: '3R Core is a digital marketing agency in La Molina, Lima, Peru. Branding, social media management, Google Ads, SEO positioning and web development for companies in Peru and the United States.',
+    titleEs: 'Agencia de Marketing Digital en Lima, Perú | 3R Core',
+    titleEn: 'Digital Marketing Agency in Lima, Peru | 3R Core',
+    descriptionEs: 'Agencia peruana con oficina en La Molina. Precios publicados, sin permanencia y el trabajo es tuyo desde el primer día. 4,7★ en 42 reseñas de Google.',
+    descriptionEn: 'Peruvian agency in La Molina, Lima. Published pricing, no lock-in and you own the work from day one. 4.7 stars from 42 Google reviews.',
     ogImage: {
       url: 'https://3rcore.com/og/default.jpg',
       width: 1200,
@@ -77,11 +78,28 @@ export default async function LimaLandingLayout({ children, params }: { children
     "speakable": buildSpeakableSchema(['h1', 'h2', '.local-intro']),
   }
 
+  // FAQPage con las MISMAS preguntas que se ven en la página (COPY compartido):
+  // marcar preguntas que el visitante no encuentra en pantalla es justo lo que
+  // Google considera marcado engañoso.
+  const t = locale === 'en' ? COPY.en : COPY.es
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${BASE_URL}/${locale}/agencia-marketing-digital-lima#faqpage`,
+    "url": `${BASE_URL}/${locale}/agencia-marketing-digital-lima`,
+    "inLanguage": isEn ? 'en' : 'es',
+    "mainEntity": t.faq.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, itemList, breadcrumbSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, itemList, breadcrumbSchema, faqSchema]) }}
       />
       {children}
     </>
