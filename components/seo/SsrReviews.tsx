@@ -28,9 +28,11 @@ export default async function SsrReviews({ locale }: { locale: string }) {
           : `Lo que dicen nuestros clientes: ${rating} sobre 5 en ${count} reseñas de Google`}
       </h2>
       <p className="text-white/55 text-sm md:text-base leading-relaxed mb-8 max-w-3xl">
+        {/* Solo lo que la ficha dice: nota media y número de reseñas. Ni
+            «verificadas» ni de qué países son — eso no consta en el dato. */}
         {isEn
-          ? `3R Core holds a ${rating}-star average from ${count} verified reviews on its Google Business Profile, left by clients in Peru and the United States.`
-          : `3R Core mantiene una valoración media de ${rating} estrellas sobre ${count} reseñas verificadas en su perfil de empresa de Google, dejadas por clientes de Perú y Estados Unidos.`}
+          ? `3R Core holds an average rating of ${rating} out of 5 across ${count} reviews on its Google Business Profile.`
+          : `3R Core tiene una valoración media de ${rating} sobre 5 en ${count} reseñas de su perfil de empresa de Google.`}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {reviews.map((r) => (

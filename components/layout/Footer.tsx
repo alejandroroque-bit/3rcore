@@ -6,6 +6,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import type { AppPathname } from "@/i18n/routing";
+import { NAP } from '@/lib/nap';
 
 const Footer = () => {
 
@@ -57,10 +58,11 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">{ t('agency')}</h3>
             <div className="text-gray-200 text-sm lg:text-xs xl:text-sm leading-relaxed space-y-1">
+              {/* Dirección desde lib/nap.ts: una sola fuente para todo el sitio. */}
               <p>
-                Alameda de la Paz 187, primer piso
+                {NAP.street}
                 <br />
-                 Urb El Remanso,La Molina. Lima - Perú
+                Urb El Remanso, {NAP.district}. {NAP.region} - Perú
               </p>
               <p>
                 { t('A')}<br />9am a 6pm

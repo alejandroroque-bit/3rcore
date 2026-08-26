@@ -9,13 +9,17 @@
  * en el resultado. Solo `cuanto-cuesta-pagina-web-peru-2026` acumula 4.195
  * apariciones y 17 visitas.
  *
- * Qué cambia respecto al meta que trae Supabase: el snippet dice la CIFRA. En
- * una búsqueda que empieza por «cuánto cuesta», el resultado que enseña el
- * precio se lleva el clic. Los importes son los publicados por el cliente en
- * /es/precios — ni uno inventado.
+ * ⚠️ REGLA DE ORIGEN DE LOS DATOS. Cada cifra de estas descripciones está
+ * copiada del «Resumen ejecutivo» DEL PROPIO ARTÍCULO — se leyeron los catorce
+ * por la API (`/api/posts/<slug>`) el 26-ago-2026 antes de escribir una sola
+ * línea. NO se usan los precios de /es/precios: esos son la tarifa de 3R Core y
+ * los artículos hablan del precio de MERCADO en Perú, que es otra cosa. Una
+ * descripción que promete una cifra que el artículo no da es un clic
+ * defraudado, y Google lo acaba notando.
  *
  * Cómo mandar: esto tiene prioridad sobre `meta_title` / `meta_description` de
- * la base. Para devolver el control al CMS, basta borrar la entrada.
+ * la base. Para devolver el control al CMS, basta borrar la entrada. Si se
+ * reescribe un artículo y cambian sus cifras, hay que revisar su entrada aquí.
  *
  * Deliberadamente NO se toca «características de la publicidad» (2.694
  * apariciones, posición 7,4): es público escolar. Subirle el CTR inflaría las
@@ -28,78 +32,105 @@ export interface BlogSeoOverride {
 }
 
 export const BLOG_SEO_OVERRIDES: Record<string, BlogSeoOverride> = {
+  // Resumen del artículo: S/2,500–25,000 · landing S/2,500 · corporativa
+  // S/4,500–9,000 · e-commerce desde S/6,500 · portal desde S/12,000.
   'cuanto-cuesta-pagina-web-peru-2026': {
     title: '¿Cuánto cuesta una página web en Perú? Precios 2026',
     description:
-      'Landing desde S/1,800, web corporativa entre S/4,500 y S/9,000 y tienda online desde S/6,500. Qué incluye cada rango y qué encarece el presupuesto.',
+      'Landing S/2,500, web corporativa S/4,500–9,000, e-commerce desde S/6,500 y portal con sistema desde S/12,000. Qué incluye cada rango y qué lo encarece.',
   },
+  // Resumen: logo desde S/800 · identidad visual completa desde S/3,500 ·
+  // branding integral con manual desde S/6,500 · rebranding desde S/12,000.
   'cuanto-cuesta-branding-peru-2026': {
     title: '¿Cuánto cuesta el branding en Perú? Precios 2026',
     description:
-      'Una identidad con logotipo y manual de marca arranca desde S/500. Qué entra en ese precio, qué sube la factura y cómo saber si te cobran de más.',
+      'Logo desde S/800, identidad visual completa desde S/3,500, branding con manual de marca desde S/6,500 y rebranding desde S/12,000. Qué incluye cada nivel.',
   },
+  // Resumen: piso práctico S/600/mes · rangos S/1,500–8,000 según rubro ·
+  // CPM S/8–25 · CPC S/0.30–1.50 · costo por lead S/3–40.
   'cuanto-cuesta-publicidad-facebook-instagram-peru-2026': {
     title: 'Cuánto cuesta la publicidad en Facebook en Perú 2026',
     description:
-      'Qué se le paga a Meta y qué a la agencia, cuánto hace falta para arrancar en Perú y los errores que disparan el costo por resultado.',
+      'Piso práctico de S/600 al mes y rangos de S/1,500 a S/8,000 según rubro. CPM de S/8 a S/25, CPC de S/0.30 a S/1.50 y costo por lead de S/3 a S/40.',
   },
+  // Resumen: implementación S/1,500–25,000 · tienda estándar S/1,500–4,000 ·
+  // mensualidad: Shopify desde USD 39, Tiendanube desde S/89, Woo solo hosting.
   'cuanto-cuesta-tienda-virtual-peru-2026': {
     title: '¿Cuánto cuesta una tienda virtual en Perú? 2026',
     description:
-      'Implementación en Shopify o Tiendanube desde S/1,500 y e-commerce completo desde S/6,500. Qué incluye cada opción y qué se paga aparte.',
+      'Implementación de S/1,500 a S/25,000 y una tienda estándar lista para vender de S/1,500 a S/4,000, más la mensualidad de Shopify, Tiendanube o WooCommerce.',
   },
+  // Resumen: una tienda pequeña se sostiene desde ~S/150–400/mes en costos
+  // fijos, sin contar pauta ni comisiones de pasarela.
   'cuanto-cuesta-mantener-tienda-virtual-peru-2026': {
     title: '¿Cuánto cuesta mantener una tienda virtual en Perú?',
     description:
-      'Hosting, dominio, pasarela de pago, plantilla y soporte: la suma real de mantener una tienda online en Perú cada mes, sin sorpresas al final.',
+      'Una tienda pequeña se sostiene desde S/150 a S/400 al mes en costos fijos, sin contar pauta ni comisiones. El desglose de plataforma, pasarela y soporte.',
   },
+  // Resumen: freelance S/600–1,500/mes · agencia S/1,500–4,000+/mes según
+  // piezas, plataformas y si incluye pauta.
   'cuanto-cuesta-community-manager-redes-lima-2026': {
     title: '¿Cuánto cuesta un community manager en Lima? 2026',
     description:
-      'Freelance, agencia o alguien en planilla: qué cobra cada opción en Lima y qué incluye. Con agencia, la gestión de redes arranca desde S/1,500 al mes.',
+      'Un freelance cobra de S/600 a S/1,500 al mes y una agencia de S/1,500 a S/4,000+. Qué incluye cada rango y cómo saber si tus redes venden o solo dan likes.',
   },
+  // Resumen: S/1,800–5,000+/mes · local S/1,800 · competitivo S/3,000 ·
+  // enterprise desde S/5,000 · netos, +18% IGV · rinde a partir del mes 3-6.
   'cuanto-cuesta-agencia-seo-lima-2026': {
     title: '¿Cuánto cuesta una agencia SEO en Lima? Precios 2026',
     description:
-      'El SEO con agencia en Lima arranca desde S/1,800 al mes. Qué entra en ese fee, cuánto tarda de verdad en verse y qué promesas son señal de humo.',
+      'De S/1,800 a S/5,000+ al mes: tier local S/1,800, competitivo S/3,000 y enterprise desde S/5,000. Rinde a partir del mes 3-6, no antes.',
   },
+  // Resumen: fee de gestión desde S/1,800/mes + pauta mínima recomendada
+  // S/1,500/mes pagada a Google → arranque serio ~S/3,300/mes.
   'cuanto-cuesta-google-ads-lima-agencia-2026': {
-    title: '¿Cuánto cuesta Google Ads con agencia en Lima? 2026',
+    title: '¿Cuánto cuesta Google Ads en Lima? Fee y pauta 2026',
     description:
-      'Fee de gestión desde S/1,800 al mes más un presupuesto de pauta mínimo de S/1,500 que se paga directo a Google. Qué cubre exactamente cada parte.',
+      'Son dos costos que no hay que mezclar: fee de agencia desde S/1,800 al mes y pauta mínima de S/1,500 pagada a Google. Un arranque serio ronda los S/3,300.',
   },
+  // Resumen: piso práctico S/700/mes en medios · CPM S/6–20 · CPC S/0.20–1.20 ·
+  // CPA S/5–45 según rubro.
   'cuanto-cuesta-anunciar-tiktok-peru-cpm-cpa': {
     title: '¿Cuánto cuesta anunciar en TikTok en Perú? CPM y CPA',
     description:
-      'Presupuesto mínimo para arrancar, cómo se forman el CPM y el CPA en Perú y cuánto hace falta para que la campaña salga de la fase de aprendizaje.',
+      'Piso práctico de S/700 al mes en medios, CPM de S/6 a S/20, CPC de S/0.20 a S/1.20 y CPA de S/5 a S/45 según rubro. Qué encarece y qué abarata tu campaña.',
   },
+  // El artículo NO da una cifra en su resumen: explica el trabajo real (pagos
+  // peruanos, envíos, velocidad, SEO, medición) y cuándo hace falta una
+  // agencia. La descripción NO puede prometer un precio que el texto no tiene.
   'agencia-shopify-peru-que-hace-cuanto-cuesta': {
     title: 'Agencia Shopify en Perú: qué hace y cuánto cuesta',
     description:
-      'Qué hace exactamente una agencia Shopify, qué puedes resolver tú solo y cuánto cuesta. Una tienda completa con pasarela local arranca desde S/6,500.',
+      'Entre abrir una cuenta de Shopify y tener una tienda que venda en Perú hay pagos locales, envíos, velocidad, SEO y medición. Eso es lo que hace una agencia.',
   },
+  // Resumen: ninguna plataforma tiene tarifario fijo, todas van por subasta.
+  // Lo que sí se puede saber es la estructura (pauta + gestión) y los rangos.
   'tarifas-publicidad-digital-peru-2026-google-meta-tiktok-linkedin': {
     title: 'Tarifas de publicidad digital en Perú 2026',
     description:
-      'Google, Meta, TikTok y LinkedIn comparados: presupuesto mínimo por canal, a qué público llega cada uno y cuál conviene según lo que vendas.',
+      'Ninguna plataforma tiene tarifario: todas van por subasta. Cómo se estructura la inversión entre pauta y gestión en Google, Meta, TikTok y LinkedIn.',
   },
+  // Resumen: se puede empezar desde S/700 al mes, pero lo que decide es el
+  // creativo. Guía de 6 pasos hasta la primera campaña medida.
   'tiktok-ads-peru-2026-guia-completa-empezar-vender': {
     title: 'TikTok Ads en Perú: guía para empezar a vender',
     description:
-      'Cómo montar tu primera campaña de TikTok Ads en Perú paso a paso: cuenta, píxel, formatos, presupuesto y qué mirar en la primera semana.',
+      'Se puede empezar desde S/700 al mes, pero lo que decide no es el dinero: es el creativo. De crear la cuenta a Spark Ads y medir con el píxel, paso a paso.',
   },
+  // El artículo analiza DIEZ webs peruanas concretas: BCP, Plaza Vea,
+  // Cinepólis, Don Italo, Sodimac, Inkaterra… Nombrarlas es lo que da el clic.
   'mejores-paginas-web-peruanas-2026': {
-    title: 'Las mejores páginas web peruanas de 2026',
+    title: '10 páginas web peruanas que rinden en 2026',
     description:
-      'Webs peruanas que sí funcionan, mirando diseño, velocidad y conversión — y qué conviene copiarles antes de rehacer la tuya desde cero.',
+      'BCP, Plaza Vea, Cinepólis, Don Italo, Sodimac o Inkaterra analizadas una a una: qué hace bien cada web y qué decisiones puedes copiar para la tuya.',
   },
   // 18.825 apariciones, posición 6,5 y CTR 0,77%. Ojo: es público escolar, no
   // clientes. Se arregla el snippet porque cuesta cero, no porque vaya a
   // vender: el valor real de esta URL es el CTA hacia los servicios.
   'parafrasist-la-mejor-herramienta-para-resumir-textos': {
-    title: 'Parafrasist: cómo funciona y para qué sirve de verdad',
+    title: 'Parafrasist: qué es y cómo usarla para resumir textos',
     description:
-      'Cómo funciona Parafrasist para reescribir y resumir textos, en qué acierta, dónde falla y qué tener en cuenta antes de usarlo en un trabajo.',
+      'Qué hace Parafrasist al parafrasear y resumir en español, cómo usarla sin meterte en problemas en un trabajo académico, sus límites y qué alternativas hay.',
   },
 }
 

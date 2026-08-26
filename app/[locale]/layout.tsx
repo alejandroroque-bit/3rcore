@@ -15,6 +15,7 @@ import { localizedUrl } from "@/lib/metadata";
 import ReactLenis from "lenis/react";
 import Script from "next/script";
 import { getReviews, buildRatingNodes } from "@/lib/reviews"
+import { POSTAL_ADDRESS } from "@/lib/nap"
 
 
 const lenisOptions = {
@@ -168,14 +169,9 @@ export default async function RootLayout({
     "description": locale === 'en'
       ? "Digital marketing agency in Lima, Peru. We combine Experience, Vision, and Technology into strategies: Branding, Social Media, SEO, Google Ads & Web Development."
       : "Agencia de marketing digital en Lima, Perú. Combinamos Experiencia, Visión y Tecnología en estrategias: Branding, Social Media, SEO, Google Ads y Desarrollo Web.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Alameda de la Paz 187, primer piso",
-      "addressLocality": "La Molina",
-      "addressRegion": "Lima",
-      "postalCode": "15024",
-      "addressCountry": "PE"
-    },
+    // Una sola fuente para el NAP (ver lib/nap.ts): la web llegó a publicar dos
+    // direcciones distintas y eso rompe la coherencia que Google necesita.
+    "address": POSTAL_ADDRESS,
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": -12.0913,

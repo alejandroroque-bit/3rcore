@@ -1,4 +1,6 @@
 import Link from "next/link"
+import { setRequestLocale } from "next-intl/server"
+import { COPY } from './copy'
 
 interface Props { params: Promise<{ locale: string }> }
 
@@ -7,33 +9,27 @@ interface Props { params: Promise<{ locale: string }> }
  *
  * Historia: existía, se consolidó el 15-jul-2026 con un 301 hacia /servicios y
  * el 25-ago el análisis con Search Console mostró el precio de esa decisión —
- * la búsqueda que DEFINE el negocio, «agencia de marketing digital lima»,
- * aparecía 179 veces al trimestre en posición 68,7 (séptima página) sin recibir
- * un solo clic, y la página que heredaba todo eso era un índice de 395 palabras
- * que Google no rastreaba desde el 23-jul.
+ * la búsqueda que DEFINE el negocio aparecía 179 veces al trimestre en posición
+ * 68,7 (séptima página) sin recibir un solo clic, y la página que heredaba todo
+ * eso era un índice de 395 palabras que Google no rastreaba desde el 23-jul.
  *
- * Reparto de papeles para que las dos páginas NO compitan entre sí, que era el
- * motivo legítimo de la consolidación:
+ * Reparto de papeles para que las dos páginas NO compitan, que era el motivo
+ * legítimo de la consolidación:
  *   · /es/servicios → CATÁLOGO. Qué es cada servicio y cuánto cuesta.
- *   · esta página   → AGENCIA EN LIMA. Por qué contratar a 3R Core, cómo se
- *                     trabaja, a qué zonas y sectores se atiende, qué preguntan
- *                     antes de firmar. Ni una tabla de precios: enlaza a la del
- *                     catálogo.
+ *   · esta página   → AGENCIA EN LIMA. Quiénes son, qué cobran, dónde atienden
+ *                     y qué preguntan antes de contratar.
+ *
+ * TODO el texto sale de copy.ts, donde cada bloque lleva anotada la fuente
+ * dentro del propio repositorio. Aquí no se inventa nada.
  *
  * Reversible: basta devolver la entrada 301 a next.config.ts.
  */
-
-import { COPY } from './copy'
-import { setRequestLocale } from "next-intl/server"
-
 export default async function LimaLandingPage({ params }: Props) {
   const { locale } = await params
-  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
-  // Vercel devuelve `no-store` en cada visita.
+  // Renderizado estático (ver app/[locale]/layout.tsx).
   setRequestLocale(locale);
 
   const t = locale === 'en' ? COPY.en : COPY.es
-
   const link = (href: string) => `/${locale}${href}`
 
   return (
@@ -43,7 +39,8 @@ export default async function LimaLandingPage({ params }: Props) {
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">{t.hero}</h1>
         <p className="local-intro text-lg md:text-xl text-white/80 max-w-3xl mb-8">{t.sub}</p>
         <div className="text-sm text-white/60 mb-9 space-y-1">
-          <p>{t.addr}</p>
+          <p>{t.zona}</p>
+          <p>{t.horario}</p>
           <p>
             <a href={`tel:${t.phone.replace(/\s/g, '')}`} className="hover:text-white transition">{t.phone}</a>
             <span aria-hidden="true"> · </span>
@@ -81,16 +78,16 @@ export default async function LimaLandingPage({ params }: Props) {
       </section>
 
       <section className="px-6 md:px-10 lg:px-20 py-16 max-w-6xl mx-auto border-t border-white/10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">{t.processH2}</h2>
-        <ol className="grid md:grid-cols-2 gap-6">
-          {t.process.map((p, i) => (
-            <li key={p.t} className="border border-white/10 rounded-2xl p-6">
-              <span className="text-[#E91E63] font-bold text-sm">{String(i + 1).padStart(2, '0')}</span>
-              <h3 className="text-xl font-semibold mt-2 mb-2">{p.t}</h3>
-              <p className="text-white/70 leading-relaxed">{p.d}</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">{t.refH2}</h2>
+        <ul className="grid md:grid-cols-3 gap-4 mb-6">
+          {t.ref.map((r) => (
+            <li key={r.t} className="border border-white/10 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold mb-2">{r.t}</h3>
+              <p className="text-white/60 text-sm">{r.d}</p>
             </li>
           ))}
-        </ol>
+        </ul>
+        <p className="text-white/70 max-w-3xl">{t.refNote}</p>
       </section>
 
       <section className="px-6 md:px-10 lg:px-20 py-16 max-w-6xl mx-auto border-t border-white/10">
@@ -110,9 +107,9 @@ export default async function LimaLandingPage({ params }: Props) {
       </section>
 
       <section className="px-6 md:px-10 lg:px-20 py-16 max-w-6xl mx-auto border-t border-white/10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">{t.faqH2}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">{t.qaH2}</h2>
         <div className="space-y-6 max-w-3xl">
-          {t.faq.map((f) => (
+          {t.qa.map((f) => (
             <div key={f.q}>
               <h3 className="faq-question text-lg md:text-xl font-semibold mb-2">{f.q}</h3>
               <p className="faq-answer text-white/70 leading-relaxed">{f.a}</p>

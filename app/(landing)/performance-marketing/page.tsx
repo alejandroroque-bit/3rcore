@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LandingClient from "./LandingClient";
 import { TEL_LANDING } from "@/lib/contact";
+import { POSTAL_ADDRESS } from "@/lib/nap";
 
 const BASE_URL = "https://3rcore.com";
 
@@ -46,13 +47,7 @@ const jsonLd = {
     name: "3R Core",
     url: BASE_URL,
     areaServed: "Lima, Perú",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Alameda de la Paz 187, primer piso",
-      addressLocality: "La Molina",
-      addressRegion: "Lima",
-      addressCountry: "PE",
-    },
+    address: POSTAL_ADDRESS,
     telephone: TEL_LANDING,
   },
   areaServed: { "@type": "City", name: "Lima" },

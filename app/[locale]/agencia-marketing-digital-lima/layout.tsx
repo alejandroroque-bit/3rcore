@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { generatePageMetadata, generateBreadcrumbSchema, BASE_URL } from "@/lib/metadata"
 import { buildServiceItemList, buildSpeakableSchema } from "@/lib/seoSchemas"
-import { COPY } from "./copy"
+import { POSTAL_ADDRESS } from "@/lib/nap"
 
 export const revalidate = 3600
 
@@ -61,14 +61,7 @@ export default async function LimaLandingLayout({ children, params }: { children
     "telephone": "+51 986 889 147",
     "email": "info@3rcore.com",
     "priceRange": "S/500 - S/15,000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Alameda de la Paz 187, primer piso",
-      "addressLocality": "La Molina",
-      "addressRegion": "Lima",
-      "postalCode": "15024",
-      "addressCountry": "PE"
-    },
+    "address": POSTAL_ADDRESS,
     "areaServed": [
       { "@type": "Country", "name": "PE" },
       { "@type": "Country", "name": "US" },
@@ -82,28 +75,15 @@ export default async function LimaLandingLayout({ children, params }: { children
     "speakable": buildSpeakableSchema(['h1', 'h2', '.local-intro']),
   }
 
-  // FAQPage con las MISMAS preguntas que se ven en la página (COPY compartido):
-  // marcar preguntas que el visitante no encuentra en pantalla es justo lo que
-  // Google considera marcado engañoso.
-  const t = locale === 'en' ? COPY.en : COPY.es
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": `${BASE_URL}/${locale}/agencia-marketing-digital-lima#faqpage`,
-    "url": `${BASE_URL}/${locale}/agencia-marketing-digital-lima`,
-    "inLanguage": isEn ? 'en' : 'es',
-    "mainEntity": t.faq.map((f) => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a },
-    })),
-  }
+  // NO se emite FAQPage aquí a propósito: las preguntas que muestra la página
+  // son las que 3R Core ya publica en /es/precios y /es/preguntas, y esas dos
+  // URLs ya las llevan marcadas. Repetir el marcado no suma, reparte.
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, itemList, breadcrumbSchema, faqSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, itemList, breadcrumbSchema]) }}
       />
       {children}
     </>

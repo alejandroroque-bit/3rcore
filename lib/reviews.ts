@@ -19,28 +19,38 @@ export interface GbpReview {
   date: string
 }
 
-/** Último snapshot verificado a mano contra la ficha (2026-08-26). */
+/**
+ * Snapshot de respaldo, copiado LITERALMENTE de la respuesta de la API de Google
+ * el 2026-08-26 (rating 4,7 · 42 reseñas). Los textos van verbatim, con su
+ * ortografía original: recortar o «arreglar» una reseña real es inventarla.
+ */
 export const REVIEWS_SNAPSHOT = {
   rating: 4.7,
   count: 42,
   reviews: [
     {
-      author: 'Tamara Gonzales',
+      author: "Tamara Gonzales",
       rating: 5,
-      text: '¡Totalmente recomendado! Esta agencia logró cambiar mi forma de ver las cosas, superaron mis expectativas. Una agencia de marketing digital que se compromete y pone todo su compromiso con el cliente.',
-      date: '2022-11-11',
+      // Texto VERBATIM de la ficha de Google. No se resume, no se corrige la
+      // ortografía y no se recorta: alterar una reseña real es inventarla.
+      text: "¡Totalmente recomendado! Esta agencia logró cambiar mi forma de ver las cosas, superaron mis expectativas. Una agencia de marketing digital que se compromete y pone todo su compromiso con el cliente, y eso se ve muy poco, además del buen trato que tienen los del personal y su amplia tarea de brindar las mejores perspectivas desde su experiencia y conocimiento para ayudarnos a nosotros también triunfar en nuestros negocios. Me encuentro totalmente dispuesta a volver a trabajar con 3R CORE y llevar mi negocio a otro nivel.",
+      date: "2022-11-11",
     },
     {
-      author: 'Melanie Bdv',
+      author: "Melanie Bdv",
       rating: 5,
-      text: '¡Increíbles resultados! El equipo de 3R Core me ayudó a impulsar mi marca desde Los Ángeles y ahora puedo llevar un mejor manejo de mis redes y el posicionamiento de mi marca. Aún sigo trabajando con ellos.',
-      date: '2025-02-21',
+      // Texto VERBATIM de la ficha de Google. No se resume, no se corrige la
+      // ortografía y no se recorta: alterar una reseña real es inventarla.
+      text: "Increibles resultados! EL equipo de 3R CORE me ayudó a impulsar mi marca desde Los Angeles y ahora puedo llevar un mejor manejo de mis redes y el posicionamiento de mi marca. Aun sigo trabajando con ellos en conjunto. Recomendado!!",
+      date: "2025-02-21",
     },
     {
-      author: 'Fabián Olea',
+      author: "Fabián Olea",
       rating: 5,
-      text: 'Me considero un cliente exigente y consiguieron superar mis expectativas de principio a fin. Resolvieron cada una de mis dudas durante el desarrollo de la tienda virtual de mi negocio.',
-      date: '2022-06-20',
+      // Texto VERBATIM de la ficha de Google. No se resume, no se corrige la
+      // ortografía y no se recorta: alterar una reseña real es inventarla.
+      text: "¡Lo recomiendo completamente! Me considero un cliente exigente y consiguieron superar mis expectativas de principio a fin. Lograron resolver cada una de mis dudas durante el desarrollo de la tienda virtual de mi negocio, e incluso me ofrecieron una perspectiva diferente dada su amplia experiencia, lo que permitió que el resultado final de mi e-commerce sea mejor de lo que esperaba. He conocido pocas agencias de marketing con el nivel de dedicación y compromiso que ofrece 3R CORE, me encuentro dispuesto a volver a trabajar con ellos y ampliar mi negocio.",
+      date: "2022-06-20",
     },
   ] as GbpReview[],
 }

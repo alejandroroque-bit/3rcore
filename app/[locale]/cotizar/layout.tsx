@@ -8,10 +8,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     path: '/cotizar',
     titleEs: 'Cotizador online: precio de tu proyecto | 3R Core',
     titleEn: 'Instant Quote Calculator in USD | 3R Core',
-    descriptionEs: 'Cuánto te costaría tu tienda virtual, web, SEO, Google Ads o branding en Perú. Estimado en un minuto, sin dejar el correo y sin compromiso.',
+    descriptionEs: 'Marca lo que necesitas para tu web, tienda online, SEO, Google Ads o branding y recibe un estimado al instante. El precio exacto se afina por WhatsApp.',
     descriptionEn: 'Estimate a reference price in U.S. dollars for your online store, website, SEO, Google Ads, branding or social media in under a minute.',
     titleUs: 'Cotizador online en dólares | 3R Core',
-    descriptionUs: 'Cuánto te costaría tu tienda online, web, SEO, Google Ads o branding en dólares. Estimado en un minuto, sin dejar el correo y sin compromiso.',
+    descriptionUs: 'Marca lo que necesitas para tu web, tienda online, SEO, Google Ads o branding y recibe un estimado en dólares. El precio exacto se afina por WhatsApp.',
   })
 }
 
