@@ -14,6 +14,7 @@ import { TEL_MAIN } from "@/lib/contact";
 import { localizedUrl } from "@/lib/metadata";
 import ReactLenis from "lenis/react";
 import Script from "next/script";
+import { getReviews, buildRatingNodes } from "@/lib/reviews"
 
 
 const lenisOptions = {
@@ -120,6 +121,12 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
+  // 4,7★ con 42 reseñas reales de la ficha de Google que hasta ahora ningún
+  // marcado declaraba (0 de 27 páginas). Se leen en el servidor con caché de
+  // 24 h; si la API falla se usa el último snapshot verificado.
+  const reviewsData = await getReviews();
+  const ratingNodes = buildRatingNodes(reviewsData);
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": ["ProfessionalService", "LocalBusiness", "MarketingAgency"],
@@ -216,6 +223,11 @@ export default async function RootLayout({
       "geoRadius": 50000
     },
     "priceRange": "$$",
+    // Valoración y reseñas del perfil de empresa de Google, las mismas que
+    // ReviewsSection pinta en la página (nunca datos inventados y nunca una
+    // reseña que la web no muestre).
+    "aggregateRating": ratingNodes.aggregateRating,
+    "review": ratingNodes.review,
     "currenciesAccepted": "PEN, USD",
     "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer, Yape, Plin, BCP, Interbank, BBVA, Scotiabank",
     "slogan": locale === 'en'
