@@ -44,6 +44,12 @@ export const HREFLANG = (path = '') => ({
   'x-default': `${BASE_URL}/en${path}`,
 })
 
+// Prerrenderiza los tres idiomas en el build (antes cada visita se calculaba
+// en caliente porque `[locale]` no tenía params estáticos).
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params;
 

@@ -190,6 +190,17 @@ const nextConfig: NextConfig = {
           { key: 'Access-Control-Allow-Methods', value: 'GET,POST,OPTIONS' },
         ],
       },
+      // Estáticos de /public: vídeos, imágenes, iconos y OG. Son ficheros que
+      // solo cambian cuando se sustituye el archivo, y hasta ahora se
+      // revalidaban en cada visita. Un año de caché inmutable ahorra la mayor
+      // parte del peso en la segunda página que abre el visitante y libera
+      // presupuesto de rastreo de Google.
+      ...['videos', 'images', 'icons', 'og', 'frames', 'proto'].map((dir) => ({
+        source: `/${dir}/:path*`,
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      })),
     ];
   },
 };
