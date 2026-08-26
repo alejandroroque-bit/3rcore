@@ -27,10 +27,13 @@ import SocialPortfolio from '@/components/sections/home/v2/SocialPortfolio';
 export default function HomeClientV2() {
 
   useScrollToSection();
+  // El cargador ya no espera a los vídeos: el hero pinta su póster al
+  // instante y los del portafolio se cargan al llegar a ellos. Esperarlos
+  // dejaba al visitante mirando la pantalla de carga los 4 segundos completos.
   const isLoading = useIndividualPageLoader({
-    timeout: 4000,
-    minLoadingTime: 1200,
-    checkVideos: true
+    timeout: 2500,
+    minLoadingTime: 900,
+    checkVideos: false
   });
 
   return (

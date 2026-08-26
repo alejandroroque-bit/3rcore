@@ -104,6 +104,26 @@ const nextConfig: NextConfig = {
       { source: '/agencia-seo-lima', destination: '/es/posicionamiento-seo', permanent: true },
       { source: '/:locale(es|en)/agencia-marketing-digital-lima', destination: '/:locale/servicios', permanent: true },
       { source: '/agencia-marketing-digital-lima', destination: '/es/servicios', permanent: true },
+      // ── 136 URLs de la web anterior en WordPress (2026-08-26) ────────────
+      // La migración dejó 136 direcciones con formato `/AAAA/MM/DD/slug/`
+      // devolviendo 404. Comprobado en el mapa del 25-ago: las 134 con destino
+      // apuntan al MISMO slug bajo `/es/blogs/`, así que dos reglas con patrón
+      // las cubren todas (y también cualquiera que no estuviera en la lista).
+      // 61 de ellas llevaban además el prefijo `/en/` porque el detector de
+      // idioma las reenviaba antes de morir en el 404.
+      //
+      // Qué se recupera y qué NO: hoy solo 3 de las 136 conservan impresiones
+      // (20 en 90 días). Esto NO devuelve tráfico — devuelve la autoridad de
+      // los enlaces externos que apuntan a las direcciones viejas y deja de
+      // gastar presupuesto de rastreo de Google en 136 errores.
+      //
+      // La excepción va primero: ese slug ya estaba consolidado en otro post,
+      // y encadenar dos 301 diluye la señal.
+      { source: '/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/mejores-agencias-de-publicidad', destination: '/es/blogs/mejores-agencias-de-marketing-digital', permanent: true },
+      { source: '/:locale(es|en|us)/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/mejores-agencias-de-publicidad', destination: '/es/blogs/mejores-agencias-de-marketing-digital', permanent: true },
+      { source: '/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/:slug', destination: '/es/blogs/:slug', permanent: true },
+      { source: '/:locale(es|en|us)/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/:slug', destination: '/es/blogs/:slug', permanent: true },
+
       // Typo histórico → página web real.
       {
         source: '/:locale(es|en)/servicios/web-deveploment',

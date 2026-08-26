@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
@@ -16,16 +17,50 @@ export default function HeroHome() {
     });
   };
 
+  // ── Peso de la portada: de 8,6 MB a un póster de 57 KB ──────────────────
+  // El vídeo de cabecera era el original de 4K (3840×2160, 8,6 MB) con
+  // autoPlay y sin `poster` ni `preload`: se descargaba ENTERO antes de que el
+  // visitante hubiera decidido si le interesa. En Lima, con datos móviles, eso
+  // son varios segundos de pantalla oscura y 8,6 MB del plan de datos — y más
+  // de la mitad del tráfico peruano es móvil.
+  //
+  // Ahora: primero pinta el póster (57 KB), y solo cuando el navegador está
+  // ocioso engancha el vídeo, en 1080p en pantallas grandes (3,6 MB) o 720p en
+  // el resto (1,4 MB). Si el visitante activó el ahorro de datos o pidió menos
+  // movimiento, se queda con el póster y ya está. El diseño no cambia.
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    const conn = (navigator as any)?.connection;
+    if (conn?.saveData) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const pick = () =>
+      setVideoSrc(window.innerWidth >= 1024 ? "/videos/final-1080.mp4" : "/videos/final-720.mp4");
+
+    const ric = (window as any).requestIdleCallback;
+    if (typeof ric === "function") {
+      const id = ric(pick, { timeout: 2500 });
+      return () => (window as any).cancelIdleCallback?.(id);
+    }
+    const t = setTimeout(pick, 800);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <div className="relative w-full min-h-[100svh] md:h-screen bg-[#16021B] overflow-hidden flex items-center">
       <video
+        key={videoSrc ?? "poster"}
         className="absolute inset-0 w-full h-full object-cover z-0"
+        poster="/videos/final-poster.webp"
+        preload="none"
         autoPlay
         loop
         muted
         playsInline
+        aria-hidden="true"
       >
-        <source src="/videos/final.mp4" type="video/mp4" />
+        {videoSrc && <source src={videoSrc} type="video/mp4" />}
       </video>
 
       <div className="absolute inset-0 bg-black/60 z-[5] pointer-events-none" />

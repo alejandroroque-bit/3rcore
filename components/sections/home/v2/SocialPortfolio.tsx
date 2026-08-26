@@ -52,8 +52,8 @@ export default function SocialPortfolio() {
 
             <PizzaCard
               media={[
-                { type: "video", src: "/videos/AguJuego.webm" },
-                { type: "video", src: "/videos/As11.webm" },
+                { type: "video", src: "/videos/AguJuego-lite.mp4", poster: "/videos/AguJuego-poster.webp" },
+                { type: "video", src: "/videos/As11-lite.mp4", poster: "/videos/As11-poster.webp" },
               ]}
               autoOnHover={false}
               className="aspect-[3/5] transition-all duration-500 ease-in-out"
@@ -63,8 +63,8 @@ export default function SocialPortfolio() {
           <div className="grid gap-6">
             <PizzaCard
               media={[
-                { type: "video", src: "/videos/AsDeOros102.webm" },
-                { type: "video", src: "/videos/Galletas.webm" },
+                { type: "video", src: "/videos/AsDeOros102-lite.mp4", poster: "/videos/AsDeOros102-poster.webp" },
+                { type: "video", src: "/videos/Galletas-lite.mp4", poster: "/videos/Galletas-poster.webp" },
               ]}
               autoOnHover={true}
               className="aspect-[3/5] transition-all duration-500 ease-in-out"
@@ -88,8 +88,8 @@ export default function SocialPortfolio() {
             />
             <PizzaCard
               media={[
-                { type: "video", src: "/videos/Img3849.webm" },
-                { type: "video", src: "/videos/Vide5.webm" }
+                { type: "video", src: "/videos/Img3849-lite.mp4", poster: "/videos/Img3849-poster.webp" },
+                { type: "video", src: "/videos/Vide5-lite.mp4", poster: "/videos/Vide5-poster.webp" }
               ]}
               autoOnHover={true}
               className="aspect-[3/5] transition-all duration-500 ease-in-out"
