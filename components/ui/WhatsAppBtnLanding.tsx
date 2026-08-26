@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { WA_LANDING } from '@/lib/contact';
 import { useLocale } from 'next-intl';
 import { gsap } from 'gsap';
+import { trackConversion } from '@/lib/track';
 
 const COPY = {
   es: {
@@ -198,10 +199,11 @@ const WhatsAppBtnLanding = () => {
       } catch { /* best-effort */ }
 
       // Medición GA4/GTM del clic (antes era invisible en Analytics).
-      if (typeof window !== 'undefined') {
-        (window as any).dataLayer = (window as any).dataLayer || [];
-        (window as any).dataLayer.push({ event: 'whatsapp_click', wa_phone: phoneNumber, wa_source: origin });
-      }
+      // Pasa por el filtro de tráfico automatizado (lib/track.ts): en ago-2026
+      // el 63% de las conversiones de GA4 eran clics de bot con 0 s de
+      // permanencia. Este envío nace de un submit real del formulario, así que
+      // el filtro casi siempre lo deja pasar; lo que corta es el clic sintético.
+      trackConversion('whatsapp_click', { wa_phone: phoneNumber, wa_source: origin });
 
       gtag_report_conversion(whatsappUrl);
       window.open(whatsappUrl, '_blank');

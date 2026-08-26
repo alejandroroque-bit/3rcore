@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { WA_LANDING } from "@/lib/contact";
+import { isHumanInteraction } from "@/lib/track";
 
 type GtagWindow = Window & {
   dataLayer?: unknown[];
@@ -252,7 +253,13 @@ export default function LandingClient() {
         .replace(/\s+/g, " ").trim().slice(0, 80);
       const href = el.getAttribute("href") || "";
       if (href.includes("wa.me") || href.includes("api.whatsapp")) {
-        track("whatsapp_click", { location: sec, label, link_url: href });
+        // Filtro de tráfico automatizado (lib/track.ts): un clic sintético no
+        // cuenta como conversión, se archiva como whatsapp_click_bot.
+        if (isHumanInteraction(e)) {
+          track("whatsapp_click", { location: sec, label, link_url: href });
+        } else {
+          track("whatsapp_click_bot", { location: sec, label, link_url: href, human: false });
+        }
         // Conversión de Google Ads por clic a WhatsApp (si hay label configurado).
         adsConversion(process.env.NEXT_PUBLIC_ADS_WA_LABEL, { location: sec });
         // Captura PROPIA: si el enlace NO trae ya los datos (data-wa-direct) y aún

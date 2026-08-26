@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { WA_LEADS } from '@/lib/contact'
+import { trackConversion } from '@/lib/track'
 
 /**
  * PillarWaCapture — captura de leads nativa para las páginas pilar (recursos
@@ -38,12 +39,6 @@ const COPY = {
   },
 }
 
-function pushDL(payload: Record<string, unknown>) {
-  if (typeof window === 'undefined') return
-  ;(window as any).dataLayer = (window as any).dataLayer || []
-  ;(window as any).dataLayer.push(payload)
-}
-
 export default function PillarWaCapture({ locale, service }: { locale: string; service: string }) {
   const t = COPY[locale === 'en' ? 'en' : 'es']
   const [nombre, setNombre] = useState('')
@@ -77,8 +72,10 @@ export default function PillarWaCapture({ locale, service }: { locale: string; s
       }).catch(() => {})
     } catch { /* best-effort */ }
 
-    pushDL({ event: 'generate_lead', lead_source: 'pillar_wa_capture', cta_service: service, page_path: origin })
-    pushDL({ event: 'whatsapp_click', wa_phone: WA_PHONE, wa_source: origin })
+    // Conversión filtrada: ver lib/track.ts (63% de los keyEvents de GA4 eran
+    // automatizados en ago-2026).
+    trackConversion('generate_lead', { lead_source: 'pillar_wa_capture', cta_service: service, page_path: origin }, e.nativeEvent)
+    trackConversion('whatsapp_click', { wa_phone: WA_PHONE, wa_source: origin }, e.nativeEvent)
 
     openWa(
       locale === 'en'
@@ -88,8 +85,8 @@ export default function PillarWaCapture({ locale, service }: { locale: string; s
     setLoading(false)
   }
 
-  const onDirect = () => {
-    pushDL({ event: 'whatsapp_click', wa_phone: WA_PHONE, wa_source: origin })
+  const onDirect = (e: React.MouseEvent) => {
+    trackConversion('whatsapp_click', { wa_phone: WA_PHONE, wa_source: origin }, e.nativeEvent)
     openWa(locale === 'en' ? `Hi, I'm interested in ${service}.` : `Hola, me interesa ${service}.`)
   }
 
