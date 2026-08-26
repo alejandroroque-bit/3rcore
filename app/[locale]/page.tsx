@@ -1,11 +1,16 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import HomeClient from "./HomeClient"
 import HomeClientV2 from "./HomeClientV2"
 import HomeSeoSection from "@/components/sections/home/HomeSeoSection"
+import SsrReviews from "@/components/seo/SsrReviews"
 import { buildServiceItemList, buildSpeakableWebPage } from "@/lib/seoSchemas"
 
 export default async function HomePage({ params }: { params: any }) {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const isEn = locale === 'en'
   const tH1 = await getTranslations({ locale, namespace: "HiddenH1" })
 
@@ -65,6 +70,9 @@ export default async function HomePage({ params }: { params: any }) {
           pilares + señales locales para Googlebot y bots de IA que no ejecutan
           JS. HomeClient (arriba) es 'use client' y se hidrata en el navegador. */}
       <HomeSeoSection locale={locale} />
+      {/* Reputación en el HTML inicial: el carrusel de reseñas es cliente y los
+          bots de IA no ejecutan JS. Mismas reseñas que el JSON-LD. */}
+      <SsrReviews locale={locale} />
     </>
   )
 }

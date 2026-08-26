@@ -8,9 +8,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/blogs',
-    titleEs: 'Blog de Marketing Digital en Perú: SEO, Branding y Ads | 3R Core',
+    titleEs: 'Blog de Marketing Digital en Perú | 3R Core',
     titleEn: 'Marketing Blog — UGC, Ads, SEO & PR | 3R Core',
-    descriptionEs: 'Artículos, guías y casos reales sobre marketing digital en Perú: posicionamiento SEO en Google, branding corporativo, campañas de Google Ads, manejo de redes sociales y desarrollo web. Actualizado semanalmente por 3R Core.',
+    descriptionEs: 'Guías con precios reales del mercado peruano: cuánto cuesta una web, una tienda online, el branding o una campaña. Escritas por la agencia, no por la IA.',
     descriptionEn: 'Guides for U.S. brands: what UGC costs, usage rights, working with a Peru-based team, creative testing, Hispanic marketing, paid media and SEO.',
     titleUs: 'Blog de Marketing Digital en Español | 3R Core',
     descriptionUs: 'Artículos y guías sobre marketing digital en español: contenido UGC, influencer marketing, relaciones públicas, posicionamiento SEO, campañas de Google Ads y tiendas online.',

@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing"
 import type { AppPathname } from "@/i18n/routing"
 import PillarWaCapture from "@/components/ui/PillarWaCapture"
 import ProtoPage from "@/components/proto/ProtoPage"
+import { setRequestLocale } from "next-intl/server"
 
 interface Props { params: Promise<{ locale: string }> }
 
@@ -225,6 +226,10 @@ const COPY: Record<string, any> = {
 
 export default async function TiendasVirtualesLimaPage({ params }: Props) {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const t = (COPY as any)[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
 
   // Rediseño aprobado (mix 18-ago): es sirve el prototipo; us y en, su versión propia

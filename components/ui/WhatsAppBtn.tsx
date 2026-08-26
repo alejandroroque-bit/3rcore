@@ -3,6 +3,7 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { WA_LEADS } from '@/lib/contact';
+import { trackConversion } from '@/lib/track';
 
 const WhatsAppBtn = () => {
   const pathname = usePathname() || '';
@@ -20,13 +21,16 @@ const WhatsAppBtn = () => {
 
   // WhatsApp es el canal que más leads reales trae — cada clic queda medido en
   // GA4/GTM con la página de origen (antes el botón era invisible en Analytics).
-  const trackClick = () => {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push({
-      event: 'whatsapp_click',
-      wa_phone: phoneNumber,
-      wa_source: window.location.pathname,
-    });
+  // Desde ago-2026 pasa por trackConversion: el 63% de las «conversiones» que
+  // registraba GA4 eran clics automatizados con 0 s de permanencia (ver
+  // lib/track.ts). Un clic sin señales humanas se archiva como
+  // `whatsapp_click_bot` y no cuenta como lead.
+  const trackClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    trackConversion(
+      'whatsapp_click',
+      { wa_phone: phoneNumber, wa_source: window.location.pathname },
+      e.nativeEvent
+    );
   };
 
   return (

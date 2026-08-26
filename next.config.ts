@@ -102,8 +102,36 @@ const nextConfig: NextConfig = {
       { source: '/diseno-web-lima', destination: '/es/servicios/web-development', permanent: true },
       { source: '/:locale(es|en)/agencia-seo-lima', destination: '/:locale/posicionamiento-seo', permanent: true },
       { source: '/agencia-seo-lima', destination: '/es/posicionamiento-seo', permanent: true },
-      { source: '/:locale(es|en)/agencia-marketing-digital-lima', destination: '/:locale/servicios', permanent: true },
-      { source: '/agencia-marketing-digital-lima', destination: '/es/servicios', permanent: true },
+      // La 301 de /agencia-marketing-digital-lima → /servicios se retira el
+      // 26-ago-2026. Motivo (Search Console, 90 días): «agencia de marketing
+      // digital lima» daba 179 impresiones en posición 68,7 y CERO clics, y la
+      // página que heredaba esa búsqueda era un índice de 395 palabras que
+      // Google no rastreaba desde el 23-jul. Ahora las dos existen con papeles
+      // distintos: /servicios es el CATÁLOGO (qué es cada cosa y cuánto cuesta)
+      // y /agencia-marketing-digital-lima es la página de AGENCIA EN LIMA (por
+      // qué contratarla, cómo trabaja, zonas, sectores y preguntas previas).
+      // Volver atrás = devolver estas dos líneas.
+      { source: '/agencia-marketing-digital-lima', destination: '/es/agencia-marketing-digital-lima', permanent: true },
+      // ── 136 URLs de la web anterior en WordPress (2026-08-26) ────────────
+      // La migración dejó 136 direcciones con formato `/AAAA/MM/DD/slug/`
+      // devolviendo 404. Comprobado en el mapa del 25-ago: las 134 con destino
+      // apuntan al MISMO slug bajo `/es/blogs/`, así que dos reglas con patrón
+      // las cubren todas (y también cualquiera que no estuviera en la lista).
+      // 61 de ellas llevaban además el prefijo `/en/` porque el detector de
+      // idioma las reenviaba antes de morir en el 404.
+      //
+      // Qué se recupera y qué NO: hoy solo 3 de las 136 conservan impresiones
+      // (20 en 90 días). Esto NO devuelve tráfico — devuelve la autoridad de
+      // los enlaces externos que apuntan a las direcciones viejas y deja de
+      // gastar presupuesto de rastreo de Google en 136 errores.
+      //
+      // La excepción va primero: ese slug ya estaba consolidado en otro post,
+      // y encadenar dos 301 diluye la señal.
+      { source: '/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/mejores-agencias-de-publicidad', destination: '/es/blogs/mejores-agencias-de-marketing-digital', permanent: true },
+      { source: '/:locale(es|en|us)/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/mejores-agencias-de-publicidad', destination: '/es/blogs/mejores-agencias-de-marketing-digital', permanent: true },
+      { source: '/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/:slug', destination: '/es/blogs/:slug', permanent: true },
+      { source: '/:locale(es|en|us)/:y(\\d{4})/:m(\\d{2})/:d(\\d{2})/:slug', destination: '/es/blogs/:slug', permanent: true },
+
       // Typo histórico → página web real.
       {
         source: '/:locale(es|en)/servicios/web-deveploment',
@@ -190,6 +218,17 @@ const nextConfig: NextConfig = {
           { key: 'Access-Control-Allow-Methods', value: 'GET,POST,OPTIONS' },
         ],
       },
+      // Estáticos de /public: vídeos, imágenes, iconos y OG. Son ficheros que
+      // solo cambian cuando se sustituye el archivo, y hasta ahora se
+      // revalidaban en cada visita. Un año de caché inmutable ahorra la mayor
+      // parte del peso en la segunda página que abre el visitante y libera
+      // presupuesto de rastreo de Google.
+      ...['videos', 'images', 'icons', 'og', 'frames', 'proto'].map((dir) => ({
+        source: `/${dir}/:path*`,
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      })),
     ];
   },
 };

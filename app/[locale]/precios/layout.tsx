@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Pricing — Digital Marketing in USD | 3R Core',
     descriptionEs: 'Precios referenciales en Lima: branding desde S/500, SEO S/1,800/mes, Google Ads desde S/1,800/mes de gestión y webs desde S/1,800. Netos + 18% IGV.',
     descriptionEn: 'Branding from $500, SEO $500/month, social media $800/month, Google Ads $800/month and websites from $850. Net prices in dollars for U.S. clients.',
-    titleUs: 'Precios de Marketing Digital en Dólares para EE.UU. | 3R Core',
+    titleUs: 'Precios de Marketing Digital en Dólares | 3R Core',
     descriptionUs: 'Precios para negocios en Estados Unidos: branding desde $500, SEO $500/mes, redes sociales $800/mes, gestión de Google Ads $800/mes y páginas web desde $850. Precios netos en dólares, sin contratos forzosos.',
   })
 }

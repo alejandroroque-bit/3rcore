@@ -8,12 +8,12 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/servicios/marketing-clinicas',
-    titleEs: "Marketing Digital para Clínicas y Consultorios en Lima, Perú | 3R Core",
+    titleEs: "Marketing para Clínicas y Consultorios en Lima",
     titleEn: 'Digital Marketing for U.S. Clinics & Practices | 3R Core',
-    descriptionEs: "Agencia de marketing digital para clínicas y consultorios en Lima, Perú: Google Ads de salud, SEO local, Google Business Profile y captación de pacientes con citas medibles.",
+    descriptionEs: "Traemos pacientes a tu clínica en Lima con Google Ads de salud, SEO local y ficha de Google. Se mide en citas agendadas, no en «me gusta».",
     descriptionEn: 'Patient acquisition for U.S. clinics run from Lima, Peru: healthcare Google Ads, local SEO, Google Business Profile and bilingual campaigns.',
-    titleUs: 'Marketing Digital para Clínicas y Consultorios en EE.UU. | 3R Core',
-    descriptionUs: 'Marketing digital en español para clínicas y consultorios en Estados Unidos: Google Ads de salud, SEO local, Google Business Profile y captación de pacientes hispanos con citas medibles.',
+    titleUs: 'Marketing para Clínicas y Consultorios en EE.UU.',
+    descriptionUs: 'Captación de pacientes hispanos en EE.UU.: Google Ads de salud, SEO local y ficha de Google. Se mide en citas agendadas, con precios en dólares.',
     ogImage: {
       url: 'https://3rcore.com/og/google-ads.jpg',
       width: 1200,

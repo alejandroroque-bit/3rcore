@@ -9,9 +9,21 @@ export const dynamic = 'force-dynamic';
 // El token del panel queda en el servidor, no se expone en el navegador.
 export async function POST(request: Request) {
   try {
-    const { nombre, celular, proyecto, origin, gclid } = await request.json();
+    const { nombre, celular, proyecto, origin, gclid, sitio_web } = await request.json();
     if (!nombre || !celular) {
       return NextResponse.json({ ok: false, error: 'name_and_phone_required' }, { status: 400 });
+    }
+    // Honeypot: campo invisible para personas. Si viene lleno es un bot — se
+    // responde OK para no darle señal de que fue detectado, pero el lead NO
+    // entra al CRM. Mismo patrón que /api/contact.
+    if (sitio_web) {
+      return NextResponse.json({ ok: true });
+    }
+    // Un celular sin dígitos suficientes es basura automatizada, no un lead:
+    // el panel se llenaba de filas inútiles que además contaban como conversión.
+    const digitos = String(celular).replace(/\D/g, '');
+    if (digitos.length < 7 || digitos.length > 15) {
+      return NextResponse.json({ ok: true });
     }
     // El GCLID va en su propia línea para poder exportar conversiones offline a
     // Google Ads (subir gclid + fecha/hora de conversión cuando el lead cierre).

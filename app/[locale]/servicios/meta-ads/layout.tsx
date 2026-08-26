@@ -8,12 +8,12 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/servicios/meta-ads',
-    titleEs: "Agencia de Meta Ads (Facebook e Instagram) en Lima, Perú | 3R Core",
+    titleEs: "Agencia de Meta Ads en Lima, Perú | 3R Core",
     titleEn: 'Meta Ads Agency for U.S. Brands | 3R Core',
-    descriptionEs: "Agencia de Meta Ads en Lima, Perú: campañas en Facebook e Instagram con segmentación avanzada, retargeting y creatividades que venden. Gestión con ROAS medible desde S/1,500/mes.",
+    descriptionEs: "Campañas de Facebook e Instagram en Perú con retargeting, catálogo y mensajes directos a WhatsApp. Desde S/1,500/mes con ROAS medible.",
     descriptionEn: 'Facebook and Instagram campaigns managed from Lima, Peru for U.S. businesses, with advanced targeting, retargeting and in-house UGC creative.',
-    titleUs: 'Agencia de Meta Ads (Facebook e Instagram) en Español | 3R Core',
-    descriptionUs: 'Campañas de Meta Ads en español para el público hispano de Estados Unidos: segmentación por idioma y ciudad, retargeting y creatividades UGC que venden. Gestión con ROAS medible desde $800/mes.',
+    titleUs: 'Agencia de Meta Ads en Español para EE.UU. | 3R Core',
+    descriptionUs: 'Facebook e Instagram para el público hispano de EE.UU.: segmentación por idioma y ciudad, retargeting y creatividades UGC. Desde $800/mes.',
     ogImage: {
       url: 'https://3rcore.com/og/socialmedia.jpg',
       width: 1200,

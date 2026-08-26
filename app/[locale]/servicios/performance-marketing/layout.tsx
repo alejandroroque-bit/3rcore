@@ -8,12 +8,12 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/servicios/performance-marketing',
-    titleEs: "Performance Marketing en Lima, Perú — Adquisición con ROI | 3R Core",
+    titleEs: "Performance Marketing en Lima, Perú | 3R Core",
     titleEn: 'Performance Marketing for U.S. Brands | 3R Core',
-    descriptionEs: "Agencia de performance marketing en Lima, Perú: adquisición multicanal (Google, Meta, TikTok), medición end-to-end, CRO y optimización por CAC y ROAS. Crece con datos, no con corazonadas.",
+    descriptionEs: "Google, Meta y TikTok coordinados con medición de punta a punta y optimización por CAC y ROAS. Se crece con datos, no con corazonadas.",
     descriptionEn: 'Multichannel acquisition across Google, Meta and TikTok, run from Lima, Peru for U.S. brands, with end-to-end measurement, CRO and CAC/ROAS focus.',
-    titleUs: 'Performance Marketing en Español para Negocios en EE.UU. | 3R Core',
-    descriptionUs: 'Adquisición multicanal (Google, Meta y TikTok) para negocios en Estados Unidos, con medición end-to-end, CRO y optimización por CAC y ROAS. Se decide con datos, no con corazonadas.',
+    titleUs: 'Performance Marketing en Español para EE.UU.',
+    descriptionUs: 'Google, Meta y TikTok coordinados para negocios en EE.UU., con medición de punta a punta y optimización por CAC y ROAS. Precios en dólares.',
     ogImage: {
       url: 'https://3rcore.com/og/google-ads.jpg',
       width: 1200,

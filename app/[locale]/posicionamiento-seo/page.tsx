@@ -1,5 +1,5 @@
 // app/[locale]/posicionamiento-seo/page.tsx
-import { getMessages } from "next-intl/server"
+import { getMessages, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
 import { generatePageMetadata, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildFAQPageSchema, buildServiceSchema, buildSpeakableWebPage } from "@/lib/seoSchemas"
@@ -8,6 +8,10 @@ import ProtoPage from "@/components/proto/ProtoPage"
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   return generatePageMetadata({
     locale,
     path: '/posicionamiento-seo',
@@ -15,7 +19,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'SEO Agency for U.S. Brands | 3R Core',
     descriptionEs: 'Agencia de posicionamiento SEO en Lima, Perú: auditoría, optimización, interlinks, contenido y escalamiento mensual. Desde S/1,800/mes.',
     descriptionEn: 'SEO for U.S. businesses run from Lima, Peru through our U.S. subsidiary: keyword research, technical SEO, content and link building. From $500/month.',
-    titleUs: 'Agencia de Posicionamiento SEO en Español para EE.UU. | 3R Core',
+    titleUs: 'Posicionamiento SEO en Español para EE.UU. | 3R Core',
     descriptionUs: 'Posicionamiento SEO en español e inglés para negocios en Estados Unidos: keyword research, SEO técnico, contenido y SEO local. Las búsquedas en español suelen tener menos competencia. Desde $500/mes sin contratos forzosos.',
     ogImage: {
       url: 'https://3rcore.com/og/posicionamiento-seo.jpg',
@@ -28,6 +32,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 
 export default async function Posicionamientoseo({ params }: { params: any }) {
   const { locale } = await params
+  // Renderizado estático (ver app/[locale]/layout.tsx).
+  setRequestLocale(locale);
+
   const messages = (await getMessages()) as any
   const isEn = locale === "en"
 

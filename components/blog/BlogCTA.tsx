@@ -5,6 +5,7 @@ import type { AppPathname } from "@/i18n/routing";
 import { Link } from '@/i18n/navigation'
 import { serviceForSlug, guidesFor, type ServiceKey } from '@/lib/blog-cta-map'
 import { WA_LEADS } from '@/lib/contact'
+import { trackConversion } from '@/lib/track'
 
 /**
  * BlogCTA — bloque de conversión al final (y opcionalmente en medio) de cada blog.
@@ -139,10 +140,13 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
     return () => io.disconnect()
   }, [slug, key, variant, svc.path])
 
-  const onServiceClick = () =>
-    pushDL({ event: 'blog_cta_click', blog_slug: slug, cta_service: key, cta_variant: variant, cta_target: svc.path })
-  const onWaClick = () =>
-    pushDL({ event: 'blog_cta_whatsapp', blog_slug: slug, cta_service: key, cta_variant: variant })
+  // Ambos son keyEvents en GA4, así que pasan por el filtro de tráfico
+  // automatizado (lib/track.ts). blog_cta_view NO es conversión y se deja tal
+  // cual: sirve justamente para comparar vistas de bot contra clics humanos.
+  const onServiceClick = (e: React.MouseEvent) =>
+    trackConversion('blog_cta_click', { blog_slug: slug, cta_service: key, cta_variant: variant, cta_target: svc.path }, e.nativeEvent)
+  const onWaClick = (e: React.MouseEvent) =>
+    trackConversion('blog_cta_whatsapp', { blog_slug: slug, cta_service: key, cta_variant: variant }, e.nativeEvent)
 
   // Variante compacta para el arranque del post (tras la intro): una sola
   // barra discreta, sin robarle protagonismo al contenido. Emite los mismos

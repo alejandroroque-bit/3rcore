@@ -11,6 +11,8 @@ interface MediaItem {
   type: "image" | "video";
   src: string;
   alt?: string;
+  /** Fotograma de póster: se pinta al instante y evita descargar el vídeo. */
+  poster?: string;
 }
 
 interface PizzaCardProps {
@@ -33,6 +35,12 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [videoProgress, setVideoProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  // ── Los seis vídeos del portafolio pesaban 14,2 MB en la primera carga ──
+  // Sin `preload` y con un .play() en el montaje, los seis se descargaban
+  // enteros aunque estuvieran cinco pantallas más abajo. Ahora cada tarjeta
+  // enseña su póster y solo engancha el vídeo cuando el visitante llega a
+  // ella. Diseño idéntico; 14,2 MB menos en la portada.
+  const [inView, setInView] = useState(false);
 
   const indexRef = useRef(0);
 
@@ -59,7 +67,7 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
 
     const newVideo = videoRefs.current[targetIndex];
     if (newVideo && media[targetIndex].type === "video") {
-      newVideo.play();
+      newVideo.play().catch(() => { /* el navegador puede bloquear el autoplay */ });
     }
   };
 
@@ -98,14 +106,33 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
   };
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      // 200 px de margen: el vídeo empieza a cargar justo antes de que la
+      // tarjeta entre en pantalla, así no se ve el salto del póster al vídeo.
+      { rootMargin: "200px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
     // Auto-play video when component mounts or currentIndex changes
+    if (!inView) return;
     if (media[currentIndex]?.type === "video") {
       const currentVideo = videoRefs.current[currentIndex];
       if (currentVideo) {
-        currentVideo.play();
+        currentVideo.play().catch(() => { /* el navegador puede bloquear el autoplay */ });
       }
     }
-  }, [currentIndex, media]);
+  }, [currentIndex, media, inView]);
 
   useEffect(() => {
     return () => {
@@ -140,6 +167,8 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
               <img
                 src={item.src}
                 alt={item.alt ?? ""}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full  select-none pointer-events-none"
               />
             ) : (
@@ -147,7 +176,9 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
                 ref={(el) => {
                   videoRefs.current[i] = el;
                 }}
-                src={item.src}
+                src={inView ? item.src : undefined}
+                poster={item.poster}
+                preload="none"
                 className="w-full h-full object-cover select-none"
                 playsInline
                 muted

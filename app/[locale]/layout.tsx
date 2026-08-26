@@ -7,13 +7,14 @@ import CookieBanner from "@/components/layout/CookieBanners";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
 import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
 import { TEL_MAIN } from "@/lib/contact";
 import { localizedUrl } from "@/lib/metadata";
 import ReactLenis from "lenis/react";
 import Script from "next/script";
+import { getReviews, buildRatingNodes } from "@/lib/reviews"
 
 
 const lenisOptions = {
@@ -43,20 +44,30 @@ export const HREFLANG = (path = '') => ({
   'x-default': `${BASE_URL}/en${path}`,
 })
 
+// Prerrenderiza los tres idiomas en el build (antes cada visita se calculaba
+// en caliente porque `[locale]` no tenía params estáticos).
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params;
 
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const title = locale === 'en'
-    ? "Peru-Based Marketing Agency for U.S. Brands | 3R Core"
+    ? "Marketing Agency for U.S. Brands | 3R Core"
     : locale === 'us'
-      ? "Agencia de Marketing Digital para Negocios Hispanos en EE.UU. | 3R Core"
-      : "Agencia de Tiendas Virtuales, SEO y Google Ads en Lima, Perú | 3R Core"
+      ? "Marketing Digital en Español para EE.UU. | 3R Core"
+      : "Agencia de Marketing Digital en Lima, Perú | 3R Core"
 
   const description = locale === 'en'
-    ? "Peruvian agency with a U.S. subsidiary: websites, SEO and online stores for U.S. brands, built remotely from Lima on U.S. hours and invoiced in USD."
+    ? "Websites, SEO and online stores for U.S. brands. Peruvian team, U.S. subsidiary, U.S. hours, fixed scopes in USD. 4.7 stars from 42 reviews."
     : locale === 'us'
-      ? "Agencia de marketing digital en español para negocios hispanos en Estados Unidos. Video UGC, campañas de Google Ads y Meta, SEO en español y tiendas online. Precios en dólares, atención en tu horario y reportes mensuales."
-      : "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú. Creamos tu tienda online (Shopify, WooCommerce, Tiendanube), te posicionamos en Google y gestionamos campañas que venden. ROI medible y reportes mensuales."
+      ? "Marketing en español para negocios hispanos en EE.UU.: video UGC, Google Ads, Meta Ads, SEO y tiendas online. Precios en dólares y reportes cada mes."
+      : "Tiendas virtuales, SEO y Google Ads en Lima. Precios publicados, sin contratos forzosos y reportes cada mes. 4,7★ en 42 reseñas. Cotiza gratis."
 
   return {
     title,
@@ -118,7 +129,18 @@ export default async function RootLayout({
     notFound();
   }
 
+  // Renderizado estático: sin esto next-intl marca TODO el subárbol como
+  // dinámico y Vercel devuelve `no-store` en cada visita, que es exactamente lo
+  // que se midió el 25-ago (x-vercel-cache: MISS siempre).
+  setRequestLocale(locale);
+
   const messages = await getMessages();
+
+  // 4,7★ con 42 reseñas reales de la ficha de Google que hasta ahora ningún
+  // marcado declaraba (0 de 27 páginas). Se leen en el servidor con caché de
+  // 24 h; si la API falla se usa el último snapshot verificado.
+  const reviewsData = await getReviews();
+  const ratingNodes = buildRatingNodes(reviewsData);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -216,6 +238,11 @@ export default async function RootLayout({
       "geoRadius": 50000
     },
     "priceRange": "$$",
+    // Valoración y reseñas del perfil de empresa de Google, las mismas que
+    // ReviewsSection pinta en la página (nunca datos inventados y nunca una
+    // reseña que la web no muestre).
+    "aggregateRating": ratingNodes.aggregateRating,
+    "review": ratingNodes.review,
     "currenciesAccepted": "PEN, USD",
     "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer, Yape, Plin, BCP, Interbank, BBVA, Scotiabank",
     "slogan": locale === 'en'
