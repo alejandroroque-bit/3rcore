@@ -29,96 +29,104 @@ type Row = { name: string; price: string; detail: string; href: AppPathname }
 const COPY = {
   es: {
     h2Precios: 'Cuánto cuesta cada servicio de marketing digital en Lima',
+    // Fuente: app/[locale]/precios/page.tsx → COPY.es.note y COPY.es.sub, literal.
     introPrecios:
-      'Publicamos los precios porque es la primera pregunta de cualquier empresa que busca agencia en Perú, y porque una cotización que tarda tres correos en llegar hace perder tiempo a todos. Estos son los importes netos en soles; las facturas peruanas suman el 18% de IGV. Ninguno lleva contrato de permanencia forzosa.',
+      'Sin contratos forzosos, con reportes mensuales y resultados progresivos. Los precios son referenciales según paquetes base; cada propuesta se ajusta tras una reunión inicial. Son importes netos en soles peruanos: las facturas en Perú suman 18% de IGV.',
+    // Fuente: COPY.es.tiers y COPY.es.webTiers de la página de precios.
     rows: [
-      { name: 'Branding e identidad de marca', price: 'desde S/ 500', detail: 'Logotipo, manual de marca, paleta cromática, tipografía corporativa y aplicaciones esenciales. Se entrega la propuesta tras una sesión inicial de descubrimiento.', href: '/servicios/branding' },
-      { name: 'Manejo de redes sociales', price: 'desde S/ 1,500 / mes', detail: 'Entre 8 y 12 piezas al mes para TikTok, Instagram, Facebook y LinkedIn, con Reels y TikToks editados, community management y reporte mensual.', href: '/servicios/socialmedia' },
-      { name: 'Posicionamiento SEO', price: 'S/ 1,800 / mes', detail: 'Auditoría inicial, planificación, optimización on-page, escalamiento de contenidos y reporte mensual. Resultados progresivos, sin contratos forzosos.', href: '/posicionamiento-seo' },
-      { name: 'Gestión de Google Ads', price: 'desde S/ 1,800 / mes', detail: 'Search, Performance Max, YouTube, Display, Shopping y remarketing. Aparte va el presupuesto de pauta, con un mínimo recomendado de S/ 1,500 al mes que se paga directamente a Google.', href: '/servicios/google-ads' },
-      { name: 'Páginas web y landing pages', price: 'desde S/ 1,800', detail: 'Landing page con diseño a medida, SEO técnico y formulario. Una web corporativa de 5 a 8 secciones va de S/ 4,500 a S/ 9,000 según alcance.', href: '/servicios/web-development' },
-      { name: 'Tiendas virtuales y e-commerce', price: 'desde S/ 6,500', detail: 'Tienda en Shopify o WooCommerce con catálogo, pasarela local (Culqi, Niubiz, Izipay o Mercado Pago), inventario y panel de administración. La implementación básica sobre Shopify o Tiendanube arranca desde S/ 1,500.', href: '/tiendas-virtuales-lima' },
+      { name: 'Branding inicial', price: 'desde S/ 500', detail: 'Diseño de identidad visual con entrega de propuesta tras sesión inicial de descubrimiento: logotipo, manual de marca, paleta cromática, tipografía corporativa y aplicaciones esenciales.', href: '/servicios/branding' },
+      { name: 'Social Media', price: 'desde S/ 1,500 / mes', detail: 'Manejo de TikTok, Instagram, Facebook y LinkedIn con 8–12 piezas mensuales, Reels y TikToks editados, community management y reporte mensual.', href: '/servicios/socialmedia' },
+      { name: 'Posicionamiento SEO', price: 'S/ 1,800 / mes', detail: 'Auditoría inicial, planificación, optimización on-page, escalamiento y reporte mensual. Estrategia continua sin contratos forzosos y con resultados progresivos.', href: '/posicionamiento-seo' },
+      { name: 'Google Ads gestión', price: 'desde S/ 1,800 / mes', detail: 'Fee de gestión de campañas Search, Performance Max, YouTube, Display, Shopping y Remarketing, con tracking de conversiones y reporte mensual. Aparte va un presupuesto mínimo de pauta de S/ 1,500/mes pagado directamente a Google.', href: '/servicios/google-ads' },
+      { name: 'Landing page profesional', price: 'desde S/ 1,800', detail: 'Landing page con diseño a medida, SEO técnico básico y formulario de contacto. Una web corporativa de 5 a 8 secciones va de S/ 4,500 a S/ 9,000 según alcance.', href: '/servicios/web-development' },
+      { name: 'E-commerce Shopify / WooCommerce', price: 'desde S/ 6,500', detail: 'Tienda online con catálogo, pasarela de pago (Culqi, Niubiz, Izipay o Mercado Pago), gestión de inventario y panel de administración.', href: '/tiendas-virtuales-lima' },
     ] as Row[],
-    presupuestoH3: 'Cuánto invierte al mes una empresa peruana',
+    // Fuente: COPY.es.refTitle / refList / refNote de la página de precios, literal.
+    presupuestoH3: 'Inversión mensual de referencia para Lima',
     presupuesto:
-      'Como referencia de mercado en Lima: un emprendimiento suele moverse entre S/ 2,500 y S/ 4,500 al mes, que cubre redes sociales más una campaña básica; una pyme entre S/ 5,000 y S/ 12,000, ya con estrategia integral de redes, Ads, SEO y mejoras web; y una empresa mediana entre S/ 12,000 y S/ 30,000, con producción de contenido propia y optimización de conversión. La diferencia entre esos escalones no es «más de lo mismo»: es cuántos canales se pueden sostener a la vez sin que ninguno quede a medias.',
+      'Emprendimientos, de S/ 2,500 a 4,500 al mes, que cubre redes más Ads básico. Pymes, de S/ 5,000 a 12,000, ya con estrategia integral de redes, Ads, SEO y mejoras web. Empresas medianas, de S/ 12,000 a 30,000, con marketing completo, producción de contenido y CRO. Lo importante no es el presupuesto sino que el ROI sea positivo desde el mes 3.',
     h2Especialidad: 'Servicios de captación por canal',
     introEspecialidad:
-      'Cada canal se contrata por separado o dentro de una estrategia conjunta. Lo que no hacemos es venderlos todos por defecto: si un negocio vive del boca a boca y de Instagram, meterle Google Ads antes de tener la web lista es quemar presupuesto.',
+      'Cada canal se contrata por separado o dentro de una estrategia conjunta. En la página de cada uno está el detalle de qué incluye.',
+    // Fuente: la descripción de metadata / el schema de servicio de cada página.
     canales: [
-      { name: 'Meta Ads (Facebook e Instagram)', detail: 'Prospección, retargeting, catálogos y mensajes directos a WhatsApp, con ROAS medible.', href: '/servicios/meta-ads' },
-      { name: 'TikTok Ads', detail: 'Spark Ads y vídeo nativo con creadores propios para llegar a audiencias jóvenes.', href: '/servicios/tiktok-ads' },
-      { name: 'Performance marketing', detail: 'Google, Meta y TikTok coordinados con medición de punta a punta y gestión por CAC y ROAS.', href: '/servicios/performance-marketing' },
-      { name: 'Email marketing y automatización', detail: 'Flujos de bienvenida, recuperación de carritos, newsletters y CRM.', href: '/servicios/email-marketing' },
-      { name: 'Contenido UGC', detail: 'Vídeo con creadores propios: ángulos de venta, guion por pieza y entregables listos para pauta.', href: '/servicios/ugc' },
+      { name: 'Meta Ads (Facebook e Instagram)', detail: 'Prospección, retargeting, catálogos y mensajes a WhatsApp, con ROAS medible y reportes mensuales.', href: '/servicios/meta-ads' },
+      { name: 'TikTok Ads', detail: 'Spark Ads, video nativo, contenido UGC, retargeting y medición con el TikTok Pixel.', href: '/servicios/tiktok-ads' },
+      { name: 'Performance marketing', detail: 'Google Ads, Meta Ads y TikTok Ads coordinados, medición end-to-end, CRO y gestión por CAC, ROAS y LTV.', href: '/servicios/performance-marketing' },
+      { name: 'Email marketing y automatización', detail: 'Flujos de bienvenida, recuperación de carritos, newsletters, segmentación y automatización con CRM.', href: '/servicios/email-marketing' },
+      { name: 'Contenido UGC', detail: 'Producción de video con creadores propios: definición de ángulos de venta y guion por pieza.', href: '/servicios/ugc' },
       { name: 'Influencer marketing', detail: 'Selección de creadores por datos de audiencia, negociación de tarifas y medición del resultado.', href: '/servicios/influencer-marketing' },
       { name: 'Relaciones públicas', detail: 'Mapa de medios por relevancia comercial, identificación del ángulo noticiable y gestión de la publicación.', href: '/servicios/relaciones-publicas' },
     ] as { name: string; detail: string; href: AppPathname }[],
     h2Sectores: 'Marketing digital por sector',
     introSectores:
-      'Hay tres sectores donde el trabajo cambia lo suficiente como para tener página propia, porque el embudo, la normativa y el coste por contacto no se parecen en nada al resto.',
+      'Tres sectores tienen página propia porque su embudo y su coste por contacto no se parecen al resto.',
     sectores: [
-      { name: 'Clínicas y consultorios', detail: 'Google Ads de salud, SEO local y ficha de Google. Se mide en citas agendadas, no en seguidores.', href: '/servicios/marketing-clinicas' },
-      { name: 'Inmobiliarias y proyectos', detail: 'Captación de leads con Meta Ads y Google Ads, landing por proyecto, CRM y seguimiento por WhatsApp con costo por lead medible.', href: '/servicios/marketing-inmobiliarias' },
-      { name: 'E-commerce y tiendas online', detail: 'Google Shopping, Meta Ads con catálogo, email y optimización de conversión sobre Shopify, WooCommerce o VTEX.', href: '/servicios/marketing-ecommerce' },
+      { name: 'Clínicas y consultorios', detail: 'Google Ads de salud, SEO local, Google Business Profile y captación de pacientes con citas medibles.', href: '/servicios/marketing-clinicas' },
+      { name: 'Inmobiliarias y proyectos', detail: 'Meta Ads y Google Ads para captar leads, landing por proyecto, CRM y seguimiento por WhatsApp con costo por lead medible.', href: '/servicios/marketing-inmobiliarias' },
+      { name: 'E-commerce y tiendas online', detail: 'Google Shopping y Performance Max, Meta Ads con catálogo, email marketing y CRO sobre Shopify, WooCommerce o VTEX.', href: '/servicios/marketing-ecommerce' },
     ] as { name: string; detail: string; href: AppPathname }[],
-    h2Como: 'Cómo se trabaja con 3R Core',
+    h2Como: 'Quiénes somos',
+    // Fuente: messages/es.json → FAQ.faqs.q2 y q1, literal.
     como:
-      'Empezamos siempre por entender el negocio antes que el canal: qué margen deja cada venta, cuánto vale un cliente en el tiempo y qué está fallando hoy. De ahí sale el plan, no de una plantilla. Después se configura la medición — sin ella cualquier reporte es una opinión — y solo entonces se enciende el canal. Cada mes se entrega un reporte con lo que se hizo, lo que costó y lo que trajo. Somos una agencia peruana, con oficina en La Molina, Lima, y atendemos también a empresas de Estados Unidos en remoto a través de nuestra filial allí.',
+      'Somos un equipo de profesionales y nativos digitales con una visión de 3 generaciones. Conjugamos la experiencia, la visión estratégica y la tecnología para crear estrategias personalizadas que potencian el crecimiento real de tu empresa. Somos una agencia de marketing digital integral que ofrece Branding Corporativo, Gestión de Redes Sociales, Desarrollo Web y E-commerce sobre Shopify y WooCommerce, Google Ads (SEM) y Posicionamiento SEO, con oficina en La Molina, Lima, y atención tanto en Perú como en EE.UU.',
     verMas: 'Ver el detalle',
     linksH3: 'Antes de decidir',
     links: [
-      { name: 'Casos de éxito', detail: 'Proyectos reales de clientes, con lo que se hizo y el resultado.', href: '/casos-de-exito' },
-      { name: 'Preguntas frecuentes', detail: 'Plazos, contratos, de quién es el trabajo y qué pasa si algo no funciona.', href: '/preguntas' },
+      { name: 'Casos de éxito', detail: 'Proyectos de clientes publicados por la agencia.', href: '/casos-de-exito' },
+      { name: 'Preguntas frecuentes', detail: 'Servicios, plataformas, ubicación y horario.', href: '/preguntas' },
       { name: 'Precios completos', detail: 'La tabla entera con planes, extras y presupuestos mensuales de referencia.', href: '/precios' },
-      { name: 'Cotizador online', detail: 'Un estimado de tu proyecto en un minuto, sin dejar el correo.', href: '/cotizar' },
+      { name: 'Cotizador online', detail: 'Un estimado de tu proyecto sin dejar el correo.', href: '/cotizar' },
     ] as { name: string; detail: string; href: AppPathname }[],
   },
   en: {
     h2Precios: 'What each digital marketing service costs',
+    // Fuente: app/[locale]/precios/page.tsx → COPY.en.note y COPY.en.sub, literal.
     introPrecios:
-      'We publish prices because it is the first question every company asks, and because a quote that takes three emails to arrive wastes everyone’s time. Figures below are in U.S. dollars for U.S. clients, invoiced through our U.S. subsidiary. No forced retainers.',
+      'No mandatory contracts, monthly reports and progressive results. Prices shown are reference packages; each proposal is tailored after an initial meeting. Net prices in US Dollars for clients based in the United States.',
     rows: [
-      { name: 'Branding and visual identity', price: 'from $500', detail: 'Logo, brand manual, color palette, corporate typography and core applications, delivered after a discovery session.', href: '/servicios/branding' },
-      { name: 'Social media management', price: 'from $800 / month', detail: '8 to 12 pieces a month for TikTok, Instagram, Facebook and LinkedIn, with edited Reels and TikToks, community management and a monthly report.', href: '/servicios/socialmedia' },
-      { name: 'SEO', price: 'from $500 / month', detail: 'Audit, planning, on-page work, content scaling and monthly reporting. Progressive results, no lock-in.', href: '/posicionamiento-seo' },
-      { name: 'Google Ads management', price: 'from $800 / month', detail: 'Search, Performance Max, YouTube, Display, Shopping and remarketing. Ad spend is separate and paid directly to Google.', href: '/servicios/google-ads' },
-      { name: 'Websites and landing pages', price: 'custom scope', detail: 'Landing pages, corporate sites and bilingual builds with technical SEO and lead capture.', href: '/servicios/web-development' },
-      { name: 'Online stores', price: 'custom scope', detail: 'Shopify or WooCommerce stores with catalog, payments, inventory and an admin panel.', href: '/tiendas-virtuales-lima' },
+      { name: 'Starter branding', price: 'from $500 USD', detail: 'Visual identity design — logo, brand manual, color palette, corporate typography and essential applications. Detailed proposal after an initial discovery session.', href: '/servicios/branding' },
+      { name: 'Social media', price: '$800 USD / month', detail: 'TikTok, Instagram, Facebook and LinkedIn management with 8–12 pieces per month, edited Reels and TikToks, community management and a monthly report.', href: '/servicios/socialmedia' },
+      { name: 'SEO positioning', price: '$500 USD / month', detail: 'Audit, planning, on-page optimization, scaling and monthly reports. Continuous strategy with no mandatory contracts and progressive results.', href: '/posicionamiento-seo' },
+      { name: 'Google Ads management', price: '$800 USD / month', detail: 'Management fee for Search, Performance Max, YouTube, Display, Shopping and Remarketing campaigns, plus a minimum ad spend of $400/month paid directly to Google.', href: '/servicios/google-ads' },
+      { name: 'Professional landing page', price: 'from $850 USD', detail: 'Custom landing page design with basic technical SEO and contact form. A 5–8 section corporate site ranges from $1,200 to $2,400 depending on scope.', href: '/servicios/web-development' },
+      { name: 'E-commerce Shopify / WooCommerce', price: 'from $1,750 USD', detail: 'Online store with catalog, payment gateway, inventory management and admin panel.', href: '/tiendas-virtuales-lima' },
     ] as Row[],
-    presupuestoH3: 'What a monthly engagement looks like',
+    // Fuente: COPY.en.refList / refNote de la página de precios, literal.
+    presupuestoH3: 'Reference monthly investment',
     presupuesto:
-      'Most U.S. clients start with one channel and one clear objective — usually UGC video plus paid social, or search plus a landing page — and add channels once the measurement is trustworthy. The step between tiers is not «more of the same»: it is how many channels can be sustained at once without any of them being half-done.',
+      'Startups, $750 to $1,400 a month, covering social plus basic Ads. SMBs, $1,500 to $3,600, with a full strategy across social, Ads, SEO and web improvements. Mid-market, $3,600 to $9,000, with full marketing, content production and CRO. What matters is not the budget but that ROI turns positive from month 3.',
     h2Especialidad: 'Acquisition services by channel',
     introEspecialidad:
-      'Each channel can be hired on its own or inside a joint strategy. What we do not do is sell all of them by default: pushing paid search before the website converts is burning budget.',
+      'Each channel can be hired on its own or inside a joint strategy. Every service page carries the full scope.',
     canales: [
-      { name: 'Meta Ads (Facebook and Instagram)', detail: 'Prospecting, retargeting, catalogs and click-to-WhatsApp, with measurable ROAS.', href: '/servicios/meta-ads' },
-      { name: 'TikTok Ads', detail: 'Spark Ads and native video with in-house creators.', href: '/servicios/tiktok-ads' },
-      { name: 'Performance marketing', detail: 'Google, Meta and TikTok coordinated, with end-to-end measurement and CAC/ROAS management.', href: '/servicios/performance-marketing' },
-      { name: 'Email marketing and automation', detail: 'Welcome flows, cart recovery, newsletters and CRM automation.', href: '/servicios/email-marketing' },
-      { name: 'UGC content', detail: 'Video with in-house creators: selling angles, per-asset scripting and ad-ready deliverables.', href: '/servicios/ugc' },
+      { name: 'Meta Ads (Facebook and Instagram)', detail: 'Prospecting, retargeting, catalogs and click-to-WhatsApp, with measurable ROAS and monthly reports.', href: '/servicios/meta-ads' },
+      { name: 'TikTok Ads', detail: 'Spark Ads, native video, UGC content, retargeting and measurement with the TikTok Pixel.', href: '/servicios/tiktok-ads' },
+      { name: 'Performance marketing', detail: 'Google Ads, Meta Ads and TikTok Ads coordinated, end-to-end measurement, CRO and management by CAC, ROAS and LTV.', href: '/servicios/performance-marketing' },
+      { name: 'Email marketing and automation', detail: 'Welcome flows, cart recovery, newsletters, segmentation and CRM automation.', href: '/servicios/email-marketing' },
+      { name: 'UGC content', detail: 'Video production with in-house creators: selling-angle research and per-asset scripting.', href: '/servicios/ugc' },
       { name: 'Influencer marketing', detail: 'Creator selection on audience data, rate negotiation and result measurement.', href: '/servicios/influencer-marketing' },
       { name: 'Public relations', detail: 'Media mapping by commercial relevance, newsworthy angle identification and placement.', href: '/servicios/relaciones-publicas' },
     ] as { name: string; detail: string; href: AppPathname }[],
     h2Sectores: 'Digital marketing by industry',
     introSectores:
-      'Three industries change the work enough to deserve their own page, because the funnel, the regulation and the cost per contact look nothing like the rest.',
+      'Three industries have their own page because their funnel and cost per contact look nothing like the rest.',
     sectores: [
-      { name: 'Clinics and medical practices', detail: 'Healthcare Google Ads, local SEO and Google Business Profile. Measured in booked appointments.', href: '/servicios/marketing-clinicas' },
-      { name: 'Real estate', detail: 'Lead generation on Meta and Google Ads, per-project landing pages, CRM and follow-up with measurable cost per lead.', href: '/servicios/marketing-inmobiliarias' },
-      { name: 'E-commerce', detail: 'Google Shopping, catalog-based Meta Ads, email and CRO on Shopify, WooCommerce or VTEX.', href: '/servicios/marketing-ecommerce' },
+      { name: 'Clinics and medical practices', detail: 'Healthcare Google Ads, local SEO, Google Business Profile and bilingual patient acquisition campaigns.', href: '/servicios/marketing-clinicas' },
+      { name: 'Real estate', detail: 'Meta and Google Ads for listings, CRM follow-up and measurable cost per qualified lead.', href: '/servicios/marketing-inmobiliarias' },
+      { name: 'E-commerce', detail: 'Google Shopping, catalog feeds, email flows and CRO on Shopify, WooCommerce or VTEX.', href: '/servicios/marketing-ecommerce' },
     ] as { name: string; detail: string; href: AppPathname }[],
-    h2Como: 'How working with 3R Core goes',
+    h2Como: 'Who we are',
+    // Fuente: messages/en.json → FAQ.faqs.q2 y q1, literal.
     como:
-      'We start with the business, not the channel: what margin each sale leaves, what a customer is worth over time and what is failing today. The plan comes from that, not from a template. Then measurement is set up — without it any report is an opinion — and only then does the channel go live. Every month you get a report with what was done, what it cost and what it brought. 3R Core is a Peruvian agency based in Lima that serves U.S. companies remotely through its U.S. subsidiary.',
+      'We are a team of professionals and digital natives with a 3-generation vision. We combine experience, strategic insight, and technology to create personalized strategies that drive real growth for your business. We are a full-service digital marketing agency offering Corporate Branding, Social Media Management, Web Development and E-commerce on Shopify and WooCommerce, Google Ads (SEM) and SEO Positioning, based in La Molina, Lima, and serving clients in both Peru and the USA.',
     verMas: 'See the details',
     linksH3: 'Before you decide',
     links: [
-      { name: 'Case studies', detail: 'Real client projects, what was done and what came out of it.', href: '/casos-de-exito' },
-      { name: 'FAQ', detail: 'Timelines, contracts, who owns the work and what happens if something does not work.', href: '/preguntas' },
+      { name: 'Case studies', detail: 'Client projects published by the agency.', href: '/casos-de-exito' },
+      { name: 'FAQ', detail: 'Services, platforms, location and business hours.', href: '/preguntas' },
       { name: 'Full pricing', detail: 'The complete table with plans, add-ons and reference monthly budgets.', href: '/precios' },
-      { name: 'Quote calculator', detail: 'An estimate for your project in a minute, without leaving your email.', href: '/cotizar' },
+      { name: 'Quote calculator', detail: 'An estimate for your project without leaving your email.', href: '/cotizar' },
     ] as { name: string; detail: string; href: AppPathname }[],
   },
 }
@@ -127,6 +135,8 @@ export default function ServiciosSeoSection({ locale }: { locale: string }) {
   // /us es español pero factura en dólares: comparte el texto de /es salvo la
   // referencia de presupuesto, que allí se dice en dólares.
   const t = locale === 'en' ? COPY.en : COPY.es
+  // /us es español pero factura en dólares: los rangos en soles de /es no le
+  // corresponden y los de /en son de otro texto, así que no se le enseña ninguno.
   const isUs = locale === 'us'
 
   return (

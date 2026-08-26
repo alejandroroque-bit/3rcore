@@ -60,9 +60,12 @@ const ComplaintsForm = () => {
             <div className="absolute inset-0 bg-[#130218]/90 z-0"></div>
 
             <div className="relative z-10 w-full max-w-7xl px-10 lg:px-6">
-              <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.2em] uppercase mb-16">
+              {/* Era un <h2> y la página se quedaba SIN H1 — el único caso de las
+                  27 páginas /es. Mismo estilo, misma clase: solo cambia la
+                  etiqueta, que es lo que lee Google. */}
+              <h1 className="text-white text-center text-2xl md:text-3xl tracking-[0.2em] uppercase mb-16">
                 {t('title')}
-              </h2>
+              </h1>
 
               <div className="flex justify-center">
                 <div className="w-full max-w-4xl">

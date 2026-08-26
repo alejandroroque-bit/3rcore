@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     path: '/preguntas',
     titleEs: 'Preguntas Frecuentes de Marketing Digital | 3R Core',
     titleEn: 'FAQ — Working With Our Peru-Based Team | 3R Core',
-    descriptionEs: 'Cuánto cuesta, cuánto tarda, si hay permanencia y de quién es el trabajo: las respuestas concretas antes de contratar una agencia en Lima.',
+    descriptionEs: 'Qué servicios ofrece 3R Core, qué incluye el branding, con qué plataformas web trabaja, qué esperar de Google Ads y dónde está su oficina en Lima.',
     descriptionEn: 'How a Peruvian agency serves U.S. clients: pricing in USD, time zones, contracts, invoicing through our U.S. subsidiary and who owns the work.',
     titleUs: 'Preguntas Frecuentes — Marketing en Español | 3R Core',
-    descriptionUs: 'Precios en dólares, plazos, contratos, horarios y facturación: lo que preguntan los negocios de EE.UU. antes de trabajar con un equipo en Lima.',
+    descriptionUs: 'Qué servicios ofrece 3R Core, qué incluye el branding, con qué plataformas web trabaja, qué esperar de Google Ads y cuál es su horario de atención.',
   })
 }
 

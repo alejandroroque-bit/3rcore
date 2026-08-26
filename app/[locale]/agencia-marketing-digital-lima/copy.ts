@@ -1,8 +1,31 @@
 /**
  * Textos de la página madre «agencia de marketing digital en Lima».
- * Viven aparte porque el layout los necesita para construir el FAQPage del
- * JSON-LD: si el marcado y la página se escriben por separado acaban
- * diciendo cosas distintas, que es exactamente lo que Google penaliza.
+ *
+ * ⚠️ REGLA DE ORIGEN DE LOS DATOS (26-ago-2026). Esta página se reescribió
+ * entera para que NO contenga una sola afirmación que la propia web no publique
+ * ya. Cada bloque lleva anotada su fuente dentro del repositorio:
+ *
+ *   · Precios y condiciones → app/[locale]/precios/page.tsx (COPY.es / COPY.en)
+ *   · Quiénes somos y preguntas → messages/es.json · messages/en.json (FAQ)
+ *   · Distritos y cobertura → components/sections/home/HomeSeoSection.tsx
+ *   · Horario, teléfono y correo → app/[locale]/layout.tsx (JSON-LD) y llms.txt
+ *   · Valoración → ficha de Google vía lib/reviews.ts (4,7 · 42 reseñas)
+ *
+ * Lo que se quitó en esa revisión, por no estar respaldado en ninguna parte:
+ * la dirección de calle (ver AVISO), un proceso de trabajo en cuatro pasos, la
+ * promesa de que las cuentas publicitarias quedan a nombre del cliente, la de
+ * que atiende siempre la misma persona y la de que se limita la cartera a
+ * propósito. Todo eso puede ser cierto; simplemente no consta, y una landing no
+ * es el sitio para estrenar promesas.
+ *
+ * 🚨 AVISO — LA WEB PUBLICA DOS DIRECCIONES DISTINTAS:
+ *   · «Alameda de la Paz 187, primer piso, La Molina, Lima 15024»
+ *     → JSON-LD, pie de página, políticas, términos y landing de campaña.
+ *   · «Calle Las Caobas 170, Ofic. 400, Urb El Remanso, La Molina, Lima 15024»
+ *     → preguntas frecuentes (es y en) y public/llms.txt.
+ * Hasta que 3R Core confirme cuál es la buena y se unifique en todo el sitio,
+ * esta página NO publica dirección de calle: solo el distrito, en el que las
+ * dos coinciden. Una NAP inconsistente hace daño real al posicionamiento local.
  */
 
 type Item = { name: string; desc: string; href: string }
@@ -11,130 +34,144 @@ export const COPY = {
   es: {
     eyebrow: '3R Core · La Molina, Lima · Perú',
     hero: 'Agencia de marketing digital en Lima',
-    sub: 'Somos una agencia peruana con oficina en La Molina. Trabajamos con empresas de todo el Perú y, a través de nuestra filial, con negocios de Estados Unidos. Branding, redes sociales, Google Ads, posicionamiento SEO, tiendas virtuales y desarrollo web.',
-    addr: 'Alameda de la Paz 187, primer piso, La Molina, Lima 15024',
+    // Fuente: descripción del nodo Organization en app/[locale]/layout.tsx.
+    sub: 'Agencia de marketing digital en La Molina, Lima. Combinamos Experiencia, Visión y Tecnología en estrategias de branding, social media, SEO, Google Ads y desarrollo web para empresas de Perú y de Estados Unidos.',
+    // Fuente: llms.txt y el JSON-LD del sitio. Sin calle: ver AVISO arriba.
+    zona: 'La Molina, Lima 15024, Perú',
+    horario: 'Lunes a viernes, 9:00 a 18:00 (hora de Perú)',
     phone: '+51 986 889 147',
     email: 'info@3rcore.com',
     cta: 'Cotiza tu proyecto',
     ctaHref: '/cotizar',
-    ctaSecondary: 'Ver precios de cada servicio',
+    ctaSecondary: 'Ver todos los precios',
     ctaSecondaryHref: '/precios',
 
-    whyH2: 'Qué hace distinta a esta agencia',
-    whyP1: 'La mayoría de agencias en Lima venden horas de gestión. Nosotros vendemos un resultado que se pueda contar: cuántas personas llegaron, cuántas escribieron y cuánto costó cada una. Por eso lo primero que se configura en cualquier proyecto no es una campaña, es la medición — sin ella, cualquier reporte mensual es una opinión bien maquetada.',
-    whyP2: '3R Core la fundaron los hermanos Alejandro y Piero Roque, y sigue siendo una agencia familiar: el que responde el WhatsApp es el que trabaja la cuenta, no un ejecutivo intermedio. Eso limita cuántos clientes se pueden llevar a la vez, y es una decisión consciente. Los precios están publicados en la web, no hay contratos de permanencia forzosa y el trabajo entregado —marca, web, cuentas publicitarias— es propiedad del cliente desde el primer día.',
-    whyP3: 'Tenemos 4,7 estrellas sobre 42 reseñas verificadas en Google, de clientes en Perú y en Estados Unidos. No es un sello que nos hayamos puesto nosotros: está en la ficha pública y se puede leer entera.',
+    whyH2: 'Quiénes somos',
+    // Fuente: messages/es.json → FAQ.faqs.q2.answer (literal).
+    whyP1: 'Somos un equipo de profesionales y nativos digitales con una visión de 3 generaciones. Conjugamos la experiencia, la visión estratégica y la tecnología para crear estrategias personalizadas que potencian el crecimiento real de tu empresa.',
+    // Fuente: messages/es.json → FAQ.faqs.q1.answer (literal).
+    whyP2: 'Somos una agencia de marketing digital integral que ofrece Branding Corporativo, Gestión de Redes Sociales (Social Media), Desarrollo Web & E-commerce (Shopify/WooCommerce), Google Ads (SEM) y Posicionamiento SEO.',
+    // Fuente: ficha de Google leída el 26-ago-2026 (lib/reviews.ts).
+    whyP3: 'En el perfil de empresa de Google la agencia acumula una valoración media de 4,7 sobre 5 en 42 reseñas.',
 
-    servicesH2: 'Los servicios que se contratan desde Lima',
-    servicesP: 'Cada uno se puede contratar suelto o dentro de una estrategia conjunta. En la página de cada servicio está el detalle de qué incluye, el plazo y el precio.',
+    servicesH2: 'Servicios y precios',
+    // Fuente: app/[locale]/precios/page.tsx → COPY.es.note (literal).
+    servicesP: 'Sin contratos forzosos, con reportes mensuales y resultados progresivos. Los precios son referenciales según paquetes base; cada propuesta se ajusta tras una reunión inicial. Precios netos en soles peruanos; las facturas en Perú suman 18% de IGV.',
+    // Fuente: COPY.es.tiers y COPY.es.webTiers de la página de precios.
     services: [
-      { name: 'Branding e identidad de marca', desc: 'Logotipo, manual de marca, paleta y tipografía. Desde S/500, con la propuesta entregada tras una sesión de descubrimiento.', href: '/servicios/branding' },
-      { name: 'Manejo de redes sociales', desc: 'De 8 a 12 piezas al mes en TikTok, Instagram, Facebook y LinkedIn, con community management y reporte. Desde S/1,500 al mes.', href: '/servicios/socialmedia' },
-      { name: 'Google Ads y SEM', desc: 'Search, Performance Max, YouTube, Display, Shopping y remarketing. Fee desde S/1,800 al mes, más el presupuesto de pauta.', href: '/servicios/google-ads' },
-      { name: 'Posicionamiento SEO', desc: 'Auditoría, plan, optimización on-page, contenidos y reporte mensual. S/1,800 al mes, sin contrato forzoso.', href: '/posicionamiento-seo' },
-      { name: 'Diseño y desarrollo web', desc: 'Landing pages desde S/1,800 y webs corporativas de 5 a 8 secciones entre S/4,500 y S/9,000.', href: '/servicios/web-development' },
-      { name: 'Tiendas virtuales', desc: 'Shopify, WooCommerce o Tiendanube con pasarela local, inventario y panel. E-commerce completo desde S/6,500.', href: '/tiendas-virtuales-lima' },
+      { name: 'Branding inicial — desde S/ 500', desc: 'Logotipo, manual de marca, paleta cromática, tipografía corporativa y aplicaciones esenciales. La propuesta se entrega tras una sesión inicial de descubrimiento.', href: '/servicios/branding' },
+      { name: 'Social Media — desde S/ 1,500 / mes', desc: 'Manejo de TikTok, Instagram, Facebook y LinkedIn con 8–12 piezas mensuales, Reels y TikToks editados, community management y reporte mensual.', href: '/servicios/socialmedia' },
+      { name: 'Posicionamiento SEO — S/ 1,800 / mes', desc: 'Auditoría inicial, planificación, optimización on-page, escalamiento y reporte mensual. Estrategia continua sin contratos forzosos.', href: '/posicionamiento-seo' },
+      { name: 'Google Ads — desde S/ 1,800 / mes', desc: 'Fee de gestión de campañas Search, Performance Max, YouTube, Display, Shopping y Remarketing. Aparte va un presupuesto mínimo de pauta de S/ 1,500/mes pagado directamente a Google.', href: '/servicios/google-ads' },
+      { name: 'Landing page — desde S/ 1,800', desc: 'Diseño a medida, SEO técnico básico y formulario de contacto. Una web corporativa de 5 a 8 secciones va de S/ 4,500 a S/ 9,000 según alcance.', href: '/servicios/web-development' },
+      { name: 'E-commerce — desde S/ 6,500', desc: 'Tienda online con catálogo, pasarela de pago (Culqi, Niubiz, Izipay o Mercado Pago), gestión de inventario y panel de administración.', href: '/tiendas-virtuales-lima' },
     ] as Item[],
 
-    processH2: 'Cómo se trabaja una cuenta, paso a paso',
-    process: [
-      { t: 'Primero el negocio, no el canal', d: 'Antes de proponer nada preguntamos qué margen deja cada venta, cuánto vale un cliente en el tiempo y de dónde salen hoy los que llegan. Un negocio que vive del boca a boca y de Instagram no necesita Google Ads el primer mes: necesita que su web convierta.' },
-      { t: 'Se instala la medición', d: 'Analítica, eventos de contacto y, cuando hay campañas, conversiones enlazadas a la cuenta publicitaria. Es la parte menos vistosa y la que decide si el resto sirve de algo.' },
-      { t: 'Se enciende un canal y se deja madurar', d: 'Abrir cinco frentes a la vez con presupuesto de uno es la forma más rápida de no saber qué funcionó. Se empieza por el canal con más probabilidad de dar retorno y se amplía cuando los números lo justifican.' },
-      { t: 'Reporte mensual con las tres cifras que importan', d: 'Qué se hizo, qué costó y qué trajo. Sin gráficos de impresiones que no significan nada. Si un mes salió mal, el reporte lo dice.' },
+    // Fuente: COPY.es.refTitle / refList / refNote de la página de precios.
+    refH2: 'Inversión mensual de referencia para Lima',
+    ref: [
+      { t: 'Emprendimientos', d: 'S/ 2,500 – 4,500 / mes (cubre redes + Ads básico)' },
+      { t: 'Pymes', d: 'S/ 5,000 – 12,000 / mes (estrategia integral con redes, Ads, SEO y mejoras web)' },
+      { t: 'Empresas medianas', d: 'S/ 12,000 – 30,000 / mes (marketing completo con producción de contenido y CRO)' },
     ],
+    refNote: 'Lo importante no es el presupuesto sino que el ROI sea positivo desde el mes 3.',
 
-    zonesH2: 'A qué zonas y sectores atendemos',
-    zonesP: 'La oficina está en La Molina y trabajamos con empresas de toda Lima Metropolitana —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos, Callao— y de provincias, en remoto. También atendemos a negocios de Estados Unidos en español y en inglés, a través de nuestra filial allí, en horario compatible y facturando en dólares.',
-    sectorsP: 'Hay tres sectores con página propia porque su embudo, su normativa y su coste por contacto no se parecen al resto:',
+    zonesH2: 'Dónde atendemos',
+    // Fuente: HomeSeoSection (mismos distritos, sin añadir ninguno) + FAQ q6.
+    zonesP: 'La oficina está en La Molina y trabajamos con negocios de todos los distritos de Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— y de provincias en todo el Perú. Contamos con presencia y atención tanto en Perú como en EE.UU. Atendemos de lunes a viernes, de 9:00 a 18:00.',
+    sectorsP: 'Tres sectores tienen página propia porque su embudo y su coste por contacto no se parecen al resto:',
+    // Fuente: la descripción de metadata de cada una de esas tres páginas.
     sectors: [
-      { name: 'Clínicas y consultorios', desc: 'Se mide en citas agendadas, no en seguidores.', href: '/servicios/marketing-clinicas' },
-      { name: 'Inmobiliarias y proyectos', desc: 'Captación de leads con costo por lead medible y seguimiento en CRM.', href: '/servicios/marketing-inmobiliarias' },
-      { name: 'E-commerce y tiendas online', desc: 'Shopping, catálogo, email y optimización de la conversión.', href: '/servicios/marketing-ecommerce' },
+      { name: 'Clínicas y consultorios', desc: 'Google Ads de salud, SEO local, Google Business Profile y captación de pacientes con citas medibles.', href: '/servicios/marketing-clinicas' },
+      { name: 'Inmobiliarias y proyectos', desc: 'Meta Ads y Google Ads para captar leads, landing por proyecto, CRM y seguimiento por WhatsApp con costo por lead medible.', href: '/servicios/marketing-inmobiliarias' },
+      { name: 'E-commerce y tiendas online', desc: 'Google Shopping, Meta Ads con catálogo, email marketing y CRO sobre Shopify, WooCommerce o VTEX.', href: '/servicios/marketing-ecommerce' },
     ] as Item[],
 
-    faqH2: 'Lo que se pregunta antes de contratar',
-    faq: [
-      { q: '¿Cuánto cuesta contratar una agencia de marketing digital en Lima?', a: 'Como referencia mensual de mercado: un emprendimiento se mueve entre S/2,500 y S/4,500, una pyme entre S/5,000 y S/12,000, y una empresa mediana entre S/12,000 y S/30,000. Por servicio suelto: SEO S/1,800 al mes, gestión de Google Ads desde S/1,800 más pauta, redes sociales desde S/1,500, branding desde S/500 y webs desde S/1,800.' },
-      { q: '¿Cuánto tarda en verse un resultado?', a: 'Depende del canal. Google Ads y Meta Ads dan datos la primera semana y decisiones sólidas al mes. El SEO es otra escala: los primeros movimientos se ven entre el segundo y el tercer mes, y el resultado serio a partir del sexto. Quien prometa primeros puestos en treinta días está vendiendo otra cosa.' },
-      { q: '¿Hay contrato de permanencia?', a: 'No. Los servicios mensuales se renuevan mes a mes. Si el trabajo no convence, no hay penalidad por parar.' },
-      { q: '¿De quién son la web, la marca y las cuentas publicitarias?', a: 'Del cliente, siempre y desde el principio. Las cuentas de Google Ads, Meta y Analytics se crean a nombre de la empresa y nosotros entramos como gestores. Si algún día la relación termina, no hay nada que reclamar.' },
-      { q: '¿Atienden a empresas fuera de Lima?', a: 'Sí. Trabajamos en remoto con empresas de todo el Perú y con negocios de Estados Unidos a través de nuestra filial, en español y en inglés.' },
+    qaH2: 'Lo que más se pregunta',
+    // Fuente: FAQ publicadas en /es/precios y /es/preguntas, LITERALES. No se
+    // emite FAQPage aquí: esas mismas preguntas ya están marcadas en sus
+    // páginas y duplicar el marcado reparte la señal en vez de sumarla.
+    qa: [
+      { q: '¿Cuánto cuesta contratar una agencia de marketing digital en Lima?', a: 'Depende del mix de servicios. Como referencia mensual en Lima: emprendimientos S/ 2,500–4,500, pymes S/ 5,000–12,000 y empresas medianas S/ 12,000–30,000. Por servicio: SEO S/ 1,800/mes, gestión de Google Ads desde S/ 1,800/mes (más pauta), Social Media desde S/ 1,500/mes, branding desde S/ 500 y webs desde S/ 1,800.' },
+      { q: '¿Los precios incluyen IGV? ¿Hay contratos forzosos?', a: 'Los precios son netos en soles peruanos; las facturas en Perú suman 18% de IGV. No trabajamos con contratos forzosos: el servicio es mensual, con reportes y resultados progresivos.' },
+      { q: '¿Qué resultados puedo esperar de las campañas de Google Ads?', a: 'Nuestras campañas están enfocadas en la conversión. Obtendrás mayor visibilidad en los primeros resultados de búsqueda, un incremento en los mensajes y llamadas de clientes potenciales, y un mejor retorno de inversión (ROI).' },
     ],
 
     closeH2: 'Hablemos de tu proyecto',
-    closeP: 'Cuéntanos qué vendes y qué está fallando hoy. Salimos con una propuesta con alcance y precio, no con una presentación de cincuenta láminas. Si no somos la agencia adecuada para lo que necesitas, también lo decimos.',
+    // Fuente: COPY.es.contactDesc de la página de precios (literal).
+    closeP: 'Cuéntanos tu objetivo y armamos una cotización personalizada en la primera reunión.',
     moreH3: 'Antes de escribirnos',
     more: [
-      { name: 'Casos de éxito', desc: 'Proyectos reales con lo que se hizo y el resultado.', href: '/casos-de-exito' },
-      { name: 'Precios completos', desc: 'La tabla entera de planes, extras y presupuestos.', href: '/precios' },
       { name: 'Todos los servicios', desc: 'El catálogo con el detalle de cada uno.', href: '/servicios' },
-      { name: 'Preguntas frecuentes', desc: 'Plazos, contratos y qué pasa si algo no funciona.', href: '/preguntas' },
+      { name: 'Precios completos', desc: 'La tabla entera de planes, extras y presupuestos.', href: '/precios' },
+      { name: 'Preguntas frecuentes', desc: 'Servicios, plataformas, ubicación y horario.', href: '/preguntas' },
+      { name: 'Casos de éxito', desc: 'Proyectos de clientes publicados por la agencia.', href: '/casos-de-exito' },
     ] as Item[],
   },
   en: {
     eyebrow: '3R Core · La Molina, Lima · Peru',
     hero: 'Digital marketing agency in Lima, Peru',
-    sub: 'A Peruvian agency with its office in La Molina, Lima. We work with companies across Peru and — through our U.S. subsidiary — with businesses in the United States. Branding, social media, Google Ads, SEO, online stores and web development.',
-    addr: 'Alameda de la Paz 187, first floor, La Molina, Lima 15024',
+    sub: 'Digital marketing agency in La Molina, Lima. We combine Experience, Vision and Technology across branding, social media, SEO, Google Ads and web development for companies in Peru and the United States.',
+    zona: 'La Molina, Lima 15024, Peru',
+    horario: 'Monday to Friday, 9:00 to 18:00 (Peru time)',
     phone: '+51 986 889 147',
     email: 'info@3rcore.com',
     cta: 'Get a quote',
     ctaHref: '/quote',
-    ctaSecondary: 'See pricing per service',
+    ctaSecondary: 'See full pricing',
     ctaSecondaryHref: '/pricing',
 
-    whyH2: 'What makes this agency different',
-    whyP1: 'Most agencies sell hours of management. We sell a result you can count: how many people arrived, how many wrote in and what each one cost. That is why the first thing set up on any account is not a campaign — it is measurement. Without it, a monthly report is a well-designed opinion.',
-    whyP2: '3R Core was founded by brothers Alejandro and Piero Roque and is still a family agency: whoever answers your message is the person working on the account. That limits how many clients can be taken on at once, and it is a deliberate choice. Prices are published, there are no forced retainers, and everything delivered — brand, site, ad accounts — belongs to the client from day one.',
-    whyP3: 'We hold 4.7 stars from 42 verified Google reviews, left by clients in Peru and the United States. It is a public profile anyone can read in full.',
+    whyH2: 'Who we are',
+    // Fuente: messages/en.json → FAQ.faqs.q2.answer (literal).
+    whyP1: 'We are a team of professionals and digital natives with a 3-generation vision. We combine experience, strategic insight, and technology to create personalized strategies that drive real growth for your business.',
+    // Fuente: messages/en.json → FAQ.faqs.q1.answer (literal).
+    whyP2: 'We are a full-service digital marketing agency offering Corporate Branding, Social Media Management, Web Development & E-commerce (Shopify/WooCommerce), Google Ads (SEM), and SEO Positioning.',
+    whyP3: 'On its Google Business Profile the agency holds an average rating of 4.7 out of 5 across 42 reviews.',
 
-    servicesH2: 'Services delivered from Lima',
-    servicesP: 'Each one can be hired on its own or inside a joint strategy. Every service page has the scope, the timeline and the price.',
+    servicesH2: 'Services and pricing',
+    // Fuente: app/[locale]/precios/page.tsx → COPY.en.note y COPY.en.sub.
+    servicesP: 'No mandatory contracts, monthly reports and progressive results. Prices shown are reference packages; each proposal is tailored after an initial meeting. Net prices in US Dollars for clients based in the United States.',
     services: [
-      { name: 'Branding and visual identity', desc: 'Logo, brand manual, palette and typography, delivered after a discovery session.', href: '/services/branding' },
-      { name: 'Social media management', desc: '8 to 12 pieces a month across TikTok, Instagram, Facebook and LinkedIn, with community management and reporting.', href: '/services/social-media' },
-      { name: 'Google Ads and SEM', desc: 'Search, Performance Max, YouTube, Display, Shopping and remarketing. Ad spend is separate.', href: '/services/google-ads' },
-      { name: 'SEO', desc: 'Audit, plan, on-page work, content and monthly reporting. No lock-in.', href: '/seo-agency' },
-      { name: 'Web design and development', desc: 'Landing pages, corporate sites and bilingual builds with technical SEO.', href: '/services/web-development' },
-      { name: 'Online stores', desc: 'Shopify, WooCommerce or Tiendanube with payments, inventory and an admin panel.', href: '/ecommerce-development' },
+      { name: 'Starter branding — from $500 USD', desc: 'Visual identity design: logo, brand manual, color palette, corporate typography and essential applications, after an initial discovery session.', href: '/services/branding' },
+      { name: 'Social media — $800 USD / month', desc: 'TikTok, Instagram, Facebook and LinkedIn management with 8–12 pieces per month, edited Reels and TikToks, community management and a monthly report.', href: '/services/social-media' },
+      { name: 'SEO positioning — $500 USD / month', desc: 'Audit, planning, on-page optimization, scaling and monthly reports. Continuous strategy with no mandatory contracts.', href: '/seo-agency' },
+      { name: 'Google Ads management — $800 USD / month', desc: 'Management fee for Search, Performance Max, YouTube, Display, Shopping and Remarketing campaigns, plus a minimum ad spend of $400/month paid directly to Google.', href: '/services/google-ads' },
+      { name: 'Landing page — from $850 USD', desc: 'Custom landing page design with basic technical SEO and contact form. A 5–8 section corporate site ranges from $1,200 to $2,400 depending on scope.', href: '/services/web-development' },
+      { name: 'E-commerce — from $1,750 USD', desc: 'Online store on Shopify or WooCommerce with catalog, payment gateway, inventory management and admin panel.', href: '/ecommerce-development' },
     ] as Item[],
 
-    processH2: 'How an account is run, step by step',
-    process: [
-      { t: 'Business first, channel second', d: 'Before proposing anything we ask what margin each sale leaves, what a customer is worth over time and where today’s customers come from. A business living off word of mouth does not need paid search in month one — it needs a site that converts.' },
-      { t: 'Measurement gets installed', d: 'Analytics, contact events and, where there are campaigns, conversions wired to the ad account. It is the least glamorous part and the one that decides whether the rest means anything.' },
-      { t: 'One channel goes live and is left to mature', d: 'Opening five fronts with one front’s budget is the fastest way to never know what worked. We start with the channel most likely to return and expand when the numbers justify it.' },
-      { t: 'A monthly report with the three figures that matter', d: 'What was done, what it cost and what it brought. No impression charts that mean nothing. If a month went badly, the report says so.' },
+    refH2: 'Reference monthly investment',
+    ref: [
+      { t: 'Startups', d: '$750 – $1,400 / month (covers social + basic Ads)' },
+      { t: 'SMBs', d: '$1,500 – $3,600 / month (full strategy with social, Ads, SEO and web improvements)' },
+      { t: 'Mid-market', d: '$3,600 – $9,000 / month (full marketing with content production and CRO)' },
     ],
+    refNote: 'What matters is not the budget but that ROI turns positive from month 3.',
 
-    zonesH2: 'Where we work and who we work with',
-    zonesP: 'The office is in La Molina and we serve companies across Metropolitan Lima — San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos, Callao — and the rest of Peru remotely. We also serve U.S. businesses in Spanish and English through our U.S. subsidiary, on overlapping hours and invoiced in USD.',
-    sectorsP: 'Three industries have their own page because their funnel, regulation and cost per contact look nothing like the rest:',
+    zonesH2: 'Where we work',
+    zonesP: 'The office is in La Molina, Lima, and we work with businesses across every district of Lima and throughout Peru. We serve clients in both Peru and the USA. Open Monday to Friday, 9:00 to 18:00 Peru time.',
+    sectorsP: 'Three industries have their own page because their funnel and cost per contact look nothing like the rest:',
     sectors: [
-      { name: 'Clinics and medical practices', desc: 'Measured in booked appointments, not followers.', href: '/services/healthcare-marketing' },
-      { name: 'Real estate', desc: 'Lead generation with measurable cost per lead and CRM follow-up.', href: '/services/real-estate-marketing' },
-      { name: 'E-commerce', desc: 'Shopping, catalog feeds, email and conversion optimization.', href: '/services/ecommerce-marketing' },
+      { name: 'Clinics and medical practices', desc: 'Healthcare Google Ads, local SEO, Google Business Profile and bilingual patient acquisition campaigns.', href: '/services/healthcare-marketing' },
+      { name: 'Real estate', desc: 'Meta and Google Ads for listings, CRM follow-up and measurable cost per qualified lead.', href: '/services/real-estate-marketing' },
+      { name: 'E-commerce', desc: 'Google Shopping, catalog feeds, email flows and CRO for online stores.', href: '/services/ecommerce-marketing' },
     ] as Item[],
 
-    faqH2: 'What people ask before signing',
-    faq: [
-      { q: 'What does hiring a digital marketing agency cost?', a: 'It depends on the mix. Most U.S. engagements start with one channel and one clear objective and grow from there. Every service page publishes its own starting price in USD.' },
-      { q: 'How long until results show?', a: 'It depends on the channel. Paid search and paid social give data in week one and solid decisions within a month. SEO is a different scale: first movements between month two and three, serious results from month six. Anyone promising top rankings in thirty days is selling something else.' },
-      { q: 'Is there a lock-in contract?', a: 'No. Monthly services renew month to month, with no penalty for stopping.' },
-      { q: 'Who owns the site, the brand and the ad accounts?', a: 'The client, always and from the start. Google Ads, Meta and Analytics accounts are created under the company’s name and we come in as managers.' },
-      { q: 'Do you work with companies outside Peru?', a: 'Yes. We serve U.S. businesses in Spanish and English through our U.S. subsidiary.' },
+    qaH2: 'Most asked',
+    qa: [
+      { q: 'How much does a digital marketing agency cost?', a: 'It depends on the mix of services. Reference monthly ranges: startups $750–$1,400, SMBs $1,500–$3,600 and mid-market $3,600–$9,000. Per service: SEO $500/month, Google Ads management from $800/month (plus ad spend), social media $800/month, branding from $500 and websites from $850.' },
+      { q: 'Which web development platforms do you work with?', a: 'We partner with top e-commerce platforms like Shopify and WooCommerce to provide scalable, robust, and high-performance websites (UX/UI) tailored to your business needs.' },
+      { q: 'What results can I expect from Google Ads campaigns?', a: 'Our campaigns are conversion-focused. You will gain higher visibility in top search results, an increase in messages and calls from potential leads, and a better return on investment (ROI).' },
     ],
 
     closeH2: 'Let’s talk about your project',
-    closeP: 'Tell us what you sell and what is failing today. You get a proposal with scope and price, not a fifty-slide deck. If we are not the right agency for what you need, we say that too.',
+    closeP: 'Tell us your goal and we build a custom proposal in the first meeting.',
     moreH3: 'Before you write',
     more: [
-      { name: 'Case studies', desc: 'Real projects, what was done and what came out of it.', href: '/services' },
-      { name: 'Pricing', desc: 'The full table of plans, add-ons and budgets.', href: '/pricing' },
       { name: 'All services', desc: 'The catalogue with the detail of each one.', href: '/services' },
-      { name: 'FAQ', desc: 'Timelines, contracts and what happens if something does not work.', href: '/faq' },
+      { name: 'Full pricing', desc: 'The complete table of plans, add-ons and budgets.', href: '/pricing' },
+      { name: 'FAQ', desc: 'Services, platforms, location and business hours.', href: '/faq' },
+      { name: 'Case studies', desc: 'Client projects published by the agency.', href: '/services' },
     ] as Item[],
   },
 }
-

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { generatePageMetadata, generateBreadcrumbSchema, BASE_URL } from "@/lib/metadata"
 import { buildServiceItemList, buildSpeakableSchema } from "@/lib/seoSchemas"
-import { COPY } from "./copy"
 
 export const revalidate = 3600
 
@@ -18,6 +17,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     // ataca /nearshore-marketing-agency. /en y /us quedan noindex,follow para
     // no canibalizar y seguir repartiendo autoridad por sus enlaces internos.
     noindex: locale !== 'es',
+    // Y el hreflang solo declara /es: apuntar a /en y /us, que acaban de
+    // quedarse en noindex, es contradecirse en la misma página.
+    onlyLocales: ['es'],
     ogImage: {
       url: 'https://3rcore.com/og/default.jpg',
       width: 1200,
@@ -50,60 +52,34 @@ export default async function LimaLandingLayout({ children, params }: { children
     ],
   })
 
-  const localBusinessSchema = {
+  // Antes esta página declaraba un SEGUNDO nodo de negocio local
+  // (#localbusiness) con nombre y teléfono ligeramente distintos a los del
+  // nodo #organization que el layout raíz ya emite en todas las páginas: dos
+  // entidades para la misma empresa en la misma URL, y una de ellas con el
+  // teléfono sin formato E.164. Mientras la página redirigía daba igual;
+  // desde que vuelve a indexarse, cuenta.
+  //
+  // Se sustituye por un WebPage que APUNTA a la entidad que ya existe. No se
+  // pierde señal local: el nodo #organization ya lleva dirección, geo, horario,
+  // áreas atendidas y la valoración de la ficha.
+  const webPageSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": `${BASE_URL}/${locale}/agencia-marketing-digital-lima#localbusiness`,
-    "name": "3R Core - Agencia de Marketing Digital en Lima",
+    "@type": "WebPage",
+    "@id": `${BASE_URL}/${locale}/agencia-marketing-digital-lima#webpage`,
     "url": `${BASE_URL}/${locale}/agencia-marketing-digital-lima`,
-    "image": `${BASE_URL}/og/default.jpg`,
-    "logo": `${BASE_URL}/icons/LogoFull.webp`,
-    "telephone": "+51 986 889 147",
-    "email": "info@3rcore.com",
-    "priceRange": "S/500 - S/15,000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Alameda de la Paz 187, primer piso",
-      "addressLocality": "La Molina",
-      "addressRegion": "Lima",
-      "postalCode": "15024",
-      "addressCountry": "PE"
-    },
-    "areaServed": [
-      { "@type": "Country", "name": "PE" },
-      { "@type": "Country", "name": "US" },
-    ],
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00",
-    }],
+    "name": isEn ? "Digital Marketing Agency in Lima, Peru — 3R Core" : "Agencia de Marketing Digital en Lima — 3R Core",
+    "inLanguage": isEn ? "en" : "es",
+    "isPartOf": { "@id": `${BASE_URL}/#website` },
+    "about": { "@id": `${BASE_URL}/#organization` },
+    "primaryImageOfPage": `${BASE_URL}/og/default.jpg`,
     "speakable": buildSpeakableSchema(['h1', 'h2', '.local-intro']),
-  }
-
-  // FAQPage con las MISMAS preguntas que se ven en la página (COPY compartido):
-  // marcar preguntas que el visitante no encuentra en pantalla es justo lo que
-  // Google considera marcado engañoso.
-  const t = locale === 'en' ? COPY.en : COPY.es
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": `${BASE_URL}/${locale}/agencia-marketing-digital-lima#faqpage`,
-    "url": `${BASE_URL}/${locale}/agencia-marketing-digital-lima`,
-    "inLanguage": isEn ? 'en' : 'es',
-    "mainEntity": t.faq.map((f) => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a },
-    })),
   }
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema, itemList, breadcrumbSchema, faqSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, itemList, breadcrumbSchema]) }}
       />
       {children}
     </>

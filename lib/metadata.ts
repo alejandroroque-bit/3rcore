@@ -52,6 +52,21 @@ export function hreflangFor(path: string) {
   }
 }
 
+/**
+ * hreflang restringido: solo los locales que de verdad se indexan. Se conserva
+ * el x-default apuntando al primero de la lista.
+ */
+export function hreflangSolo(path: string, locales: string[]) {
+  const out: Record<string, string> = {}
+  const mapa: Record<string, string[]> = { es: ['es', 'es-PE'], us: ['es-US'], en: ['en', 'en-US'] }
+  for (const loc of locales) {
+    const url = localizedUrl(path, loc)
+    for (const etiqueta of (mapa[loc] ?? [loc])) out[etiqueta] = url
+  }
+  out['x-default'] = localizedUrl(path, locales[0])
+  return out
+}
+
 interface PageMetadataOptions {
   locale: string
   path: string
@@ -63,11 +78,19 @@ interface PageMetadataOptions {
   titleUs?: string
   descriptionUs?: string
   noindex?: boolean
+  /**
+   * Limita el hreflang a los idiomas indicados. Hace falta cuando una página
+   * solo se indexa en un locale: declarar un alternate hacia una URL noindex es
+   * una señal contradictoria — Google descarta el par y lo puede reportar como
+   * error de hreflang. Ejemplo: /agencia-marketing-digital-lima solo compite en
+   * /es; /en y /us existen pero van noindex,follow.
+   */
+  onlyLocales?: string[]
   ogImage?: { url: string; width?: number; height?: number; alt?: string }
 }
 
 export function generatePageMetadata(options: PageMetadataOptions): Metadata {
-  const { locale, path, titleEs, titleEn, descriptionEs, descriptionEn, titleUs, descriptionUs, noindex, ogImage } = options
+  const { locale, path, titleEs, titleEn, descriptionEs, descriptionEn, titleUs, descriptionUs, noindex, onlyLocales, ogImage } = options
   const isEn = locale === 'en'
   const isUs = locale === 'us'
   const title = isEn ? titleEn : isUs ? (titleUs ?? titleEs) : titleEs
@@ -79,7 +102,7 @@ export function generatePageMetadata(options: PageMetadataOptions): Metadata {
     description,
     alternates: {
       canonical: localizedUrl(path, locale),
-      languages: hreflangFor(path),
+      languages: onlyLocales ? hreflangSolo(path, onlyLocales) : hreflangFor(path),
     },
     openGraph: {
       title,

@@ -35,8 +35,18 @@ export default function HeroHome() {
     if (conn?.saveData) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const pick = () =>
-      setVideoSrc(window.innerWidth >= 1024 ? "/videos/final-1080.mp4" : "/videos/final-720.mp4");
+    // Tres cortes medidos con CDP sobre la portada en vivo: el móvil pagaba
+    // 1,47 MB por el 720p cuando a 390 px de ancho, detrás de un velo negro al
+    // 60%, no se distingue del 480p — que son 927 KB. Medio mega menos en la
+    // conexión que peor lo lleva, sin tocar el diseño.
+    const pick = () => {
+      const w = window.innerWidth;
+      setVideoSrc(
+        w >= 1024 ? "/videos/final-1080.mp4" :
+        w >= 768 ? "/videos/final-720.mp4" :
+        "/videos/final-480.mp4"
+      );
+    };
 
     const ric = (window as any).requestIdleCallback;
     if (typeof ric === "function") {
