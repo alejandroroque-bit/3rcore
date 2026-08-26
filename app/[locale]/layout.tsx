@@ -7,7 +7,7 @@ import CookieBanner from "@/components/layout/CookieBanners";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
 import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
 import { TEL_MAIN } from "@/lib/contact";
@@ -52,6 +52,10 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params;
+
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
 
   const title = locale === 'en'
     ? "Marketing Agency for U.S. Brands | 3R Core"
@@ -124,6 +128,11 @@ export default async function RootLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  // Renderizado estático: sin esto next-intl marca TODO el subárbol como
+  // dinámico y Vercel devuelve `no-store` en cada visita, que es exactamente lo
+  // que se midió el 25-ago (x-vercel-cache: MISS siempre).
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 

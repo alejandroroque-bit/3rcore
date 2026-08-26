@@ -6,6 +6,7 @@ import { createServerClient } from "@/lib/supabase/server"
 import type { BlogPost } from "@/lib/supabase/types"
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
+import { setRequestLocale } from "next-intl/server"
 
 export const revalidate = 600
 
@@ -25,6 +26,10 @@ export async function generateMetadata(
   { params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<SP> }
 ): Promise<Metadata> {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const sp = await searchParams
   const page = parsePage(sp)
   const cat = typeof sp?.categoria === "string" && sp.categoria ? sp.categoria : undefined
@@ -53,6 +58,9 @@ export default async function BlogsPage(
   { params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<SP> }
 ) {
   const { locale } = await params
+  // Renderizado estático (ver app/[locale]/layout.tsx).
+  setRequestLocale(locale);
+
   const sp = await searchParams
   const page = parsePage(sp)
   const cat = typeof sp?.categoria === "string" && sp.categoria ? sp.categoria : undefined

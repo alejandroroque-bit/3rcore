@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import HomeClient from "./HomeClient"
 import HomeClientV2 from "./HomeClientV2"
 import HomeSeoSection from "@/components/sections/home/HomeSeoSection"
@@ -7,6 +7,10 @@ import { buildServiceItemList, buildSpeakableWebPage } from "@/lib/seoSchemas"
 
 export default async function HomePage({ params }: { params: any }) {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const isEn = locale === 'en'
   const tH1 = await getTranslations({ locale, namespace: "HiddenH1" })
 

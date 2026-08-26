@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing"
 import type { AppPathname } from "@/i18n/routing"
 import { buildFAQPageSchema } from "@/lib/seoSchemas"
 import ProtoPage from "@/components/proto/ProtoPage"
+import { setRequestLocale } from "next-intl/server"
 
 interface Props { params: Promise<{ locale: string }> }
 
@@ -123,6 +124,10 @@ const COPY = {
 
 export default async function PreciosPage({ params }: Props) {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const t = (COPY as any)[locale === 'en' ? 'en' : locale === 'us' ? 'us' : 'es']
   const isEn = locale === 'en'
   const faqSchema = buildFAQPageSchema((t.faqs || []).map((f: any) => ({ question: f.q, answer: f.a })))

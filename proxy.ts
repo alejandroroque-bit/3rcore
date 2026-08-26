@@ -22,6 +22,17 @@ export default function middleware(request: NextRequest) {
   const hasLocalePrefix = /^\/(es|en|us)(\/|$)/.test(request.nextUrl.pathname);
   if (hasLocalePrefix) {
     response.headers.delete('set-cookie');
+    // Y se declara la caché a mano. Estas páginas no tienen nada personalizado:
+    // el mismo HTML sirve para todos.
+    // Aviso medido: en `next start` autoalojado esta cabecera la pisa Next con
+    // su `no-store` cuando la petición pasa por middleware. La que de verdad
+    // arregla el problema es el renderizado estático (setRequestLocale +
+    // generateStaticParams: 34 de 37 rutas pasan a prerenderizarse en el
+    // build). Esta línea queda para las tres que siguen siendo dinámicas.
+    response.headers.set(
+      'Cache-Control',
+      'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400'
+    );
     return response;
   }
 

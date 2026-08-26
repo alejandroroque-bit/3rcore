@@ -1,10 +1,14 @@
 import { montserrat } from "@/lib/fonts"
 import { Link } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 
 export default async function GraciasPage({ params }: { params: any }) {
   const { locale } = await params;
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const isEn = locale === 'en';
 
   return (

@@ -2,11 +2,16 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
 import ProtoPage from "@/components/proto/ProtoPage"
+import { setRequestLocale } from "next-intl/server"
 
 const PATH = '/casos-de-exito'
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   // Solo existe en es: la página del prototipo habla de marcas trabajadas
   // desde Lima. Sin alternates: no hay versión us ni en.
   if (locale !== 'es') return { robots: { index: false, follow: false } }
@@ -38,6 +43,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 
 export default async function CasosDeExitoPage({ params }: { params: any }) {
   const { locale } = await params
+  // Renderizado estático (ver app/[locale]/layout.tsx).
+  setRequestLocale(locale);
+
   if (locale !== 'es') notFound()
 
   const breadcrumbSchema = generateBreadcrumbSchema(

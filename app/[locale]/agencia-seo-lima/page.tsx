@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { setRequestLocale } from "next-intl/server"
 
 interface Props { params: Promise<{ locale: string }> }
 
@@ -65,6 +66,10 @@ const COPY = {
 
 export default async function AgenciaSeoLimaPage({ params }: Props) {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   const t = (COPY as any)[locale === 'en' ? 'en' : 'es']
 
   return (

@@ -1,5 +1,5 @@
 // app/[locale]/posicionamiento-seo/page.tsx
-import { getMessages } from "next-intl/server"
+import { getMessages, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
 import { generatePageMetadata, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildFAQPageSchema, buildServiceSchema, buildSpeakableWebPage } from "@/lib/seoSchemas"
@@ -8,6 +8,10 @@ import ProtoPage from "@/components/proto/ProtoPage"
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { locale } = await params
+  // Renderizado estático: sin esto next-intl marca la ruta como dinámica y
+  // Vercel devuelve `no-store` en cada visita.
+  setRequestLocale(locale);
+
   return generatePageMetadata({
     locale,
     path: '/posicionamiento-seo',
@@ -28,6 +32,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 
 export default async function Posicionamientoseo({ params }: { params: any }) {
   const { locale } = await params
+  // Renderizado estático (ver app/[locale]/layout.tsx).
+  setRequestLocale(locale);
+
   const messages = (await getMessages()) as any
   const isEn = locale === "en"
 
