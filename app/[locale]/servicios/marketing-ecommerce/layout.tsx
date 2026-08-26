@@ -8,12 +8,12 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/servicios/marketing-ecommerce',
-    titleEs: "Marketing Digital para E-commerce y Tiendas Online en Perú | 3R Core",
+    titleEs: "Marketing para E-commerce y Tiendas Online en Perú",
     titleEn: 'E-commerce Marketing for U.S. Online Stores | 3R Core',
-    descriptionEs: "Agencia de marketing digital para e-commerce y tiendas online en Perú: Google Shopping, Meta Ads, catálogos, email marketing y CRO para escalar ventas con ROAS medible.",
+    descriptionEs: "Google Shopping, Meta Ads con catálogo, email y CRO para tiendas Shopify, WooCommerce y VTEX en Perú. Se optimiza por ROAS, no por impresiones.",
     descriptionEn: 'Google Shopping, Meta Ads, catalog feeds, email flows and CRO for U.S. online stores, run from Lima, Peru with measurable ROAS and pricing in USD.',
-    titleUs: 'Marketing Digital para E-commerce y Tiendas Online en EE.UU. | 3R Core',
-    descriptionUs: 'Marketing digital para tiendas online en Estados Unidos: Google Shopping, Meta Ads, catálogos, email marketing y CRO para escalar ventas con ROAS medible, en español e inglés.',
+    titleUs: 'Marketing para E-commerce y Tiendas Online en EE.UU.',
+    descriptionUs: 'Google Shopping, Meta Ads con catálogo, email y CRO para tiendas online en EE.UU., en español e inglés. Se optimiza por ROAS y se paga en dólares.',
     ogImage: {
       url: 'https://3rcore.com/og/web-development.jpg',
       width: 1200,

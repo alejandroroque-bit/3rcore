@@ -8,12 +8,12 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/servicios/email-marketing',
-    titleEs: "Agencia de Email Marketing y Automatización en Lima, Perú | 3R Core",
+    titleEs: "Email Marketing y Automatización en Lima | 3R Core",
     titleEn: 'Email Marketing & Automation Agency | 3R Core',
-    descriptionEs: "Agencia de email marketing y automatización en Lima, Perú: flujos automáticos, newsletters, segmentación y CRM. Recupera carritos, fideliza clientes y vende en piloto automático.",
+    descriptionEs: "Flujos automáticos, newsletters y CRM para negocios en Perú: recupera carritos abandonados y vuelve a vender a quien ya te compró una vez.",
     descriptionEn: 'Automated flows, newsletters, segmentation and CRM integration built from Lima, Peru for U.S. businesses. Recover carts and sell on autopilot.',
-    titleUs: 'Agencia de Email Marketing y Automatización para EE.UU. | 3R Core',
-    descriptionUs: 'Email marketing y automatización en español e inglés para negocios en Estados Unidos: flujos automáticos, newsletters, segmentación y CRM. Recupera carritos y fideliza clientes.',
+    titleUs: 'Email Marketing y Automatización para EE.UU.',
+    descriptionUs: 'Flujos automáticos, newsletters y CRM en español e inglés para negocios de EE.UU.: recupera carritos y vuelve a vender a tus clientes actuales.',
     ogImage: {
       url: 'https://3rcore.com/og/google-ads.jpg',
       width: 1200,

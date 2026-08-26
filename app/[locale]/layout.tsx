@@ -48,16 +48,16 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   const { locale } = await params;
 
   const title = locale === 'en'
-    ? "Peru-Based Marketing Agency for U.S. Brands | 3R Core"
+    ? "Marketing Agency for U.S. Brands | 3R Core"
     : locale === 'us'
-      ? "Agencia de Marketing Digital para Negocios Hispanos en EE.UU. | 3R Core"
-      : "Agencia de Tiendas Virtuales, SEO y Google Ads en Lima, Perú | 3R Core"
+      ? "Marketing Digital en Español para EE.UU. | 3R Core"
+      : "Agencia de Marketing Digital en Lima, Perú | 3R Core"
 
   const description = locale === 'en'
-    ? "Peruvian agency with a U.S. subsidiary: websites, SEO and online stores for U.S. brands, built remotely from Lima on U.S. hours and invoiced in USD."
+    ? "Websites, SEO and online stores for U.S. brands. Peruvian team, U.S. subsidiary, U.S. hours, fixed scopes in USD. 4.7 stars from 42 reviews."
     : locale === 'us'
-      ? "Agencia de marketing digital en español para negocios hispanos en Estados Unidos. Video UGC, campañas de Google Ads y Meta, SEO en español y tiendas online. Precios en dólares, atención en tu horario y reportes mensuales."
-      : "Agencia de tiendas virtuales, posicionamiento SEO y Google Ads (SEM) en Lima, Perú. Creamos tu tienda online (Shopify, WooCommerce, Tiendanube), te posicionamos en Google y gestionamos campañas que venden. ROI medible y reportes mensuales."
+      ? "Marketing en español para negocios hispanos en EE.UU.: video UGC, Google Ads, Meta Ads, SEO y tiendas online. Precios en dólares y reportes cada mes."
+      : "Tiendas virtuales, SEO y Google Ads en Lima. Precios publicados, sin contratos forzosos y reportes cada mes. 4,7★ en 42 reseñas. Cotiza gratis."
 
   return {
     title,

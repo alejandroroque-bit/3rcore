@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEn: 'Shopify & WooCommerce Development | 3R Core',
     descriptionEs: 'Creamos tu tienda online en Shopify, WooCommerce o Tiendanube con pagos peruanos (Yape, Culqi, Izipay), catálogo cargado y SEO técnico. Desde S/1,500.',
     descriptionEn: 'Online stores built in Lima, Peru for U.S. brands: payment gateway, catalog, tax setup and technical SEO. Bilingual storefronts from $1,750 in USD.',
-    titleUs: 'Creación de Tiendas Online Shopify y WooCommerce para EE.UU. | 3R Core',
+    titleUs: 'Tiendas Online Shopify y WooCommerce en EE.UU. | 3R Core',
     descriptionUs: 'Creamos tu tienda online en Shopify o WooCommerce con pasarela de pago, catálogo cargado, cálculo de impuestos y SEO técnico. Tienda bilingüe lista para vender en Estados Unidos. Desde $1,750.',
     ogImage: {
       url: 'https://3rcore.com/og/web-development.jpg',
