@@ -7,7 +7,7 @@ export interface BlogPost {
   featured_image: string | null
   featured_image_alt: string | null
   status: 'draft' | 'published' | 'archived'
-  locale: 'es' | 'en'
+  locale: 'es' | 'en' | 'us'
   meta_title: string | null
   meta_description: string | null
   og_title: string | null
@@ -30,7 +30,7 @@ export interface BlogCategory {
   name: string
   slug: string
   description: string | null
-  locale: 'es' | 'en'
+  locale: 'es' | 'en' | 'us'
   created_at: string
 }
 
@@ -38,6 +38,6 @@ export interface BlogTag {
   id: string
   name: string
   slug: string
-  locale: 'es' | 'en'
+  locale: 'es' | 'en' | 'us'
   created_at: string
 }

@@ -15,7 +15,7 @@ import PageLoader from '@/components/layout/PageLoader';
 
 import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
 
-export default function NearshoreMarketingAgency() {
+export default function HispanicMarketingAgency() {
 
   useScrollToSection();
   const isLoading = useIndividualPageLoader({
@@ -28,18 +28,18 @@ export default function NearshoreMarketingAgency() {
   return (
     <>
       <AnimatePresence mode="wait">
-        {isLoading && <PageLoader key="nearshore-marketing-agency-loader" />}
+        {isLoading && <PageLoader key="hispanic-marketing-agency-loader" />}
       </AnimatePresence>
       <main>
-        <h1 className="sr-only">{tH1('nearshore')}</h1>
+        <h1 className="sr-only">{tH1('hispanic')}</h1>
         <div id="hero">
-          <ServiceLanding namespace="NearshoreLanding" />
+          <ServiceLanding namespace="HispanicLanding" />
         </div>
-        <ServiceFAQ namespace="NearshoreFAQ" count={8} />
+        <ServiceFAQ namespace="HispanicFAQ" count={8} />
         <SEOContentBlock
-          namespace="NearshoreSEO"
+          namespace="HispanicSEO"
           paragraphs={6}
-          relatedLinks={[{ href: "/posicionamiento-seo", label: "SEO" }, { href: "/servicios/web-development", label: "Web Development" }, { href: "/tiendas-virtuales-lima", label: "Online Stores" }, { href: "/spanish-seo-services", label: "Spanish SEO" }]}
+          relatedLinks={[{ href: "/posicionamiento-seo", label: "SEO" }, { href: "/servicios/web-development", label: "Web Development" }, { href: "/tiendas-virtuales-lima", label: "Online Stores" }, { href: "/precios", label: "Pricing" }]}
         />
         <ReviewsSection/>
         <ClientSection />

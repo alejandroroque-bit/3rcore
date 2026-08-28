@@ -36,7 +36,10 @@ export default function PostEditor({ post }: PostEditorProps) {
   const [featuredImage, setFeaturedImage] = useState(post?.featured_image || '')
   const [featuredImageAlt, setFeaturedImageAlt] = useState(post?.featured_image_alt || '')
   const [status, setStatus] = useState<'draft' | 'published'>(post?.status === 'published' ? 'published' : 'draft')
-  const [locale, setLocale] = useState<'es' | 'en'>(post?.locale || 'es')
+  // 'us' = español para Estados Unidos (es-US). Se añade el 28-ago-2026: hasta
+  // entonces /us servía los posts peruanos y no había forma de escribir para el
+  // mercado hispano de EE.UU. sin que el artículo acabara indexado como Perú.
+  const [locale, setLocale] = useState<'es' | 'en' | 'us'>(post?.locale || 'es')
   const [categoryId, setCategoryId] = useState(post?.category_id || '')
   const [authorName, setAuthorName] = useState(post?.author_name || 'Piero Roque')
 
@@ -394,7 +397,7 @@ export default function PostEditor({ post }: PostEditorProps) {
           <div>
             <label className="text-white/40 text-[10px] uppercase tracking-widest block mb-2">Idioma</label>
             <div className="flex gap-2">
-              {(['es', 'en'] as const).map((l) => (
+              {(['es', 'en', 'us'] as const).map((l) => (
                 <button
                   key={l}
                   type="button"
@@ -403,7 +406,7 @@ export default function PostEditor({ post }: PostEditorProps) {
                     locale === l ? 'bg-[#E91E63]/20 text-[#E91E63] border border-[#E91E63]/30' : 'bg-white/5 text-white/40 border border-white/10'
                   }`}
                 >
-                  {l === 'es' ? 'Español' : 'English'}
+                  {l === 'es' ? 'Perú' : l === 'en' ? 'English' : 'EE.UU. 🇺🇸'}
                 </button>
               ))}
             </div>

@@ -24,10 +24,22 @@ const Footer = () => {
           { href: '/servicios/google-ads', label: tn('services.googleAds') },
           { href: '/servicios/web-development', label: tn('services.webDesign') },
         ]
+      : locale === 'en'
+      ? [
+          { href: '/servicios/web-development', label: tn('services.webDesign') },
+          { href: '/posicionamiento-seo', label: tn('services.seo') },
+          { href: '/tiendas-virtuales-lima', label: tn('services.ecommerce') },
+          // Ver el comentario de MARKET_ANCHORS en Navbar.tsx: estas páginas
+          // estaban huérfanas y sin indexar.
+          { href: '/spanish-seo-services', label: tn('services.spanishSeo') },
+          { href: '/hispanic-marketing-agency', label: tn('services.hispanic') },
+          { href: '/nearshore-marketing-agency', label: tn('services.nearshore') },
+        ]
       : [
           { href: '/servicios/web-development', label: tn('services.webDesign') },
           { href: '/posicionamiento-seo', label: tn('services.seo') },
           { href: '/tiendas-virtuales-lima', label: tn('services.ecommerce') },
+          { href: '/marketing-para-negocios-hispanos', label: tn('services.hispanic') },
         ];
 
 

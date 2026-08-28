@@ -98,7 +98,10 @@
       "influencers": "Influencer Marketing",
       "pr": "Public Relations",
       "socialMedia": "Social Media",
-      "branding": "Branding"
+      "branding": "Branding",
+      "spanishSeo": "Spanish SEO",
+      "hispanic": "Hispanic Marketing",
+      "nearshore": "Why a Peruvian agency"
     }
   },
   "FoundersSection": {
@@ -637,7 +640,9 @@
     "ugc": "UGC content production for U.S. brands with in-house creators in Lima, Peru",
     "influencers": "Influencer marketing for U.S. brands with per-creator attribution, run from Lima, Peru",
     "pr": "Public relations, press coverage and reputation management for U.S. brands, run from Lima, Peru",
-    "nearshore": "Peruvian marketing agency serving U.S. brands remotely through its U.S. subsidiary"
+    "nearshore": "Peruvian marketing agency serving U.S. brands remotely through its U.S. subsidiary",
+    "hispanic": "Hispanic marketing agency for U.S. brands: websites, SEO and online stores written in Spanish, not translated",
+    "spanishseo": "Spanish SEO services for U.S. businesses: native keyword research, hreflang repair and Spanish pages from $500 per month"
   },
   "HomeFAQ": {
     "badge": "Frequently Asked Questions",
@@ -2284,5 +2289,241 @@
       "/precios": "Pricing",
       "/servicios": "Services"
     }
+  },
+  "HispanicLanding": {
+    "hero": {
+      "badge": "Native Spanish team · U.S. subsidiary · U.S. hours",
+      "title": "Hispanic marketing agency for U.S. brands, with a native Spanish team",
+      "subtitle": "3R Core is a Peruvian agency that builds websites, SEO and online stores for U.S. brands that want to reach Spanish-speaking customers. The Spanish is written by native speakers in Lima, not translated, and the work runs in overlapping U.S. business hours and is invoiced in U.S. dollars.",
+      "cta": "Get a scoped proposal"
+    },
+    "intro": {
+      "title": "What a Hispanic marketing agency actually has to get right",
+      "p1": "Most agencies serving the U.S. Hispanic market start from English and translate. 3R Core starts from Spanish, because Spanish is the working language of the team: our writers, SEO specialists and developers are in Lima, Peru, and Spanish is what they think in. That difference shows up in the two places it matters — the words people actually search for, and the words that make them trust you enough to call.",
+      "p2": "The failure mode is easy to spot once you know it. A translated page ranks for the phrase an English speaker would translate, not the phrase a Spanish speaker types. \"Home insurance\" translated is \"seguro de hogar\"; a lot of U.S. Hispanic customers search \"seguro de casa\". Both are correct Spanish. Only one is the query. Keyword research done in Spanish catches that; translation never does.",
+      "p3": "The second half is operational. Lima runs on Eastern Time, or one hour behind depending on daylight saving, so a brief sent from New York at 9am is being worked at 9am. You get same-day revisions instead of overnight handoffs, and you contract and invoice through our U.S. subsidiary the way you normally would."
+    },
+    "benefits": {
+      "badge": "What we run for the Hispanic market",
+      "title": "Three services, delivered in Spanish and in English",
+      "items": [
+        {
+          "title": "Bilingual websites that are marked up correctly",
+          "description": "Separate URLs per language with hreflang declared both ways, so Google serves the Spanish page to the Spanish speaker instead of guessing. Most bilingual sites we audit fail on exactly this."
+        },
+        {
+          "title": "Spanish SEO built on Spanish keyword research",
+          "description": "Research done natively, not translated: the query set, the questions and the local modifiers that Spanish-speaking customers in your service area actually type."
+        },
+        {
+          "title": "Online stores that clear U.S. payments",
+          "description": "Shopify or WooCommerce with the gateway, the catalog in both languages, state-level sales tax by economic nexus and purchase tracking working before launch."
+        },
+        {
+          "title": "Content written, not translated",
+          "description": "Every Spanish page is written from scratch against Spanish search intent. A translated page inherits the English page's structure, and that structure was built for a different query."
+        },
+        {
+          "title": "Google Business Profile in Spanish",
+          "description": "For local businesses the profile decides the calls, not the website. Category, services, posts and review replies in Spanish, which is what makes a Spanish-speaking customer pick you out of the map pack."
+        },
+        {
+          "title": "Measurement installed before launch",
+          "description": "Analytics, conversion tracking and language segmentation configured before the site goes live, so you can see what Spanish traffic is worth on its own instead of averaged into the English number."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How the engagement runs",
+      "title": "From first call to first deliverable",
+      "steps": [
+        {
+          "title": "1 · Discovery call, in English or Spanish",
+          "description": "Your goal, your service area, who you are trying to reach and what already exists. Forty-five minutes, no charge."
+        },
+        {
+          "title": "2 · Audit of what you have in Spanish",
+          "description": "If you already have Spanish pages we measure them first: hreflang, indexation, whether the copy is translated or written, and what it ranks for today."
+        },
+        {
+          "title": "3 · Scoped proposal in U.S. dollars",
+          "description": "Fixed scope, fixed price, dates. Reference pricing is public: SEO $500/month, websites from $850, online stores from $1,750."
+        },
+        {
+          "title": "4 · Build, in overlapping hours",
+          "description": "Weekly checkpoints in your time zone. Revisions land the same day they are requested, not the following night."
+        },
+        {
+          "title": "5 · Monthly reporting you can read",
+          "description": "What changed, what moved and what is next. No mandatory contracts: the service is monthly."
+        }
+      ]
+    }
+  },
+  "HispanicFAQ": {
+    "badge": "FAQ",
+    "title": "Hispanic marketing — frequently asked questions",
+    "faqs": {
+      "q1": {
+        "question": "What does a Hispanic marketing agency do that a general agency does not?",
+        "answer": "A Hispanic marketing agency does keyword research, writes copy and structures the site in Spanish as the source language rather than translating from English. The practical difference is which queries the pages target: a translated page ranks for the literal translation of the English phrase, which is often not the phrase Spanish-speaking customers actually type. 3R Core works this way because the team in Lima, Peru is native Spanish-speaking."
+      },
+      "q2": {
+        "question": "Is 3R Core a U.S. agency?",
+        "answer": "No. 3R Core is a Peruvian agency based in Lima, and it serves U.S. brands remotely through its U.S. subsidiary. Clients contract and are invoiced in U.S. dollars the way they normally would, and the work is produced in Lima. We say this plainly because it is the reason the Spanish is native and the reason the same budget buys more output."
+      },
+      "q3": {
+        "question": "How much does Hispanic marketing cost with 3R Core?",
+        "answer": "Reference pricing in U.S. dollars, published on our pricing page: SEO $500 per month, websites from $850, corporate sites from $1,200 (range $1,200–$2,400 depending on scope) and Shopify or WooCommerce stores from $1,750. Monthly reference budgets run $750–$1,400 for small businesses and $1,500–$3,600 for established SMBs. Every proposal is scoped after an initial meeting."
+      },
+      "q4": {
+        "question": "Should my Spanish content live on a subfolder, a subdomain or a separate site?",
+        "answer": "A subfolder on the same domain, such as example.com/es/, is the right default for a U.S. business adding Spanish. It inherits the authority the domain already has, which a separate site would have to earn from zero, and it keeps one property to maintain. Whatever you choose, each language needs its own URL and hreflang declared in both directions."
+      },
+      "q5": {
+        "question": "Can I just translate my English site into Spanish?",
+        "answer": "You can, and it is better than nothing, but it underperforms for a structural reason: a translated page inherits the English page's headings, and those headings were written against English search intent. The page ends up answering a question nobody typed in Spanish. Machine translation adds a second problem — it produces neutral Spanish that reads as foreign to a U.S. Hispanic audience and reduces trust at exactly the moment someone decides whether to call."
+      },
+      "q6": {
+        "question": "Do you work in English too, or only Spanish?",
+        "answer": "Both. Most of our U.S. engagements are bilingual: the English side of the site and the Spanish side are built together, with hreflang connecting them. Meetings, briefs and reporting run in whichever language you prefer."
+      },
+      "q7": {
+        "question": "What time zone does the team work in?",
+        "answer": "Lima, Peru runs on Eastern Time, or one hour behind depending on U.S. daylight saving. That means live standups, same-day revisions and no overnight handoff cycle, which is the main practical difference between nearshore and offshore delivery."
+      },
+      "q8": {
+        "question": "How long before Spanish SEO produces traffic?",
+        "answer": "For local and long-tail Spanish queries with low competition, movement typically shows within a few months of consistent work; competitive commercial terms take considerably longer. We do not quote a guaranteed date, because anyone who does is quoting a number they cannot control. What we do commit to is a monthly report that shows what moved and what did not."
+      }
+    }
+  },
+  "HispanicSEO": {
+    "seoTitle": "Hispanic marketing agency for U.S. brands — websites, SEO and online stores in Spanish",
+    "p1": "3R Core is a Hispanic marketing agency for U.S. brands: a Peruvian team in Lima that builds websites, SEO and online stores in Spanish and English, serving U.S. clients through its U.S. subsidiary. The Spanish is written by native speakers rather than translated, and the work runs in overlapping U.S. business hours.",
+    "p2": "The reason we lead with \"written, not translated\" is that translation is where most Spanish-language projects lose their money. Keyword research done in English and then translated produces a page targeting a phrase that is grammatically correct and commercially irrelevant. Research done in Spanish produces the phrase people type.",
+    "p3": "Bilingual sites fail on a second, more mechanical point: hreflang. Each language needs its own URL, and each URL needs to declare the other in both directions. When that declaration is missing or one-sided, Google decides on its own which version to show, and it frequently shows the English page to a Spanish-speaking searcher. This is the single most common defect we find when auditing an existing bilingual site.",
+    "p4": "For local businesses, the Google Business Profile decides more of the phone calls than the website does. A profile with its category, services, posts and review replies in Spanish is what makes a Spanish-speaking customer choose you from the map pack. We treat it as part of the SEO engagement rather than an afterthought.",
+    "p5": "Reference pricing in U.S. dollars is public and does not require a call to obtain: SEO $500 per month, websites from $850, corporate sites from $1,200 and Shopify or WooCommerce stores from $1,750. Monthly reference budgets run $750–$1,400 for small businesses and $1,500–$3,600 for established SMBs. There are no mandatory contracts.",
+    "p6": "3R Core does not present itself as a U.S. agency. It is a Peruvian agency serving U.S. brands through its U.S. subsidiary, and that is the reason the Spanish is native and the reason a U.S. budget buys more production than it would at a U.S. metro cost base.",
+    "relatedTitle": "Related services"
+  },
+  "SpanishSeoLanding": {
+    "hero": {
+      "badge": "Spanish SEO · native research · U.S. hours",
+      "title": "Spanish SEO services for U.S. businesses",
+      "subtitle": "Rank in Spanish for the queries your Spanish-speaking customers actually type. Research, structure and copy produced in Spanish by a native team in Lima, Peru, working in overlapping U.S. business hours. $500 per month, no mandatory contract.",
+      "cta": "Get a Spanish SEO proposal"
+    },
+    "intro": {
+      "title": "Why Spanish search is the cheaper half of the same market",
+      "p1": "In most U.S. service categories, the English search results are contested by every competitor in the county and the Spanish results are contested by a handful. Same customers, same city, same purchase — a fraction of the competition, because almost nobody has built pages for it. That gap is the entire opportunity, and it closes as more businesses notice it.",
+      "p2": "The reason the gap persists is that doing it properly is annoying. It is not translating the site. It is running keyword research in Spanish, discovering that the query set is different from the English one, and then writing pages against those queries with headings that match how the question is asked. Translation software will not surface that, because translation software is answering a different question.",
+      "p3": "3R Core runs this natively. The team in Lima works in Spanish by default, so the research, the headings and the copy come out of the language rather than through it. And because Lima shares business hours with the U.S. East Coast, the loop stays same-day."
+    },
+    "benefits": {
+      "badge": "What the engagement includes",
+      "title": "What we run every month",
+      "items": [
+        {
+          "title": "Keyword research done in Spanish",
+          "description": "Not a translated list. The queries, the questions and the regional variants your customers type — including the ones that differ from the textbook translation."
+        },
+        {
+          "title": "Technical audit and hreflang repair",
+          "description": "The most common defect in U.S. bilingual sites: hreflang missing or declared one-way, so Google serves the English page to Spanish searchers. We fix the declaration in both directions."
+        },
+        {
+          "title": "Spanish pages written from scratch",
+          "description": "Each page built against a Spanish query with headings that match how the question is asked, rather than inheriting the English page's structure."
+        },
+        {
+          "title": "Internal linking that makes it compound",
+          "description": "New Spanish pages linked from pages that already have authority. A page nobody links to is a page Google discovers and declines to index — we see it constantly."
+        },
+        {
+          "title": "Google Business Profile in Spanish",
+          "description": "Category, services, posts and review replies in Spanish. For local businesses this moves the phone more than the website does."
+        },
+        {
+          "title": "Monthly report with language split",
+          "description": "Spanish traffic reported on its own, not averaged into the English number, so you can see what the investment is actually returning."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How it starts",
+      "title": "First 90 days",
+      "steps": [
+        {
+          "title": "1 · Audit and baseline",
+          "description": "What you rank for in Spanish today, what is technically broken, and what your competitors have and have not built."
+        },
+        {
+          "title": "2 · Spanish keyword map",
+          "description": "The query set, grouped by intent, with one page assigned to each axis so your own pages do not compete with each other."
+        },
+        {
+          "title": "3 · Fix the technical floor",
+          "description": "Hreflang, indexation, canonicals and internal links. There is no point publishing until the pages can be served and found."
+        },
+        {
+          "title": "4 · Publish on a schedule",
+          "description": "Pages released in batches rather than all at once. A site that publishes forty pages in a week looks like what it is."
+        },
+        {
+          "title": "5 · Measure and iterate",
+          "description": "Monthly reporting on Spanish queries, positions and conversions, and the next batch built from what moved."
+        }
+      ]
+    }
+  },
+  "SpanishSeoFAQ": {
+    "badge": "FAQ",
+    "title": "Spanish SEO — frequently asked questions",
+    "faqs": {
+      "q1": {
+        "question": "What are Spanish SEO services?",
+        "answer": "Spanish SEO is search optimization done with Spanish as the source language: keyword research run in Spanish, pages written against Spanish queries, and the technical setup — separate URLs per language with hreflang declared both ways — that lets Google serve the Spanish page to a Spanish-speaking searcher. It is not translating an English site, which is the most common way the work is done badly."
+      },
+      "q2": {
+        "question": "How much do Spanish SEO services cost?",
+        "answer": "At 3R Core, SEO costs $500 USD per month and includes the initial audit, planning, on-page optimization, scaling and a monthly report, with no mandatory contract. If the engagement also requires building Spanish pages from scratch, websites start at $850 and corporate sites at $1,200 (range $1,200–$2,400 depending on scope)."
+      },
+      "q3": {
+        "question": "Is Spanish SEO easier than English SEO?",
+        "answer": "In most U.S. local and service categories, yes — not because the technique differs but because far fewer competitors have built Spanish pages, so there is less to outrank. The work itself is the same discipline. The advantage is competitive, not technical, and it shrinks as more businesses in a category start publishing in Spanish."
+      },
+      "q4": {
+        "question": "Should Spanish content go on /es/, a subdomain, or its own domain?",
+        "answer": "For a U.S. business adding Spanish, a subfolder such as example.com/es/ is the right default. It inherits the authority the domain has already earned, which a subdomain or separate domain would have to build from nothing, and it leaves one property to maintain. What matters more than the choice is that each language has its own URL and that hreflang declares both directions."
+      },
+      "q5": {
+        "question": "Can I use automatic translation plugins for Spanish SEO?",
+        "answer": "Translation plugins solve the wrong problem. They produce a Spanish version of an English page, which means the page still targets whatever the English page targeted, and the headings still answer the English question. They also tend to generate neutral machine Spanish that a U.S. Hispanic reader recognizes immediately, which costs trust at the moment of decision. They are a stopgap, not an SEO strategy."
+      },
+      "q6": {
+        "question": "What is hreflang and why does it matter for Spanish SEO?",
+        "answer": "Hreflang is the tag that tells Google which language version of a page to show to which searcher. Each language version needs its own URL, and each must point at the other — the declaration has to be reciprocal. When it is missing or one-sided, Google picks on its own and frequently serves the English page to a Spanish-speaking user, which wastes the Spanish page entirely. It is the first thing we check in any bilingual audit."
+      },
+      "q7": {
+        "question": "How long does Spanish SEO take to work?",
+        "answer": "Low-competition local and long-tail Spanish queries typically start moving within a few months of consistent work. Competitive commercial terms take considerably longer, and anyone quoting a guaranteed date is quoting a number they do not control. What we commit to is a monthly report showing which queries moved and which did not."
+      },
+      "q8": {
+        "question": "Do you also handle Google Ads in Spanish?",
+        "answer": "In the United States, 3R Core sells three services: websites, SEO and online stores. Google Ads management is part of our catalog in Peru but is not what we lead with for U.S. clients, and we would rather say so than sell a service we are not focused on. If paid search in Spanish is your priority, we will tell you honestly whether we are the right fit on the first call."
+      }
+    }
+  },
+  "SpanishSeoSEO": {
+    "seoTitle": "Spanish SEO services for U.S. businesses — $500/month, native research, no mandatory contract",
+    "p1": "3R Core provides Spanish SEO services for U.S. businesses at $500 USD per month: keyword research run in Spanish, pages written against Spanish queries, hreflang and technical repair, Google Business Profile in Spanish and a monthly report with the Spanish traffic split out. There is no mandatory contract.",
+    "p2": "Spanish SEO is not translation. The defining step is running keyword research in Spanish and discovering that the query set differs from the English one — sometimes in ways a translator would never produce, because both phrasings are correct Spanish and only one is what people type. Pages are then built against those queries, with headings matching how the question is asked.",
+    "p3": "The technical floor is hreflang. Each language version needs its own URL and a reciprocal declaration pointing at the other. When that declaration is absent or one-way, Google chooses for itself and routinely serves the English page to Spanish-speaking searchers, which nullifies the Spanish page. It is the most common defect we find in U.S. bilingual sites and the first thing an audit checks.",
+    "p4": "For local businesses, the Google Business Profile decides more calls than the site does. Category, services, posts and review replies in Spanish are what make a Spanish-speaking customer choose you from the map pack, so the profile is part of the engagement rather than an add-on.",
+    "p5": "The competitive argument is simple: in most U.S. service categories the English results are contested by everyone and the Spanish results by very few, because almost nobody has built the pages. Same customers, same city, less competition. That advantage is real and it narrows as more businesses notice it.",
+    "p6": "3R Core is a Peruvian agency in Lima serving U.S. clients through its U.S. subsidiary. Spanish is the team's working language, which is why the research and the copy come out of it natively, and Lima shares business hours with the U.S. East Coast, which is why revisions land the same day.",
+    "relatedTitle": "Related services"
   }
 }

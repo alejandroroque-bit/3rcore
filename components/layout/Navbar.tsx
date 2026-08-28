@@ -199,10 +199,28 @@ const Navbar = () => {
     "/posicionamiento-seo",
     "/tiendas-virtuales-lima",
   ];
+  // 28-ago-2026. Las páginas ancla de cada mercado estaban con UN solo enlace
+  // interno en todo el sitio y las tres seguían "Descubiertas: actualmente sin
+  // indexar" dieciséis días después de publicarse. Colgar del menú es lo que
+  // les da un enlace desde cada página del sitio, incluidas las que Google sí
+  // tiene indexadas. Se quedan fuera de /es a propósito: allí no existen.
+  const MARKET_ANCHORS: Record<string, { href: AppPathname; label: string }[]> = {
+    en: [
+      { href: "/spanish-seo-services", label: t("services.spanishSeo") },
+      { href: "/hispanic-marketing-agency", label: t("services.hispanic") },
+      { href: "/nearshore-marketing-agency", label: t("services.nearshore") },
+    ],
+    us: [
+      { href: "/marketing-para-negocios-hispanos", label: t("services.hispanic") },
+    ],
+  };
   const services =
     currentLocale === "es"
       ? ALL_SERVICES
-      : US_SERVICES.map((h) => ALL_SERVICES.find((s) => s.href === h)!);
+      : [
+          ...US_SERVICES.map((h) => ALL_SERVICES.find((s) => s.href === h)!),
+          ...(MARKET_ANCHORS[currentLocale] ?? []),
+        ];
 
   // '/servicios#servicios' y '#contacto' no son rutas: el primero se separa
   // en pathname + hash y el segundo es un ancla de la misma página.

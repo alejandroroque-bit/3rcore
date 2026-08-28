@@ -59,6 +59,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // que acabamos de abrir.
   const marketOnlyPages: { url: string; priority: number }[] = [
     { url: `${baseUrl}/en/nearshore-marketing-agency`, priority: 0.95 },
+    { url: `${baseUrl}/en/hispanic-marketing-agency`, priority: 0.95 },
+    { url: `${baseUrl}/en/spanish-seo-services`, priority: 0.95 },
     { url: `${baseUrl}/us/marketing-para-negocios-hispanos`, priority: 0.95 },
     { url: `${baseUrl}/es/casos-de-exito`, priority: 0.8 },
     // Página madre del negocio, recuperada el 26-ago-2026 (ya no 301 hacia
@@ -73,7 +75,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const LOCALES = ['es', 'en', 'us'] as const
 
   // Rutas que no deben listarse fuera de /es:
-  //  - /blogs en /us sirve los mismos posts en español y canonicaliza a /es.
   //  - /reclamaciones es el libro de reclamaciones exigido por Indecopi:
   //    obligación peruana, sin sentido para un comprador de EE.UU.
   // En EE.UU. solo se venden tres servicios: páginas web, SEO y tiendas online.
@@ -88,8 +89,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/servicios/marketing-inmobiliarias', '/servicios/marketing-ecommerce',
   ]
 
+  // 28-ago-2026: /us recupera /blogs. Antes se excluía porque servía los mismos
+  // posts peruanos con canonical a /es; ahora tiene locale propio ('us') y sus
+  // artículos canonicalizan en /us, así que su índice sí es una URL con
+  // contenido propio que indexar.
   const SKIP: Record<string, string[]> = {
-    us: ['/blogs', '/reclamaciones', ...NOT_SOLD_IN_US],
+    us: ['/reclamaciones', ...NOT_SOLD_IN_US],
     en: ['/reclamaciones', ...NOT_SOLD_IN_US],
   }
 

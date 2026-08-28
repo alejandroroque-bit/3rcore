@@ -15,6 +15,8 @@ import { USA_POSTS_2026_08 } from "./posts-usa-2026-08"
 import { USA2_POSTS_2026_08 } from "./posts-usa2-2026-08"
 import { USA3_POSTS_2026_08 } from "./posts-usa3-2026-08"
 import { UGC_PR_POSTS_2026_08 } from "./posts-ugc-pr-2026-08"
+import { USA4_EN_POSTS } from "./posts-usa4-en-2026-08"
+import { USA4_US_POSTS } from "./posts-usa4-us-2026-08"
 
 export interface SeedPost {
   title: string
@@ -24,7 +26,7 @@ export interface SeedPost {
    * no cambian de comportamiento. Los posts escritos para EE.UU. lo declaran
    * como 'en' y el seed los publica en ese locale con su canonical /en/.
    */
-  locale?: "es" | "en"
+  locale?: "es" | "en" | "us"
   excerpt: string
   content: string
   featured_image: string
@@ -3014,4 +3016,6 @@ export const SEED_POSTS: SeedPost[] = [
   ...USA2_POSTS_2026_08,
   ...USA3_POSTS_2026_08,
   ...UGC_PR_POSTS_2026_08,
+  ...USA4_EN_POSTS,
+  ...USA4_US_POSTS,
 ]
