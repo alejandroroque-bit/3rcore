@@ -6,6 +6,7 @@ import BlogPostView from "./BlogPostView"
 import { BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
 import { getBlogSeoOverride } from "@/lib/blog-seo-overrides"
+import { blogLocale, contentLanguage } from "@/lib/blogLocale"
 
 export const revalidate = 3600
 
@@ -28,14 +29,23 @@ export async function generateStaticParams() {
 
 async function getPost(slug: string, locale: string): Promise<BlogPost | null> {
   const supabase = createServerClient()
-  const { data } = await supabase
-    .from('blog_posts')
-    .select('*, category:blog_categories(name, slug)')
-    .eq('slug', slug)
-    .eq('locale', locale === 'en' ? 'en' : 'es')
-    .eq('status', 'published')
-    .single()
-  return data
+  const want = blogLocale(locale)
+  const fetchOne = async (loc: string) => {
+    const { data } = await supabase
+      .from('blog_posts')
+      .select('*, category:blog_categories(name, slug)')
+      .eq('slug', slug)
+      .eq('locale', loc)
+      .eq('status', 'published')
+      .single()
+    return data as BlogPost | null
+  }
+  const own = await fetchOne(want)
+  if (own) return own
+  // /us hereda el fondo peruano cuando no tiene artículo propio para ese slug.
+  // Al revés no: un post es-US no debe aparecer en /es (habla de EE.UU.).
+  if (want === 'us') return await fetchOne('es')
+  return null
 }
 
 // Locales que REALMENTE existen publicados para este slug (evita hreflang/enlaces
@@ -74,7 +84,7 @@ async function getRelatedPosts(currentId: string, categoryId: string | null, loc
     .from('blog_posts')
     .select('id, title, slug, excerpt, featured_image, featured_image_alt, published_at, created_at, category:blog_categories(name, slug)')
     .neq('id', currentId)
-    .eq('locale', locale === 'en' ? 'en' : 'es')
+    .in('locale', blogLocale(locale) === 'us' ? ['us', 'es'] : [blogLocale(locale)])
     .eq('status', 'published')
     .order('published_at', { ascending: false })
     .limit(POOL)
@@ -89,7 +99,7 @@ async function getRelatedPosts(currentId: string, categoryId: string | null, loc
     .from('blog_posts')
     .select('id, title, slug, excerpt, featured_image, featured_image_alt, published_at, created_at, category:blog_categories(name, slug)')
     .neq('id', currentId)
-    .eq('locale', locale === 'en' ? 'en' : 'es')
+    .in('locale', blogLocale(locale) === 'us' ? ['us', 'es'] : [blogLocale(locale)])
     .eq('status', 'published')
     .order('published_at', { ascending: false })
     .limit(POOL)
@@ -114,7 +124,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // posts en español (no hay versión es-US propia), así que /us/blogs/x y
   // /es/blogs/x devuelven el mismo texto: con canonical propio serían ~140
   // duplicados compitiendo entre sí.
-  const canonicalLocale = locale === 'en' ? 'en' : 'es'
+  // El canonical va al locale REAL del post, que ahora puede ser 'us'. Un
+  // artículo escrito para el hispano de EE.UU. canonicaliza en /us, no en /es:
+  // si lo mandáramos a /es estaríamos regalando a Perú la señal del mercado
+  // que se está abriendo.
+  const canonicalLocale = post.locale ?? blogLocale(locale)
   const canonical = `${BASE_URL}/${canonicalLocale}/blogs/${slug}`
   const image = post.og_image || post.featured_image
 
@@ -206,7 +220,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "articleBody": articleBodyExcerpt,
     "url": canonical,
     "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
-    "inLanguage": isEn ? 'en' : 'es',
+    "inLanguage": contentLanguage(post.locale ?? blogLocale(locale)),
     ...(post.focus_keyword ? { "keywords": post.focus_keyword } : {}),
     ...((post.category as any)?.name ? { "articleSection": (post.category as any).name } : {}),
     "wordCount": wordCount,

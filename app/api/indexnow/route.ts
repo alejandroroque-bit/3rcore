@@ -63,6 +63,18 @@ const STATIC_URLS = [
   "https://3rcore.com/en/nearshore-marketing-agency",
   "https://3rcore.com/us",
   "https://3rcore.com/us/marketing-para-negocios-hispanos",
+  // 28-ago-2026. Páginas y artículos nuevos del mercado de EE.UU.
+  "https://3rcore.com/en/hispanic-marketing-agency",
+  "https://3rcore.com/en/spanish-seo-services",
+  "https://3rcore.com/en/blogs/how-much-does-a-shopify-store-cost",
+  "https://3rcore.com/en/blogs/how-much-does-a-small-business-website-cost",
+  "https://3rcore.com/en/blogs/seo-agency-pricing-what-you-should-get",
+  "https://3rcore.com/en/blogs/best-ecommerce-platform-for-small-business",
+  "https://3rcore.com/us/blogs",
+  "https://3rcore.com/us/blogs/cuanto-cuesta-una-pagina-web-en-estados-unidos",
+  "https://3rcore.com/us/blogs/cuanto-cobra-una-agencia-de-marketing-digital-en-estados-unidos",
+  "https://3rcore.com/us/blogs/como-crear-una-tienda-online-en-estados-unidos",
+  "https://3rcore.com/us/blogs/como-vender-online-en-estados-unidos",
 ]
 
 export async function GET(req: NextRequest) {

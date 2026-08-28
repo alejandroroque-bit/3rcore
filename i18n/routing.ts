@@ -45,6 +45,15 @@ export const pathnames = {
   // Páginas ancla de un solo mercado
   '/nearshore-marketing-agency': '/nearshore-marketing-agency',
   '/marketing-para-negocios-hispanos': '/marketing-para-negocios-hispanos',
+  // 28-ago-2026. Dos ejes distintos del mercado de EE.UU. que no tenían URL:
+  //  - /hispanic-marketing-agency responde a quien busca EN INGLÉS una agencia
+  //    para llegar al consumidor hispano (el marketer estadounidense).
+  //  - /spanish-seo-services responde a "spanish seo services", que es un
+  //    servicio concreto y no el genérico de /seo-agency.
+  // No se creó la versión en español de ninguna de las dos: en /us ese eje ya
+  // lo ocupa /marketing-para-negocios-hispanos y duplicarlo sería canibalizar.
+  '/hispanic-marketing-agency': '/hispanic-marketing-agency',
+  '/spanish-seo-services': '/spanish-seo-services',
   // Solo en /es: la página del prototipo habla de marcas trabajadas desde Lima
   '/casos-de-exito': '/casos-de-exito',
 

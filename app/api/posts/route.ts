@@ -18,7 +18,7 @@ export async function GET(request: Request) {
       .from('blog_posts')
       .select('id, title, slug, excerpt, featured_image, featured_image_alt, published_at, created_at, og_image, meta_description, category:blog_categories(name)', { count: 'exact' })
       .eq('status', 'published')
-      .eq('locale', lang === 'en' ? 'en' : 'es')
+      .in('locale', lang === 'en' ? ['en'] : lang === 'us' ? ['us', 'es'] : ['es'])
       .order('published_at', { ascending: false })
       .range(from, to)
 

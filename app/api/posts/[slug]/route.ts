@@ -17,7 +17,7 @@ export async function GET(
       .from('blog_posts')
       .select('*')
       .eq('slug', slug)
-      .eq('locale', lang === 'en' ? 'en' : 'es')
+      .in('locale', lang === 'en' ? ['en'] : lang === 'us' ? ['us', 'es'] : ['es'])
       .eq('status', 'published')
       .single()
 

@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing"
 import { montserrat } from "@/lib/fonts"
 import { createServerClient } from "@/lib/supabase/server"
 import type { BlogPost } from "@/lib/supabase/types"
+import { blogLocale } from "@/lib/blogLocale"
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
 import { setRequestLocale } from "next-intl/server"
@@ -65,7 +66,10 @@ export default async function BlogsPage(
   const page = parsePage(sp)
   const cat = typeof sp?.categoria === "string" && sp.categoria ? sp.categoria : undefined
   const isEn = locale === "en"
-  const loc = isEn ? "en" : "es"
+  // /us lista sus propios artículos es-US PRIMERO y completa con el fondo
+  // peruano: al abrir el mercado no hay 60 posts hispanos que enseñar.
+  const loc = blogLocale(locale)
+  const locFilter: string[] = loc === "us" ? ["us", "es"] : [loc]
 
   const supabase = createServerClient()
 
@@ -75,13 +79,13 @@ export default async function BlogsPage(
         .from("blog_posts")
         .select("*, category:blog_categories!inner(name, slug)", { count: "exact" })
         .eq("status", "published")
-        .eq("locale", loc)
+        .in("locale", locFilter)
         .eq("category.slug", cat)
     : supabase
         .from("blog_posts")
         .select("*, category:blog_categories(name, slug)", { count: "exact" })
         .eq("status", "published")
-        .eq("locale", loc)
+        .in("locale", locFilter)
   const { data: posts, count } = await query
     .order("published_at", { ascending: false })
     .range(from, from + PAGE_SIZE - 1)
@@ -93,7 +97,7 @@ export default async function BlogsPage(
   const { data: cats } = await supabase
     .from("blog_categories")
     .select("name, slug")
-    .eq("locale", loc)
+    .in("locale", locFilter)
     .order("name")
   const categories = (cats || []) as { name: string; slug: string }[]
 
