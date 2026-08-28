@@ -56,7 +56,11 @@ export default async function SpanishSeoServicesLayout({ children, params }: { c
     descriptionEn: "Spanish SEO services for U.S. businesses at $500 USD per month: keyword research run natively in Spanish rather than translated, technical audit and reciprocal hreflang repair, Spanish pages written against Spanish search intent, internal linking, Google Business Profile managed in Spanish, and a monthly report with Spanish traffic reported separately. No mandatory contract.",
     serviceType: "Spanish SEO / Multilingual Search Engine Optimization",
     offerPriceEn: 500,
-    audienceTypes: ["E-commerce", "D2C brands", "B2B", "SaaS", "Agencies"],
+    // Página de un solo mercado: areaServed sin PE. Por defecto buildServiceSchema
+    // declara ["PE","US"], y en una página cuyo mercado es Estados Unidos, Perú
+    // dentro del área servida es ruido que contradice al propio texto.
+    areaServed: ["US"],
+    audienceTypes: ["Small business", "E-commerce", "D2C brands", "Local business", "B2B"],
   })
 
   const faqItems = Object.values(faqMessages).map((q: any) => ({

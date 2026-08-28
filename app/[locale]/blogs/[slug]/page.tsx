@@ -115,6 +115,42 @@ async function getRelatedPosts(currentId: string, categoryId: string | null, loc
 // real del post.
 const looksLikeSlug = (s: string) => /^[a-z0-9áéíóúñü]+(?:-[a-z0-9áéíóúñü]+)+$/.test(s.trim())
 
+/**
+ * Extrae el bloque de preguntas frecuentes del HTML del artículo para emitir
+ * FAQPage. Los posts llevan un H2 «Frequently asked questions» / «Preguntas
+ * frecuentes» seguido de H3-pregunta + párrafo-respuesta, pero eso no se
+ * declaraba en JSON-LD: se perdía el resultado enriquecido y, sobre todo, el
+ * bloque más citable por los modelos de IA — que en este sitio convierten al
+ * 12,23% frente al 4,03% del orgánico. Detectado el 28-ago-2026 al verificar
+ * los cuatro artículos nuevos en inglés.
+ */
+function buildBlogFaqSchema(html: string) {
+  const heading = /<h2[^>]*>\s*(?:frequently asked questions|preguntas frecuentes)[^<]*<\/h2>/i.exec(html)
+  if (!heading) return null
+  const tail = html.slice(heading.index + heading[0].length)
+  // Corta en el siguiente H2, para no arrastrar secciones posteriores.
+  const end = /<h2[^>]*>/i.exec(tail)
+  const block = end ? tail.slice(0, end.index) : tail
+  const items: { q: string; a: string }[] = []
+  const re = /<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h3[^>]*>|$)/gi
+  let m: RegExpExecArray | null
+  while ((m = re.exec(block)) !== null) {
+    const q = stripHtml(m[1])
+    const a = stripHtml(m[2])
+    if (q && a && a.length > 20) items.push({ q, a })
+  }
+  if (items.length < 2) return null
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map((it) => ({
+      "@type": "Question",
+      "name": it.q,
+      "acceptedAnswer": { "@type": "Answer", "text": it.a },
+    })),
+  }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   const { slug, locale } = await params
   const post = await getPost(slug, locale)
@@ -208,7 +244,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "headline": post.title,
     "datePublished": post.published_at || post.created_at,
     "dateModified": post.updated_at,
-    "author": buildAuthorNode(post.author_name),
+    "author": buildAuthorNode(post.author_name, post.locale ?? blogLocale(locale)),
     "publisher": {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
@@ -238,11 +274,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ],
   }
 
+  const faqSchema = buildBlogFaqSchema(content)
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([blogPostSchema, breadcrumbSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([blogPostSchema, breadcrumbSchema, faqSchema].filter(Boolean)) }}
       />
       <BlogPostView post={post} locale={locale} minutesRead={minutesRead} relatedPosts={relatedPosts} />
     </>

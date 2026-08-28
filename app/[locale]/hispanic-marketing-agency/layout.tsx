@@ -56,7 +56,11 @@ export default async function HispanicMarketingAgencyLayout({ children, params }
     descriptionEn: "Hispanic marketing agency for U.S. brands: bilingual websites with hreflang declared correctly, Spanish SEO built on native Spanish keyword research, Shopify and WooCommerce stores with state-level sales tax, and Google Business Profile managed in Spanish. Delivered from Lima, Peru in overlapping U.S. business hours through a U.S. subsidiary and invoiced in U.S. dollars.",
     serviceType: "Hispanic Marketing / Spanish-Language Digital Marketing",
     offerPriceEn: 500,
-    audienceTypes: ["E-commerce", "D2C brands", "B2B", "SaaS", "Agencies"],
+    // Página de un solo mercado: areaServed sin PE. Por defecto buildServiceSchema
+    // declara ["PE","US"], y en una página cuyo mercado es Estados Unidos, Perú
+    // dentro del área servida es ruido que contradice al propio texto.
+    areaServed: ["US"],
+    audienceTypes: ["Small business", "E-commerce", "D2C brands", "Local business", "B2B"],
   })
 
   const faqItems = Object.values(faqMessages).map((q: any) => ({

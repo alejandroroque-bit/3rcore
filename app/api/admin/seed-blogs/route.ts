@@ -47,11 +47,19 @@ export async function POST(req: NextRequest) {
 
   const supabase = createServerClient()
   const now = new Date().toISOString()
+  // 28-ago-2026. Los cuatro artículos del lote anterior entraron con
+  // published_at IDÉNTICO al milisegundo (2026-08-28T22:42:54.419Z los cuatro).
+  // Eso es la huella de una publicación en lote y contradice la norma de
+  // escalonar contenidos. Ahora cada artículo del lote recibe un sello propio,
+  // separado media hora del anterior hacia atrás, en el orden del array.
+  const stampFor = (i: number) =>
+    new Date(new Date(now).getTime() - i * 30 * 60 * 1000).toISOString()
   const inserted: string[] = []
   const skipped: string[] = []
   const errors: { slug: string; error: string }[] = []
 
-  for (const post of SEED_POSTS) {
+  for (let seedIndex = 0; seedIndex < SEED_POSTS.length; seedIndex++) {
+    const post = SEED_POSTS[seedIndex]
     // Los posts antiguos no declaran locale: siguen siendo 'es'. Los escritos
     // para EE.UU. lo traen como 'en' y se publican en ese locale, con su
     // canonical apuntando a /en/ y no a /es/.
@@ -74,7 +82,7 @@ export async function POST(req: NextRequest) {
       robots: "index, follow",
       focus_keyword: post.focus_keyword,
       author_name: post.author_name,
-      published_at: now,
+      published_at: stampFor(seedIndex),
     }
 
     // Check if slug already exists
@@ -99,9 +107,13 @@ export async function POST(req: NextRequest) {
         skipped.push(`${post.slug} (unchanged)`)
         continue
       }
+      // Al corregir el texto de un artículo NO se le cambia la fecha de
+      // publicación: republicarlo cada vez que se toca una coma le da a Google
+      // una señal de frescura falsa y borra su antigüedad real.
+      const { published_at: _ignored, ...updateRecord } = record
       const { error } = await (supabase as any)
         .from("blog_posts")
-        .update(record)
+        .update(updateRecord)
         .eq("id", existing.id)
       if (error) {
         errors.push({ slug: post.slug, error: error.message })
