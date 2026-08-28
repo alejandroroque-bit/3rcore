@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
 import { hreflangFor, localizedUrl } from '@/lib/metadata'
+import { STATIC_US_POSTS } from '@/lib/blog-static/us-posts'
 
 /**
  * El sitemap se generaba en el BUILD (○ Static), así que los posts
@@ -161,5 +162,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Silently fail
   }
 
-  return [...staticEntries, ...marketEntries, ...blogEntries]
+  // Artículos es-US servidos desde el código mientras la base no los admita.
+  // Se excluyen los que ya estén publicados en Supabase para no duplicarlos.
+  const yaEnBase = new Set(blogEntries.map((e) => e.url))
+  const staticUsEntries: MetadataRoute.Sitemap = STATIC_US_POSTS
+    .map((p) => `${baseUrl}/us/blogs/${p.slug}`)
+    .filter((url) => !yaEnBase.has(url))
+    .map((url) => ({
+      url,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }))
+
+  return [...staticEntries, ...marketEntries, ...blogEntries, ...staticUsEntries]
 }

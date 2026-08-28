@@ -7,6 +7,7 @@ import { BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
 import { getBlogSeoOverride } from "@/lib/blog-seo-overrides"
 import { blogLocale, contentLanguage } from "@/lib/blogLocale"
+import { STATIC_US_POSTS, getStaticUsPost } from "@/lib/blog-static/us-posts"
 
 export const revalidate = 3600
 
@@ -21,9 +22,13 @@ export async function generateStaticParams() {
       .from('blog_posts')
       .select('slug, locale')
       .eq('status', 'published')
-    return (data || []).map((p: any) => ({ slug: p.slug, locale: p.locale }))
+    const fromDb = (data || []).map((p: any) => ({ slug: p.slug, locale: p.locale }))
+    const fromCode = STATIC_US_POSTS
+      .filter((p) => !fromDb.some((d: any) => d.slug === p.slug && d.locale === 'us'))
+      .map((p) => ({ slug: p.slug, locale: 'us' }))
+    return [...fromDb, ...fromCode]
   } catch {
-    return []
+    return STATIC_US_POSTS.map((p) => ({ slug: p.slug, locale: 'us' }))
   }
 }
 
@@ -42,9 +47,15 @@ async function getPost(slug: string, locale: string): Promise<BlogPost | null> {
   }
   const own = await fetchOne(want)
   if (own) return own
-  // /us hereda el fondo peruano cuando no tiene artículo propio para ese slug.
-  // Al revés no: un post es-US no debe aparecer en /es (habla de EE.UU.).
-  if (want === 'us') return await fetchOne('es')
+  if (want === 'us') {
+    // Artículos es-US que aún no caben en la base (ver lib/blog-static/us-posts.ts).
+    // La base manda: solo se llega aquí si Supabase no los tiene.
+    const fromCode = getStaticUsPost(slug)
+    if (fromCode) return fromCode
+    // /us hereda el fondo peruano cuando no tiene artículo propio para ese slug.
+    // Al revés no: un post es-US no debe aparecer en /es (habla de EE.UU.).
+    return await fetchOne('es')
+  }
   return null
 }
 

@@ -5,6 +5,7 @@ import { montserrat } from "@/lib/fonts"
 import { createServerClient } from "@/lib/supabase/server"
 import type { BlogPost } from "@/lib/supabase/types"
 import { blogLocale } from "@/lib/blogLocale"
+import { STATIC_US_POSTS } from "@/lib/blog-static/us-posts"
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
 import { setRequestLocale } from "next-intl/server"
@@ -90,8 +91,23 @@ export default async function BlogsPage(
     .order("published_at", { ascending: false })
     .range(from, from + PAGE_SIZE - 1)
 
-  const allPosts: BlogPost[] = (posts || []) as unknown as BlogPost[]
-  const total = count || allPosts.length
+  let allPosts: BlogPost[] = (posts || []) as unknown as BlogPost[]
+  let total = count || allPosts.length
+  // Los artículos es-US que todavía no caben en la base van al frente de la
+  // primera página: son los únicos escritos PARA este mercado, el resto del
+  // listado es fondo peruano heredado.
+  if (loc === 'us' && !cat) {
+    const yaEnBase = new Set(allPosts.map((p) => p.slug))
+    const extra = STATIC_US_POSTS.filter((p) => !yaEnBase.has(p.slug))
+    if (extra.length) {
+      total += extra.length
+      // Se anteponen SIN recortar: recortar a PAGE_SIZE empujaba cuatro
+      // artículos fuera de la página 1, y como la página 2 se pide a la base
+      // con un desplazamiento fijo, esos cuatro no reaparecían en ninguna
+      // página. La página 1 muestra cuatro tarjetas más y no se pierde nada.
+      allPosts = page === 1 ? [...extra, ...allPosts] : allPosts
+    }
+  }
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
   const { data: cats } = await supabase
