@@ -50,6 +50,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── RUTAS DESNUDAS DE LAS PÁGINAS ANCLA (2026-08-28) ──────────────────
+      // Estas tres páginas existen SOLO en un mercado. Sin prefijo de idioma,
+      // el middleware las mandaba a /es/…, donde no existen: quien copiaba el
+      // enlace sin el /en/ (o lo tecleaba) aterrizaba en un 404. Y son
+      // precisamente las URLs que se reparten en propuestas y por WhatsApp.
+      { source: '/hispanic-marketing-agency', destination: '/en/hispanic-marketing-agency', permanent: true },
+      { source: '/spanish-seo-services', destination: '/en/spanish-seo-services', permanent: true },
+      { source: '/nearshore-marketing-agency', destination: '/en/nearshore-marketing-agency', permanent: true },
+      { source: '/marketing-para-negocios-hispanos', destination: '/us/marketing-para-negocios-hispanos', permanent: true },
+      // Y las de /es que sí existen solo allí, por el mismo motivo.
+      { source: '/casos-de-exito', destination: '/es/casos-de-exito', permanent: true },
+
       // ── SLUGS EN INGLÉS PARA /en (2026-08-12) ─────────────────────────────
       // Las URLs de /en eran las españolas (/en/posicionamiento-seo,
       // /en/tiendas-virtuales-lima…): la URL desmentía al contenido. Ahora
