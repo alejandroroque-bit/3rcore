@@ -71,10 +71,14 @@ const STATIC_URLS = [
   "https://3rcore.com/en/blogs/seo-agency-pricing-what-you-should-get",
   "https://3rcore.com/en/blogs/best-ecommerce-platform-for-small-business",
   "https://3rcore.com/us/blogs",
-  "https://3rcore.com/us/blogs/cuanto-cuesta-una-pagina-web-en-estados-unidos",
-  "https://3rcore.com/us/blogs/cuanto-cobra-una-agencia-de-marketing-digital-en-estados-unidos",
-  "https://3rcore.com/us/blogs/como-crear-una-tienda-online-en-estados-unidos",
-  "https://3rcore.com/us/blogs/como-vender-online-en-estados-unidos",
+  // Los 4 artículos en español para EE.UU. NO se listan todavía: la tabla
+  // blog_posts tiene un CHECK que solo admite locale 'es' o 'en', el insert
+  // falló y las URLs devuelven 404. Enviar un 404 a IndexNow gasta cuota y
+  // enseña a Bing una URL rota. Se descomentan cuando el seed entre bien.
+  // "https://3rcore.com/us/blogs/cuanto-cuesta-una-pagina-web-en-estados-unidos",
+  // "https://3rcore.com/us/blogs/cuanto-cobra-una-agencia-de-marketing-digital-en-estados-unidos",
+  // "https://3rcore.com/us/blogs/como-crear-una-tienda-online-en-estados-unidos",
+  // "https://3rcore.com/us/blogs/como-vender-online-en-estados-unidos",
 ]
 
 export async function GET(req: NextRequest) {

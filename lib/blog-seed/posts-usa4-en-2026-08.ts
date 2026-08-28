@@ -85,7 +85,7 @@ export const USA4_EN_POSTS: SeedPost[] = [
 
 <h2>What do apps add to the monthly bill?</h2>
 
-<p><strong>Budget $0 to $150 a month for apps on a normal small store.</strong> Shopify's app ecosystem is the reason the platform is pleasant and the reason bills drift.</p>
+<p><strong>Apps are billed per app, per month, and Shopify does not publish a typical total — it depends entirely on which ones you install.</strong> Each app lists its own price in the Shopify App Store, so the only honest way to budget this is to add up the ones you actually plan to use.</p>
 
 <p>The pattern we see repeatedly: a store launches with four apps, someone adds a review widget, then an upsell tool, then a loyalty program, and eighteen months later there are eleven subscriptions and nobody can say which ones are earning their keep. Review the list quarterly and cancel what has not been opened. It is the cheapest cost saving in ecommerce.</p>
 
@@ -101,7 +101,7 @@ export const USA4_EN_POSTS: SeedPost[] = [
 
 <table>
 <tr><th></th><th>Shopify</th><th>WooCommerce</th></tr>
-<tr><td>Platform fee</td><td>$25–$399/mo</td><td>$0</td></tr>
+<tr><td>Platform fee</td><td>$25–$399/mo (Plus from $2,300)</td><td>$0</td></tr>
 <tr><td>Hosting</td><td>Included</td><td>$25–$350/mo</td></tr>
 <tr><td>Extensions / apps</td><td>Per app, monthly</td><td>$29–$299/yr each</td></tr>
 <tr><td>Third-party gateway surcharge</td><td>0.2%–2%</td><td>None</td></tr>
@@ -112,14 +112,14 @@ export const USA4_EN_POSTS: SeedPost[] = [
 
 <h2>What does the first year actually cost?</h2>
 
-<p><strong>For a small U.S. store built properly: roughly $1,750–$3,000 one-time for the build, plus $300–$800 for the year on the Shopify plan, plus apps and processing.</strong> That is the realistic band for a business launching with a manageable catalog and no exotic integrations.</p>
+<p><strong>For a small U.S. store built properly: roughly $1,750–$3,000 one-time for the build, plus the plan — $228 a year on Basic billed annually, $300 billed monthly — plus apps and processing.</strong> That is the realistic band for a business launching with a manageable catalog and no exotic integrations.</p>
 
 <p>The number that ruins budgets is never the plan. It is the rebuild eighteen months later because the first store was built without tracking, without a migration path and without anyone who understood the checkout. That rebuild costs more than doing it once.</p>
 
 <h2>Frequently asked questions</h2>
 
 <h3>How much does a Shopify store cost per month?</h3>
-<p>The plan is $25/mo on Basic, $65 on Grow and $399 on Advanced, discounted to $19, $49 and $299 respectively when billed annually. Add apps, which commonly run $0–$150 a month, and payment processing charged as a percentage of sales.</p>
+<p>The plan is $25/mo on Basic, $65 on Grow and $399 on Advanced, discounted to $19, $49 and $299 respectively when billed annually. On top of that: any apps you install (each priced individually in the Shopify App Store) and payment processing charged as a percentage of sales.</p>
 
 <h3>Is Shopify cheaper than hiring a developer?</h3>
 <p>They are not alternatives. Shopify is the platform; a developer builds the store on it. You will pay the plan either way. What a developer changes is whether the store is configured correctly at launch — catalog, gateway, tax and tracking — or configured by trial and error afterward.</p>
@@ -343,7 +343,7 @@ export const USA4_EN_POSTS: SeedPost[] = [
 
 <h2>Shopify: what it costs and who it fits</h2>
 
-<p><strong>Shopify costs $25 to $399 a month ($19 to $299 billed annually) and fits businesses that want to sell rather than administer software.</strong> Hosting, security, updates and PCI compliance are Shopify's problem, and that is most of what you are buying.</p>
+<p><strong>Shopify costs $25 to $399 a month ($19 to $299 billed annually) across the three plans a small business would use, and fits businesses that want to sell rather than administer software.</strong> Hosting, security, updates and PCI compliance are Shopify's problem, and that is most of what you are buying. The enterprise tier, Plus, starts at $2,300 a month.</p>
 
 <p>The cost most people miss: <strong>if you use a payment provider other than Shopify Payments, Shopify adds 2% on Basic, 1% on Grow, 0.6% on Advanced and 0.2% on Plus to every transaction.</strong> On a store doing $30,000 a month on Basic through an external gateway, that surcharge is $600 — many times the plan itself. It changes which plan is cheapest, and sometimes whether Shopify is cheapest.</p>
 
@@ -361,7 +361,7 @@ export const USA4_EN_POSTS: SeedPost[] = [
 
 <table>
 <tr><th></th><th>Shopify</th><th>WooCommerce</th></tr>
-<tr><td>Platform fee</td><td>$25–$399/mo</td><td>$0</td></tr>
+<tr><td>Platform fee</td><td>$25–$399/mo (Plus from $2,300)</td><td>$0</td></tr>
 <tr><td>Hosting</td><td>Included</td><td>$25–$350/mo</td></tr>
 <tr><td>Extensions</td><td>Per app, monthly</td><td>$29–$299/yr each</td></tr>
 <tr><td>Third-party gateway fee</td><td>0.2%–2%</td><td>None</td></tr>
@@ -372,7 +372,7 @@ export const USA4_EN_POSTS: SeedPost[] = [
 
 <h2>What about Squarespace, Wix and BigCommerce?</h2>
 
-<p><strong>They are viable and they fit narrower cases.</strong> Squarespace and Wix are excellent when the store is secondary to a beautiful site and the catalog is small; they become constraining as catalog and operations grow. BigCommerce is closest to Shopify and competes on not charging a third-party gateway surcharge, which matters most at higher volume.</p>
+<p><strong>They are viable and they fit narrower cases.</strong> Squarespace and Wix are excellent when the store is secondary to a beautiful site and the catalog is small; they become constraining as catalog and operations grow. BigCommerce is the closest direct alternative to Shopify. We have not priced it against the other two here, and rather than repeat a comparison we have not verified, we would point you at their current pricing page before deciding.</p>
 
 <p>None of them is a mistake for the right business. The mistake is choosing on the marketing site rather than on a list of what your store has to do.</p>
 
@@ -386,6 +386,28 @@ export const USA4_EN_POSTS: SeedPost[] = [
 <li><strong>What volume, and through which gateway?</strong> High volume through an external gateway makes Shopify's surcharge a real number. Model it before choosing.</li>
 <li><strong>Do you need something the platform forbids?</strong> Complex B2B pricing, unusual subscription logic, regulated categories. If yes, you need the open platform.</li>
 </ul>
+
+<h2>What does migrating between platforms actually cost?</h2>
+
+<p><strong>The software side of a migration is cheap; the search side is where the money is lost.</strong> Products, customers and orders export and import with tooling. What does not come across automatically is the URL structure, and that is what carries your rankings.</p>
+
+<p>Every product and category page on the old store has an address that Google has indexed and that other sites link to. If the new store uses a different address for the same product — and it almost always does, because platforms structure URLs differently — every one of those needs a 301 redirect pointing old to new. Skip that step and the store relaunches with its search visibility reset to zero, which is a cost that does not appear on any quote.</p>
+
+<p>The three things to insist on in a migration scope:</p>
+
+<ul>
+<li><strong>A URL map, produced before anything moves.</strong> Old address to new address, every page, exported from a crawl of the live store rather than assembled from memory.</li>
+<li><strong>Redirects tested after launch, not assumed.</strong> A redirect that was written but not deployed looks identical to one that works, right up until you check.</li>
+<li><strong>Analytics continuity.</strong> Keep the same property so you can compare before and after. Starting a fresh property at migration destroys your only baseline.</li>
+</ul>
+
+<h2>Which platform is better for SEO?</h2>
+
+<p><strong>Neither, in any way that will decide your rankings.</strong> Both Shopify and WooCommerce can produce technically sound stores, and both can produce bad ones. The platform sets a floor, not a ceiling, and every store in your category is standing on a similar floor.</p>
+
+<p>What actually differentiates ecommerce sites in search is the same everywhere: product and category pages that answer what people search rather than restating the manufacturer's copy, a site that loads quickly on a phone, and internal linking that connects new pages to pages that already have authority. None of that is a platform feature.</p>
+
+<p>The one structural difference worth knowing: WooCommerce gives you complete control over URLs, templates and markup, which matters if you have unusual requirements. Shopify's structure is more fixed, and for the overwhelming majority of stores that constraint costs nothing — it is a guardrail rather than a limit.</p>
 
 <h2>What matters more than the platform</h2>
 

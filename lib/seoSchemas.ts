@@ -93,14 +93,20 @@ export function buildServiceSchema(p: ServiceSchemaParams) {
 // Autor para BlogPosting: los posts firmados "Equipo 3R Core" no son una
 // persona — se marcan como Organization (la propia agencia); un nombre propio
 // (p.ej. "Piero Roque") sí va como Person.
-export function buildAuthorNode(name?: string | null) {
+/**
+ * `locale` se añadió el 28-ago-2026: el nodo autor apuntaba SIEMPRE a
+ * /es/nosotros, así que los artículos en inglés declaraban como autor una
+ * página en español. Fuga de idioma detectada al verificar los 4 posts nuevos.
+ */
+export function buildAuthorNode(name?: string | null, locale?: string) {
   const n = (name || 'Equipo 3R Core').trim()
+  const about = locale === 'en' ? '/en/about' : locale === 'us' ? '/us/nosotros' : '/es/nosotros'
   if (/equipo|team|3r\s*core/i.test(n)) {
     return {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
       "name": n,
-      "url": `${BASE_URL}/es/nosotros`,
+      "url": `${BASE_URL}${about}`,
     }
   }
   return { "@type": "Person", "name": n }

@@ -449,37 +449,54 @@ export default async function RootLayout({
     }
   }
 
+  // 28-ago-2026. El SiteNavigationElement declaraba los NUEVE servicios en los
+  // tres mercados. En /en y /us seis de ellos van con `noindex` porque en EE.UU.
+  // solo se venden tres (web, SEO y tiendas online): el schema estaba
+  // anunciando a Google un catálogo que la propia web pide no indexar, y
+  // repartiendo la señal de navegación entre nueve destinos en vez de tres.
+  // Es el mismo fallo que se corrigió en los enlaces HTML, un nivel más abajo.
   const navItems = locale === 'en'
     ? [
         { name: "Home", url: `${BASE_URL}/en` },
         { name: "About Us", url: localizedUrl('/nosotros', 'en') },
         { name: "Services", url: localizedUrl('/servicios', 'en') },
         { name: "Web Design & Development", url: localizedUrl('/servicios/web-development', 'en') },
-        { name: "Social Media Management", url: localizedUrl('/servicios/socialmedia', 'en') },
-        { name: "Corporate Branding", url: localizedUrl('/servicios/branding', 'en') },
-        { name: "Google Ads", url: localizedUrl('/servicios/google-ads', 'en') },
         { name: "SEO Positioning", url: localizedUrl('/posicionamiento-seo', 'en') },
-        { name: "UGC Content Production", url: localizedUrl('/servicios/ugc', 'en') },
-        { name: "Influencer Marketing", url: localizedUrl('/servicios/influencer-marketing', 'en') },
-        { name: "Public Relations", url: localizedUrl('/servicios/relaciones-publicas', 'en') },
+        { name: "E-commerce Development", url: localizedUrl('/tiendas-virtuales-lima', 'en') },
+        { name: "Spanish SEO Services", url: `${BASE_URL}/en/spanish-seo-services` },
+        { name: "Hispanic Marketing Agency", url: `${BASE_URL}/en/hispanic-marketing-agency` },
+        { name: "Peruvian Agency for U.S. Brands", url: `${BASE_URL}/en/nearshore-marketing-agency` },
+        { name: "Pricing", url: localizedUrl('/precios', 'en') },
         { name: "Blog", url: `${BASE_URL}/en/blogs` },
         { name: "FAQ", url: localizedUrl('/preguntas', 'en') },
       ]
+    : locale === 'us'
+    ? [
+        { name: "Inicio", url: `${BASE_URL}/us` },
+        { name: "Nosotros", url: localizedUrl('/nosotros', 'us') },
+        { name: "Servicios", url: localizedUrl('/servicios', 'us') },
+        { name: "Diseño y Desarrollo Web", url: localizedUrl('/servicios/web-development', 'us') },
+        { name: "Posicionamiento SEO en Español", url: localizedUrl('/posicionamiento-seo', 'us') },
+        { name: "Tiendas Online", url: localizedUrl('/tiendas-virtuales-lima', 'us') },
+        { name: "Marketing para Negocios Hispanos", url: `${BASE_URL}/us/marketing-para-negocios-hispanos` },
+        { name: "Precios", url: localizedUrl('/precios', 'us') },
+        { name: "Blog", url: `${BASE_URL}/us/blogs` },
+        { name: "Preguntas Frecuentes", url: localizedUrl('/preguntas', 'us') },
+      ]
     : [
-        // Vale para /es y /us: el prefijo sale del locale, no está fijado a "es".
-        { name: "Inicio", url: `${BASE_URL}/${locale}` },
-        { name: "Nosotros", url: localizedUrl('/nosotros', locale) },
-        { name: "Servicios", url: localizedUrl('/servicios', locale) },
-        { name: "Diseño y Desarrollo Web", url: localizedUrl('/servicios/web-development', locale) },
-        { name: "Manejo de Redes Sociales", url: localizedUrl('/servicios/socialmedia', locale) },
-        { name: "Branding Corporativo", url: localizedUrl('/servicios/branding', locale) },
-        { name: "Google Ads", url: localizedUrl('/servicios/google-ads', locale) },
-        { name: "Posicionamiento SEO", url: localizedUrl('/posicionamiento-seo', locale) },
-        { name: "Contenido UGC", url: localizedUrl('/servicios/ugc', locale) },
-        { name: "Influencer Marketing", url: localizedUrl('/servicios/influencer-marketing', locale) },
-        { name: "Relaciones Públicas", url: localizedUrl('/servicios/relaciones-publicas', locale) },
-        { name: "Blog", url: `${BASE_URL}/${locale}/blogs` },
-        { name: "Preguntas Frecuentes", url: localizedUrl('/preguntas', locale) },
+        { name: "Inicio", url: `${BASE_URL}/es` },
+        { name: "Nosotros", url: localizedUrl('/nosotros', 'es') },
+        { name: "Servicios", url: localizedUrl('/servicios', 'es') },
+        { name: "Diseño y Desarrollo Web", url: localizedUrl('/servicios/web-development', 'es') },
+        { name: "Manejo de Redes Sociales", url: localizedUrl('/servicios/socialmedia', 'es') },
+        { name: "Branding Corporativo", url: localizedUrl('/servicios/branding', 'es') },
+        { name: "Google Ads", url: localizedUrl('/servicios/google-ads', 'es') },
+        { name: "Posicionamiento SEO", url: localizedUrl('/posicionamiento-seo', 'es') },
+        { name: "Contenido UGC", url: localizedUrl('/servicios/ugc', 'es') },
+        { name: "Influencer Marketing", url: localizedUrl('/servicios/influencer-marketing', 'es') },
+        { name: "Relaciones Públicas", url: localizedUrl('/servicios/relaciones-publicas', 'es') },
+        { name: "Blog", url: `${BASE_URL}/es/blogs` },
+        { name: "Preguntas Frecuentes", url: localizedUrl('/preguntas', 'es') },
       ]
 
   const siteNavigationSchema = navItems.map((item) => ({
