@@ -143,6 +143,19 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
   // Ambos son keyEvents en GA4, así que pasan por el filtro de tráfico
   // automatizado (lib/track.ts). blog_cta_view NO es conversión y se deja tal
   // cual: sirve justamente para comparar vistas de bot contra clics humanos.
+  // 29-ago-2026. El CTA ofrecía dos salidas y las dos piden hablar con alguien:
+  // «ver el servicio» y «cotizar por WhatsApp». Medido en GA4 (Perú, 90 días):
+  // blog_cta_view 427 · blog_cta_click 8. Menos del 2%.
+  //
+  // Faltaba la salida de fricción cero: /cotizar es una calculadora REAL, con
+  // los precios publicados, moneda por mercado y guardado del lead en
+  // /api/wa-lead — y en las 224 páginas del sitio solo la enlazaba la home.
+  // El competidor que domina Lima mete TRES formularios dentro de cada
+  // artículo; aquí había cero. Esto es lo más barato que se puede hacer por los
+  // leads: la herramienta ya estaba construida y nadie la veía.
+  const onQuoteClick = (e: React.MouseEvent) =>
+    trackConversion('blog_cta_cotizador', { blog_slug: slug, cta_service: key, cta_variant: variant, cta_target: '/cotizar' }, e.nativeEvent)
+
   const onServiceClick = (e: React.MouseEvent) =>
     trackConversion('blog_cta_click', { blog_slug: slug, cta_service: key, cta_variant: variant, cta_target: svc.path }, e.nativeEvent)
   const onWaClick = (e: React.MouseEvent) =>
@@ -174,6 +187,14 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
             {t.wa}
           </a>
           <Link
+            href="/cotizar"
+            onClick={onQuoteClick}
+            data-gtm="blog-cta-cotizador"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-[10px] font-bold uppercase tracking-[0.15em] text-[10px] text-white border border-[#A21F8A]/50 bg-[#A21F8A]/10 hover:bg-[#A21F8A]/20 transition-all"
+          >
+            {isEn ? 'Calculate the price' : 'Calcular el precio'}
+          </Link>
+          <Link
             href={svc.path}
             onClick={onServiceClick}
             data-gtm="blog-cta-service"
@@ -203,10 +224,21 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
       </p>
       <div className="flex flex-col sm:flex-row gap-3 relative z-10">
         <Link
+          href="/cotizar"
+          onClick={onQuoteClick}
+          data-gtm="blog-cta-cotizador"
+          className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-[14px] font-bold uppercase tracking-[0.18em] text-[11px] text-white bg-gradient-to-r from-[#E91E63] to-[#9C27B0] hover:shadow-[0_18px_50px_rgba(233,30,99,0.35)] hover:-translate-y-0.5 transition-all duration-300"
+        >
+          {isEn ? 'Estimate your project in 1 minute' : 'Calcula tu proyecto en 1 minuto'}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+            <path d="M1 7h12M13 7L8 2M13 7l-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
+        <Link
           href={svc.path}
           onClick={onServiceClick}
           data-gtm="blog-cta-service"
-          className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-[14px] font-bold uppercase tracking-[0.18em] text-[11px] text-white bg-gradient-to-r from-[#E91E63] to-[#9C27B0] hover:shadow-[0_18px_50px_rgba(233,30,99,0.35)] hover:-translate-y-0.5 transition-all duration-300"
+          className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-[14px] font-bold uppercase tracking-[0.18em] text-[11px] text-white/75 border border-white/20 hover:text-white hover:border-[#A21F8A]/60 transition-all duration-300"
         >
           {t.btn}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">

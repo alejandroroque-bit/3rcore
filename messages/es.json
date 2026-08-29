@@ -88,7 +88,8 @@
       "services": "SERVICIOS",
       "blogs": "BLOGS",
       "contact": "CONTACTO",
-      "cases": "CASOS DE ÉXITO"
+      "cases": "CASOS DE ÉXITO",
+      "quote": "Cotizar"
     },
     "clo": "CERRAR",
     "services": {
