@@ -89,6 +89,9 @@ export const EXTRA_POSTS_2026_07: SeedPost[] = [
 <h3>¿Cuánto tarda en verse resultados?</h3>
 <p>Ads: primeras semanas ya hay datos y leads. SEO: 3–6 meses para tracción real. Redes y branding: es construcción de marca a mediano plazo.</p>
 
+
+<h3>¿Cuánto cobra 3R Core?</h3>
+<p>Por servicio y al mes: posicionamiento SEO <strong>S/1,800</strong>, gestión de Google Ads <strong>S/1,800</strong> más la pauta, y manejo de redes sociales desde <strong>S/1,500</strong>. En proyectos puntuales: branding desde <strong>S/500</strong> y páginas web desde <strong>S/1,800</strong>. Netos en soles, sin IGV y sin permanencia. La tarifa completa está en <a href="/es/precios">nuestra página de precios</a> y el estimado de tu caso lo puedes calcular en <a href="/es/cotizar">el cotizador</a>.</p>
 <h2>Cierre</h2>
 <p>Contratar una agencia en Perú cuesta lo que cuesta hacer las cosas bien: entre S/1,500 y S/8,000 al mes según alcance. El error caro no es pagar de más, sino pagar poco por un plan que no mide ni convierte. En 3R Core armamos planes claros por canal, con fee separado de la pauta y reportes de negocio. Si quieres una cotización real para tu caso, mira nuestro <a href="/es/servicios/performance-marketing">servicio de performance marketing</a> o <a href="/es#contacto">conversemos</a> y te decimos qué inversión tiene sentido para tu etapa.</p>`,
   },
