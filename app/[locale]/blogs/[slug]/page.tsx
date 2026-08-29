@@ -33,17 +33,26 @@ export async function generateStaticParams() {
 }
 
 async function getPost(slug: string, locale: string): Promise<BlogPost | null> {
-  const supabase = createServerClient()
   const want = blogLocale(locale)
-  const fetchOne = async (loc: string) => {
-    const { data } = await supabase
-      .from('blog_posts')
-      .select('*, category:blog_categories(name, slug)')
-      .eq('slug', slug)
-      .eq('locale', loc)
-      .eq('status', 'published')
-      .single()
-    return data as BlogPost | null
+  // 29-ago-2026. Antes esto llamaba a Supabase sin red de seguridad, y los
+  // artículos que se sirven DESDE EL CÓDIGO dependían igualmente de que la base
+  // respondiera: si fallaba, caía también lo que no necesitaba base. Se vio en
+  // un build sin variables de entorno, donde reventó la generación entera.
+  // Ahora cualquier fallo de la base se traga y se sigue al plan B.
+  const fetchOne = async (loc: string): Promise<BlogPost | null> => {
+    try {
+      const supabase = createServerClient()
+      const { data } = await supabase
+        .from('blog_posts')
+        .select('*, category:blog_categories(name, slug)')
+        .eq('slug', slug)
+        .eq('locale', loc)
+        .eq('status', 'published')
+        .single()
+      return (data as BlogPost | null) ?? null
+    } catch {
+      return null
+    }
   }
   const own = await fetchOne(want)
   if (own) return own
@@ -90,6 +99,7 @@ function slugOffset(slug: string, poolSize: number, take: number): number {
 
 async function getRelatedPosts(currentId: string, categoryId: string | null, locale: string, limit = 3, currentSlug = ''): Promise<BlogPost[]> {
   const POOL = 12
+  try {
   const supabase = createServerClient()
   let query = supabase
     .from('blog_posts')
@@ -117,6 +127,10 @@ async function getRelatedPosts(currentId: string, categoryId: string | null, loc
   const pool = (fallback || []) as unknown as BlogPost[]
   const off = slugOffset(currentSlug, pool.length, limit)
   return pool.slice(off, off + limit)
+  } catch {
+    // Sin base no hay relacionados, pero el artículo se sigue sirviendo.
+    return []
+  }
 }
 
 // Posts legacy (2022-2023) migraron con meta_title = slug crudo

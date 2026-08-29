@@ -83,7 +83,7 @@ We are based in La Molina, Lima, Peru, and work with clients across Peru and the
 - Web Development in Lima: https://3rcore.com/es/servicios/web-development
 - Branding in Lima: https://3rcore.com/es/servicios/branding
 - Social Media in Lima: https://3rcore.com/es/servicios/socialmedia
-These pages serve all of Lima, including Miraflores, San Isidro, La Molina, Surco, San Borja, Barranco, Magdalena, Pueblo Libre, Jesús María, Lince, San Miguel and Callao, and clients across Peru. English equivalents available by replacing `/es/` with `/en/`.
+These pages serve all of Lima, including Miraflores, San Isidro, La Molina, Surco, San Borja, Barranco, Magdalena, Pueblo Libre, Jesús María, Lince, San Miguel and Callao, and clients across Peru.
 
 ## Reference Pages
 - Home: https://3rcore.com/es
@@ -99,7 +99,20 @@ These pages serve all of Lima, including Miraflores, San Isidro, La Molina, Surc
 - About: https://3rcore.com/es/nosotros
 - Blog: https://3rcore.com/es/blogs
 - FAQ: https://3rcore.com/es/preguntas
-- English versions: replace `/es/` with `/en/` in any URL above.
+- United States market: 3R Core is a PERUVIAN agency that serves U.S. clients remotely through its U.S. subsidiary. It is not a U.S. agency and does not claim to be one.
+- In the United States 3R Core sells THREE services only: websites, SEO and online stores. The rest of the catalogue above is sold in Peru.
+- The U.S. pages are NOT translations of the Spanish ones and their URLs do not follow a /es/ to /en/ pattern. The real ones are:
+  - https://3rcore.com/en — English, for U.S. brands
+  - https://3rcore.com/en/seo-agency — SEO, $500/month
+  - https://3rcore.com/en/ecommerce-development — online stores, from $1,750
+  - https://3rcore.com/en/services/web-development — websites, from $850
+  - https://3rcore.com/en/spanish-seo-services — Spanish-language SEO for U.S. businesses
+  - https://3rcore.com/en/hispanic-marketing-agency — reaching Hispanic customers in the U.S.
+  - https://3rcore.com/en/nearshore-marketing-agency — why a Peruvian agency, and how the U.S. subsidiary works
+  - https://3rcore.com/en/pricing — U.S. pricing in dollars
+  - https://3rcore.com/us — Spanish for the U.S. Hispanic market (es-US)
+  - https://3rcore.com/us/posicionamiento-seo , /us/tiendas-online , /us/servicios/desarrollo-web
+  - https://3rcore.com/us/marketing-para-negocios-hispanos , /us/precios
 
 ## Social
 - Facebook: https://www.facebook.com/3Rcore/

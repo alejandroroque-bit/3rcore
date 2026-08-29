@@ -100,14 +100,28 @@ export default function BlogPostView({ post, locale, minutesRead, relatedPosts =
           // 'top' compacto tras la intro (antes del primer H2), 'inline' a
           // mitad del artículo (tras la 2ª sección) y 'end' al final.
           const html = post.content || ''
-          const marker = '</h2>'
           // Corte del CTA top: justo antes del primer <h2 (fin de la intro).
           const firstH2 = html.search(/<h2[\s>]/)
           const topCut = firstH2 > 200 && html.length > 3000 ? firstH2 : -1
-          // Corte del CTA inline: tras el cierre de la 2ª sección.
-          let idx = -1
-          for (let i = 0; i < 2; i++) { const n = html.indexOf(marker, idx + 1); if (n === -1) break; idx = n }
-          const inlineCut = idx !== -1 && html.length - idx > 900 ? idx + marker.length : -1
+          // Corte del CTA inline: ANTES del 3er H2, es decir al FINAL de la 2ª
+          // sección, no pegado al encabezado.
+          //
+          // 29-ago-2026. Antes cortaba justo
+          // después de `</h2>`: el anuncio quedaba entre el encabezado y su
+          // primera palabra. Un modelo de lenguaje que extrae el pasaje que
+          // responde a ese H2 se encontraba el bloque de contacto y cero
+          // respuesta. Y este sitio recibe de la IA un tráfico que convierte al
+          // 12,23% frente al 4,03% del orgánico, así que el pasaje vale dinero.
+          //
+          // Ahora el CTA cae donde termina la sección, que además es donde tiene
+          // sentido para el lector: ha entendido algo y ahí se le ofrece hablar.
+          const h2s: number[] = []
+          const reH2 = /<h2[\s>]/g
+          let mH2: RegExpExecArray | null
+          while ((mH2 = reH2.exec(html)) !== null) h2s.push(mH2.index)
+          const antesDelTercerH2 = h2s.length >= 3 ? h2s[2] : -1
+          const inlineCut =
+            antesDelTercerH2 !== -1 && html.length - antesDelTercerH2 > 900 ? antesDelTercerH2 : -1
 
           if (topCut === -1 && inlineCut === -1) {
             return <div className="post-content prose-content" dangerouslySetInnerHTML={{ __html: html }} />
