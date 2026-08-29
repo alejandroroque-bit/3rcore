@@ -56,6 +56,11 @@ export const pathnames = {
   '/spanish-seo-services': '/spanish-seo-services',
   // Solo en /es: la página del prototipo habla de marcas trabajadas desde Lima
   '/casos-de-exito': '/casos-de-exito',
+  // Landing madre del eje comercial, recuperada el 26-ago. Se declara aquí para
+  // poder enlazarla con <Link>: hasta el 29-ago no la enlazaba NADIE en las 224
+  // páginas del sitio, y sin entrada en `pathnames` el tipo AppPathname lo
+  // impedía. Solo /es: en /en el mercado lo ataca /nearshore-marketing-agency.
+  '/agencia-marketing-digital-lima': '/agencia-marketing-digital-lima',
 
   // Institucionales
   '/nosotros': {es: '/nosotros', us: '/nosotros', en: '/about'},

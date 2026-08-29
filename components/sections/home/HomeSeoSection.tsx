@@ -115,12 +115,17 @@ const COPY: Record<'es' | 'en' | 'us', {
     quoteCta: 'Calcula el estimado de tu proyecto',
   },
   en: {
-    eyebrow: 'Digital marketing agency in Lima, Peru',
-    h2: 'Online stores, SEO and Google Ads that bring clients, not just visits',
+    // 29-ago-2026. Este bloque era la versión peruana traducida: se anunciaba
+    // como «agency in Lima, Peru», decía «we help businesses in Peru» a un
+    // lector estadounidense y vendía Google Ads, que en EE.UU. NO se vende (su
+    // página va con noindex allí). Se dice de dónde es el equipo —esa es la
+    // regla, no se esconde— pero se habla al mercado al que se vende.
+    eyebrow: 'Digital marketing agency for U.S. businesses',
+    h2: 'Websites, SEO and online stores that bring clients, not just visits',
     intro:
-      'At 3R Core we help businesses in Peru sell more online with three pillars that work together: we build your online store, rank you on Google with SEO and run your Google Ads campaigns. Everything with real measurement, monthly reports and a focus on return on investment (ROI), not vanity metrics.',
+      'At 3R Core we help U.S. businesses sell more online with three services that work together: we build your website, rank you on Google with SEO and build your online store. Our team is in Lima, Peru and works U.S. business hours; U.S. clients contract and invoice through our U.S. subsidiary. Everything with real measurement, monthly reports and a focus on return on investment, not vanity metrics.',
     definition:
-      '3R Core is a digital marketing agency founded by brothers Alejandro and Piero Roque, based in La Molina, Lima, Peru (Alameda de la Paz 187, primer piso), serving businesses across Peru and the United States. It specializes in online stores on Shopify, WooCommerce and Tiendanube (implementation from $420), SEO positioning ($500/month) and Google Ads management (from $800/month), plus branding, social media and web development, with published pricing and no forced contracts.',
+      '3R Core is a digital marketing agency founded by brothers Alejandro and Piero Roque, based in La Molina, Lima, Peru, serving clients in Peru and the United States. For U.S. clients it sells three services: websites (from $850), SEO positioning ($500/month) and online stores on Shopify or WooCommerce (from $1,750), with published pricing and no mandatory contracts. Branding, social media and paid media are part of the catalogue in Peru.',
     pillars: [
       {
         h: 'Web design and development',
@@ -224,6 +229,22 @@ export default function HomeSeoSection({ locale }: { locale: string }) {
           <h3 className="text-lg md:text-xl font-semibold mb-3 text-white">{t.localH3}</h3>
           <p className="text-white/55 text-sm md:text-base leading-relaxed mb-4">{t.local}</p>
           <p className="text-white/70 text-sm md:text-base leading-relaxed mb-6">{t.closing}</p>
+          {/* 29-ago-2026. /es/agencia-marketing-digital-lima es la landing del
+              eje comercial del negocio y tenía CERO enlaces entrantes en las 224
+              páginas del sitio: nadie la enlazaba, ni la plantilla ni un solo
+              artículo. Está en posición 26 con 307 impresiones y 0 clics.
+              Este es el primer enlace contextual que recibe, y va desde la home,
+              que es la página con más autoridad del dominio.
+              Solo en /es: la landing no existe en los otros dos mercados. */}
+          {locale === 'es' && (
+            <p className="text-white/55 text-sm md:text-base leading-relaxed mb-6">
+              ¿Quieres ver cómo trabajamos en concreto?{' '}
+              <Link href="/agencia-marketing-digital-lima" className="text-[#E91E63] underline underline-offset-4 hover:text-white transition-colors">
+                Conoce nuestra agencia de marketing digital en Lima
+              </Link>
+              : oficina en La Molina, precios publicados y sin permanencia.
+            </p>
+          )}
           <Link
             href="/cotizar"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-[0.18em] text-[11px] text-white bg-gradient-to-r from-[#E91E63] to-[#9C27B0] hover:-translate-y-0.5 transition-all"

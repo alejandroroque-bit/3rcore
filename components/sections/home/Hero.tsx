@@ -331,12 +331,40 @@ export default function HeroHome() {
     };
 
     if (images.length === 0) {
-      for (let i = 0; i < frameCount; i++) {
+      // 29-ago-2026. Antes esto lanzaba las 193 peticiones de golpe al montar:
+      // 9,54 MB de WebP compitiendo con el render inicial. Lighthouse móvil
+      // sobre /en daba LCP 36,5 s, 11,6 MB y 282 peticiones — y /en es
+      // justamente el mercado que se está abriendo.
+      //
+      // Ahora: los 8 primeros fotogramas entran ya (son los que se ven antes de
+      // que el usuario mueva la rueda) y el resto se carga por tandas cuando el
+      // navegador está ocioso. La animación va atada al scroll, así que los
+      // fotogramas del final no hacen falta hasta que se llega a ellos.
+      const PRIMEROS = 8;
+      const TANDA = 12;
+      const crear = (i: number) => {
         const img = new Image();
         img.src = `/frames/frame_${(i + 1).toString().padStart(3, "0")}.webp`;
         if (i === 0) img.onload = render;
-        images.push(img);
-      }
+        images[i] = img;
+      };
+      for (let i = 0; i < Math.min(PRIMEROS, frameCount); i++) crear(i);
+
+      let siguiente = PRIMEROS;
+      const ocioso: (cb: () => void) => void =
+        typeof (window as any).requestIdleCallback === 'function'
+          ? (cb) => (window as any).requestIdleCallback(cb, { timeout: 1500 })
+          : (cb) => window.setTimeout(cb, 200);
+      const cargarTanda = () => {
+        if (siguiente >= frameCount) return;
+        const hasta = Math.min(siguiente + TANDA, frameCount);
+        for (let i = siguiente; i < hasta; i++) crear(i);
+        siguiente = hasta;
+        ocioso(cargarTanda);
+      };
+      // No se arranca hasta que la página ha terminado de cargar lo suyo.
+      if (document.readyState === 'complete') ocioso(cargarTanda);
+      else window.addEventListener('load', () => ocioso(cargarTanda), { once: true });
     }
 
     const wordsBottom = gsap.utils.toArray<HTMLElement>(".word-bottom", containerRef.current);
