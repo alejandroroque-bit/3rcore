@@ -155,10 +155,16 @@ const WhatsAppBtnLanding = () => {
       if (url) window.location.href = url;
     };
 
+    // 29-ago-2026. La conversión se enviaba SIEMPRE con currency "PEN", también
+    // desde /en y /us: un lead estadounidense se reportaba a Google Ads en soles
+    // peruanos. El importe (1.0) es un marcador de posición, no un valor de lead
+    // acordado, así que se deja como está y solo se corrige la moneda.
+    // ⚠️ Si en algún momento se activa puja por valor, hay que acordar con quien
+    //    lleva las campañas un valor real por mercado antes de tocar `value`.
     (window as any).gtag("event", "conversion", {
       send_to: "AW-17933910865/AcOyCNuLq4ccENGGx-dC",
       value: 1.0,
-      currency: "PEN",
+      currency: locale === "es" ? "PEN" : "USD",
       event_callback: callback,
     });
   };

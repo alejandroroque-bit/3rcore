@@ -70,7 +70,12 @@ export default async function BlogsPage(
   // /us lista sus propios artículos es-US PRIMERO y completa con el fondo
   // peruano: al abrir el mercado no hay 60 posts hispanos que enseñar.
   const loc = blogLocale(locale)
-  const locFilter: string[] = loc === "us" ? ["us", "es"] : [loc]
+  // 29-ago-2026. /us heredaba el fondo peruano: el listado enlazaba 155 URLs
+  // bajo /us/blogs/*, todas con 200, todas canonicalizando a /es y solo 4 en el
+  // sitemap. Eran 151 direcciones que Google tenía que rastrear para descubrir
+  // que apuntan a otro sitio. Ahora /us lista SOLO lo suyo: son cuatro piezas,
+  // pero son las escritas para ese mercado.
+  const locFilter: string[] = [loc]
 
   const supabase = createServerClient()
 
