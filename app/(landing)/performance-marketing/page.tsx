@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BASE_URL}/performance-marketing`,
   },
+  // 29-ago-2026. Esta landing vive fuera del sistema de idiomas, es indexable,
+  // NO está en el sitemap y duplica a /es/servicios/performance-marketing, que
+  // sí lo está. En 90 días recibió 536 sesiones, 527 de ellas de Google Ads: es
+  // una landing de pago, y una landing de pago no necesita estar en el índice.
+  // Se marca noindex —no se redirige— porque romper la URL costaría campañas.
+  // `follow` se mantiene para que siga repartiendo sus enlaces internos.
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Google Ads en Lima | 3R Core",
     description:

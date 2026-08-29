@@ -50,6 +50,22 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── LA RAÍZ DEVOLVÍA 307 TEMPORAL (2026-08-29) ────────────────────────
+      // Medido en vivo: `curl -I https://3rcore.com/` daba HTTP 307 hacia /es.
+      // Un 307 es TEMPORAL, y ante un redirect temporal Google conserva en su
+      // índice la URL de ORIGEN, no el destino. Por eso «/» figuraba en Search
+      // Console con impresiones y posición propias, compitiendo contra /es por
+      // «agencia de marketing», «agencia de publicidad» y «agencia seo en lima».
+      //
+      // Peor: el 307 lo emitía el middleware negociando por Accept-Language, así
+      // que Googlebot con `Accept-Language: en-US` aterrizaba en /en. El mercado
+      // de EE.UU. tiene 45 URLs y el de Perú 173: dejar que el idioma del
+      // rastreador decida la home es dejar la puerta abierta a que Google fije
+      // la sección pequeña como principal.
+      //
+      // Con 308 permanente la raíz deja de negociar: mismo destino para todos.
+      { source: '/', destination: '/es', permanent: true },
+
       // ── RUTAS DESNUDAS DE LAS PÁGINAS ANCLA (2026-08-28) ──────────────────
       // Estas tres páginas existen SOLO en un mercado. Sin prefijo de idioma,
       // el middleware las mandaba a /es/…, donde no existen: quien copiaba el
@@ -204,6 +220,52 @@ const nextConfig: NextConfig = {
         destination: '/es#contacto',
         permanent: true,
       },
+      // ── 46 ENLACES DEL CUERPO DE 30 POSTS ACABAN EN 404 (2026-08-29) ─────
+      // Son rutas de la web antigua que quedaron escritas dentro del HTML de los
+      // artículos. Arreglarlas post a post en Supabase es lento y frágil; una
+      // 301 en un solo sitio las recupera todas y además conserva la autoridad
+      // de cualquier enlace externo que aún apunte ahí.
+      // Comprobado el 29-ago: las seis daban 404 tras el 307 del middleware.
+      { source: '/content-marketing', destination: '/es/servicios/socialmedia', permanent: true },
+      { source: '/branding', destination: '/es/servicios/branding', permanent: true },
+      { source: '/tech-innovation', destination: '/es/servicios/web-development', permanent: true },
+      { source: '/lienzo-de-ideas', destination: '/es/blogs', permanent: true },
+      { source: '/categoria/seo', destination: '/es/posicionamiento-seo', permanent: true },
+      { source: '/categoria/marketing', destination: '/es/servicios', permanent: true },
+      { source: '/categoria/:slug', destination: '/es/blogs', permanent: true },
+
+      // ── LA LANDING DE ADS NO DEBE COMPETIR CON SU PROPIA FICHA (2026-08-29)
+      // /performance-marketing vive fuera del sistema de idiomas, es indexable,
+      // no está en el sitemap y duplica a /es/servicios/performance-marketing.
+      // NO se redirige: recibe 527 sesiones de Google Ads en 90 días y romperla
+      // costaría campañas. Se marca noindex en su propio layout (ver
+      // app/(landing)/performance-marketing), que es lo correcto para una
+      // landing de pago: sirve para anuncios, no para el índice.
+
+      // ── TODA RUTA SIN PREFIJO DE IDIOMA DEVOLVÍA 307 (2026-08-29) ─────────
+      // No era un riesgo teórico: Search Console tiene NUEVE URLs sin prefijo
+      // indexadas con 2.260 impresiones en 90 días —«/» sola acumula 1.491 en
+      // posición 6,3—, todas duplicando su gemela de /es. El 307 del middleware
+      // es temporal, y ante un redirect temporal Google conserva la URL de
+      // origen en el índice.
+      //
+      // Esta regla va la ÚLTIMA a propósito: las anteriores son específicas y
+      // deben ganar. Y excluye:
+      //   es|en|us    los tres locales reales
+      //   api|_next   endpoints y assets del framework
+      //   og|icons|images|fonts   estáticos de /public
+      //   admin       el panel, que vive fuera de [locale]
+      //   performance-marketing   landing de Google Ads en la raíz: recibe 536
+      //                           sesiones de pago en 90 días. Redirigirla
+      //                           rompería las campañas.
+      //   [^.]*       cualquier cosa con punto es un fichero: robots.txt,
+      //               sitemap.xml, llms.txt, favicon.ico, imágenes…
+      {
+        source: '/:path((?!es$|es/|en$|en/|us$|us/|api/|_next/|og/|icons/|images/|fonts/|admin$|admin/|performance-marketing$)[^.]*)',
+        destination: '/es/:path',
+        permanent: true,
+      },
+
     ];
   },
   experimental: {

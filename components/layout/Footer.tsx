@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import { TEL_MAIN } from "@/lib/contact";
 import type { AppPathname } from "@/i18n/routing";
 import { NAP } from '@/lib/nap';
 
@@ -99,6 +100,39 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* 29-ago-2026. Las 43 URLs de /en y /us no tenían NI UN correo ni un
+              teléfono pulsable: la única vía de contacto en todo el mercado de
+              EE.UU. era un WhatsApp peruano con el texto prerrellenado en
+              español. En /es sí existían, pero solo en algunas páginas.
+              Ahora el correo va en el pie de las 218.
+              ⚠️ PENDIENTE DEL CLIENTE: un número de EE.UU. Aquí no se inventa
+              uno: se muestra el peruano diciendo el horario en que se atiende,
+              que es información verdadera y útil. */}
+          <div className="flex flex-col items-start">
+            <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">
+              {locale === 'en' ? 'Contact' : 'Contacto'}
+            </h3>
+            <ul className="space-y-2 text-gray-200 lg:text-xs 2xl:text-sm mb-8">
+              <li>
+                <a href="mailto:info@3rcore.com" className="hover:text-pink-500 transition-colors duration-300">
+                  info@3rcore.com
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${TEL_MAIN}`} className="hover:text-pink-500 transition-colors duration-300">
+                  {TEL_MAIN}
+                </a>
+              </li>
+              <li className="text-gray-400 text-[11px] leading-snug max-w-[240px]">
+                {locale === 'en'
+                  ? 'Our team is in Lima, Peru and works U.S. Eastern hours.'
+                  : locale === 'us'
+                    ? 'Nuestro equipo está en Lima y atiende en horario del este de EE.UU.'
+                    : 'Oficina en La Molina, Lima. Lunes a viernes.'}
+              </li>
+            </ul>
           </div>
 
           <div className="flex flex-col items-start">
