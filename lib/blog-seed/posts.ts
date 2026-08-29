@@ -150,7 +150,8 @@ export const SEED_POSTS: SeedPost[] = [
 
 <h2>Cierre: cuánto deberías invertir tú</h2>
 <p>Si recién arrancas: invierte en una <strong>landing profesional bien hecha (S/2,500–4,500)</strong> antes que una web grande mediocre. Si ya tienes negocio establecido y estás listo para escalar: una <strong>web corporativa con SEO desde el día uno (S/4,500–9,000)</strong>. Si vendes producto físico: <strong>e-commerce serio (S/6,500+)</strong>. Y si tu objetivo final es <strong>aparecer en Google cuando tus clientes buscan</strong>, una web bien hecha es solo el primer paso: necesitas también <a href="/es/posicionamiento-seo">posicionamiento SEO</a> mensual.</p>
-<p>En 3R Core diseñamos páginas web en Lima con foco en <strong>SEO técnico, conversión y velocidad</strong> desde el primer brief. Si quieres una cotización honesta para tu proyecto, <a href="/es#contacto">conversemos</a> y te armamos propuesta sin compromiso. También puedes leer cómo <a href="/es/blogs/como-elegir-agencia-diseno-web-lima">elegir la mejor agencia de diseño web en Lima</a> para no equivocarte en la selección.</p>`,
+<p>En 3R Core diseñamos páginas web en Lima con foco en <strong>SEO técnico, conversión y velocidad</strong> desde el primer brief. Si quieres una cotización honesta para tu proyecto, <a href="/es#contacto">conversemos</a> y te armamos propuesta sin compromiso. También puedes leer cómo <a href="/es/blogs/como-elegir-agencia-diseno-web-lima">elegir la mejor agencia de diseño web en Lima</a> para no equivocarte en la selección.</p>
+<p><em>¿Tu negocio está en Estados Unidos?</em> Los precios cambian por completo: lo hemos desglosado en <a href="/us/blogs/cuanto-cuesta-una-pagina-web-en-estados-unidos">cuánto cuesta una página web en Estados Unidos</a>.</p>`,
   },
 
   {

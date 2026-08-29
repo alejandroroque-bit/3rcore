@@ -90,7 +90,8 @@ export const EXTRA_POSTS_2026_07: SeedPost[] = [
 <p>Ads: primeras semanas ya hay datos y leads. SEO: 3–6 meses para tracción real. Redes y branding: es construcción de marca a mediano plazo.</p>
 
 <h2>Cierre</h2>
-<p>Contratar una agencia en Perú cuesta lo que cuesta hacer las cosas bien: entre S/1,500 y S/8,000 al mes según alcance. El error caro no es pagar de más, sino pagar poco por un plan que no mide ni convierte. En 3R Core armamos planes claros por canal, con fee separado de la pauta y reportes de negocio. Si quieres una cotización real para tu caso, mira nuestro <a href="/es/servicios/performance-marketing">servicio de performance marketing</a> o <a href="/es#contacto">conversemos</a> y te decimos qué inversión tiene sentido para tu etapa.</p>`,
+<p>Contratar una agencia en Perú cuesta lo que cuesta hacer las cosas bien: entre S/1,500 y S/8,000 al mes según alcance. El error caro no es pagar de más, sino pagar poco por un plan que no mide ni convierte. En 3R Core armamos planes claros por canal, con fee separado de la pauta y reportes de negocio. Si quieres una cotización real para tu caso, mira nuestro <a href="/es/servicios/performance-marketing">servicio de performance marketing</a> o <a href="/es#contacto">conversemos</a> y te decimos qué inversión tiene sentido para tu etapa.</p>
+<p><em>¿Y si tu negocio está en Estados Unidos?</em> Las tarifas allí son otras y el mix también: lo explicamos en <a href="/us/blogs/cuanto-cobra-una-agencia-de-marketing-digital-en-estados-unidos">cuánto cobra una agencia de marketing digital en Estados Unidos</a>.</p>`,
   },
 
   // 2 ─────────────────────────────────────────────────────────────────────
