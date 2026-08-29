@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { generatePageMetadata, generateBreadcrumbSchema, BASE_URL } from "@/lib/metadata"
+import { generatePageMetadata, generateBreadcrumbSchema, BASE_URL, localizedUrl } from "@/lib/metadata"
 import { buildOfferCatalogSchema, buildSpeakableSchema } from "@/lib/seoSchemas"
 
 export const revalidate = 3600
@@ -53,8 +53,11 @@ export default async function PreciosLayout({ children, params }: { children: Re
   const pricingPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${BASE_URL}/${locale}/precios#webpage`,
-    "url": `${BASE_URL}/${locale}/precios`,
+    // 29-ago-2026. Usaba la ruta INTERNA (/precios) en vez de la pública. En
+    // /en la pública es /pricing y /en/precios devuelve un 308: el schema
+    // declaraba como propia una URL que redirige.
+    "@id": `${localizedUrl('/precios', locale)}#webpage`,
+    "url": localizedUrl('/precios', locale),
     "name": isEn ? 'Pricing — 3R Core' : 'Precios — 3R Core',
     "inLanguage": isEn ? 'en' : 'es',
     "isPartOf": { "@id": `${BASE_URL}/#website` },

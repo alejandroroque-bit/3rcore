@@ -145,7 +145,12 @@ export default async function RootLayout({
 
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": ["ProfessionalService", "LocalBusiness", "MarketingAgency"],
+    // "MarketingAgency" NO existe en schema.org: el vocabulario oficial no lo
+    // define y https://schema.org/MarketingAgency devuelve 404. Un @type
+    // inventado no aporta y ensucia el grafo. El rubro se expresa con
+    // additionalType, que sí es válido.
+    "@type": ["ProfessionalService", "LocalBusiness"],
+    "additionalType": "https://www.wikidata.org/wiki/Q679520",
     "@id": `${BASE_URL}/#organization`,
     "name": "3R Core - Agencia de Marketing Digital",
     "alternateName": ["3R Core Marketing Agency", "3R Core Agencia de Marketing", "3RCore"],
@@ -163,8 +168,7 @@ export default async function RootLayout({
       `${BASE_URL}/og/branding.jpg`,
       `${BASE_URL}/og/web-development.jpg`,
       `${BASE_URL}/og/socialmedia.jpg`,
-      `${BASE_URL}/og/google-ads.jpg`,
-      `${BASE_URL}/og/agencia-seo-lima.jpg`
+      `${BASE_URL}/og/google-ads.jpg`
     ],
     "description": locale === 'en'
       ? "Digital marketing agency in Lima, Peru. We combine Experience, Vision, and Technology into strategies: Branding, Social Media, SEO, Google Ads & Web Development."
@@ -239,8 +243,13 @@ export default async function RootLayout({
     // reseña que la web no muestre).
     "aggregateRating": ratingNodes.aggregateRating,
     "review": ratingNodes.review,
-    "currenciesAccepted": "PEN, USD",
-    "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer, Yape, Plin, BCP, Interbank, BBVA, Scotiabank",
+    // 29-ago-2026. Las 17 páginas de /us servían el nodo de Perú tal cual:
+    // declaraban Yape, Plin, BCP e Interbank a un comprador estadounidense, y
+    // más abajo el SEO en soles. /en sí estaba localizado; /us se quedó a medias.
+    "currenciesAccepted": locale === 'es' ? "PEN, USD" : "USD",
+    "paymentAccepted": locale === 'es'
+      ? "Cash, Credit Card, Debit Card, Bank Transfer, Yape, Plin, BCP, Interbank, BBVA, Scotiabank"
+      : "Credit Card, Debit Card, Bank Transfer, ACH, Wire Transfer",
     "slogan": locale === 'en'
       ? "Experience, Vision & Technology"
       : "Experiencia, Visión y Tecnología",
@@ -311,7 +320,7 @@ export default async function RootLayout({
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": locale === 'en' ? "Digital Marketing Services" : "Servicios de Marketing Digital",
-      "itemListElement": [
+      "itemListElement": ([
         {
           "@type": "Offer",
           "itemOffered": {
@@ -358,8 +367,8 @@ export default async function RootLayout({
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "price": locale === 'en' ? 500 : 1800,
-            "priceCurrency": locale === 'en' ? "USD" : "PEN",
+            "price": locale === 'es' ? 1800 : 500,
+            "priceCurrency": locale === 'es' ? "PEN" : "USD",
             "valueAddedTaxIncluded": false
           }
         },
@@ -426,7 +435,26 @@ export default async function RootLayout({
             "serviceType": "E-commerce Marketing"
           }
         }
-      ]
+      ])
+        // 29-ago-2026. El catálogo anunciaba los DOCE servicios en los tres
+        // mercados. En /en y /us diez de ellos van con `noindex` porque en
+        // Estados Unidos solo se venden tres: web, SEO y tiendas online. El
+        // schema estaba ofreciendo a Google un catálogo que la propia web pide
+        // no indexar, y repartiendo la señal entre doce destinos en vez de tres.
+        .filter((o: any) => {
+          if (locale === 'es') return true
+          const url: string = o?.itemOffered?.url ?? ''
+          return (
+            url.includes('/servicios/web-development') ||
+            url.includes('/servicios/desarrollo-web') ||
+            url.includes('/services/web-development') ||
+            url.includes('/posicionamiento-seo') ||
+            url.includes('/seo-agency') ||
+            url.includes('/tiendas-virtuales-lima') ||
+            url.includes('/tiendas-online') ||
+            url.includes('/ecommerce-development')
+          )
+        })
     }
   }
 
