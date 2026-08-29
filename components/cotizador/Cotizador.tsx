@@ -93,6 +93,26 @@ const COPY = {
     disclaimer: 'Estimado 100% referencial, no es la cotización final. Precios netos en soles, no incluyen IGV. El precio exacto se confirma por WhatsApp.',
     needName: 'Escribe tu nombre y WhatsApp para enviarte la cotización.',
   },
+  // 29-ago-2026. /us usaba el copy de Perú entero, así que un comprador
+  // estadounidense veía precios en dólares y debajo, literalmente, «Precios
+  // netos en soles, no incluyen IGV». El IGV es un impuesto peruano.
+  us: {
+    eyebrow: 'Cotizador · 3R Core',
+    h1: 'Calcula el estimado de tu proyecto',
+    sub: 'Marca lo que necesitas y te damos un estimado referencial al instante. El precio exacto lo afinamos contigo por WhatsApp.',
+    step1: '1. ¿Qué necesitas?',
+    step2: '2. Tu estimado referencial',
+    setupLabel: 'Inversión inicial',
+    monthlyLabel: 'Mensual',
+    from: 'desde',
+    perMonth: '/ mes',
+    empty: 'Marca al menos un servicio para ver tu estimado.',
+    name: 'Tu nombre',
+    phone: 'Tu WhatsApp',
+    cta: 'Cotizar por WhatsApp',
+    disclaimer: 'Estimado 100% referencial, no es la cotización final. Precios netos en dólares estadounidenses. El precio exacto se confirma por WhatsApp.',
+    needName: 'Escribe tu nombre y WhatsApp para enviarte la cotización.',
+  },
   en: {
     eyebrow: 'Quote calculator · 3R Core',
     h1: 'Estimate your project',
@@ -122,7 +142,9 @@ export default function Cotizador({ locale }: { locale: string }) {
   // es-US: textos en español, tarifas y moneda de EE.UU.
   const isUs = locale === 'us'
   const isUsd = isEn || isUs
-  const t = COPY[isEn ? 'en' : 'es']
+  // El IDIOMA y la MONEDA son dos cosas distintas: /us habla español y cobra
+  // en dólares. Mezclarlas en una sola variable era el origen del problema.
+  const t = COPY[isEn ? 'en' : isUs ? 'us' : 'es']
   // selección: { [serviceKey]: scopeId }
   const [selected, setSelected] = useState<Record<string, string>>({})
   const [nombre, setNombre] = useState('')
@@ -130,7 +152,24 @@ export default function Cotizador({ locale }: { locale: string }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const scopesOf = (s: Service) => (isUsd ? s.scopesEn : s.scopes)
+  // Antes: `isUsd ? s.scopesEn : s.scopes`, o sea que /us se llevaba las
+  // etiquetas EN INGLÉS junto con los importes en dólares — marco en español y
+  // catálogo en inglés en la misma pantalla. Ahora la etiqueta sale del idioma
+  // y el importe del mercado, cruzando ambas listas por el id del alcance.
+  const scopesOf = (s: Service): Scope[] => {
+    const importes = isUsd ? s.scopesEn : s.scopes
+    if (isEn) return importes
+    return importes.map((sc) => ({
+      ...sc,
+      label: s.scopes.find((es) => es.id === sc.id)?.label ?? sc.label,
+    }))
+  }
+
+  // En Estados Unidos solo se venden tres servicios: web, SEO y tiendas online.
+  // El cotizador ofrecía los siete, incluidos los que allí van con noindex.
+  const SERVICIOS_VISIBLES = isUsd
+    ? SERVICES.filter((s) => ['tienda', 'web', 'seo'].includes(s.key))
+    : SERVICES
 
   const toggle = (s: Service, scopeId: string) => {
     setSelected((prev) => {
@@ -145,7 +184,7 @@ export default function Cotizador({ locale }: { locale: string }) {
     let setup = 0
     let monthly = 0
     const labels: string[] = []
-    for (const s of SERVICES) {
+    for (const s of SERVICIOS_VISIBLES) {
       const scopeId = selected[s.key]
       if (!scopeId) continue
       const scope = scopesOf(s).find((x) => x.id === scopeId)
@@ -209,7 +248,7 @@ export default function Cotizador({ locale }: { locale: string }) {
           <div>
             <h2 className="text-[11px] uppercase tracking-[0.3em] text-white/40 font-bold mb-5">{t.step1}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {SERVICES.map((s) => {
+              {SERVICIOS_VISIBLES.map((s) => {
                 const scopes = scopesOf(s)
                 return (
                   <div key={s.key} className="rounded-[18px] border border-white/10 bg-white/[0.03] p-5">
