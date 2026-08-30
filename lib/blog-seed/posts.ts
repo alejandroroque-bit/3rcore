@@ -763,7 +763,7 @@ export const SEED_POSTS: SeedPost[] = [
     excerpt: "Confundir logo con branding te cuesta caro: terminas pidiendo lo barato y necesitando lo caro. Diferencias claras con ejemplos peruanos y qué pedir según tu momento.",
     og_title: "Logo, identidad visual y branding — Las diferencias claras",
     og_description: "Confundir estos términos te cuesta dinero. Guía clara con ejemplos peruanos.",
-    featured_image: IMG("1561070791-2526d30994b8"),
+    featured_image: IMG("1626785774573-4b799315345d"),
     featured_image_alt: "Diferencia entre logo, identidad visual y branding",
     author_name: AUTHOR,
     content: `<p class="lead"><strong>Resumen ejecutivo:</strong> el <strong>logo</strong> es el símbolo gráfico (S/800–2,500). La <strong>identidad visual</strong> es el sistema completo: logo + colores + tipografía + iconografía + plantillas (S/3,500–6,500). El <strong>branding</strong> es la estrategia de marca aplicada: identidad visual + posicionamiento + tono de voz + manual + aplicaciones (S/6,500–15,000+). Confundir los términos te lleva a pedir lo barato cuando necesitabas lo caro, o al revés. Esta guía te explica qué es cada cosa con ejemplos peruanos para que pidas lo que de verdad necesita tu negocio.</p>
@@ -910,7 +910,7 @@ export const SEED_POSTS: SeedPost[] = [
     excerpt: "Un manual de marca mal hecho es papel mojado. Un manual bien hecho ahorra dinero, tiempo y peleas con proveedores. Las 12 secciones que sí o sí debe tener.",
     og_title: "Manual de marca 2026 — Estructura completa que sí funciona",
     og_description: "Las 12 secciones obligatorias de un manual de marca profesional en 2026.",
-    featured_image: IMG("1561070791-2526d30994b8"),
+    featured_image: IMG("1524758631624-e2822e304c36"),
     featured_image_alt: "Manual de marca estructura plantilla 2026",
     author_name: AUTHOR,
     content: `<p class="lead"><strong>Resumen ejecutivo:</strong> un <strong>manual de marca</strong> profesional en 2026 tiene 12 secciones obligatorias: estrategia, logo + variantes, paleta de colores con códigos exactos, tipografía, iconografía, fotografía, ilustración, tono de voz, aplicaciones digitales, aplicaciones impresas, qué NO hacer, y casos de aplicación. Sin estas 12, el manual es decoración: el equipo y los proveedores lo ignoran porque no resuelve sus dudas reales. Esta guía te explica cada sección con ejemplos peruanos y los errores más comunes que vacían el documento.</p>
@@ -1102,7 +1102,7 @@ export const SEED_POSTS: SeedPost[] = [
     excerpt: "Rebranding cuesta S/15,000+; refresh, S/4,500. Elegir mal duplica el costo o desperdicia el potencial. Cómo decidir según criterios reales y casos peruanos.",
     og_title: "Rebranding vs Refresh — Cuándo cada uno tiene sentido",
     og_description: "Cómo decidir entre cambio profundo o ajuste ligero. Casos peruanos.",
-    featured_image: IMG("1561070791-2526d30994b8"),
+    featured_image: IMG("1558655146-9f40138edfeb"),
     featured_image_alt: "Rebranding vs refresh - cuándo cada uno",
     author_name: AUTHOR,
     content: `<p class="lead"><strong>Resumen ejecutivo:</strong> el <strong>refresh de marca</strong> (S/4,500–8,000) actualiza la identidad visual conservando lo reconocible: ajusta logo, moderniza tipografía, optimiza paleta. El <strong>rebranding</strong> (S/12,000–25,000+) reinventa la marca: nueva estrategia, nueva identidad, posiblemente nuevo nombre. Elegir mal cuesta caro: rebrandear cuando solo necesitabas refresh es desperdicio de presupuesto y reconocimiento; refrescar cuando necesitabas rebranding es maquillar un problema. Esta guía te da los 7 criterios para decidir bien y muestra casos peruanos reales.</p>
