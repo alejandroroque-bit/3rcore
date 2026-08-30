@@ -17,6 +17,7 @@ import { USA3_POSTS_2026_08 } from "./posts-usa3-2026-08"
 import { UGC_PR_POSTS_2026_08 } from "./posts-ugc-pr-2026-08"
 import { USA4_EN_POSTS } from "./posts-usa4-en-2026-08"
 import { USA4_US_POSTS } from "./posts-usa4-us-2026-08"
+import { HUECOS_POSTS_2026_08 } from "./posts-huecos-2026-08"
 
 export interface SeedPost {
   title: string
@@ -3021,4 +3022,5 @@ export const SEED_POSTS: SeedPost[] = [
   ...UGC_PR_POSTS_2026_08,
   ...USA4_EN_POSTS,
   ...USA4_US_POSTS,
+  ...HUECOS_POSTS_2026_08,
 ]

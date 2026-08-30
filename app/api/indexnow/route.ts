@@ -77,6 +77,12 @@ const STATIC_URLS = [
   "https://3rcore.com/us/blogs/cuanto-cobra-una-agencia-de-marketing-digital-en-estados-unidos",
   "https://3rcore.com/us/blogs/como-crear-una-tienda-online-en-estados-unidos",
   "https://3rcore.com/us/blogs/como-vender-online-en-estados-unidos",
+  // 29-ago-2026. Piezas que cubren huecos medidos en el autocompletado.
+  "https://3rcore.com/us/blogs/cuanto-tarda-una-pagina-web-en-aparecer-en-google",
+  "https://3rcore.com/en/blogs/how-long-does-it-take-to-build-a-website",
+  "https://3rcore.com/es/blogs/contrato-agencia-marketing-digital-peru-que-firmar",
+  "https://3rcore.com/es/blogs/como-aparecer-en-chatgpt-negocios-peru",
+  "https://3rcore.com/es/blogs/por-que-mi-pagina-web-no-aparece-en-google-peru",
 ]
 
 export async function GET(req: NextRequest) {

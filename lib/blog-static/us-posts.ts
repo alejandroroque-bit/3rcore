@@ -1,5 +1,6 @@
 import type { BlogPost } from "@/lib/supabase/types"
 import { USA4_US_POSTS } from "@/lib/blog-seed/posts-usa4-us-2026-08"
+import { HUECOS_POSTS_2026_08 } from "@/lib/blog-seed/posts-huecos-2026-08"
 
 /**
  * Artículos de /us servidos DESDE EL CÓDIGO, no desde Supabase.
@@ -59,7 +60,11 @@ function toBlogPost(p: (typeof USA4_US_POSTS)[number], i: number): BlogPost {
   }
 }
 
-export const STATIC_US_POSTS: BlogPost[] = USA4_US_POSTS.map(toBlogPost)
+// Los artículos es-US de otros lotes también se sirven desde aquí mientras el
+// CHECK de la base no admita el locale 'us'.
+const TODOS_US = [...USA4_US_POSTS, ...HUECOS_POSTS_2026_08.filter((p) => p.locale === 'us')]
+
+export const STATIC_US_POSTS: BlogPost[] = TODOS_US.map(toBlogPost)
 
 export function getStaticUsPost(slug: string): BlogPost | null {
   return STATIC_US_POSTS.find((p) => p.slug === slug) ?? null
