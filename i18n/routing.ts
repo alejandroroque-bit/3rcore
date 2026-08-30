@@ -41,6 +41,14 @@ export const pathnames = {
   '/servicios/marketing-clinicas': {es: '/servicios/marketing-clinicas', us: '/servicios/marketing-clinicas', en: '/services/healthcare-marketing'},
   '/servicios/marketing-inmobiliarias': {es: '/servicios/marketing-inmobiliarias', us: '/servicios/marketing-inmobiliario', en: '/services/real-estate-marketing'},
   '/servicios/marketing-ecommerce': {es: '/servicios/marketing-ecommerce', us: '/servicios/marketing-ecommerce', en: '/services/ecommerce-marketing'},
+  // 29-ago-2026. Dos verticales/ejes vacíos y con demanda medida:
+  //  - posicionamiento-ia (GEO): el competidor que domina Lima tiene 118 URLs
+  //    sobre esto y 3rcore CERO, teniendo el único dato propio del mercado
+  //    (su tráfico de IA convierte al 12,23% contra el 4,03% del orgánico).
+  //  - marketing-abogados: vertical vacío en las dos webs, con demanda en el
+  //    autocompletado. 3rcore ya tiene clínicas, inmobiliarias y e-commerce.
+  '/servicios/posicionamiento-ia': {es: '/servicios/posicionamiento-ia', us: '/servicios/posicionamiento-ia', en: '/services/generative-engine-optimization'},
+  '/servicios/marketing-abogados': {es: '/servicios/marketing-abogados', us: '/servicios/marketing-abogados', en: '/services/law-firm-marketing'},
 
   // Páginas ancla de un solo mercado
   '/nearshore-marketing-agency': '/nearshore-marketing-agency',
