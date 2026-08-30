@@ -71,7 +71,8 @@ export const TIENDAS_POSTS_2026_07: SeedPost[] = [
 <p>Una tienda estándar en 2–4 semanas; una a medida, 5–8 semanas.</p>
 
 <h2>Cierre</h2>
-<p>Crear una tienda virtual en Perú cuesta lo que cuesta hacerla bien: desde S/1,500 una tienda profesional, más plataforma y pagos. El error caro no es invertir, es pagar poco por una tienda que no vende. En 3R Core creamos tu <a href="/es/tiendas-virtuales-lima">tienda virtual lista para vender</a> y la conectamos con <a href="/es/posicionamiento-seo">SEO</a> y <a href="/es/servicios/google-ads">Google Ads</a> para que reciba tráfico que compra. <a href="/es/tiendas-virtuales-lima#cotizar">Cotiza tu tienda</a> con nosotros.</p>`,
+<p>Crear una tienda virtual en Perú cuesta lo que cuesta hacerla bien: desde S/1,500 una tienda profesional, más plataforma y pagos. El error caro no es invertir, es pagar poco por una tienda que no vende. En 3R Core creamos tu <a href="/es/tiendas-virtuales-lima">tienda virtual lista para vender</a> y la conectamos con <a href="/es/posicionamiento-seo">SEO</a> y <a href="/es/servicios/google-ads">Google Ads</a> para que reciba tráfico que compra. <a href="/es/tiendas-virtuales-lima#cotizar">Cotiza tu tienda</a> con nosotros.</p>
+<p><em>¿Tu tienda es para el mercado estadounidense?</em> Los costos y las plataformas son otros: <a href="/en/blogs/how-much-does-a-shopify-store-cost">cuánto cuesta realmente una tienda Shopify</a>.</p>`,
   },
   {
     slug: "como-crear-tienda-online-que-venda-peru",
@@ -183,7 +184,8 @@ export const TIENDAS_POSTS_2026_07: SeedPost[] = [
 <p>En 3R Core dejamos las pasarelas configuradas y probadas al crear tu <a href="/es/tiendas-virtuales-lima">tienda virtual</a>, para que cobres sin fricción desde el día uno.</p>
 
 <h2>Cierre</h2>
-<p>Los pagos son donde se gana o se pierde la venta final. Ofrece varios métodos, prueba cada uno y muestra los sellos de seguridad. Si prefieres que quede impecable desde el inicio, en 3R Core <a href="/es/tiendas-virtuales-lima">creamos tu tienda</a> con todos los pagos peruanos integrados. <a href="/es#contacto">Cotiza tu tienda</a>.</p>`,
+<p>Los pagos son donde se gana o se pierde la venta final. Ofrece varios métodos, prueba cada uno y muestra los sellos de seguridad. Si prefieres que quede impecable desde el inicio, en 3R Core <a href="/es/tiendas-virtuales-lima">creamos tu tienda</a> con todos los pagos peruanos integrados. <a href="/es#contacto">Cotiza tu tienda</a>.</p>
+<p><em>¿Vas a cobrar en Estados Unidos?</em> Ahí no hay Culqi ni Yape, y aparece el impuesto de venta por estado: lo cubrimos en <a href="/us/blogs/como-vender-online-en-estados-unidos">cómo vender online en Estados Unidos</a>.</p>`,
   },
   {
     slug: "shopify-woocommerce-tiendanube-peru-cual-elegir",
@@ -240,7 +242,8 @@ export const TIENDAS_POSTS_2026_07: SeedPost[] = [
 <p>Depende de tu negocio. En 3R Core hacemos un diagnóstico y recomendamos sin sesgo la que más te conviene al <a href="/es/tiendas-virtuales-lima">crear tu tienda</a>.</p>
 
 <h2>Cierre</h2>
-<p>No existe la plataforma perfecta, existe la correcta para tu negocio. Shopify para velocidad, WooCommerce para control, Tiendanube para arrancar accesible. En 3R Core te ayudamos a elegir y <a href="/es/tiendas-virtuales-lima">creamos tu tienda</a> en la que mejor te sirva. <a href="/es#contacto">Conversemos</a>.</p>`,
+<p>No existe la plataforma perfecta, existe la correcta para tu negocio. Shopify para velocidad, WooCommerce para control, Tiendanube para arrancar accesible. En 3R Core te ayudamos a elegir y <a href="/es/tiendas-virtuales-lima">creamos tu tienda</a> en la que mejor te sirva. <a href="/es#contacto">Conversemos</a>.</p>
+<p><em>Si vendes en Estados Unidos</em>, la comparación cambia —Tiendanube deja de estar en la ecuación y aparece el recargo de Shopify por pasarela externa—: lo vemos en <a href="/en/blogs/best-ecommerce-platform-for-small-business">la mejor plataforma de e-commerce para pequeños negocios</a> y en <a href="/us/blogs/como-crear-una-tienda-online-en-estados-unidos">cómo crear una tienda online en Estados Unidos</a>.</p>`,
   },
   {
     slug: "errores-crear-tienda-virtual-peru",
@@ -399,6 +402,7 @@ export const TIENDAS_POSTS_2026_07: SeedPost[] = [
 <p>Sí. En 3R Core gestionamos <a href="/es/servicios/google-ads">Google Ads y Google Shopping</a> con feed optimizado y medición real de ventas.</p>
 
 <h2>Cierre</h2>
-<p>Google Shopping y Google Ads son el camino más rápido para que tu tienda venda desde el primer día. La clave es un feed optimizado, medición de ventas reales y escalar lo que rinde. En 3R Core lo gestionamos de punta a punta y lo combinamos con tu <a href="/es/tiendas-virtuales-lima">tienda</a> y <a href="/es/posicionamiento-seo">SEO</a>. <a href="/es#contacto">Cotiza tu campaña</a>.</p>`,
+<p>Google Shopping y Google Ads son el camino más rápido para que tu tienda venda desde el primer día. La clave es un feed optimizado, medición de ventas reales y escalar lo que rinde. En 3R Core lo gestionamos de punta a punta y lo combinamos con tu <a href="/es/tiendas-virtuales-lima">tienda</a> y <a href="/es/posicionamiento-seo">SEO</a>. <a href="/es#contacto">Cotiza tu campaña</a>.</p>
+<p><em>Si tu tienda vende en Estados Unidos</em>, antes de la pauta conviene revisar la plataforma y los cobros: <a href="/us/blogs/como-crear-una-tienda-online-en-estados-unidos">cómo crear una tienda online en Estados Unidos</a>.</p>`,
   },
 ]

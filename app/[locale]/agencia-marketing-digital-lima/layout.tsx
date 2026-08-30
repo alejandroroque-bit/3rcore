@@ -9,7 +9,13 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return generatePageMetadata({
     locale,
     path: '/agencia-marketing-digital-lima',
-    titleEs: 'Agencia de Marketing Digital en Lima, Perú | 3R Core',
+    // 28-ago-2026. Era EXACTAMENTE el mismo title que la home de /es
+    // (app/[locale]/layout.tsx línea 65). Dos URLs con el title idéntico se
+    // disputan la misma consulta y Google elige una: la señal se parte en dos.
+    // Esta landing conserva el eje —agencia de marketing digital en Lima— pero
+    // se diferencia por lo que la home no dice: la oficina, las reseñas y que
+    // los precios están publicados.
+    titleEs: 'Agencia de Marketing Digital en Lima: precios publicados y sin permanencia | 3R Core',
     titleEn: 'Digital Marketing Agency in Lima, Peru | 3R Core',
     descriptionEs: 'Agencia peruana con oficina en La Molina. Precios publicados, sin permanencia y el trabajo es tuyo desde el primer día. 4,7★ en 42 reseñas de Google.',
     descriptionEn: 'Peruvian agency in La Molina, Lima. Published pricing, no lock-in and you own the work from day one. 4.7 stars from 42 Google reviews.',

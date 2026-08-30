@@ -6,6 +6,7 @@ import { createServerClient } from "@/lib/supabase/server"
 import type { BlogPost } from "@/lib/supabase/types"
 import { blogLocale } from "@/lib/blogLocale"
 import { STATIC_US_POSTS } from "@/lib/blog-static/us-posts"
+import { notFound } from "next/navigation"
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
 import { setRequestLocale } from "next-intl/server"
@@ -77,24 +78,36 @@ export default async function BlogsPage(
   // pero son las escritas para ese mercado.
   const locFilter: string[] = [loc]
 
-  const supabase = createServerClient()
-
   const from = (page - 1) * PAGE_SIZE
-  const query = cat
-    ? supabase
-        .from("blog_posts")
-        .select("*, category:blog_categories!inner(name, slug)", { count: "exact" })
-        .eq("status", "published")
-        .in("locale", locFilter)
-        .eq("category.slug", cat)
-    : supabase
-        .from("blog_posts")
-        .select("*, category:blog_categories(name, slug)", { count: "exact" })
-        .eq("status", "published")
-        .in("locale", locFilter)
-  const { data: posts, count } = await query
-    .order("published_at", { ascending: false })
-    .range(from, from + PAGE_SIZE - 1)
+  // 30-ago-2026. Si Supabase falla, este listado devolvía 500 en vez de
+  // degradar: el índice del blog entero caía por un problema de base de datos.
+  // Ahora se traga el fallo y se sirve lo que haya —en /us, los artículos que
+  // viven en el código— con el aviso de que la lista puede estar incompleta.
+  let posts: unknown[] | null = null
+  let count: number | null = null
+  try {
+    const supabase = createServerClient()
+    const query = cat
+      ? supabase
+          .from("blog_posts")
+          .select("*, category:blog_categories!inner(name, slug)", { count: "exact" })
+          .eq("status", "published")
+          .in("locale", locFilter)
+          .eq("category.slug", cat)
+      : supabase
+          .from("blog_posts")
+          .select("*, category:blog_categories(name, slug)", { count: "exact" })
+          .eq("status", "published")
+          .in("locale", locFilter)
+    const res = await query
+      .order("published_at", { ascending: false })
+      .range(from, from + PAGE_SIZE - 1)
+    posts = res.data as unknown[] | null
+    count = res.count
+  } catch {
+    posts = null
+    count = null
+  }
 
   let allPosts: BlogPost[] = (posts || []) as unknown as BlogPost[]
   let total = count || allPosts.length
@@ -115,12 +128,24 @@ export default async function BlogsPage(
   }
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
-  const { data: cats } = await supabase
-    .from("blog_categories")
-    .select("name, slug")
-    .in("locale", locFilter)
-    .order("name")
-  const categories = (cats || []) as { name: string; slug: string }[]
+  // 28-ago-2026. ?page=8 con siete páginas devolvía 200, cero artículos y un
+  // canonical autorreferencial: un soft 404 indexable, y la paginación admite
+  // cualquier número. Fuera de rango se devuelve 404 de verdad.
+  if (page > totalPages && page > 1) notFound()
+
+  let categories: { name: string; slug: string }[] = []
+  try {
+    const supabaseCats = createServerClient()
+    const { data: cats } = await supabaseCats
+      .from("blog_categories")
+      .select("name, slug")
+      .in("locale", locFilter)
+      .order("name")
+    categories = (cats || []) as { name: string; slug: string }[]
+  } catch {
+    // Sin base no hay filtro de categorías, pero el listado se sigue sirviendo.
+    categories = []
+  }
 
   const blogSchema = {
     "@context": "https://schema.org",
