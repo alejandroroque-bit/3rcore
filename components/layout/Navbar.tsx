@@ -231,6 +231,11 @@ const Navbar = () => {
     // Solo /es: la página vive únicamente en el mercado peruano
     ...(currentLocale === "es" ? [{ name: t("nav.cases"), href: "/casos-de-exito" as AppPathname }] : []),
     { name: t("nav.blogs"), href: "/blogs" },
+    // 29-ago-2026. /cotizar es una calculadora real —precios publicados, moneda
+    // por mercado y guardado del lead— y recibía 8 enlaces internos en todo el
+    // sitio, ninguno desde el menú. Es la vía de contacto de menos fricción que
+    // tiene la agencia: no pide hablar con nadie, devuelve un número.
+    { name: t("nav.quote"), href: "/cotizar" },
     { name: t("nav.contact"), href: "/", hash: currentLocale === "en" ? "#contact" : "#contacto", isContact: true },
   ];
 
