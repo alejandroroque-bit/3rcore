@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
     // Check if slug already exists
     const { data: existing } = await (supabase as any)
       .from("blog_posts")
-      .select("id, content, meta_title, meta_description, title")
+      .select("id, content, meta_title, meta_description, title, featured_image, featured_image_alt, og_title, og_description")
       .eq("slug", post.slug)
       .eq("locale", locale)
       .maybeSingle()
@@ -98,11 +98,20 @@ export async function POST(req: NextRequest) {
       // sobreescribía TODOS los posts con published_at = now → decenas de
       // artículos con el mismo timestamp al milisegundo (footprint de
       // publicación en lote y pérdida de la fecha real).
+      // 30-ago-2026. Esta comparación NO miraba la portada, así que corregir una
+      // imagen en el seed no llegaba nunca a la base: se marcaba «unchanged» y
+      // se saltaba. Se descubrió al reemplazar dos fotos de Unsplash que habían
+      // desaparecido (404) y ver que el seed reportaba 0 actualizadas.
+      // Ahora también se comparan la imagen, su alt y los textos de Open Graph.
       const unchanged =
         existing.content === record.content &&
         existing.meta_title === record.meta_title &&
         existing.meta_description === record.meta_description &&
-        existing.title === record.title
+        existing.title === record.title &&
+        existing.featured_image === record.featured_image &&
+        existing.featured_image_alt === record.featured_image_alt &&
+        existing.og_title === record.og_title &&
+        existing.og_description === record.og_description
       if (unchanged) {
         skipped.push(`${post.slug} (unchanged)`)
         continue
