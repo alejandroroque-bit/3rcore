@@ -32,11 +32,19 @@ const CAMBIOS: [string, string][] = [
 
 // Cuatro ficheros no existen en NINGÚN servidor: se comprobaron los dos hosts y
 // todas las variantes de tamaño y de codificación del carácter «×».
+//
+// 30-ago-2026. Dos de esos nombres llevan «×» y la base los guarda con el
+// carácter LITERAL, no con %C3%97. La primera versión de esta lista solo traía
+// la forma codificada —que es la que enseña el navegador— así que no encajaba
+// con nada: el simulacro reportó 49 artículos y dejó fuera precisamente el que
+// tenía la portada muerta. Van las dos formas.
 const MUERTAS = [
   "2023/02/Grupal-3.png",
   "2023/07/Alibaba-Logo-1.png",
   "2023/07/Sin-titulo-1000-%C3%97-600-px.png",
   "2023/04/Sin-titulo-800-%C3%97-480-px.jpg",
+  "2023/07/Sin-titulo-1000-\u00d7-600-px.png",
+  "2023/04/Sin-titulo-800-\u00d7-480-px.jpg",
 ]
 
 // Dos de ellas eran la PORTADA de su artículo, así que hace falta uno nuevo.
