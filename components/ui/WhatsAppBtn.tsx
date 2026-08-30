@@ -1,12 +1,33 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { WA_LEADS } from '@/lib/contact';
 import { trackConversion } from '@/lib/track';
+import { EVENTO_CONSENTIMIENTO, consentimientoResuelto } from '@/lib/cookieConsent';
 
 const WhatsAppBtn = () => {
   const pathname = usePathname() || '';
+
+  // 30-ago-2026. Este botón y el aviso de cookies se pintaban en la misma
+  // esquina con la misma capa (z-50), y el verde tapaba entre el 19% y el 37%
+  // del botón «Aceptar todas» — medido con navegador a 320, 390, 768 y 1440 px.
+  // Quien pulsaba la mitad derecha abría WhatsApp en vez de aceptar, así que no
+  // se daba el consentimiento y GA4 y Ads no llegaban a medir esa visita.
+  // Mientras el aviso esté en pantalla, el botón se OCULTA. Primero probé a
+  // subirlo (bottom-56) y la captura enseñó que entonces tapaba el CTA del hero
+  // «Ver servicios» a 320 px: cambiar un solape por otro. El aviso se cierra a
+  // la primera interacción, así que esconder el botón unos segundos no cuesta
+  // un lead y quita el problema entero.
+  // Todo esto lo cazó una CAPTURA, no una medida: ninguna de las dos páginas
+  // desbordaba y el auditor las daba por buenas.
+  const [avisoAbierto, setAvisoAbierto] = useState(false);
+  useEffect(() => {
+    const revisar = () => setAvisoAbierto(!consentimientoResuelto());
+    revisar();
+    window.addEventListener(EVENTO_CONSENTIMIENTO, revisar);
+    return () => window.removeEventListener(EVENTO_CONSENTIMIENTO, revisar);
+  }, []);
   const phoneNumber = WA_LEADS;
   const message = "Hola vengo de la página web, quiero agendar una reunión.";
 
@@ -18,6 +39,10 @@ const WhatsAppBtn = () => {
   // página de SEO usa el diseño del prototipo (sin ese widget), así que el
   // botón flotante SÍ debe aparecer para no dejar la money page sin CTA fijo.
   if (pathname.includes('/posicionamiento-seo') && !pathname.startsWith('/es/')) return null;
+
+  // Ver arriba: con el aviso de cookies abierto, este botón tapaba el «Aceptar
+  // todas» entre un 19% y un 37% según la anchura.
+  if (avisoAbierto) return null;
 
   // WhatsApp es el canal que más leads reales trae — cada clic queda medido en
   // GA4/GTM con la página de origen (antes el botón era invisible en Analytics).

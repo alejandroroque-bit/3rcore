@@ -309,7 +309,7 @@ export const TIENDAS_POSTS_2026_07: SeedPost[] = [
     excerpt: "Vender online sin depender solo de la publicidad: guía de SEO para e-commerce en Perú para posicionar tu tienda en Google y recibir tráfico que compra, gratis.",
     og_title: "SEO para e-commerce: posiciona tu tienda online en Perú",
     og_description: "SEO técnico, fichas, categorías y schema para que tu tienda venda sin depender solo de Ads.",
-    featured_image: IMG("1562577309-4932fdd64cf1"),
+    featured_image: IMG("1460925895917-afdab827c52f"),
     featured_image_alt: "SEO para ecommerce cómo posicionar tu tienda online en Perú",
     author_name: AUTHOR,
     content: `<p class="lead"><strong>Resumen ejecutivo:</strong> el <strong>SEO para e-commerce</strong> hace que tu tienda aparezca en Google cuando alguien busca lo que vendes — y traiga ventas sin pagar por clic. En Perú, una tienda con buen SEO deja de depender 100% de la publicidad. Las palancas: SEO técnico (velocidad, schema, URLs), fichas de producto optimizadas, categorías que capturan búsquedas y contenido que atrae compradores. Esta guía te muestra cómo posicionar tu tienda online paso a paso.</p>
