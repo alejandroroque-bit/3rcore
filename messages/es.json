@@ -658,7 +658,9 @@
     "ecommerce": "Agencia de marketing digital para e-commerce y tiendas online en Perú",
     "ugc": "Agencia de producción de contenido UGC para campañas en Lima, Perú",
     "influencers": "Agencia de influencer marketing y campañas con creadores en Lima, Perú",
-    "pr": "Agencia de relaciones públicas, prensa y gestión de reputación en Lima, Perú"
+    "pr": "Agencia de relaciones públicas, prensa y gestión de reputación en Lima, Perú",
+    "posicionamientoia": "Posicionamiento en IA (GEO) en Lima: que ChatGPT, Perplexity y Copilot citen a tu empresa",
+    "abogados": "Agencia de marketing digital para estudios de abogados en Lima, Perú"
   },
   "HomeFAQ": {
     "badge": "Preguntas Frecuentes",
@@ -2218,5 +2220,241 @@
       "/precios": "Precios",
       "/servicios": "Servicios"
     }
+  },
+  "PosicionamientoIALanding": {
+    "hero": {
+      "badge": "Posicionamiento en IA · GEO · Lima",
+      "title": "Que ChatGPT, Perplexity y Copilot citen a tu empresa cuando alguien pregunta por lo que vendes",
+      "subtitle": "Cada vez más clientes deciden a quién llamar preguntándole a un asistente de IA en vez de mirar diez resultados de Google. En 3R Core medimos ese canal en nuestra propia analítica: convierte al 12,23% frente al 4,03% del tráfico orgánico. Trabajamos para que la respuesta te nombre a ti.",
+      "cta": "Quiero que la IA me cite"
+    },
+    "intro": {
+      "title": "¿Qué es el posicionamiento en IA y en qué se diferencia del SEO de siempre?",
+      "p1": "El posicionamiento en IA —GEO, por generative engine optimization— consiste en preparar tu web para que los asistentes que responden con texto la usen como fuente y te nombren. No compites por un puesto en una lista: compites por aparecer dentro de una respuesta que el usuario lee entera y de la que casi siempre sale con una decisión ya tomada.",
+      "p2": "La diferencia práctica con el SEO clásico está en la unidad de trabajo. En Google se posiciona una página; en un asistente se cita un pasaje. El modelo no enlaza tu web porque sea bonita ni porque tenga muchas palabras: recorta el fragmento que responde la pregunta y lo atribuye. Si tu página tarda tres párrafos en decir el precio, ese fragmento se lo lleva otro.",
+      "p3": "Lo segundo que cambia es la comprobación. En SEO puedes mirar en qué posición estás. En un asistente no hay posición: hay respuestas que varían entre usuarios y entre días. Quien te prometa «el primer puesto en ChatGPT» te está vendiendo algo que no existe, y conviene saberlo antes de firmar."
+    },
+    "benefits": {
+      "badge": "Qué hacemos",
+      "title": "El trabajo que hace que un modelo te cite",
+      "items": [
+        {
+          "title": "Dejar entrar a los rastreadores",
+          "description": "GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot y Google-Extended tienen que poder leer tu web. Lo comprobamos comparando los bytes que recibe cada agente contra los de un navegador: un 200 no basta, porque un cortafuegos puede servirle una pantalla vacía al bot y una web completa a ti."
+        },
+        {
+          "title": "Reescribir para que el pasaje se pueda extraer",
+          "description": "Respuesta directa en las primeras cincuenta palabras después de cada encabezado, encabezados formulados como la pregunta real, y secciones cortas. Un bloque de ochocientas palabras sin subtítulo no tiene nada que un modelo pueda recortar."
+        },
+        {
+          "title": "Poner cifra, unidad, fecha y fuente",
+          "description": "Los asistentes citan datos concretos y verificables, no adjetivos. «Entre S/2,500 y S/25,000 según el tipo de proyecto, revisado en agosto de 2026» se cita; «precios muy competitivos» no se cita nunca."
+        },
+        {
+          "title": "Marcar la página con datos estructurados",
+          "description": "Organization, Service, FAQPage y Breadcrumb coherentes con lo que dice el texto. El marcado no inventa autoridad, pero le dice al modelo qué es cada cosa y evita que tu propia web se contradiga."
+        },
+        {
+          "title": "Cubrir las preguntas, no las palabras clave",
+          "description": "Nadie le escribe «agencia marketing digital lima» a un asistente: le escribe «¿qué agencia me recomiendas en Lima y cuánto me va a cobrar?». Trabajamos el mapa de preguntas reales, que es más largo y más específico que el de palabras clave."
+        },
+        {
+          "title": "Medir el canal por separado",
+          "description": "En Google Analytics separamos el tráfico que llega de ChatGPT, Perplexity, Copilot, Gemini y Claude, y lo comparamos con el orgánico en sesiones, permanencia y conversión. Sin esa separación no sabes si el trabajo sirve."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo empezamos",
+      "title": "Los primeros noventa días",
+      "steps": [
+        {
+          "title": "1 · Diagnóstico de acceso y de forma",
+          "description": "Comprobamos si los rastreadores de IA entran y medimos la citabilidad real de tus páginas: dónde está la respuesta, si los encabezados son preguntas, si hay datos con fuente."
+        },
+        {
+          "title": "2 · Mapa de preguntas",
+          "description": "Las preguntas que hace de verdad quien está a punto de contratarte, sacadas del autocompletado, de Search Console y de lo que te preguntan por WhatsApp."
+        },
+        {
+          "title": "3 · Reescritura de las páginas que ya tienen tráfico",
+          "description": "Primero las que ya reciben visitas: cuesta menos hacer citable una página que funciona que crear una nueva desde cero."
+        },
+        {
+          "title": "4 · Contenido nuevo donde falte respuesta",
+          "description": "Escalonado, no de golpe. Una web que publica cuarenta páginas en una semana parece lo que es."
+        },
+        {
+          "title": "5 · Medición mensual del canal",
+          "description": "Sesiones, permanencia y conversión de cada asistente frente al orgánico, y qué páginas están recibiendo esas visitas."
+        }
+      ]
+    }
+  },
+  "PosicionamientoIAFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Posicionamiento en IA — preguntas frecuentes",
+    "faqs": {
+      "q1": {
+        "question": "¿Qué es el posicionamiento en IA o GEO?",
+        "answer": "Es el trabajo de preparar una web para que los asistentes de inteligencia artificial —ChatGPT, Perplexity, Copilot, Gemini o Claude— la usen como fuente y nombren a la empresa dentro de sus respuestas. Se diferencia del SEO clásico en que no se compite por un puesto en una lista de resultados, sino por que un fragmento concreto de la página sea el que el modelo recorte y atribuya."
+      },
+      "q2": {
+        "question": "¿Cuánto cuesta el posicionamiento en IA en 3R Core?",
+        "answer": "Va dentro del servicio de posicionamiento SEO, que cuesta S/1,800 al mes en Perú y $500 al mes para clientes de Estados Unidos. No lo cobramos aparte porque el trabajo se solapa: la misma reescritura que hace citable un pasaje mejora la página en Google. Precios netos, sin contratos forzosos."
+      },
+      "q3": {
+        "question": "¿Se puede garantizar aparecer en ChatGPT?",
+        "answer": "No, y desconfía de quien lo garantice. Las respuestas de un asistente varían entre usuarios, entre países y entre días, y no existe una posición que puedas comprobar como en Google. Lo que sí se puede hacer es aumentar de forma verificable las probabilidades: dejar entrar a los rastreadores, estructurar los pasajes para que se puedan extraer y publicar datos con fuente. Y lo que sí se puede medir es el tráfico que llega de esos asistentes, que es lo que acabamos reportando."
+      },
+      "q4": {
+        "question": "¿De verdad llega tráfico desde los asistentes de IA?",
+        "answer": "Sí, y en 3R Core lo medimos en nuestra propia analítica antes de venderlo a nadie. En una ventana de noventa días, el tráfico procedente de ChatGPT, Perplexity y Copilot convirtió al 12,23%, frente al 4,03% del tráfico orgánico de Google. Es menos volumen, pero llega mucho más decidido: la persona ya leyó una respuesta y entra a confirmar."
+      },
+      "q5": {
+        "question": "¿Sirve de algo el fichero llms.txt?",
+        "answer": "Es un fichero de texto en la raíz del dominio que resume qué hace la empresa y enlaza sus páginas principales, pensado para que un modelo lo lea. Lo implementamos porque cuesta poco y no hace daño, pero seamos honestos: no hay evidencia pública de que los grandes asistentes lo usen hoy como señal, a diferencia de robots.txt o del sitemap, que sí están documentados. Nosotros lo tratamos como una apuesta barata, no como la palanca principal."
+      },
+      "q6": {
+        "question": "¿Hay que bloquear a los bots de IA para proteger el contenido?",
+        "answer": "Es una decisión de negocio y depende de qué vendas. Si vives de que te encuentren y te contraten, bloquearlos es cerrarte un canal que hoy convierte mejor que el orgánico. Si vendes el contenido en sí —cursos, informes de pago, una base de datos— la conversación es otra. Te decimos lo que implica cada opción y decides tú; no lo bloqueamos ni lo abrimos sin hablarlo."
+      },
+      "q7": {
+        "question": "¿Cuánto tarda en notarse?",
+        "answer": "No damos una fecha porque no la controlamos. Lo que sí ocurre rápido es la parte técnica: si un rastreador estaba bloqueado y se desbloquea, el efecto se ve en semanas. La parte de contenido va al ritmo de la publicación y de la indexación. Lo que sí te garantizamos es un reporte mensual que separa el canal de IA del resto, para que veas el movimiento real en vez de una promesa."
+      },
+      "q8": {
+        "question": "¿Esto sustituye al SEO?",
+        "answer": "No. Los asistentes se apoyan en buena medida en lo que ya está indexado, así que una web que no aparece en ningún buscador tampoco suele aparecer citada. El posicionamiento en IA es una capa encima del SEO, no un reemplazo: si tuvieras que elegir uno solo, empieza por el SEO técnico y de contenido, y te lo diríamos igual aunque nos costara la venta."
+      }
+    }
+  },
+  "PosicionamientoIASEO": {
+    "seoTitle": "Posicionamiento en IA (GEO) en Lima — que ChatGPT, Perplexity y Copilot citen tu empresa",
+    "p1": "3R Core trabaja el posicionamiento en inteligencia artificial —conocido como GEO— para empresas de Lima y de todo el Perú: preparamos tu web para que ChatGPT, Perplexity, Copilot, Gemini y Claude la usen como fuente y te nombren cuando alguien pregunta por lo que vendes. Va dentro del servicio de SEO, que cuesta S/1,800 al mes, sin contratos forzosos.",
+    "p2": "La diferencia con el SEO clásico es la unidad de trabajo: en Google se posiciona una página y en un asistente se cita un pasaje. El modelo recorta el fragmento que responde la pregunta y lo atribuye, así que una página que tarda tres párrafos en dar el dato pierde la cita aunque esté bien posicionada.",
+    "p3": "Lo primero que revisamos es el acceso. GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot y Google-Extended tienen que poder leer la web, y eso se comprueba comparando los bytes que recibe cada agente contra los de un navegador: un código 200 no prueba nada, porque un cortafuegos puede servirle una pantalla vacía al rastreador y la página completa a una persona.",
+    "p4": "Después viene la forma del texto: respuesta directa en las primeras cincuenta palabras tras cada encabezado, encabezados escritos como la pregunta que la gente teclea, secciones cortas y datos con cifra, unidad, fecha y fuente. Los asistentes citan hechos verificables, no adjetivos comerciales.",
+    "p5": "Por qué le dedicamos un servicio a esto: en nuestra propia analítica, en una ventana de noventa días, el tráfico llegado desde asistentes de IA convirtió al 12,23% frente al 4,03% del orgánico de Google. Es menos volumen y mucha más intención, porque la persona ya leyó una respuesta y entra a confirmar una decisión que casi ha tomado.",
+    "p6": "Lo que no hacemos es prometer posiciones. En un asistente no existe una posición comprobable: las respuestas varían entre usuarios, países y días. Lo que sí entregamos es un reporte mensual que separa el canal de IA del resto del tráfico y muestra qué páginas lo están recibiendo.",
+    "relatedTitle": "Servicios relacionados"
+  },
+  "MarketingAbogadosLanding": {
+    "hero": {
+      "badge": "Marketing jurídico · Lima, Perú",
+      "title": "Marketing digital para estudios de abogados en Lima que se mide en consultas, no en visitas",
+      "subtitle": "Quien busca un abogado no está comparando precios: está resolviendo un problema que le quita el sueño y quiere saber a quién puede confiárselo. Trabajamos la ficha de Google, el posicionamiento local y el contenido que genera esa confianza antes de la primera llamada.",
+      "cta": "Quiero más consultas"
+    },
+    "intro": {
+      "title": "¿Por qué el marketing para abogados no se parece al del resto?",
+      "p1": "Porque la decisión es de confianza y no de precio. En casi cualquier otro sector el cliente compara opciones y elige la más conveniente; con un estudio jurídico, la persona llega asustada, con un plazo encima y sin saber distinguir a un buen abogado de uno malo. Elige a quien le transmite que ha resuelto antes un caso como el suyo.",
+      "p2": "Eso cambia dónde se juega el trabajo. La búsqueda casi siempre es local y urgente —«abogado laboral en Lima», «qué hago si me despiden»— y se resuelve en el mapa antes que en la web: la ficha de Google, con sus reseñas y su categoría bien puesta, decide más llamadas que la portada. Es lo primero que ordenamos.",
+      "p3": "Y cambia el contenido. Una página que explica con claridad qué hacer en las primeras 48 horas de un despido capta a alguien que necesita un abogado hoy. Un artículo genérico sobre «la importancia del derecho laboral» no capta a nadie. Escribimos lo primero."
+    },
+    "benefits": {
+      "badge": "Qué trabajamos",
+      "title": "Lo que mueve el teléfono de un estudio jurídico",
+      "items": [
+        {
+          "title": "Ficha de Google ordenada",
+          "description": "Categoría correcta, áreas de práctica como servicios, horario real, fotos del estudio y respuesta a todas las reseñas. En un negocio local con oficina, el mapa reparte más llamadas que la web entera."
+        },
+        {
+          "title": "Páginas por área de práctica",
+          "description": "Laboral, familia, penal, civil, notarial y corporativo tienen consultas, urgencias y clientes distintos. Una sola página de «servicios legales» no compite con ninguna de ellas; seis páginas específicas sí."
+        },
+        {
+          "title": "Contenido que responde la urgencia",
+          "description": "Qué hacer, en qué plazo y con qué documentos. Ese es el contenido que lee alguien con un problema encima, y el que hace que te llame a ti y no al siguiente resultado."
+        },
+        {
+          "title": "Reseñas, que aquí pesan el doble",
+          "description": "Montamos el circuito para pedirlas sin incomodar al cliente y respondemos todas, también las malas. En un servicio de confianza, la reseña es la prueba que sustituye a la recomendación de un conocido."
+        },
+        {
+          "title": "Web rápida y clara en el móvil",
+          "description": "Buena parte de estas búsquedas se hacen desde el teléfono y en un mal momento. Si la web tarda o el teléfono no se puede pulsar, la consulta se va a otro estudio."
+        },
+        {
+          "title": "Medición de consultas reales",
+          "description": "Contamos llamadas, WhatsApp y formularios enviados, no visitas. Un reporte que celebra el tráfico y no dice cuántas consultas entraron no sirve para decidir nada."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "Del primer diagnóstico a las primeras consultas",
+      "steps": [
+        {
+          "title": "1 · Diagnóstico del estudio",
+          "description": "Qué áreas quieren llenar, cuáles ya funcionan por recomendación y de dónde llegan hoy las consultas. Sin eso, cualquier plan es genérico."
+        },
+        {
+          "title": "2 · Ficha de Google primero",
+          "description": "Es lo más rápido y lo que más mueve. Categoría, servicios, fotos, horario y reseñas antes de tocar una sola línea de la web."
+        },
+        {
+          "title": "3 · Página por área de práctica",
+          "description": "Empezando por la que el estudio quiere llenar, no por la que más se busca: no sirve traer casos que no se quieren tomar."
+        },
+        {
+          "title": "4 · Contenido de urgencia, escalonado",
+          "description": "Publicación repartida en el tiempo. Un estudio que publica veinte artículos en una semana no parece más solvente, parece automatizado."
+        },
+        {
+          "title": "5 · Reporte mensual de consultas",
+          "description": "Cuántas entraron, por qué área y por qué canal. Y qué cambia el mes siguiente."
+        }
+      ]
+    }
+  },
+  "MarketingAbogadosFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Marketing para abogados — preguntas frecuentes",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto cuesta el marketing digital para un estudio de abogados en Lima?",
+        "answer": "En 3R Core se cotiza con los mismos precios publicados que el resto de servicios: posicionamiento SEO S/1,800 al mes, gestión de Google Ads S/1,800 al mes más la pauta, y página web desde S/1,800. No cobramos una tarifa distinta por ser un estudio jurídico. Precios netos en soles, sin IGV y sin contratos forzosos; puedes calcular el estimado de tu caso en nuestro cotizador."
+      },
+      "q2": {
+        "question": "¿Qué da más resultado para un abogado, la web o la ficha de Google?",
+        "answer": "La ficha de Google, casi siempre, y por un margen amplio. La mayoría de búsquedas de abogado son locales y urgentes, y se resuelven en el mapa: la persona ve tres estudios con sus reseñas y llama. Por eso empezamos siempre por la ficha, aunque la web esté por rehacer: es lo que da resultado antes."
+      },
+      "q3": {
+        "question": "¿Puede un abogado hacer publicidad de sus servicios en Perú?",
+        "answer": "La publicidad de servicios legales está sujeta a las normas deontológicas del colegio profesional correspondiente, que regulan cómo puede comunicarse un abogado. No reproducimos aquí ningún artículo concreto porque esas normas cambian y una cita equivocada te perjudicaría a ti, no a nosotros: antes de lanzar cualquier campaña revisamos contigo el código de ética de tu colegio y ajustamos los mensajes. Lo que sí podemos afirmar es que las prácticas que recomendamos —ficha de Google, contenido informativo y reseñas de clientes reales— son las más conservadoras del abanico."
+      },
+      "q4": {
+        "question": "¿Debo tener una página por cada área de práctica?",
+        "answer": "Sí, si quieres captar por esas áreas. Alguien que busca «abogado laboral» y alguien que busca «abogado de familia» tienen problemas distintos, urgencias distintas y palabras distintas. Una sola página de «servicios legales» no responde bien a ninguno de los dos, y en resultados de búsqueda pierde contra estudios que sí tienen la página específica."
+      },
+      "q5": {
+        "question": "¿Cómo consigo reseñas sin incomodar al cliente?",
+        "answer": "Pidiéndolas en el momento correcto: cuando el caso termina bien y el cliente lo acaba de saber. Montamos el circuito para que sea un mensaje breve con el enlace directo, no una petición incómoda en persona. Y se responden todas, incluidas las negativas, porque la respuesta la lee el siguiente cliente potencial."
+      },
+      "q6": {
+        "question": "¿Cuánto tarda en llegar la primera consulta?",
+        "answer": "Depende del área y de la competencia que tenga en tu ciudad, y no damos una fecha porque no la controlamos. Lo que suele moverse antes es la ficha de Google, en semanas, porque no depende de posicionar contenido nuevo. El posicionamiento orgánico de páginas nuevas es más lento y va por meses. Cualquiera que te prometa una fecha exacta te está prometiendo algo que no puede cumplir."
+      },
+      "q7": {
+        "question": "¿Trabajan con estudios pequeños o solo con firmas grandes?",
+        "answer": "Con los dos. Un abogado que trabaja solo suele necesitar exactamente lo mismo que una firma, en menor escala: ficha ordenada, una web que cargue rápido y dos o tres páginas de área bien escritas. De hecho, un estudio pequeño con una sola área bien trabajada compite mejor que una firma grande con una web genérica."
+      },
+      "q8": {
+        "question": "¿Qué NO recomendamos para un estudio jurídico?",
+        "answer": "Comprar bases de datos de contactos, prometer resultados de casos en la publicidad y publicar contenido que roce el consejo legal sin matices. Lo primero no funciona y molesta; lo segundo puede meterte en un problema con tu colegio; lo tercero genera consultas de gente que espera algo que no dijiste. Preferimos decir esto antes de empezar que discutirlo después."
+      }
+    }
+  },
+  "MarketingAbogadosSEO": {
+    "seoTitle": "Marketing digital para abogados y estudios jurídicos en Lima, Perú",
+    "p1": "3R Core hace marketing digital para estudios de abogados en Lima y en todo el Perú: ficha de Google, posicionamiento local por área de práctica y contenido que genera confianza antes de la primera llamada. Se cotiza con los precios publicados de la agencia —SEO S/1,800 al mes, web desde S/1,800— sin contratos forzosos.",
+    "p2": "El marketing jurídico no se parece al del resto de sectores porque la decisión es de confianza y no de precio. Quien busca un abogado llega con un plazo encima y sin saber distinguir a uno bueno de uno malo, así que elige a quien le transmite que ya resolvió un caso como el suyo.",
+    "p3": "Por eso empezamos por la ficha de Google. La mayoría de estas búsquedas son locales y urgentes y se resuelven en el mapa: la persona ve tres estudios con sus reseñas y llama. La ficha, con su categoría correcta, sus áreas de práctica como servicios y sus reseñas respondidas, reparte más llamadas que la portada de la web.",
+    "p4": "Después, una página por área de práctica. Laboral, familia, penal, civil, notarial y corporativo tienen consultas, urgencias y clientes distintos, y una sola página de «servicios legales» no compite con ninguna de ellas.",
+    "p5": "El contenido que funciona es el que responde a la urgencia: qué hacer, en qué plazo y con qué documentos. Ese lo lee alguien que necesita un abogado hoy. Un artículo general sobre la importancia del derecho laboral no lo lee nadie que esté a punto de contratar.",
+    "p6": "Sobre publicidad y normas deontológicas: la comunicación de servicios legales está sujeta a las reglas del colegio profesional correspondiente. No citamos artículos concretos porque esas normas cambian y una cita equivocada perjudicaría al estudio; antes de lanzar campañas las revisamos con el cliente. Las prácticas que recomendamos —ficha de Google, contenido informativo y reseñas reales— son las más conservadoras del abanico.",
+    "relatedTitle": "Servicios relacionados"
   }
 }

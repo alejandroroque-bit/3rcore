@@ -45,6 +45,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/servicios/marketing-clinicas', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/servicios/marketing-inmobiliarias', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/servicios/marketing-ecommerce', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/servicios/posicionamiento-ia', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/servicios/marketing-abogados', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/blogs', priority: 0.7, changeFrequency: 'daily' as const },
     { path: '/preguntas', priority: 0.6, changeFrequency: 'monthly' as const },
     { path: '/politicas', priority: 0.3, changeFrequency: 'yearly' as const },
@@ -87,6 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/servicios/ugc', '/servicios/influencer-marketing', '/servicios/relaciones-publicas',
     '/servicios/meta-ads', '/servicios/tiktok-ads', '/servicios/performance-marketing',
     '/servicios/email-marketing', '/servicios/marketing-clinicas',
+    '/servicios/posicionamiento-ia', '/servicios/marketing-abogados',
     '/servicios/marketing-inmobiliarias', '/servicios/marketing-ecommerce',
   ]
 
