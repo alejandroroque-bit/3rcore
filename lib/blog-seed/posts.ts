@@ -59,11 +59,11 @@ export const SEED_POSTS: SeedPost[] = [
     author_name: AUTHOR,
     content: `<p class="lead"><strong>Resumen ejecutivo:</strong> en 2026 una <strong>página web profesional en Perú</strong> cuesta entre <strong>S/2,500 y S/25,000</strong> según tipo, alcance e integraciones. Una landing de campaña arranca en S/2,500, una web corporativa entre S/4,500 y S/9,000, un e-commerce con Shopify o WooCommerce desde S/6,500, y un portal con sistema interno desde S/12,000. Lo que mueve el precio no es la cantidad de páginas, sino las integraciones, el SEO técnico, la velocidad y el copy. Esta guía te explica cuánto pagar por cada tipo de proyecto, qué debe incluir y cómo evitar las trampas más comunes.</p>
 
-<h2>Por qué los precios de páginas web en Perú varían tanto</h2>
+<h2>¿Por qué varían tanto los precios de páginas web en Perú?</h2>
 <p>Si pides 5 cotizaciones en Lima para "una página web", recibes precios entre <strong>S/500 y S/15,000 para el mismo brief</strong>. La diferencia no es estafa: es que cada estudio o agencia define "página web" distinto. Algunos cobran S/500 por una plantilla rellenada en WordPress sin estrategia; otros cobran S/15,000 por una web a medida con investigación de mercado, copywriting profesional, SEO técnico, integración con CRM y testing. Ambos productos son legítimos para clientes distintos.</p>
 <p>Para no perderte, lo primero es entender <strong>cuál es el tipo de proyecto que tu negocio realmente necesita</strong>. Después puedes comparar peras con peras.</p>
 
-<h2>Tabla de precios 2026 por tipo de página web en Perú</h2>
+<h2>¿Cuánto cuesta una página web en Perú en 2026, por tipo de proyecto?</h2>
 <table>
 <thead><tr><th>Tipo de proyecto</th><th>Rango de precio (PEN)</th><th>Plazo típico</th><th>Para quién</th></tr></thead>
 <tbody>
@@ -140,7 +140,7 @@ export const SEED_POSTS: SeedPost[] = [
 <p>Entre S/200 y S/1,200 al mes según el alcance. Plan básico (backups + actualizaciones de seguridad): S/200–400. Plan medio (incluye edición de contenido, soporte): S/500–800. Plan SEO + mantenimiento integral: S/900–1,500.</p>
 
 <h3>¿Cuánto cuesta el hosting y dominio en Perú?</h3>
-<p>Dominio .com: USD 12/año. Dominio .pe: S/45/año (en Punto.pe). Hosting compartido decente: S/180–600/año. Hosting Shopify (incluye plataforma): USD 39/mes. Hosting cloud (DigitalOcean, Vercel): USD 8–25/mes según tráfico.</p>
+<p>Dominio .com: USD 12/año. Dominio .pe: S/45/año (en Punto.pe). Hosting compartido decente: S/180–600/año. Shopify: plan Basic USD 25/mes facturado mes a mes o USD 19/mes con pago anual; Grow USD 65/mes y Advanced USD 399/mes (<a href="https://www.shopify.com/pricing" rel="nofollow noopener" target="_blank">shopify.com/pricing</a>, consultado el 28-ago-2026). Hosting cloud (DigitalOcean, Vercel): USD 8–25/mes según tráfico.</p>
 
 <h3>¿Una página web me ayuda a vender más en Perú?</h3>
 <p>Sí, pero solo si está pensada como herramienta comercial. Una web que es solo "presencia online" trae visitas; una web con <strong>copy enfocado en conversión, formularios bien diseñados y SEO bien hecho</strong> trae clientes calificados. La diferencia entre ambas es la inversión inicial: la primera cuesta S/800, la segunda S/4,500–9,000, y solo la segunda paga sola en 6–12 meses.</p>
@@ -148,6 +148,9 @@ export const SEED_POSTS: SeedPost[] = [
 <h3>¿Conviene Shopify o WooCommerce para vender en Perú?</h3>
 <p>Profundizamos en eso en nuestra <a href="/es/blogs/shopify-vs-woocommerce-peru-2026">guía Shopify vs WooCommerce 2026</a> con tabla comparativa por costo total, integraciones peruanas y casos de uso reales.</p>
 
+
+<h3>¿Cuánto cobra 3R Core por una página web en Perú?</h3>
+<p>Landing page profesional desde <strong>S/1,800</strong>, web corporativa de 5 a 8 secciones desde <strong>S/4,500</strong> y tienda online sobre Shopify o WooCommerce desde <strong>S/6,500</strong>. Precios netos en soles, sin IGV y sin contratos forzosos. Cada propuesta incluye diseño en Figma, desarrollo responsive, SEO técnico básico, formulario de contacto y Google Analytics; el primer año incluye dominio, SSL y hosting. Están publicados en <a href="/es/precios">nuestra página de precios</a>.</p>
 <h2>Cierre: cuánto deberías invertir tú</h2>
 <p>Si recién arrancas: invierte en una <strong>landing profesional bien hecha (S/2,500–4,500)</strong> antes que una web grande mediocre. Si ya tienes negocio establecido y estás listo para escalar: una <strong>web corporativa con SEO desde el día uno (S/4,500–9,000)</strong>. Si vendes producto físico: <strong>e-commerce serio (S/6,500+)</strong>. Y si tu objetivo final es <strong>aparecer en Google cuando tus clientes buscan</strong>, una web bien hecha es solo el primer paso: necesitas también <a href="/es/posicionamiento-seo">posicionamiento SEO</a> mensual.</p>
 <p>En 3R Core diseñamos páginas web en Lima con foco en <strong>SEO técnico, conversión y velocidad</strong> desde el primer brief. Si quieres una cotización honesta para tu proyecto, <a href="/es#contacto">conversemos</a> y te armamos propuesta sin compromiso. También puedes leer cómo <a href="/es/blogs/como-elegir-agencia-diseno-web-lima">elegir la mejor agencia de diseño web en Lima</a> para no equivocarte en la selección.</p>`,
