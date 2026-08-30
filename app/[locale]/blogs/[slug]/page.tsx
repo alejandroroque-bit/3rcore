@@ -98,7 +98,20 @@ function slugOffset(slug: string, poolSize: number, take: number): number {
 }
 
 async function getRelatedPosts(currentId: string, categoryId: string | null, locale: string, limit = 3, currentSlug = ''): Promise<BlogPost[]> {
-  const POOL = 12
+  // 30-ago-2026. POOL era 12, y la consulta pide los 12 MÁS RECIENTES de la
+  // categoría. La rotación por hash del slug repartía dentro de esos 12, así
+  // que todo el blog acababa enlazando al mismo puñado: medido en vivo sobre 35
+  // artículos, 105 enlaces de este bloque iban a solo 12 destinos, y 109 de los
+  // 148 posts de /es no recibían NI UNO.
+  //
+  // Importa más de lo que parece porque el dominio no tiene un solo enlace
+  // externo —Bing devuelve 0 en GetLinkCounts—, así que el reparto interno es
+  // la única autoridad que hay para mover.
+  //
+  // Con la ventana ancha, la misma rotación determinista reparte sobre hasta 60
+  // artículos por categoría en vez de 12. Sigue siendo una sola consulta y
+  // devuelve las mismas 3 tarjetas.
+  const POOL = 60
   try {
   const supabase = createServerClient()
   let query = supabase
