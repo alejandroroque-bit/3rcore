@@ -20,6 +20,9 @@ const Footer = () => {
   const footerServices: { href: AppPathname; label: string }[] =
     locale === 'es'
       ? [
+          // El índice de servicios recibía 2 enlaces internos mientras sus
+          // propias hijas recibían entre 41 y 71. La jerarquía estaba del revés.
+          { href: '/servicios', label: tn('services.todos') },
           { href: '/servicios/branding', label: tn('services.branding') },
           { href: '/servicios/socialmedia', label: tn('services.socialMedia') },
           { href: '/servicios/google-ads', label: tn('services.googleAds') },
@@ -27,6 +30,7 @@ const Footer = () => {
         ]
       : locale === 'en'
       ? [
+          { href: '/servicios', label: tn('services.todos') },
           { href: '/servicios/web-development', label: tn('services.webDesign') },
           { href: '/posicionamiento-seo', label: tn('services.seo') },
           { href: '/tiendas-virtuales-lima', label: tn('services.ecommerce') },
@@ -37,6 +41,7 @@ const Footer = () => {
           { href: '/nearshore-marketing-agency', label: tn('services.nearshore') },
         ]
       : [
+          { href: '/servicios', label: tn('services.todos') },
           { href: '/servicios/web-development', label: tn('services.webDesign') },
           { href: '/posicionamiento-seo', label: tn('services.seo') },
           { href: '/tiendas-virtuales-lima', label: tn('services.ecommerce') },
