@@ -126,7 +126,7 @@ const ALT: Record<string, Record<string, string>> = {
     "Backlinks3R.png": "Gráfico del crecimiento del comercio electrónico en Perú, con datos de la Cámara Peruana de Comercio Electrónico",
   },
   "tendencias-en-diseno-de-paginas-web-para-2024": {
-    "Imagen-de-un-sitio-web-responsivo-en-diferentes-dispositivos.jpg": "Un mismo sitio web mostrado en portátil, tableta y móvil, con el diseño adaptado a cada pantalla",
+    "Imagen-de-un-sitio-web-responsivo-en-diferentes-dispositivos.png": "Un mismo sitio web mostrado en portátil, tableta y móvil, con el diseño adaptado a cada pantalla",
     "Grafico-de-velocidad-de-carga-de-una-pagina-web.png": "Ilustración de un cohete despegando desde un portátil, sobre la velocidad de carga de una página web",
     "Ejemplo-de-un-formulario.png": "Formulario de contacto de una web, con los campos de datos junto a un mapa de ubicación",
   },
