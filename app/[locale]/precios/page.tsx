@@ -46,15 +46,19 @@ const COPY = {
   },
   en: {
     hero: 'Digital Marketing Pricing for US Clients',
-    sub: 'Branding from $500 USD, SEO $500/month, Social Media $800/month, Google Ads management $800/month and websites from $850 USD. Net prices in US Dollars for clients based in the United States. Peru-based pricing in Peruvian Soles is shown on our Spanish pricing page.',
+    // 28-ago-2026. Esta página seguía vendiendo branding, social media y Google
+    // Ads en EE.UU. La decisión comercial del 12-ago es que allí se venden TRES
+    // servicios —web, SEO y tiendas online— y ya está aplicada en el menú, el
+    // pie, el sitemap y el `noindex` de esas páginas. /en/pricing y /us/precios
+    // eran el último sitio donde no se había aplicado: la web ofrecía un
+    // catálogo que ella misma pide no indexar. Los servicios retirados siguen
+    // vivos y con precio en /es/precios, que es donde sí se venden.
+    sub: 'SEO $500/month, websites from $850 USD and online stores from $1,750 USD. Net prices in US Dollars for clients based in the United States. Peru-based pricing in Peruvian Soles is shown on our Spanish pricing page.',
     contactCta: 'Let’s talk about your project',
     contactPath: '/#contact',
     note: 'No mandatory contracts, monthly reports and progressive results. Prices shown are reference packages; each proposal is tailored after an initial meeting.',
     tiers: [
-      { name: 'Starter branding', price: 'from $500 USD', period: '/ project', desc: 'Visual identity design. Detailed proposal after an initial discovery session.', feats: ['Logo','Brand manual','Color palette','Corporate typography','Essential applications'], href: '/servicios/branding', cta: 'See branding' },
-      { name: 'Social media', price: '$800 USD', period: '/ month', desc: 'TikTok, Instagram, Facebook and LinkedIn management with 8–12 pieces per month.', feats: ['8–12 pieces / month','TikTok + IG + FB + LinkedIn','Edited Reels / TikToks','Community management','Monthly report'], href: '/servicios/socialmedia', cta: 'See social media' },
       { name: 'SEO positioning', price: '$500 USD', period: '/ month', desc: 'Audit, planning, optimization, scaling and monthly reports. Continuous strategy with no mandatory contracts and progressive results.', feats: ['Initial audit','Planning','On-page optimization','Scaling','Monthly report'], href: '/posicionamiento-seo', cta: 'See SEO', highlight: true },
-      { name: 'Google Ads management', price: '$800 USD', period: '/ month', desc: 'Management fee for Search, Performance Max, YouTube, Display, Shopping and Remarketing campaigns.', feats: ['Campaign setup','Continuous optimization','Conversion tracking','Monthly report'], href: '/servicios/google-ads', cta: 'See Google Ads', extra: '+ minimum ad spend $400/month paid directly to Google.' },
     ],
     webTitle: 'Web design & development',
     webNote: 'Custom quote after initial meeting. Each proposal includes Figma design, responsive development, basic technical SEO, contact form and Google Analytics integration. First year includes domain, SSL and hosting.',
@@ -74,10 +78,10 @@ const COPY = {
     contactDesc: 'Tell us your goal and we build a custom proposal in the first meeting.',
     faqTitle: 'Pricing frequently asked questions',
     faqs: [
-      { q: 'How much does a digital marketing agency cost?', a: 'It depends on the mix of services. Reference monthly ranges: startups $750–$1,400, SMBs $1,500–$3,600 and mid-market $3,600–$9,000. Per service: SEO $500/month, Google Ads management from $800/month (plus ad spend), social media $800/month, branding from $500 and websites from $850.' },
+      { q: 'How much does a digital marketing agency cost?', a: 'It depends on the mix of services. Reference monthly ranges: startups $750–$1,400, SMBs $1,500–$3,600 and mid-market $3,600–$9,000. In the United States we sell three services: SEO at $500/month, websites from $850 and online stores from $1,750.' },
       { q: 'How much does an online store or e-commerce cost?', a: 'An online store on Shopify or WooCommerce starts from $1,750 USD, with catalog, payment gateway, inventory management and admin panel.' },
       { q: 'How much does SEO positioning cost?', a: 'SEO costs $500 USD per month and includes audit, planning, on-page optimization, scaling and a monthly report. No mandatory contracts and progressive results.' },
-      { q: 'How much should I invest in Google Ads spend?', a: 'On top of the management fee (from $800/month), we recommend a minimum ad spend of $400/month, paid directly to Google.' },
+      { q: 'Do you handle branding, social media or Google Ads for U.S. clients?', a: 'In the United States we focus on three services: websites, SEO and online stores. Branding, social media and paid media are part of our catalog in Peru, and we would rather say so than sell a service we are not focused on for this market.' },
       { q: 'Are prices final? Are there mandatory contracts?', a: 'Prices are net; each proposal is tailored after an initial meeting. We do not use mandatory contracts: the service is monthly, with reports and progressive results.' },
     ],
   },
@@ -85,15 +89,12 @@ const COPY = {
   // pasarelas peruanas y con los precios en dólares del bloque 'en'.
   us: {
     hero: 'Precios de Marketing Digital para Negocios en Estados Unidos',
-    sub: 'Branding desde $500, SEO $500/mes, Social Media $800/mes, gestión de Google Ads $800/mes y páginas web desde $850. Precios netos en dólares para clientes en Estados Unidos.',
+    sub: 'SEO $500/mes, páginas web desde $850 y tiendas online desde $1,750. Precios netos en dólares para clientes en Estados Unidos.',
     contactCta: 'Conversemos sobre tu proyecto',
     contactPath: '/#contacto',
     note: 'Sin contratos forzosos, con reportes mensuales y resultados progresivos. Los precios son referenciales según paquetes base; cada propuesta se ajusta tras una reunión inicial.',
     tiers: [
-      { name: 'Branding inicial', price: 'desde $500', period: '/ proyecto', desc: 'Diseño de identidad visual con entrega de propuesta tras sesión inicial de descubrimiento.', feats: ['Logotipo','Manual de marca','Paleta cromática','Tipografía corporativa','Aplicaciones esenciales'], href: '/servicios/branding', cta: 'Ver branding' },
-      { name: 'Social Media', price: '$800', period: '/ mes', desc: 'Manejo de TikTok, Instagram, Facebook y LinkedIn con 8–12 piezas mensuales, en español o bilingüe.', feats: ['8–12 piezas / mes','TikTok + IG + FB + LinkedIn','Reels / TikToks editados','Community management','Reporte mensual'], href: '/servicios/socialmedia', cta: 'Ver redes sociales' },
       { name: 'Posicionamiento SEO', price: '$500', period: '/ mes', desc: 'Auditoría, planificación, optimización, escalamiento y reportes mensuales. Estrategia continua sin contratos forzosos.', feats: ['Auditoría inicial','Planificación','Optimización on-page','Escalamiento','Reporte mensual'], href: '/posicionamiento-seo', cta: 'Ver SEO', highlight: true },
-      { name: 'Google Ads gestión', price: '$800', period: '/ mes', desc: 'Fee de gestión de campañas Search, Performance Max, YouTube, Display, Shopping y Remarketing.', feats: ['Configuración de campañas','Optimización continua','Tracking de conversiones','Reporte mensual'], href: '/servicios/google-ads', cta: 'Ver Google Ads', extra: '+ presupuesto mínimo de pauta de $400/mes pagado directamente a Google.' },
     ],
     webTitle: 'Diseño y desarrollo web',
     webNote: 'Cotización a medida tras reunión inicial. Cada propuesta incluye diseño en Figma, desarrollo responsive, SEO técnico básico, formulario de contacto y conexión a Google Analytics. El primer año incluye dominio, SSL y hosting.',
@@ -113,10 +114,10 @@ const COPY = {
     contactDesc: 'Cuéntanos tu objetivo y armamos una cotización personalizada en la primera reunión.',
     faqTitle: 'Preguntas frecuentes sobre precios',
     faqs: [
-      { q: '¿Cuánto cuesta contratar una agencia de marketing digital?', a: 'Depende del mix de servicios. Como referencia mensual: negocios que empiezan $750–$1,400, pymes $1,500–$3,600 y empresas medianas $3,600–$9,000. Por servicio: SEO $500/mes, gestión de Google Ads desde $800/mes (más la pauta), Social Media $800/mes, branding desde $500 y páginas web desde $850.' },
+      { q: '¿Cuánto cuesta contratar una agencia de marketing digital?', a: 'Depende del mix de servicios. Como referencia mensual: negocios que empiezan $750–$1,400, pymes $1,500–$3,600 y empresas medianas $3,600–$9,000. En Estados Unidos vendemos tres servicios: SEO a $500/mes, páginas web desde $850 y tiendas online desde $1,750.' },
       { q: '¿Cuánto cuesta crear una tienda online?', a: 'Una tienda completa en Shopify o WooCommerce arranca desde $1,750, con catálogo, pasarela de pago, gestión de inventario y panel de administración.' },
       { q: '¿Cuánto cuesta el posicionamiento SEO?', a: 'El servicio de SEO cuesta $500 al mes e incluye auditoría, planificación, optimización on-page, escalamiento y reporte mensual. Sin contratos forzosos y con resultados progresivos.' },
-      { q: '¿Cuánto debo invertir en pauta de Google Ads?', a: 'Además del fee de gestión (desde $800/mes), recomendamos un presupuesto mínimo de pauta de $400/mes, que se paga directamente a Google.' },
+      { q: '¿Hacen branding, redes sociales o Google Ads para clientes en Estados Unidos?', a: 'En Estados Unidos nos centramos en tres servicios: páginas web, posicionamiento SEO y tiendas online. Branding, redes sociales y medios pagados forman parte de nuestro catálogo en Perú, y preferimos decirlo antes que vender un servicio en el que no estamos enfocados para este mercado.' },
       { q: '¿Los precios son finales? ¿Hay contratos forzosos?', a: 'Los precios son netos en dólares y cada propuesta se ajusta tras una reunión inicial. No trabajamos con contratos forzosos: el servicio es mensual, con reportes y resultados progresivos.' },
     ],
   }

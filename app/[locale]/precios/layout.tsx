@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     titleEs: 'Precios de Marketing Digital en Lima, Perú | 3R Core',
     titleEn: 'Pricing — Digital Marketing in USD | 3R Core',
     descriptionEs: 'Precios referenciales en Lima: branding desde S/500, SEO S/1,800/mes, Google Ads desde S/1,800/mes de gestión y webs desde S/1,800. Netos + 18% IGV.',
-    descriptionEn: 'Branding from $500, SEO $500/month, social media $800/month, Google Ads $800/month and websites from $850. Net prices in dollars for U.S. clients.',
+    descriptionEn: 'SEO $500/month, websites from $850 and online stores from $1,750. Net prices in U.S. dollars for clients based in the United States, with no mandatory contracts.',
     titleUs: 'Precios de Marketing Digital en Dólares | 3R Core',
-    descriptionUs: 'Precios para negocios en Estados Unidos: branding desde $500, SEO $500/mes, redes sociales $800/mes, gestión de Google Ads $800/mes y páginas web desde $850. Precios netos en dólares, sin contratos forzosos.',
+    descriptionUs: 'Precios para negocios en Estados Unidos: SEO $500/mes, páginas web desde $850 y tiendas online desde $1,750. Precios netos en dólares, sin contratos forzosos.',
   })
 }
 
@@ -30,7 +30,13 @@ export default async function PreciosLayout({ children, params }: { children: Re
     locale
   )
 
-  const offerCatalog = buildOfferCatalogSchema(locale, [
+  // 28-ago-2026. El OfferCatalog publicaba los siete servicios en los tres
+  // mercados. En EE.UU. solo se venden tres (web, SEO y tiendas online) y las
+  // páginas de los otros van con `noindex` allí: el schema estaba ofreciendo a
+  // Google un catálogo que la propia web pide no indexar. Perú mantiene los
+  // siete, que es donde sí se venden.
+  const SOLO_PERU = ['Branding', 'Social Media Management', 'Google Ads / SEM']
+  const catalogoCompleto = [
     { name: isEn ? 'Branding starter package' : 'Paquete branding inicial', priceEs: 500, priceEn: 500, serviceType: 'Branding', path: '/servicios/branding', descriptionEs: 'Identidad visual con logotipo, manual de marca, paleta cromática, tipografía y aplicaciones.', descriptionEn: 'Visual identity with logo, brand manual, color palette, typography and applications.' },
     { name: isEn ? 'Social media management' : 'Manejo de redes sociales', priceEs: 1500, priceEn: 800, serviceType: 'Social Media Management', path: '/servicios/socialmedia', descriptionEs: 'TikTok, Instagram, Facebook y LinkedIn con 8–12 piezas mensuales y reporte mensual.', descriptionEn: 'TikTok, Instagram, Facebook and LinkedIn with 8–12 pieces per month and monthly report.' },
     { name: isEn ? 'SEO positioning' : 'Posicionamiento SEO', priceEs: 1800, priceEn: 500, serviceType: 'SEO', path: '/posicionamiento-seo', descriptionEs: 'Auditoría, planificación, optimización, escalamiento y reportes mensuales sin contratos forzosos.', descriptionEn: 'Audit, planning, optimization, scaling and monthly reports with no mandatory contracts.' },
@@ -38,7 +44,11 @@ export default async function PreciosLayout({ children, params }: { children: Re
     { name: isEn ? 'Landing page' : 'Landing page profesional', priceEs: 1800, priceEn: 850, serviceType: 'Web Development', path: '/servicios/web-development', descriptionEs: 'Landing page profesional con diseño a medida, SEO técnico básico y formulario de contacto.', descriptionEn: 'Professional landing page with custom design, basic technical SEO and contact form.' },
     { name: isEn ? 'Corporate website' : 'Web corporativa', priceEs: 4500, priceEn: 1200, serviceType: 'Web Development', path: '/servicios/web-development', descriptionEs: 'Web corporativa de 5–8 secciones. Rango S/4,500–9,000 según alcance.', descriptionUs: 'Web corporativa de 5–8 secciones. Rango $1,200–$2,400 según alcance.', descriptionEn: '5–8 section corporate site. Range $1,200–$2,400 depending on scope.' },
     { name: isEn ? 'E-commerce Shopify / WooCommerce' : 'E-commerce Shopify / WooCommerce', priceEs: 6500, priceEn: 1750, serviceType: 'Web Development', path: '/servicios/web-development', descriptionEs: 'Tienda online con catálogo, pasarela de pago (Culqi, Niubiz, Izipay o Mercado Pago), gestión de inventario y panel admin.', descriptionUs: 'Tienda online con catálogo, pasarela de pago (Stripe, PayPal o Shopify Payments), gestión de inventario y panel admin.', descriptionEn: 'Online store with catalog, payment gateway, inventory management and admin panel.' },
-  ])
+  ]
+  const offerCatalog = buildOfferCatalogSchema(
+    locale,
+    locale === 'es' ? catalogoCompleto : catalogoCompleto.filter((o) => !SOLO_PERU.includes(o.serviceType))
+  )
 
   const pricingPageSchema = {
     "@context": "https://schema.org",

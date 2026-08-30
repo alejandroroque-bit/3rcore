@@ -6,6 +6,7 @@ import { createServerClient } from "@/lib/supabase/server"
 import type { BlogPost } from "@/lib/supabase/types"
 import { blogLocale } from "@/lib/blogLocale"
 import { STATIC_US_POSTS } from "@/lib/blog-static/us-posts"
+import { notFound } from "next/navigation"
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/metadata"
 import { buildAuthorNode } from "@/lib/seoSchemas"
 import { setRequestLocale } from "next-intl/server"
@@ -114,6 +115,11 @@ export default async function BlogsPage(
     }
   }
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
+
+  // 28-ago-2026. ?page=8 con siete páginas devolvía 200, cero artículos y un
+  // canonical autorreferencial: un soft 404 indexable, y la paginación admite
+  // cualquier número. Fuera de rango se devuelve 404 de verdad.
+  if (page > totalPages && page > 1) notFound()
 
   const { data: cats } = await supabase
     .from("blog_categories")
