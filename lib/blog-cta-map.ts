@@ -319,8 +319,36 @@ export const SERVICE_GUIDES_EN: Record<ServiceKey, { slug: string; title: string
   ],
 }
 
+/**
+ * Hash estable del slug. Mismo post, misma selección en cada build; posts
+ * distintos, selecciones distintas.
+ */
+function desplazamiento(slug: string, total: number, toma: number): number {
+  if (total <= toma) return 0
+  let h = 0
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0
+  return h % (total - toma + 1)
+}
+
+/**
+ * 30-ago-2026. Antes esto devolvía SIEMPRE los dos primeros destinos de cada
+ * categoría (`.slice(0, max)`), así que los 32 destinos de la tabla se reducían
+ * en la práctica a un puñado: se midieron 435 enlaces de este bloque repartidos
+ * entre solo 13 URLs, y los seis primeros acaparaban el 62%.
+ *
+ * Mientras tanto, 85 de los 173 posts de /es no reciben ningún enlace salvo su
+ * ficha en el índice paginado. Y como el dominio no tiene NI UN enlace externo
+ * (Bing devuelve 0 en GetLinkCounts), el reparto interno es la única autoridad
+ * que hay que mover.
+ *
+ * Con la ventana rotada por hash del slug, cada post reparte sus enlaces a
+ * destinos distintos y la tabla entera acaba enlazada, de forma determinística
+ * y estable entre builds. Es el mismo patrón que ya usa getRelatedPosts.
+ */
 export function guidesFor(slug: string, max = 2, locale = 'es'): { slug: string; title: string }[] {
   const key = serviceForSlug(slug)
   const table = locale === 'en' ? SERVICE_GUIDES_EN : SERVICE_GUIDES
-  return (table[key] || []).filter((g) => g.slug !== slug).slice(0, max)
+  const pool = (table[key] || []).filter((g) => g.slug !== slug)
+  const off = desplazamiento(slug, pool.length, max)
+  return pool.slice(off, off + max)
 }
