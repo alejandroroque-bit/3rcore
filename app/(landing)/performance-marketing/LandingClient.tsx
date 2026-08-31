@@ -159,7 +159,9 @@ const RESULTS = [
   ["4.2×", "ROAS promedio de portafolio"],
   ["-38%", "Reducción de costo por lead"],
   ["+67%", "Aumento en tasa de conversión"],
-  ["+120", "Marcas trabajadas"],
+  // 31-ago-2026: decía «+120» mientras la portada decía «+1000» con el mismo
+  // rótulo. La cifra confirmada por el cliente es +1000 (ver CTASection.tsx).
+  ["+1000", "Marcas trabajadas"],
 ];
 
 // Reseñas REALES y verificables.
@@ -467,7 +469,9 @@ export default function LandingClient() {
                 <a href="#contacto" className="btn btn-ghost" data-track="hero_diagnostico_form">Pide tu diagnóstico <ArrowIcon /></a>
               </div>
               <div className="hero-stats">
-                <div><div className="num grad-text">+120</div><div className="lbl">Marcas escaladas</div></div>
+                {/* 31-ago-2026: «+120» aquí y en RESULTS mientras la portada decía «+1000».
+                    Cifra confirmada por el cliente: +1000 marcas. */}
+                <div><div className="num grad-text">+1000</div><div className="lbl">Marcas escaladas</div></div>
                 <div><div className="num grad-text">4.2x</div><div className="lbl">ROAS promedio</div></div>
                 <div><div className="num grad-text">-38%</div><div className="lbl">Costo por lead</div></div>
               </div>

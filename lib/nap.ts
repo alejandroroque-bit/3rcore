@@ -11,19 +11,22 @@
  *   B) «Calle Las Caobas 170, Ofic. 400, Urb El Remanso, La Molina, Lima 15024»
  *      → preguntas frecuentes (es y en) y public/llms.txt.
  *
- * Las dos coinciden en urbanización, distrito, ciudad y código postal; solo
- * cambia la calle. Aquí se centraliza la versión A porque es la que estaba en
- * más sitios y en el marcado estructurado, PERO ESO NO ES UNA DECISIÓN
- * TÉCNICA: hace falta que 3R Core confirme cuál es la buena.
+ * ✅ RESUELTO EL 31-AGO-2026. El cliente confirma que la buena es la A:
+ * «Alameda de la Paz 187 es la dirección de la oficina». La B se ha retirado de
+ * todo el sitio (FAQ de es y en). Desde esa fecha, la calle también se publica
+ * en `public/llms.txt` y en la página madre `/es/agencia-marketing-digital-lima`,
+ * que hasta entonces daban solo el distrito para no citar una calle sin
+ * confirmar.
  *
- * 🔧 CUANDO LO CONFIRMEN: se cambia `STREET` aquí y queda arreglado el JSON-LD,
- * el pie y la landing de una vez. Faltará ajustar a mano los textos legales de
- * `messages/*.json` (políticas y términos, donde la dirección forma parte del
- * texto legal) y la respuesta q6 de las preguntas frecuentes.
+ * 🔒 REGLA: cualquier página nueva que necesite la dirección importa `NAP` o
+ * `POSTAL_ADDRESS` de aquí. No se vuelve a escribir una calle a mano. Los
+ * únicos textos que la repiten literalmente son los legales de
+ * `messages/*.json` (políticas y términos, donde forma parte del texto
+ * jurídico) y la respuesta q6 de las preguntas frecuentes.
  *
- * Mientras tanto, `public/llms.txt` y la página madre solo publican el
- * distrito: dar una calle sin confirmar a un motor de IA que la va a citar es
- * peor que no dar ninguna.
+ * ⏳ PENDIENTE FUERA DEL CÓDIGO: la ficha de Google Business Profile todavía
+ * hay que revisarla contra esta dirección — es la única fuente que Google mira
+ * para el mapa, y la web no la corrige sola.
  */
 
 export const NAP = {

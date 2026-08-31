@@ -18,14 +18,12 @@
  * propósito. Todo eso puede ser cierto; simplemente no consta, y una landing no
  * es el sitio para estrenar promesas.
  *
- * 🚨 AVISO — LA WEB PUBLICA DOS DIRECCIONES DISTINTAS:
- *   · «Alameda de la Paz 187, primer piso, La Molina, Lima 15024»
- *     → JSON-LD, pie de página, políticas, términos y landing de campaña.
- *   · «Calle Las Caobas 170, Ofic. 400, Urb El Remanso, La Molina, Lima 15024»
- *     → preguntas frecuentes (es y en) y public/llms.txt.
- * Hasta que 3R Core confirme cuál es la buena y se unifique en todo el sitio,
- * esta página NO publica dirección de calle: solo el distrito, en el que las
- * dos coinciden. Una NAP inconsistente hace daño real al posicionamiento local.
+ * ✅ DIRECCIÓN CONFIRMADA (31-ago-2026). La web publicaba dos calles a la vez;
+ * el cliente confirma que la oficina es «Alameda de la Paz 187, primer piso,
+ * Urb. El Remanso, La Molina, Lima 15024». «Calle Las Caobas 170, Ofic. 400»
+ * era la incorrecta y se retiró de las FAQ (es y en). Fuente única: lib/nap.ts.
+ * Ya se puede publicar la calle aquí, y conviene hacerlo: una NAP completa y
+ * coincidente en todas partes es lo que sostiene el posicionamiento local.
  */
 
 type Item = { name: string; desc: string; href: string }
@@ -37,7 +35,7 @@ export const COPY = {
     // Fuente: descripción del nodo Organization en app/[locale]/layout.tsx.
     sub: 'Agencia de marketing digital en La Molina, Lima. Combinamos Experiencia, Visión y Tecnología en estrategias de branding, social media, SEO, Google Ads y desarrollo web para empresas de Perú y de Estados Unidos.',
     // Fuente: llms.txt y el JSON-LD del sitio. Sin calle: ver AVISO arriba.
-    zona: 'La Molina, Lima 15024, Perú',
+    zona: 'Alameda de la Paz 187, primer piso, Urb. El Remanso, La Molina, Lima 15024, Perú',
     horario: 'Lunes a viernes, 9:00 a 18:00 (hora de Perú)',
     phone: '+51 986 889 147',
     email: 'info@3rcore.com',
@@ -78,7 +76,7 @@ export const COPY = {
 
     zonesH2: 'Dónde atendemos',
     // Fuente: HomeSeoSection (mismos distritos, sin añadir ninguno) + FAQ q6.
-    zonesP: 'La oficina está en La Molina y trabajamos con negocios de todos los distritos de Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— y de provincias en todo el Perú. Contamos con presencia y atención tanto en Perú como en EE.UU. Atendemos de lunes a viernes, de 9:00 a 18:00.',
+    zonesP: 'La oficina está en la Alameda de la Paz 187, primer piso, urbanización El Remanso, La Molina, y trabajamos con negocios de todos los distritos de Lima —San Isidro, Miraflores, Surco, San Borja, La Victoria, Los Olivos— y de provincias en todo el Perú. Contamos con presencia y atención tanto en Perú como en EE.UU. Atendemos de lunes a viernes, de 9:00 a 18:00.',
     sectorsP: 'Tres sectores tienen página propia porque su embudo y su coste por contacto no se parecen al resto:',
     // Fuente: la descripción de metadata de cada una de esas tres páginas.
     sectors: [
@@ -112,7 +110,7 @@ export const COPY = {
     eyebrow: '3R Core · La Molina, Lima · Peru',
     hero: 'Digital marketing agency in Lima, Peru',
     sub: 'Digital marketing agency in La Molina, Lima. We combine Experience, Vision and Technology across branding, social media, SEO, Google Ads and web development for companies in Peru and the United States.',
-    zona: 'La Molina, Lima 15024, Peru',
+    zona: 'Alameda de la Paz 187, first floor, Urb. El Remanso, La Molina, Lima 15024, Peru',
     horario: 'Monday to Friday, 9:00 to 18:00 (Peru time)',
     phone: '+51 986 889 147',
     email: 'info@3rcore.com',
@@ -149,7 +147,7 @@ export const COPY = {
     refNote: 'What matters is not the budget but that ROI turns positive from month 3.',
 
     zonesH2: 'Where we work',
-    zonesP: 'The office is in La Molina, Lima, and we work with businesses across every district of Lima and throughout Peru. We serve clients in both Peru and the USA. Open Monday to Friday, 9:00 to 18:00 Peru time.',
+    zonesP: 'The office is at Alameda de la Paz 187, first floor, Urb. El Remanso, La Molina, Lima, and we work with businesses across every district of Lima and throughout Peru. We serve clients in both Peru and the USA. Open Monday to Friday, 9:00 to 18:00 Peru time.',
     sectorsP: 'Three industries have their own page because their funnel and cost per contact look nothing like the rest:',
     sectors: [
       { name: 'Clinics and medical practices', desc: 'Healthcare Google Ads, local SEO, Google Business Profile and bilingual patient acquisition campaigns.', href: '/services/healthcare-marketing' },
