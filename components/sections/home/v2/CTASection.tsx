@@ -23,10 +23,15 @@ const servicesList = [
 const StatsAndMarquee = () => {
   const t = useTranslations("CTA");
 
+  // ✅ Cifras confirmadas por el cliente el 31-ago-2026: +1000 marcas,
+  // +3 países, +5 años. Deben coincidir con components/sections/home/CTASection.tsx
+  // (la variante que sirve /en): dos portadas de la misma web no pueden dar
+  // números distintos. El «+» iba solo en el primero; ahora va en los tres,
+  // porque las tres cifras son mínimos, no exactos.
   const stats = [
     { id: 1, endValue: 1000, label: t("labelClients"), prefix: "+" },
-    { id: 2, endValue: 10, label: t("labelExperience"), prefix: "" },
-    { id: 3, endValue: 3, label: t("labelCountries"), prefix: "" },
+    { id: 2, endValue: 5, label: t("labelExperience"), prefix: "+" },
+    { id: 3, endValue: 3, label: t("labelCountries"), prefix: "+" },
   ];
 
   const containerRef = useRef(null);

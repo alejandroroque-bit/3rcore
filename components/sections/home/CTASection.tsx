@@ -21,17 +21,19 @@ const StatsAndCTA = () => {
   const message = "Hola vengo de la página web, quiero agendar una reunión.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-  // 29-ago-2026. Este bloque (solo lo usa /en) decía «+5000 BRANDS» mientras
-  // /es y /us dicen «+1000 MARCAS» con el mismo rótulo, y otras páginas del
-  // sitio hablan de «ocho años y 150 proyectos». Tres cifras distintas de la
-  // misma empresa en la misma web: quien compare dos páginas deja de creerse
-  // las dos. Se alinea con lo que dicen los otros dos mercados (1000), que es
-  // además la cifra más conservadora.
-  // ⚠️ PENDIENTE DEL CLIENTE: confirmar la cifra REAL de marcas atendidas y de
-  // años. Mientras no llegue, las tres portadas dicen lo mismo.
+  // ✅ CIFRAS CONFIRMADAS POR EL CLIENTE (31-ago-2026): +1000 marcas,
+  // +3 países, +5 años. Son la ÚNICA fuente para cualquier cifra corporativa
+  // del sitio; si alguna página dice otra cosa, la que está mal es la página.
+  //
+  // Antes de esa confirmación la web publicaba CUATRO cifras distintas de la
+  // misma empresa: «+5000 BRANDS» aquí en /en, «+1000 MARCAS» en /es y /us con
+  // el mismo rótulo, «+120 marcas trabajadas» en la landing de performance y
+  // «ocho años y 150 proyectos» en las FAQ de los tres mercados. Quien comparaba
+  // dos páginas dejaba de creerse las dos. Los «150 proyectos» se retiraron: el
+  // cliente no los confirmó y contradicen las mil marcas.
   const stats = [
     { id: 1, endValue: 1000, label: t("labelClients"), prefix: "+" },
-    { id: 2, endValue: 10, label: t("labelExperience"), prefix: "+" },
+    { id: 2, endValue: 5, label: t("labelExperience"), prefix: "+" },
     { id: 3, endValue: 3, label: t("labelCountries"), prefix: "+" },
   ];
 
