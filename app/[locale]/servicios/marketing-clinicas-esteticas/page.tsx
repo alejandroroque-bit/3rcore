@@ -15,7 +15,7 @@ import PageLoader from '@/components/layout/PageLoader';
 
 import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
 
-export default function MarketingClinicas() {
+export default function MarketingClinicasEsteticas() {
 
   useScrollToSection();
   const isLoading = useIndividualPageLoader({
@@ -31,15 +31,15 @@ export default function MarketingClinicas() {
         {isLoading && <PageLoader key="home-loader" />}
       </AnimatePresence>
       <main>
-        <h1 className="sr-only">{tH1('clinicas')}</h1>
+        <h1 className="sr-only">{tH1('clinicasesteticas')}</h1>
         <div id="hero">
-          <ServiceLanding namespace="MarketingClinicasLanding" />
+          <ServiceLanding namespace="MarketingClinicasEsteticasLanding" />
         </div>
-        <ServiceFAQ namespace="MarketingClinicasFAQ" count={8} />
+        <ServiceFAQ namespace="MarketingClinicasEsteticasFAQ" count={8} />
         <SEOContentBlock
-          namespace="MarketingClinicasSEO"
+          namespace="MarketingClinicasEsteticasSEO"
           paragraphs={6}
-          relatedLinks={[{ href: "/servicios/marketing-clinicas-dentales", label: "Clínicas Dentales" }, { href: "/servicios/marketing-clinicas-esteticas", label: "Clínicas Estéticas" }, { href: "/servicios/google-ads", label: "Google Ads" }, { href: "/posicionamiento-seo", label: "SEO Local" }]}
+          relatedLinks={[{ href: "/servicios/marketing-clinicas", label: "Marketing para Clínicas" }, { href: "/servicios/meta-ads", label: "Meta Ads" }, { href: "/servicios/ugc", label: "Contenido UGC" }, { href: "/servicios/socialmedia", label: "Redes Sociales" }]}
         />
         <ReviewsSection/>
         <ClientSection />

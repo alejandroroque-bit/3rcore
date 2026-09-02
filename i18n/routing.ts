@@ -50,6 +50,17 @@ export const pathnames = {
   '/servicios/posicionamiento-ia': {es: '/servicios/posicionamiento-ia', us: '/servicios/posicionamiento-ia', en: '/services/generative-engine-optimization'},
   '/servicios/marketing-abogados': {es: '/servicios/marketing-abogados', us: '/servicios/marketing-abogados', en: '/services/law-firm-marketing'},
 
+  // 2-set-2026. Tres verticales con demanda medida en el autocompletado de
+  // Google y con la matriz ya funcionando: /servicios/marketing-clinicas está
+  // en posición 2,0 con solo 4 enlaces internos.
+  //  - clínicas dentales: «marketing para dentistas» da 10 sugerencias.
+  //  - clínicas estéticas: 3 sugerencias, y reglas de anuncios distintas
+  //    (Meta prohíbe el antes/después en tratamientos corporales).
+  //  - veterinarias: 5 sugerencias y vertical vacío en las 9 webs medidas.
+  '/servicios/marketing-clinicas-dentales': {es: '/servicios/marketing-clinicas-dentales', us: '/servicios/marketing-clinicas-dentales', en: '/services/dental-clinic-marketing'},
+  '/servicios/marketing-clinicas-esteticas': {es: '/servicios/marketing-clinicas-esteticas', us: '/servicios/marketing-clinicas-esteticas', en: '/services/aesthetic-clinic-marketing'},
+  '/servicios/marketing-veterinarias': {es: '/servicios/marketing-veterinarias', us: '/servicios/marketing-veterinarias', en: '/services/veterinary-marketing'},
+
   // Páginas ancla de un solo mercado
   '/nearshore-marketing-agency': '/nearshore-marketing-agency',
   '/marketing-para-negocios-hispanos': '/marketing-para-negocios-hispanos',

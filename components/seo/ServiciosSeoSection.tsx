@@ -65,6 +65,10 @@ const COPY = {
       { name: 'Clínicas y consultorios', detail: 'Google Ads de salud, SEO local, Google Business Profile y captación de pacientes con citas medibles.', href: '/servicios/marketing-clinicas' },
       { name: 'Inmobiliarias y proyectos', detail: 'Meta Ads y Google Ads para captar leads, landing por proyecto, CRM y seguimiento por WhatsApp con costo por lead medible.', href: '/servicios/marketing-inmobiliarias' },
       { name: 'E-commerce y tiendas online', detail: 'Google Shopping y Performance Max, Meta Ads con catálogo, email marketing y CRO sobre Shopify, WooCommerce o VTEX.', href: '/servicios/marketing-ecommerce' },
+      { name: 'Clínicas dentales', detail: 'Google Ads de salud por tratamiento, ficha de Google, SEO local y landing por implantes, ortodoncia o blanqueamiento. Se reporta en citas agendadas.', href: '/servicios/marketing-clinicas-dentales' },
+      { name: 'Clínicas estéticas', detail: 'Instagram y TikTok como canal principal, Meta Ads dentro de las reglas de la categoría, y Google Ads para los tratamientos que sí se buscan por su nombre.', href: '/servicios/marketing-clinicas-esteticas' },
+      { name: 'Veterinarias', detail: 'Ficha de Google Business Profile, SEO local por distrito y páginas por servicio con precio. En este rubro la decisión se toma en el mapa.', href: '/servicios/marketing-veterinarias' },
+      { name: 'Estudios de abogados', detail: 'Captación de casos por área de práctica con Google Ads de alta intención, SEO local y landing por especialidad.', href: '/servicios/marketing-abogados' },
     ] as { name: string; detail: string; href: AppPathname }[],
     h2Como: 'Quiénes somos',
     // Fuente: messages/es.json → FAQ.faqs.q2 y q1, literal.

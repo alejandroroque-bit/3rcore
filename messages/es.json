@@ -662,7 +662,10 @@
     "influencers": "Agencia de influencer marketing y campañas con creadores en Lima, Perú",
     "pr": "Agencia de relaciones públicas, prensa y gestión de reputación en Lima, Perú",
     "posicionamientoia": "Posicionamiento en IA (GEO) en Lima: que ChatGPT, Perplexity y Copilot citen a tu empresa",
-    "abogados": "Agencia de marketing digital para estudios de abogados en Lima, Perú"
+    "abogados": "Agencia de marketing digital para estudios de abogados en Lima, Perú",
+    "clinicasdentales": "Agencia de marketing digital para clínicas dentales en Lima, Perú",
+    "clinicasesteticas": "Agencia de marketing digital para clínicas estéticas en Lima, Perú",
+    "veterinarias": "Agencia de marketing digital para veterinarias en Lima, Perú"
   },
   "HomeFAQ": {
     "badge": "Preguntas Frecuentes",
@@ -2457,6 +2460,360 @@
     "p4": "Después, una página por área de práctica. Laboral, familia, penal, civil, notarial y corporativo tienen consultas, urgencias y clientes distintos, y una sola página de «servicios legales» no compite con ninguna de ellas.",
     "p5": "El contenido que funciona es el que responde a la urgencia: qué hacer, en qué plazo y con qué documentos. Ese lo lee alguien que necesita un abogado hoy. Un artículo general sobre la importancia del derecho laboral no lo lee nadie que esté a punto de contratar.",
     "p6": "Sobre publicidad y normas deontológicas: la comunicación de servicios legales está sujeta a las reglas del colegio profesional correspondiente. No citamos artículos concretos porque esas normas cambian y una cita equivocada perjudicaría al estudio; antes de lanzar campañas las revisamos con el cliente. Las prácticas que recomendamos —ficha de Google, contenido informativo y reseñas reales— son las más conservadoras del abanico.",
+    "relatedTitle": "Servicios relacionados"
+  },
+  "MarketingClinicasDentalesLanding": {
+    "hero": {
+      "badge": "Odontología · Captación de pacientes",
+      "title": "Marketing digital para clínicas dentales en Lima",
+      "subtitle": "Atraemos pacientes para tu clínica dental o consultorio odontológico con Google Ads de salud, SEO local y ficha de Google. La gestión parte en S/1,800 al mes más IGV y se reporta en citas agendadas.",
+      "cta": "Quiero más pacientes"
+    },
+    "intro": {
+      "title": "Citas agendadas, no seguidores",
+      "p1": "Quien necesita un dentista lo busca en Google en el momento en que le duele o cuando decide arreglarse la sonrisa. Ahí se define la clínica que gana la cita, y casi nunca es la que tiene más seguidores: es la que aparece en el mapa, responde rápido y explica su precio.",
+      "p2": "En 3R Core combinamos Google Ads de alta intención por tratamiento —implantes, ortodoncia, blanqueamiento— con SEO local y trabajo de ficha de Google, y enviamos ese tráfico a una landing por tratamiento en vez de a la página de inicio.",
+      "p3": "El rubro salud tiene reglas: Google restringe las promesas de resultado y prohíbe segmentar por datos sensibles. Escribimos las campañas dentro de esas reglas desde el primer día, que es la causa más común de que una cuenta dental se caiga."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Nuestro sistema para clínicas dentales",
+      "items": [
+        {
+          "title": "Google Ads por tratamiento",
+          "description": "Campañas separadas por implantes, ortodoncia, blanqueamiento y urgencias, con palabras clave negativas desde el día uno para no pagar clics que no agendan."
+        },
+        {
+          "title": "Ficha de Google Business Profile",
+          "description": "Categoría correcta, horarios reales, fotos del consultorio, servicios listados y respuesta a cada reseña. Es lo que aparece en el mapa cuando alguien busca «dentista en Surco»."
+        },
+        {
+          "title": "Landing por tratamiento",
+          "description": "Una página por servicio desde S/1,800 más IGV, lista en 1 a 2 semanas, con lo que incluye, cuánto dura, cuánto cuesta y el botón de agendar."
+        },
+        {
+          "title": "SEO local por distrito",
+          "description": "Posicionamiento en Google y Google Maps por la zona de influencia real de la clínica, desde S/1,800 al mes más IGV."
+        },
+        {
+          "title": "Cumplimiento del rubro salud",
+          "description": "Redacción sin promesas de resultado clínico y sin segmentación por condición de salud, que es lo que exigen Google y Meta en esta categoría."
+        },
+        {
+          "title": "Reporte de costo por cita",
+          "description": "Cada mes: lo invertido, las citas agendadas y el costo por cita. Sin capturas de alcance ni de impresiones sueltas."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "Nuestro proceso con una clínica dental",
+      "steps": [
+        {
+          "title": "Diagnóstico de tratamientos",
+          "description": "Qué tratamientos quiere llenar la clínica, cuál deja más margen y qué compite en su distrito."
+        },
+        {
+          "title": "Ficha y presencia local",
+          "description": "Ordenamos la ficha de Google, las categorías, las fotos y las reseñas antes de invertir un sol en publicidad."
+        },
+        {
+          "title": "Campañas y landings",
+          "description": "Una campaña y una landing por tratamiento, con el presupuesto separado para que no se mezclen."
+        },
+        {
+          "title": "Medición por cita",
+          "description": "Se mide el costo por cita agendada durante el primer mes y esa es la línea base sobre la que se ajusta."
+        },
+        {
+          "title": "Reporte y ajuste",
+          "description": "Reporte mensual en soles y ajuste de presupuesto hacia los tratamientos que sí están agendando."
+        }
+      ]
+    }
+  },
+  "MarketingClinicasDentalesFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto cuesta el marketing digital para una clínica dental en Lima?",
+        "answer": "En 3R Core, la gestión de Google Ads para una clínica dental parte en S/1,800 al mes más IGV, y el SEO mensual también en S/1,800 más IGV. El manejo de redes sociales parte en S/1,500 al mes más IGV. La inversión en anuncios va aparte y la paga la clínica directamente a Google o a Meta."
+      },
+      "q2": {
+        "question": "¿Puedo anunciar mi clínica dental en Google si es del rubro salud?",
+        "answer": "Sí. Google permite anunciar servicios odontológicos en el Perú, pero la categoría de salud tiene restricciones: no se puede prometer un resultado clínico ni segmentar por datos sensibles de salud. La campaña se arma por intención de búsqueda y por zona geográfica."
+      },
+      "q3": {
+        "question": "¿En cuánto tiempo llegan los primeros pacientes?",
+        "answer": "Con Google Ads, las primeras consultas suelen entrar durante la primera semana de campaña. Con SEO local, el efecto se nota entre el tercer y el cuarto mes, porque Google necesita tiempo para reposicionar la clínica y su ficha."
+      },
+      "q4": {
+        "question": "¿3R Core garantiza una cantidad de pacientes al mes?",
+        "answer": "No. 3R Core no garantiza un número de pacientes ni resultados clínicos. Lo que sí se compromete es el trabajo del plan, el reporte mensual con el costo por cita agendada y el ajuste de las campañas según ese dato."
+      },
+      "q5": {
+        "question": "¿Cuánto cuesta conseguir un paciente dental en Lima?",
+        "answer": "No hay una cifra fija: depende del tratamiento, del distrito y de la competencia que puje por esa búsqueda. Captar para un blanqueamiento y para un implante no cuesta lo mismo. Se mide con los datos de cada clínica durante el primer mes y recién ahí se fija la meta."
+      },
+      "q6": {
+        "question": "¿Necesito una web nueva o basta con mi ficha de Google y mis redes?",
+        "answer": "Una clínica dental puede empezar a recibir pacientes solo con la ficha de Google bien trabajada. La web se vuelve necesaria cuando se quiere hacer publicidad: los anuncios necesitan una página donde el paciente agende, y esa página decide cuántos clics se convierten en citas."
+      },
+      "q7": {
+        "question": "¿Trabajan con clínicas dentales fuera de Lima?",
+        "answer": "Sí. 3R Core trabaja desde La Molina, Lima, y atiende clínicas de otras ciudades del Perú de forma remota. El trabajo de ficha de Google y campañas se hace igual; lo que cambia es la configuración geográfica de las campañas."
+      },
+      "q8": {
+        "question": "¿Los precios incluyen IGV? ¿Emiten factura?",
+        "answer": "Los precios publicados son netos y 3R Core emite factura, donde se suma el IGV del 18%. Una web corporativa de S/4,500 factura S/5,310 en total. El pago se hace en dos partes: 50% al iniciar el proyecto y 50% al entregarlo."
+      }
+    }
+  },
+  "MarketingClinicasDentalesSEO": {
+    "seoTitle": "Marketing digital para clínicas dentales en Lima con foco en citas",
+    "p1": "El paciente dental peruano decide en Google. Busca «dentista cerca de mí» cuando le duele, y «cuánto cuesta un implante dental» cuando está evaluando. Son dos momentos distintos y necesitan dos respuestas distintas: la primera se gana con la ficha de Google y las campañas de búsqueda; la segunda, con una página del tratamiento que diga el precio.",
+    "p2": "En 3R Core trabajamos las dos. La gestión de Google Ads para una clínica dental parte en S/1,800 al mes más IGV y el SEO mensual en S/1,800 más IGV, con la inversión publicitaria aparte, que la clínica paga directo a la plataforma y decide cuánto es.",
+    "p3": "Las landing pages por tratamiento cuestan S/1,800 más IGV cada una y están listas en 1 a 2 semanas. Cada una responde lo que el paciente pregunta antes de agendar: qué incluye el tratamiento, cuánto dura, cuánto cuesta y cómo se paga. Enviar el tráfico de una campaña de implantes a la página de inicio es la forma más cara de perder ese clic.",
+    "p4": "El rubro salud tiene reglas propias y son la causa más frecuente de que una cuenta publicitaria dental se caiga. Google restringe el lenguaje que promete resultados y prohíbe construir públicos a partir de condiciones de salud. Nosotros escribimos las campañas dentro de esas reglas desde el primer día.",
+    "p5": "La ficha de Google Business Profile es lo más barato de arreglar y lo que más rinde en este rubro: es lo que ocupa la pantalla cuando alguien busca «dentista en Miraflores» desde el celular. Categoría correcta, horario real, fotos del consultorio y respuesta a cada reseña.",
+    "p6": "Reportamos en costo por cita agendada, no en alcance. Y pedimos a la clínica el dato de tratamiento cerrado desde su propio sistema, porque es lo único que convierte el reporte de clics en un reporte de soles.",
+    "relatedTitle": "Servicios relacionados"
+  },
+  "MarketingClinicasEsteticasLanding": {
+    "hero": {
+      "badge": "Estética · Captación de pacientes",
+      "title": "Marketing digital para clínicas estéticas en Lima",
+      "subtitle": "Atraemos pacientes para tu clínica estética o centro de medicina estética con Instagram, Meta Ads y SEO local. Las redes parten en S/1,500 al mes más IGV y se reporta en citas agendadas.",
+      "cta": "Quiero más pacientes"
+    },
+    "intro": {
+      "title": "El tratamiento estético se descubre, no se busca",
+      "p1": "Quien necesita un dentista escribe «dentista cerca de mí». Quien termina agendando una limpieza facial muchas veces no la estaba buscando esa mañana: la vio. Por eso, en el rubro estético, Instagram y TikTok pesan más que la búsqueda, y el reparto del presupuesto es el inverso al de una clínica dental.",
+      "p2": "Eso no significa que Google no sirva. Sirve para los tratamientos que la gente escribe por su nombre: depilación láser, ácido hialurónico, tratamiento para el acné. Lo que hacemos es repartir según cómo se decide cada tratamiento, no aplicar la misma receta a todo.",
+      "p3": "La estética es de las categorías más vigiladas por las plataformas, y la mayoría de los rechazos vienen de la creatividad, no de la configuración. Meta restringe las fotos de antes y después en tratamientos corporales y los mensajes que señalan el cuerpo de quien mira."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Nuestro sistema para clínicas estéticas",
+      "items": [
+        {
+          "title": "Contenido para Instagram y TikTok",
+          "description": "Entre 8 y 12 piezas en cada red que se maneje, desde S/1,500 al mes más IGV. En este rubro el video vertical de persona real rinde más que el diseño gráfico."
+        },
+        {
+          "title": "Meta Ads por tratamiento",
+          "description": "Campañas separadas por procedimiento, escritas dentro de las reglas de la categoría: sin antes y después, sin señalar el cuerpo y sin prometer resultados."
+        },
+        {
+          "title": "Google Ads donde sí se busca",
+          "description": "Solo para los tratamientos que la gente escribe por su nombre. Gestión desde S/1,800 al mes más IGV, con la inversión publicitaria aparte."
+        },
+        {
+          "title": "Landing por tratamiento",
+          "description": "Una página por procedimiento desde S/1,800 más IGV, lista en 1 a 2 semanas, con qué es, cuánto dura, quién lo realiza y cómo se agenda."
+        },
+        {
+          "title": "Ficha de Google y reseñas",
+          "description": "Fotos reales del local, horario, tratamientos listados y respuesta a cada reseña. En estética, las reseñas pesan tanto como la publicidad."
+        },
+        {
+          "title": "Reporte de costo por cita",
+          "description": "Cada mes: lo invertido, las citas agendadas y el costo por cita, más las que efectivamente llegaron."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "Nuestro proceso con una clínica estética",
+      "steps": [
+        {
+          "title": "Diagnóstico de tratamientos",
+          "description": "Qué procedimientos quiere llenar la clínica, cuál deja más margen y cuáles se buscan por su nombre en Google."
+        },
+        {
+          "title": "Contenido y prueba social",
+          "description": "Producción para Instagram y TikTok, con el equipo de la clínica y testimonios en video en vez de antes y después."
+        },
+        {
+          "title": "Campañas por procedimiento",
+          "description": "Meta Ads para lo que se descubre, Google Ads para lo que se busca. Presupuesto separado por tratamiento."
+        },
+        {
+          "title": "Medición por cita",
+          "description": "Se mide el costo por cita agendada y cuántas llegaron, porque en estética la diferencia entre agendar y asistir suele ser grande."
+        },
+        {
+          "title": "Reporte y ajuste",
+          "description": "Reporte mensual en soles y ajuste hacia los tratamientos que sí están llenando la agenda."
+        }
+      ]
+    }
+  },
+  "MarketingClinicasEsteticasFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto cuesta el marketing digital para una clínica estética en Lima?",
+        "answer": "En 3R Core, la gestión de campañas para una clínica estética parte en S/1,800 al mes más IGV y el manejo de redes sociales en S/1,500 al mes más IGV. Una landing por tratamiento cuesta S/1,800 más IGV. La inversión publicitaria va aparte y la paga la clínica directamente a Meta o a Google."
+      },
+      "q2": {
+        "question": "¿Puedo poner fotos de antes y después en mis anuncios?",
+        "answer": "En Meta, no: la plataforma restringe las imágenes de antes y después para tratamientos corporales, y es una de las causas más comunes de rechazo de anuncios en el rubro estético. En su lugar se usa explicación del procedimiento, testimonio en video o contenido del equipo de la clínica."
+      },
+      "q3": {
+        "question": "¿Qué funciona mejor para una clínica estética: Instagram o Google?",
+        "answer": "Para la mayoría de tratamientos estéticos, Instagram y TikTok funcionan mejor, porque el tratamiento se descubre antes de buscarse. Google funciona para los procedimientos que la gente escribe por su nombre, como depilación láser o ácido hialurónico. Lo habitual es combinar ambos."
+      },
+      "q4": {
+        "question": "¿3R Core garantiza una cantidad de pacientes al mes?",
+        "answer": "No. 3R Core no garantiza un número de pacientes ni resultados estéticos. Lo que se compromete es el trabajo del plan, el reporte mensual con el costo por cita agendada y el ajuste de las campañas según ese dato."
+      },
+      "q5": {
+        "question": "¿Cuánto tarda en verse el resultado de las campañas?",
+        "answer": "Con Meta Ads y Google Ads, las primeras consultas suelen entrar durante la primera semana. Con SEO local y trabajo de ficha de Google, el efecto se nota entre el tercer y el cuarto mes."
+      },
+      "q6": {
+        "question": "¿Cuánto cuesta captar un paciente en una clínica estética?",
+        "answer": "No hay un costo estándar: cambia según el tratamiento, el ticket y el distrito. Captar para una limpieza facial de bajo ticket y para un tratamiento de varios miles de soles no cuesta lo mismo ni se mide igual. Se mide con los datos de la clínica durante el primer mes."
+      },
+      "q7": {
+        "question": "¿Trabajan con clínicas estéticas fuera de Lima?",
+        "answer": "Sí. 3R Core trabaja desde La Molina, Lima, y atiende clínicas de otras ciudades del Perú de forma remota. Lo que cambia es la configuración geográfica de las campañas."
+      },
+      "q8": {
+        "question": "¿Los precios incluyen IGV? ¿Emiten factura?",
+        "answer": "Los precios publicados son netos y 3R Core emite factura, donde se suma el IGV del 18%. Una landing de S/1,800 factura S/2,124 en total. El pago se hace 50% al iniciar y 50% al entregar."
+      }
+    }
+  },
+  "MarketingClinicasEsteticasSEO": {
+    "seoTitle": "Marketing digital para clínicas estéticas en Lima con foco en citas",
+    "p1": "Un tratamiento estético casi nunca se busca: se descubre. Esa sola diferencia cambia todo el reparto del presupuesto respecto a otras clínicas, porque el momento de decisión no ocurre en el buscador sino en el feed. Instagram y TikTok son el canal principal, y Google entra para los procedimientos que la gente sí escribe por su nombre.",
+    "p2": "En 3R Core el manejo de redes sociales para una clínica estética parte en S/1,500 al mes más IGV, con entre 8 y 12 piezas en cada red que se maneje. La gestión de campañas parte en S/1,800 al mes más IGV, con la inversión publicitaria aparte, que la clínica paga directo a la plataforma.",
+    "p3": "En este rubro el video vertical de persona real rinde más que el diseño gráfico, y por eso el contenido de tipo UGC se combina con el manejo de redes cuando el presupuesto lo permite. No es una moda: es el formato con el que se decide un tratamiento estético.",
+    "p4": "La estética es de las categorías más vigiladas por las plataformas. Meta restringe explícitamente las fotos de antes y después en tratamientos corporales, rechaza los anuncios que señalan el cuerpo de quien mira y no permite segmentar por condiciones de salud. Estas reglas no las pone la agencia: las ponen las plataformas, y son la razón principal por la que se cae una cuenta publicitaria del rubro.",
+    "p5": "Las landing pages por tratamiento cuestan S/1,800 más IGV cada una y están listas en 1 a 2 semanas. Cada una responde qué es el procedimiento, cuánto dura, quién lo realiza y cómo se agenda, que es exactamente lo que el paciente quiere saber antes de escribir.",
+    "p6": "Reportamos en costo por cita agendada y en citas que efectivamente llegaron, porque en estética la diferencia entre una cosa y la otra suele ser grande. El dato de tratamiento cerrado lo aporta la clínica desde su sistema y es lo que convierte el reporte en soles.",
+    "relatedTitle": "Servicios relacionados"
+  },
+  "MarketingVeterinariasLanding": {
+    "hero": {
+      "badge": "Veterinarias · Captación de clientes",
+      "title": "Marketing digital para veterinarias en Lima",
+      "subtitle": "Atraemos clientes para tu veterinaria o clínica veterinaria con ficha de Google, SEO local y campañas. El SEO parte en S/1,800 al mes más IGV y la mayor parte del trabajo que rinde está en el mapa.",
+      "cta": "Quiero más clientes"
+    },
+    "intro": {
+      "title": "Casi nadie elige veterinaria por su página web",
+      "p1": "La elige por el mapa. Cuando alguien busca «veterinaria cerca de mí» o «veterinaria 24 horas» desde el celular, lo que ocupa la pantalla es un bloque de fichas con las estrellas, el horario y el botón de llamar. Quien no está bien ahí no existe para esa búsqueda, por buena que sea su web.",
+      "p2": "Por eso en este rubro el trabajo empieza por la ficha de Google Business Profile: categoría correcta, horario real incluido el de emergencias, fotos del local y respuesta a cada reseña. Es lo más barato de arreglar y lo que más rinde.",
+      "p3": "En el rubro veterinario conviven dos búsquedas muy distintas: la urgente, que se decide por cercanía y por quién contesta el teléfono, y la planificada, que se compara por precio y por reseñas. Cada una necesita una respuesta distinta."
+    },
+    "benefits": {
+      "badge": "Qué incluye",
+      "title": "Nuestro sistema para veterinarias",
+      "items": [
+        {
+          "title": "Ficha de Google Business Profile",
+          "description": "Categoría correcta, horario real incluido el de emergencias, servicios listados uno a uno, fotos del local y respuesta a cada reseña. Es lo que decide una llamada a las once de la noche."
+        },
+        {
+          "title": "SEO local por distrito",
+          "description": "Posicionamiento por la zona real de la veterinaria: «veterinaria en Surco», «veterinaria en San Borja». Desde S/1,800 al mes más IGV."
+        },
+        {
+          "title": "Páginas por servicio con precio",
+          "description": "Vacunación, esterilización, baño y peluquería, consulta general y emergencias. Desde S/1,800 más IGV cada una, listas en 1 a 2 semanas."
+        },
+        {
+          "title": "Google Ads para urgencias",
+          "description": "Campañas de búsqueda para captar cuando la decisión es inmediata. Gestión desde S/1,800 al mes más IGV, con la inversión aparte."
+        },
+        {
+          "title": "Redes sociales",
+          "description": "Desde S/1,500 al mes más IGV. En veterinaria funciona el contenido del día a día de la clínica, no el diseño publicitario."
+        },
+        {
+          "title": "Tienda virtual, cuando aplica",
+          "description": "Si la veterinaria ya vende alimento y accesorios, una tienda de hasta 50 productos cuesta S/2,500 más IGV y convierte una compra puntual en recurrente."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Cómo trabajamos",
+      "title": "Nuestro proceso con una veterinaria",
+      "steps": [
+        {
+          "title": "Diagnóstico de la ficha",
+          "description": "Revisamos la ficha de Google, la categoría, los horarios y las reseñas antes de invertir un sol en publicidad."
+        },
+        {
+          "title": "Presencia local",
+          "description": "Ordenamos la ficha y trabajamos el posicionamiento por los distritos de los que realmente vienen los clientes."
+        },
+        {
+          "title": "Páginas de servicio",
+          "description": "Una página por servicio con el precio o el rango, que después sirve como destino de las campañas."
+        },
+        {
+          "title": "Campañas, si hacen falta",
+          "description": "Las campañas entran cuando hay un servicio concreto que llenar, no por defecto."
+        },
+        {
+          "title": "Reporte y ajuste",
+          "description": "Llamadas desde la ficha, citas agendadas y costo por cita cuando hay campañas activas."
+        }
+      ]
+    }
+  },
+  "MarketingVeterinariasFAQ": {
+    "badge": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto cuesta el marketing digital para una veterinaria en Lima?",
+        "answer": "En 3R Core, el SEO local parte en S/1,800 al mes más IGV, la gestión de campañas también en S/1,800 al mes más IGV y el manejo de redes sociales en S/1,500 al mes más IGV. La inversión publicitaria va aparte y la paga la veterinaria directamente a Google o a Meta."
+      },
+      "q2": {
+        "question": "¿Necesito una web o me basta con la ficha de Google?",
+        "answer": "Una veterinaria puede empezar a recibir clientes solo con la ficha de Google bien trabajada, porque la mayoría de estas búsquedas se resuelven en el mapa. La web se vuelve necesaria cuando se quiere hacer publicidad o publicar precios de servicios: los anuncios necesitan una página de destino y esa página decide cuántos clics se convierten en citas."
+      },
+      "q3": {
+        "question": "¿Qué es lo primero que debería hacer una veterinaria en Lima?",
+        "answer": "Ordenar la ficha de Google Business Profile: categoría correcta, horario real incluido el de emergencias, fotos del local y respuesta a todas las reseñas. Es lo más barato de arreglar y lo que más rinde, porque es lo que Google enseña cuando alguien busca «veterinaria cerca de mí»."
+      },
+      "q4": {
+        "question": "¿Sirve tener tienda virtual en una veterinaria?",
+        "answer": "Sirve cuando la veterinaria ya vende alimento, accesorios o antiparasitarios en el local, porque convierte una compra puntual en una recurrente. Una tienda de hasta 50 productos cuesta S/2,500 más IGV en 3R Core. Si solo se da servicio clínico, es mejor invertir primero en ficha de Google y páginas de servicio."
+      },
+      "q5": {
+        "question": "¿3R Core garantiza una cantidad de clientes al mes?",
+        "answer": "No. 3R Core no garantiza un número de clientes. Lo que se compromete es el trabajo del plan, el reporte mensual con las llamadas y citas generadas, y el ajuste de las campañas según ese dato."
+      },
+      "q6": {
+        "question": "¿Cómo se capta a alguien que busca una veterinaria de urgencia?",
+        "answer": "Estando en el mapa y contestando. La búsqueda urgente casi no se gana con contenido: se decide por cercanía, por horario y por quién responde el teléfono. Por eso la ficha de Google con el horario de emergencias bien puesto vale más que cualquier artículo."
+      },
+      "q7": {
+        "question": "¿Trabajan con veterinarias fuera de Lima?",
+        "answer": "Sí. 3R Core trabaja desde La Molina, Lima, y atiende negocios de otras ciudades del Perú de forma remota. Lo que cambia es la configuración geográfica de la ficha y de las campañas."
+      },
+      "q8": {
+        "question": "¿Los precios incluyen IGV? ¿Emiten factura?",
+        "answer": "Los precios publicados son netos y 3R Core emite factura, donde se suma el IGV del 18%. Una tienda virtual de S/2,500 factura S/2,950 en total. El pago se hace 50% al iniciar y 50% al entregar."
+      }
+    }
+  },
+  "MarketingVeterinariasSEO": {
+    "seoTitle": "Marketing digital para veterinarias en Lima con foco en el mapa",
+    "p1": "El dueño de una mascota casi nunca compara páginas web de veterinarias: mira el mapa, las estrellas y el horario. Cuando busca «veterinaria cerca de mí» desde el celular, lo que ocupa la pantalla es un bloque de fichas de empresa, y quien no está bien ahí no entra en la decisión.",
+    "p2": "Por eso el trabajo de una veterinaria empieza en la ficha de Google Business Profile y no en la web. Categoría correcta —«veterinario» y «clínica veterinaria» no compiten por lo mismo—, horario real incluido el de emergencias, fotos del local y del equipo, servicios listados uno a uno y respuesta a cada reseña.",
+    "p3": "Ese trabajo va dentro del plan de SEO local, que en 3R Core parte en S/1,800 al mes más IGV e incluye además el posicionamiento por distrito: «veterinaria en Surco», «veterinaria en San Borja», según de dónde vengan realmente los clientes.",
+    "p4": "En el rubro conviven dos búsquedas que no se parecen. La urgente —«veterinaria 24 horas»— se decide por cercanía y por quién contesta, y casi no se puede ganar con contenido. La planificada —«cuánto cuesta esterilizar a un perro»— se compara por precio y por confianza, y esa sí se gana con una página del servicio que diga la cifra.",
+    "p5": "Las páginas por servicio cuestan desde S/1,800 más IGV cada una y están listas en 1 a 2 semanas. Después sirven como destino de las campañas, porque enviar un anuncio de esterilización a la página de inicio es la forma más cara de perder ese clic.",
+    "p6": "Si la veterinaria ya vende alimento, accesorios o antiparasitarios en el local, una tienda virtual de hasta 50 productos cuesta S/2,500 más IGV y convierte una compra puntual en una recurrente. Es lo que separa a un local de barrio de un negocio con ingresos previsibles.",
     "relatedTitle": "Servicios relacionados"
   }
 }
