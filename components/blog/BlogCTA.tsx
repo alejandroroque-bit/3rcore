@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation'
 import { serviceForSlug, guidesFor, type ServiceKey } from '@/lib/blog-cta-map'
 import { WA_LEADS } from '@/lib/contact'
 import { trackConversion } from '@/lib/track'
+import InlineLeadForm from '@/components/blog/InlineLeadForm'
 
 /**
  * BlogCTA — bloque de conversión al final (y opcionalmente en medio) de cada blog.
@@ -222,6 +223,16 @@ export default function BlogCTA({ slug, locale, variant = 'end' }: { slug: strin
       <p className="text-white/60 text-sm md:text-base max-w-2xl relative z-10 mb-7">
         {t.sub}
       </p>
+
+      {/* 2-set-2026. Solo en el mercado de EE.UU.: los artículos en inglés son
+          los que más apariciones acumulan allí y ninguno tenía un formulario
+          dentro — la única vía era un WhatsApp peruano. Un comprador
+          estadounidense deja su correo, no escribe a un +51. */}
+      {(isEn || isUs) && (
+        <div className="relative z-10 mb-7">
+          <InlineLeadForm slug={slug} service={key} />
+        </div>
+      )}
       <div className="flex flex-col sm:flex-row gap-3 relative z-10">
         <Link
           href="/cotizar"
