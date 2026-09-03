@@ -428,35 +428,26 @@ const Navbar = () => {
                   isOpen ? "opacity-0 delay-0" : "opacity-100 delay-300"
                 } text-gray-400`}
               >
-                {/* Tres versiones, no dos. 'US' es el español de Estados
-                    Unidos (es-US): mismo idioma que PE, otro mercado y otra
-                    moneda. Se etiqueta por país y no por idioma porque PE y US
-                    comparten idioma y el usuario distingue por su mercado. */}
+                {/* Dos opciones: el selector es para el HUMANO y va por IDIOMA.
+                    El servicio presencial de 3R Core es solo Perú, así que
+                    «español» es Perú. El locale es-US (/us) sigue vivo e
+                    indexado; a ese usuario lo enruta Google por hreflang, que
+                    es para lo que existe — no por este botón. */}
                 <Link
                   href={localeSwitchHref}
                   locale="es"
-                  // next-intl deriva hrefLang del prop `locale`. Con "us" emitía
-                  // hrefLang="us", que no es un código de idioma válido ("us" es
-                  // un país). Se declaran explícitos y correctos.
-                  hrefLang="es-PE"
-                  title="Perú — español"
-                  className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'es' ? 'text-white' : ''}`}
+                  // next-intl deriva hrefLang del prop `locale`. Se declara
+                  // explícito para no emitir códigos inválidos.
+                  hrefLang="es"
+                  title="Español"
+                  className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'es' || currentLocale === 'us' ? 'text-white' : ''}`}
                 >
-                  PE
-                </Link>
-                <Link
-                  href={localeSwitchHref}
-                  locale="us"
-                  hrefLang="es-US"
-                  title="Estados Unidos — español"
-                  className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'us' ? 'text-white' : ''}`}
-                >
-                  US
+                  ES
                 </Link>
                 <Link
                   href={localeSwitchHref}
                   locale="en"
-                  hrefLang="en-US"
+                  hrefLang="en"
                   title="English"
                   className={`hover:text-[#E91E63] transition-colors cursor-pointer uppercase ${currentLocale === 'en' ? 'text-white' : ''}`}
                 >
